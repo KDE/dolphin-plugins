@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Peter Penz <peter.penz@gmx.at>                  *
+ *   Copyright (C) 2009-2010 by Peter Penz <peter.penz@gmx.at>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -95,12 +95,12 @@ FileViewSvnPlugin::~FileViewSvnPlugin()
 
 QString FileViewSvnPlugin::fileName() const
 {
-    return ".svn";
+    return QLatin1String(".svn");
 }
 
 bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
 {
-    Q_ASSERT(directory.endsWith('/'));
+    Q_ASSERT(directory.endsWith(QLatin1Char('/')));
 
     // Clear all entries for this directory including the entries
     // for sub directories
@@ -113,10 +113,10 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     }
 
     QStringList arguments;
-    arguments << "status" << "--show-updates" << directory;
+    arguments << QLatin1String("status") << QLatin1String("--show-updates") << directory;
 
     QProcess process;
-    process.start("svn", arguments);
+    process.start(QLatin1String("svn"), arguments);
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
@@ -230,14 +230,13 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const KFileItemList& items
 
 QList<QAction*> FileViewSvnPlugin::contextMenuActions(const QString& directory)
 {
-    const bool enabled = !m_pendingOperation;
-    if (enabled) {
-        m_contextDir = directory;
-    }
+    m_contextDir = directory;
+    m_contextItems.clear();
 
     // Only enable the SVN actions if no SVN commands are
     // executed currently (see slotOperationCompleted() and
     // startSvnCommandProcess()).
+    const bool enabled = !m_pendingOperation;
     m_updateAction->setEnabled(enabled);
     m_showLocalChangesAction->setEnabled(enabled);
     m_commitAction->setEnabled(enabled);
@@ -262,9 +261,9 @@ void FileViewSvnPlugin::showLocalChanges()
     Q_ASSERT(!m_contextDir.isEmpty());
     Q_ASSERT(m_contextItems.isEmpty());
 
-    const QString command = "mkfifo /tmp/fifo; svn diff " +
+    const QString command = QLatin1String("mkfifo /tmp/fifo; svn diff ") +
                             KShell::quoteArg(m_contextDir) +
-                            " > /tmp/fifo & kompare /tmp/fifo; rm /tmp/fifo";
+                            QLatin1String(" > /tmp/fifo & kompare /tmp/fifo; rm /tmp/fifo");
     KRun::runCommand(command, 0);
 }
 
@@ -312,7 +311,7 @@ void FileViewSvnPlugin::commitFiles()
 
 void FileViewSvnPlugin::addFiles()
 {
-    execSvnCommand("add",
+    execSvnCommand(QLatin1String("add"),
                    i18nc("@info:status", "Adding files to SVN repository..."),
                    i18nc("@info:status", "Adding of files to SVN repository failed."),
                    i18nc("@info:status", "Added files to SVN repository."));
@@ -320,7 +319,7 @@ void FileViewSvnPlugin::addFiles()
 
 void FileViewSvnPlugin::removeFiles()
 {
-    execSvnCommand("remove",
+    execSvnCommand(QLatin1String("remove"),
                    i18nc("@info:status", "Removing files from SVN repository..."),
                    i18nc("@info:status", "Removing of files from SVN repository failed."),
                    i18nc("@info:status", "Removed files from SVN repository."));
@@ -373,7 +372,7 @@ void FileViewSvnPlugin::startSvnCommandProcess()
     connect(process, SIGNAL(error(QProcess::ProcessError)),
             this, SLOT(slotOperationError()));
 
-    const QString program = "svn " + m_command + ' ';
+    const QString program = QLatin1String("svn ") + m_command + ' ';
     if (!m_contextDir.isEmpty()) {
         process->start(program + KShell::quoteArg(m_contextDir));
         m_contextDir.clear();

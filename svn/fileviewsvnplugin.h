@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Peter Penz <peter.penz@gmx.at>                  *
+ *   Copyright (C) 2009-2010 by Peter Penz <peter.penz@gmx.at>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -26,9 +26,9 @@
 #include <QProcess>
 #include <QTemporaryFile>
 
-// TODO: This class will be moved to kdevplatform as soon as kdevplatform will
-// be released. Moving it to kdevplatform allows to reuse code for the context
-// menu actions like commit, add, update, ...
+/**
+ * @brief Subversion implementation for the KVersionControlPlugin interface.
+ */
 class FileViewSvnPlugin : public KVersionControlPlugin
 {
     Q_OBJECT
