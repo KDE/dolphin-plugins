@@ -26,8 +26,6 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include <kdebug.h>
-
 #include <KPluginFactory>
 #include <KPluginLoader>
 K_PLUGIN_FACTORY(FileViewGitPluginFactory, registerPlugin<FileViewGitPlugin>();)
@@ -53,8 +51,6 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
 {
     Q_ASSERT(directory.endsWith('/'));
 
-    kDebug() << "-------- dir:" << directory;
-
     // Clear all entries for this directory including the entries
     // for sub directories
     QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
@@ -76,13 +72,10 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
             VersionState state = NormalVersion;
             const QString filePath(buffer);
-            kDebug() << "-------- filePath" << filePath;
             if (filePath.contains(QLatin1String("modified:"))) {
                 const QString file = filePath.simplified().section(QChar(' '), 2);
                 state = LocallyModifiedVersion;
-                kDebug() << "Tada!" << file;
                 const QString filePath = directory + file;
-                kDebug() << "inserting" << filePath;
                 m_versionInfoHash.insert(filePath, state);
             }
         }
