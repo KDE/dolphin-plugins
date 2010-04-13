@@ -1,6 +1,10 @@
 [Desktop Entry]
 Type=Service
 Name=Git
+Name[pt]=Git
+Name[sv]=Git
+Name[uk]=Git
+Name[x-test]=xxGitxx
 X-KDE-ServiceTypes=FileViewVersionControlPlugin
 MimeType=text/plain;
 X-KDE-Library=fileviewgitplugin
