@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Git
+Name[ca]=Git
 Name[de]=Git
 Name[pt]=Git
 Name[pt_BR]=Git
