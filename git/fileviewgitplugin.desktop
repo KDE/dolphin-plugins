@@ -3,6 +3,7 @@ Type=Service
 Name=Git
 Name[ca]=Git
 Name[de]=Git
+Name[en_GB]=Git
 Name[nb]=Git
 Name[pt]=Git
 Name[pt_BR]=Git
