@@ -30,10 +30,10 @@
 #include <kvbox.h>
 #include <QDir>
 #include <QLabel>
+#include <QPlainTextEdit>
 #include <QProcess>
 #include <QString>
 #include <QStringList>
-#include <QTextEdit>
 #include <QTextStream>
 
 #include <KPluginFactory>
@@ -273,7 +273,7 @@ void FileViewSvnPlugin::commitFiles()
 
     KVBox* box = new KVBox(&dialog);
     new QLabel(i18nc("@label", "Description:"), box);
-    QTextEdit* editor = new QTextEdit(box);
+    QPlainTextEdit* editor = new QPlainTextEdit(box);
 
     dialog.setMainWidget(box);
     dialog.setCaption(i18nc("@title:window", "SVN Commit"));
@@ -299,7 +299,7 @@ void FileViewSvnPlugin::commitFiles()
         const QString fileName = m_tempFile.fileName();
         out << editor->toPlainText();
         m_tempFile.close();
-
+        
         execSvnCommand("commit -F " + KShell::quoteArg(fileName),
                        i18nc("@info:status", "Committing SVN changes..."),
                        i18nc("@info:status", "Commit of SVN changes failed."),
