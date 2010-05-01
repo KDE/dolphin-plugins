@@ -19,6 +19,8 @@
 
 #include "fileviewsvnplugin.h"
 
+#include "fileviewsvnpluginsettings.h"
+
 #include <kaction.h>
 #include <kdemacros.h>
 #include <kdialog.h>
@@ -50,6 +52,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_commitAction(0),
     m_addAction(0),
     m_removeAction(0),
+    m_showUpdatesAction(0),
     m_command(),
     m_errorMsg(),
     m_operationCompletedMsg(),
@@ -87,6 +90,13 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_removeAction->setText(i18nc("@item:inmenu", "SVN Delete"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
+
+    m_showUpdatesAction = new KAction(this);
+    m_showUpdatesAction->setCheckable(true);
+    m_showUpdatesAction->setText(i18nc("@item:inmenu", "Show SVN Updates"));
+    m_showUpdatesAction->setChecked(FileViewSvnPluginSettings::showUpdates());
+    connect(m_showUpdatesAction, SIGNAL(toggled(bool)),
+            this, SLOT(slotShowUpdatesToggled(bool)));
 }
 
 FileViewSvnPlugin::~FileViewSvnPlugin()
@@ -113,7 +123,11 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     }
 
     QStringList arguments;
-    arguments << QLatin1String("status") << QLatin1String("--show-updates") << directory;
+    arguments << QLatin1String("status");
+    if (FileViewSvnPluginSettings::showUpdates()) {
+        arguments << QLatin1String("--show-updates");
+    }
+    arguments << directory;
 
     QProcess process;
     process.start(QLatin1String("svn"), arguments);
@@ -225,6 +239,7 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const KFileItemList& items
     actions.append(m_commitAction);
     actions.append(m_addAction);
     actions.append(m_removeAction);
+    actions.append(m_showUpdatesAction);
     return actions;
 }
 
@@ -245,6 +260,7 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const QString& directory)
     actions.append(m_updateAction);
     actions.append(m_showLocalChangesAction);
     actions.append(m_commitAction);
+    actions.append(m_showUpdatesAction);
     return actions;
 }
 
@@ -299,7 +315,7 @@ void FileViewSvnPlugin::commitFiles()
         const QString fileName = m_tempFile.fileName();
         out << editor->toPlainText();
         m_tempFile.close();
-        
+
         execSvnCommand("commit -F " + KShell::quoteArg(fileName),
                        i18nc("@info:status", "Committing SVN changes..."),
                        i18nc("@info:status", "Commit of SVN changes failed."),
@@ -346,6 +362,16 @@ void FileViewSvnPlugin::slotOperationError()
     m_pendingOperation = false;
 
     emit errorMessage(m_errorMsg);
+}
+
+void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
+{
+    FileViewSvnPluginSettings* settings = FileViewSvnPluginSettings::self();
+    Q_ASSERT(settings != 0);
+    settings->setShowUpdates(checked);
+    settings->writeConfig();
+
+    emit versionStatesChanged();
 }
 
 void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,

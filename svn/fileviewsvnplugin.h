@@ -53,6 +53,8 @@ private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
 
+    void slotShowUpdatesToggled(bool checked);
+
 private:
     /**
      * Executes the command "svn {svnCommand}" for the files that have been
@@ -80,6 +82,7 @@ private:
     QAction* m_commitAction;
     QAction* m_addAction;
     QAction* m_removeAction;
+    QAction* m_showUpdatesAction;
 
     QString m_command;
     QString m_errorMsg;
