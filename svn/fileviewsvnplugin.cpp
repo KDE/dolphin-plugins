@@ -127,7 +127,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     if (FileViewSvnPluginSettings::showUpdates()) {
         arguments << QLatin1String("--show-updates");
     }
-    arguments << directory;
+    arguments << QLatin1String("--no-ignore") << directory;
 
     QProcess process;
     process.start(QLatin1String("svn"), arguments);
@@ -138,6 +138,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             QString filePath(buffer);
 
             switch (buffer[0]) {
+            case 'I':
             case '?': state = UnversionedVersion; break;
             case 'M': state = LocallyModifiedVersion; break;
             case 'A': state = AddedVersion; break;
