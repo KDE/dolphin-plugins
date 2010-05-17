@@ -67,6 +67,7 @@ private:
      *                    has been completed successfully.
      */
     void execSvnCommand(const QString& svnCommand,
+                        const QStringList& arguments,
                         const QString& infoMsg,
                         const QString& errorMsg,
                         const QString& operationCompletedMsg);
@@ -85,6 +86,7 @@ private:
     QAction* m_showUpdatesAction;
 
     QString m_command;
+    QStringList m_arguments;
     QString m_errorMsg;
     QString m_operationCompletedMsg;
 

@@ -54,6 +54,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_removeAction(0),
     m_showUpdatesAction(0),
     m_command(),
+    m_arguments(),
     m_errorMsg(),
     m_operationCompletedMsg(),
     m_contextDir(),
@@ -268,7 +269,7 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const QString& directory)
 
 void FileViewSvnPlugin::updateFiles()
 {
-    execSvnCommand("update",
+    execSvnCommand("update", QStringList(),
                    i18nc("@info:status", "Updating SVN repository..."),
                    i18nc("@info:status", "Update of SVN repository failed."),
                    i18nc("@info:status", "Updated SVN repository."));
@@ -318,7 +319,9 @@ void FileViewSvnPlugin::commitFiles()
         out << editor->toPlainText();
         m_tempFile.close();
 
-        execSvnCommand("commit -F " + KShell::quoteArg(fileName),
+        QStringList arguments;
+        arguments << "-F" << fileName;
+        execSvnCommand("commit", arguments,
                        i18nc("@info:status", "Committing SVN changes..."),
                        i18nc("@info:status", "Commit of SVN changes failed."),
                        i18nc("@info:status", "Committed SVN changes."));
@@ -329,7 +332,7 @@ void FileViewSvnPlugin::commitFiles()
 
 void FileViewSvnPlugin::addFiles()
 {
-    execSvnCommand(QLatin1String("add"),
+    execSvnCommand(QLatin1String("add"), QStringList(),
                    i18nc("@info:status", "Adding files to SVN repository..."),
                    i18nc("@info:status", "Adding of files to SVN repository failed."),
                    i18nc("@info:status", "Added files to SVN repository."));
@@ -337,7 +340,7 @@ void FileViewSvnPlugin::addFiles()
 
 void FileViewSvnPlugin::removeFiles()
 {
-    execSvnCommand(QLatin1String("remove"),
+    execSvnCommand(QLatin1String("remove"), QStringList(),
                    i18nc("@info:status", "Removing files from SVN repository..."),
                    i18nc("@info:status", "Removing of files from SVN repository failed."),
                    i18nc("@info:status", "Removed files from SVN repository."));
@@ -377,6 +380,7 @@ void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
 }
 
 void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,
+                                       const QStringList& arguments,
                                        const QString& infoMsg,
                                        const QString& errorMsg,
                                        const QString& operationCompletedMsg)
@@ -384,6 +388,7 @@ void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,
     emit infoMessage(infoMsg);
 
     m_command = svnCommand;
+    m_arguments = arguments;
     m_errorMsg = errorMsg;
     m_operationCompletedMsg = operationCompletedMsg;
 
@@ -400,13 +405,17 @@ void FileViewSvnPlugin::startSvnCommandProcess()
     connect(process, SIGNAL(error(QProcess::ProcessError)),
             this, SLOT(slotOperationError()));
 
-    const QString program = QLatin1String("svn ") + m_command + ' ';
+    const QString program(QLatin1String("svn"));
+    QStringList arguments;
+    arguments << m_command << m_arguments;
     if (!m_contextDir.isEmpty()) {
-        process->start(program + KShell::quoteArg(m_contextDir));
+        arguments << m_contextDir;
+        process->start(program, arguments);
         m_contextDir.clear();
     } else {
         const KFileItem item = m_contextItems.takeLast();
-        process->start(program + KShell::quoteArg(item.localPath()));
+        arguments << item.localPath();
+        process->start(program, arguments);
         // the remaining items of m_contextItems will be executed
         // after the process has finished (see slotOperationFinished())
     }
