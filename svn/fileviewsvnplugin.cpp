@@ -75,6 +75,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
             this, SLOT(showLocalChanges()));
 
     m_commitAction = new KAction(this);
+    m_commitAction->setIcon(KIcon("svn-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "SVN Commit..."));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commitFiles()));
