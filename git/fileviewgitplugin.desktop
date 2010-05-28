@@ -2,6 +2,7 @@
 Type=Service
 Name=Git
 Name[ca]=Git
+Name[ca@valencia]=Git
 Name[de]=Git
 Name[en_GB]=Git
 Name[nb]=Git
