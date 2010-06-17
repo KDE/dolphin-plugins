@@ -15,6 +15,7 @@ Name[pt_BR]=Git
 Name[sv]=Git
 Name[uk]=Git
 Name[x-test]=xxGitxx
+Name[zh_CN]=Git
 Name[zh_TW]=Git
 X-KDE-ServiceTypes=FileViewVersionControlPlugin
 MimeType=text/plain;

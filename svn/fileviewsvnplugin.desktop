@@ -18,6 +18,7 @@ Name[pt_BR]=Subversion
 Name[sv]=Subversion
 Name[uk]=Subversion
 Name[x-test]=xxSubversionxx
+Name[zh_CN]=Subversion
 Name[zh_TW]=Subversion
 X-KDE-ServiceTypes=FileViewVersionControlPlugin
 MimeType=text/plain;
