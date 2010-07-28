@@ -93,6 +93,7 @@ private:
     QString m_contextDir;
     KFileItemList m_contextItems;
 
+    QProcess m_process;
     QTemporaryFile m_tempFile;
 };
 #endif // FILEVIEWSVNPLUGIN_H

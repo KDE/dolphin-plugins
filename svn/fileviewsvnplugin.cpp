@@ -59,6 +59,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_operationCompletedMsg(),
     m_contextDir(),
     m_contextItems(),
+    m_process(),
     m_tempFile()
 {
     Q_UNUSED(args);
@@ -99,6 +100,11 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_showUpdatesAction->setChecked(FileViewSvnPluginSettings::showUpdates());
     connect(m_showUpdatesAction, SIGNAL(toggled(bool)),
             this, SLOT(slotShowUpdatesToggled(bool)));
+
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
+            this, SLOT(slotOperationError()));
 }
 
 FileViewSvnPlugin::~FileViewSvnPlugin()
@@ -213,29 +219,37 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const KFileItemList& items
     }
     m_contextDir.clear();
 
-    // iterate all items and check the version state to know which
-    // actions can be enabled
-    const int itemsCount = items.count();
-    int versionedCount = 0;
-    int editingCount = 0;
-    foreach (const KFileItem& item, items) {
-        const VersionState state = versionState(item);
-        if (state != UnversionedVersion) {
-            ++versionedCount;
-        }
+    const bool noPendingOperation = !m_pendingOperation;
+    if (noPendingOperation) {
+        // iterate all items and check the version state to know which
+        // actions can be enabled
+        const int itemsCount = items.count();
+        int versionedCount = 0;
+        int editingCount = 0;
+        foreach (const KFileItem& item, items) {
+            const VersionState state = versionState(item);
+            if (state != UnversionedVersion) {
+                ++versionedCount;
+            }
 
-        switch (state) {
-        case LocallyModifiedVersion:
-        case ConflictingVersion:
-            ++editingCount;
-            break;
-        default:
-            break;
+            switch (state) {
+                case LocallyModifiedVersion:
+                case ConflictingVersion:
+                    ++editingCount;
+                    break;
+                default:
+                    break;
+            }
         }
+        m_commitAction->setEnabled(editingCount > 0);
+        m_addAction->setEnabled(versionedCount == 0);
+        m_removeAction->setEnabled(versionedCount == itemsCount);
+    } else {
+        m_commitAction->setEnabled(false);
+        m_addAction->setEnabled(false);
+        m_removeAction->setEnabled(false);
     }
-    m_commitAction->setEnabled(editingCount > 0);
-    m_addAction->setEnabled(versionedCount == 0);
-    m_removeAction->setEnabled(versionedCount == itemsCount);
+    m_updateAction->setEnabled(noPendingOperation);
 
     QList<QAction*> actions;
     actions.append(m_updateAction);
@@ -397,26 +411,20 @@ void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,
 
 void FileViewSvnPlugin::startSvnCommandProcess()
 {
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
     m_pendingOperation = true;
-
-    QProcess* process = new QProcess(this);
-    connect(process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(process, SIGNAL(error(QProcess::ProcessError)),
-            this, SLOT(slotOperationError()));
 
     const QString program(QLatin1String("svn"));
     QStringList arguments;
     arguments << m_command << m_arguments;
     if (!m_contextDir.isEmpty()) {
         arguments << m_contextDir;
-        process->start(program, arguments);
         m_contextDir.clear();
     } else {
         const KFileItem item = m_contextItems.takeLast();
         arguments << item.localPath();
-        process->start(program, arguments);
         // the remaining items of m_contextItems will be executed
         // after the process has finished (see slotOperationFinished())
     }
+    m_process.start(program, arguments);
 }
