@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0">
+    <kcfgfile name="fileviewgitpluginrc"/>
+    <group name="CommitDialogSettings">
+        <entry name="commitDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>300</default>
+            <min>50</min>
+        </entry>
+        <entry name="commitDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>500</default>
+            <min>50</min>
+        </entry>
+    </group>
+</kcfg>
+

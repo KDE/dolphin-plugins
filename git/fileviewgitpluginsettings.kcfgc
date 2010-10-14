@@ -1,0 +1,5 @@
+File=fileviewgitpluginsettings.kcfg
+ClassName=FileViewGitPluginSettings
+Singleton=true
+Mutators=true
+
