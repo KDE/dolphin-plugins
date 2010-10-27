@@ -26,7 +26,6 @@
 class KTextEdit;
 class KLineEdit;
 class KComboBox;
-class QCheckBox;
 class QTextCodec;
 class QRadioButton;
 
