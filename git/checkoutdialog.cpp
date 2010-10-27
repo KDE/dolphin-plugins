@@ -29,7 +29,6 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QRadioButton>
-#include <QProcess>
 #include <QString>
 
 CheckoutDialog::CheckoutDialog(QWidget* parent):

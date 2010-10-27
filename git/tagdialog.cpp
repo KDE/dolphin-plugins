@@ -28,9 +28,7 @@
 #include <kvbox.h>
 #include <QCheckBox>
 #include <QGroupBox>
-#include <QProcess>
 #include <QPushButton>
-#include <QRadioButton>
 #include <QTextCodec>
 #include <QVBoxLayout>
 #include <QLabel>

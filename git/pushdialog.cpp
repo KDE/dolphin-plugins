@@ -27,7 +27,6 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QProcess>
 
 PushDialog::PushDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog)

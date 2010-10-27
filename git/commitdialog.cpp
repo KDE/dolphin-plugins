@@ -28,7 +28,6 @@
 #include <QCheckBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QProcess>
 #include <QTextCodec>
 
 CommitDialog::CommitDialog (QWidget* parent ):
