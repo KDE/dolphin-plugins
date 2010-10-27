@@ -31,10 +31,10 @@ class PushDialog : public KDialog
 
 public:
     PushDialog(QWidget* parent = 0);
-    QString destination();
-    QString localBranch();
-    QString remoteBranch();
-    bool force();
+    QString destination() const;
+    QString localBranch() const;
+    QString remoteBranch() const;
+    bool force() const;
 private slots:
     void remoteSelectionChanged(const QString& newRemote);
     void localBranchSelectionChanged(const QString& newLocalBranch);

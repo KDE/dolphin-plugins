@@ -113,22 +113,22 @@ PushDialog::PushDialog (QWidget* parent ):
             this, SLOT(localBranchSelectionChanged(QString)));
 }
 
-QString PushDialog::destination()
+QString PushDialog::destination() const 
 {
     return m_remoteComboBox->currentText();
 }
 
-QString PushDialog::localBranch()
+QString PushDialog::localBranch() const
 {
     return m_localBranchComboBox->currentText();
 }
 
-QString PushDialog::remoteBranch()
+QString PushDialog::remoteBranch() const
 {
     return m_remoteBranchComboBox->currentText();
 }
 
-bool PushDialog::force()
+bool PushDialog::force() const
 {
     return m_forceCheckBox->isChecked();
 }
