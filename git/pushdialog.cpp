@@ -74,7 +74,7 @@ PushDialog::PushDialog (QWidget* parent ):
     QHBoxLayout * optionsHBox = new QHBoxLayout(optionsGroupBox);
     optionsGroupBox->setLayout(optionsHBox);
     m_forceCheckBox = new QCheckBox(i18nc("@option:check", "Force"), optionsGroupBox);
-    m_forceCheckBox->setToolTip(i18nc("@info:tooltip", "Procede even if the remote branch is not an ancestor of the local brnach."));
+    m_forceCheckBox->setToolTip(i18nc("@info:tooltip", "Proceed even if the remote branch is not an ancestor of the local branch."));
     optionsHBox->addWidget(m_forceCheckBox);
 
     //populate UI
