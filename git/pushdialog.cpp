@@ -113,7 +113,7 @@ PushDialog::PushDialog (QWidget* parent ):
             this, SLOT(localBranchSelectionChanged(QString)));
 }
 
-QString PushDialog::destination() const 
+QString PushDialog::destination() const
 {
     return m_remoteComboBox->currentText();
 }

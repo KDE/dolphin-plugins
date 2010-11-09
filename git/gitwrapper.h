@@ -42,6 +42,12 @@ class GitWrapper
         static const int SMALL_BUFFER_SIZE;
         QProcess m_process;
         QTextCodec * m_localCodec;
+        /**
+         * Gets a list of all remote hosts, whose entry ends with \a lineEnd
+         * @param lineEnd The end of the lines, which should be returned as entries.
+         *                Should be "(pull)" or "(push)".
+         */
+        QStringList remotes(QLatin1String lineEnd);
     public:
         static GitWrapper* instance();
         static void freeInstance();
@@ -78,6 +84,12 @@ class GitWrapper
          * @param result Set to store the results in.
          */
         void tagSet(QSet<QString>& result);
+
+        /**
+         * Gets a list of all remote hosts we can pull from.
+         * @returns The list containing the remote hosts.
+         */
+        QStringList pullRemotes();
 
         /**
          * Gets a list of all remote hosts we can push to.

@@ -8,6 +8,7 @@ set(fileviewgitplugin_SRCS
     commitdialog.cpp
     tagdialog.cpp
     pushdialog.cpp
+    pulldialog.cpp
     gitwrapper.cpp
 )
 

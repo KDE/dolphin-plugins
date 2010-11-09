@@ -52,6 +52,7 @@ private slots:
     void commit();
     void createTag();
     void push();
+    void pull();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -88,6 +89,7 @@ private:
     QAction* m_commitAction;
     QAction* m_tagAction;
     QAction* m_pushAction;
+    QAction* m_pullAction;
 
     QProcess m_process;
     QString m_command;

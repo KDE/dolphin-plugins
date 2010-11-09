@@ -123,7 +123,7 @@ QStringList GitWrapper::tags()
     return result;
 }
 
-QStringList GitWrapper::pushRemotes()
+inline QStringList GitWrapper::remotes(QLatin1String lineEnd)
 {
     QStringList result;
     m_process.start(QLatin1String("git remote -v"));
@@ -131,12 +131,22 @@ QStringList GitWrapper::pushRemotes()
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
             const QString line = QString(buffer).simplified();
-            if (line.endsWith(QLatin1String("(push)"))) {
+            if (line.endsWith(lineEnd)) {
                 result.append(line.section(' ', 0, 0));
             }
         }
     }
     return result;
+}
+
+QStringList GitWrapper::pullRemotes()
+{
+    return remotes(QLatin1String("(fetch)"));
+}
+
+QStringList GitWrapper::pushRemotes()
+{
+    return remotes(QLatin1String("(push)"));
 }
 
 QString GitWrapper::lastCommitMessage()

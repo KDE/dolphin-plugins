@@ -25,6 +25,7 @@
 #include "tagdialog.h"
 #include "pushdialog.h"
 #include "gitwrapper.h"
+#include "pulldialog.h"
 
 #include <kaction.h>
 #include <kdemacros.h>
@@ -36,8 +37,6 @@
 #include <QString>
 #include <QStringList>
 #include <QTextCodec>
-
-#include <kdebug.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -52,7 +51,8 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_checkoutAction(0),
     m_commitAction(0),
     m_tagAction(0),
-    m_pushAction(0)
+    m_pushAction(0),
+    m_pullAction(0)
 {
     Q_UNUSED(args);
 
@@ -90,6 +90,10 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_pushAction->setText(i18nc("@action:inmenu", "<application>Git</application> Push..."));
     connect(m_pushAction, SIGNAL(triggered()),
             this, SLOT(push()));
+    m_pullAction = new KAction(this);
+    m_pullAction->setText(i18nc("@action:inmenu", "<application>Git</application> Pull..."));
+    connect(m_pullAction, SIGNAL(triggered()),
+            this, SLOT(pull()));
 
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -191,7 +195,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
                     case ChangedFromIndex:
                         if (currentLine.contains(QLatin1String("modified:"))) {
                             relativeFileName = currentLine.simplified().section(QChar(' '), 2);
-                            state = LocallyModifiedVersion;
+                            state = LocallyModifiedUnstagedVersion;
                         }
                         else if (currentLine.contains(QLatin1String("unmerged:"))) {
                             relativeFileName = currentLine.simplified().section(QChar(' '), 2);
@@ -216,7 +220,10 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
                         //only keep the most important state for a directory
                         if (oldState == ConflictingVersion)
                             continue;
-                        if (oldState == LocallyModifiedVersion && state != ConflictingVersion)
+                        if (oldState == LocallyModifiedUnstagedVersion && state != ConflictingVersion)
+                            continue;
+                        if (oldState == LocallyModifiedVersion &&
+                            state != LocallyModifiedUnstagedVersion && state != ConflictingVersion)
                             continue;
                         m_versionInfoHash.insert(absoluteDirName, state);
                     } else {
@@ -284,7 +291,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuActions(const KFileItemList& items
             if (state != UnversionedVersion && state != RemovedVersion){
                 ++versionedCount;
             }
-            if (state == UnversionedVersion || state == LocallyModifiedVersion) {
+            if (state == UnversionedVersion || state == LocallyModifiedUnstagedVersion) {
                 ++addableCount;
             }
         }
@@ -333,6 +340,8 @@ QList<QAction*> FileViewGitPlugin::contextMenuActions(const QString& directory)
     actions.append(m_tagAction);
     m_pushAction->setEnabled(!m_pendingOperation);
     actions.append(m_pushAction);
+    m_pullAction->setEnabled(!m_pendingOperation);
+    actions.append(m_pullAction);
 
     return actions;
 }
@@ -501,6 +510,23 @@ void FileViewGitPlugin::push()
     }
 }
 
+void FileViewGitPlugin::pull()
+{
+    PullDialog dialog;
+    if (dialog.exec()  == QDialog::Accepted) {
+        m_process.setWorkingDirectory(m_contextDir);
+
+        m_errorMsg = i18nc("@info:status", "Pulling branch %1 from %2 failed.",
+                        dialog.remoteBranch(), dialog.source());
+        m_operationCompletedMsg = i18nc("@info:status", "Pulled branch %1 from %2 successfully.",
+                        dialog.remoteBranch(), dialog.source());
+        emit infoMessage(i18nc("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
+                    dialog.source()));
+
+        m_pendingOperation = true;
+        m_process.start(QString("git pull %1 %2").arg(dialog.source()).arg(dialog.remoteBranch()));
+    }
+}
 
 void FileViewGitPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
 {
