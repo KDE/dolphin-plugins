@@ -24,7 +24,6 @@
 #include <QProcess>
 #include <QStringList>
 #include <QSet>
-#include <X11/Xproto.h>
 
 class QTextCodec;
 
