@@ -1,4 +1,6 @@
 find_package(LibKonq REQUIRED)
 
-add_subdirectory(git)
+if(NOT WIN32)
+  add_subdirectory(git)
+endif(NOT WIN32)
 add_subdirectory(svn)
