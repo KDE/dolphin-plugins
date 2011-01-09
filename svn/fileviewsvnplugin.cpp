@@ -174,17 +174,17 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
         }
     }
     if ((process.exitCode() != 0 || process.exitStatus() != QProcess::NormalExit)) {
-	if (FileViewSvnPluginSettings::showUpdates()) {
-	    // Network update failed. Unset ShowUpdates option, which triggers a refresh
-	    emit infoMessage(i18nc("@info:status", "SVN status update failed. Disabling Option "
-				   "\"Show SVN Updates\"."));
-	    m_showUpdatesAction->setChecked(false);
-	    // this is no fail, we just try again differently
-	    // furthermore returning false shows an error message that would override our info
-	    return true;
-	} else {
-	    return false;
-	}
+        if (FileViewSvnPluginSettings::showUpdates()) {
+            // Network update failed. Unset ShowUpdates option, which triggers a refresh
+            emit infoMessage(i18nc("@info:status", "SVN status update failed. Disabling Option "
+                                   "\"Show SVN Updates\"."));
+            m_showUpdatesAction->setChecked(false);
+            // this is no fail, we just try again differently
+            // furthermore returning false shows an error message that would override our info
+            return true;
+        } else {
+            return false;
+        }
     }
 
     return true;
