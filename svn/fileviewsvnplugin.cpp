@@ -173,6 +173,19 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             }
         }
     }
+    if ((process.exitCode() != 0 || process.exitStatus() != QProcess::NormalExit)) {
+        if (FileViewSvnPluginSettings::showUpdates()) {
+            // Network update failed. Unset ShowUpdates option, which triggers a refresh
+            m_showUpdatesAction->setChecked(false);
+            // The above line triggers a _silent_ update. As this leads to the "updating..."
+            // message not being cleared by dolphin, we do it manually.
+            emit operationCompletedMessage(QString());
+            // this is no fail, we just try again differently
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     return true;
 }
