@@ -2,7 +2,7 @@
 <!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
 <kcfg>
     <kcfgfile name="fileviewsvnpluginrc"/>
-    <group name="Feffi">
+    <group name="General">
       <entry name="showUpdates" type="bool">
           <label>Show updates</label>
           <default>false</default>
