@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Service
+Name=Mercurial
+X-KDE-ServiceTypes=FileViewVersionControlPlugin
+MimeType=text/plain;
+X-KDE-Library=fileviewhgplugin

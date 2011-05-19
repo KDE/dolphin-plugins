@@ -1,0 +1,4 @@
+File=fileviewhgpluginsettings.kcfg
+ClassName=FileViewHgPluginSettings
+Singleton=true
+Mutators=true
