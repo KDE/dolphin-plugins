@@ -22,6 +22,8 @@
 
 #include <kfileitem.h>
 #include <kversioncontrolplugin.h>
+#include <QHash>
+#include <QString>
 
 class FileViewHgPlugin : public KVersionControlPlugin
 {
@@ -36,6 +38,9 @@ public:
     virtual KVersionControlPlugin::VersionState versionState(const KFileItem& item);
     virtual QList<QAction*> contextMenuActions(const KFileItemList& items);
     virtual QList<QAction*> contextMenuActions(const QString& directory);
+
+private:
+    QHash<QString, VersionState> m_versionInfoHash;
 };
 
 #endif // FILEVIEWHGPLUGIN_H
