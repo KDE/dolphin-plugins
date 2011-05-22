@@ -22,6 +22,10 @@
 #include <QProcess>
 #include <QString>
 #include <QDebug>
+#include <kaction.h>
+#include <kfileitem.h>
+#include <kicon.h>
+#include <klocale.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -29,9 +33,28 @@ K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
 K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args) :
-    KVersionControlPlugin(parent)
+    KVersionControlPlugin(parent),
+    m_pendingOperation(false),
+    m_addAction(0),
+    m_removeAction(0),
+    m_renameAction(0)
 {
     Q_UNUSED(args);
+    
+    m_addAction = new KAction(this);
+    m_addAction->setIcon(KIcon("list-add"));
+    m_addAction->setText(i18nc("@action:inmenu", "<application>Hg</application> Add"));
+
+    m_removeAction = new KAction(this);
+    m_removeAction->setIcon(KIcon("list-remove"));
+    m_removeAction->setText(i18nc("@action:inmenu", "<application>Hg</application> Remove"));
+
+    m_renameAction = new KAction(this);
+    m_renameAction->setIcon(KIcon("list-rename"));
+    m_renameAction->setText(i18nc("@action:inmenu", "<application>Hg</application> Rename"));
+
+
+
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -90,7 +113,6 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
                 if (vs != NormalVersion) {
                     QString filePath = hgBaseDir + currentFile;
                     filePath.remove(QChar('\n'));
-                    qDebug() << filePath;
                     m_versionInfoHash.insert(filePath, vs);
                 }
             }
@@ -128,7 +150,45 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 {
-    return QList<QAction*>();
+    Q_ASSERT(!items.isEmpty());
+
+    if (!m_pendingOperation){
+        m_contextDir.clear();
+        m_contextItems.clear();
+        foreach (const KFileItem& item, items){
+            m_contextItems.append(item);
+        }
+
+        //see which actions should be enabled
+        int versionedCount = 0;
+        int addableCount = 0;
+        foreach (const KFileItem& item, items){
+            const VersionState state = versionState(item);
+            if (state != UnversionedVersion && state != RemovedVersion){
+                ++versionedCount;
+            }
+            if (state == UnversionedVersion || state == LocallyModifiedUnstagedVersion) {
+                ++addableCount;
+            }
+        }
+
+        m_addAction->setEnabled(addableCount == items.count());
+        m_removeAction->setEnabled(versionedCount == items.count());
+    }
+    else {
+        m_addAction->setEnabled(false);
+        m_removeAction->setEnabled(false);
+    }
+
+    QList<QAction*> actions;
+    actions.append(m_addAction);
+    actions.append(m_removeAction);
+
+    if (!m_pendingOperation && items.size() == 1 && 
+            versionState(items.first()) != UnversionedVersion)  
+        actions.append(m_renameAction);
+
+    return actions;
 }
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)

@@ -41,6 +41,16 @@ public:
 
 private:
     QHash<QString, VersionState> m_versionInfoHash;
+    
+    QAction* m_addAction;
+    QAction* m_removeAction;
+    QAction* m_renameAction;
+
+    KFileItemList m_contextItems;
+    QString m_contextDir;
+
+    bool m_pendingOperation;
+ 
 };
 
 #endif // FILEVIEWHGPLUGIN_H
