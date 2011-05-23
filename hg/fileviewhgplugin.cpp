@@ -32,7 +32,7 @@
 K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
 K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
-FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args) :
+FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args):
     KVersionControlPlugin(parent),
     m_pendingOperation(false),
     m_addAction(0),
@@ -43,15 +43,18 @@ FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args)
     
     m_addAction = new KAction(this);
     m_addAction->setIcon(KIcon("list-add"));
-    m_addAction->setText(i18nc("@action:inmenu", "<application>Hg</application> Add"));
+    m_addAction->setText(i18nc("@action:inmenu", 
+                "<application>Hg</application> Add"));
 
     m_removeAction = new KAction(this);
     m_removeAction->setIcon(KIcon("list-remove"));
-    m_removeAction->setText(i18nc("@action:inmenu", "<application>Hg</application> Remove"));
+    m_removeAction->setText(i18nc("@action:inmenu", 
+                "<application>Hg</application> Remove"));
 
     m_renameAction = new KAction(this);
     m_renameAction->setIcon(KIcon("list-rename"));
-    m_renameAction->setText(i18nc("@action:inmenu", "<application>Hg</application> Rename"));
+    m_renameAction->setText(i18nc("@action:inmenu", 
+                "<application>Hg</application> Rename"));
 
 
 
@@ -81,8 +84,10 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
         }
     }
 
-    QString relativePrefix = directory.right(directory.length() - nTrimOutLeft - 1);
-    QString hgBaseDir = directory.left(directory.length() - relativePrefix.length());
+    QString relativePrefix = directory.right(directory.length() - 
+            nTrimOutLeft - 1);
+    QString hgBaseDir = directory.left(directory.length() -
+            relativePrefix.length());
     
     // Clear all entries for this directory including the entries
     QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
@@ -165,16 +170,19 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
         int addableCount = 0;
         foreach (const KFileItem& item, items){
             const VersionState state = versionState(item);
-            if (state != UnversionedVersion && state != RemovedVersion){
+            if (state != UnversionedVersion && state != RemovedVersion) {
                 ++versionedCount;
             }
-            if (state == UnversionedVersion || state == LocallyModifiedUnstagedVersion) {
+            if (state == UnversionedVersion || 
+                    state == LocallyModifiedUnstagedVersion) {
                 ++addableCount;
             }
         }
 
         m_addAction->setEnabled(addableCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
+        m_renameAction->setEnabled(items.size() == 1 && 
+            versionState(items.first()) != UnversionedVersion);
     }
     else {
         m_addAction->setEnabled(false);
@@ -184,10 +192,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
     QList<QAction*> actions;
     actions.append(m_addAction);
     actions.append(m_removeAction);
-
-    if (!m_pendingOperation && items.size() == 1 && 
-            versionState(items.first()) != UnversionedVersion)  
-        actions.append(m_renameAction);
+    actions.append(m_renameAction);
 
     return actions;
 }
