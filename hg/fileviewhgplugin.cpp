@@ -107,7 +107,9 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
                 case 'A':  vs = AddedVersion; break;
                 case 'M': vs = LocallyModifiedVersion; break;
                 case '?': vs = UnversionedVersion; break;
-                case 'D': vs = RemovedVersion; break;
+                case 'R': vs = RemovedVersion; break;
+                case 'I': vs = UnversionedVersion; break;
+                case '!': continue;
                 default: vs = NormalVersion; break;
                 }
                 if (vs != NormalVersion) {
@@ -128,7 +130,6 @@ void FileViewHgPlugin::endRetrieval()
 KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileItem& item)
 {
     const QString itemUrl = item.localPath();
-    qDebug() << itemUrl;
     if (m_versionInfoHash.contains(itemUrl)) {
         return m_versionInfoHash.value(itemUrl);
     } 
