@@ -24,6 +24,8 @@
 #include <kversioncontrolplugin.h>
 #include <QHash>
 #include <QString>
+#include <QProcess>
+#include <QStringList>
 
 class FileViewHgPlugin : public KVersionControlPlugin
 {
@@ -39,6 +41,22 @@ public:
     virtual QList<QAction*> contextMenuActions(const KFileItemList& items);
     virtual QList<QAction*> contextMenuActions(const QString& directory);
 
+private slots:
+    void addFiles();
+    void removeFiles();
+    void renameFile();
+
+    void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
+    void slotOperationError();
+
+private:
+    void execHgCommand(const QString& hgCommand,
+                        const QStringList& arguments,
+                        const QString& infoMsg,
+                        const QString& errorMsg,
+                        const QString& operationCompletedMsg);
+    void startHgCommandProcess();
+
 private:
     QHash<QString, VersionState> m_versionInfoHash;
     
@@ -50,7 +68,14 @@ private:
     QString m_contextDir;
 
     bool m_pendingOperation;
- 
+
+    QProcess m_process;
+    QString m_command;
+    QStringList m_arguments;
+    QString m_operationCompletedMsg;
+    QString m_errorMsg;
+
+
 };
 
 #endif // FILEVIEWHGPLUGIN_H
