@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Vishesh Yadav <vishesh3y@gmail.com>        *
+ *   Copyright (C) 2011 by Vishesh Yadav <vishesh3y@gmail.com>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -74,6 +74,8 @@ private:
     QStringList m_arguments;
     QString m_operationCompletedMsg;
     QString m_errorMsg;
+
+    QString m_hgBaseDir;
 
 
 };

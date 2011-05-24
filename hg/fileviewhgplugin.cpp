@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Vishesh Yadav <vishesh3y@gmail.com>        *
+ *   Copyright (C) 2011 by Vishesh Yadav <vishesh3y@gmail.com>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,12 +18,10 @@
  ***************************************************************************/
 
 #include "fileviewhgplugin.h"
+#include "renamedialog.h"
 
-#include <QProcess>
-#include <QString>
 #include <QDebug>
 #include <kaction.h>
-#include <kfileitem.h>
 #include <kicon.h>
 #include <klocale.h>
 
@@ -97,8 +95,8 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
 
     QString relativePrefix = directory.right(directory.length() - 
             nTrimOutLeft - 1);
-    QString hgBaseDir = directory.left(directory.length() -
-            relativePrefix.length());
+    QString &hgBaseDir = m_hgBaseDir;
+    hgBaseDir = directory.left(directory.length() -relativePrefix.length());
     
     // Clear all entries for this directory including the entries
     QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
@@ -210,6 +208,8 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)
 {
+    if (!m_pendingOperation)
+        m_contextDir = directory;
     return QList<QAction*>();
 }
 
@@ -234,6 +234,24 @@ void FileViewHgPlugin::removeFiles()
 
 void FileViewHgPlugin::renameFile()
 {
+    //QString source = KUrl::relativeUrl(KUrl(m_hgBaseDir), m_contextItems.first().url());
+    QString source = m_contextItems.first().name();
+    RenameDialog dialog(source);
+    if (dialog.exec() == QDialog::Accepted) {
+        m_process.setWorkingDirectory(m_contextItems.first().url().directory());
+        qDebug() << m_contextItems.first().url().directory();
+
+        m_errorMsg = i18nc("@info:status", 
+              "Renaming of file in <application>Hg</application> repository failed.");
+        m_operationCompletedMsg = i18nc("@info:status", 
+              "Renamed file in <application>Hg</application> repository successfully.");
+        emit infoMessage(i18nc("@info:status", 
+                    "Renaming file in <application>Hg</application> repository."));
+
+        m_pendingOperation = true;
+        m_process.start(QString("hg rename %1 %2")
+                .arg(source).arg(dialog.destination()));
+    }
 }
 
 void FileViewHgPlugin::execHgCommand(const QString& hgCommand,
@@ -293,4 +311,5 @@ void FileViewHgPlugin::slotOperationError()
     emit errorMessage(m_errorMsg);
 }
 
+#include "fileviewhgplugin.moc"
 
