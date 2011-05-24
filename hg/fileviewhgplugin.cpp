@@ -249,6 +249,7 @@ void FileViewHgPlugin::renameFile()
                     "Renaming file in <application>Hg</application> repository."));
 
         m_pendingOperation = true;
+        m_contextItems.clear();
         m_process.start(QString("hg rename %1 %2")
                 .arg(source).arg(dialog.destination()));
     }
@@ -290,12 +291,10 @@ void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus
 {
     m_pendingOperation = false;
 
-    QString message;
-
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
-        emit errorMessage(message.isNull() ? m_errorMsg : message);
+        emit errorMessage(m_errorMsg);
     } else if (m_contextItems.isEmpty()) {
-        emit operationCompletedMessage(message.isNull() ? m_operationCompletedMsg : message);
+        emit operationCompletedMessage(m_operationCompletedMsg);
         emit versionStatesChanged();
     } else {
         startHgCommandProcess();

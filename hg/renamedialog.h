@@ -33,6 +33,9 @@ public:
     QString source() const;
     QString destination() const;
 
+private slots:
+    void enableDisableOkButton(const QString &text);
+
 private:
     QString m_source;
     KLineEdit *m_destinationFile;

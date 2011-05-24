@@ -44,7 +44,7 @@ RenameDialog::RenameDialog(QString source, QWidget* parent):
     QLabel *sourceFileLabel = new QLabel("<b>" + source + "</b>");
     QLabel *destinationLabel = new QLabel(i18nc("@label:rename", 
                 "Rename to:") );
-    m_destinationFile = new KLineEdit;
+    m_destinationFile = new KLineEdit(source);
 
     sourceHBox->addWidget(sourceLabel);
     sourceHBox->addWidget(sourceFileLabel);
@@ -55,6 +55,17 @@ RenameDialog::RenameDialog(QString source, QWidget* parent):
     vbox->addLayout(destinationHBox);
     frame->setLayout(vbox);
     setMainWidget(frame);
+
+    m_destinationFile->setFocus();
+    m_destinationFile->selectAll();
+
+    connect(m_destinationFile, SIGNAL(textChanged(const QString&)), 
+            this, SLOT(enableDisableOkButton(const QString&)));
+}
+
+void RenameDialog::enableDisableOkButton(const QString &text)
+{
+    enableButtonOk(text.length()!=0);
 }
 
 QString RenameDialog::source() const 
