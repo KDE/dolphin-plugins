@@ -22,10 +22,10 @@
 
 #include <kfileitem.h>
 #include <kversioncontrolplugin.h>
-#include <QHash>
-#include <QString>
-#include <QProcess>
-#include <QStringList>
+#include <QtCore/QHash>
+#include <QtCore/QString>
+#include <QtCore/QProcess>
+#include <QtCore/QStringList>
 
 class FileViewHgPlugin : public KVersionControlPlugin
 {
@@ -66,8 +66,7 @@ private:
 
     KFileItemList m_contextItems;
     QString m_contextDir;
-
-    bool m_pendingOperation;
+    QString m_hgBaseDir;
 
     QProcess m_process;
     QString m_command;
@@ -75,9 +74,7 @@ private:
     QString m_operationCompletedMsg;
     QString m_errorMsg;
 
-    QString m_hgBaseDir;
-
-
+    bool m_pendingOperation;
 };
 
 #endif // FILEVIEWHGPLUGIN_H

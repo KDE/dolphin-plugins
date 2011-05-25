@@ -20,11 +20,11 @@
 #include "renamedialog.h"
 
 #include <klocale.h>
-#include <QGroupBox>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QFrame>
+#include <QtGui/QGroupBox>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QFrame>
 
 RenameDialog::RenameDialog(QString source, QWidget* parent):
     KDialog(parent, Qt::Dialog), m_source(source)
@@ -34,23 +34,20 @@ RenameDialog::RenameDialog(QString source, QWidget* parent):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Rename"));
 
-    QVBoxLayout *vbox = new QVBoxLayout;
-    QFrame *frame = new QFrame;
-
     QHBoxLayout *sourceHBox = new QHBoxLayout;
-    QHBoxLayout *destinationHBox = new QHBoxLayout;
-
     QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file", "Source:"));
     QLabel *sourceFileLabel = new QLabel("<b>" + source + "</b>");
-    QLabel *destinationLabel = new QLabel(i18nc("@label:rename", 
-                "Rename to:") );
-    m_destinationFile = new KLineEdit(source);
-
     sourceHBox->addWidget(sourceLabel);
     sourceHBox->addWidget(sourceFileLabel);
+
+    QHBoxLayout *destinationHBox = new QHBoxLayout;
+    QLabel *destinationLabel = new QLabel(i18nc("@label:rename", "Rename to:") );
+    m_destinationFile = new KLineEdit(source);
     destinationHBox->addWidget(destinationLabel);
     destinationHBox->addWidget(m_destinationFile);
 
+    QVBoxLayout *vbox = new QVBoxLayout;
+    QFrame *frame = new QFrame;
     vbox->addLayout(sourceHBox);
     vbox->addLayout(destinationHBox);
     frame->setLayout(vbox);

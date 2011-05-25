@@ -22,7 +22,7 @@
 
 #include <kdialog.h>
 #include <klineedit.h>
-#include <QString>
+#include <QtCore/QString>
 
 class RenameDialog : public KDialog
 {

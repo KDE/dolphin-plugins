@@ -20,10 +20,10 @@
 #include "fileviewhgplugin.h"
 #include "renamedialog.h"
 
-#include <QDebug>
 #include <kaction.h>
 #include <kicon.h>
 #include <klocale.h>
+#include <QtCore/QDebug>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -46,15 +46,12 @@ FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args)
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
-
-
     m_removeAction = new KAction(this);
     m_removeAction->setIcon(KIcon("list-remove"));
     m_removeAction->setText(i18nc("@action:inmenu", 
                 "<application>Hg</application> Remove"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
-
 
     m_renameAction = new KAction(this);
     m_renameAction->setIcon(KIcon("list-rename"));
@@ -97,7 +94,7 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
             nTrimOutLeft - 1);
     QString &hgBaseDir = m_hgBaseDir;
     hgBaseDir = directory.left(directory.length() -relativePrefix.length());
-    
+
     // Clear all entries for this directory including the entries
     QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
     while (it.hasNext()) {
@@ -118,13 +115,26 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
             if (currentFile.startsWith(relativePrefix)) {
                 VersionState vs = NormalVersion;
                 switch (currentStatus) {
-                case 'A':  vs = AddedVersion; break;
-                case 'M': vs = LocallyModifiedVersion; break;
-                case '?': vs = UnversionedVersion; break;
-                case 'R': vs = RemovedVersion; break;
-                case 'I': vs = UnversionedVersion; break;
-                case '!': continue;
-                default: vs = NormalVersion; break;
+                case 'A': 
+                    vs = AddedVersion; 
+                    break;
+                case 'M': 
+                    vs = LocallyModifiedVersion; 
+                    break;
+                case '?': 
+                    vs = UnversionedVersion; 
+                    break;
+                case 'R': 
+                    vs = RemovedVersion; 
+                    break;
+                case 'I': 
+                    vs = UnversionedVersion; 
+                    break;
+                case '!': 
+                    continue;
+                default: 
+                    vs = NormalVersion; 
+                    break;
                 }
                 if (vs != NormalVersion) {
                     QString filePath = hgBaseDir + currentFile;
@@ -208,8 +218,9 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)
 {
-    if (!m_pendingOperation)
+    if (!m_pendingOperation) {
         m_contextDir = directory;
+    }
     return QList<QAction*>();
 }
 
