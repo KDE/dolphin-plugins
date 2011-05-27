@@ -5,6 +5,7 @@ include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${LIBKONQ_INCLUDE_DIR} $
 set(fileviewhgplugin_SRCS
     fileviewhgplugin.cpp
     renamedialog.cpp
+    hgwrapper.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

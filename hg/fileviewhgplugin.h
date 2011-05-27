@@ -20,6 +20,8 @@
 #ifndef FILEVIEWHGPLUGIN_H
 #define FILEVIEWHGPLUGIN_H
 
+#include "hgwrapper.h"
+
 #include <kfileitem.h>
 #include <kversioncontrolplugin.h>
 #include <QtCore/QHash>
@@ -65,16 +67,13 @@ private:
     QAction* m_renameAction;
 
     KFileItemList m_contextItems;
-    QString m_contextDir;
     QString m_hgBaseDir;
+    QString m_currentDir;
 
-    QProcess m_process;
-    QString m_command;
-    QStringList m_arguments;
     QString m_operationCompletedMsg;
     QString m_errorMsg;
 
-    bool m_pendingOperation;
+    HgWrapper* m_hgWrapper;
 };
 
 #endif // FILEVIEWHGPLUGIN_H

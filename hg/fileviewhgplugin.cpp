@@ -32,12 +32,12 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args):
     KVersionControlPlugin(parent),
-    m_pendingOperation(false),
     m_addAction(0),
     m_removeAction(0),
     m_renameAction(0)
 {
     Q_UNUSED(args);
+    m_hgWrapper = HgWrapper::instance();
     
     m_addAction = new KAction(this);
     m_addAction->setIcon(KIcon("list-add"));
@@ -60,9 +60,9 @@ FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args)
     connect(m_renameAction, SIGNAL(triggered()),
             this, SLOT(renameFile()));
 
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+    connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
+    connect(m_hgWrapper, SIGNAL(error(QProcess::ProcessError)),
             this, SLOT(slotOperationError()));
 }
 
@@ -80,6 +80,7 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
     int nTrimOutLeft = 0;
     QProcess process;
     process.setWorkingDirectory(directory);
+    m_currentDir = directory;
 
     // Get repo root directory
     process.start(QLatin1String("hg root"));
@@ -177,8 +178,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 {
     Q_ASSERT(!items.isEmpty());
 
-    if (!m_pendingOperation){
-        m_contextDir.clear();
+    if (!m_hgWrapper->isBusy()){
         m_contextItems.clear();
         foreach (const KFileItem& item, items){
             m_contextItems.append(item);
@@ -218,39 +218,50 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)
 {
-    if (!m_pendingOperation) {
-        m_contextDir = directory;
+    if (!m_hgWrapper->isBusy()) {
+        //
     }
     return QList<QAction*>();
 }
 
 void FileViewHgPlugin::addFiles()
 {
-    execHgCommand(QLatin1String("add"), QStringList(),
-            i18nc("@info:status", "Adding files to <application>Hg</application> repository..."),
-            i18nc("@info:status", "Adding files to <application>Hg</application> repository failed."),
-            i18nc("@info:status", "Added files to <application>Hg</application> repository."));
+    Q_ASSERT(!m_contextItems.isEmpty());
+    QString infoMsg = i18nc("@info:status", 
+            "Adding files to <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status", 
+            "Adding files to <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status", 
+            "Added files to <application>Hg</application> repository.");
+
+    emit infoMessage(infoMsg);
+    m_hgWrapper->setWorkingDirectory(m_currentDir);
+    m_hgWrapper->addFiles(m_contextItems);
 }
 
 void FileViewHgPlugin::removeFiles()
 {
-    QStringList arguments;
-    arguments << "--force"; //also remove files that have not been committed yet
-    execHgCommand(QLatin1String("remove"), arguments,
-            i18nc("@info:status", "Removing files from <application>Hg</application> repository..."),
-            i18nc("@info:status", "Removing files from <application>Hg</application> repository failed."),
-            i18nc("@info:status", "Removed files from <application>Hg</application> repository."));
+    Q_ASSERT(!m_contextItems.isEmpty());
+    QString infoMsg = i18nc("@info:status", 
+            "Removing files from <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status", 
+            "Removing files from <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status", 
+            "Removed files from <application>Hg</application> repository.");
 
+    emit infoMessage(infoMsg);
+    m_hgWrapper->setWorkingDirectory(m_currentDir);
+    m_hgWrapper->removeFiles(m_contextItems);
 }
+
 
 void FileViewHgPlugin::renameFile()
 {
-    //QString source = KUrl::relativeUrl(KUrl(m_hgBaseDir), m_contextItems.first().url());
+    Q_ASSERT(!m_contextItems.isEmpty());
     QString source = m_contextItems.first().name();
     RenameDialog dialog(source);
     if (dialog.exec() == QDialog::Accepted) {
-        m_process.setWorkingDirectory(m_contextItems.first().url().directory());
-        qDebug() << m_contextItems.first().url().directory();
+        m_hgWrapper->setWorkingDirectory(m_contextItems.first().url().directory());
 
         m_errorMsg = i18nc("@info:status", 
               "Renaming of file in <application>Hg</application> repository failed.");
@@ -259,65 +270,26 @@ void FileViewHgPlugin::renameFile()
         emit infoMessage(i18nc("@info:status", 
                     "Renaming file in <application>Hg</application> repository."));
 
-        m_pendingOperation = true;
         m_contextItems.clear();
-        m_process.start(QString("hg rename %1 %2")
+        m_hgWrapper->start(QString("hg rename %1 %2")
                 .arg(source).arg(dialog.destination()));
     }
 }
 
-void FileViewHgPlugin::execHgCommand(const QString& hgCommand,
-                                       const QStringList& arguments,
-                                       const QString& infoMsg,
-                                       const QString& errorMsg,
-                                       const QString& operationCompletedMsg)
-{
-    emit infoMessage(infoMsg);
-
-    m_command = hgCommand;
-    m_arguments = arguments;
-    m_errorMsg = errorMsg;
-    m_operationCompletedMsg = operationCompletedMsg;
-
-    startHgCommandProcess();
-}
-
-
-void FileViewHgPlugin::startHgCommandProcess()
-{
-    Q_ASSERT(!m_contextItems.isEmpty());
-    Q_ASSERT(m_process.state() == QProcess::NotRunning);
-    m_pendingOperation = true;
-
-    const KFileItem item = m_contextItems.takeLast();
-    m_process.setWorkingDirectory(item.url().directory());
-    QStringList arguments;
-    arguments << m_command;
-    arguments << m_arguments;
-    arguments << item.url().fileName();
-    m_process.start(QLatin1String("hg"), arguments);
-}
-
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    m_pendingOperation = false;
-
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
         emit errorMessage(m_errorMsg);
-    } else if (m_contextItems.isEmpty()) {
+    } else {
+        m_contextItems.clear();
         emit operationCompletedMessage(m_operationCompletedMsg);
         emit versionStatesChanged();
-    } else {
-        startHgCommandProcess();
     }
 }
 
 void FileViewHgPlugin::slotOperationError()
 {
-    // don't do any operation on other items anymore
     m_contextItems.clear();
-    m_pendingOperation = false;
-
     emit errorMessage(m_errorMsg);
 }
 
