@@ -95,7 +95,7 @@ void HgWrapper::addFiles(const KFileItemList& fileList)
         return;
     }
 
-    m_arguments << "add";
+    m_arguments << QLatin1String("add");
     foreach (const KFileItem& item, fileList) {
         m_arguments << item.localPath();
     }
@@ -110,7 +110,7 @@ void HgWrapper::removeFiles(const KFileItemList& fileList)
         return;
     }
 
-    m_arguments << "remove";
+    m_arguments << QLatin1String("remove");
     foreach (const KFileItem& item, fileList) {
         m_arguments << item.localPath();
     }

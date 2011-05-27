@@ -79,7 +79,7 @@ void HgRenameDialog::slotButtonClicked(KDialog::ButtonCode button)
 
         HgWrapper *hgi = HgWrapper::instance();
         hgi->setWorkingDirectory(m_source_dir);
-        hgi->executeCommand("rename", arguments);
+        hgi->executeCommand(QLatin1String("rename"), arguments);
     }   
 }
 

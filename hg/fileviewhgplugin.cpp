@@ -228,11 +228,11 @@ void FileViewHgPlugin::addFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
     QString infoMsg = i18nc("@info:status", 
-            "Adding files to <application>Hg</application> repository...");
+         "Adding files to <application>Hg</application> repository...");
     m_errorMsg = i18nc("@info:status", 
-            "Adding files to <application>Hg</application> repository failed.");
+         "Adding files to <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status", 
-            "Added files to <application>Hg</application> repository.");
+         "Added files to <application>Hg</application> repository.");
 
     emit infoMessage(infoMsg);
     m_hgWrapper->setWorkingDirectory(m_currentDir);
@@ -243,11 +243,11 @@ void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
     QString infoMsg = i18nc("@info:status", 
-            "Removing files from <application>Hg</application> repository...");
+         "Removing files from <application>Hg</application> repository...");
     m_errorMsg = i18nc("@info:status", 
-            "Removing files from <application>Hg</application> repository failed.");
+         "Removing files from <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status", 
-            "Removed files from <application>Hg</application> repository.");
+         "Removed files from <application>Hg</application> repository.");
 
     emit infoMessage(infoMsg);
     m_hgWrapper->setWorkingDirectory(m_currentDir);
@@ -260,11 +260,11 @@ void FileViewHgPlugin::renameFile()
     Q_ASSERT(m_contextItems.size() == 1);
 
     m_errorMsg = i18nc("@info:status", 
-            "Renaming of file in <application>Hg</application> repository failed.");
+         "Renaming of file in <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status", 
-            "Renamed file in <application>Hg</application> repository successfully.");
+         "Renamed file in <application>Hg</application> repository successfully.");
     emit infoMessage(i18nc("@info:status", 
-                "Renaming file in <application>Hg</application> repository."));
+         "Renaming file in <application>Hg</application> repository."));
 
     HgRenameDialog dialog(m_contextItems.first());
     dialog.exec();
