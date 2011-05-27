@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "fileviewhgplugin.h"
-#include "renamedialog.h"
+#include "hgrenamedialog.h"
 
 #include <kaction.h>
 #include <kicon.h>
@@ -257,23 +257,18 @@ void FileViewHgPlugin::removeFiles()
 
 void FileViewHgPlugin::renameFile()
 {
-    Q_ASSERT(!m_contextItems.isEmpty());
-    QString source = m_contextItems.first().name();
-    RenameDialog dialog(source);
-    if (dialog.exec() == QDialog::Accepted) {
-        m_hgWrapper->setWorkingDirectory(m_contextItems.first().url().directory());
+    Q_ASSERT(m_contextItems.size() == 1);
 
-        m_errorMsg = i18nc("@info:status", 
-              "Renaming of file in <application>Hg</application> repository failed.");
-        m_operationCompletedMsg = i18nc("@info:status", 
-              "Renamed file in <application>Hg</application> repository successfully.");
-        emit infoMessage(i18nc("@info:status", 
-                    "Renaming file in <application>Hg</application> repository."));
+    m_errorMsg = i18nc("@info:status", 
+            "Renaming of file in <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status", 
+            "Renamed file in <application>Hg</application> repository successfully.");
+    emit infoMessage(i18nc("@info:status", 
+                "Renaming file in <application>Hg</application> repository."));
 
-        m_contextItems.clear();
-        m_hgWrapper->start(QString("hg rename %1 %2")
-                .arg(source).arg(dialog.destination()));
-    }
+    HgRenameDialog dialog(m_contextItems.first());
+    dialog.exec();
+    m_contextItems.clear();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

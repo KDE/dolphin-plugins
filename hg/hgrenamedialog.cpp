@@ -17,7 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "renamedialog.h"
+#include "hgrenamedialog.h"
+#include "hgwrapper.h"
 
 #include <klocale.h>
 #include <QtGui/QGroupBox>
@@ -25,9 +26,12 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
+#include <QDebug>
 
-RenameDialog::RenameDialog(QString source, QWidget* parent):
-    KDialog(parent, Qt::Dialog), m_source(source)
+HgRenameDialog::HgRenameDialog(const KFileItem& source, QWidget* parent):
+    KDialog(parent, Qt::Dialog), 
+    m_source(source.name()), 
+    m_source_dir(source.url().directory())
 {
     this->setCaption(i18nc("@title:window", "<application>Hg</application> Rename"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
@@ -36,13 +40,13 @@ RenameDialog::RenameDialog(QString source, QWidget* parent):
 
     QHBoxLayout *sourceHBox = new QHBoxLayout;
     QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file", "Source:"));
-    QLabel *sourceFileLabel = new QLabel("<b>" + source + "</b>");
+    QLabel *sourceFileLabel = new QLabel("<b>" + m_source + "</b>");
     sourceHBox->addWidget(sourceLabel);
     sourceHBox->addWidget(sourceFileLabel);
 
     QHBoxLayout *destinationHBox = new QHBoxLayout;
     QLabel *destinationLabel = new QLabel(i18nc("@label:rename", "Rename to:") );
-    m_destinationFile = new KLineEdit(source);
+    m_destinationFile = new KLineEdit(m_source);
     destinationHBox->addWidget(destinationLabel);
     destinationHBox->addWidget(m_destinationFile);
 
@@ -57,23 +61,37 @@ RenameDialog::RenameDialog(QString source, QWidget* parent):
     m_destinationFile->selectAll();
 
     connect(m_destinationFile, SIGNAL(textChanged(const QString&)), 
-            this, SLOT(enableDisableOkButton(const QString&)));
+            this, SLOT(slotTextChanged(const QString&)));
+    connect(this, SIGNAL(buttonClicked(KDialog::ButtonCode)), 
+            this, SLOT(slotButtonClicked(KDialog::ButtonCode)));
 }
 
-void RenameDialog::enableDisableOkButton(const QString &text)
+void HgRenameDialog::slotTextChanged(const QString &text)
 {
     enableButtonOk(text.length()!=0);
 }
 
-QString RenameDialog::source() const 
+void HgRenameDialog::slotButtonClicked(KDialog::ButtonCode button)
+{
+    if(button == KDialog::Ok) {
+        QStringList arguments;
+        arguments << source() << destination();
+
+        HgWrapper *hgi = HgWrapper::instance();
+        hgi->setWorkingDirectory(m_source_dir);
+        hgi->executeCommand("rename", arguments);
+    }   
+}
+
+QString HgRenameDialog::source() const 
 {
     return m_source;
 }
 
-QString RenameDialog::destination() const 
+QString HgRenameDialog::destination() const 
 {
     return m_destinationFile->text();
 }
 
-#include "renamedialog.moc"
+#include "hgrenamedialog.moc"
 

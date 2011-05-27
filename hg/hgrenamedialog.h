@@ -17,28 +17,31 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef RENAMEDIALOG_H
-#define RENAMEDIALOG_H
+#ifndef HGRENAMEDIALOG_H
+#define HGRENAMEDIALOG_H
 
 #include <kdialog.h>
 #include <klineedit.h>
+#include <kfileitem.h>
 #include <QtCore/QString>
 
-class RenameDialog : public KDialog
+class HgRenameDialog : public KDialog
 {
     Q_OBJECT
 
 public:
-    RenameDialog(QString source, QWidget* parent = 0);
+    HgRenameDialog(const KFileItem& source, QWidget* parent = 0);
     QString source() const;
     QString destination() const;
 
 private slots:
-    void enableDisableOkButton(const QString &text);
+    void slotTextChanged(const QString &text);
+    void slotButtonClicked(KDialog::ButtonCode button);
 
 private:
     QString m_source;
+    QString m_source_dir;
     KLineEdit *m_destinationFile;
 };
 
-#endif // RENAMEDIALOG_H
+#endif // HGRENAMEDIALOG_H
