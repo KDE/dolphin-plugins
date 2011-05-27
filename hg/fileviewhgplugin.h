@@ -52,14 +52,6 @@ private slots:
     void slotOperationError();
 
 private:
-    void execHgCommand(const QString& hgCommand,
-                        const QStringList& arguments,
-                        const QString& infoMsg,
-                        const QString& errorMsg,
-                        const QString& operationCompletedMsg);
-    void startHgCommandProcess();
-
-private:
     QHash<QString, VersionState> m_versionInfoHash;
     
     QAction* m_addAction;
