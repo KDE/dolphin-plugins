@@ -47,6 +47,7 @@ private slots:
     void addFiles();
     void removeFiles();
     void renameFile();
+    void commit();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -57,6 +58,7 @@ private:
     QAction* m_addAction;
     QAction* m_removeAction;
     QAction* m_renameAction;
+    QAction* m_commitAction;
 
     KFileItemList m_contextItems;
     QString m_hgBaseDir;
@@ -69,4 +71,3 @@ private:
 };
 
 #endif // FILEVIEWHGPLUGIN_H
-

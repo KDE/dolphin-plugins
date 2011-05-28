@@ -5,12 +5,13 @@ include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${LIBKONQ_INCLUDE_DIR} $
 set(fileviewhgplugin_SRCS
     fileviewhgplugin.cpp
     hgrenamedialog.cpp
+    hgcommitdialog.cpp
     hgwrapper.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)
 kde4_add_plugin(fileviewhgplugin  ${fileviewhgplugin_SRCS})
-target_link_libraries(fileviewhgplugin ${KDE4_KIO_LIBS} ${LIBKONQ_LIBRARY})
+target_link_libraries(fileviewhgplugin ${KDE4_KIO_LIBS} ${LIBKONQ_LIBRARY} ${KDE4_KTEXTEDITOR_LIBS} )
 install(FILES fileviewhgplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 install(FILES fileviewhgpluginsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 install(TARGETS fileviewhgplugin DESTINATION ${PLUGIN_INSTALL_DIR})

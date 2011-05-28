@@ -19,6 +19,7 @@
 
 #include "fileviewhgplugin.h"
 #include "hgrenamedialog.h"
+#include "hgcommitdialog.h"
 
 #include <kaction.h>
 #include <kicon.h>
@@ -34,7 +35,8 @@ FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args)
     KVersionControlPlugin(parent),
     m_addAction(0),
     m_removeAction(0),
-    m_renameAction(0)
+    m_renameAction(0),
+    m_commitAction(0)
 {
     Q_UNUSED(args);
     m_hgWrapper = HgWrapper::instance();
@@ -59,6 +61,14 @@ FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args)
                 "<application>Hg</application> Rename"));
     connect(m_renameAction, SIGNAL(triggered()),
             this, SLOT(renameFile()));
+
+    m_commitAction = new KAction(this);
+    m_commitAction->setIcon(KIcon("svn-commit"));
+    m_commitAction->setText(i18nc("@action:inmenu", 
+                "<application>Hg</application> Commit"));
+    connect(m_commitAction, SIGNAL(triggered()),
+            this, SLOT(commit()));
+
 
     connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -218,10 +228,11 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)
 {
+    QList<QAction*> actions;
     if (!m_hgWrapper->isBusy()) {
-        //
+       actions.append(m_commitAction); 
     }
-    return QList<QAction*>();
+    return actions;
 }
 
 void FileViewHgPlugin::addFiles()
@@ -269,6 +280,13 @@ void FileViewHgPlugin::renameFile()
     HgRenameDialog dialog(m_contextItems.first());
     dialog.exec();
     m_contextItems.clear();
+}
+
+
+void FileViewHgPlugin::commit()
+{
+    HgCommitDialog *dialog = new HgCommitDialog;
+    dialog->show();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
