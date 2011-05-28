@@ -286,7 +286,7 @@ void FileViewHgPlugin::renameFile()
 void FileViewHgPlugin::commit()
 {
     HgCommitDialog *dialog = new HgCommitDialog;
-    dialog->show();
+    dialog->exec();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
