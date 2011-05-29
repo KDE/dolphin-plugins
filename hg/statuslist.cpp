@@ -20,7 +20,6 @@
 #include "statuslist.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QCheckBox>
 #include <QtGui/QVBoxLayout>
 #include <QtCore/QStringList>
 #include <QDebug>
@@ -78,7 +77,7 @@ void HgStatusList::reloadStatusTable()
             QString currentFile = currentLine.mid(2);
             currentFile = currentFile.trimmed();
 
-            QCheckBox *check = new QCheckBox;
+            QTableWidgetItem *check = new QTableWidgetItem;
             QTableWidgetItem *status = new QTableWidgetItem;
             QTableWidgetItem *fileName = new QTableWidgetItem;
 
@@ -86,7 +85,8 @@ void HgStatusList::reloadStatusTable()
             fileName->setText(currentFile);
             
             m_statusTable->insertRow(rowCount);
-            m_statusTable->setCellWidget(rowCount, 0, check);
+            check->setCheckState(Qt::Unchecked);
+            m_statusTable->setItem(rowCount, 0, check);
             m_statusTable->setItem(rowCount, 1, status);
             m_statusTable->setItem(rowCount, 2, fileName);
 
@@ -94,17 +94,17 @@ void HgStatusList::reloadStatusTable()
             case 'A':
                 status->setForeground(Qt::darkCyan);
                 fileName->setForeground(Qt::darkCyan);
-                check->setChecked(true);
+                check->setCheckState(Qt::Checked);
                 break;
             case 'M':
                 status->setForeground(Qt::blue);
                 fileName->setForeground(Qt::blue);
-                check->setChecked(true);
+                check->setCheckState(Qt::Checked);
                 break;
             case 'R':
                 status->setForeground(Qt::red);
                 fileName->setForeground(Qt::red);
-                check->setChecked(true);
+                check->setCheckState(Qt::Checked);
                 break;
             case '?':
                 status->setForeground(Qt::darkMagenta);
