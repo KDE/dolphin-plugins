@@ -47,6 +47,17 @@ HgStatusList::HgStatusList(QWidget *parent):
     setLayout(mainLayout);
 
     reloadStatusTable();
+
+    connect(m_statusTable, SIGNAL(itemSelectionChanged()),
+            this, SLOT(itemSelectionChangedSlot()));
+}
+
+void HgStatusList::itemSelectionChangedSlot()
+{
+    qDebug() << "Emitting itemSelectionChanged from HgStatusList";
+    emit itemSelectionChanged(
+            m_statusTable->item(m_statusTable->currentRow(), 1)->text()[0].toLatin1(),
+            m_statusTable->item(m_statusTable->currentRow(), 2)->text() );
 }
 
 void HgStatusList::reloadStatusTable()
@@ -79,7 +90,7 @@ void HgStatusList::reloadStatusTable()
             m_statusTable->setItem(rowCount, 1, status);
             m_statusTable->setItem(rowCount, 2, fileName);
 
-            switch(currentStatus) {
+            switch (currentStatus) {
             case 'A':
                 status->setForeground(Qt::darkCyan);
                 fileName->setForeground(Qt::darkCyan);

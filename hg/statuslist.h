@@ -34,6 +34,12 @@ public:
 private slots:
     void reloadStatusTable();
 
+private slots:
+    void itemSelectionChangedSlot();
+
+signals:
+    void itemSelectionChanged(const char status, const QString &fileName);
+
 private:
     QString m_hgBaseDir;
 

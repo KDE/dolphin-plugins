@@ -43,6 +43,7 @@ public:
 
 private slots:
     void slotButtonClicked(int button);
+    void itemSelectionChangedSlot(const char status, const QString &fileName);
 
 private:
     QString m_hgBaseDir;

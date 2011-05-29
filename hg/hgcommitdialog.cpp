@@ -27,8 +27,10 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
+#include <QtCore/QStringList>
 #include <QDebug>
 #include <kservice.h>
+#include <kurl.h>
 
 HgCommitDialog::HgCommitDialog(QWidget* parent):
     KDialog(parent, Qt::Dialog) 
@@ -36,17 +38,17 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     this->setCaption(i18nc("@title:window", "<application>Hg</application> Commit"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
+    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Commit"));
 
     // To show diff between commit 
     KTextEditor::Editor *editor = KTextEditor::EditorChooser::editor();
     if (!editor) {
-        KMessageBox::error(this, i18n("A KDE text-editor component could not be found;\n"
-                    "please check your KDE installation."));
+        KMessageBox::error(this, i18n("A KDE text-editor component could not be found;"
+                    "\nplease check your KDE installation."));
         return;
     }
     m_fileDiffDoc = editor->createDocument(0);
     m_fileDiffView = qobject_cast<KTextEditor::View*>(m_fileDiffDoc->createView(this));
-    m_fileDiffDoc->setHighlightingMode("diff");
     m_fileDiffDoc->setReadWrite(false);
 
 
@@ -71,8 +73,45 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     mainLayout->addLayout(bodyLayout);
     frame->setLayout(mainLayout);
     setMainWidget(frame);
+
+    this->setMinimumSize(QSize(900, 500));
+
+    connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString&)),
+            this, SLOT(itemSelectionChangedSlot(const char, const QString&)));
 }
 
+
+void HgCommitDialog::itemSelectionChangedSlot(const char status, const QString &fileName)
+{
+    qDebug() << "Caught signal itemSelectionChanged from HgStatusList";
+    m_fileDiffDoc->setReadWrite(true);
+    m_fileDiffDoc->setModified(false);
+    m_fileDiffDoc->closeUrl(false);
+
+    if (status != '?') {
+        QStringList arguments;
+        QString diffOut;
+        HgWrapper *hgWrapper = HgWrapper::instance();
+
+        arguments << fileName;
+        hgWrapper->executeCommand(QLatin1String("diff"), arguments);
+        while (hgWrapper->waitForReadyRead()) {
+            char buffer[2048];
+            while (hgWrapper->readLine(buffer, sizeof(buffer)) > 0) {
+                diffOut += buffer;
+            }
+            m_fileDiffDoc->setHighlightingMode("diff");
+            m_fileDiffDoc->setText(diffOut);
+        }
+    }
+    else {
+        KUrl url(HgWrapper::instance()->getBaseDir());
+        url.addPath(fileName);
+        m_fileDiffDoc->openUrl(url);
+    }
+
+    m_fileDiffDoc->setReadWrite(false);
+}
 
 void HgCommitDialog::slotButtonClicked(int button)
 {

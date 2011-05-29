@@ -86,7 +86,7 @@ QString HgWrapper::getBaseDir(const QString& directory)
         char buffer[512];
         hgBaseDir = QString(this->readAll());
     }
-    return hgBaseDir;
+    return hgBaseDir.trimmed();
 }
 
 void  HgWrapper::setBaseAsWorkingDir()
