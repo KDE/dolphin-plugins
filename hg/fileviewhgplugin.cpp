@@ -123,6 +123,7 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
             const QString currentLine(buffer);
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
+            currentFile = currentFile.trimmed();
             if (currentFile.startsWith(relativePrefix)) {
                 VersionState vs = NormalVersion;
                 switch (currentStatus) {
@@ -149,7 +150,6 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
                 }
                 if (vs != NormalVersion) {
                     QString filePath = hgBaseDir + currentFile;
-                    filePath.remove(QChar('\n'));
                     m_versionInfoHash.insert(filePath, vs);
                 }
             }
@@ -285,7 +285,8 @@ void FileViewHgPlugin::renameFile()
 
 void FileViewHgPlugin::commit()
 {
-    HgCommitDialog *dialog = new HgCommitDialog;
+    m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
+    HgCommitDialog *dialog = new HgCommitDialog();
     dialog->exec();
 }
 

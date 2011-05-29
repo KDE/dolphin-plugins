@@ -78,7 +78,8 @@ void HgWrapper::executeCommand(const QString& hgCommand,
 QString HgWrapper::getBaseDir(const QString& directory)
 {
     m_pendingOperation = true;
-    setWorkingDirectory(directory);
+    if(!directory.isEmpty())
+        setWorkingDirectory(directory);
     start(QLatin1String("hg root"));
     QString hgBaseDir;
     while (waitForReadyRead()) {
@@ -86,6 +87,13 @@ QString HgWrapper::getBaseDir(const QString& directory)
         hgBaseDir = QString(this->readAll());
     }
     return hgBaseDir;
+}
+
+void  HgWrapper::setBaseAsWorkingDir()
+{
+    setWorkingDirectory(getBaseDir());
+    qDebug() << "Hg Working directory changed to: "
+        << this->workingDirectory();
 }
 
 void HgWrapper::addFiles(const KFileItemList& fileList)

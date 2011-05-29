@@ -20,22 +20,18 @@
 #ifndef HGCOMMITDIALOG_H
 #define HGRENAMEDIALOG_H
 
-#include <kdialog.h>
-#include <klineedit.h>
-#include <kfileitem.h>
+#include "statuslist.h"
+
 #include <QtCore/QString>
-#include <QtGui/QListWidget>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QPushButton>
 #include <QtGui/QTextEdit>
-#include <QtGui/QLineEdit>
-#include <kmessagebox.h>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
 #include <KTextEditor/Editor>
 #include <KTextEditor/EditorChooser>
-#include <klistwidget.h>
+#include <kmessagebox.h>
+#include <kdialog.h>
+#include <klineedit.h>
+#include <kfileitem.h>
 #include <kpushbutton.h>
 
 class HgCommitDialog : public KDialog
@@ -51,10 +47,9 @@ private slots:
 private:
     QString m_hgBaseDir;
     
-    KListWidget *m_fileList;
     QTextEdit *m_commitMessage;
-    KLineEdit *m_fileFilter;
     KPushButton *m_optionsButton;
+    HgStatusList *m_statusList;
     
     KTextEditor::View *m_fileDiffView;
     KTextEditor::Document *m_fileDiffDoc;

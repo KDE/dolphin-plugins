@@ -51,19 +51,17 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
 
 
     QHBoxLayout *topBarLayout = new QHBoxLayout;
-    m_fileFilter = new KLineEdit;
     m_optionsButton = new KPushButton;
-    topBarLayout->addWidget(m_fileFilter);
     topBarLayout->addWidget(m_optionsButton);
 
     QGridLayout *bodyLayout = new QGridLayout;
-    m_fileList = new KListWidget;
+    m_statusList = new HgStatusList;
     m_commitMessage = new QTextEdit;
-    bodyLayout->addWidget(m_fileList, 0, 0, 0, 1);
+    bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
     bodyLayout->addWidget(m_commitMessage, 0, 1);
     bodyLayout->addWidget(m_fileDiffView, 1, 1);
     bodyLayout->setColumnStretch(0, 1);
-    bodyLayout->setColumnStretch(1, 3);
+    bodyLayout->setColumnStretch(1, 2);
     bodyLayout->setRowStretch(0, 1);
     bodyLayout->setRowStretch(1, 1);
 
@@ -78,9 +76,5 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
 
 void HgCommitDialog::slotButtonClicked(int button)
 {
-    if(button == KDialog::Ok) {
-        HgWrapper *hgi = HgWrapper::instance();
-        hgi->setWorkingDirectory(m_hgBaseDir);
-    }   
 }
 

@@ -7,6 +7,7 @@ set(fileviewhgplugin_SRCS
     hgrenamedialog.cpp
     hgcommitdialog.cpp
     hgwrapper.cpp
+    statuslist.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)
