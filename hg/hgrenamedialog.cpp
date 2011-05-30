@@ -71,7 +71,7 @@ void HgRenameDialog::slotTextChanged(const QString &text)
     enableButtonOk(text.length()!=0);
 }
 
-void HgRenameDialog::slotButtonClicked(int button)
+void HgRenameDialog::slotButtonClicked(KDialog::ButtonCode button)
 {
     if(button == KDialog::Ok) {
         QStringList arguments;

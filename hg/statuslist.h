@@ -21,15 +21,18 @@
 #define STATUSLIST_H
 
 #include <QtCore/QString>
+#include <QtCore/QStringList>
 #include <QtGui/QTableWidget>
+#include <QtGui/QGroupBox>
 #include <klineedit.h>
 
-class HgStatusList : public QWidget
+class HgStatusList : public QGroupBox
 {
     Q_OBJECT
 
 public:
     HgStatusList(QWidget *parent = 0);
+    bool getSelectionForCommit(QStringList &files);
 
 private slots:
     void reloadStatusTable();

@@ -28,7 +28,7 @@
 
 
 HgStatusList::HgStatusList(QWidget *parent):
-    QWidget(parent)
+    QGroupBox(parent)
 {
     m_statusTable = new QTableWidget;
     m_statusTable->setColumnCount(3);
@@ -43,6 +43,8 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_filter = new KLineEdit;
     mainLayout->addWidget(m_filter);
     mainLayout->addWidget(m_statusTable);
+
+    setTitle(i18nc("@title:group", "File Status"));
     setLayout(mainLayout);
 
     reloadStatusTable();
@@ -76,6 +78,12 @@ void HgStatusList::reloadStatusTable()
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
             currentFile = currentFile.trimmed();
+
+            // Temporarily ignoring
+            // TODO: Ask to add file if this is checked by user
+            if (currentStatus == '?') {
+                continue;
+            }
 
             QTableWidgetItem *check = new QTableWidgetItem;
             QTableWidgetItem *status = new QTableWidgetItem;
@@ -115,5 +123,24 @@ void HgStatusList::reloadStatusTable()
             ++rowCount;
         }
     }
+}
+
+bool HgStatusList::getSelectionForCommit(QStringList &files)
+{
+    int nChecked = 0;
+    int nRowCount = m_statusTable->rowCount();
+    for (int row=0; row<nRowCount; row++) {
+        QTableWidgetItem *item = m_statusTable->item(row, 0);
+        if (item->checkState() == Qt::Checked) {
+            nChecked++;
+            files << m_statusTable->item(row, 2)->text();
+        }
+    }
+    if (nChecked == nRowCount) {
+        files.clear();
+    }
+    if (nChecked)
+        return true;
+    return false;
 }
 

@@ -19,6 +19,7 @@
 
 #include "hgcommitdialog.h"
 #include "hgwrapper.h"
+#include "fileviewhgpluginsettings.h"
 
 #include <klocale.h>
 #include <QtGui/QGroupBox>
@@ -26,14 +27,16 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
+#include <QtGui/QLabel>
 #include <QtGui/QFrame>
+#include <QtGui/QGroupBox>
 #include <QtCore/QStringList>
 #include <QDebug>
 #include <kservice.h>
 #include <kurl.h>
 
 HgCommitDialog::HgCommitDialog(QWidget* parent):
-    KDialog(parent, Qt::Dialog) 
+    KDialog(parent, Qt::Dialog)
 {
     this->setCaption(i18nc("@title:window", "<application>Hg</application> Commit"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
@@ -51,17 +54,29 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     m_fileDiffView = qobject_cast<KTextEditor::View*>(m_fileDiffDoc->createView(this));
     m_fileDiffDoc->setReadWrite(false);
 
-
     QHBoxLayout *topBarLayout = new QHBoxLayout;
     m_optionsButton = new KPushButton;
     topBarLayout->addWidget(m_optionsButton);
 
+    QGroupBox *messageGroupBox = new QGroupBox;
+    QVBoxLayout *commitLayout = new QVBoxLayout;
+    m_commitMessage = new QPlainTextEdit;
+    commitLayout->addWidget(new QLabel(getParentBranchForLabel()));
+    commitLayout->addWidget(m_commitMessage);
+    messageGroupBox->setTitle(i18nc("@title:group", "Commit Message"));
+    messageGroupBox->setLayout(commitLayout);
+
+    QGroupBox *diffGroupBox = new QGroupBox;
+    QVBoxLayout *diffLayout = new QVBoxLayout;
+    diffLayout->addWidget(m_fileDiffView);
+    diffGroupBox->setTitle(i18nc("@title:group", "Diff/Content"));
+    diffGroupBox->setLayout(diffLayout);
+
     QGridLayout *bodyLayout = new QGridLayout;
     m_statusList = new HgStatusList;
-    m_commitMessage = new QTextEdit;
     bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
-    bodyLayout->addWidget(m_commitMessage, 0, 1);
-    bodyLayout->addWidget(m_fileDiffView, 1, 1);
+    bodyLayout->addWidget(messageGroupBox, 0, 1);
+    bodyLayout->addWidget(diffGroupBox, 1, 1);
     bodyLayout->setColumnStretch(0, 1);
     bodyLayout->setColumnStretch(1, 2);
     bodyLayout->setRowStretch(0, 1);
@@ -74,12 +89,36 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     frame->setLayout(mainLayout);
     setMainWidget(frame);
 
-    this->setMinimumSize(QSize(900, 500));
+    //this->setMinimumSize(QSize(900, 500)    
+    FileViewHgPluginSettings* settings = FileViewHgPluginSettings::self();
+    this->setInitialSize(QSize(settings->commitDialogWidth(), 
+                settings->commitDialogHeight()));
+
+    this->enableButtonOk(false);
 
     connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString&)),
             this, SLOT(itemSelectionChangedSlot(const char, const QString&)));
+    connect(m_commitMessage, SIGNAL(textChanged()), 
+            this, SLOT(slotMessageChanged()));
+    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
 }
 
+QString HgCommitDialog::getParentBranchForLabel()
+{
+    HgWrapper *hgWrapper = HgWrapper::instance();
+    QString command =  QLatin1String("hg log -r tip --template {parents}\\n{branches}");
+    hgWrapper->start(command);
+    QString lines;
+    while (hgWrapper->waitForReadyRead()) {
+        char buffer[1024];
+        hgWrapper->readLine(buffer, sizeof(buffer));
+        lines += QString("<b>parent: </b>%1").arg(buffer).trimmed();
+        hgWrapper->readLine(buffer, sizeof(buffer));
+        lines += " | ";
+        lines += QString("<b>branch: </b>%1").arg(buffer).trimmed();
+    }
+    return lines;
+}
 
 void HgCommitDialog::itemSelectionChangedSlot(const char status, const QString &fileName)
 {
@@ -113,7 +152,43 @@ void HgCommitDialog::itemSelectionChangedSlot(const char status, const QString &
     m_fileDiffDoc->setReadWrite(false);
 }
 
-void HgCommitDialog::slotButtonClicked(int button)
+void HgCommitDialog::slotMessageChanged()
 {
+    /*qDebug() << "Hg/Commit: Checking empty message. " 
+        << m_commitMessage->toPlainText().isEmpty();*/
+    enableButtonOk(!m_commitMessage->toPlainText().isEmpty());
 }
 
+void HgCommitDialog::done(int r)
+{
+    if(r == KDialog::Accepted) {
+        QStringList files;
+        if (m_statusList->getSelectionForCommit(files)) {
+            HgWrapper *hgWrapper = HgWrapper::instance();
+            hgWrapper->commit(m_commitMessage->toPlainText(), files);
+            hgWrapper->waitForFinished();
+
+            if (hgWrapper->exitCode() == 0
+                    && hgWrapper->exitStatus() == QProcess::NormalExit) {
+                KDialog::done(r);
+            }
+            else {
+                KMessageBox::error(this, "Commit unsuccessful!");
+            }
+        }
+        else {
+            KMessageBox::error(this, "No files for commit!");
+        }
+    }
+    else {
+        KDialog::done(r);
+    }
+}
+
+void HgCommitDialog::saveGeometry()
+{
+    FileViewHgPluginSettings* settings = FileViewHgPluginSettings::self();
+    settings->setCommitDialogHeight(this->height());
+    settings->setCommitDialogWidth(this->width());
+    settings->writeConfig();
+}

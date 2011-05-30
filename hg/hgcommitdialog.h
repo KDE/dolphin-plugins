@@ -23,7 +23,7 @@
 #include "statuslist.h"
 
 #include <QtCore/QString>
-#include <QtGui/QTextEdit>
+#include <QtGui/QPlainTextEdit>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
 #include <KTextEditor/Editor>
@@ -42,13 +42,18 @@ public:
     HgCommitDialog(QWidget* parent = 0);
 
 private slots:
-    void slotButtonClicked(int button);
     void itemSelectionChangedSlot(const char status, const QString &fileName);
+    void slotMessageChanged();
+    void saveGeometry();
+
+private:
+    QString getParentBranchForLabel();
+    void done(int r);
 
 private:
     QString m_hgBaseDir;
     
-    QTextEdit *m_commitMessage;
+    QPlainTextEdit *m_commitMessage;
     KPushButton *m_optionsButton;
     HgStatusList *m_statusList;
     

@@ -38,11 +38,12 @@ public:
 
     bool isBusy() const;
     void executeCommand(const QString& hgCommand,
-                        const QStringList& arguments);
+                        const QStringList& arguments=QStringList());
     QString getBaseDir(const QString &directory=0);
     void setBaseAsWorkingDir();
     void addFiles(const KFileItemList& fileList);
     void removeFiles(const KFileItemList& fileList);
+    void commit(const QString &message, const QStringList &files=QStringList());
 
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);

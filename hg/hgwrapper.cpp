@@ -126,5 +126,13 @@ void HgWrapper::removeFiles(const KFileItemList& fileList)
     start(QLatin1String("hg"), m_arguments);
 }
 
+void HgWrapper::commit(const QString &message, const QStringList &files)
+{
+   QStringList args;
+   args << files;
+   args << QLatin1String("-m") << message;
+   executeCommand(QLatin1String("commit"), args);
+}
+
 #include "hgwrapper.moc"
 
