@@ -20,6 +20,8 @@
 #ifndef HGBRANCHTAG_H
 #define HGBRANCHTAG_H
 
+#include <kdialog.h>
+
 class HgBranchTagDialog : public KDialog
 {
     Q_OBJECT

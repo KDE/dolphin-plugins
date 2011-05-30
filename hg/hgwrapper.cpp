@@ -29,6 +29,8 @@ HgWrapper::HgWrapper(QObject *parent) :
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
     connect(this, SIGNAL(error(QProcess::ProcessError)),
             this, SLOT(slotOperationError()));
+
+    getBranches();
 }
 
 HgWrapper*  HgWrapper::instance()
@@ -132,6 +134,18 @@ void HgWrapper::commit(const QString &message, const QStringList &files)
    args << files;
    args << QLatin1String("-m") << message;
    executeCommand(QLatin1String("commit"), args);
+}
+
+QStringList HgWrapper::getBranches()
+{
+    QStringList result;
+    
+    executeCommand("branches");
+    waitForFinished();
+    QString out = readAll();
+    qDebug() << out;
+    return result;
+
 }
 
 #include "hgwrapper.moc"

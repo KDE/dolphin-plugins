@@ -44,6 +44,8 @@ public:
     void addFiles(const KFileItemList& fileList);
     void removeFiles(const KFileItemList& fileList);
     void commit(const QString &message, const QStringList &files=QStringList());
+    QStringList getBranches();
+    QStringList getTags();
 
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);

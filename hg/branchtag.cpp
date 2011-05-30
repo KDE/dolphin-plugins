@@ -17,7 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-HgBranchTagDialog::HgBranchTagDialog(QWidget *parent=0):
+#include "branchtag.h"
+
+HgBranchTagDialog::HgBranchTagDialog(QWidget *parent):
     KDialog(parent, Qt::Dialog)
 {
 }
