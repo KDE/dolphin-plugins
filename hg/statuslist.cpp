@@ -144,3 +144,4 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
     return false;
 }
 
+#include "statuslist.moc"

@@ -4,10 +4,11 @@ include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${LIBKONQ_INCLUDE_DIR} $
 
 set(fileviewhgplugin_SRCS
     fileviewhgplugin.cpp
-    hgrenamedialog.cpp
-    hgcommitdialog.cpp
+    renamedialog.cpp
+    commitdialog.cpp
     hgwrapper.cpp
     statuslist.cpp
+    branchtag.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

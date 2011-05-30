@@ -17,7 +17,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "hgrenamedialog.h"
+#include "renamedialog.h"
 #include "hgwrapper.h"
 
 #include <klocale.h>
@@ -93,5 +93,5 @@ QString HgRenameDialog::destination() const
     return m_destinationFile->text();
 }
 
-#include "hgrenamedialog.moc"
+#include "renamedialog.moc"
 

@@ -17,7 +17,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "hgcommitdialog.h"
+#include "commitdialog.h"
 #include "hgwrapper.h"
 #include "fileviewhgpluginsettings.h"
 
@@ -192,3 +192,6 @@ void HgCommitDialog::saveGeometry()
     settings->setCommitDialogWidth(this->width());
     settings->writeConfig();
 }
+
+#include "commitdialog.moc"
+

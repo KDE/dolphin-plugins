@@ -48,6 +48,7 @@ private slots:
     void removeFiles();
     void renameFile();
     void commit();
+    void branchAndTag();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -59,6 +60,7 @@ private:
     QAction* m_removeAction;
     QAction* m_renameAction;
     QAction* m_commitAction;
+    QAction* m_branchTagAction;
 
     KFileItemList m_contextItems;
     QString m_hgBaseDir;

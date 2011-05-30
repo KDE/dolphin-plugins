@@ -18,8 +18,8 @@
  ***************************************************************************/
 
 #include "fileviewhgplugin.h"
-#include "hgrenamedialog.h"
-#include "hgcommitdialog.h"
+#include "renamedialog.h"
+#include "commitdialog.h"
 
 #include <kaction.h>
 #include <kicon.h>
@@ -284,6 +284,21 @@ void FileViewHgPlugin::renameFile()
 
 
 void FileViewHgPlugin::commit()
+{
+    //FIXME: Disable emitting of status messages when executing sub tasks.
+    m_errorMsg = i18nc("@info:status", 
+         "Commit to  <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status", 
+         "Commit to <application>Hg</application> repository successfull.");
+    emit infoMessage(i18nc("@info:status", 
+         "Commit <application>Hg</application> repository."));
+
+    m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
+    HgCommitDialog *dialog = new HgCommitDialog();
+    dialog->exec();
+}
+
+void FileViewHgPlugin::branchAndTag()
 {
     m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
     HgCommitDialog *dialog = new HgCommitDialog();

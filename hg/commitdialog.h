@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #ifndef HGCOMMITDIALOG_H
-#define HGRENAMEDIALOG_H
+#define HGCOMMITDIALOG_H
 
 #include "statuslist.h"
 
@@ -33,6 +33,12 @@
 #include <klineedit.h>
 #include <kfileitem.h>
 #include <kpushbutton.h>
+
+
+// TODO: Make upper toolbar strip. 
+// TODO: Ability to set commit options. eg user
+// TODO: Filter in HgStatusList. 
+// TODO: Set branch.
 
 class HgCommitDialog : public KDialog
 {
