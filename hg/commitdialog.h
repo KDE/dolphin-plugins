@@ -29,13 +29,11 @@
 #include <KTextEditor/Editor>
 #include <KTextEditor/EditorChooser>
 #include <kmessagebox.h>
+#include <kmenu.h>
+#include <kaction.h>
 #include <kdialog.h>
-#include <klineedit.h>
-#include <kfileitem.h>
-#include <kpushbutton.h>
 
 
-// TODO: Make upper toolbar strip. 
 // TODO: Ability to set commit options. eg user
 // TODO: Filter in HgStatusList. 
 // TODO: Set branch.
@@ -48,24 +46,43 @@ public:
     HgCommitDialog(QWidget* parent = 0);
 
 private slots:
-    void itemSelectionChangedSlot(const char status, const QString &fileName);
+    void slotItemSelectionChanged(const char status, const QString &fileName);
     void slotMessageChanged();
     void saveGeometry();
+    void slotBranchActions(QAction *action);
 
 private:
-    QString getParentBranchForLabel();
+    QString getParentForLabel();
     void done(int r);
 
 private:
     QString m_hgBaseDir;
     
     QPlainTextEdit *m_commitMessage;
-    KPushButton *m_optionsButton;
     HgStatusList *m_statusList;
     
     KTextEditor::View *m_fileDiffView;
     KTextEditor::Document *m_fileDiffDoc;
+
+    KPushButton *m_branchButton;
+
+    KAction *m_closeBranch;
+    KAction *m_newBranch;
+    KAction *m_noChanges;
+    KMenu *m_branchMenu;
+
+    enum {CloseBranch, NewBranch, NoChanges} m_branchAction;
+    QString m_newBranchName;
+
+    class NewBranchDialog : public KDialog {
+        public:
+            NewBranchDialog(QWidget *parent=0);
+        private:
+
+    };
 };
+
+
 
 #endif // HGCOMMITDIALOG_H
 

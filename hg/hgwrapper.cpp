@@ -19,6 +19,8 @@
 
 #include "hgwrapper.h"
 
+#include <QDebug>
+
 HgWrapper* HgWrapper::m_instance = 0;
 bool HgWrapper::m_pendingOperation = 0;
 
@@ -29,8 +31,6 @@ HgWrapper::HgWrapper(QObject *parent) :
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
     connect(this, SIGNAL(error(QProcess::ProcessError)),
             this, SLOT(slotOperationError()));
-
-    getBranches();
 }
 
 HgWrapper*  HgWrapper::instance()
@@ -94,8 +94,6 @@ QString HgWrapper::getBaseDir(const QString& directory)
 void  HgWrapper::setBaseAsWorkingDir()
 {
     setWorkingDirectory(getBaseDir());
-    qDebug() << "Hg Working directory changed to: "
-        << this->workingDirectory();
 }
 
 void HgWrapper::addFiles(const KFileItemList& fileList)
@@ -128,24 +126,36 @@ void HgWrapper::removeFiles(const KFileItemList& fileList)
     start(QLatin1String("hg"), m_arguments);
 }
 
-void HgWrapper::commit(const QString &message, const QStringList &files)
+void HgWrapper::commit(const QString &message, const QStringList &files, 
+        bool closeCurrentBranch)
 {
    QStringList args;
    args << files;
    args << QLatin1String("-m") << message;
+   if (closeCurrentBranch) {
+       args << "--close-branch";
+   }
    executeCommand(QLatin1String("commit"), args);
 }
 
 QStringList HgWrapper::getBranches()
 {
     QStringList result;
-    
-    executeCommand("branches");
-    waitForFinished();
-    QString out = readAll();
-    qDebug() << out;
+    executeCommand(QLatin1String("branches"));
+    while (waitForReadyRead()) {
+        char buffer[1048];
+        while (readLine(buffer, sizeof(buffer)) > 0) {
+            result << QString(buffer).remove(QRegExp("[\\s]+[\\d:a-zA-Z\\(\\)]*")); 
+        }
+    }
     return result;
+}
 
+bool HgWrapper::createBranch(const QString &branchName)
+{
+    executeCommand("branch " + branchName);
+    waitForFinished();
+    return (exitStatus()==QProcess::NormalExit) && (exitCode()==0);
 }
 
 #include "hgwrapper.moc"

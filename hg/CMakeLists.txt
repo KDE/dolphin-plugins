@@ -8,7 +8,7 @@ set(fileviewhgplugin_SRCS
     commitdialog.cpp
     hgwrapper.cpp
     statuslist.cpp
-    branchtag.cpp
+    branchdialog.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

@@ -21,19 +21,19 @@
 #include "hgwrapper.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <klocale.h>
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
-#include <QtGui/QLabel>
 #include <QtGui/QFrame>
 #include <QtGui/QGroupBox>
 #include <QtCore/QStringList>
+#include <QtGui/QActionGroup>
 #include <QDebug>
-#include <kservice.h>
 #include <kurl.h>
+#include <kpushbutton.h>
+#include <klocale.h>
 
 HgCommitDialog::HgCommitDialog(QWidget* parent):
     KDialog(parent, Qt::Dialog)
@@ -54,24 +54,64 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     m_fileDiffView = qobject_cast<KTextEditor::View*>(m_fileDiffDoc->createView(this));
     m_fileDiffDoc->setReadWrite(false);
 
+    // Top bar of buttons
     QHBoxLayout *topBarLayout = new QHBoxLayout;
-    m_optionsButton = new KPushButton;
-    topBarLayout->addWidget(m_optionsButton);
+    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"));
+    KPushButton *optionsButton = new KPushButton(i18n("Options"));
+    m_branchButton = new KPushButton(i18n("Branch"));
 
+    topBarLayout->addWidget(new QLabel(getParentForLabel()));
+    topBarLayout->addStretch();
+    topBarLayout->addWidget(copyMessageButton);
+    topBarLayout->addWidget(m_branchButton);
+    topBarLayout->addWidget(optionsButton);
+
+    m_noChanges= new KAction(this);
+    m_noChanges->setCheckable(true);
+    m_noChanges->setText(i18nc("@action:inmenu",
+                "No branch changes"));
+
+    m_newBranch = new KAction(this);
+    m_newBranch->setCheckable(true);
+    m_newBranch->setText(i18nc("@action:inmenu",
+                "Create new branch"));
+
+    m_closeBranch = new KAction(this);
+    m_closeBranch->setCheckable(true);
+    m_closeBranch->setText(i18nc("@action:inmenu",
+                "Close current branch"));
+
+    m_branchMenu = new KMenu;
+    m_branchMenu->addAction(m_noChanges);
+    m_branchMenu->addAction(m_newBranch);
+    m_branchMenu->addAction(m_closeBranch);
+
+    QActionGroup *branchActionGroup = new QActionGroup(this);
+    branchActionGroup->addAction(m_noChanges);
+    branchActionGroup->addAction(m_newBranch);
+    branchActionGroup->addAction(m_closeBranch);
+    m_noChanges->setChecked(true);
+    connect(branchActionGroup, SIGNAL(triggered(QAction*)),
+                this, SLOT(slotBranchActions(QAction*)));
+
+    m_branchButton->setMenu(m_branchMenu);
+
+    // the commit box itself
     QGroupBox *messageGroupBox = new QGroupBox;
     QVBoxLayout *commitLayout = new QVBoxLayout;
     m_commitMessage = new QPlainTextEdit;
-    commitLayout->addWidget(new QLabel(getParentBranchForLabel()));
     commitLayout->addWidget(m_commitMessage);
     messageGroupBox->setTitle(i18nc("@title:group", "Commit Message"));
     messageGroupBox->setLayout(commitLayout);
 
+    // Show diff here
     QGroupBox *diffGroupBox = new QGroupBox;
     QVBoxLayout *diffLayout = new QVBoxLayout;
     diffLayout->addWidget(m_fileDiffView);
     diffGroupBox->setTitle(i18nc("@title:group", "Diff/Content"));
     diffGroupBox->setLayout(diffLayout);
 
+    // Set up layout for Status, Commit and Diff boxes
     QGridLayout *bodyLayout = new QGridLayout;
     m_statusList = new HgStatusList;
     bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
@@ -82,6 +122,7 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     bodyLayout->setRowStretch(0, 1);
     bodyLayout->setRowStretch(1, 1);
 
+    // Set up layout and container for main dialog
     QFrame *frame = new QFrame;
     QVBoxLayout *mainLayout = new QVBoxLayout; 
     mainLayout->addLayout(topBarLayout);
@@ -89,38 +130,42 @@ HgCommitDialog::HgCommitDialog(QWidget* parent):
     frame->setLayout(mainLayout);
     setMainWidget(frame);
 
-    //this->setMinimumSize(QSize(900, 500)    
+    // Load saved settings
     FileViewHgPluginSettings* settings = FileViewHgPluginSettings::self();
     this->setInitialSize(QSize(settings->commitDialogWidth(), 
                 settings->commitDialogHeight()));
 
-    this->enableButtonOk(false);
+    this->enableButtonOk(false); // since commit message is empty when loaded
 
+    //
     connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString&)),
-            this, SLOT(itemSelectionChangedSlot(const char, const QString&)));
+            this, SLOT(slotItemSelectionChanged(const char, const QString&)));
     connect(m_commitMessage, SIGNAL(textChanged()), 
             this, SLOT(slotMessageChanged()));
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
 }
 
-QString HgCommitDialog::getParentBranchForLabel()
+QString HgCommitDialog::getParentForLabel()
 {
     HgWrapper *hgWrapper = HgWrapper::instance();
-    QString command =  QLatin1String("hg log -r tip --template {parents}\\n{branches}");
+    QString line("<b>parents:</b> ");
+    QString command =  QLatin1String("hg parents");
     hgWrapper->start(command);
-    QString lines;
     while (hgWrapper->waitForReadyRead()) {
         char buffer[1024];
-        hgWrapper->readLine(buffer, sizeof(buffer));
-        lines += QString("<b>parent: </b>%1").arg(buffer).trimmed();
-        hgWrapper->readLine(buffer, sizeof(buffer));
-        lines += " | ";
-        lines += QString("<b>branch: </b>%1").arg(buffer).trimmed();
+        while (hgWrapper->readLine(buffer, sizeof(buffer))) {
+            QString bufferString = QString(buffer);
+            if (bufferString.contains("changeset:")) {
+                QStringList parts = bufferString.split(" ", QString::SkipEmptyParts);
+                line += parts.takeLast().trimmed();
+                line += "   ";
+            }
+        }
     }
-    return lines;
+    return line;
 }
 
-void HgCommitDialog::itemSelectionChangedSlot(const char status, const QString &fileName)
+void HgCommitDialog::slotItemSelectionChanged(const char status, const QString &fileName)
 {
     qDebug() << "Caught signal itemSelectionChanged from HgStatusList";
     m_fileDiffDoc->setReadWrite(true);
@@ -154,8 +199,6 @@ void HgCommitDialog::itemSelectionChangedSlot(const char status, const QString &
 
 void HgCommitDialog::slotMessageChanged()
 {
-    /*qDebug() << "Hg/Commit: Checking empty message. " 
-        << m_commitMessage->toPlainText().isEmpty();*/
     enableButtonOk(!m_commitMessage->toPlainText().isEmpty());
 }
 
@@ -173,11 +216,11 @@ void HgCommitDialog::done(int r)
                 KDialog::done(r);
             }
             else {
-                KMessageBox::error(this, "Commit unsuccessful!");
+                KMessageBox::error(this, i18n("Commit unsuccessful!"));
             }
         }
         else {
-            KMessageBox::error(this, "No files for commit!");
+            KMessageBox::error(this, i18n("No files for commit!"));
         }
     }
     else {
@@ -191,6 +234,24 @@ void HgCommitDialog::saveGeometry()
     settings->setCommitDialogHeight(this->height());
     settings->setCommitDialogWidth(this->width());
     settings->writeConfig();
+}
+
+void HgCommitDialog::slotBranchActions(QAction *action)
+{
+    if (action == m_noChanges) {
+    }
+    else if (action == m_newBranch) {
+    }
+    else if (action == m_closeBranch) {
+    }
+}
+
+
+/* Branch Dialog */
+
+HgCommitDialog::NewBranchDialog::NewBranchDialog(QWidget *parent):
+    KDialog(parent, Qt::Dialog)
+{
 }
 
 #include "commitdialog.moc"

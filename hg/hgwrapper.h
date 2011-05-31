@@ -20,11 +20,9 @@
 #ifndef HGWRAPPER_H
 #define HGWRAPPER_H
 
-#include <QtCore/QObject>
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
-#include <QDebug>
 #include <kfileitem.h>
 
 class HgWrapper : public QProcess
@@ -43,9 +41,11 @@ public:
     void setBaseAsWorkingDir();
     void addFiles(const KFileItemList& fileList);
     void removeFiles(const KFileItemList& fileList);
-    void commit(const QString &message, const QStringList &files=QStringList());
+    void commit(const QString &message, const QStringList &files=QStringList(), 
+            bool closeCurrentBranch=false);
     QStringList getBranches();
     QStringList getTags();
+    bool createBranch(const QString &branchName);
 
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
