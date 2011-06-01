@@ -35,7 +35,7 @@
 
 
 // TODO: Ability to set commit options. eg user
-// TODO: Filter in HgStatusList. 
+// TODO: Filter in HgStatusList.
 // TODO: Set branch.
 
 class HgCommitDialog : public KDialog
@@ -43,7 +43,7 @@ class HgCommitDialog : public KDialog
     Q_OBJECT
 
 public:
-    HgCommitDialog(QWidget* parent = 0);
+    HgCommitDialog(QWidget *parent = 0);
 
 private slots:
     void slotItemSelectionChanged(const char status, const QString &fileName);
@@ -57,10 +57,10 @@ private:
 
 private:
     QString m_hgBaseDir;
-    
+
     QPlainTextEdit *m_commitMessage;
     HgStatusList *m_statusList;
-    
+
     KTextEditor::View *m_fileDiffView;
     KTextEditor::Document *m_fileDiffDoc;
 
@@ -75,9 +75,9 @@ private:
     QString m_newBranchName;
 
     class NewBranchDialog : public KDialog {
-        public:
-            NewBranchDialog(QWidget *parent=0);
-        private:
+    public:
+        NewBranchDialog(QWidget *parent = 0);
+    private:
 
     };
 };

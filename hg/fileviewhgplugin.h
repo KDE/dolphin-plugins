@@ -34,14 +34,14 @@ class FileViewHgPlugin : public KVersionControlPlugin
     Q_OBJECT
 
 public:
-    FileViewHgPlugin(QObject* parent, const QList<QVariant>& args);
+    FileViewHgPlugin(QObject *parent, const QList<QVariant> &args);
     virtual ~FileViewHgPlugin();
     virtual QString fileName() const;
-    virtual bool beginRetrieval(const QString& directory);
+    virtual bool beginRetrieval(const QString &directory);
     virtual void endRetrieval();
-    virtual KVersionControlPlugin::VersionState versionState(const KFileItem& item);
-    virtual QList<QAction*> contextMenuActions(const KFileItemList& items);
-    virtual QList<QAction*> contextMenuActions(const QString& directory);
+    virtual KVersionControlPlugin::VersionState versionState(const KFileItem &item);
+    virtual QList<QAction *> contextMenuActions(const KFileItemList &items);
+    virtual QList<QAction *> contextMenuActions(const QString &directory);
 
 private slots:
     void addFiles();
@@ -55,12 +55,12 @@ private slots:
 
 private:
     QHash<QString, VersionState> m_versionInfoHash;
-    
-    QAction* m_addAction;
-    QAction* m_removeAction;
-    QAction* m_renameAction;
-    QAction* m_commitAction;
-    QAction* m_branchTagAction;
+
+    QAction *m_addAction;
+    QAction *m_removeAction;
+    QAction *m_renameAction;
+    QAction *m_commitAction;
+    QAction *m_branchTagAction;
 
     KFileItemList m_contextItems;
     QString m_hgBaseDir;
@@ -69,7 +69,7 @@ private:
     QString m_operationCompletedMsg;
     QString m_errorMsg;
 
-    HgWrapper* m_hgWrapper;
+    HgWrapper *m_hgWrapper;
 };
 
 #endif // FILEVIEWHGPLUGIN_H

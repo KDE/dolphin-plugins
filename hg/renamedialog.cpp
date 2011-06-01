@@ -26,11 +26,10 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
-#include <QDebug>
 
-HgRenameDialog::HgRenameDialog(const KFileItem& source, QWidget* parent):
-    KDialog(parent, Qt::Dialog), 
-    m_source(source.name()), 
+HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
+    KDialog(parent, Qt::Dialog),
+    m_source(source.name()),
     m_source_dir(source.url().directory())
 {
     this->setCaption(i18nc("@title:window", "<application>Hg</application> Rename"));
@@ -60,35 +59,35 @@ HgRenameDialog::HgRenameDialog(const KFileItem& source, QWidget* parent):
     m_destinationFile->setFocus();
     m_destinationFile->selectAll();
 
-    connect(m_destinationFile, SIGNAL(textChanged(const QString&)), 
-            this, SLOT(slotTextChanged(const QString&)));
-    connect(this, SIGNAL(buttonClicked(KDialog::ButtonCode)), 
+    connect(m_destinationFile, SIGNAL(textChanged(const QString &)),
+            this, SLOT(slotTextChanged(const QString &)));
+    connect(this, SIGNAL(buttonClicked(KDialog::ButtonCode)),
             this, SLOT(slotButtonClicked(KDialog::ButtonCode)));
 }
 
 void HgRenameDialog::slotTextChanged(const QString &text)
 {
-    enableButtonOk(text.length()!=0);
+    enableButtonOk(text.length() != 0);
 }
 
 void HgRenameDialog::slotButtonClicked(KDialog::ButtonCode button)
 {
-    if(button == KDialog::Ok) {
+    if (button == KDialog::Ok) {
         QStringList arguments;
         arguments << source() << destination();
 
         HgWrapper *hgi = HgWrapper::instance();
         hgi->setWorkingDirectory(m_source_dir);
         hgi->executeCommand(QLatin1String("rename"), arguments);
-    }   
+    }
 }
 
-QString HgRenameDialog::source() const 
+QString HgRenameDialog::source() const
 {
     return m_source;
 }
 
-QString HgRenameDialog::destination() const 
+QString HgRenameDialog::destination() const
 {
     return m_destinationFile->text();
 }

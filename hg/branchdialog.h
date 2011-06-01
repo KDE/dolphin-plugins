@@ -32,4 +32,3 @@ public:
 
 #endif // HGBRANCHTAG_H
 
-

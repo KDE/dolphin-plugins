@@ -24,14 +24,14 @@
 #include <kaction.h>
 #include <kicon.h>
 #include <klocale.h>
-#include <QtCore/QDebug>
+#include <kdebug.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
 K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
 K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
-FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args):
+FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin(parent),
     m_addAction(0),
     m_removeAction(0),
@@ -40,32 +40,32 @@ FileViewHgPlugin::FileViewHgPlugin(QObject* parent, const QList<QVariant>& args)
 {
     Q_UNUSED(args);
     m_hgWrapper = HgWrapper::instance();
-    
+
     m_addAction = new KAction(this);
     m_addAction->setIcon(KIcon("list-add"));
-    m_addAction->setText(i18nc("@action:inmenu", 
-                "<application>Hg</application> Add"));
+    m_addAction->setText(i18nc("@action:inmenu",
+                               "<application>Hg</application> Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
     m_removeAction = new KAction(this);
     m_removeAction->setIcon(KIcon("list-remove"));
-    m_removeAction->setText(i18nc("@action:inmenu", 
-                "<application>Hg</application> Remove"));
+    m_removeAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Remove"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
     m_renameAction = new KAction(this);
     m_renameAction->setIcon(KIcon("list-rename"));
-    m_renameAction->setText(i18nc("@action:inmenu", 
-                "<application>Hg</application> Rename"));
+    m_renameAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Rename"));
     connect(m_renameAction, SIGNAL(triggered()),
             this, SLOT(renameFile()));
 
     m_commitAction = new KAction(this);
     m_commitAction->setIcon(KIcon("svn-commit"));
-    m_commitAction->setText(i18nc("@action:inmenu", 
-                "<application>Hg</application> Commit"));
+    m_commitAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Commit"));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
 
@@ -85,7 +85,7 @@ QString FileViewHgPlugin::fileName() const
     return QLatin1String(".hg");
 }
 
-bool FileViewHgPlugin::beginRetrieval(const QString& directory)
+bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
     int nTrimOutLeft = 0;
     QProcess process;
@@ -97,12 +97,12 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
     while (process.waitForReadyRead()) {
         char buffer[512];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            nTrimOutLeft = QString(buffer).trimmed().length(); 
+            nTrimOutLeft = QString(buffer).trimmed().length();
         }
     }
 
-    QString relativePrefix = directory.right(directory.length() - 
-            nTrimOutLeft - 1);
+    QString relativePrefix = directory.right(directory.length() -
+                             nTrimOutLeft - 1);
     QString &hgBaseDir = m_hgBaseDir;
     hgBaseDir = directory.left(directory.length() -relativePrefix.length());
 
@@ -124,28 +124,29 @@ bool FileViewHgPlugin::beginRetrieval(const QString& directory)
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
             currentFile = currentFile.trimmed();
+            kDebug() << "Hg/FileStatus" << currentStatus << " " << currentFile;
             if (currentFile.startsWith(relativePrefix)) {
                 VersionState vs = NormalVersion;
                 switch (currentStatus) {
-                case 'A': 
-                    vs = AddedVersion; 
+                case 'A':
+                    vs = AddedVersion;
                     break;
-                case 'M': 
-                    vs = LocallyModifiedVersion; 
+                case 'M':
+                    vs = LocallyModifiedVersion;
                     break;
-                case '?': 
-                    vs = UnversionedVersion; 
+                case '?':
+                    vs = UnversionedVersion;
                     break;
-                case 'R': 
-                    vs = RemovedVersion; 
+                case 'R':
+                    vs = RemovedVersion;
                     break;
-                case 'I': 
-                    vs = UnversionedVersion; 
+                case 'I':
+                    vs = UnversionedVersion;
                     break;
-                case '!': 
+                case '!':
                     continue;
-                default: 
-                    vs = NormalVersion; 
+                default:
+                    vs = NormalVersion;
                     break;
                 }
                 if (vs != NormalVersion) {
@@ -162,12 +163,12 @@ void FileViewHgPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileItem& item)
+KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileItem &item)
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
         return m_versionInfoHash.value(itemUrl);
-    } 
+    }
     if (item.isDir()) {
         QHash<QString, VersionState>::const_iterator it = m_versionInfoHash.constBegin();
         while (it != m_versionInfoHash.constEnd()) {
@@ -184,25 +185,25 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
     return NormalVersion;
 }
 
-QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
+QList<QAction *> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
 {
     Q_ASSERT(!items.isEmpty());
 
-    if (!m_hgWrapper->isBusy()){
+    if (!m_hgWrapper->isBusy()) {
         m_contextItems.clear();
-        foreach (const KFileItem& item, items){
+        foreach (const KFileItem &item, items) {
             m_contextItems.append(item);
         }
 
         //see which actions should be enabled
         int versionedCount = 0;
         int addableCount = 0;
-        foreach (const KFileItem& item, items){
+        foreach (const KFileItem &item, items) {
             const VersionState state = versionState(item);
             if (state != UnversionedVersion && state != RemovedVersion) {
                 ++versionedCount;
             }
-            if (state == UnversionedVersion || 
+            if (state == UnversionedVersion ||
                     state == LocallyModifiedUnstagedVersion) {
                 ++addableCount;
             }
@@ -210,15 +211,15 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
 
         m_addAction->setEnabled(addableCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
-        m_renameAction->setEnabled(items.size() == 1 && 
-            versionState(items.first()) != UnversionedVersion);
+        m_renameAction->setEnabled(items.size() == 1 &&
+                                   versionState(items.first()) != UnversionedVersion);
     }
     else {
         m_addAction->setEnabled(false);
         m_removeAction->setEnabled(false);
     }
 
-    QList<QAction*> actions;
+    QList<QAction *> actions;
     actions.append(m_addAction);
     actions.append(m_removeAction);
     actions.append(m_renameAction);
@@ -226,11 +227,11 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList& items)
     return actions;
 }
 
-QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)
+QList<QAction *> FileViewHgPlugin::contextMenuActions(const QString &directory)
 {
-    QList<QAction*> actions;
+    QList<QAction *> actions;
     if (!m_hgWrapper->isBusy()) {
-       actions.append(m_commitAction); 
+        actions.append(m_commitAction);
     }
     return actions;
 }
@@ -238,12 +239,12 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString& directory)
 void FileViewHgPlugin::addFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
-    QString infoMsg = i18nc("@info:status", 
-         "Adding files to <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status", 
-         "Adding files to <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status", 
-         "Added files to <application>Hg</application> repository.");
+    QString infoMsg = i18nc("@info:status",
+                            "Adding files to <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status",
+                       "Adding files to <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+                                    "Added files to <application>Hg</application> repository.");
 
     emit infoMessage(infoMsg);
     m_hgWrapper->setWorkingDirectory(m_currentDir);
@@ -253,12 +254,12 @@ void FileViewHgPlugin::addFiles()
 void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
-    QString infoMsg = i18nc("@info:status", 
-         "Removing files from <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status", 
-         "Removing files from <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status", 
-         "Removed files from <application>Hg</application> repository.");
+    QString infoMsg = i18nc("@info:status",
+                            "Removing files from <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status",
+                       "Removing files from <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+                                    "Removed files from <application>Hg</application> repository.");
 
     emit infoMessage(infoMsg);
     m_hgWrapper->setWorkingDirectory(m_currentDir);
@@ -270,12 +271,12 @@ void FileViewHgPlugin::renameFile()
 {
     Q_ASSERT(m_contextItems.size() == 1);
 
-    m_errorMsg = i18nc("@info:status", 
-         "Renaming of file in <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status", 
-         "Renamed file in <application>Hg</application> repository successfully.");
-    emit infoMessage(i18nc("@info:status", 
-         "Renaming file in <application>Hg</application> repository."));
+    m_errorMsg = i18nc("@info:status",
+                       "Renaming of file in <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+                                    "Renamed file in <application>Hg</application> repository successfully.");
+    emit infoMessage(i18nc("@info:status",
+                           "Renaming file in <application>Hg</application> repository."));
 
     HgRenameDialog dialog(m_contextItems.first());
     dialog.exec();
@@ -286,12 +287,12 @@ void FileViewHgPlugin::renameFile()
 void FileViewHgPlugin::commit()
 {
     //FIXME: Disable emitting of status messages when executing sub tasks.
-    m_errorMsg = i18nc("@info:status", 
-         "Commit to  <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status", 
-         "Commit to <application>Hg</application> repository successfull.");
-    emit infoMessage(i18nc("@info:status", 
-         "Commit <application>Hg</application> repository."));
+    m_errorMsg = i18nc("@info:status",
+                       "Commit to  <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+                                    "Commit to <application>Hg</application> repository successfull.");
+    emit infoMessage(i18nc("@info:status",
+                           "Commit <application>Hg</application> repository."));
 
     m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
     HgCommitDialog *dialog = new HgCommitDialog();
@@ -309,7 +310,8 @@ void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus
 {
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
         emit errorMessage(m_errorMsg);
-    } else {
+    }
+    else {
         m_contextItems.clear();
         emit operationCompletedMessage(m_operationCompletedMsg);
         emit versionStatesChanged();

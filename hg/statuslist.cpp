@@ -22,10 +22,8 @@
 
 #include <QtGui/QVBoxLayout>
 #include <QtCore/QStringList>
-#include <QDebug>
 #include <QHeaderView>
 #include <klocale.h>
-
 
 HgStatusList::HgStatusList(QWidget *parent):
     QGroupBox(parent)
@@ -55,10 +53,9 @@ HgStatusList::HgStatusList(QWidget *parent):
 
 void HgStatusList::itemSelectionChangedSlot()
 {
-    qDebug() << "Emitting itemSelectionChanged from HgStatusList";
     emit itemSelectionChanged(
-            m_statusTable->item(m_statusTable->currentRow(), 1)->text()[0].toLatin1(),
-            m_statusTable->item(m_statusTable->currentRow(), 2)->text() );
+        m_statusTable->item(m_statusTable->currentRow(), 1)->text()[0].toLatin1(),
+        m_statusTable->item(m_statusTable->currentRow(), 2)->text() );
 }
 
 void HgStatusList::reloadStatusTable()
@@ -91,7 +88,7 @@ void HgStatusList::reloadStatusTable()
 
             status->setText(QString(currentStatus));
             fileName->setText(currentFile);
-            
+
             m_statusTable->insertRow(rowCount);
             check->setCheckState(Qt::Unchecked);
             m_statusTable->setItem(rowCount, 0, check);
@@ -129,7 +126,7 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
 {
     int nChecked = 0;
     int nRowCount = m_statusTable->rowCount();
-    for (int row=0; row<nRowCount; row++) {
+    for (int row = 0; row < nRowCount; row++) {
         QTableWidgetItem *item = m_statusTable->item(row, 0);
         if (item->checkState() == Qt::Checked) {
             nChecked++;
@@ -139,8 +136,9 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
     if (nChecked == nRowCount) {
         files.clear();
     }
-    if (nChecked)
+    if (nChecked) {
         return true;
+    }
     return false;
 }
 

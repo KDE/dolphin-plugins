@@ -31,18 +31,18 @@ class HgWrapper : public QProcess
 public:
     HgWrapper(QObject *parent = 0);
 
-    static HgWrapper* instance();
+    static HgWrapper *instance();
     static void freeInstance();
 
     bool isBusy() const;
-    void executeCommand(const QString& hgCommand,
-                        const QStringList& arguments=QStringList());
-    QString getBaseDir(const QString &directory=0);
+    void executeCommand(const QString &hgCommand,
+                        const QStringList &arguments = QStringList());
+    QString getBaseDir(const QString &directory = 0);
     void setBaseAsWorkingDir();
-    void addFiles(const KFileItemList& fileList);
-    void removeFiles(const KFileItemList& fileList);
-    void commit(const QString &message, const QStringList &files=QStringList(), 
-            bool closeCurrentBranch=false);
+    void addFiles(const KFileItemList &fileList);
+    void removeFiles(const KFileItemList &fileList);
+    void commit(const QString &message, const QStringList &files = QStringList(),
+                bool closeCurrentBranch = false);
     QStringList getBranches();
     QStringList getTags();
     bool createBranch(const QString &branchName);
