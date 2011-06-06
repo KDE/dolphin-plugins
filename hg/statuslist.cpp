@@ -30,8 +30,8 @@ HgStatusList::HgStatusList(QWidget *parent):
     QGroupBox(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    m_filter = new KLineEdit(mainLayout);
-    m_statusTable = new QTableWidget(mainLayout);
+    m_filter = new KLineEdit(this);
+    m_statusTable = new QTableWidget(this);
 
     m_statusTable->setColumnCount(3);
     QStringList headers;
@@ -73,10 +73,9 @@ void HgStatusList::reloadStatusTable()
     while (hgWrapper->waitForReadyRead()) {
         char buffer[1024];
         while (hgWrapper->readLine(buffer, sizeof(buffer)) > 0)  {
-            const QString currentLine(buffer);
+            const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
-            currentFile = QTextCodec::codecForLocale()->toUnicode(currentFile.trimmed());
 
             // Temporarily ignoring
             // TODO: Ask to add file if this is checked by user
@@ -84,9 +83,9 @@ void HgStatusList::reloadStatusTable()
                 continue;
             }
 
-            QTableWidgetItem *check = new QTableWidgetItem(m_statusTable);
-            QTableWidgetItem *status = new QTableWidgetItem(m_statusTable);
-            QTableWidgetItem *fileName = new QTableWidgetItem(m_statusTable);
+            QTableWidgetItem *check = new QTableWidgetItem();
+            QTableWidgetItem *status = new QTableWidgetItem();
+            QTableWidgetItem *fileName = new QTableWidgetItem();
 
             status->setText(QString(currentStatus));
             fileName->setText(currentFile);

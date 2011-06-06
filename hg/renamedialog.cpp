@@ -41,17 +41,17 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
     QFrame *frame = new QFrame(this);
     QVBoxLayout *vbox = new QVBoxLayout(frame);
 
-    QHBoxLayout *sourceHBox = new QHBoxLayout(vbox);
+    QHBoxLayout *sourceHBox = new QHBoxLayout(frame);
     QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file",
-                "Source:"), sourceHBox);
+                "Source:"), frame);
     QLabel *sourceFileLabel = new QLabel("<b>" + m_source + "</b>");
     sourceHBox->addWidget(sourceLabel);
     sourceHBox->addWidget(sourceFileLabel);
 
-    QHBoxLayout *destinationHBox = new QHBoxLayout(vbox);
+    QHBoxLayout *destinationHBox = new QHBoxLayout(frame);
     QLabel *destinationLabel = new QLabel(i18nc("@label:rename", "Rename to:"), 
-            destinationHBox);
-    m_destinationFile = new KLineEdit(m_source, destinationHBox);
+            frame);
+    m_destinationFile = new KLineEdit(m_source, frame);
     destinationHBox->addWidget(destinationLabel);
     destinationHBox->addWidget(m_destinationFile);
 

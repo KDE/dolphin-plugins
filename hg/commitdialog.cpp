@@ -55,11 +55,11 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     // Top bar of buttons
     QHBoxLayout *topBarLayout = new QHBoxLayout(this);
-    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"), topBarLayout);
-    KPushButton *optionsButton = new KPushButton(i18n("Options"), topBarLayout);
-    m_branchButton = new KPushButton(i18n("Branch"), topBarLayout);
+    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"), this);
+    KPushButton *optionsButton = new KPushButton(i18n("Options"), this);
+    m_branchButton = new KPushButton(i18n("Branch"), this);
 
-    topBarLayout->addWidget(new QLabel(getParentForLabel(), topBarLayout));
+    topBarLayout->addWidget(new QLabel(getParentForLabel(), this));
     topBarLayout->addStretch();
     topBarLayout->addWidget(copyMessageButton);
     topBarLayout->addWidget(m_branchButton);
@@ -112,7 +112,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     // Set up layout for Status, Commit and Diff boxes
     QGridLayout *bodyLayout = new QGridLayout(this);
-    m_statusList = new HgStatusList(bodyLayout);
+    m_statusList = new HgStatusList(this);
     bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
     bodyLayout->addWidget(messageGroupBox, 0, 1);
     bodyLayout->addWidget(diffGroupBox, 1, 1);
@@ -123,7 +123,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     // Set up layout and container for main dialog
     QFrame *frame = new QFrame(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addLayout(topBarLayout);
     mainLayout->addLayout(bodyLayout);
     frame->setLayout(mainLayout);

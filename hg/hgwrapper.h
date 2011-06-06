@@ -23,6 +23,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtCore/QTextCodec>
 #include <kfileitem.h>
 
 class HgWrapper : public QProcess

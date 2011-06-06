@@ -295,15 +295,13 @@ void FileViewHgPlugin::commit()
                            "Commit <application>Hg</application> repository."));
 
     m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
-    HgCommitDialog *dialog = new HgCommitDialog(this);
-    dialog->exec();
+    HgCommitDialog dialog;
+    dialog.exec();
 }
 
 void FileViewHgPlugin::branchAndTag()
 {
     m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
-    HgCommitDialog *dialog = new HgCommitDialog(this);
-    dialog->exec();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
