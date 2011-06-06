@@ -23,12 +23,16 @@
 #include <QtGui/QVBoxLayout>
 #include <QtCore/QStringList>
 #include <QHeaderView>
+#include <QTextCodec>
 #include <klocale.h>
 
 HgStatusList::HgStatusList(QWidget *parent):
     QGroupBox(parent)
 {
-    m_statusTable = new QTableWidget;
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    m_filter = new KLineEdit(mainLayout);
+    m_statusTable = new QTableWidget(mainLayout);
+
     m_statusTable->setColumnCount(3);
     QStringList headers;
     headers << "*" << "S" << "Filename";
@@ -37,8 +41,6 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_statusTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_statusTable->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    m_filter = new KLineEdit;
     mainLayout->addWidget(m_filter);
     mainLayout->addWidget(m_statusTable);
 
@@ -55,7 +57,7 @@ void HgStatusList::itemSelectionChangedSlot()
 {
     emit itemSelectionChanged(
         m_statusTable->item(m_statusTable->currentRow(), 1)->text()[0].toLatin1(),
-        m_statusTable->item(m_statusTable->currentRow(), 2)->text() );
+        m_statusTable->item(m_statusTable->currentRow(), 2)->text());
 }
 
 void HgStatusList::reloadStatusTable()
@@ -74,7 +76,7 @@ void HgStatusList::reloadStatusTable()
             const QString currentLine(buffer);
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
-            currentFile = currentFile.trimmed();
+            currentFile = QTextCodec::codecForLocale()->toUnicode(currentFile.trimmed());
 
             // Temporarily ignoring
             // TODO: Ask to add file if this is checked by user
@@ -82,9 +84,9 @@ void HgStatusList::reloadStatusTable()
                 continue;
             }
 
-            QTableWidgetItem *check = new QTableWidgetItem;
-            QTableWidgetItem *status = new QTableWidgetItem;
-            QTableWidgetItem *fileName = new QTableWidgetItem;
+            QTableWidgetItem *check = new QTableWidgetItem(m_statusTable);
+            QTableWidgetItem *status = new QTableWidgetItem(m_statusTable);
+            QTableWidgetItem *fileName = new QTableWidgetItem(m_statusTable);
 
             status->setText(QString(currentStatus));
             fileName->setText(currentFile);

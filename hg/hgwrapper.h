@@ -57,6 +57,7 @@ private:
     static bool m_pendingOperation;
 
     QStringList m_arguments;
+    QTextCodec *m_localCodec;
 };
 
 #endif // HGWRAPPER_H

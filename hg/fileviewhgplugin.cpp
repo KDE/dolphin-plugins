@@ -21,6 +21,7 @@
 #include "renamedialog.h"
 #include "commitdialog.h"
 
+#include <QTextCodec>
 #include <kaction.h>
 #include <kicon.h>
 #include <klocale.h>
@@ -120,10 +121,9 @@ bool FileViewHgPlugin::beginRetrieval(const QString &directory)
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            const QString currentLine(buffer);
+            const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
-            currentFile = currentFile.trimmed();
             kDebug() << "Hg/FileStatus" << currentStatus << " " << currentFile;
             if (currentFile.startsWith(relativePrefix)) {
                 VersionState vs = NormalVersion;
@@ -295,14 +295,14 @@ void FileViewHgPlugin::commit()
                            "Commit <application>Hg</application> repository."));
 
     m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
-    HgCommitDialog *dialog = new HgCommitDialog();
+    HgCommitDialog *dialog = new HgCommitDialog(this);
     dialog->exec();
 }
 
 void FileViewHgPlugin::branchAndTag()
 {
     m_hgWrapper->setWorkingDirectory(m_hgBaseDir);
-    HgCommitDialog *dialog = new HgCommitDialog();
+    HgCommitDialog *dialog = new HgCommitDialog(this);
     dialog->exec();
 }
 

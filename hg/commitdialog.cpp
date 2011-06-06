@@ -54,12 +54,12 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     m_fileDiffDoc->setReadWrite(false);
 
     // Top bar of buttons
-    QHBoxLayout *topBarLayout = new QHBoxLayout;
-    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"));
-    KPushButton *optionsButton = new KPushButton(i18n("Options"));
-    m_branchButton = new KPushButton(i18n("Branch"));
+    QHBoxLayout *topBarLayout = new QHBoxLayout(this);
+    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"), topBarLayout);
+    KPushButton *optionsButton = new KPushButton(i18n("Options"), topBarLayout);
+    m_branchButton = new KPushButton(i18n("Branch"), topBarLayout);
 
-    topBarLayout->addWidget(new QLabel(getParentForLabel()));
+    topBarLayout->addWidget(new QLabel(getParentForLabel(), topBarLayout));
     topBarLayout->addStretch();
     topBarLayout->addWidget(copyMessageButton);
     topBarLayout->addWidget(m_branchButton);
@@ -80,7 +80,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     m_closeBranch->setText(i18nc("@action:inmenu",
                                  "Close current branch"));
 
-    m_branchMenu = new KMenu;
+    m_branchMenu = new KMenu(this);
     m_branchMenu->addAction(m_noChanges);
     m_branchMenu->addAction(m_newBranch);
     m_branchMenu->addAction(m_closeBranch);
@@ -96,23 +96,23 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     m_branchButton->setMenu(m_branchMenu);
 
     // the commit box itself
-    QGroupBox *messageGroupBox = new QGroupBox;
-    QVBoxLayout *commitLayout = new QVBoxLayout;
-    m_commitMessage = new QPlainTextEdit;
+    QGroupBox *messageGroupBox = new QGroupBox(this);
+    QVBoxLayout *commitLayout = new QVBoxLayout(this);
+    m_commitMessage = new QPlainTextEdit(messageGroupBox);
     commitLayout->addWidget(m_commitMessage);
     messageGroupBox->setTitle(i18nc("@title:group", "Commit Message"));
     messageGroupBox->setLayout(commitLayout);
 
     // Show diff here
-    QGroupBox *diffGroupBox = new QGroupBox;
-    QVBoxLayout *diffLayout = new QVBoxLayout;
+    QGroupBox *diffGroupBox = new QGroupBox(this);
+    QVBoxLayout *diffLayout = new QVBoxLayout(diffGroupBox);
     diffLayout->addWidget(m_fileDiffView);
     diffGroupBox->setTitle(i18nc("@title:group", "Diff/Content"));
     diffGroupBox->setLayout(diffLayout);
 
     // Set up layout for Status, Commit and Diff boxes
-    QGridLayout *bodyLayout = new QGridLayout;
-    m_statusList = new HgStatusList;
+    QGridLayout *bodyLayout = new QGridLayout(this);
+    m_statusList = new HgStatusList(bodyLayout);
     bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
     bodyLayout->addWidget(messageGroupBox, 0, 1);
     bodyLayout->addWidget(diffGroupBox, 1, 1);
@@ -122,8 +122,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     bodyLayout->setRowStretch(1, 1);
 
     // Set up layout and container for main dialog
-    QFrame *frame = new QFrame;
-    QVBoxLayout *mainLayout = new QVBoxLayout;
+    QFrame *frame = new QFrame(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(mainLayout);
     mainLayout->addLayout(topBarLayout);
     mainLayout->addLayout(bodyLayout);
     frame->setLayout(mainLayout);
@@ -186,6 +186,9 @@ void HgCommitDialog::slotItemSelectionChanged(const char status, const QString &
             m_fileDiffDoc->setText(diffOut);
         }
     }
+
+
+
     else {
         KUrl url(HgWrapper::instance()->getBaseDir());
         url.addPath(fileName);

@@ -25,6 +25,8 @@ bool HgWrapper::m_pendingOperation = 0;
 HgWrapper::HgWrapper(QObject *parent) :
     QProcess(parent)
 {
+    m_localCodec = QTextCodec::codecForLocale();
+
     connect(this, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
     connect(this, SIGNAL(error(QProcess::ProcessError)),
@@ -33,19 +35,17 @@ HgWrapper::HgWrapper(QObject *parent) :
 
 HgWrapper *HgWrapper::instance()
 {
-    if (!m_instance ) {
+    if (!m_instance) {
         m_instance = new HgWrapper;
     }
     return m_instance;
 }
 
 
-void HgWrapper::freeInstance( )
+void HgWrapper::freeInstance()
 {
-    if ( m_instance ) {
-        delete m_instance;
-        m_instance = 0;
-    }
+    delete m_instance;
+    m_instance = 0;
 }
 
 bool HgWrapper::isBusy() const {
@@ -55,13 +55,13 @@ bool HgWrapper::isBusy() const {
 void HgWrapper::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
 {
     m_pendingOperation = false;
-    m_arguments.clear( );
+    m_arguments.clear();
 }
 
 void HgWrapper::slotOperationError()
 {
     m_pendingOperation = false;
-    m_arguments.clear( );
+    m_arguments.clear();
 }
 
 void HgWrapper::executeCommand(const QString &hgCommand,

@@ -32,25 +32,29 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
     m_source(source.name()),
     m_source_dir(source.url().directory())
 {
-    this->setCaption(i18nc("@title:window", "<application>Hg</application> Rename"));
+    this->setCaption(i18nc("@title:window",
+                "<application>Hg</application> Rename"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Rename"));
 
-    QHBoxLayout *sourceHBox = new QHBoxLayout;
-    QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file", "Source:"));
+    QFrame *frame = new QFrame(this);
+    QVBoxLayout *vbox = new QVBoxLayout(frame);
+
+    QHBoxLayout *sourceHBox = new QHBoxLayout(vbox);
+    QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file",
+                "Source:"), sourceHBox);
     QLabel *sourceFileLabel = new QLabel("<b>" + m_source + "</b>");
     sourceHBox->addWidget(sourceLabel);
     sourceHBox->addWidget(sourceFileLabel);
 
-    QHBoxLayout *destinationHBox = new QHBoxLayout;
-    QLabel *destinationLabel = new QLabel(i18nc("@label:rename", "Rename to:") );
-    m_destinationFile = new KLineEdit(m_source);
+    QHBoxLayout *destinationHBox = new QHBoxLayout(vbox);
+    QLabel *destinationLabel = new QLabel(i18nc("@label:rename", "Rename to:"), 
+            destinationHBox);
+    m_destinationFile = new KLineEdit(m_source, destinationHBox);
     destinationHBox->addWidget(destinationLabel);
     destinationHBox->addWidget(m_destinationFile);
 
-    QVBoxLayout *vbox = new QVBoxLayout;
-    QFrame *frame = new QFrame;
     vbox->addLayout(sourceHBox);
     vbox->addLayout(destinationHBox);
     frame->setLayout(vbox);
