@@ -37,34 +37,27 @@
 HgCommitDialog::HgCommitDialog(QWidget *parent):
     KDialog(parent, Qt::Dialog)
 {
-    this->setCaption(i18nc("@title:window", "<application>Hg</application> Commit"));
+    // dialog properties
+    this->setCaption(i18nc("@title:window", 
+                "<application>Hg</application> Commit"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Commit"));
+    this->enableButtonOk(false); // since commit message is empty when loaded
 
     // To show diff between commit
     KTextEditor::Editor *editor = KTextEditor::EditorChooser::editor();
     if (!editor) {
-        KMessageBox::error(this, i18n("A KDE text-editor component could not be found;"
-                                      "\nplease check your KDE installation."));
+        KMessageBox::error(this, 
+                i18n("A KDE text-editor component could not be found;"
+                     "\nplease check your KDE installation."));
         return;
     }
     m_fileDiffDoc = editor->createDocument(0);
     m_fileDiffView = qobject_cast<KTextEditor::View *>(m_fileDiffDoc->createView(this));
     m_fileDiffDoc->setReadWrite(false);
 
-    // Top bar of buttons
-    QHBoxLayout *topBarLayout = new QHBoxLayout(this);
-    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"), this);
-    KPushButton *optionsButton = new KPushButton(i18n("Options"), this);
-    m_branchButton = new KPushButton(i18n("Branch"), this);
-
-    topBarLayout->addWidget(new QLabel(getParentForLabel(), this));
-    topBarLayout->addStretch();
-    topBarLayout->addWidget(copyMessageButton);
-    topBarLayout->addWidget(m_branchButton);
-    topBarLayout->addWidget(optionsButton);
-
+    // Setup actions
     m_noChanges= new KAction(this);
     m_noChanges->setCheckable(true);
     m_noChanges->setText(i18nc("@action:inmenu",
@@ -93,26 +86,42 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     connect(branchActionGroup, SIGNAL(triggered(QAction *)),
             this, SLOT(slotBranchActions(QAction *)));
 
+
+    //////////////
+    // Setup UI //
+    //////////////
+
+    // Top bar of buttons
+    QHBoxLayout *topBarLayout = new QHBoxLayout;
+    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"));
+    KPushButton *optionsButton = new KPushButton(i18n("Options"));
+    m_branchButton = new KPushButton(i18n("Branch"));
+
+    topBarLayout->addWidget(new QLabel(getParentForLabel()));
+    topBarLayout->addStretch();
+    topBarLayout->addWidget(copyMessageButton);
+    topBarLayout->addWidget(m_branchButton);
+    topBarLayout->addWidget(optionsButton);
     m_branchButton->setMenu(m_branchMenu);
 
     // the commit box itself
-    QGroupBox *messageGroupBox = new QGroupBox(this);
-    QVBoxLayout *commitLayout = new QVBoxLayout(this);
-    m_commitMessage = new QPlainTextEdit(messageGroupBox);
+    QGroupBox *messageGroupBox = new QGroupBox;
+    QVBoxLayout *commitLayout = new QVBoxLayout;
+    m_commitMessage = new QPlainTextEdit;
     commitLayout->addWidget(m_commitMessage);
     messageGroupBox->setTitle(i18nc("@title:group", "Commit Message"));
     messageGroupBox->setLayout(commitLayout);
 
     // Show diff here
-    QGroupBox *diffGroupBox = new QGroupBox(this);
+    QGroupBox *diffGroupBox = new QGroupBox;
     QVBoxLayout *diffLayout = new QVBoxLayout(diffGroupBox);
     diffLayout->addWidget(m_fileDiffView);
     diffGroupBox->setTitle(i18nc("@title:group", "Diff/Content"));
     diffGroupBox->setLayout(diffLayout);
 
     // Set up layout for Status, Commit and Diff boxes
-    QGridLayout *bodyLayout = new QGridLayout(this);
-    m_statusList = new HgStatusList(this);
+    QGridLayout *bodyLayout = new QGridLayout;
+    m_statusList = new HgStatusList;
     bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
     bodyLayout->addWidget(messageGroupBox, 0, 1);
     bodyLayout->addWidget(diffGroupBox, 1, 1);
@@ -122,8 +131,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     bodyLayout->setRowStretch(1, 1);
 
     // Set up layout and container for main dialog
-    QFrame *frame = new QFrame(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    QFrame *frame = new QFrame;
+    QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addLayout(topBarLayout);
     mainLayout->addLayout(bodyLayout);
     frame->setLayout(mainLayout);
@@ -133,14 +142,12 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     this->setInitialSize(QSize(settings->commitDialogWidth(),
                                settings->commitDialogHeight()));
-
-    this->enableButtonOk(false); // since commit message is empty when loaded
-
     //
-    connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString &)),
-            this, SLOT(slotItemSelectionChanged(const char, const QString &)));
+    connect(m_statusList, 
+        SIGNAL(itemSelectionChanged(const char, const QString &)),
+        this, SLOT(slotItemSelectionChanged(const char, const QString &)));
     connect(m_commitMessage, SIGNAL(textChanged()),
-            this, SLOT(slotMessageChanged()));
+         this, SLOT(slotMessageChanged()));
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
 }
 
@@ -148,23 +155,12 @@ QString HgCommitDialog::getParentForLabel()
 {
     HgWrapper *hgWrapper = HgWrapper::instance();
     QString line("<b>parents:</b> ");
-    QString command =  QLatin1String("hg parents");
-    hgWrapper->start(command);
-    while (hgWrapper->waitForReadyRead()) {
-        char buffer[1024];
-        while (hgWrapper->readLine(buffer, sizeof(buffer))) {
-            QString bufferString = QString(buffer);
-            if (bufferString.contains("changeset:")) {
-                QStringList parts = bufferString.split(" ", QString::SkipEmptyParts);
-                line += parts.takeLast().trimmed();
-                line += "   ";
-            }
-        }
-    }
+    line += hgWrapper->getParentsOfHead();
     return line;
 }
 
-void HgCommitDialog::slotItemSelectionChanged(const char status, const QString &fileName)
+void HgCommitDialog::slotItemSelectionChanged(const char status, 
+        const QString &fileName)
 {
     m_fileDiffDoc->setReadWrite(true);
     m_fileDiffDoc->setModified(false);
@@ -176,26 +172,16 @@ void HgCommitDialog::slotItemSelectionChanged(const char status, const QString &
         HgWrapper *hgWrapper = HgWrapper::instance();
 
         arguments << fileName;
-        hgWrapper->executeCommand(QLatin1String("diff"), arguments);
-        while (hgWrapper->waitForReadyRead()) {
-            char buffer[2048];
-            while (hgWrapper->readLine(buffer, sizeof(buffer)) > 0) {
-                diffOut += buffer;
-            }
-            m_fileDiffDoc->setHighlightingMode("diff");
-            m_fileDiffDoc->setText(diffOut);
-        }
+        hgWrapper->executeCommand(QLatin1String("diff"), arguments, diffOut);
+        m_fileDiffDoc->setHighlightingMode("diff");
+        m_fileDiffDoc->setText(diffOut);
     }
-
-
-
     else {
         KUrl url(HgWrapper::instance()->getBaseDir());
         url.addPath(fileName);
+        qDebug() << "Url is : " << url;
         m_fileDiffDoc->openUrl(url);
     }
-
-    m_fileDiffDoc->setReadWrite(false);
 }
 
 void HgCommitDialog::slotMessageChanged()
@@ -209,11 +195,10 @@ void HgCommitDialog::done(int r)
         QStringList files;
         if (m_statusList->getSelectionForCommit(files)) {
             HgWrapper *hgWrapper = HgWrapper::instance();
-            hgWrapper->commit(m_commitMessage->toPlainText(), files);
-            hgWrapper->waitForFinished();
+            bool success = hgWrapper->commit(m_commitMessage->toPlainText(),
+                    files);
 
-            if (hgWrapper->exitCode() == 0
-                    && hgWrapper->exitStatus() == QProcess::NormalExit) {
+            if (success) {
                 KDialog::done(r);
             }
             else {

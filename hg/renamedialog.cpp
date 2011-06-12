@@ -77,12 +77,8 @@ void HgRenameDialog::slotTextChanged(const QString &text)
 void HgRenameDialog::slotButtonClicked(KDialog::ButtonCode button)
 {
     if (button == KDialog::Ok) {
-        QStringList arguments;
-        arguments << source() << destination();
-
         HgWrapper *hgi = HgWrapper::instance();
-        hgi->setWorkingDirectory(m_source_dir);
-        hgi->executeCommand(QLatin1String("rename"), arguments);
+        hgi->renameFile(source(), destination());
     }
 }
 

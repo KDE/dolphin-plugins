@@ -22,9 +22,12 @@
 
 #include <QtGui/QVBoxLayout>
 #include <QtCore/QStringList>
-#include <QHeaderView>
-#include <QTextCodec>
+#include <QtCore/QHash>
+#include <QtGui/QHeaderView>
+#include <QtCore/QTextCodec>
 #include <klocale.h>
+#include <kurl.h>
+#include <kdebug.h>
 
 HgStatusList::HgStatusList(QWidget *parent):
     QGroupBox(parent)
@@ -35,7 +38,7 @@ HgStatusList::HgStatusList(QWidget *parent):
 
     m_statusTable->setColumnCount(3);
     QStringList headers;
-    headers << "*" << "S" << "Filename";
+    headers << "*" << "S" << i18n("Filename");
     m_statusTable->setHorizontalHeaderLabels(headers);
     m_statusTable->verticalHeader()->hide();
     m_statusTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -68,58 +71,70 @@ void HgStatusList::reloadStatusTable()
     m_statusTable->horizontalHeader()->setStretchLastSection(true);
 
     HgWrapper *hgWrapper = HgWrapper::instance();
-    hgWrapper->executeCommand(QLatin1String("status"), QStringList());
+    QHash<QString, HgVersionState> &hgVsState = hgWrapper->getVersionStates(false);
+    QMutableHashIterator<QString, HgVersionState> it(hgVsState);
     int rowCount = 0;
-    while (hgWrapper->waitForReadyRead()) {
-        char buffer[1024];
-        while (hgWrapper->readLine(buffer, sizeof(buffer)) > 0)  {
-            const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
-            char currentStatus = buffer[0];
-            QString currentFile = currentLine.mid(2);
+    while (it.hasNext()) {
+        it.next();
+        HgVersionState currentStatus = it.value();
+        // FIXME: preferred method, but not working :| bad hack below
+        // QString currentFile 
+        //    = KUrl::relativeUrl(hgWrapper->getBaseDir(), it.key()); 
+        QString currentFile = it.key().mid(hgWrapper->getBaseDir().length()+1);
+        QString currentStatusString;
 
-            // Temporarily ignoring
-            // TODO: Ask to add file if this is checked by user
-            if (currentStatus == '?') {
-                continue;
-            }
+        // Temporarily ignoring
+        // TODO: Ask to add file if this is checked by user
+        if (currentStatus == HgUntrackedVersion ||
+                currentStatus == HgIgnoredVersion) {
+            continue;
+        }
 
-            QTableWidgetItem *check = new QTableWidgetItem();
-            QTableWidgetItem *status = new QTableWidgetItem();
-            QTableWidgetItem *fileName = new QTableWidgetItem();
+        QTableWidgetItem *check = new QTableWidgetItem;
+        QTableWidgetItem *status = new QTableWidgetItem;
+        QTableWidgetItem *fileName = new QTableWidgetItem;
 
-            status->setText(QString(currentStatus));
-            fileName->setText(currentFile);
-
-            m_statusTable->insertRow(rowCount);
-            check->setCheckState(Qt::Unchecked);
-            m_statusTable->setItem(rowCount, 0, check);
-            m_statusTable->setItem(rowCount, 1, status);
-            m_statusTable->setItem(rowCount, 2, fileName);
-
-            switch (currentStatus) {
-            case 'A':
+        switch (currentStatus) {
+            case HgAddedVersion:
                 status->setForeground(Qt::darkCyan);
                 fileName->setForeground(Qt::darkCyan);
                 check->setCheckState(Qt::Checked);
+                currentStatusString = QLatin1String("A");
                 break;
-            case 'M':
+            case HgModifiedVersion:
                 status->setForeground(Qt::blue);
                 fileName->setForeground(Qt::blue);
                 check->setCheckState(Qt::Checked);
+                currentStatusString = QLatin1String("M");
                 break;
-            case 'R':
-                status->setForeground(Qt::red);
+            case HgRemovedVersion:
+               status->setForeground(Qt::red);
                 fileName->setForeground(Qt::red);
                 check->setCheckState(Qt::Checked);
+                currentStatusString = QLatin1String("R");
                 break;
-            case '?':
+            case HgUntrackedVersion:
                 status->setForeground(Qt::darkMagenta);
                 fileName->setForeground(Qt::darkMagenta);
+                currentStatusString = QLatin1String("?");
                 break;
-            }
-
-            ++rowCount;
+            case HgIgnoredVersion:
+                status->setForeground(Qt::black);
+                fileName->setForeground(Qt::black);
+                currentStatusString = QLatin1String("I");
+                break;
         }
+
+        status->setText(QString(currentStatusString));
+        fileName->setText(currentFile);
+
+        m_statusTable->insertRow(rowCount);
+        check->setCheckState(Qt::Checked); //Change. except untracked, ignored
+        m_statusTable->setItem(rowCount, 0, check);
+        m_statusTable->setItem(rowCount, 1, status);
+        m_statusTable->setItem(rowCount, 2, fileName);
+
+        ++rowCount;
     }
 }
 
@@ -137,10 +152,11 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
     if (nChecked == nRowCount) {
         files.clear();
     }
-    if (nChecked) {
+    if (nChecked > 0) {
         return true;
     }
     return false;
 }
 
 #include "statuslist.moc"
+

@@ -63,12 +63,8 @@ private:
     QAction *m_branchTagAction;
 
     KFileItemList m_contextItems;
-    QString m_hgBaseDir;
-    QString m_currentDir;
-
     QString m_operationCompletedMsg;
     QString m_errorMsg;
-
     HgWrapper *m_hgWrapper;
 };
 

@@ -24,7 +24,14 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 #include <QtCore/QTextCodec>
+#include <QtCore/QHash>
 #include <kfileitem.h>
+
+
+enum HgVersionState {
+    HgModifiedVersion, HgAddedVersion, HgRemovedVersion, HgCleanVersion,
+    HgMissingVersion, HgIgnoredVersion, HgUntrackedVersion
+};
 
 class HgWrapper : public QProcess
 {
@@ -35,30 +42,50 @@ public:
     static HgWrapper *instance();
     static void freeInstance();
 
-    bool isBusy() const;
     void executeCommand(const QString &hgCommand,
                         const QStringList &arguments = QStringList());
-    QString getBaseDir(const QString &directory = 0);
+    bool executeCommand(const QString &hgCommand,
+                        const QStringList &arguments,
+                        QString &output);
+
+    QString getBaseDir() const;
     void setBaseAsWorkingDir();
+    void setCurrentDir(const QString &directory);
+    QHash<QString, HgVersionState>& getVersionStates(bool ignoreParents=false);
+
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);
-    void commit(const QString &message, const QStringList &files = QStringList(),
+    bool renameFile(const QString &source, const QString &destination);
+    bool commit(const QString &message, 
+                const QStringList &files = QStringList(), 
                 bool closeCurrentBranch = false);
+
+    QString getParentsOfHead();
+    
     QStringList getBranches();
     QStringList getTags();
     bool createBranch(const QString &branchName);
+
+    inline bool isBusy() {
+        return (state() == QProcess::Running);
+    }
+
+private:
+    void updateBaseDir();
 
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
 
 private:
-private:
     static HgWrapper *m_instance;
-    static bool m_pendingOperation;
 
     QStringList m_arguments;
     QTextCodec *m_localCodec;
+
+    QString m_hgBaseDir;
+    QString m_currentDir;
+    QHash<QString, HgVersionState> m_versionStateResult;
 };
 
 #endif // HGWRAPPER_H
