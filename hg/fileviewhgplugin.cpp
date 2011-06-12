@@ -21,7 +21,8 @@
 #include "renamedialog.h"
 #include "commitdialog.h"
 
-#include <QTextCodec>
+#include <QtCore/QTextCodec>
+#include <QtCore/QDir>
 #include <kaction.h>
 #include <kicon.h>
 #include <klocale.h>
@@ -128,18 +129,37 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
     //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
     if (item.isDir()) {
-        QHash<QString, VersionState>::const_iterator it 
+                QHash<QString, VersionState>::const_iterator it 
                                     = m_versionInfoHash.constBegin();
         while (it != m_versionInfoHash.constEnd()) {
             if (it.key().startsWith(itemUrl)) {
                 const VersionState state = m_versionInfoHash.value(it.key());
                 if (state == LocallyModifiedVersion ||
-                        state == AddedVersion) {
+                        state == AddedVersion ||
+                        state == RemovedVersion) {
                     return LocallyModifiedVersion;
                 }
             }
             ++it;
         }
+
+        // Making folders with all files within untracked 'Unversioned'
+        // will disable the context menu there.
+        //
+        //QDir dir(item.localPath());
+        //QStringList filesInside = dir.entryList();
+        //foreach (const QString &fileName, filesInside) {
+        //    if (fileName == "." || fileName == ".." ) {
+        //        continue;
+        //    }
+        //    KUrl tempUrl(dir.absoluteFilePath(fileName));
+        //    KFileItem tempFileItem(KFileItem::Unknown,
+        //            KFileItem::Unknown, tempUrl);
+        //    if (versionState(tempFileItem) == NormalVersion) {
+        //       return NormalVersion;
+        //  }
+        //}
+        //return UnversionedVersion;
         return NormalVersion;
     }
     if (m_versionInfoHash.contains(itemUrl)) {
