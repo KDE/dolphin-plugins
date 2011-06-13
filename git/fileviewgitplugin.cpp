@@ -77,7 +77,7 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_commitAction = new KAction(this);
     m_commitAction->setIcon(KIcon("svn-commit"));
     m_commitAction->setText(i18nc("@action:inmenu", "<application>Git</application> Commit..."));
-    :q!!    connect(m_commitAction, SIGNAL(triggered()),
+    connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
 
     m_tagAction = new KAction(this);
@@ -117,8 +117,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
 
     GitWrapper::instance()->setWorkingDirectory(directory);
 
-    :q!
-       :    //find git base dir
+    //find git base dir
     int pathLengthBelowGitBaseDir = 0;
     QProcess process;
     process.setWorkingDirectory(directory);

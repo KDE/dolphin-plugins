@@ -197,7 +197,6 @@ void HgCommitDialog::done(int r)
             HgWrapper *hgWrapper = HgWrapper::instance();
             bool success = hgWrapper->commit(m_commitMessage->toPlainText(),
                     files);
-
             if (success) {
                 KDialog::done(r);
             }
