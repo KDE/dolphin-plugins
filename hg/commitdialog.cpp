@@ -58,10 +58,10 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     m_fileDiffDoc->setReadWrite(false);
 
     // Setup actions
-    m_noChanges= new KAction(this);
-    m_noChanges->setCheckable(true);
-    m_noChanges->setText(i18nc("@action:inmenu",
-                               "No branch changes"));
+    m_useCurrentBranch= new KAction(this);
+    m_useCurrentBranch->setCheckable(true);
+    m_useCurrentBranch->setText(i18nc("@action:inmenu",
+                               "Commit to current branch"));
 
     m_newBranch = new KAction(this);
     m_newBranch->setCheckable(true);
@@ -74,15 +74,15 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
                                  "Close current branch"));
 
     m_branchMenu = new KMenu(this);
-    m_branchMenu->addAction(m_noChanges);
+    m_branchMenu->addAction(m_useCurrentBranch);
     m_branchMenu->addAction(m_newBranch);
     m_branchMenu->addAction(m_closeBranch);
 
     QActionGroup *branchActionGroup = new QActionGroup(this);
-    branchActionGroup->addAction(m_noChanges);
+    branchActionGroup->addAction(m_useCurrentBranch);
     branchActionGroup->addAction(m_newBranch);
     branchActionGroup->addAction(m_closeBranch);
-    m_noChanges->setChecked(true);
+    m_useCurrentBranch->setChecked(true);
     connect(branchActionGroup, SIGNAL(triggered(QAction *)),
             this, SLOT(slotBranchActions(QAction *)));
 
@@ -196,7 +196,7 @@ void HgCommitDialog::done(int r)
         if (m_statusList->getSelectionForCommit(files)) {
             HgWrapper *hgWrapper = HgWrapper::instance();
             bool success = hgWrapper->commit(m_commitMessage->toPlainText(),
-                    files);
+                    files, m_branchAction==CloseBranch);
             if (success) {
                 KDialog::done(r);
             }
@@ -223,11 +223,14 @@ void HgCommitDialog::saveGeometry()
 
 void HgCommitDialog::slotBranchActions(QAction *action)
 {
-    if (action == m_noChanges) {
+    if (action == m_useCurrentBranch) {
+        m_branchAction = NoChanges;
     }
     else if (action == m_newBranch) {
+        m_branchAction = NewBranch;
     }
     else if (action == m_closeBranch) {
+        m_branchAction = CloseBranch;
     }
 }
 

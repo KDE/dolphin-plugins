@@ -17,18 +17,35 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGBRANCHTAG_H
-#define HGBRANCHTAG_H
+#ifndef HGBRANCH_H
+#define HGBRANCH_H
 
+#include <QtCore/QString>
+#include <QtGui/QLabel>
+#include <kpushbutton.h>
+#include <kcombobox.h>
 #include <kdialog.h>
 
-class HgBranchTagDialog : public KDialog
+class HgBranchDialog : public KDialog
 {
     Q_OBJECT
 
 public:
-    HgBranchTagDialog(QWidget *parent = 0);
+    HgBranchDialog(QWidget *parent = 0);
+
+public slots:
+    void slotUpdateDialog(const QString &text);
+    void slotCreateBranch();
+    void slotSwitchBranch();
+
+private:
+    KComboBox *m_branchComboBox;
+    KPushButton *m_createBranch;
+    KPushButton *m_updateBranch;
+    QLabel *m_currentBranchLabel;
+
+    QStringList m_branchList;
 };
 
-#endif // HGBRANCHTAG_H
+#endif // HGBRANCH_H
 

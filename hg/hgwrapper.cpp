@@ -43,7 +43,6 @@ HgWrapper *HgWrapper::instance()
     return m_instance;
 }
 
-
 void HgWrapper::freeInstance()
 {
     delete m_instance;

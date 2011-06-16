@@ -20,6 +20,7 @@
 #include "fileviewhgplugin.h"
 #include "renamedialog.h"
 #include "commitdialog.h"
+#include "branchdialog.h"
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
@@ -40,7 +41,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_removeAction(0),
     m_renameAction(0),
     m_commitAction(0),
-    m_branchTagAction(0)
+    m_branchAction(0)
 {
     Q_UNUSED(args);
     m_hgWrapper = HgWrapper::instance();
@@ -72,6 +73,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                   "<application>Hg</application> Commit"));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
+
+    m_branchAction = new KAction(this);
+    m_branchAction->setIcon(KIcon("svn-branch"));
+    m_branchAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Branch"));
+    connect(m_branchAction, SIGNAL(triggered()),
+            this, SLOT(branch()));
 
     connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -217,6 +225,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     if (!m_hgWrapper->isBusy()) {
         actions.append(m_commitAction);
     }
+    actions.append(m_branchAction);
     return actions;
 }
 
@@ -280,8 +289,10 @@ void FileViewHgPlugin::commit()
     dialog.exec();
 }
 
-void FileViewHgPlugin::branchAndTag()
+void FileViewHgPlugin::branch()
 {
+    HgBranchDialog dialog;
+    dialog.exec();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

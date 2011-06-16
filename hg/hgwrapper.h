@@ -33,6 +33,10 @@ enum HgVersionState {
     HgMissingVersion, HgIgnoredVersion, HgUntrackedVersion
 };
 
+//TODO: Make HgWrapper contain QProcess, rather than inherit
+//TODO: Create signals when process is started or finished,
+//TODO: Create signals for infoMessage and errorMessage which will be 
+//      caught by main plugin interface.
 class HgWrapper : public QProcess
 {
     Q_OBJECT

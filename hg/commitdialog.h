@@ -68,7 +68,7 @@ private:
 
     KAction *m_closeBranch;
     KAction *m_newBranch;
-    KAction *m_noChanges;
+    KAction *m_useCurrentBranch;
     KMenu *m_branchMenu;
 
     enum {CloseBranch, NewBranch, NoChanges} m_branchAction;
