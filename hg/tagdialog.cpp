@@ -89,7 +89,11 @@ void HgTagDialog::updateInitialDialog()
 void HgTagDialog::slotUpdateDialog(const QString &text)
 {
     // update pushbuttons
-    if (m_tagList.contains(text)) {
+    if (text.length() == 0) {
+        m_createTag->setEnabled(false);
+        m_updateTag->setEnabled(false);
+    }
+    else if (m_tagList.contains(text)) {
         m_createTag->setEnabled(false);
         m_updateTag->setEnabled(true);
     }

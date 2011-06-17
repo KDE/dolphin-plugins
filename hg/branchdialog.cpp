@@ -98,7 +98,11 @@ void HgBranchDialog::updateInitialDialog()
 void HgBranchDialog::slotUpdateDialog(const QString &text)
 {
     // update pushbuttons
-    if (m_branchList.contains(text)) {
+    if (text.length() == 0) {
+        m_createBranch->setEnabled(false);
+        m_updateBranch->setEnabled(false);
+    }
+    else if (m_branchList.contains(text)) {
         m_createBranch->setEnabled(false);
         m_updateBranch->setEnabled(true);
     }
