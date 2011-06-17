@@ -27,7 +27,9 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <klocale.h>
+#include <klineedit.h>
 #include <kdebug.h>
+#include <kmessagebox.h>
 
 HgBranchDialog::HgBranchDialog(QWidget *parent):
     KDialog(parent, Qt::Dialog)
@@ -59,25 +61,27 @@ HgBranchDialog::HgBranchDialog(QWidget *parent):
     m_updateBranch->setEnabled(false);
 
     frame->setLayout(vbox);
+    updateInitialDialog();
     slotUpdateDialog(QString());
     setMainWidget(frame);
 
+    slotUpdateDialog(m_branchComboBox->currentText());
+    QLineEdit *m_lineEdit = m_branchComboBox->lineEdit();
+    
     // connections
     connect(m_createBranch, SIGNAL(clicked()), 
             this, SLOT(slotCreateBranch()));
     connect(m_updateBranch, SIGNAL(clicked()),
-            this, SLOT(slotSwitchBranch()));
+            this, SLOT(slotSwitch()));
     connect(m_branchComboBox, SIGNAL(editTextChanged(const QString &text)),
             this, SLOT(slotUpdateDialog(const QString &text)));
+    connect(m_lineEdit, SIGNAL(textChanged(const QString&)), 
+                this, SLOT(slotUpdateDialog(const QString&)));
 }
 
-void HgBranchDialog::slotUpdateDialog(const QString &text)
+void HgBranchDialog::updateInitialDialog()
 {
     HgWrapper *hgWrapper = HgWrapper::instance();
-
-    // update combo box
-    m_branchList = hgWrapper->getBranches();
-    m_branchComboBox->addItems(m_branchList);
 
     // update label - current branch
     QString out;
@@ -85,6 +89,14 @@ void HgBranchDialog::slotUpdateDialog(const QString &text)
     out = i18n("<b>Current Branch: </b>") + out;
     m_currentBranchLabel->setText(out);
 
+    // update combo box
+    m_branchList = hgWrapper->getBranches();
+    m_branchComboBox->addItems(m_branchList);
+
+}
+
+void HgBranchDialog::slotUpdateDialog(const QString &text)
+{
     // update pushbuttons
     if (m_branchList.contains(text)) {
         m_createBranch->setEnabled(false);
@@ -96,17 +108,19 @@ void HgBranchDialog::slotUpdateDialog(const QString &text)
     }
 }
 
-void HgBranchDialog::slotSwitchBranch()
+void HgBranchDialog::slotSwitch()
 {
     HgWrapper *hgWrapper = HgWrapper::instance();
     QString out;
     QStringList args;
+    args << QLatin1String("-c");
     args << m_branchComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("update"), args, out)) {
-        //TODO
+        KMessageBox::information(this, i18n("Updated working directory!"));
+        done(KDialog::Ok);
     }
     else {
-        //TODO
+        KMessageBox::error(this, i18n("Some error occcurred"));
     }
 }
 
@@ -117,10 +131,11 @@ void HgBranchDialog::slotCreateBranch()
     QStringList args;
     args << m_branchComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("branch"), args, out)) {
-        //TODO
+        KMessageBox::information(this, i18n("Created branch successfully!"));
+        done(KDialog::Ok);
     }
     else {
-        //TODO
+        KMessageBox::error(this, i18n("Some error occcurred"));
     }
 }
 

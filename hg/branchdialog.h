@@ -36,7 +36,10 @@ public:
 public slots:
     void slotUpdateDialog(const QString &text);
     void slotCreateBranch();
-    void slotSwitchBranch();
+    void slotSwitch();
+
+private:
+    void updateInitialDialog();
 
 private:
     KComboBox *m_branchComboBox;

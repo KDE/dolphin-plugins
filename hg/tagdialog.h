@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGTAG_H
-#define HGTAG_H
+#ifndef HGTAGDIALOG_H
+#define HGTAGDIALOG_H
 
 #include <QtCore/QString>
 #include <QtGui/QLabel>
@@ -34,15 +34,19 @@ public:
     HgTagDialog(QWidget *parent = 0);
 
 public slots:
+    void slotUpdateDialog(const QString &text);
+    void slotCreateTag();
+    void slotSwitch();
 
 private:
-    KComboBox *m_branchComboBox;
-    KPushButton *m_createBranch;
-    KPushButton *m_updateBranch;
-    QLabel *m_currentBranchLabel;
+    void updateInitialDialog();
 
-    QStringList m_branchList;
+private:
+    KComboBox *m_tagComboBox;
+    KPushButton *m_createTag;
+    KPushButton *m_updateTag;
+    QStringList m_tagList;
 };
 
-#endif // HGTAG_H
+#endif // HGTAGDIALOG_H
 
