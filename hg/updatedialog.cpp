@@ -103,7 +103,7 @@ void HgUpdateDialog::slotUpdateDialog(int index)
     m_selectFinal->setFocus();
 
     QString output;
-    hgWrapper->executeCommand(QLatin1String("tip"), QStringList(), output);
+    hgWrapper->executeCommand(QLatin1String("parents"), QStringList(), output);
     QStringList outBreak = output.split('\n', QString::SkipEmptyParts);
     output.clear();
 
