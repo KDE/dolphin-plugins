@@ -10,6 +10,7 @@ set(fileviewhgplugin_SRCS
     statuslist.cpp
     branchdialog.cpp
     tagdialog.cpp
+    updatedialog.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)
