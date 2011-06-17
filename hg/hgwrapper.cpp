@@ -76,6 +76,7 @@ bool HgWrapper::executeCommand(const QString &hgCommand,
     return (exitStatus() == QProcess::NormalExit &&
             exitCode() == 0);
 }
+
 void HgWrapper::executeCommand(const QString &hgCommand,
                                const QStringList &arguments)
 {
@@ -84,6 +85,20 @@ void HgWrapper::executeCommand(const QString &hgCommand,
     m_arguments << hgCommand;
     m_arguments << arguments;
     start(QLatin1String("hg"), m_arguments);
+}
+
+bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
+                               const QStringList &arguments)
+{
+    Q_ASSERT(this->state() == QProcess::NotRunning);
+
+    m_arguments << hgCommand;
+    m_arguments << arguments;
+    start(QLatin1String("hg"), m_arguments);
+    waitForFinished();
+
+    return (exitStatus() == QProcess::NormalExit &&
+            exitCode() == 0);
 }
 
 QString HgWrapper::getBaseDir() const

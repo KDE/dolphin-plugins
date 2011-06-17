@@ -28,6 +28,7 @@
 #include <QtGui/QVBoxLayout>
 #include <klocale.h>
 #include <klistwidget.h>
+#include <kmessagebox.h>
 #include <kdebug.h>
 
 HgUpdateDialog::HgUpdateDialog(QWidget *parent):
@@ -117,5 +118,36 @@ void HgUpdateDialog::slotUpdateDialog(int index)
     m_currentInfo->setText(output);
 }
 
+void HgUpdateDialog::done(int r)
+{
+    if (r == KDialog::Accepted) {
+        QStringList args;
+        // Should we discard uncommitted changes
+        if (m_discardChanges->checkState() == Qt::Checked) {
+            args << "-C";
+        }
+        else {
+            args << "-c";
+        }
+        if (m_updateTo == ToBranch) {
+            args << "-r";
+        }
+
+        // update to
+        args << m_selectFinal->currentText();
+
+        // execute mercurial command
+        HgWrapper *hgw = HgWrapper::instance();
+        if (hgw->executeCommandTillFinished(QLatin1String("update"), args)) {
+            KDialog::done(r);
+        }
+        else {
+            KMessageBox::error(this, i18n("Some error occcurred."));
+        }
+    }
+    else {
+        KDialog::done(r);
+    }
+}
 #include "updatedialog.moc"
 

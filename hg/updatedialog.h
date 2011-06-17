@@ -38,6 +38,9 @@ public slots:
     void slotUpdateDialog(int index);
 
 private:
+    void done(int r);
+
+private:
     enum {ToBranch, ToTag, ToRevision} m_updateTo;
     KComboBox *m_selectType;
     KComboBox *m_selectFinal;

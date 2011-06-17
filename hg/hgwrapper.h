@@ -48,6 +48,8 @@ public:
 
     void executeCommand(const QString &hgCommand,
                         const QStringList &arguments = QStringList());
+    bool executeCommandTillFinished(const QString &hgCommand,
+                        const QStringList &arguments = QStringList());
     bool executeCommand(const QString &hgCommand,
                         const QStringList &arguments,
                         QString &output);
@@ -67,6 +69,7 @@ public:
     bool switchBranch(const QString &name);
     bool createTag(const QString &name);
     bool switchTag(const QString &name);
+    //bool update(const QString &name, bool discardChanges=false);
 
     QString getParentsOfHead();
     
