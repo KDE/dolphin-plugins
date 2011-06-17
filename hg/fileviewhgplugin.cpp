@@ -22,6 +22,7 @@
 #include "commitdialog.h"
 #include "branchdialog.h"
 #include "tagdialog.h"
+#include "updatedialog.h"
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
@@ -89,6 +90,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                   "<application>Hg</application> Branch"));
     connect(m_branchAction, SIGNAL(triggered()),
             this, SLOT(branch()));
+
+    m_updateAction = new KAction(this);
+    m_updateAction->setIcon(KIcon("hg-update"));
+    m_updateAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Update"));
+    connect(m_updateAction, SIGNAL(triggered()),
+            this, SLOT(update()));
 
     connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -234,6 +242,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     if (!m_hgWrapper->isBusy()) {
         actions.append(m_commitAction);
     }
+    actions.append(m_updateAction);
     actions.append(m_branchAction);
     actions.append(m_tagAction);
     return actions;
@@ -302,6 +311,12 @@ void FileViewHgPlugin::commit()
 void FileViewHgPlugin::tag()
 {
     HgTagDialog dialog;
+    dialog.exec();
+}
+
+void FileViewHgPlugin::update()
+{
+    HgUpdateDialog dialog;
     dialog.exec();
 }
 

@@ -27,6 +27,7 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <klocale.h>
+#include <klistwidget.h>
 #include <kdebug.h>
 
 HgUpdateDialog::HgUpdateDialog(QWidget *parent):
@@ -34,16 +35,86 @@ HgUpdateDialog::HgUpdateDialog(QWidget *parent):
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
-                "<application>Hg</application> Tag"));
+                "<application>Hg</application> Update"));
     this->setButtons(KDialog::None);
+    this->setButtons(KDialog::Ok | KDialog::Cancel);
+    this->setDefaultButton(KDialog::Ok);
+    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Update"));
 
     // UI 
+    QGroupBox *selectGroup = new QGroupBox(i18n("New working directory"));
+    QVBoxLayout *selectLayout = new QVBoxLayout;
+    m_selectType = new KComboBox;
+    m_selectFinal = new KComboBox;
+    m_selectType->addItem(i18n("Branch"));
+    m_selectType->addItem(i18n("Tag"));
+    m_selectType->addItem(i18n("Changeset/Revision"));
+    selectLayout->addWidget(m_selectType);
+    selectLayout->addWidget(m_selectFinal);
+    selectGroup->setLayout(selectLayout);
+
+    QGroupBox *infoGroup = new QGroupBox(i18n("Current Parent"));
+    QVBoxLayout *infoLayout = new QVBoxLayout;
+    m_currentInfo = new QLabel;
+    infoLayout->addWidget(m_currentInfo);
+    infoGroup->setLayout(infoLayout);
+
+    QGroupBox *optionGroup = new QGroupBox(i18n("Options"));
+    QVBoxLayout *optionLayout = new QVBoxLayout;
+    m_discardChanges = new QCheckBox("Discard uncommitted changes");
+    m_discardChanges->setCheckState(Qt::Unchecked);
+    optionLayout->addWidget(m_discardChanges);
+    optionGroup->setLayout(optionLayout);
+
     QFrame *frame = new QFrame;
-    QVBoxLayout *vbox = new QVBoxLayout;
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    mainLayout->addWidget(infoGroup);
+    mainLayout->addWidget(selectGroup);
+    mainLayout->addWidget(optionGroup);
+    frame->setLayout(mainLayout);
 
-    qDebug() << "\n\n\n\n\n\n" 
-        << HgWrapper::instance()->getTags() << "\n\n\n\n\n";
+    slotUpdateDialog(0);
+    setMainWidget(frame);
 
+    // connections
+    connect(m_selectType, SIGNAL(currentIndexChanged(int)), this,
+            SLOT(slotUpdateDialog(int)));
+}
+
+void HgUpdateDialog::slotUpdateDialog(int index)
+{
+    HgWrapper *hgWrapper = HgWrapper::instance();
+    m_selectFinal->clear();
+    if (index == 0) {
+        m_updateTo = ToBranch;
+        m_selectFinal->setEditable(false);
+        m_selectFinal->addItems(hgWrapper->getBranches());
+    }
+    else if (index == 1) {
+        m_updateTo = ToTag;
+        m_selectFinal->setEditable(false);
+        m_selectFinal->addItems(hgWrapper->getTags());
+    }
+    else if (index == 2) {
+        m_updateTo = ToRevision;
+        m_selectFinal->setEditable(true);
+    }
+    m_selectFinal->setFocus();
+
+    QString output;
+    hgWrapper->executeCommand(QLatin1String("tip"), QStringList(), output);
+    QStringList outBreak = output.split('\n', QString::SkipEmptyParts);
+    output.clear();
+
+    foreach (QString line, outBreak) {
+        QStringList lineBreak =  line.split(QRegExp("\\s+"), 
+                QString::SkipEmptyParts);
+        output += QLatin1String("<b>") + lineBreak.first() 
+            + QLatin1String("</b>  ") + lineBreak.last() 
+            + QLatin1String("<br/>");
+    }
+
+    m_currentInfo->setText(output);
 }
 
 #include "updatedialog.moc"

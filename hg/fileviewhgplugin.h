@@ -23,6 +23,7 @@
 #include "hgwrapper.h"
 
 #include <kfileitem.h>
+#include <kaction.h>
 #include <kversioncontrolplugin.h>
 #include <QtCore/QHash>
 #include <QtCore/QString>
@@ -50,6 +51,7 @@ private slots:
     void commit();
     void branch();
     void tag();
+    void update();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -57,12 +59,13 @@ private slots:
 private:
     QHash<QString, VersionState> m_versionInfoHash;
 
-    QAction *m_addAction;
-    QAction *m_removeAction;
-    QAction *m_renameAction;
-    QAction *m_commitAction;
-    QAction *m_branchAction;
-    QAction *m_tagAction;
+    KAction *m_addAction;
+    KAction *m_removeAction;
+    KAction *m_renameAction;
+    KAction *m_commitAction;
+    KAction *m_branchAction;
+    KAction *m_tagAction;
+    KAction *m_updateAction;
 
     KFileItemList m_contextItems;
     QString m_operationCompletedMsg;

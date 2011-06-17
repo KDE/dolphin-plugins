@@ -22,6 +22,7 @@
 
 #include <QtCore/QString>
 #include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
 #include <kpushbutton.h>
 #include <kcombobox.h>
 #include <kdialog.h>
@@ -34,14 +35,15 @@ public:
     HgUpdateDialog(QWidget *parent = 0);
 
 public slots:
+    void slotUpdateDialog(int index);
 
 private:
-    KComboBox *m_branchComboBox;
-    KPushButton *m_createBranch;
-    KPushButton *m_updateBranch;
-    QLabel *m_currentBranchLabel;
-
-    QStringList m_branchList;
+    enum {ToBranch, ToTag, ToRevision} m_updateTo;
+    KComboBox *m_selectType;
+    KComboBox *m_selectFinal;
+    QLabel *m_currentInfo;
+    QStringList m_selectList;
+    QCheckBox *m_discardChanges;
 };
 
 #endif // HGUPDATEDIALOG_H
