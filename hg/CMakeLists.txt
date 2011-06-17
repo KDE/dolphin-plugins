@@ -9,6 +9,7 @@ set(fileviewhgplugin_SRCS
     hgwrapper.cpp
     statuslist.cpp
     branchdialog.cpp
+    tagdialog.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

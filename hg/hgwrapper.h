@@ -63,12 +63,15 @@ public:
     bool commit(const QString &message, 
                 const QStringList &files = QStringList(), 
                 bool closeCurrentBranch = false);
+    bool createBranch(const QString &name);
+    bool switchBranch(const QString &name);
+    bool createTag(const QString &name);
+    bool switchTag(const QString &name);
 
     QString getParentsOfHead();
     
     QStringList getBranches();
     QStringList getTags();
-    bool createBranch(const QString &branchName);
 
     inline bool isBusy() {
         return (state() == QProcess::Running);

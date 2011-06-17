@@ -49,6 +49,7 @@ private slots:
     void renameFile();
     void commit();
     void branch();
+    void tag();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -61,6 +62,7 @@ private:
     QAction *m_renameAction;
     QAction *m_commitAction;
     QAction *m_branchAction;
+    QAction *m_tagAction;
 
     KFileItemList m_contextItems;
     QString m_operationCompletedMsg;
@@ -69,3 +71,4 @@ private:
 };
 
 #endif // FILEVIEWHGPLUGIN_H
+

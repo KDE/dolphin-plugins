@@ -21,6 +21,7 @@
 #include "renamedialog.h"
 #include "commitdialog.h"
 #include "branchdialog.h"
+#include "tagdialog.h"
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
@@ -41,7 +42,8 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_removeAction(0),
     m_renameAction(0),
     m_commitAction(0),
-    m_branchAction(0)
+    m_branchAction(0),
+    m_tagAction(0)
 {
     Q_UNUSED(args);
     m_hgWrapper = HgWrapper::instance();
@@ -73,6 +75,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                   "<application>Hg</application> Commit"));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
+
+    m_tagAction = new KAction(this);
+    m_tagAction->setIcon(KIcon("svn-tag"));
+    m_tagAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Tag"));
+    connect(m_tagAction, SIGNAL(triggered()),
+            this, SLOT(tag()));
 
     m_branchAction = new KAction(this);
     m_branchAction->setIcon(KIcon("svn-branch"));
@@ -226,6 +235,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
         actions.append(m_commitAction);
     }
     actions.append(m_branchAction);
+    actions.append(m_tagAction);
     return actions;
 }
 
@@ -286,6 +296,12 @@ void FileViewHgPlugin::commit()
             "Commit <application>Hg</application> repository."));
 
     HgCommitDialog dialog;
+    dialog.exec();
+}
+
+void FileViewHgPlugin::tag()
+{
+    HgTagDialog dialog;
     dialog.exec();
 }
 

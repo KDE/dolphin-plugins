@@ -159,6 +159,42 @@ bool HgWrapper::commit(const QString &message, const QStringList &files,
     return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
 }
 
+bool HgWrapper::createBranch(const QString &name)
+{
+    QStringList args;
+    args << name;
+    executeCommand(QLatin1String("branch"), args);
+    waitForFinished();
+    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+}
+
+bool HgWrapper::switchBranch(const QString &name)
+{
+    QStringList args;
+    args << QLatin1String("-c") << name;
+    executeCommand(QLatin1String("update"), args);
+    waitForFinished();
+    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+}
+
+bool HgWrapper::createTag(const QString &name)
+{
+    QStringList args;
+    args << name;
+    executeCommand(QLatin1String("tag"), args);
+    waitForFinished();
+    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+}
+
+bool HgWrapper::switchTag(const QString &name)
+{
+    QStringList args;
+    args << QLatin1String("-c") << name;
+    executeCommand(QLatin1String("update"), args);
+    waitForFinished();
+    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+}
+
 //TODO: Make it return QStringList.
 QString HgWrapper::getParentsOfHead()
 {
@@ -180,6 +216,20 @@ QString HgWrapper::getParentsOfHead()
     return line;
 }
 
+QStringList HgWrapper::getTags()
+{
+    QStringList result;
+    executeCommand(QLatin1String("tags"));
+    while (waitForReadyRead()) {
+        char buffer[1048];
+        while (readLine(buffer, sizeof(buffer)) > 0) {
+            result << QString(buffer).split(QRegExp("\\s+"),
+                    QString::SkipEmptyParts)[0];
+        }
+    }
+    return result;
+}
+
 QStringList HgWrapper::getBranches()
 {
     QStringList result;
@@ -191,13 +241,6 @@ QStringList HgWrapper::getBranches()
         }
     }
     return result;
-}
-
-bool HgWrapper::createBranch(const QString &branchName)
-{
-    executeCommand("branch " + branchName);
-    waitForFinished();
-    return (exitStatus() == QProcess::NormalExit) && (exitCode() == 0);
 }
 
 QHash<QString, HgVersionState>& HgWrapper::getVersionStates(bool ignoreParents)
