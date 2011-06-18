@@ -25,14 +25,20 @@
 HgWrapper *HgWrapper::m_instance = 0;
 
 HgWrapper::HgWrapper(QObject *parent) :
-    QProcess(parent)
+    QObject(parent)
 {
     m_localCodec = QTextCodec::codecForLocale();
 
-    connect(this, SIGNAL(finished(int, QProcess::ExitStatus)),
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(this, SIGNAL(error(QProcess::ProcessError)),
+    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
             this, SLOT(slotOperationError()));
+    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
+            this, SIGNAL(error(QProcess::ProcessError))); 
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SIGNAL(finished(int, QProcess::ExitStatus))),
+    connect(&m_process, SIGNAL(started()),
+            this, SIGNAL(started()));
 }
 
 HgWrapper *HgWrapper::instance()
@@ -51,14 +57,14 @@ void HgWrapper::freeInstance()
 
 void HgWrapper::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    qDebug() << "Done executing successfully: 'hg' with arguments "
+    kDebug() << "Done executing successfully: 'hg' with arguments "
         << m_arguments;
     m_arguments.clear();
 }
 
 void HgWrapper::slotOperationError()
 {
-    qDebug() << "Error occurred while executing 'hg' with arguments "
+    kDebug() << "Error occurred while executing 'hg' with arguments "
         << m_arguments;
     m_arguments.clear();
 }
@@ -67,38 +73,38 @@ bool HgWrapper::executeCommand(const QString &hgCommand,
                                const QStringList &arguments,
                                QString &output)
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     executeCommand(hgCommand, arguments);
-    waitForFinished();
-    output = readAll();
+    m_process.waitForFinished();
+    output = m_process.readAll();
 
-    return (exitStatus() == QProcess::NormalExit &&
-            exitCode() == 0);
+    return (m_process.exitStatus() == QProcess::NormalExit &&
+            m_process.exitCode() == 0);
 }
 
 void HgWrapper::executeCommand(const QString &hgCommand,
                                const QStringList &arguments)
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     m_arguments << hgCommand;
     m_arguments << arguments;
-    start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), m_arguments);
 }
 
 bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
                                const QStringList &arguments)
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     m_arguments << hgCommand;
     m_arguments << arguments;
-    start(QLatin1String("hg"), m_arguments);
-    waitForFinished();
+    m_process.start(QLatin1String("hg"), m_arguments);
+    m_process.waitForFinished();
 
-    return (exitStatus() == QProcess::NormalExit &&
-            exitCode() == 0);
+    return (m_process.exitStatus() == QProcess::NormalExit &&
+            m_process.exitCode() == 0);
 }
 
 QString HgWrapper::getBaseDir() const
@@ -108,10 +114,10 @@ QString HgWrapper::getBaseDir() const
 
 void HgWrapper::updateBaseDir()
 {
-    setWorkingDirectory(m_currentDir);
-    start(QLatin1String("hg root"));
-    waitForFinished();
-    m_hgBaseDir = QString(this->readAll()).trimmed();
+    m_process.setWorkingDirectory(m_currentDir);
+    m_process.start(QLatin1String("hg root"));
+    m_process.waitForFinished();
+    m_hgBaseDir = QString(m_process.readAll()).trimmed();
 }
 
 void HgWrapper::setCurrentDir(const QString &directory)
@@ -122,42 +128,42 @@ void HgWrapper::setCurrentDir(const QString &directory)
 
 void  HgWrapper::setBaseAsWorkingDir()
 {
-    setWorkingDirectory(getBaseDir());
+    m_process.setWorkingDirectory(getBaseDir());
 }
 
 void HgWrapper::addFiles(const KFileItemList &fileList)
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     m_arguments << QLatin1String("add");
     foreach (const KFileItem &item, fileList) {
         m_arguments << item.localPath();
     }
-    start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), m_arguments);
 }
 
 bool HgWrapper::renameFile(const QString &source, const QString &destination)
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     QStringList args;
     args <<  source << destination;
     executeCommand(QLatin1String("rename"), args);
 
-    waitForFinished();
-    return (exitStatus() == QProcess::NormalExit
-            && exitCode() == 0);
+    m_process.waitForFinished();
+    return (m_process.exitStatus() == QProcess::NormalExit
+            && m_process.exitCode() == 0);
 }
 
 void HgWrapper::removeFiles(const KFileItemList &fileList)
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     m_arguments << QLatin1String("remove");
     foreach (const KFileItem &item, fileList) {
         m_arguments << item.localPath();
     }
-    start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), m_arguments);
 }
 
 bool HgWrapper::commit(const QString &message, const QStringList &files,
@@ -170,8 +176,8 @@ bool HgWrapper::commit(const QString &message, const QStringList &files,
         args << "--close-branch";
     }
     executeCommand(QLatin1String("commit"), args);
-    waitForFinished();
-    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+    m_process.waitForFinished();
+    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::createBranch(const QString &name)
@@ -179,8 +185,8 @@ bool HgWrapper::createBranch(const QString &name)
     QStringList args;
     args << name;
     executeCommand(QLatin1String("branch"), args);
-    waitForFinished();
-    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+    m_process.waitForFinished();
+    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::switchBranch(const QString &name)
@@ -188,8 +194,8 @@ bool HgWrapper::switchBranch(const QString &name)
     QStringList args;
     args << QLatin1String("-c") << name;
     executeCommand(QLatin1String("update"), args);
-    waitForFinished();
-    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+    m_process.waitForFinished();
+    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::createTag(const QString &name)
@@ -197,8 +203,8 @@ bool HgWrapper::createTag(const QString &name)
     QStringList args;
     args << name;
     executeCommand(QLatin1String("tag"), args);
-    waitForFinished();
-    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+    m_process.waitForFinished();
+    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::switchTag(const QString &name)
@@ -206,20 +212,20 @@ bool HgWrapper::switchTag(const QString &name)
     QStringList args;
     args << QLatin1String("-c") << name;
     executeCommand(QLatin1String("update"), args);
-    waitForFinished();
-    return (exitCode() == 0 && exitStatus() == QProcess::NormalExit);
+    m_process.waitForFinished();
+    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 //TODO: Make it return QStringList.
 QString HgWrapper::getParentsOfHead()
 {
-    Q_ASSERT(this->state() == QProcess::NotRunning);
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
     QString line;
-    start(QLatin1String("hg parents"));
-    while (waitForReadyRead()) {
+    m_process.start(QLatin1String("hg parents"));
+    while (m_process.waitForReadyRead()) {
         char buffer[1024];
-        while (readLine(buffer, sizeof(buffer))) {
+        while (m_process.readLine(buffer, sizeof(buffer))) {
             QString bufferString = QString(buffer);
             if (bufferString.contains("changeset:")) {
                 QStringList parts = bufferString.split(" ", QString::SkipEmptyParts);
@@ -235,9 +241,9 @@ QStringList HgWrapper::getTags()
 {
     QStringList result;
     executeCommand(QLatin1String("tags"));
-    while (waitForReadyRead()) {
+    while (m_process.waitForReadyRead()) {
         char buffer[1048];
-        while (readLine(buffer, sizeof(buffer)) > 0) {
+        while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result << QString(buffer).split(QRegExp("\\s+"),
                     QString::SkipEmptyParts)[0];
         }
@@ -249,9 +255,9 @@ QStringList HgWrapper::getBranches()
 {
     QStringList result;
     executeCommand(QLatin1String("branches"));
-    while (waitForReadyRead()) {
+    while (m_process.waitForReadyRead()) {
         char buffer[1048];
-        while (readLine(buffer, sizeof(buffer)) > 0) {
+        while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result << QString(buffer).remove(QRegExp("[\\s]+[\\d:a-zA-Z\\(\\)]*"));
         }
     }
@@ -266,11 +272,11 @@ QHash<QString, HgVersionState>& HgWrapper::getVersionStates(bool ignoreParents)
     m_versionStateResult.clear();
 
     // Get status of files
-    setWorkingDirectory(m_currentDir);
-    start(QLatin1String("hg status"));
-    while (waitForReadyRead()) {
+    m_process.setWorkingDirectory(m_currentDir);
+    m_process.start(QLatin1String("hg status"));
+    while (m_process.waitForReadyRead()) {
         char buffer[1024];
-        while (readLine(buffer, sizeof(buffer)) > 0)  {
+        while (m_process.readLine(buffer, sizeof(buffer)) > 0)  {
             const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);

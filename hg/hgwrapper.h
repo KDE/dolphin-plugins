@@ -37,7 +37,7 @@ enum HgVersionState {
 //TODO: Create signals when process is started or finished,
 //TODO: Create signals for infoMessage and errorMessage which will be 
 //      caught by main plugin interface.
-class HgWrapper : public QProcess
+class HgWrapper : public QObject
 {
     Q_OBJECT
 public:
@@ -77,8 +77,13 @@ public:
     QStringList getTags();
 
     inline bool isBusy() {
-        return (state() == QProcess::Running);
+        return (m_process.state() == QProcess::Running);
     }
+
+signals:
+    void finished(int exitCode, QProcess::ExitStatus exitStatus);
+    void error(QProcess::ProcessError error);
+    void started();
 
 private:
     void updateBaseDir();
@@ -89,6 +94,8 @@ private slots:
 
 private:
     static HgWrapper *m_instance;
+
+    QProcess m_process;
 
     QStringList m_arguments;
     QTextCodec *m_localCodec;
