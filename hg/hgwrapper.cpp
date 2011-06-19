@@ -22,6 +22,8 @@
 #include <kdebug.h>
 #include <kurl.h>
 
+//TODO: Replace start() with executeCommand functions wherever possible.
+
 HgWrapper *HgWrapper::m_instance = 0;
 
 HgWrapper::HgWrapper(QObject *parent) :
@@ -55,7 +57,8 @@ void HgWrapper::freeInstance()
     m_instance = 0;
 }
 
-void HgWrapper::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
+void HgWrapper::slotOperationCompleted(int exitCode, 
+                                       QProcess::ExitStatus exitStatus)
 {
     kDebug() << "Done executing successfully: 'hg' with arguments "
         << m_arguments;
@@ -177,7 +180,8 @@ bool HgWrapper::commit(const QString &message, const QStringList &files,
     }
     executeCommand(QLatin1String("commit"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 
+            && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::createBranch(const QString &name)
@@ -186,7 +190,8 @@ bool HgWrapper::createBranch(const QString &name)
     args << name;
     executeCommand(QLatin1String("branch"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 
+            && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::switchBranch(const QString &name)
@@ -195,7 +200,8 @@ bool HgWrapper::switchBranch(const QString &name)
     args << QLatin1String("-c") << name;
     executeCommand(QLatin1String("update"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0
+            && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::createTag(const QString &name)
@@ -204,7 +210,8 @@ bool HgWrapper::createTag(const QString &name)
     args << name;
     executeCommand(QLatin1String("tag"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 
+            && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::switchTag(const QString &name)
@@ -213,7 +220,8 @@ bool HgWrapper::switchTag(const QString &name)
     args << QLatin1String("-c") << name;
     executeCommand(QLatin1String("update"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 
+            && m_process.exitStatus() == QProcess::NormalExit);
 }
 
 //TODO: Make it return QStringList.
