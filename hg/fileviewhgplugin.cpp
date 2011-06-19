@@ -193,6 +193,14 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
     return NormalVersion;
 }
 
+QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
+{
+    QAction *m_try_action = new QAction("Hello World", this);
+    QList<QAction*> result;
+    result.append(m_try_action);
+    return result;
+}
+
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
 {
     Q_ASSERT(!items.isEmpty());

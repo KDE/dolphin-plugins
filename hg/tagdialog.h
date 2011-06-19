@@ -37,6 +37,7 @@ public slots:
     void slotUpdateDialog(const QString &text);
     void slotCreateTag();
     void slotSwitch();
+    void slotRemoveTag();
 
 private:
     void updateInitialDialog();
@@ -45,6 +46,7 @@ private:
     KComboBox *m_tagComboBox;
     KPushButton *m_createTag;
     KPushButton *m_updateTag;
+    KPushButton *m_removeTag;
     QStringList m_tagList;
 };
 

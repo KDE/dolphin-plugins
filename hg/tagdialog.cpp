@@ -49,13 +49,16 @@ HgTagDialog::HgTagDialog(QWidget *parent):
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;
     m_createTag = new KPushButton(i18n("Create New Tag"));
+    m_removeTag = new KPushButton(i18n("Remove Tag"));
     m_updateTag = new KPushButton(i18n("Switch Tag"));
     buttonLayout->addWidget(m_createTag);
+    buttonLayout->addWidget(m_removeTag);
     buttonLayout->addWidget(m_updateTag);
     vbox->addLayout(buttonLayout);
 
     m_createTag->setEnabled(false);
     m_updateTag->setEnabled(false);
+    m_removeTag->setEnabled(false);
 
     frame->setLayout(vbox);
     updateInitialDialog();
@@ -69,6 +72,8 @@ HgTagDialog::HgTagDialog(QWidget *parent):
     // connections
     connect(m_createTag, SIGNAL(clicked()), 
             this, SLOT(slotCreateTag()));
+    connect(m_removeTag, SIGNAL(clicked()), 
+            this, SLOT(slotRemoveTag()));
     connect(m_updateTag, SIGNAL(clicked()),
             this, SLOT(slotSwitch()));
     connect(m_tagComboBox, SIGNAL(editTextChanged(const QString &text)),
@@ -92,14 +97,17 @@ void HgTagDialog::slotUpdateDialog(const QString &text)
     if (text.length() == 0) {
         m_createTag->setEnabled(false);
         m_updateTag->setEnabled(false);
+        m_removeTag->setEnabled(false);
     }
     else if (m_tagList.contains(text)) {
         m_createTag->setEnabled(false);
         m_updateTag->setEnabled(true);
+        m_removeTag->setEnabled(true);
     }
     else {
         m_createTag->setEnabled(true);
         m_updateTag->setEnabled(false);
+        m_removeTag->setEnabled(false);
     }
 }
 
@@ -112,6 +120,22 @@ void HgTagDialog::slotSwitch()
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("update"), args, out)) {
         KMessageBox::information(this, i18n("Updated working directory!"));
+        done(KDialog::Ok);
+    }
+    else {
+        KMessageBox::error(this, i18n("Some error occcurred"));
+    }
+}
+
+void HgTagDialog::slotRemoveTag()
+{
+    HgWrapper *hgWrapper = HgWrapper::instance();
+    QString out;
+    QStringList args;
+    args << QLatin1String("--remove");
+    args << m_tagComboBox->currentText();
+    if (hgWrapper->executeCommand(QLatin1String("tag"), args, out)) {
+        KMessageBox::information(this, i18n("Removed tag successfully!"));
         done(KDialog::Ok);
     }
     else {

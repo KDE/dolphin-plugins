@@ -41,8 +41,9 @@ public:
     virtual bool beginRetrieval(const QString &directory);
     virtual void endRetrieval();
     virtual KVersionControlPlugin::VersionState versionState(const KFileItem &item);
-    virtual QList<QAction *> contextMenuActions(const KFileItemList &items);
-    virtual QList<QAction *> contextMenuActions(const QString &directory);
+    virtual QList<QAction*> contextMenuActions(const KFileItemList &items);
+    virtual QList<QAction*> contextMenuActions(const QString &directory);
+    virtual QList<QAction*> universalContextMenuActions(const QString &directory);
 
 private slots:
     void addFiles();
