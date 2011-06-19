@@ -23,6 +23,7 @@
 #include "branchdialog.h"
 #include "tagdialog.h"
 #include "updatedialog.h"
+#include "clonedialog.h"
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
@@ -90,6 +91,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                   "<application>Hg</application> Branch"));
     connect(m_branchAction, SIGNAL(triggered()),
             this, SLOT(branch()));
+
+    m_cloneAction = new KAction(this);
+    m_cloneAction->setIcon(KIcon("hg-clone"));
+    m_cloneAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Clone"));
+    connect(m_cloneAction, SIGNAL(triggered()),
+            this, SLOT(clone()));
 
     m_updateAction = new KAction(this);
     m_updateAction->setIcon(KIcon("hg-update"));
@@ -195,9 +203,8 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
 {
-    QAction *m_try_action = new QAction("Hello World", this);
     QList<QAction*> result;
-    result.append(m_try_action);
+    result.append(m_cloneAction);
     return result;
 }
 
@@ -331,6 +338,12 @@ void FileViewHgPlugin::update()
 void FileViewHgPlugin::branch()
 {
     HgBranchDialog dialog;
+    dialog.exec();
+}
+
+void FileViewHgPlugin::clone()
+{
+    HgCloneDialog dialog;
     dialog.exec();
 }
 

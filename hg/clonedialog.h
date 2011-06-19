@@ -17,73 +17,31 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCOMMITDIALOG_H
-#define HGCOMMITDIALOG_H
-
-#include "statuslist.h"
+#ifndef HGCLONEDILAOG_H
+#define HGCLONEDILAOG_H
 
 #include <QtCore/QString>
-#include <QtGui/QPlainTextEdit>
-#include <KTextEditor/Document>
-#include <KTextEditor/View>
-#include <KTextEditor/Editor>
-#include <KTextEditor/EditorChooser>
-#include <kmessagebox.h>
-#include <kmenu.h>
 #include <kaction.h>
 #include <kdialog.h>
 
 
-// TODO: Ability to set commit options. eg user
-// TODO: Filter in HgStatusList.
-// TODO: Set branch.
-
-class HgCommitDialog : public KDialog
+class HgCloneDialog : public KDialog
 {
     Q_OBJECT
 
 public:
-    HgCommitDialog(QWidget *parent = 0);
+    HgCloneDialog(QWidget *parent = 0);
 
 private slots:
-    void slotItemSelectionChanged(const char status, const QString &fileName);
-    void slotMessageChanged();
     void saveGeometry();
-    void slotBranchActions(QAction *action);
-    void slotInitDiffOutput();
 
 private:
-    QString getParentForLabel();
     void done(int r);
 
 private:
-    QString m_hgBaseDir;
-
-    QPlainTextEdit *m_commitMessage;
-    HgStatusList *m_statusList;
-
-    KTextEditor::View *m_fileDiffView;
-    KTextEditor::Document *m_fileDiffDoc;
-
-    KPushButton *m_branchButton;
-
-    KAction *m_closeBranch;
-    KAction *m_newBranch;
-    KAction *m_useCurrentBranch;
-    KMenu *m_branchMenu;
-
-    enum {CloseBranch, NewBranch, NoChanges} m_branchAction;
-    QString m_newBranchName;
-
-    class NewBranchDialog : public KDialog {
-    public:
-        NewBranchDialog(QWidget *parent = 0);
-    private:
-
-    };
 };
 
 
 
-#endif // HGCOMMITDIALOG_H
+#endif // HGCLONEDILAOG_H
 

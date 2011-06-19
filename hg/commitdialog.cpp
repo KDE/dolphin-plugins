@@ -138,6 +138,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     frame->setLayout(mainLayout);
     setMainWidget(frame);
 
+    slotInitDiffOutput(); // initialise with whole repo diff
+
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     this->setInitialSize(QSize(settings->commitDialogWidth(),
@@ -157,6 +159,19 @@ QString HgCommitDialog::getParentForLabel()
     QString line("<b>parents:</b> ");
     line += hgWrapper->getParentsOfHead();
     return line;
+}
+
+void HgCommitDialog::slotInitDiffOutput()
+{
+    m_fileDiffDoc->setReadWrite(true);
+    m_fileDiffDoc->setModified(false);
+    m_fileDiffDoc->closeUrl(false);
+
+    QString diffOut;
+    HgWrapper *hgWrapper = HgWrapper::instance();
+    hgWrapper->executeCommand(QLatin1String("diff"), QStringList(), diffOut);
+    m_fileDiffDoc->setHighlightingMode("diff");
+    m_fileDiffDoc->setText(diffOut);
 }
 
 void HgCommitDialog::slotItemSelectionChanged(const char status, 
@@ -179,7 +194,6 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
     else {
         KUrl url(HgWrapper::instance()->getBaseDir());
         url.addPath(fileName);
-        qDebug() << "Url is : " << url;
         m_fileDiffDoc->openUrl(url);
     }
 }
