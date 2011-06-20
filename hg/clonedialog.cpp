@@ -22,7 +22,7 @@
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
+#include <QtGui/QGridLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
@@ -41,20 +41,62 @@ HgCloneDialog::HgCloneDialog(QWidget *parent):
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Clone"));
-    this->enableButtonOk(false); 
+    this->enableButtonOk(false);
 
 
     //////////////
     // Setup UI //
     //////////////
 
+    QGroupBox *urlGroup = new QGroupBox(i18n("URL's"));
+    QGridLayout *urlLayout = new QGridLayout;
+    QLabel *sourceLabel = new QLabel(i18nc("@label", "Source"));
+    QLabel *destLabel = new QLabel(i18nc("@lobel", "Destination"));
+    KPushButton *m_browse_dest = new KPushButton(i18nc("@button", "Browse"));
+    KPushButton *m_browse_source = new KPushButton(i18nc("@button", "Browse"));
+    m_source = new KLineEdit;
+    m_destination = new KLineEdit;
+    urlLayout->addWidget(sourceLabel, 0, 0);
+    urlLayout->addWidget(m_source, 0, 1);
+    urlLayout->addWidget(m_browse_dest, 0, 2);
+    urlLayout->addWidget(destLabel, 1, 0);
+    urlLayout->addWidget(m_destination, 1, 1);
+    urlLayout->addWidget(m_browse_source, 1, 2);
+    urlGroup->setLayout(urlLayout);
+
+    // Options Group
+    QGroupBox *optionGroup = new QGroupBox(i18nc("@label", "Options"));
+    QVBoxLayout *optionLayout = new QVBoxLayout;
+
+    m_optNoUpdate = new QCheckBox(i18n("Do not update the new working directory"));
+    m_optUsePull = new QCheckBox(i18n("Use pull protocol to copy metadata."));
+    m_optUseUncmprdTrans = new QCheckBox(i18n("Use uncompressed transfer"));
+    m_optNoVerifyServCert = new QCheckBox(i18n("Do not verify server certificate (ignoring web.cacerts config)"));
+
+    optionLayout->addWidget(m_optNoUpdate);
+    optionLayout->addWidget(m_optUsePull);
+    optionLayout->addWidget(m_optUseUncmprdTrans);
+    optionLayout->addWidget(m_optNoVerifyServCert);
+    optionGroup->setLayout(optionLayout);
+    // end options
+
+    QFrame *frame = new QFrame;
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    mainLayout->addWidget(urlGroup);
+    mainLayout->addWidget(optionGroup);
+    mainLayout->addStretch();
+    frame->setLayout(mainLayout);
+    
+    setMainWidget(frame);
 
     // Load saved settings
-    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    /*FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     this->setInitialSize(QSize(settings->cloneDialogWidth(),
                                settings->cloneDialogHeight()));
-    //
+    */
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
+    connect(m_source, SIGNAL(textChanged(const QString&)), 
+            this, SLOT(slotUpdateOkButton(const QString&)));
 }
 
 void HgCloneDialog::done(int r)
@@ -72,6 +114,16 @@ void HgCloneDialog::saveGeometry()
     settings->setCloneDialogHeight(this->height());
     settings->setCloneDialogWidth(this->width());
     settings->writeConfig();
+}
+
+void HgCloneDialog::slotUpdateOkButton(const QString &text)
+{
+    if (m_source->text().length() > 0) {
+        enableButtonOk(true);
+    }
+    else {
+        enableButtonOk(false);
+    }
 }
 
 #include "clonedialog.moc"

@@ -99,8 +99,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     topBarLayout->addWidget(new QLabel(getParentForLabel()));
     topBarLayout->addStretch();
-    topBarLayout->addWidget(copyMessageButton);
     topBarLayout->addWidget(m_branchButton);
+    topBarLayout->addWidget(copyMessageButton);
     topBarLayout->addWidget(optionsButton);
     m_branchButton->setMenu(m_branchMenu);
 
@@ -138,6 +138,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     frame->setLayout(mainLayout);
     setMainWidget(frame);
 
+    slotBranchActions(m_useCurrentBranch);
     slotInitDiffOutput(); // initialise with whole repo diff
 
     // Load saved settings
@@ -209,6 +210,9 @@ void HgCommitDialog::done(int r)
         QStringList files;
         if (m_statusList->getSelectionForCommit(files)) {
             HgWrapper *hgWrapper = HgWrapper::instance();
+            if (m_branchAction == NewBranch) {
+                hgWrapper->createBranch(m_newBranchName);
+            }
             bool success = hgWrapper->commit(m_commitMessage->toPlainText(),
                     files, m_branchAction==CloseBranch);
             if (success) {
@@ -239,20 +243,89 @@ void HgCommitDialog::slotBranchActions(QAction *action)
 {
     if (action == m_useCurrentBranch) {
         m_branchAction = NoChanges;
+        m_branchButton->setText(i18n("Branch: No Changes"));
     }
     else if (action == m_newBranch) {
-        m_branchAction = NewBranch;
+        NewBranchDialog diag;
+        if (diag.exec() == KDialog::Accepted) {
+           m_branchAction = NewBranch;
+           m_newBranchName = diag.getBranchName(); 
+           m_branchButton->setText(i18n("Branch: ") + m_newBranchName);
+        }
+        else { // restore previous check state
+            if (m_branchAction == NoChanges) {
+                m_useCurrentBranch->setChecked(true);
+            }
+            else if (m_branchAction == CloseBranch) {
+                m_closeBranch->setChecked(true);
+            }
+        }
     }
     else if (action == m_closeBranch) {
         m_branchAction = CloseBranch;
+        m_branchButton->setText(i18n("Branch: Close Current"));
     }
 }
 
-
+/*****************/
 /* Branch Dialog */
+/*****************/
 
-HgCommitDialog::NewBranchDialog::NewBranchDialog(QWidget *parent):
+NewBranchDialog::NewBranchDialog(QWidget *parent):
     KDialog(parent, Qt::Dialog)
+{
+    // dialog properties
+    this->setCaption(i18nc("@title:window", 
+                "<application>Hg</application> Commit: New Branch"));
+    this->setButtons(KDialog::Ok | KDialog::Cancel);
+    this->setDefaultButton(KDialog::Ok);
+    this->enableButtonOk(false); // since commit message is empty when loaded
+
+    m_branchList = HgWrapper::instance()->getBranches();
+
+    QLabel *message = new QLabel(i18nc("@label", "Enter new branch name"));
+    m_branchNameInput = new KLineEdit;
+    m_errorLabel = new QLabel;
+
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(message);
+    layout->addWidget(m_branchNameInput);
+    layout->addWidget(m_errorLabel);
+
+    QFrame *frame = new QFrame;
+    frame->setLayout(layout);
+    setMainWidget(frame);
+
+    connect(m_branchNameInput, SIGNAL(textChanged(const QString&)),
+            this, SLOT(slotTextChanged(const QString&)));
+}
+
+void NewBranchDialog::slotTextChanged(const QString &text)
+{
+    if (m_branchList.contains(text)) {
+        m_errorLabel->setText(i18nc("@label", "<b>Branch already exists!</b>"));
+        enableButtonOk(false);
+    }
+    else if (text.length() > 0) {
+        m_errorLabel->clear();
+        enableButtonOk(true);
+    }
+    else {
+        m_errorLabel->setText(i18nc("@label", "<b>Enter some text!</b>"));
+        enableButtonOk(false);
+    }
+}
+
+QString NewBranchDialog::getBranchName() const
+{
+    return m_branchNameInput->text();
+}
+
+/******************/
+/* Options Dialog */
+/******************/
+
+CommitOptionsDialog::CommitOptionsDialog(QWidget *parent)
 {
 }
 

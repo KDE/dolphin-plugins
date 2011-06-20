@@ -34,9 +34,8 @@
 #include <kdialog.h>
 
 
-// TODO: Ability to set commit options. eg user
+// TODO: Copy last commit messages
 // TODO: Filter in HgStatusList.
-// TODO: Set branch.
 
 class HgCommitDialog : public KDialog
 {
@@ -74,16 +73,35 @@ private:
 
     enum {CloseBranch, NewBranch, NoChanges} m_branchAction;
     QString m_newBranchName;
-
-    class NewBranchDialog : public KDialog {
-    public:
-        NewBranchDialog(QWidget *parent = 0);
-    private:
-
-    };
 };
 
 
+class NewBranchDialog : public KDialog 
+{
+        Q_OBJECT
+
+    public:
+        NewBranchDialog(QWidget *parent = 0);
+        QString getBranchName() const;
+
+    private slots:
+        void slotTextChanged(const QString &text);
+
+    private:
+        QLabel *m_errorLabel;
+        KLineEdit *m_branchNameInput;
+        QStringList m_branchList;
+
+};
+
+//TODO: Design and implement commit options dialog
+class CommitOptionsDialog : public KDialog
+{
+    Q_OBJECT
+public:
+    CommitOptionsDialog(QWidget *parent=0);
+};
 
 #endif // HGCOMMITDIALOG_H
+
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0">
-    <kcfgfile name="fileviewgitpluginrc"/>
+    <kcfgfile name="fileviewhgpluginrc"/>
     <group name="CommitDialogSettings">
         <entry name="commitDialogHeight" type="Int">
             <label>Dialog height</label>

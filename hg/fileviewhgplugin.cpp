@@ -38,6 +38,9 @@
 K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
 K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
+
+//TODO: Emit versionStatesChanged() signals wherever required
+
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin(parent),
     m_addAction(0),

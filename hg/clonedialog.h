@@ -21,8 +21,11 @@
 #define HGCLONEDILAOG_H
 
 #include <QtCore/QString>
+#include <QtGui/QCheckBox>
 #include <kaction.h>
 #include <kdialog.h>
+#include <klineedit.h>
+#include <kpushbutton.h>
 
 
 class HgCloneDialog : public KDialog
@@ -34,11 +37,23 @@ public:
 
 private slots:
     void saveGeometry();
+    void slotUpdateOkButton(const QString &text);
 
 private:
     void done(int r);
 
 private:
+    KLineEdit *m_source;
+    KLineEdit *m_destination;
+    KPushButton *m_browse_dest;
+    KPushButton *m_browse_source;
+
+    // option checkboxes
+    QCheckBox *m_optNoUpdate;
+    QCheckBox *m_optUsePull;
+    QCheckBox *m_optUseUncmprdTrans;
+    QCheckBox *m_optNoVerifyServCert;
+
 };
 
 
