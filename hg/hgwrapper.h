@@ -25,6 +25,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTextCodec>
 #include <QtCore/QHash>
+#include <ktextedit.h>
 #include <kfileitem.h>
 
 
@@ -53,6 +54,9 @@ public:
     bool executeCommand(const QString &hgCommand,
                         const QStringList &arguments,
                         QString &output);
+    bool executeCommand(const QString &hgCommand, 
+                        const QStringList &arguments,
+                        KTextEdit *textEdit);
 
     QString getBaseDir() const;
     void setBaseAsWorkingDir();
@@ -91,11 +95,13 @@ private:
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
+    void slotOutputToTextEdit();
 
 private:
     static HgWrapper *m_instance;
 
     QProcess m_process;
+    KTextEdit *m_outTextEdit;
 
     QStringList m_arguments;
     QTextCodec *m_localCodec;

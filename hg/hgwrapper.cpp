@@ -93,7 +93,30 @@ void HgWrapper::executeCommand(const QString &hgCommand,
 
     m_arguments << hgCommand;
     m_arguments << arguments;
+    m_process.setWorkingDirectory(m_currentDir);
     m_process.start(QLatin1String("hg"), m_arguments);
+}
+
+bool HgWrapper::executeCommand(const QString &hgCommand,
+                               const QStringList &arguments,
+                               KTextEdit *textEdit)
+{
+    Q_ASSERT(m_process.state() == QProcess::NotRunning);
+
+    m_arguments << hgCommand;
+    m_arguments << arguments;
+    connect(&m_process, SIGNAL(readyReadStandardOutput()),
+            this, SLOT(slotOutputToTextEdit()));
+    m_outTextEdit = textEdit;
+    m_process.setWorkingDirectory(m_currentDir);
+    kDebug() << "Current directory: " << m_currentDir;
+    m_process.start(QLatin1String("hg"), m_arguments);
+    m_process.waitForFinished();
+    disconnect(&m_process, SIGNAL(readyReadStandardOutput()),
+            this, SLOT(slotOutputToTextEdit()));
+
+    return (m_process.exitStatus() == QProcess::NormalExit &&
+            m_process.exitCode() == 0);
 }
 
 bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
@@ -103,6 +126,7 @@ bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
 
     m_arguments << hgCommand;
     m_arguments << arguments;
+    m_process.setWorkingDirectory(m_currentDir);
     m_process.start(QLatin1String("hg"), m_arguments);
     m_process.waitForFinished();
 
@@ -323,6 +347,12 @@ QHash<QString, HgVersionState>& HgWrapper::getVersionStates(bool ignoreParents)
         }
     }
     return m_versionStateResult;
+}
+
+void HgWrapper::slotOutputToTextEdit()
+{
+    QString out = m_process.readAllStandardOutput();
+    m_outTextEdit->append(out);
 }
 
 #include "hgwrapper.moc"

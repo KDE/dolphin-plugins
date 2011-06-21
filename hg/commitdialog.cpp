@@ -211,7 +211,11 @@ void HgCommitDialog::done(int r)
         if (m_statusList->getSelectionForCommit(files)) {
             HgWrapper *hgWrapper = HgWrapper::instance();
             if (m_branchAction == NewBranch) {
-                hgWrapper->createBranch(m_newBranchName);
+                if (!hgWrapper->createBranch(m_newBranchName)) {
+                    KMessageBox::error(this,
+                            i18n("Couldnt create branch! Aborting commit!"));
+                    return;
+                }
             }
             bool success = hgWrapper->commit(m_commitMessage->toPlainText(),
                     files, m_branchAction==CloseBranch);

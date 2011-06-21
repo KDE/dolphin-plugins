@@ -31,6 +31,7 @@
 #include <kpushbutton.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kfiledialog.h>
 
 HgCloneDialog::HgCloneDialog(QWidget *parent):
     KDialog(parent, Qt::Dialog)
@@ -58,10 +59,10 @@ HgCloneDialog::HgCloneDialog(QWidget *parent):
     m_destination = new KLineEdit;
     urlLayout->addWidget(sourceLabel, 0, 0);
     urlLayout->addWidget(m_source, 0, 1);
-    urlLayout->addWidget(m_browse_dest, 0, 2);
+    urlLayout->addWidget(m_browse_source, 0, 2);
     urlLayout->addWidget(destLabel, 1, 0);
     urlLayout->addWidget(m_destination, 1, 1);
-    urlLayout->addWidget(m_browse_source, 1, 2);
+    urlLayout->addWidget(m_browse_dest, 1, 2);
     urlGroup->setLayout(urlLayout);
 
     // Options Group
@@ -87,8 +88,17 @@ HgCloneDialog::HgCloneDialog(QWidget *parent):
     mainLayout->addStretch();
     frame->setLayout(mainLayout);
     
-    setMainWidget(frame);
+    m_stackLayout = new  QStackedLayout;
+    m_outputEdit = new KTextEdit;
+    m_outputEdit->setReadOnly(true);
+    m_stackLayout->addWidget(frame);
+    m_stackLayout->addWidget(m_outputEdit);
 
+    QFrame *mainFrame = new QFrame;
+    mainFrame->setLayout(m_stackLayout);
+    m_stackLayout->setCurrentIndex(0);
+
+    setMainWidget(mainFrame);
     // Load saved settings
     /*FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     this->setInitialSize(QSize(settings->cloneDialogWidth(),
@@ -97,15 +107,55 @@ HgCloneDialog::HgCloneDialog(QWidget *parent):
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
     connect(m_source, SIGNAL(textChanged(const QString&)), 
             this, SLOT(slotUpdateOkButton(const QString&)));
+    connect(m_browse_dest, SIGNAL(clicked()),
+            this, SLOT(slotBrowseDestClicked()));
+    connect(m_browse_source, SIGNAL(clicked()),
+            this, SLOT(slotBrowseSourceClicked()));
+}
+
+void HgCloneDialog::browseDirectory(KLineEdit *dest)
+{
+    QString result = KFileDialog::getExistingDirectory();
+    if (result.length() > 0) {
+        dest->setText(result);
+    }
+}
+
+void HgCloneDialog::slotBrowseDestClicked()
+{
+    browseDirectory(m_destination);
+}
+
+void HgCloneDialog::slotBrowseSourceClicked()
+{
+    browseDirectory(m_source);
 }
 
 void HgCloneDialog::done(int r)
 {
     if (r == KDialog::Accepted) {
+        HgWrapper *hgw = HgWrapper::instance();
+        QStringList args;
+        args << QLatin1String("--verbose");
+        appendOptionArguments(args);
+        args << m_source->text() << m_destination->text();
+
+        m_outputEdit->clear();
+        m_stackLayout->setCurrentIndex(1);
+        if (hgw->executeCommand(QLatin1String("clone"), args, 
+                    m_outputEdit)) {
+        }
+        else {
+            KMessageBox::error(this, i18n("Error cloning repository!"));
+        }
     }
     else {
         KDialog::done(r);
     }
+}
+
+void HgCloneDialog::appendOptionArguments(QStringList &args)
+{
 }
 
 void HgCloneDialog::saveGeometry()
