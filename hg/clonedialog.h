@@ -30,6 +30,8 @@
 #include <kpushbutton.h>
 #include <ktextedit.h>
 
+//TODO: Read output of clone as soon as available. 
+//TODO: Add buttons to cancel and go back during cloning.
 
 class HgCloneDialog : public KDialog
 {

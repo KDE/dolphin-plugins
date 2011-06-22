@@ -27,6 +27,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
 #include <QtCore/QStringList>
+#include <QtGui/QApplication>
 #include <kurl.h>
 #include <kpushbutton.h>
 #include <klocale.h>
@@ -142,6 +143,8 @@ void HgCloneDialog::done(int r)
 
         m_outputEdit->clear();
         m_stackLayout->setCurrentIndex(1);
+        QApplication::processEvents();
+        enableButtonOk(false);
         if (hgw->executeCommand(QLatin1String("clone"), args, 
                     m_outputEdit)) {
         }

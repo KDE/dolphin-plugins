@@ -96,6 +96,7 @@ private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
     void slotOutputToTextEdit();
+    void slotCleanTextEditAfterFinish(int exitStatus, QProcess::ExitStatus);
 
 private:
     static HgWrapper *m_instance;

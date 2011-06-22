@@ -207,6 +207,7 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
 {
     QList<QAction*> result;
+    kDebug() << "Current directory set to: " << directory;
     m_hgWrapper->setCurrentDir(directory);
     result.append(m_cloneAction);
     return result;

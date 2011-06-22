@@ -19,6 +19,7 @@
 
 #include "hgwrapper.h"
 
+#include <QtGui/QApplication>
 #include <kdebug.h>
 #include <kurl.h>
 
@@ -107,13 +108,12 @@ bool HgWrapper::executeCommand(const QString &hgCommand,
     m_arguments << arguments;
     connect(&m_process, SIGNAL(readyReadStandardOutput()),
             this, SLOT(slotOutputToTextEdit()));
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SLOT(slotCleanTextEditAfterFinish(int, QProcess::ExitStatus)));
     m_outTextEdit = textEdit;
     m_process.setWorkingDirectory(m_currentDir);
     kDebug() << "Current directory: " << m_currentDir;
     m_process.start(QLatin1String("hg"), m_arguments);
-    m_process.waitForFinished();
-    disconnect(&m_process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(slotOutputToTextEdit()));
 
     return (m_process.exitStatus() == QProcess::NormalExit &&
             m_process.exitCode() == 0);
@@ -351,8 +351,15 @@ QHash<QString, HgVersionState>& HgWrapper::getVersionStates(bool ignoreParents)
 
 void HgWrapper::slotOutputToTextEdit()
 {
+    kDebug() << "called";
     QString out = m_process.readAllStandardOutput();
     m_outTextEdit->append(out);
+}
+
+void HgWrapper::slotCleanTextEditAfterFinish(int exitStatus, QProcess::ExitStatus)
+{
+    /*disconnect(&m_process, SIGNAL(finished()),
+            this, SLOT(slotCleanTextEditAfterFinish()));*/
 }
 
 #include "hgwrapper.moc"
