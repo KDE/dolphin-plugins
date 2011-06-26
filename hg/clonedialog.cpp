@@ -134,8 +134,8 @@ void HgCloneDialog::slotBrowseSourceClicked()
 
 void HgCloneDialog::done(int r)
 {
+    HgWrapper *hgw = HgWrapper::instance();
     if (r == KDialog::Accepted) {
-        HgWrapper *hgw = HgWrapper::instance();
         QStringList args;
         args << QLatin1String("--verbose");
         appendOptionArguments(args);
@@ -153,7 +153,15 @@ void HgCloneDialog::done(int r)
         }
     }
     else {
-        KDialog::done(r);
+        if (hgw->isBusy()) {
+            KMessageBox::error(this, i18n("Terminating cloning!"));
+            enableButtonOk(true);
+            hgw->terminateCurrentProcess();
+            m_stackLayout->setCurrentIndex(0);
+        }
+        else {
+            KDialog::done(r);
+        }
     }
 }
 

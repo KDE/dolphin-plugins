@@ -84,6 +84,9 @@ public:
         return (m_process.state() == QProcess::Running);
     }
 
+public slots:
+    void terminateCurrentProcess();
+
 signals:
     void finished(int exitCode, QProcess::ExitStatus exitStatus);
     void error(QProcess::ProcessError error);

@@ -12,6 +12,7 @@ set(fileviewhgplugin_SRCS
     tagdialog.cpp
     updatedialog.cpp
     clonedialog.cpp
+    createdialog.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

@@ -24,6 +24,7 @@
 #include "tagdialog.h"
 #include "updatedialog.h"
 #include "clonedialog.h"
+#include "createdialog.h"
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
@@ -98,9 +99,16 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_cloneAction = new KAction(this);
     m_cloneAction->setIcon(KIcon("hg-clone"));
     m_cloneAction->setText(i18nc("@action:inmenu",
-                                  "<application>Hg</application> Clone"));
+                                  "<application>Hg</application> Init"));
     connect(m_cloneAction, SIGNAL(triggered()),
             this, SLOT(clone()));
+
+    m_createAction = new KAction(this);
+    m_createAction->setIcon(KIcon("hg-create"));
+    m_createAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Create"));
+    connect(m_createAction, SIGNAL(triggered()),
+            this, SLOT(create()));
 
     m_updateAction = new KAction(this);
     m_updateAction->setIcon(KIcon("hg-update"));
@@ -209,6 +217,7 @@ QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &dir
     QList<QAction*> result;
     kDebug() << "Current directory set to: " << directory;
     m_hgWrapper->setCurrentDir(directory);
+    result.append(m_createAction);
     result.append(m_cloneAction);
     return result;
 }
@@ -349,6 +358,12 @@ void FileViewHgPlugin::branch()
 void FileViewHgPlugin::clone()
 {
     HgCloneDialog dialog;
+    dialog.exec();
+}
+
+void FileViewHgPlugin::create()
+{
+    HgCreateDialog dialog;
     dialog.exec();
 }
 
