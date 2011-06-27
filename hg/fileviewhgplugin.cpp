@@ -18,6 +18,7 @@
  ***************************************************************************/
 
 #include "fileviewhgplugin.h"
+#include "hgconfig.h"
 #include "renamedialog.h"
 #include "commitdialog.h"
 #include "branchdialog.h"
@@ -25,6 +26,7 @@
 #include "updatedialog.h"
 #include "clonedialog.h"
 #include "createdialog.h"
+
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
@@ -116,6 +118,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                   "<application>Hg</application> Update"));
     connect(m_updateAction, SIGNAL(triggered()),
             this, SLOT(update()));
+
+    m_configAction = new KAction(this);
+    m_configAction->setIcon(KIcon("hg-config"));
+    m_configAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Config"));
+    connect(m_configAction, SIGNAL(triggered()),
+            this, SLOT(config()));
 
     connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -274,6 +283,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_updateAction);
     actions.append(m_branchAction);
     actions.append(m_tagAction);
+    actions.append(m_configAction);
     return actions;
 }
 
@@ -365,6 +375,13 @@ void FileViewHgPlugin::create()
 {
     HgCreateDialog dialog;
     dialog.exec();
+}
+
+void FileViewHgPlugin::config()
+{
+    HgConfig hgc(HgConfig::GlobalConfig);
+    hgc.setUsername("Vishesh Yadav <vishesh3y at gmail.com>");
+    kDebug() << "Username is: " << hgc.username();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

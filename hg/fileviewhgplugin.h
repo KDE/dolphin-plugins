@@ -55,6 +55,7 @@ private slots:
     void update();
     void clone();
     void create();
+    void config();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -71,6 +72,7 @@ private:
     KAction *m_updateAction;
     KAction *m_cloneAction;
     KAction *m_createAction;
+    KAction *m_configAction;
 
     KFileItemList m_contextItems;
     QString m_operationCompletedMsg;
