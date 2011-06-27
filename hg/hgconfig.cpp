@@ -38,6 +38,11 @@ HgConfig::~HgConfig()
     delete m_config;
 }
 
+QString HgConfig::configFilePath() const
+{
+    return m_configFilePath;
+}
+
 bool HgConfig::getConfigFilePath()
 {
     switch (m_configType) {
@@ -68,14 +73,14 @@ bool HgConfig::loadConfig()
 }
 
 QString HgConfig::property(const QString &section,
-                           const QString &propertyName)
+                           const QString &propertyName) const
 {
     KConfigGroup group(m_config, section);
     return group.readEntry(propertyName, QString());
 }
 
 void HgConfig::setProperty(const QString &section, 
-                              const QString &propertyName
+                              const QString &propertyName,
                               const QString &propertyValue)
 {
     KConfigGroup uiGroup(m_config, section);
@@ -84,7 +89,7 @@ void HgConfig::setProperty(const QString &section,
 
 /* User Interface [ui] Section */
 
-QString HgConfig::username()
+QString HgConfig::username() const
 {
     return property(QLatin1String("ui"), QLatin1String("username"));
 }
@@ -94,7 +99,7 @@ void HgConfig::setUsername(const QString &userName)
     setProperty(QLatin1String("ui"), QLatin1String("username"), userName);
 }
 
-QString HgConfig::editor()
+QString HgConfig::editor() const 
 {
     return property(QLatin1String("ui"), QLatin1String("editor"));
 }
@@ -104,7 +109,7 @@ void HgConfig::setEditor(const QString &pathToEditor)
     setProperty(QLatin1String("ui"), QLatin1String("editor"), pathToEditor);
 }
 
-QString HgConfig::merge()
+QString HgConfig::merge() const 
 {
     return property(QLatin1String("ui"), QLatin1String("merge"));
 }

@@ -34,17 +34,21 @@ public:
 
     HgConfig(ConfigType configFile);
     ~HgConfig();
+    
+    // Related to config file
+    QString configFilePath() const;
 
-    QString property(const QString &section, const QString &propertyName);
+    //  
+    QString property(const QString &section, const QString &propertyName)const;
     void setProperty(const QString &section, const QString &propertyName,
             const QString &propertyValue);
 
     // user interface section
-    QString username();
+    QString username() const;
     void setUsername(const QString &userName);
-    QString editor();
+    QString editor() const;
     void setEditor(const QString &pathToEditor);
-    QString merge();
+    QString merge() const;
     void setMerge(const QString &pathToMergeTool);
 
 private:
