@@ -167,6 +167,18 @@ void HgCloneDialog::done(int r)
 
 void HgCloneDialog::appendOptionArguments(QStringList &args)
 {
+    if (m_optNoUpdate->checkState() == Qt::Checked) {
+        args << QLatin1String("-U");
+    }
+    if (m_optUsePull->checkState() == Qt::Checked) {
+        args << QLatin1String("--pull");
+    }
+    if (m_optUseUncmprdTrans->checkState() == Qt::Checked) {
+        args << QLatin1String("--uncompressed");
+    }
+    if (m_optNoVerifyServCert->checkState() == Qt::Checked) {
+        args << QLatin1String("--insecure");
+    }
 }
 
 void HgCloneDialog::saveGeometry()
