@@ -19,6 +19,7 @@
 
 #include "fileviewhgplugin.h"
 #include "hgconfig.h"
+#include "configdialog.h"
 #include "renamedialog.h"
 #include "commitdialog.h"
 #include "branchdialog.h"
@@ -43,6 +44,7 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 
 //TODO: Emit versionStatesChanged() signals wherever required
+//TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin(parent),
@@ -379,9 +381,8 @@ void FileViewHgPlugin::create()
 
 void FileViewHgPlugin::config()
 {
-    HgConfig hgc(HgConfig::GlobalConfig);
-    hgc.setUsername("Vishesh Yadav <vishesh3y at gmail.com>");
-    kDebug() << "Username is: " << hgc.username();
+    HgConfigDialog diag;
+    diag.exec();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

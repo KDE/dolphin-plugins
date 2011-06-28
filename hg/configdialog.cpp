@@ -19,32 +19,48 @@
 
 #include "configdialog.h"
 #include "hgwrapper.h"
+#include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QWidget>
+#include <QtGui/QGridLayout>
 #include <klocale.h>
+#include <kdebug.h>
 #include <kmessagebox.h>
 
 HgConfigDialog::HgConfigDialog(QWidget *parent):
-    KDialog(parent, Qt::Dialog)
+    KPageDialog(parent, Qt::Dialog)
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
                 "<application>Hg</application> Configuration"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
+    this->setButtons(KDialog::Ok | KDialog::Apply | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Create"));
     //this->enableButtonOk(false);
 
+    setupUI();
 
-    //////////////
-    // Setup UI //
-    //////////////
-    
+    connect(this, SIGNAL(applyClicked()), this, SLOT(saveSettings()));   
+}
+
+void HgConfigDialog::setupUI()
+{
+    m_generalConfig = new HgGeneralConfig;
+    addPage(m_generalConfig, i18nc("@label:group", "General Settings"));
+}
+
+void HgConfigDialog::saveSettings()
+{
+    kDebug() << "Saving Mercurial configuration";
+    m_generalConfig->saveConfig();
 }
 
 void HgConfigDialog::done(int r)
 {
     if (r == KDialog::Accepted) {
+        saveSettings();
+        KDialog::done(r);
     }
     else {
         KDialog::done(r);

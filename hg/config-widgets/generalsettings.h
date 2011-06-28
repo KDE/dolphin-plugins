@@ -17,35 +17,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCONFIGDILAOG_H
-#define HGCONFIGDILAOG_H
+#ifndef HGGENERAL_CONFIG_H
+#define HGGENERAL_CONFIG_H
 
-#include "config-widgets/generalsettings.h"
-
-#include <QtGui/QGroupBox>
+#include <QtGui/QWidget>
+#include <QtGui/QCheckBox>
 #include <klineedit.h>
-#include <kpagedialog.h>
+#include <kpushbutton.h>
 
-class HgConfigDialog : public KPageDialog
+class HgGeneralConfig : public QWidget
 {
     Q_OBJECT
 
 public:
-    HgConfigDialog(QWidget *parent = 0);
+    HgGeneralConfig(QWidget *parent = 0);
+
+public slots:
+    void saveConfig();
+    void loadConfig();
 
 private:
-    void done(int r);
-
-    // user interface
     void setupUI();
 
-private slots:
-    void saveSettings();
-
 private:
-    HgGeneralConfig *m_generalConfig;
-
+    KLineEdit *m_userEdit;
+    KLineEdit *m_editorEdit;
+    KLineEdit *m_mergeEdit;
+    QCheckBox *m_verboseCheck;
 };
 
-#endif // HGCONFIGDILAOG_H
+#endif // HGGENERAL_CONFIG_H
 
