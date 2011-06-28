@@ -22,7 +22,8 @@
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
-#include <QProcess>
+#include <QtCore/QProcess>
+#include <QtCore/QMap>
 #include <kconfig.h>
 
 class HgConfig 
@@ -37,6 +38,12 @@ public:
     
     // Related to config file
     QString configFilePath() const;
+
+    // Repo specific
+    void setRepoRemotePath(const QString &alias, const QString &url);
+    void deleteRepoRemotePath(const QString &alias);
+    QString repoRemotePath(const QString &alias) const;
+    QMap<QString, QString> repoRemotePathList() const;
 
     //  
     QString property(const QString &section, const QString &propertyName)const;

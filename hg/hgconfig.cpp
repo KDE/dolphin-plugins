@@ -119,5 +119,35 @@ void HgConfig::setMerge(const QString &pathToMergeTool)
     setProperty(QLatin1String("ui"), QLatin1String("merge"), pathToMergeTool);
 }
 
+/* Repo specific */
+
+void HgConfig::setRepoRemotePath(const QString &alias, const QString &url)
+{
+    Q_ASSERT(m_configType == RepoConfig);
+    setProperty(QLatin1String("paths"), alias, url);
+}
+
+void HgConfig::deleteRepoRemotePath(const QString &alias)
+{
+    Q_ASSERT(m_configType == RepoConfig);
+
+    KConfigGroup group(m_config, QLatin1String("paths"));
+    group.deleteEntry(alias);
+}
+
+QString HgConfig::repoRemotePath(const QString &alias) const
+{
+    Q_ASSERT(m_configType == RepoConfig);
+    return property(QLatin1String("paths"), alias);
+}
+
+QMap<QString, QString> HgConfig::repoRemotePathList() const
+{
+    Q_ASSERT(m_configType == RepoConfig);
+
+    KConfigGroup group(m_config, QLatin1String("paths"));
+    return group.entryMap();
+}
 
 //
+

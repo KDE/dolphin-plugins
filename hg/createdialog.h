@@ -21,14 +21,9 @@
 #define HGCREATEDILAOG_H
 
 #include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
 #include <kdialog.h>
 #include <klineedit.h>
-#include <kpushbutton.h>
-
-//TODO: Read output of clone as soon as available. 
-//TODO: Add buttons to cancel and go back during cloning.
 
 class HgCreateDialog : public KDialog
 {
@@ -42,6 +37,8 @@ private:
     void appendOptionArguments(QStringList &args);
 
 private:
+    KLineEdit *m_repoNameEdit;
+    QLabel *m_directory;
 
 };
 

@@ -59,6 +59,7 @@ public:
                         KTextEdit *textEdit);
 
     QString getBaseDir() const;
+    QString getCurrentDir() const;
     void setBaseAsWorkingDir();
     void setCurrentDir(const QString &directory);
     QHash<QString, HgVersionState>& getVersionStates(bool ignoreParents=false);

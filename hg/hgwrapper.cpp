@@ -139,6 +139,11 @@ QString HgWrapper::getBaseDir() const
     return m_hgBaseDir;
 }
 
+QString HgWrapper::getCurrentDir() const
+{
+    return m_currentDir;
+}
+
 void HgWrapper::updateBaseDir()
 {
     m_process.setWorkingDirectory(m_currentDir);

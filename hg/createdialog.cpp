@@ -21,13 +21,9 @@
 #include "hgwrapper.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtGui/QGroupBox>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
+#include <QtGui/QHBoxLayout>
+#include <QtCore/QStringList>
 #include <QtGui/QFrame>
-#include <QtGui/QApplication>
-#include <kurl.h>
-#include <kpushbutton.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 
@@ -36,23 +32,44 @@ HgCreateDialog::HgCreateDialog(QWidget *parent):
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
-                "<application>Hg</application> Create"));
+                "<application>Hg</application> Create Repository"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Create"));
-    this->enableButtonOk(false);
+    //this->enableButtonOk(false);
 
 
     //////////////
     // Setup UI //
     //////////////
+    
+    HgWrapper *hgw = HgWrapper::instance();
+    
+    m_directory = new QLabel("<b>" + hgw->getCurrentDir() + "</b>");
+    m_repoNameEdit = new KLineEdit;
 
+    QHBoxLayout *mainLayout = new QHBoxLayout;
+    mainLayout->addWidget(m_directory);
+    mainLayout->addWidget(m_repoNameEdit);
+
+    QFrame *frame = new QFrame;
+    frame->setLayout(mainLayout);
+    setMainWidget(frame);
+    m_repoNameEdit->setFocus();
 }
 
 void HgCreateDialog::done(int r)
 {
     HgWrapper *hgw = HgWrapper::instance();
     if (r == KDialog::Accepted) {
+        QStringList args;
+        args << m_repoNameEdit->text();
+        if (hgw->executeCommandTillFinished(QLatin1String("init"), args)) {
+            KDialog::done(r);
+        }
+        else {
+            KMessageBox::error(this, i18nc("error message", "Error creating repository!"));
+        }
     }
     else {
         KDialog::done(r);

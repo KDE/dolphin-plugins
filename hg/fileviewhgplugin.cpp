@@ -101,14 +101,14 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_cloneAction = new KAction(this);
     m_cloneAction->setIcon(KIcon("hg-clone"));
     m_cloneAction->setText(i18nc("@action:inmenu",
-                                  "<application>Hg</application> Init"));
+                                  "<application>Hg</application> Clone"));
     connect(m_cloneAction, SIGNAL(triggered()),
             this, SLOT(clone()));
 
     m_createAction = new KAction(this);
     m_createAction->setIcon(KIcon("hg-create"));
     m_createAction->setText(i18nc("@action:inmenu",
-                                  "<application>Hg</application> Create"));
+                                  "<application>Hg</application> Init"));
     connect(m_createAction, SIGNAL(triggered()),
             this, SLOT(create()));
 
