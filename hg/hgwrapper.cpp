@@ -62,7 +62,7 @@ void HgWrapper::slotOperationCompleted(int exitCode,
                                        QProcess::ExitStatus exitStatus)
 {
     kDebug() << "Done executing successfully: 'hg' with arguments "
-        << m_arguments;
+        << m_arguments << " Exit Code: " << exitCode;
     m_arguments.clear();
 }
 

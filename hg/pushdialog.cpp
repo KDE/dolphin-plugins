@@ -33,7 +33,8 @@
 
 HgPushDialog::HgPushDialog(QWidget *parent):
     KDialog(parent, Qt::Dialog),
-    m_haveOutgoingChanges(false)
+    m_haveOutgoingChanges(false),
+    m_currentTask(NoTask)
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
@@ -201,11 +202,11 @@ void HgPushDialog::slotGetOutgoingChanges()
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
             this, SLOT(slotOutChangesProcessComplete(int, QProcess::ExitStatus)));
     m_statusProg->setRange(0, 0);
+    m_outgoingChangesButton->setEnabled(false);
 
-    QString destUrl = (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_pushUrlEdit->text():m_selectPathAlias->currentText();
     QStringList args;
     args << QLatin1String("outgoing");
-    args << destUrl;
+    args << pushPath();
     args << QLatin1String("--config");
     args << QLatin1String("ui.verbose=False");
     args << QLatin1String("--template");
@@ -215,13 +216,22 @@ void HgPushDialog::slotGetOutgoingChanges()
     m_process.start(QLatin1String("hg"), args);
 }
 
+QString HgPushDialog::pushPath() const
+{
+    return (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_pushUrlEdit->text():m_selectPathAlias->currentText();
+
+}
+
 void HgPushDialog::slotOutChangesProcessError(QProcess::ProcessError error) {
     kDebug() << "Cant get outgoing changes";
+    KMessageBox::error(this, i18n("Can't get outgoing changes!"));
+    m_outgoingChangesButton->setEnabled(true);
 }
 
 void HgPushDialog::slotOutChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
 {
     m_statusProg->setRange(0, 100);
+    m_outgoingChangesButton->setEnabled(true);
     m_outChangesList->clearContents();
     //m_outChangesList->horizontalHeader()->setStretchLastSection(true);
     disconnect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
@@ -274,14 +284,56 @@ void HgPushDialog::parseUpdateOutgoingChanges(const QString &input)
 void HgPushDialog::done(int r)
 {
     if (r == KDialog::Accepted) {
+        QStringList args;
+        args << pushPath();
+        appendOptionArguments(args);
+
+        enableButtonOk(false);
+        m_statusProg->setRange(0, 0);
+        connect(m_hgw, SIGNAL(finished(int, QProcess::ExitStatus)), 
+                this, SLOT(slotPushComplete(int, QProcess::ExitStatus)));
+        connect(m_hgw, SIGNAL(error(QProcess::ProcessError)), 
+                this, SLOT(slotPushError(QProcess::ProcessError)));
+        
+        m_hgw->executeCommand(QLatin1String("push"), args);
     }
     else {
         KDialog::done(r);
     }
 }
 
+void HgPushDialog::slotPushComplete(int exitCode, QProcess::ExitStatus status)
+{
+    m_statusProg->setRange(0, 100);
+    disconnect(m_hgw, SIGNAL(finished()), this, SLOT(slotPushComplete()));
+
+    if (exitCode == 0) {
+        KDialog::done(KDialog::Accepted);
+    }
+    else {
+        enableButtonOk(true);
+        KMessageBox::error(this, i18n("Error while pushing the changes!"));
+    }
+}
+
+void HgPushDialog::slotPushError(QProcess::ProcessError)
+{
+    disconnect(m_hgw, SIGNAL(finished()), this, SLOT(slotPushComplete()));
+    enableButtonOk(true);
+    KMessageBox::error(this, i18n("Error while pushing the changes!"));
+}
+
 void HgPushDialog::appendOptionArguments(QStringList &args)
 {
+    if (m_optForce->isChecked()) {
+        args << QLatin1String("--force");
+    }
+    if (m_optAllowNewBranch->isChecked()) {
+        args << QLatin1String("--new-branch");
+    }
+    if (m_optInsecure->isChecked()) {
+        args << QLatin1String("--insecure");
+    }
 }
 
 #include "pushdialog.moc"

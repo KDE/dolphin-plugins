@@ -48,12 +48,13 @@ public:
     HgPushDialog(QWidget *parent = 0);
 
 private:
+    QString pushPath() const;
     void done(int r);
     void setupUI();
     void createOptionGroup();
     void createOutgoingChangesGroup();
-    void appendOptionArguments(QStringList &args);
     void parseUpdateOutgoingChanges(const QString &input);
+    void appendOptionArguments(QStringList &args);
 
 private slots:
     void slotChangeEditUrl(int index);
@@ -61,6 +62,8 @@ private slots:
     void slotOutChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
     void slotOutChangesProcessError(QProcess::ProcessError error);
     void slotOutSelChanged();
+    void slotPushComplete(int exitCode, QProcess::ExitStatus status);
+    void slotPushError(QProcess::ProcessError);
 
 private:
     QMap<QString, QString> m_pathList;
@@ -82,6 +85,9 @@ private:
     QTableWidget *m_outChangesList;
     KTextEdit *m_changesetInfo;
     QProcess m_process;
+
+    // current task
+    enum {NoTask, OutgoingChanges, PushingChanges} m_currentTask;
 };
 
 #endif // HGPUSHDILAOG_H
