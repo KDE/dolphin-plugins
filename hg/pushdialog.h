@@ -37,6 +37,9 @@
 #include <kcombobox.h>
 #include <kpushbutton.h>
 
+//TODO: Save/Load dialog geometry
+//TODO: Resize dialog according to visibility of outgoing changes
+
 class HgPushDialog : public KDialog
 {
     Q_OBJECT

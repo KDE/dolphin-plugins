@@ -120,6 +120,7 @@ void HgPushDialog::setupUI()
     
     //
     mainLayout->addLayout(bottomLayout);
+    mainLayout->addStretch();
     widget->setLayout(mainLayout);
 
     createOptionGroup();
@@ -188,6 +189,10 @@ void HgPushDialog::slotChangeEditUrl(int index)
 
 void HgPushDialog::slotGetOutgoingChanges()
 {
+    if (m_haveOutgoingChanges) {
+        m_outChangesGroup->setVisible(!m_outChangesGroup->isVisible());
+        return;
+    }
     if (m_process.state() == QProcess::Running) {
         return;
     }
@@ -240,6 +245,7 @@ void HgPushDialog::slotOutChangesProcessComplete(int exitCode, QProcess::ExitSta
     m_outChangesList->resizeColumnsToContents();
     m_outChangesList->resizeRowsToContents();
     m_outChangesGroup->setVisible(true);
+    m_haveOutgoingChanges = true; 
 }
 
 void HgPushDialog::parseUpdateOutgoingChanges(const QString &input)
