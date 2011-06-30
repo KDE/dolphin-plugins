@@ -30,6 +30,8 @@
 #include <QtCore/QProcess>
 #include <QtCore/QStringList>
 
+//TODO: Redesign Push/Pull dialog. Make a base class implementing their common features. High Priority!!!!!!!!!
+
 class FileViewHgPlugin : public KVersionControlPlugin
 {
     Q_OBJECT
@@ -57,6 +59,7 @@ private slots:
     void create();
     void config();
     void push();
+    void pull();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -75,6 +78,7 @@ private:
     KAction *m_createAction;
     KAction *m_configAction;
     KAction *m_pushAction;
+    KAction *m_pullAction;
 
     KFileItemList m_contextItems;
     QString m_operationCompletedMsg;

@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGPUSHDILAOG_H
-#define HGPUSHDILAOG_H
+#ifndef HGPULLDILAOG_H
+#define HGPULLDILAOG_H
 
 #include "hgwrapper.h"
 
@@ -38,59 +38,59 @@
 #include <kpushbutton.h>
 
 //TODO: Save/Load dialog geometry
-//TODO: Resize dialog according to visibility of outgoing changes
+//TODO: Resize dialog according to visibility of incoming changes
 //TODO: HTTPS login
 //TODO: Cancel current operation
 
-class HgPushDialog : public KDialog
+class HgPullDialog : public KDialog
 {
     Q_OBJECT
 
 public:
-    HgPushDialog(QWidget *parent = 0);
+    HgPullDialog(QWidget *parent = 0);
 
 private:
-    QString pushPath() const;
+    QString pullPath() const;
     void done(int r);
     void setupUI();
     void createOptionGroup();
-    void createOutgoingChangesGroup();
-    void parseUpdateOutgoingChanges(const QString &input);
+    void createIncomingChangesGroup();
+    void parseUpdateIncomingChanges(const QString &input);
     void appendOptionArguments(QStringList &args);
 
 private slots:
     void slotChangeEditUrl(int index);
-    void slotGetOutgoingChanges();
-    void slotOutChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
-    void slotOutChangesProcessError(QProcess::ProcessError error);
-    void slotOutSelChanged();
-    void slotPushComplete(int exitCode, QProcess::ExitStatus status);
-    void slotPushError(QProcess::ProcessError);
+    void slotGetIncomingChanges();
+    void slotIncChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
+    void slotIncChangesProcessError(QProcess::ProcessError error);
+    //void slotIncSelChanged();
+    void slotPullComplete(int exitCode, QProcess::ExitStatus status);
+    void slotPullError(QProcess::ProcessError);
 
 private:
     QMap<QString, QString> m_pathList;
     KComboBox *m_selectPathAlias;
-    KLineEdit *m_pushUrlEdit;
+    KLineEdit *m_pullUrlEdit;
     QProgressBar *m_statusProg;
-    bool m_haveOutgoingChanges;
+    bool m_haveIncomingChanges;
     HgWrapper *m_hgw;
 
     // Options
-    QCheckBox *m_optAllowNewBranch;
+    QCheckBox *m_optUpdate;
     QCheckBox *m_optInsecure;
     QCheckBox *m_optForce;
     QGroupBox *m_optionGroup;
 
-    // outgoing Changes
-    KPushButton *m_outgoingChangesButton;
-    QGroupBox *m_outChangesGroup;
-    QTableWidget *m_outChangesList;
-    KTextEdit *m_changesetInfo;
+    // incoming Changes
+    KPushButton *m_incomingChangesButton;
+    QGroupBox *m_incChangesGroup;
+    QTableWidget *m_incChangesList;
+    //KTextEdit *m_changesetInfo;
     QProcess m_process;
 
     // current task
-    enum {NoTask, OutgoingChanges, PushingChanges} m_currentTask;
+    enum {NoTask, IncomingChanges, PullingChanges} m_currentTask;
 };
 
-#endif // HGPUSHDILAOG_H
+#endif // HGPULLDILAOG_H
 
