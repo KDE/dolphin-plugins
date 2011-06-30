@@ -13,6 +13,7 @@ set(fileviewhgplugin_SRCS
     updatedialog.cpp
     clonedialog.cpp
     createdialog.cpp
+    pushdialog.cpp
     hgconfig.cpp
     configdialog.cpp
     config-widgets/generalsettings.cpp

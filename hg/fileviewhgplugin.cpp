@@ -27,6 +27,7 @@
 #include "updatedialog.h"
 #include "clonedialog.h"
 #include "createdialog.h"
+#include "pushdialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -127,6 +128,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                   "<application>Hg</application> Config"));
     connect(m_configAction, SIGNAL(triggered()),
             this, SLOT(config()));
+
+    m_pushAction = new KAction(this);
+    m_pushAction->setIcon(KIcon("hg-push"));
+    m_pushAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Push"));
+    connect(m_pushAction, SIGNAL(triggered()),
+            this, SLOT(push()));
 
     connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -282,6 +290,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     if (!m_hgWrapper->isBusy()) {
         actions.append(m_commitAction);
     }
+    actions.append(m_pushAction);
     actions.append(m_updateAction);
     actions.append(m_branchAction);
     actions.append(m_tagAction);
@@ -382,6 +391,12 @@ void FileViewHgPlugin::create()
 void FileViewHgPlugin::config()
 {
     HgConfigDialog diag;
+    diag.exec();
+}
+
+void FileViewHgPlugin::push()
+{
+    HgPushDialog diag;
     diag.exec();
 }
 
