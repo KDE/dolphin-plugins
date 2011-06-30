@@ -108,7 +108,7 @@ void HgStatusList::reloadStatusTable()
                 currentStatusString = QLatin1String("M");
                 break;
             case HgRemovedVersion:
-               status->setForeground(Qt::red);
+                status->setForeground(Qt::red);
                 fileName->setForeground(Qt::red);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("R");

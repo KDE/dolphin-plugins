@@ -81,7 +81,7 @@ bool HgWrapper::executeCommand(const QString &hgCommand,
 
     executeCommand(hgCommand, arguments);
     m_process.waitForFinished();
-    output = m_process.readAllStandardOutput();
+    output = QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput());
 
     return (m_process.exitStatus() == QProcess::NormalExit &&
             m_process.exitCode() == 0);

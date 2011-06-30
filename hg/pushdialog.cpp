@@ -18,7 +18,6 @@
  ***************************************************************************/
 
 #include "pushdialog.h"
-#include "hgwrapper.h"
 #include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
@@ -26,6 +25,8 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtCore/QStringList>
+#include <QtCore/QTextCodec>
+#include <QtGui/QHeaderView>
 #include <klocale.h>
 #include <kurl.h>
 #include <kmessagebox.h>
@@ -41,6 +42,7 @@ HgPushDialog::HgPushDialog(QWidget *parent):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Push"));
     this->setButtonText(KDialog::Details, i18nc("@action:button", "Options"));
+    m_hgw = HgWrapper::instance();
     
     setupUI();
     slotChangeEditUrl(0);
@@ -131,10 +133,43 @@ void HgPushDialog::createOutgoingChangesGroup()
     QHBoxLayout *hbox = new QHBoxLayout;
     m_outChangesList = new QTableWidget;
     m_changesetInfo = new KTextEdit;
+
+    m_outChangesList->setColumnCount(3);
+    m_outChangesList->verticalHeader()->hide();
+    m_outChangesList->horizontalHeader()->hide();
+    m_outChangesList->setSelectionBehavior(QAbstractItemView::SelectRows);
+    m_outChangesList->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    m_changesetInfo->setFontFamily(QLatin1String("Monospace"));
+
     hbox->addWidget(m_outChangesList);
     hbox->addWidget(m_changesetInfo);
+
     m_outChangesGroup->setLayout(hbox);
     m_outChangesGroup->setVisible(false);
+
+    connect(m_outChangesList, SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotOutSelChanged()));
+}
+
+void HgPushDialog::slotOutSelChanged()
+{
+    if (m_hgw->isBusy()) {
+        return;
+    }
+
+    QString changeset = m_outChangesList->item(m_outChangesList->currentRow(), 0)->text().split(' ', QString::SkipEmptyParts).takeLast();
+
+    QStringList args; 
+    args << QLatin1String("-r");
+    args << changeset;
+    args << QLatin1String("-v");
+    args << QLatin1String("-p");
+
+    QString output;
+    m_hgw->executeCommand(QLatin1String("log"), args, output);
+    m_changesetInfo->clear();
+    m_changesetInfo->setText(output);
 }
 
 void HgPushDialog::slotChangeEditUrl(int index)
@@ -153,20 +188,79 @@ void HgPushDialog::slotChangeEditUrl(int index)
 
 void HgPushDialog::slotGetOutgoingChanges()
 {
-    HgWrapper *hgw = HgWrapper::instance();
-    QString output;
-    if (hgw->executeCommand(QLatin1String("outgoing"), 
-                QStringList(), output)) {
-        parseUpdateOutgoingChanges(output);
+    if (m_process.state() == QProcess::Running) {
+        return;
     }
-    else {
-        KMessageBox::error(this, i18n("Error!"));
+    connect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
+            this, SLOT(slotOutChangesProcessError(QProcess::ProcessError)));
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
+            this, SLOT(slotOutChangesProcessComplete(int, QProcess::ExitStatus)));
+    m_statusProg->setRange(0, 0);
+
+    QStringList args;
+    args << QLatin1String("outgoing");
+    args << QLatin1String("--config");
+    args << QLatin1String("ui.verbose=False");
+    args << QLatin1String("--template");
+    args << QLatin1String("Commit: {rev}:{node|short}   "
+                    "{date|isodate}   {desc|firstline}\n");
+    m_process.setWorkingDirectory(m_hgw->getBaseDir());
+    m_process.start(QLatin1String("hg"), args);
+}
+
+void HgPushDialog::slotOutChangesProcessError(QProcess::ProcessError error) {
+    kDebug() << "Cant get outgoing changes";
+}
+
+void HgPushDialog::slotOutChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
+{
+    m_statusProg->setRange(0, 100);
+    m_outChangesList->clearContents();
+    //m_outChangesList->horizontalHeader()->setStretchLastSection(true);
+    disconnect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
+            this, SLOT(slotOutChangesProcessError(QProcess::ProcessError)));
+    disconnect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
+            this, SLOT(slotOutChangesProcessComplete(int, QProcess::ExitStatus)));
+
+    char buffer[512];
+    bool unwantedRead = false;
+    while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
+        QString line(QTextCodec::codecForLocale()->toUnicode(buffer));
+        if (unwantedRead ) {
+            line.remove(QLatin1String("Commit: "));
+            parseUpdateOutgoingChanges(line.trimmed());
+        }
+        else if (line.startsWith(QLatin1String("Commit: "))) {
+            unwantedRead = true;
+            line.remove(QLatin1String("Commit: "));
+            parseUpdateOutgoingChanges(line.trimmed());
+        }
     }
 
+    m_outChangesList->resizeColumnsToContents();
+    m_outChangesList->resizeRowsToContents();
+    m_outChangesGroup->setVisible(true);
 }
 
 void HgPushDialog::parseUpdateOutgoingChanges(const QString &input)
 {
+    QStringList list = input.split("  ", QString::SkipEmptyParts);
+    QTableWidgetItem *changeset = new QTableWidgetItem;
+    QTableWidgetItem *date = new QTableWidgetItem;
+    QTableWidgetItem *summary = new QTableWidgetItem;
+
+    changeset->setForeground(Qt::red);
+    date->setForeground(Qt::blue);
+
+    changeset->setText(list.takeFirst());
+    date->setText(list.takeFirst());
+    summary->setText(list.takeFirst());
+
+    int rowCount = m_outChangesList->rowCount();
+    m_outChangesList->insertRow(rowCount);
+    m_outChangesList->setItem(rowCount, 0, changeset);
+    m_outChangesList->setItem(rowCount, 1, date);
+    m_outChangesList->setItem(rowCount, 2, summary);
 }
 
 void HgPushDialog::done(int r)

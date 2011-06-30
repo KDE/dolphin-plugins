@@ -20,7 +20,10 @@
 #ifndef HGPUSHDILAOG_H
 #define HGPUSHDILAOG_H
 
+#include "hgwrapper.h"
+
 #include <QtCore/QString>
+#include <QtCore/QProcess>
 #include <QtCore/QMap>
 #include <QtGui/QLabel>
 #include <QtGui/QComboBox>
@@ -52,6 +55,9 @@ private:
 private slots:
     void slotChangeEditUrl(int index);
     void slotGetOutgoingChanges();
+    void slotOutChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
+    void slotOutChangesProcessError(QProcess::ProcessError error);
+    void slotOutSelChanged();
 
 private:
     QMap<QString, QString> m_pathList;
@@ -59,6 +65,7 @@ private:
     KLineEdit *m_pushUrlEdit;
     QProgressBar *m_statusProg;
     bool m_haveOutgoingChanges;
+    HgWrapper *m_hgw;
 
     // Options
     QCheckBox *m_optAllowNewBranch;
@@ -71,6 +78,7 @@ private:
     QGroupBox *m_outChangesGroup;
     QTableWidget *m_outChangesList;
     KTextEdit *m_changesetInfo;
+    QProcess m_process;
 };
 
 #endif // HGPUSHDILAOG_H
