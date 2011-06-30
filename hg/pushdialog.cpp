@@ -202,8 +202,10 @@ void HgPushDialog::slotGetOutgoingChanges()
             this, SLOT(slotOutChangesProcessComplete(int, QProcess::ExitStatus)));
     m_statusProg->setRange(0, 0);
 
+    QString destUrl = (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_pushUrlEdit->text():m_selectPathAlias->currentText();
     QStringList args;
     args << QLatin1String("outgoing");
+    args << destUrl;
     args << QLatin1String("--config");
     args << QLatin1String("ui.verbose=False");
     args << QLatin1String("--template");
