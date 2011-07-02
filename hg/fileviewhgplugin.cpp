@@ -161,6 +161,7 @@ QString FileViewHgPlugin::fileName() const
 
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
+    m_hgWrapper->setCurrentDir(directory);
     m_versionInfoHash = m_hgWrapper->getVersionStates(true);
     return true;
 }
@@ -216,7 +217,6 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
 {
     QList<QAction*> result;
-    kDebug() << "For UNIVERSAL ACTIONS Current directory set to: " << directory;
     m_hgWrapper->setCurrentDir(directory);
     result.append(m_createAction);
     result.append(m_cloneAction);
