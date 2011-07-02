@@ -25,6 +25,7 @@
 #include <kfileitem.h>
 #include <kaction.h>
 #include <kversioncontrolplugin.h>
+#include <kversioncontrolplugin2.h>
 #include <QtCore/QHash>
 #include <QtCore/QString>
 #include <QtCore/QProcess>
@@ -32,7 +33,7 @@
 
 //TODO: Redesign Push/Pull dialog. Make a base class implementing their common features. High Priority!!!!!!!!!
 
-class FileViewHgPlugin : public KVersionControlPlugin
+class FileViewHgPlugin : public KVersionControlPlugin2
 {
     Q_OBJECT
 

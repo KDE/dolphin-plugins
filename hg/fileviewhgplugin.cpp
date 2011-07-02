@@ -49,7 +49,7 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
-    KVersionControlPlugin(parent),
+    KVersionControlPlugin2(parent),
     m_addAction(0),
     m_removeAction(0),
     m_renameAction(0),
@@ -242,7 +242,7 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
 {
     QList<QAction*> result;
-    kDebug() << "Current directory set to: " << directory;
+    kDebug() << "For UNIVERSAL ACTIONS Current directory set to: " << directory;
     m_hgWrapper->setCurrentDir(directory);
     result.append(m_createAction);
     result.append(m_cloneAction);
