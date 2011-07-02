@@ -71,12 +71,12 @@ void HgStatusList::reloadStatusTable()
     m_statusTable->horizontalHeader()->setStretchLastSection(true);
 
     HgWrapper *hgWrapper = HgWrapper::instance();
-    QHash<QString, HgVersionState> &hgVsState = hgWrapper->getVersionStates(false);
-    QMutableHashIterator<QString, HgVersionState> it(hgVsState);
+    QHash<QString, KVersionControlPlugin::VersionState> &hgVsState = hgWrapper->getVersionStates(false);
+    QMutableHashIterator<QString, KVersionControlPlugin::VersionState> it(hgVsState);
     int rowCount = 0;
     while (it.hasNext()) {
         it.next();
-        HgVersionState currentStatus = it.value();
+        KVersionControlPlugin::VersionState currentStatus = it.value();
         // FIXME: preferred method, but not working :| bad hack below
         // QString currentFile 
         //    = KUrl::relativeUrl(hgWrapper->getBaseDir(), it.key()); 
@@ -85,8 +85,8 @@ void HgStatusList::reloadStatusTable()
 
         // Temporarily ignoring
         // TODO: Ask to add file if this is checked by user
-        if (currentStatus == HgUntrackedVersion ||
-                currentStatus == HgIgnoredVersion) {
+        if (currentStatus == KVersionControlPlugin::UnversionedVersion ||
+                currentStatus == KVersionControlPlugin::IgnoredVersion) {
             continue;
         }
 
@@ -95,33 +95,35 @@ void HgStatusList::reloadStatusTable()
         QTableWidgetItem *fileName = new QTableWidgetItem;
 
         switch (currentStatus) {
-            case HgAddedVersion:
+            case KVersionControlPlugin::AddedVersion:
                 status->setForeground(Qt::darkCyan);
                 fileName->setForeground(Qt::darkCyan);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("A");
                 break;
-            case HgModifiedVersion:
+            case KVersionControlPlugin::LocallyModifiedVersion:
                 status->setForeground(Qt::blue);
                 fileName->setForeground(Qt::blue);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("M");
                 break;
-            case HgRemovedVersion:
+            case KVersionControlPlugin::RemovedVersion:
                 status->setForeground(Qt::red);
                 fileName->setForeground(Qt::red);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("R");
                 break;
-            case HgUntrackedVersion:
+            case KVersionControlPlugin::UnversionedVersion:
                 status->setForeground(Qt::darkMagenta);
                 fileName->setForeground(Qt::darkMagenta);
                 currentStatusString = QLatin1String("?");
                 break;
-            case HgIgnoredVersion:
+            case KVersionControlPlugin::IgnoredVersion:
                 status->setForeground(Qt::black);
                 fileName->setForeground(Qt::black);
                 currentStatusString = QLatin1String("I");
+                break;
+            default:
                 break;
         }
 

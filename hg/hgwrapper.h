@@ -20,6 +20,7 @@
 #ifndef HGWRAPPER_H
 #define HGWRAPPER_H
 
+
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
@@ -27,12 +28,8 @@
 #include <QtCore/QHash>
 #include <ktextedit.h>
 #include <kfileitem.h>
+#include <kversioncontrolplugin.h>
 
-
-enum HgVersionState {
-    HgModifiedVersion, HgAddedVersion, HgRemovedVersion, HgCleanVersion,
-    HgMissingVersion, HgIgnoredVersion, HgUntrackedVersion
-};
 
 //TODO: Make HgWrapper contain QProcess, rather than inherit
 //TODO: Create signals for infoMessage and errorMessage which will be 
@@ -61,7 +58,7 @@ public:
     QString getCurrentDir() const;
     void setBaseAsWorkingDir();
     void setCurrentDir(const QString &directory);
-    QHash<QString, HgVersionState>& getVersionStates(bool ignoreParents=false);
+    QHash<QString, KVersionControlPlugin::VersionState>& getVersionStates(bool ignoreParents=false);
 
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);
@@ -116,7 +113,7 @@ private:
 
     QString m_hgBaseDir;
     QString m_currentDir;
-    QHash<QString, HgVersionState> m_versionStateResult;
+    QHash<QString, KVersionControlPlugin::VersionState> m_versionStateResult;
 };
 
 #endif // HGWRAPPER_H

@@ -161,33 +161,7 @@ QString FileViewHgPlugin::fileName() const
 
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
-    m_versionInfoHash.clear();
-    m_hgWrapper->setCurrentDir(directory);
-    QHash<QString, HgVersionState> &hgVsHash 
-        = m_hgWrapper->getVersionStates(true);
-
-    QMutableHashIterator<QString, HgVersionState> it(hgVsHash);
-    while (it.hasNext()) {
-        it.next();
-        switch (it.value()) {
-        case HgCleanVersion:
-            continue;
-        case HgRemovedVersion:
-            continue;
-        case HgAddedVersion:
-            m_versionInfoHash.insert(it.key(), AddedVersion);
-            break;
-        case HgModifiedVersion:
-            m_versionInfoHash.insert(it.key(), LocallyModifiedVersion);
-            break;
-        case HgUntrackedVersion:
-            m_versionInfoHash.insert(it.key(), UnversionedVersion);
-            break;
-        default:
-            continue;
-        }
-    }
-
+    m_versionInfoHash = m_hgWrapper->getVersionStates(true);
     return true;
 }
 
