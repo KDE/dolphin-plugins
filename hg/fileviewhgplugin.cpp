@@ -117,7 +117,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, SLOT(create()));
 
     m_updateAction = new KAction(this);
-    m_updateAction->setIcon(KIcon("hg-update"));
+    m_updateAction->setIcon(KIcon("svn-update"));
     m_updateAction->setText(i18nc("@action:inmenu",
                                   "<application>Hg</application> Update"));
     connect(m_updateAction, SIGNAL(triggered()),
@@ -131,14 +131,14 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, SLOT(config()));
 
     m_pushAction = new KAction(this);
-    m_pushAction->setIcon(KIcon("hg-push"));
+    m_pushAction->setIcon(KIcon("git-push"));
     m_pushAction->setText(i18nc("@action:inmenu",
                                   "<application>Hg</application> Push"));
     connect(m_pushAction, SIGNAL(triggered()),
             this, SLOT(push()));
 
     m_pullAction = new KAction(this);
-    m_pullAction->setIcon(KIcon("hg-pull"));
+    m_pullAction->setIcon(KIcon("git-pull"));
     m_pullAction->setText(i18nc("@action:inmenu",
                                   "<application>Hg</application> Pull"));
     connect(m_pullAction, SIGNAL(triggered()),

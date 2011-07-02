@@ -84,6 +84,10 @@ void HgConfig::setProperty(const QString &section,
                               const QString &propertyValue)
 {
     KConfigGroup uiGroup(m_config, section);
+    if (propertyValue.isEmpty()) {
+        uiGroup.deleteEntry(propertyName, KConfigGroup::Normal);
+        return;
+    }
     uiGroup.writeEntry(propertyName, propertyValue);
 }
 
