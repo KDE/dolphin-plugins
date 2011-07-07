@@ -38,6 +38,7 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <kurl.h>
+#include <kmessagebox.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -47,9 +48,12 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 //TODO: Emit versionStatesChanged() signals wherever required
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
+//TODO: Check if working directory is commitable
+//TODO: Organise Context Menu
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin2(parent),
+    m_isCommitable(false),
     m_addAction(0),
     m_removeAction(0),
     m_renameAction(0),
@@ -144,6 +148,20 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pull()));
 
+    m_revertAction = new KAction(this);
+    m_revertAction->setIcon(KIcon("hg-revert"));
+    m_revertAction->setText(i18nc("@action:inmenu",
+                                  "<application>Hg</application> Revert"));
+    connect(m_revertAction, SIGNAL(triggered()),
+            this, SLOT(revert()));
+
+    m_revertAllAction = new KAction(this);
+    m_revertAllAction->setIcon(KIcon("hg-revert"));
+    m_revertAllAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Revert All"));
+    connect(m_revertAllAction, SIGNAL(triggered()),
+            this, SLOT(revertAll()));
+
     connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
     connect(m_hgWrapper, SIGNAL(error(QProcess::ProcessError)),
@@ -236,6 +254,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         //see which actions should be enabled
         int versionedCount = 0;
         int addableCount = 0;
+        int revertableCount = 0;
         foreach (const KFileItem &item, items) {
             const VersionState state = versionState(item);
             if (state != UnversionedVersion && state != RemovedVersion) {
@@ -245,10 +264,16 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
                     state == LocallyModifiedUnstagedVersion) {
                 ++addableCount;
             }
+            if (state == LocallyModifiedVersion ||
+                    state == AddedVersion ||
+                    state == RemovedVersion) {
+                ++revertableCount;
+            }
         }
 
         m_addAction->setEnabled(addableCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
+        m_revertAction->setEnabled(revertableCount == items.count());
         m_renameAction->setEnabled(items.size() == 1 &&
                 versionState(items.first()) != UnversionedVersion);
     }
@@ -256,12 +281,14 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         m_addAction->setEnabled(false);
         m_removeAction->setEnabled(false);
         m_renameAction->setEnabled(false);
+        m_revertAction->setEnabled(false);
     }
 
     QList<QAction *> actions;
     actions.append(m_addAction);
     actions.append(m_removeAction);
     actions.append(m_renameAction);
+    actions.append(m_revertAction);
 
     return actions;
 }
@@ -277,6 +304,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_updateAction);
     actions.append(m_branchAction);
     actions.append(m_tagAction);
+    actions.append(m_revertAllAction);
     actions.append(m_configAction);
     return actions;
 }
@@ -387,6 +415,46 @@ void FileViewHgPlugin::pull()
 {
     HgPullDialog diag;
     diag.exec();
+}
+
+void FileViewHgPlugin::revert()
+{
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+                    "Would you like to revert changes "
+                    "made to selected files?"));
+    if (answer == KMessageBox::No) {
+        return;
+    }
+
+    QString infoMsg = i18nc("@info:status",
+         "Reverting files in <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status",
+         "Reverting files in <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+         "Reverting files in <application>Hg</application> repository completed successfully.");
+
+    emit infoMessage(infoMsg);
+    m_hgWrapper->revert(m_contextItems);
+}
+
+void FileViewHgPlugin::revertAll()
+{
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+                    "Would you like to revert all changes "
+                    "made to current working direcotry?"));
+    if (answer == KMessageBox::No) {
+        return;
+    }
+
+    QString infoMsg = i18nc("@info:status",
+         "Reverting files in <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status",
+         "Reverting files in <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+         "Reverting files in <application>Hg</application> repository completed successfully.");
+
+    emit infoMessage(infoMsg);
+    m_hgWrapper->revertAll();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

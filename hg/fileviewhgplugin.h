@@ -61,6 +61,8 @@ private slots:
     void config();
     void push();
     void pull();
+    void revert();
+    void revertAll();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -80,8 +82,14 @@ private:
     KAction *m_configAction;
     KAction *m_pushAction;
     KAction *m_pullAction;
+    KAction *m_revertAction;
+    KAction *m_revertAllAction;
+    //KAction *m_rollbackAction;
+    //KAction *m_backoutAction;
 
     KFileItemList m_contextItems;
+    bool m_isCommitable;
+
     QString m_operationCompletedMsg;
     QString m_errorMsg;
     HgWrapper *m_hgWrapper;

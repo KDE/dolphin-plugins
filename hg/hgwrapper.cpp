@@ -243,6 +243,23 @@ bool HgWrapper::createTag(const QString &name)
             && m_process.exitStatus() == QProcess::NormalExit);
 }
 
+bool HgWrapper::revertAll()
+{
+    QStringList args;
+    args << "--all";
+    return executeCommandTillFinished(QLatin1String("revert"), args);
+}
+
+
+bool HgWrapper::revert(const KFileItemList &fileList)
+{
+    m_arguments << QLatin1String("revert");
+    foreach (const KFileItem &item, fileList) {
+        m_arguments << item.localPath();
+    }
+    return executeCommandTillFinished(QLatin1String("hg"), m_arguments);
+}
+
 bool HgWrapper::switchTag(const QString &name)
 {
     QStringList args;

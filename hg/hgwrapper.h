@@ -70,6 +70,8 @@ public:
     bool switchBranch(const QString &name);
     bool createTag(const QString &name);
     bool switchTag(const QString &name);
+    bool revertAll();
+    bool revert(const KFileItemList &fileList);
     //bool update(const QString &name, bool discardChanges=false);
 
     QString getParentsOfHead();
