@@ -50,6 +50,8 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
 //TODO: Check if working directory is commitable
 //TODO: Organise Context Menu
+//TODO: Show error messages and set their message approproately(hg output)
+//TODO: Use i18nc rather thn i18c throughout plugin
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin2(parent),

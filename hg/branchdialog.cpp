@@ -120,7 +120,7 @@ void HgBranchDialog::slotSwitch()
     args << QLatin1String("-c");
     args << m_branchComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("update"), args, out)) {
-        KMessageBox::information(this, i18n("Updated working directory!"));
+        //KMessageBox::information(this, i18n("Updated working directory!"));
         done(KDialog::Ok);
     }
     else {
@@ -135,7 +135,7 @@ void HgBranchDialog::slotCreateBranch()
     QStringList args;
     args << m_branchComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("branch"), args, out)) {
-        KMessageBox::information(this, i18n("Created branch successfully!"));
+        //KMessageBox::information(this, i18n("Created branch successfully!"));
         done(KDialog::Ok);
     }
     else {

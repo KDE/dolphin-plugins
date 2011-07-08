@@ -119,7 +119,7 @@ void HgTagDialog::slotSwitch()
     args << QLatin1String("-c");
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("update"), args, out)) {
-        KMessageBox::information(this, i18n("Updated working directory!"));
+        //KMessageBox::information(this, i18n("Updated working directory!"));
         done(KDialog::Ok);
     }
     else {
@@ -135,7 +135,7 @@ void HgTagDialog::slotRemoveTag()
     args << QLatin1String("--remove");
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("tag"), args, out)) {
-        KMessageBox::information(this, i18n("Removed tag successfully!"));
+        //KMessageBox::information(this, i18n("Removed tag successfully!"));
         done(KDialog::Ok);
     }
     else {

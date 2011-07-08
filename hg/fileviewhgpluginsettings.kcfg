@@ -26,6 +26,28 @@
             <min>500</min>
         </entry>
     </group>
+    <group name="PushDialogSettings">
+        <entry name="pushSmallDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+            <min>400</min>
+        </entry>
+        <entry name="pullSmallDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+            <min>500</min>
+        </entry>
+        <entry name="pushBigDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+            <min>400</min>
+        </entry>
+        <entry name="pullBigDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+            <min>500</min>
+        </entry>
+    </group>
     
 </kcfg>
 

@@ -247,7 +247,7 @@ void HgCommitDialog::slotBranchActions(QAction *action)
 {
     if (action == m_useCurrentBranch) {
         m_branchAction = NoChanges;
-        m_branchButton->setText(i18n("Branch: No Changes"));
+        m_branchButton->setText(i18n("Branch: Current Branch"));
     }
     else if (action == m_newBranch) {
         NewBranchDialog diag;
