@@ -24,6 +24,8 @@
 #include <kurl.h>
 
 //TODO: Replace start() with executeCommand functions wherever possible.
+//FIXME: Add/Remove/Revert argument length limit. Divide the list.
+//FIXME: Cannot create thread for parent that is in different thread.
 
 HgWrapper *HgWrapper::m_instance = 0;
 
@@ -149,7 +151,7 @@ void HgWrapper::updateBaseDir()
     m_process.setWorkingDirectory(m_currentDir);
     m_process.start(QLatin1String("hg root"));
     m_process.waitForFinished();
-    m_hgBaseDir = QString(m_process.readAll()).trimmed();
+    m_hgBaseDir = QString(m_process.readAllStandardOutput()).trimmed();
 }
 
 void HgWrapper::setCurrentDir(const QString &directory)

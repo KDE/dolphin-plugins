@@ -190,7 +190,7 @@ void FileViewHgPlugin::endRetrieval()
 
 KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileItem &item)
 {
-    //FIXME: When folder is empty or all files within untracked.
+   //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
     if (item.isDir()) {
                 QHash<QString, VersionState>::const_iterator it 
