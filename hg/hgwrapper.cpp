@@ -326,8 +326,16 @@ QHash<QString, KVersionControlPlugin::VersionState>& HgWrapper::getVersionStates
     m_versionStateResult.clear();
 
     // Get status of files
+    QStringList args;
+    args << QLatin1String("status");
+    args << QLatin1String("--modified");
+    args << QLatin1String("--added");
+    args << QLatin1String("--removed");
+    args << QLatin1String("--deleted");
+    args << QLatin1String("--unknown");
+    args << QLatin1String("--ignored");
     m_process.setWorkingDirectory(m_currentDir);
-    m_process.start(QLatin1String("hg status"));
+    m_process.start(QLatin1String("hg"), args);
     while (m_process.waitForReadyRead()) {
         char buffer[1024];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0)  {
