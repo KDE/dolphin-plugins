@@ -190,7 +190,7 @@ void FileViewHgPlugin::endRetrieval()
 
 KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileItem &item)
 {
-   //FIXME: When folder is empty or all files within untracked.
+    //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
     if (item.isDir()) {
                 QHash<QString, VersionState>::const_iterator it 
@@ -208,23 +208,23 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
         }
 
         // Making folders with all files within untracked 'Unversioned'
-        // will disable the context menu there.
-        //
-        //QDir dir(item.localPath());
-        //QStringList filesInside = dir.entryList();
-        //foreach (const QString &fileName, filesInside) {
-        //    if (fileName == "." || fileName == ".." ) {
-        //        continue;
-        //    }
-        //    KUrl tempUrl(dir.absoluteFilePath(fileName));
-        //    KFileItem tempFileItem(KFileItem::Unknown,
-        //            KFileItem::Unknown, tempUrl);
-        //    if (versionState(tempFileItem) == NormalVersion) {
-        //       return NormalVersion;
-        //  }
-        //}
-        //return UnversionedVersion;
-        return NormalVersion;
+        // will disable the context menu there. Will enable recursive
+        // add however.
+        QDir dir(item.localPath());
+        QStringList filesInside = dir.entryList();
+        foreach (const QString &fileName, filesInside) {
+            if (fileName == "." || fileName == ".." ) {
+                continue;
+            }
+            KUrl tempUrl(dir.absoluteFilePath(fileName));
+            KFileItem tempFileItem(KFileItem::Unknown,
+                    KFileItem::Unknown, tempUrl);
+            if (versionState(tempFileItem) == NormalVersion) {
+               return NormalVersion;
+          }
+        }
+        return UnversionedVersion;
+        //return NormalVersion;
     }
     if (m_versionInfoHash.contains(itemUrl)) {
         return m_versionInfoHash.value(itemUrl);
@@ -284,7 +284,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         m_revertAction->setEnabled(false);
     }
 
-    QList<QAction *> actions;
+    QList<QAction*> actions;
     actions.append(m_addAction);
     actions.append(m_removeAction);
     actions.append(m_renameAction);
@@ -476,3 +476,4 @@ void FileViewHgPlugin::slotOperationError()
 }
 
 #include "fileviewhgplugin.moc"
+
