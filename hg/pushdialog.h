@@ -21,28 +21,19 @@
 #define HGPUSHDILAOG_H
 
 #include "hgwrapper.h"
+#include "syncdialogbase.h"
 
 #include <QtCore/QString>
-#include <QtCore/QProcess>
-#include <QtCore/QMap>
-#include <QtGui/QLabel>
-#include <QtGui/QComboBox>
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
 #include <QtGui/QTableWidget>
-#include <QtGui/QProgressBar>
-#include <kdialog.h>
-#include <klineedit.h>
 #include <ktextedit.h>
 #include <kcombobox.h>
-#include <kpushbutton.h>
 
 //TODO: Save/Load dialog geometry
 //TODO: Resize dialog according to visibility of outgoing changes
 //TODO: HTTPS login
 //TODO: Cancel current operation
 
-class HgPushDialog : public KDialog
+class HgPushDialog : public HgSyncBaseDialog 
 {
     Q_OBJECT
 
@@ -50,31 +41,16 @@ public:
     HgPushDialog(QWidget *parent = 0);
 
 private:
-    QString pushPath() const;
-    void done(int r);
-    void setupUI();
-    void createOptionGroup();
-    void createOutgoingChangesGroup();
-    void parseUpdateOutgoingChanges(const QString &input);
+    void setOptions();
+    void createChangesGroup();
+    void parseUpdateChanges(const QString &input);
     void appendOptionArguments(QStringList &args);
+    void getHgChangesArguments(QStringList &args);
 
 private slots:
-    void slotChangeEditUrl(int index);
-    void slotGetOutgoingChanges();
-    void slotOutChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
-    void slotOutChangesProcessError(QProcess::ProcessError error);
     void slotOutSelChanged();
-    void slotPushComplete(int exitCode, QProcess::ExitStatus status);
-    void slotPushError(QProcess::ProcessError);
 
 private:
-    QMap<QString, QString> m_pathList;
-    KComboBox *m_selectPathAlias;
-    KLineEdit *m_pushUrlEdit;
-    QProgressBar *m_statusProg;
-    bool m_haveOutgoingChanges;
-    HgWrapper *m_hgw;
-
     // Options
     QCheckBox *m_optAllowNewBranch;
     QCheckBox *m_optInsecure;
@@ -82,14 +58,8 @@ private:
     QGroupBox *m_optionGroup;
 
     // outgoing Changes
-    KPushButton *m_outgoingChangesButton;
-    QGroupBox *m_outChangesGroup;
     QTableWidget *m_outChangesList;
     KTextEdit *m_changesetInfo;
-    QProcess m_process;
-
-    // current task
-    enum {NoTask, OutgoingChanges, PushingChanges} m_currentTask;
 };
 
 #endif // HGPUSHDILAOG_H

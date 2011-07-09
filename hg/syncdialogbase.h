@@ -17,47 +17,80 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGPULLDILAOG_H
-#define HGPULLDILAOG_H
+#ifndef HGSYNCBASEDILAOG_H
+#define HGSYNCBASEDILAOG_H
 
 #include "hgwrapper.h"
-#include "syncdialogbase.h"
 
 #include <QtCore/QString>
+#include <QtCore/QProcess>
+#include <QtCore/QMap>
+#include <QtGui/QLabel>
+#include <QtGui/QComboBox>
 #include <QtGui/QCheckBox>
+#include <QtGui/QGroupBox>
 #include <QtGui/QTableWidget>
+#include <QtGui/QProgressBar>
+#include <kdialog.h>
+#include <klineedit.h>
 #include <ktextedit.h>
 #include <kcombobox.h>
+#include <kpushbutton.h>
 
 //TODO: Save/Load dialog geometry
 //TODO: Resize dialog according to visibility of incoming changes
 //TODO: HTTPS login
 //TODO: Cancel current operation
 
-class HgPullDialog : public HgSyncBaseDialog
+class HgSyncBaseDialog : public KDialog
 {
     Q_OBJECT
 
 public:
-    HgPullDialog(QWidget *parent = 0);
+    enum DialogType {PushDialog, PullDialog};
+
+    HgSyncBaseDialog(DialogType dialogType, QWidget *parent = 0);
 
 protected:
-    void setOptions();
-    void parseUpdateChanges(const QString &input); 
-    void appendOptionArguments(QStringList &args); 
-    void createChangesGroup();
-    void getHgChangesArguments(QStringList &args);
+    QString remoteUrl() const;
+    void done(int r);
+    void setupUI();
+    void createOptionGroup();
+    virtual void setOptions() = 0;
+    virtual void createChangesGroup() = 0;
+    virtual void parseUpdateChanges(const QString &input) = 0;
+    virtual void appendOptionArguments(QStringList &args) = 0;
+    virtual void getHgChangesArguments(QStringList &args) = 0;
 
-private:
+protected slots:
+    void slotGetChanges();
+    void slotChangeEditUrl(int index);
+    void slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
+    void slotChangesProcessError(QProcess::ProcessError error);
+    void slotOperationComplete(int exitCode, QProcess::ExitStatus status);
+    void slotOperationError(QProcess::ProcessError);
+
+protected:
+    QMap<QString, QString> m_pathList;
+    KComboBox *m_selectPathAlias;
+    KLineEdit *m_urlEdit;
+    QProgressBar *m_statusProg;
+    bool m_haveChanges;
+    HgWrapper *m_hgw;
+    DialogType m_dialogType;
+
     // Options
-    QCheckBox *m_optUpdate;
-    QCheckBox *m_optInsecure;
-    QCheckBox *m_optForce;
+    QList<QCheckBox*> m_options;
     QGroupBox *m_optionGroup;
 
-    // incoming Changes
-    QTableWidget *m_changesList;
+    // changes
+    KPushButton *m_changesButton;
+    QGroupBox *m_changesGroup;
+    QProcess m_process;
+
+    // current task
+    enum {NoTask, Secondary, Primary} m_currentTask;
 };
 
-#endif // HGPULLDILAOG_H
+#endif // HGSYNCBASEDILAOG_H
 
