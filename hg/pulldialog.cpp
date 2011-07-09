@@ -41,6 +41,8 @@ HgPullDialog::HgPullDialog(QWidget *parent):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Pull"));
     this->setButtonText(KDialog::Details, i18nc("@action:button", "Options"));
+
+    setup();
 }
 
 void HgPullDialog::setOptions()

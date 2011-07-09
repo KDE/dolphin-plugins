@@ -38,7 +38,11 @@ HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent):
     m_currentTask(NoTask)
 {
     m_hgw = HgWrapper::instance();
-    
+}
+
+void HgSyncBaseDialog::setup()
+{
+    createChangesGroup();
     setupUI();
     slotChangeEditUrl(0);
     
@@ -59,6 +63,7 @@ void HgSyncBaseDialog::createOptionGroup()
         layout->addWidget(cb);
     }
 
+    m_optionGroup = new QGroupBox;
     m_optionGroup->setLayout(layout);
     setDetailsWidget(m_optionGroup);
 }
@@ -85,7 +90,7 @@ void HgSyncBaseDialog::setupUI()
 
     // changes button
     //FIXME not very good idea. Bad HACK 
-    if (dialogType == PullDialog) {
+    if (m_dialogType == PullDialog) {
         m_changesButton = new KPushButton(i18nc("@label:button", 
                 "Show Incoming Changes"));
     }
@@ -101,8 +106,8 @@ void HgSyncBaseDialog::setupUI()
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addLayout(urlLayout);
 
-    // incoming changes
-    createChangesGroup();
+    // changes
+    // createChangesGroup();
     mainLayout->addWidget(m_changesGroup);
 
     // bottom bar
@@ -214,7 +219,7 @@ void HgSyncBaseDialog::done(int r)
         connect(m_hgw, SIGNAL(error(QProcess::ProcessError)), 
                 this, SLOT(slotOperationError(QProcess::ProcessError)));
         
-        QString command = (dialogType==PullDialog)?"pull":"push";
+        QString command = (m_dialogType==PullDialog)?"pull":"push";
         m_hgw->executeCommand(command, args);
     }
     else {

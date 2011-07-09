@@ -56,6 +56,7 @@ protected:
     void done(int r);
     void setupUI();
     void createOptionGroup();
+    void setup();
     virtual void setOptions() = 0;
     virtual void createChangesGroup() = 0;
     virtual void parseUpdateChanges(const QString &input) = 0;

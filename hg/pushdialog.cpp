@@ -41,6 +41,8 @@ HgPushDialog::HgPushDialog(QWidget *parent):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Push"));
     this->setButtonText(KDialog::Details, i18nc("@action:button", "Options"));
+
+    setup();
 }
 
 void HgPushDialog::setOptions()
