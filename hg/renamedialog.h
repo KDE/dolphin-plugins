@@ -36,7 +36,7 @@ public:
 
 private slots:
     void slotTextChanged(const QString &text);
-    void slotButtonClicked(KDialog::ButtonCode button);
+    void slotButtonClicked(int button);
 
 private:
     QString m_source;

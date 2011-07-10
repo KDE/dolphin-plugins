@@ -42,7 +42,7 @@ public:
 
 private slots:
     void saveGeometry();
-    void slotUpdateOkButton(const QString &text);
+    void slotUpdateOkButton();
     void slotBrowseDestClicked();
     void slotBrowseSourceClicked();
 

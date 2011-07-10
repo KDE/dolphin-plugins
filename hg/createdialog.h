@@ -34,7 +34,6 @@ public:
 
 private:
     void done(int r);
-    void appendOptionArguments(QStringList &args);
 
 private:
     KLineEdit *m_repoNameEdit;

@@ -189,7 +189,7 @@ void HgCloneDialog::saveGeometry()
     settings->writeConfig();
 }
 
-void HgCloneDialog::slotUpdateOkButton(const QString &text)
+void HgCloneDialog::slotUpdateOkButton()
 {
     if (m_source->text().length() > 0) {
         enableButtonOk(true);

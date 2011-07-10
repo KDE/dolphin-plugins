@@ -55,13 +55,22 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin2(parent),
-    m_isCommitable(false),
     m_addAction(0),
     m_removeAction(0),
     m_renameAction(0),
     m_commitAction(0),
     m_branchAction(0),
-    m_tagAction(0)
+    m_tagAction(0),
+    m_updateAction(0),
+    m_cloneAction(0),
+    m_createAction(0),
+    m_configAction(0),
+    m_pushAction(0),
+    m_pullAction(0),
+    m_revertAction(0),
+    m_revertAllAction(0),
+    m_isCommitable(false),
+    m_hgWrapper(0)
 {
     Q_UNUSED(args);
     m_hgWrapper = HgWrapper::instance();
@@ -182,7 +191,7 @@ QString FileViewHgPlugin::fileName() const
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
     m_hgWrapper->setCurrentDir(directory);
-    m_versionInfoHash = m_hgWrapper->getVersionStates(true);
+    m_versionInfoHash = m_hgWrapper->getVersionStates();
     return true;
 }
 

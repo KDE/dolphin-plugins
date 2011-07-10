@@ -58,7 +58,7 @@ public:
     QString getCurrentDir() const;
     void setBaseAsWorkingDir();
     void setCurrentDir(const QString &directory);
-    QHash<QString, KVersionControlPlugin::VersionState>& getVersionStates(bool ignoreParents=false);
+    QHash<QString, KVersionControlPlugin::VersionState>& getVersionStates();
 
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);

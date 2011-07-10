@@ -63,8 +63,9 @@ void HgWrapper::freeInstance()
 void HgWrapper::slotOperationCompleted(int exitCode, 
                                        QProcess::ExitStatus exitStatus)
 {
-    kDebug() << "Done executing successfully: 'hg' with arguments "
-        << m_arguments << " Exit Code: " << exitCode;
+    kDebug() << "'hg' with arguments "
+        << m_arguments << " Exit Code: " << exitCode << "  Exit Status: "
+        << exitStatus;
     m_arguments.clear();
 }
 
@@ -320,7 +321,7 @@ QStringList HgWrapper::getBranches()
     return result;
 }
 
-QHash<QString, KVersionControlPlugin::VersionState>& HgWrapper::getVersionStates(bool ignoreParents)
+QHash<QString, KVersionControlPlugin::VersionState>& HgWrapper::getVersionStates()
 {
     int nTrimOutLeft = m_hgBaseDir.length();
     QString relativePrefix = m_currentDir.right(m_currentDir.length() -

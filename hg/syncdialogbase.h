@@ -67,9 +67,9 @@ protected slots:
     void slotGetChanges();
     void slotChangeEditUrl(int index);
     void slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
-    void slotChangesProcessError(QProcess::ProcessError error);
+    void slotChangesProcessError();
     void slotOperationComplete(int exitCode, QProcess::ExitStatus status);
-    void slotOperationError(QProcess::ProcessError);
+    void slotOperationError();
 
 protected:
     QMap<QString, QString> m_pathList;

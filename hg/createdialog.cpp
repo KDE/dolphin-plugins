@@ -76,9 +76,5 @@ void HgCreateDialog::done(int r)
     }
 }
 
-void HgCreateDialog::appendOptionArguments(QStringList &args)
-{
-}
-
 #include "createdialog.moc"
 

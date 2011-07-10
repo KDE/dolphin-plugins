@@ -74,7 +74,7 @@ void HgRenameDialog::slotTextChanged(const QString &text)
     enableButtonOk(text.length() != 0);
 }
 
-void HgRenameDialog::slotButtonClicked(KDialog::ButtonCode button)
+void HgRenameDialog::slotButtonClicked(int button)
 {
     if (button == KDialog::Ok) {
         HgWrapper *hgi = HgWrapper::instance();

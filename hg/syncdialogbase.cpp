@@ -33,8 +33,8 @@
 
 HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent):
     KDialog(parent, Qt::Dialog),
-    m_dialogType(dialogType),
     m_haveChanges(false),
+    m_dialogType(dialogType),
     m_currentTask(NoTask)
 {
     m_hgw = HgWrapper::instance();
@@ -151,7 +151,7 @@ void HgSyncBaseDialog::slotGetChanges()
         return;
     }
     connect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
-            this, SLOT(slotChangesProcessError(QProcess::ProcessError)));
+            this, SLOT(slotChangesProcessError()));
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
             this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
     m_statusProg->setRange(0, 0);
@@ -169,7 +169,8 @@ QString HgSyncBaseDialog::remoteUrl() const
 
 }
 
-void HgSyncBaseDialog::slotChangesProcessError(QProcess::ProcessError error) {
+void HgSyncBaseDialog::slotChangesProcessError()
+{
     kDebug() << "Cant get changes";
     KMessageBox::error(this, i18n("Error!"));
     m_changesButton->setEnabled(true);
@@ -177,16 +178,21 @@ void HgSyncBaseDialog::slotChangesProcessError(QProcess::ProcessError error) {
 
 void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
 {
-    m_statusProg->setRange(0, 100);
-    m_changesButton->setEnabled(true);
 
     disconnect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
             this, SLOT(slotChangesProcessError(QProcess::ProcessError)));
     disconnect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
             this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
 
+    if (exitCode != 0 || status != QProcess::NormalExit) {
+        return;
+    }
+
     char buffer[512];
     bool unwantedRead = false;
+
+    m_statusProg->setRange(0, 100);
+    m_changesButton->setEnabled(true);
 
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
         QString line(QTextCodec::codecForLocale()->toUnicode(buffer));
@@ -232,7 +238,7 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
     m_statusProg->setRange(0, 100);
     disconnect(m_hgw, SIGNAL(finished()), this, SLOT(slotOperationComplete()));
 
-    if (exitCode == 0) {
+    if (exitCode == 0 && status == QProcess::NormalExit) {
         KDialog::done(KDialog::Accepted);
     }
     else {
@@ -241,7 +247,7 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
     }
 }
 
-void HgSyncBaseDialog::slotOperationError(QProcess::ProcessError)
+void HgSyncBaseDialog::slotOperationError()
 {
     disconnect(m_hgw, SIGNAL(finished()), this, SLOT(slotOperationComplete()));
     enableButtonOk(true);
