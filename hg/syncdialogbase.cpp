@@ -35,6 +35,7 @@
 HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent):
     KDialog(parent, Qt::Dialog),
     m_haveChanges(false),
+    m_terminated(false),
     m_dialogType(dialogType)
 {
     m_hgw = HgWrapper::instance();
@@ -43,6 +44,7 @@ HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent):
 void HgSyncBaseDialog::setup()
 {
     createChangesGroup();
+    readBigSize();
     setupUI();
     slotChangeEditUrl(0);
     
@@ -64,6 +66,7 @@ void HgSyncBaseDialog::setup()
             this, SLOT(slotChangesProcessError()));
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
             this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
+    connect(this, SIGNAL(finished()), this, SLOT(slotWriteBigSize()));
 }
 
 void HgSyncBaseDialog::createOptionGroup()
@@ -119,7 +122,7 @@ void HgSyncBaseDialog::setupUI()
     mainLayout->addLayout(urlLayout);
 
     // changes
-    // createChangesGroup();
+    m_changesGroup->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     mainLayout->addWidget(m_changesGroup);
 
     // bottom bar
@@ -132,7 +135,6 @@ void HgSyncBaseDialog::setupUI()
     
     //
     mainLayout->addLayout(bottomLayout);
-    mainLayout->addStretch();
     widget->setLayout(mainLayout);
 
     createOptionGroup();
@@ -157,6 +159,12 @@ void HgSyncBaseDialog::slotGetChanges()
 {
     if (m_haveChanges) {
         m_changesGroup->setVisible(!m_changesGroup->isVisible());
+        if (m_changesGroup->isVisible()) {
+            loadBigSize();
+        }
+        else {
+            loadSmallSize();
+        }
         return;
     }
     if (m_process.state() == QProcess::Running) {
@@ -207,7 +215,29 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     }
 
     m_changesGroup->setVisible(true);
+    loadBigSize();
     m_haveChanges = true; 
+    emit changeListAvailable();
+}
+
+void HgSyncBaseDialog::loadSmallSize()
+{
+    m_bigSize = size();
+    resize(m_smallSize);
+}
+
+void HgSyncBaseDialog::loadBigSize()
+{
+    m_smallSize = size();
+    resize(m_bigSize);
+}
+
+void HgSyncBaseDialog::slotWriteBigSize()
+{
+    if (m_changesGroup->isVisible()) {
+        m_bigSize = size();
+    }
+    writeBigSize();
 }
 
 void HgSyncBaseDialog::done(int r)
@@ -226,6 +256,7 @@ void HgSyncBaseDialog::done(int r)
         appendOptionArguments(args);
 
         enableButtonOk(false);
+        m_terminated = false;
         
         m_main_process.setWorkingDirectory(m_hgw->getBaseDir());
         m_main_process.start(QLatin1String("hg"), args);
@@ -242,7 +273,8 @@ void HgSyncBaseDialog::done(int r)
             }
             if (m_main_process.state() == QProcess::Running ||
                      m_main_process.state() == QProcess::Starting) {
-                kDebug() << "terminating HgWrapper process";
+                kDebug() << "terminating pull/push process";
+                m_terminated = true;
                 m_main_process.terminate();
             }
         }
@@ -259,7 +291,9 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
     }
     else {
         enableButtonOk(true);
-        KMessageBox::error(this, i18n("Error!"));
+        if (!m_terminated) {
+            KMessageBox::error(this, i18n("Error!"));
+        }
     }
 }
 

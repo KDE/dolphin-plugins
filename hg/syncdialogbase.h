@@ -51,12 +51,17 @@ public:
 
     HgSyncBaseDialog(DialogType dialogType, QWidget *parent = 0);
 
+signals:
+    void changeListAvailable();
+
 protected:
     QString remoteUrl() const;
     void done(int r);
     void setupUI();
     void createOptionGroup();
     void setup();
+    void loadSmallSize();
+    void loadBigSize();
     virtual void setOptions() = 0;
     virtual void createChangesGroup() = 0;
     virtual void parseUpdateChanges(const QString &input) = 0;
@@ -71,6 +76,9 @@ protected slots:
     void slotOperationComplete(int exitCode, QProcess::ExitStatus status);
     void slotOperationError();
     void slotUpdateBusy(QProcess::ProcessState state);
+    void slotWriteBigSize();
+    virtual void writeBigSize() = 0;
+    virtual void readBigSize() = 0;
 
 protected:
     QMap<QString, QString> m_pathList;
@@ -78,12 +86,17 @@ protected:
     KLineEdit *m_urlEdit;
     QProgressBar *m_statusProg;
     bool m_haveChanges;
+    bool m_terminated;
     HgWrapper *m_hgw;
     DialogType m_dialogType;
 
     // Options
     QList<QCheckBox*> m_options;
     QGroupBox *m_optionGroup;
+
+    // geometry
+    QSize m_smallSize;
+    QSize m_bigSize;
 
     // changes
     KPushButton *m_changesButton;

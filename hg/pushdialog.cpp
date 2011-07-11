@@ -85,6 +85,8 @@ void HgPushDialog::createChangesGroup()
 
     connect(m_outChangesList, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotOutSelChanged()));
+    connect(this, SIGNAL(changeListAvailable()), 
+            this, SLOT(slotUpdateChangesGeometry()));
 }
 
 void HgPushDialog::slotOutSelChanged()
@@ -150,6 +152,28 @@ void HgPushDialog::appendOptionArguments(QStringList &args)
     if (m_optInsecure->isChecked()) {
         args << QLatin1String("--insecure");
     }
+}
+
+void HgPushDialog::slotUpdateChangesGeometry()
+{
+    m_outChangesList->resizeColumnsToContents();
+    m_outChangesList->resizeRowsToContents();
+    m_outChangesList->horizontalHeader()->setStretchLastSection(true);
+}
+
+void HgPushDialog::readBigSize()
+{
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    m_bigSize = QSize(settings->pushDialogBigWidth(), settings->pushDialogBigHeight());
+}
+
+void HgPushDialog::writeBigSize()
+{
+    kDebug() << "Saving geometry";
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    settings->setPushDialogBigWidth(m_bigSize.width());
+    settings->setPushDialogBigHeight(m_bigSize.height());
+    settings->writeConfig();
 }
 
 #include "pushdialog.moc"

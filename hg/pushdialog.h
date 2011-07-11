@@ -49,6 +49,9 @@ private:
 
 private slots:
     void slotOutSelChanged();
+    void slotUpdateChangesGeometry();
+    void readBigSize();
+    void writeBigSize();
 
 private:
     // Options

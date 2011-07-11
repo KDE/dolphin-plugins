@@ -78,6 +78,9 @@ void HgPullDialog::createChangesGroup()
 
     m_changesGroup->setLayout(hbox);
     m_changesGroup->setVisible(false);
+
+    connect(this, SIGNAL(changeListAvailable()), 
+            this, SLOT(slotUpdateChangesGeometry()));
 }
 
 void HgPullDialog::getHgChangesArguments(QStringList &args)
@@ -128,6 +131,28 @@ void HgPullDialog::appendOptionArguments(QStringList &args)
     if (m_optInsecure->isChecked()) {
         args << QLatin1String("--insecure");
     }
+}
+
+void HgPullDialog::slotUpdateChangesGeometry()
+{
+    m_changesList->resizeColumnsToContents();
+    m_changesList->resizeRowsToContents();
+    m_changesList->horizontalHeader()->setStretchLastSection(true);
+}
+
+void HgPullDialog::readBigSize()
+{
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    m_bigSize = QSize(settings->pullDialogBigWidth(), settings->pushDialogBigHeight());
+}
+
+void HgPullDialog::writeBigSize()
+{
+    kDebug() << "Saving geometry";
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    settings->setPullDialogBigWidth(m_bigSize.width());
+    settings->setPullDialogBigHeight(m_bigSize.height());
+    settings->writeConfig();
 }
 
 #include "pulldialog.moc"

@@ -27,22 +27,24 @@
         </entry>
     </group>
     <group name="PushDialogSettings">
-        <entry name="pushSmallDialogHeight" type="Int">
+        <entry name="pushDialogBigHeight" type="Int">
             <label>Dialog height</label>
             <default>550</default>
             <min>400</min>
         </entry>
-        <entry name="pullSmallDialogWidth" type="Int">
+        <entry name="pushDialogBigWidth" type="Int">
             <label>Dialog width</label>
             <default>900</default>
             <min>500</min>
         </entry>
-        <entry name="pushBigDialogHeight" type="Int">
+    </group>
+    <group name="PullDialogSettings">
+        <entry name="pullDialogBigHeight" type="Int">
             <label>Dialog height</label>
             <default>550</default>
             <min>400</min>
         </entry>
-        <entry name="pullBigDialogWidth" type="Int">
+        <entry name="pullDialogBigWidth" type="Int">
             <label>Dialog width</label>
             <default>900</default>
             <min>500</min>

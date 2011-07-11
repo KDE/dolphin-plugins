@@ -48,6 +48,11 @@ protected:
     void createChangesGroup();
     void getHgChangesArguments(QStringList &args);
 
+private slots:
+    void slotUpdateChangesGeometry();
+    void readBigSize();
+    void writeBigSize();
+
 private:
     // Options
     QCheckBox *m_optUpdate;
