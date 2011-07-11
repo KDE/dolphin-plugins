@@ -63,7 +63,9 @@ void HgCreateDialog::done(int r)
     HgWrapper *hgw = HgWrapper::instance();
     if (r == KDialog::Accepted) {
         QStringList args;
-        args << m_repoNameEdit->text();
+        if (!m_repoNameEdit->text().isEmpty()) {
+            args << m_repoNameEdit->text();
+        }
         if (hgw->executeCommandTillFinished(QLatin1String("init"), args)) {
             KDialog::done(r);
         }

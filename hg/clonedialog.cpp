@@ -28,6 +28,7 @@
 #include <QtGui/QFrame>
 #include <QtCore/QStringList>
 #include <QtGui/QApplication>
+#include <QtCore/QTextCodec>
 #include <kurl.h>
 #include <kpushbutton.h>
 #include <klocale.h>
@@ -35,7 +36,9 @@
 #include <kfiledialog.h>
 
 HgCloneDialog::HgCloneDialog(QWidget *parent):
-    KDialog(parent, Qt::Dialog)
+    KDialog(parent, Qt::Dialog),
+    m_cloned(false),
+    m_terminated(true)
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
@@ -107,11 +110,16 @@ HgCloneDialog::HgCloneDialog(QWidget *parent):
     */
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
     connect(m_source, SIGNAL(textChanged(const QString&)), 
-            this, SLOT(slotUpdateOkButton(const QString&)));
+                this, SLOT(slotUpdateOkButton()));
     connect(m_browse_dest, SIGNAL(clicked()),
-            this, SLOT(slotBrowseDestClicked()));
+                this, SLOT(slotBrowseDestClicked()));
     connect(m_browse_source, SIGNAL(clicked()),
-            this, SLOT(slotBrowseSourceClicked()));
+                this, SLOT(slotBrowseSourceClicked()));
+    connect(&m_process, SIGNAL(started()), this, SLOT(slotCloningStarted()));
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+                this, SLOT(slotCloningFinished(int, QProcess::ExitStatus)));
+    connect(&m_process, SIGNAL(readyReadStandardOutput()),
+                this, SLOT(slotUpdateCloneOutput()));
 }
 
 void HgCloneDialog::browseDirectory(KLineEdit *dest)
@@ -135,33 +143,64 @@ void HgCloneDialog::slotBrowseSourceClicked()
 void HgCloneDialog::done(int r)
 {
     HgWrapper *hgw = HgWrapper::instance();
-    if (r == KDialog::Accepted) {
+    if (r == KDialog::Accepted && !m_cloned) {
         QStringList args;
+        args << QLatin1String("clone");
         args << QLatin1String("--verbose");
         appendOptionArguments(args);
-        args << m_source->text() << m_destination->text();
+        args << m_source->text();
+
+        if (!m_destination->text().isEmpty()) {
+            args << m_destination->text();
+        }
 
         m_outputEdit->clear();
         m_stackLayout->setCurrentIndex(1);
         QApplication::processEvents();
         enableButtonOk(false);
-        if (hgw->executeCommand(QLatin1String("clone"), args, 
-                    m_outputEdit)) {
-        }
-        else {
-            KMessageBox::error(this, i18n("Error cloning repository!"));
-        }
+
+        m_process.setWorkingDirectory(hgw->getCurrentDir());
+        kDebug() << hgw->getCurrentDir();
+        kDebug() << args;
+        m_process.start(QLatin1String("hg"), args);
+    }
+    else if (r == KDialog::Accepted && m_cloned) {
+        KDialog::done(r);
     }
     else {
-        if (hgw->isBusy()) {
+        if (m_process.state() == QProcess::Running) {
             KMessageBox::error(this, i18n("Terminating cloning!"));
             enableButtonOk(true);
-            hgw->terminateCurrentProcess();
+            m_terminated = true;
+            m_process.terminate();
             m_stackLayout->setCurrentIndex(0);
         }
         else {
             KDialog::done(r);
         }
+    }
+}
+
+void HgCloneDialog::slotCloningStarted()
+{
+    m_terminated = false;
+}
+
+void HgCloneDialog::slotUpdateCloneOutput()
+{
+    m_outputEdit->append(QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput()));
+}
+
+void HgCloneDialog::slotCloningFinished(int exitCode, QProcess::ExitStatus exitStatus)
+{
+    if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
+        m_cloned = true;
+        this->setButtonText(KDialog::Ok, i18nc("@action:button", "Close"));
+        this->enableButtonOk(true);
+    }
+    else if (!m_terminated) {
+        KMessageBox::error(this, i18nc("@message:error", 
+                                        "Error Cloning Repository!"));
     }
 }
 

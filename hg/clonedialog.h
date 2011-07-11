@@ -22,6 +22,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtCore/QProcess>
 #include <QtGui/QCheckBox>
 #include <QtGui/QStackedLayout>
 #include <kaction.h>
@@ -45,6 +46,9 @@ private slots:
     void slotUpdateOkButton();
     void slotBrowseDestClicked();
     void slotBrowseSourceClicked();
+    void slotCloningStarted();
+    void slotCloningFinished(int exitCode, QProcess::ExitStatus);
+    void slotUpdateCloneOutput();
 
 private:
     void done(int r);
@@ -58,6 +62,10 @@ private:
     KPushButton *m_browse_source;
     KTextEdit *m_outputEdit;
     QStackedLayout *m_stackLayout;
+
+    bool m_cloned;
+    bool m_terminated;
+    QProcess m_process;
 
     // option checkboxes
     QCheckBox *m_optNoUpdate;

@@ -50,9 +50,6 @@ public:
     bool executeCommand(const QString &hgCommand,
                         const QStringList &arguments,
                         QString &output);
-    bool executeCommand(const QString &hgCommand, 
-                        const QStringList &arguments,
-                        KTextEdit *textEdit);
 
     QString getBaseDir() const;
     QString getCurrentDir() const;
@@ -101,8 +98,6 @@ private:
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
-    void slotOutputToTextEdit();
-    void slotCleanTextEditAfterFinish(int exitStatus, QProcess::ExitStatus);
     void slotStarted();
 
 private:
