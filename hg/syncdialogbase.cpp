@@ -21,6 +21,7 @@
 #include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
+#include <QtGui/QApplication>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
@@ -34,8 +35,7 @@
 HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent):
     KDialog(parent, Qt::Dialog),
     m_haveChanges(false),
-    m_dialogType(dialogType),
-    m_currentTask(NoTask)
+    m_dialogType(dialogType)
 {
     m_hgw = HgWrapper::instance();
 }
@@ -52,6 +52,18 @@ void HgSyncBaseDialog::setup()
             this, SLOT(slotChangeEditUrl(int)));
     connect(m_changesButton, SIGNAL(clicked()),
             this, SLOT(slotGetChanges()));
+    connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)), 
+            this, SLOT(slotUpdateBusy(QProcess::ProcessState)));
+    connect(&m_main_process, SIGNAL(stateChanged(QProcess::ProcessState)), 
+            this, SLOT(slotUpdateBusy(QProcess::ProcessState)));
+    connect(&m_main_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
+            this, SLOT(slotOperationComplete(int, QProcess::ExitStatus)));
+    connect(&m_main_process, SIGNAL(error(QProcess::ProcessError)), 
+            this, SLOT(slotOperationError()));
+    connect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
+            this, SLOT(slotChangesProcessError()));
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
+            this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
 }
 
 void HgSyncBaseDialog::createOptionGroup()
@@ -150,11 +162,6 @@ void HgSyncBaseDialog::slotGetChanges()
     if (m_process.state() == QProcess::Running) {
         return;
     }
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
-            this, SLOT(slotChangesProcessError()));
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
-            this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
-    m_statusProg->setRange(0, 0);
     m_changesButton->setEnabled(false);
     
     QStringList args;
@@ -166,7 +173,6 @@ void HgSyncBaseDialog::slotGetChanges()
 QString HgSyncBaseDialog::remoteUrl() const
 {
     return (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_urlEdit->text():m_selectPathAlias->currentText();
-
 }
 
 void HgSyncBaseDialog::slotChangesProcessError()
@@ -178,11 +184,7 @@ void HgSyncBaseDialog::slotChangesProcessError()
 
 void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
 {
-
-    disconnect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
-            this, SLOT(slotChangesProcessError(QProcess::ProcessError)));
-    disconnect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
-            this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
+    m_changesButton->setEnabled(true);
 
     if (exitCode != 0 || status != QProcess::NormalExit) {
         return;
@@ -190,9 +192,6 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
 
     char buffer[512];
     bool unwantedRead = false;
-
-    m_statusProg->setRange(0, 100);
-    m_changesButton->setEnabled(true);
 
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
         QString line(QTextCodec::codecForLocale()->toUnicode(buffer));
@@ -214,30 +213,47 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
 void HgSyncBaseDialog::done(int r)
 {
     if (r == KDialog::Accepted) {
+        if (m_main_process.state() == QProcess::Running ||
+                m_main_process.state() == QProcess::Starting) {
+            kDebug() << "HgWrapper already busy";
+            return;
+        }
+
         QStringList args;
+        QString command = (m_dialogType==PullDialog)?"pull":"push";
+        args << command;
         args << remoteUrl();
         appendOptionArguments(args);
 
         enableButtonOk(false);
-        m_statusProg->setRange(0, 0);
-        connect(m_hgw, SIGNAL(finished(int, QProcess::ExitStatus)), 
-                this, SLOT(slotOperationComplete(int, QProcess::ExitStatus)));
-        connect(m_hgw, SIGNAL(error(QProcess::ProcessError)), 
-                this, SLOT(slotOperationError(QProcess::ProcessError)));
         
-        QString command = (m_dialogType==PullDialog)?"pull":"push";
-        m_hgw->executeCommand(command, args);
+        m_main_process.setWorkingDirectory(m_hgw->getBaseDir());
+        m_main_process.start(QLatin1String("hg"), args);
     }
     else {
-        KDialog::done(r);
+        if (m_process.state() == QProcess::Running || 
+            m_process.state() == QProcess::Starting ||
+            m_main_process.state() == QProcess::Running ||
+            m_main_process.state() == QProcess::Starting) 
+        {
+            if (m_process.state() == QProcess::Running ||
+                    m_process.state() == QProcess::Starting) {
+                m_process.terminate();
+            }
+            if (m_main_process.state() == QProcess::Running ||
+                     m_main_process.state() == QProcess::Starting) {
+                kDebug() << "terminating HgWrapper process";
+                m_main_process.terminate();
+            }
+        }
+        else {
+            KDialog::done(r);
+        }
     }
 }
 
 void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus status)
 {
-    m_statusProg->setRange(0, 100);
-    disconnect(m_hgw, SIGNAL(finished()), this, SLOT(slotOperationComplete()));
-
     if (exitCode == 0 && status == QProcess::NormalExit) {
         KDialog::done(KDialog::Accepted);
     }
@@ -249,9 +265,20 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
 
 void HgSyncBaseDialog::slotOperationError()
 {
-    disconnect(m_hgw, SIGNAL(finished()), this, SLOT(slotOperationComplete()));
     enableButtonOk(true);
     KMessageBox::error(this, i18n("Error!"));
+}
+
+void HgSyncBaseDialog::slotUpdateBusy(QProcess::ProcessState state)
+{
+    if (state == QProcess::Running || state == QProcess::Starting) {
+        m_statusProg->setRange(0, 0);
+    }
+    else {
+        m_statusProg->setRange(0, 100);
+    }
+    m_statusProg->repaint();
+    QApplication::processEvents();
 }
 
 #include "syncdialogbase.moc"

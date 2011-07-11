@@ -70,6 +70,7 @@ protected slots:
     void slotChangesProcessError();
     void slotOperationComplete(int exitCode, QProcess::ExitStatus status);
     void slotOperationError();
+    void slotUpdateBusy(QProcess::ProcessState state);
 
 protected:
     QMap<QString, QString> m_pathList;
@@ -88,9 +89,7 @@ protected:
     KPushButton *m_changesButton;
     QGroupBox *m_changesGroup;
     QProcess m_process;
-
-    // current task
-    enum {NoTask, Secondary, Primary} m_currentTask;
+    QProcess m_main_process; //should I use another process?
 };
 
 #endif // HGSYNCBASEDILAOG_H

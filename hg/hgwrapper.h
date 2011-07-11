@@ -81,7 +81,8 @@ public:
     }
 
     inline bool isBusy() {
-        return (m_process.state() == QProcess::Running);
+        return (m_process.state() == QProcess::Running ||
+                m_process.state() == QProcess::Starting);
     }
 
 public slots:
@@ -91,6 +92,7 @@ signals:
     void finished(int exitCode, QProcess::ExitStatus exitStatus);
     void error(QProcess::ProcessError error);
     void started();
+    void stateChanged(QProcess::ProcessState state);
 
 private:
     void updateBaseDir();

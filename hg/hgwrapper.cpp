@@ -34,6 +34,8 @@ HgWrapper::HgWrapper(QObject *parent) :
 {
     m_localCodec = QTextCodec::codecForLocale();
 
+    connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)),
+            this, SIGNAL(stateChanged(QProcess::ProcessState)));
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
     connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
@@ -366,6 +368,7 @@ void HgWrapper::getVersionStates(QHash<QString, KVersionControlPlugin::VersionSt
 
 void HgWrapper::terminateCurrentProcess()
 {
+    kDebug() << "terminating";
     m_process.terminate();
 }
 
