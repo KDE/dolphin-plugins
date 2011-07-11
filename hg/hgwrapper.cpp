@@ -43,6 +43,8 @@ HgWrapper::HgWrapper(QObject *parent) :
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SIGNAL(finished(int, QProcess::ExitStatus))),
     connect(&m_process, SIGNAL(started()),
+            this, SLOT(slotStarted()));
+    connect(&m_process, SIGNAL(started()),
             this, SIGNAL(started()));
 }
 
@@ -66,6 +68,7 @@ void HgWrapper::slotOperationCompleted(int exitCode,
     kDebug() << "'hg' with arguments "
         << m_arguments << " Exit Code: " << exitCode << "  Exit Status: "
         << exitStatus;
+    kDebug() << "Clearing arguments";
     m_arguments.clear();
 }
 
@@ -95,6 +98,7 @@ void HgWrapper::executeCommand(const QString &hgCommand,
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
+    m_arguments.clear(); //FIXME until signal not caught resolved
     m_arguments << hgCommand;
     m_arguments << arguments;
     m_process.setWorkingDirectory(m_currentDir);
@@ -107,6 +111,7 @@ bool HgWrapper::executeCommand(const QString &hgCommand,
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
+    m_arguments.clear(); //FIXME until signal not caught resolved
     m_arguments << hgCommand;
     m_arguments << arguments;
     connect(&m_process, SIGNAL(readyRead()),
@@ -127,6 +132,7 @@ bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
+    m_arguments.clear();
     m_arguments << hgCommand;
     m_arguments << arguments;
     m_process.setWorkingDirectory(m_currentDir);
@@ -302,7 +308,7 @@ QStringList HgWrapper::getTags()
         char buffer[1048];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result << QString(buffer).split(QRegExp("\\s+"),
-                    QString::SkipEmptyParts)[0];
+                    QString::SkipEmptyParts).first();
         }
     }
     return result;
@@ -384,21 +390,26 @@ QHash<QString, KVersionControlPlugin::VersionState>& HgWrapper::getVersionStates
 
 void HgWrapper::slotOutputToTextEdit()
 {
-    kDebug() << "called";
     QString out = m_process.readAllStandardOutput();
     m_outTextEdit->append(out);
 }
 
 void HgWrapper::slotCleanTextEditAfterFinish(int exitStatus, QProcess::ExitStatus)
 {
-    /*disconnect(&m_process, SIGNAL(finished()),
-            this, SLOT(slotCleanTextEditAfterFinish()));*/
+    disconnect(&m_process, SIGNAL(readyRead()),
+            this, SLOT(slotOutputToTextEdit()));
+    disconnect(&m_process, SIGNAL(finished()),
+            this, SLOT(slotCleanTextEditAfterFinish()));
 }
-
 
 void HgWrapper::terminateCurrentProcess()
 {
     m_process.terminate();
+}
+
+void HgWrapper::slotStarted()
+{
+    kDebug() << "started";
 }
 
 #include "hgwrapper.moc"

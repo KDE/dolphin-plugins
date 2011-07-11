@@ -33,6 +33,7 @@
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
+#include <QtCore/QProcess>
 #include <kaction.h>
 #include <kicon.h>
 #include <klocale.h>
@@ -73,7 +74,6 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_hgWrapper(0)
 {
     Q_UNUSED(args);
-    m_hgWrapper = HgWrapper::instance();
 
     m_addAction = new KAction(this);
     m_addAction->setIcon(KIcon("list-add"));
@@ -172,15 +172,27 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Revert All"));
     connect(m_revertAllAction, SIGNAL(triggered()),
             this, SLOT(revertAll()));
-
-    connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(m_hgWrapper, SIGNAL(error(QProcess::ProcessError)),
-            this, SLOT(slotOperationError()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
 {
+}
+
+void FileViewHgPlugin::createHgWrapper()
+{
+    static bool created = false;
+
+    if (created && m_hgWrapper != 0) {
+        return;
+    }
+
+    created = true;
+
+    m_hgWrapper = HgWrapper::instance();
+    connect(m_hgWrapper, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(m_hgWrapper, SIGNAL(error(QProcess::ProcessError)),
+            this, SLOT(slotOperationError()));
 }
 
 QString FileViewHgPlugin::fileName() const
@@ -190,6 +202,7 @@ QString FileViewHgPlugin::fileName() const
 
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
+    createHgWrapper();
     m_hgWrapper->setCurrentDir(directory);
     m_versionInfoHash = m_hgWrapper->getVersionStates();
     return true;
@@ -246,6 +259,7 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
 {
     QList<QAction*> result;
+    createHgWrapper();
     m_hgWrapper->setCurrentDir(directory);
     result.append(m_createAction);
     result.append(m_cloneAction);

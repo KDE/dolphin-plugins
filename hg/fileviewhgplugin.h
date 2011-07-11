@@ -48,6 +48,9 @@ public:
     virtual QList<QAction*> contextMenuActions(const QString &directory);
     virtual QList<QAction*> universalContextMenuActions(const QString &directory);
 
+private: 
+    void createHgWrapper();
+
 private slots:
     void addFiles();
     void removeFiles();

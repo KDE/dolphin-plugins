@@ -103,6 +103,7 @@ private slots:
     void slotOperationError();
     void slotOutputToTextEdit();
     void slotCleanTextEditAfterFinish(int exitStatus, QProcess::ExitStatus);
+    void slotStarted();
 
 private:
     static HgWrapper *m_instance;
