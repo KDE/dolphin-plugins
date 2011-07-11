@@ -71,7 +71,8 @@ void HgStatusList::reloadStatusTable()
     m_statusTable->horizontalHeader()->setStretchLastSection(true);
 
     HgWrapper *hgWrapper = HgWrapper::instance();
-    QHash<QString, KVersionControlPlugin::VersionState> &hgVsState = hgWrapper->getVersionStates();
+    QHash<QString, KVersionControlPlugin::VersionState> hgVsState;
+    hgWrapper->getVersionStates(hgVsState);
     QMutableHashIterator<QString, KVersionControlPlugin::VersionState> it(hgVsState);
     int rowCount = 0;
     while (it.hasNext()) {

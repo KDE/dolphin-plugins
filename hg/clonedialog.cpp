@@ -95,6 +95,7 @@ HgCloneDialog::HgCloneDialog(QWidget *parent):
     m_stackLayout = new  QStackedLayout;
     m_outputEdit = new KTextEdit;
     m_outputEdit->setReadOnly(true);
+    m_outputEdit->setFontFamily(QLatin1String("Monospace"));
     m_stackLayout->addWidget(frame);
     m_stackLayout->addWidget(m_outputEdit);
 
@@ -145,6 +146,8 @@ void HgCloneDialog::done(int r)
     HgWrapper *hgw = HgWrapper::instance();
     if (r == KDialog::Accepted && !m_cloned) {
         QStringList args;
+        args << QLatin1String("-oL");
+        args << QLatin1String("hg");
         args << QLatin1String("clone");
         args << QLatin1String("--verbose");
         appendOptionArguments(args);
@@ -162,7 +165,7 @@ void HgCloneDialog::done(int r)
         m_process.setWorkingDirectory(hgw->getCurrentDir());
         kDebug() << hgw->getCurrentDir();
         kDebug() << args;
-        m_process.start(QLatin1String("hg"), args);
+        m_process.start(QLatin1String("stdbuf"), args);
     }
     else if (r == KDialog::Accepted && m_cloned) {
         KDialog::done(r);
@@ -188,7 +191,7 @@ void HgCloneDialog::slotCloningStarted()
 
 void HgCloneDialog::slotUpdateCloneOutput()
 {
-    m_outputEdit->append(QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput()));
+    m_outputEdit->insertPlainText(QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput()));
 }
 
 void HgCloneDialog::slotCloningFinished(int exitCode, QProcess::ExitStatus exitStatus)

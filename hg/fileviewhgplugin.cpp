@@ -204,7 +204,8 @@ bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
     createHgWrapper();
     m_hgWrapper->setCurrentDir(directory);
-    m_versionInfoHash = m_hgWrapper->getVersionStates();
+    m_versionInfoHash.clear();
+    m_hgWrapper->getVersionStates(m_versionInfoHash);
     return true;
 }
 
@@ -217,7 +218,7 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
     //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
     if (item.isDir()) {
-                QHash<QString, VersionState>::const_iterator it 
+        QHash<QString, VersionState>::const_iterator it 
                                     = m_versionInfoHash.constBegin();
         while (it != m_versionInfoHash.constEnd()) {
             if (it.key().startsWith(itemUrl)) {
@@ -248,7 +249,6 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
           }
         }
         return UnversionedVersion;
-        //return NormalVersion;
     }
     if (m_versionInfoHash.contains(itemUrl)) {
         return m_versionInfoHash.value(itemUrl);

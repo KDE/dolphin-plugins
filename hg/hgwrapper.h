@@ -55,7 +55,7 @@ public:
     QString getCurrentDir() const;
     void setBaseAsWorkingDir();
     void setCurrentDir(const QString &directory);
-    QHash<QString, KVersionControlPlugin::VersionState>& getVersionStates();
+    void getVersionStates(QHash<QString, KVersionControlPlugin::VersionState> &result);
 
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);
@@ -98,7 +98,6 @@ private:
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
-    void slotStarted();
 
 private:
     static HgWrapper *m_instance;
@@ -111,7 +110,7 @@ private:
 
     QString m_hgBaseDir;
     QString m_currentDir;
-    QHash<QString, KVersionControlPlugin::VersionState> m_versionStateResult;
+    //QHash<QString, KVersionControlPlugin::VersionState> m_versionStateResult;
 };
 
 #endif // HGWRAPPER_H

@@ -43,8 +43,6 @@ HgWrapper::HgWrapper(QObject *parent) :
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SIGNAL(finished(int, QProcess::ExitStatus))),
     connect(&m_process, SIGNAL(started()),
-            this, SLOT(slotStarted()));
-    connect(&m_process, SIGNAL(started()),
             this, SIGNAL(started()));
 }
 
@@ -68,7 +66,6 @@ void HgWrapper::slotOperationCompleted(int exitCode,
     kDebug() << "'hg' with arguments "
         << m_arguments << " Exit Code: " << exitCode << "  Exit Status: "
         << exitStatus;
-    kDebug() << "Clearing arguments";
     m_arguments.clear();
 }
 
@@ -305,12 +302,11 @@ QStringList HgWrapper::getBranches()
     return result;
 }
 
-QHash<QString, KVersionControlPlugin::VersionState>& HgWrapper::getVersionStates()
+void HgWrapper::getVersionStates(QHash<QString, KVersionControlPlugin::VersionState> &result)
 {
     int nTrimOutLeft = m_hgBaseDir.length();
     QString relativePrefix = m_currentDir.right(m_currentDir.length() -
                              nTrimOutLeft - 1);
-    m_versionStateResult.clear();
 
     // Get status of files
     QStringList args;
@@ -358,22 +354,16 @@ QHash<QString, KVersionControlPlugin::VersionState>& HgWrapper::getVersionStates
                     KUrl url = KUrl::fromPath(m_hgBaseDir);
                     url.addPath(currentFile);
                     QString filePath = url.path();
-                    m_versionStateResult.insert(filePath, vs);
+                    result.insert(filePath, vs);
                 }
             }
         }
     }
-    return m_versionStateResult;
 }
 
 void HgWrapper::terminateCurrentProcess()
 {
     m_process.terminate();
-}
-
-void HgWrapper::slotStarted()
-{
-    kDebug() << "started";
 }
 
 #include "hgwrapper.moc"
