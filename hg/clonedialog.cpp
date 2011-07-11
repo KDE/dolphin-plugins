@@ -18,7 +18,6 @@
  ***************************************************************************/
 
 #include "clonedialog.h"
-#include "hgwrapper.h"
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QGroupBox>
@@ -35,10 +34,11 @@
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 
-HgCloneDialog::HgCloneDialog(QWidget *parent):
+HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
     KDialog(parent, Qt::Dialog),
     m_cloned(false),
-    m_terminated(true)
+    m_terminated(true),
+    m_workingDirectory(directory)
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
@@ -143,7 +143,6 @@ void HgCloneDialog::slotBrowseSourceClicked()
 
 void HgCloneDialog::done(int r)
 {
-    HgWrapper *hgw = HgWrapper::instance();
     if (r == KDialog::Accepted && !m_cloned) {
         QStringList args;
         args << QLatin1String("-oL");
@@ -162,9 +161,7 @@ void HgCloneDialog::done(int r)
         QApplication::processEvents();
         enableButtonOk(false);
 
-        m_process.setWorkingDirectory(hgw->getCurrentDir());
-        kDebug() << hgw->getCurrentDir();
-        kDebug() << args;
+        m_process.setWorkingDirectory(m_workingDirectory);
         m_process.start(QLatin1String("stdbuf"), args);
     }
     else if (r == KDialog::Accepted && m_cloned) {

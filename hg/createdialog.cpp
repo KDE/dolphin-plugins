@@ -18,17 +18,18 @@
  ***************************************************************************/
 
 #include "createdialog.h"
-#include "hgwrapper.h"
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QHBoxLayout>
 #include <QtCore/QStringList>
+#include <QtCore/QProcess>
 #include <QtGui/QFrame>
 #include <klocale.h>
 #include <kmessagebox.h>
 
-HgCreateDialog::HgCreateDialog(QWidget *parent):
-    KDialog(parent, Qt::Dialog)
+HgCreateDialog::HgCreateDialog(const QString &directory, QWidget *parent):
+    KDialog(parent, Qt::Dialog),
+    m_workingDirectory(directory)
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 
@@ -43,9 +44,7 @@ HgCreateDialog::HgCreateDialog(QWidget *parent):
     // Setup UI //
     //////////////
     
-    HgWrapper *hgw = HgWrapper::instance();
-    
-    m_directory = new QLabel("<b>" + hgw->getCurrentDir() + "</b>");
+    m_directory = new QLabel("<b>" + m_workingDirectory + "</b>");
     m_repoNameEdit = new KLineEdit;
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
@@ -60,13 +59,18 @@ HgCreateDialog::HgCreateDialog(QWidget *parent):
 
 void HgCreateDialog::done(int r)
 {
-    HgWrapper *hgw = HgWrapper::instance();
     if (r == KDialog::Accepted) {
+        QProcess process;
         QStringList args;
+        args << QLatin1String("init");
         if (!m_repoNameEdit->text().isEmpty()) {
             args << m_repoNameEdit->text();
         }
-        if (hgw->executeCommandTillFinished(QLatin1String("init"), args)) {
+        process.setWorkingDirectory(m_workingDirectory);
+        process.start(QLatin1String("hg"), args);
+        process.waitForFinished();
+        
+        if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
             KDialog::done(r);
         }
         else {

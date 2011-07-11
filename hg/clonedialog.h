@@ -39,7 +39,8 @@ class HgCloneDialog : public KDialog
     Q_OBJECT
 
 public:
-    HgCloneDialog(QWidget *parent = 0);
+    HgCloneDialog(const QString &directory, QWidget *parent = 0);
+    void setWorkingDirectory(const QString &directory);
 
 private slots:
     void saveGeometry();
@@ -65,6 +66,7 @@ private:
 
     bool m_cloned;
     bool m_terminated;
+    QString m_workingDirectory;
     QProcess m_process;
 
     // option checkboxes

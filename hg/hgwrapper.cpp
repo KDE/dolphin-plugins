@@ -167,8 +167,8 @@ bool HgWrapper::renameFile(const QString &source, const QString &destination)
     executeCommand(QLatin1String("rename"), args);
 
     m_process.waitForFinished();
-    return (m_process.exitStatus() == QProcess::NormalExit
-            && m_process.exitCode() == 0);
+    return (m_process.exitStatus() == QProcess::NormalExit &&
+            m_process.exitCode() == 0);
 }
 
 void HgWrapper::removeFiles(const KFileItemList &fileList)
@@ -193,8 +193,8 @@ bool HgWrapper::commit(const QString &message, const QStringList &files,
     }
     executeCommand(QLatin1String("commit"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 
-            && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 &&
+            m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::createBranch(const QString &name)
@@ -203,8 +203,8 @@ bool HgWrapper::createBranch(const QString &name)
     args << name;
     executeCommand(QLatin1String("branch"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 
-            && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 &&
+            m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::switchBranch(const QString &name)
@@ -213,8 +213,8 @@ bool HgWrapper::switchBranch(const QString &name)
     args << QLatin1String("-c") << name;
     executeCommand(QLatin1String("update"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0
-            && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 &&
+            m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::createTag(const QString &name)
@@ -223,8 +223,8 @@ bool HgWrapper::createTag(const QString &name)
     args << name;
     executeCommand(QLatin1String("tag"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 
-            && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 &&
+            m_process.exitStatus() == QProcess::NormalExit);
 }
 
 bool HgWrapper::revertAll()
@@ -250,8 +250,8 @@ bool HgWrapper::switchTag(const QString &name)
     args << QLatin1String("-c") << name;
     executeCommand(QLatin1String("update"), args);
     m_process.waitForFinished();
-    return (m_process.exitCode() == 0 
-            && m_process.exitStatus() == QProcess::NormalExit);
+    return (m_process.exitCode() == 0 &&
+            m_process.exitStatus() == QProcess::NormalExit);
 }
 
 //TODO: Make it return QStringList.
@@ -283,7 +283,7 @@ QStringList HgWrapper::getTags()
         char buffer[1048];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result << QString(buffer).split(QRegExp("\\s+"),
-                    QString::SkipEmptyParts).first();
+                                            QString::SkipEmptyParts).first();
         }
     }
     return result;
@@ -296,6 +296,9 @@ QStringList HgWrapper::getBranches()
     while (m_process.waitForReadyRead()) {
         char buffer[1048];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
+            // 'hg branches' command lists the branches in following format
+            // <branchname>      <revision:changeset_hash> [(inactive)]
+            // Extract just the branchname
             result << QString(buffer).remove(QRegExp("[\\s]+[\\d:a-zA-Z\\(\\)]*"));
         }
     }
@@ -306,7 +309,7 @@ void HgWrapper::getVersionStates(QHash<QString, KVersionControlPlugin::VersionSt
 {
     int nTrimOutLeft = m_hgBaseDir.length();
     QString relativePrefix = m_currentDir.right(m_currentDir.length() -
-                             nTrimOutLeft - 1);
+                                                 nTrimOutLeft - 1);
 
     // Get status of files
     QStringList args;

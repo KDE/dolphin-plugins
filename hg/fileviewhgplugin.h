@@ -91,6 +91,7 @@ private:
     //KAction *m_backoutAction;
 
     KFileItemList m_contextItems;
+    QString m_universalCurrentDirectory;
     bool m_isCommitable;
 
     QString m_operationCompletedMsg;

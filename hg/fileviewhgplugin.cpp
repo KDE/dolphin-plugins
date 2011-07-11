@@ -259,8 +259,7 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
 {
     QList<QAction*> result;
-    createHgWrapper();
-    m_hgWrapper->setCurrentDir(directory);
+    m_universalCurrentDirectory = directory;
     result.append(m_createAction);
     result.append(m_cloneAction);
     return result;
@@ -351,6 +350,14 @@ void FileViewHgPlugin::addFiles()
 void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
+
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+                    "Would you like to remove selected files "
+                    "from the repository?"));
+    if (answer == KMessageBox::No) {
+        return;
+    }
+
     QString infoMsg = i18nc("@info:status",
          "Removing files from <application>Hg</application> repository...");
     m_errorMsg = i18nc("@info:status",
@@ -414,13 +421,13 @@ void FileViewHgPlugin::branch()
 
 void FileViewHgPlugin::clone()
 {
-    HgCloneDialog dialog;
+    HgCloneDialog dialog(m_universalCurrentDirectory);
     dialog.exec();
 }
 
 void FileViewHgPlugin::create()
 {
-    HgCreateDialog dialog;
+    HgCreateDialog dialog(m_universalCurrentDirectory);
     dialog.exec();
 }
 
@@ -466,7 +473,7 @@ void FileViewHgPlugin::revertAll()
 {
     int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
                     "Would you like to revert all changes "
-                    "made to current working direcotry?"));
+                    "made to current working directory?"));
     if (answer == KMessageBox::No) {
         return;
     }

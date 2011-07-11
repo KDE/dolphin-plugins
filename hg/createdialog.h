@@ -30,12 +30,14 @@ class HgCreateDialog : public KDialog
     Q_OBJECT
 
 public:
-    HgCreateDialog(QWidget *parent = 0);
+    HgCreateDialog(const QString &directory, QWidget *parent = 0);
 
 private:
     void done(int r);
+    void setWorkingDirectory(const QString &directory);
 
 private:
+    QString m_workingDirectory;
     KLineEdit *m_repoNameEdit;
     QLabel *m_directory;
 
