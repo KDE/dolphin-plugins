@@ -22,12 +22,9 @@
 #include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtGui/QHBoxLayout>
 #include <QtGui/QWidget>
-#include <QtGui/QGridLayout>
 #include <klocale.h>
 #include <kdebug.h>
-#include <kmessagebox.h>
 
 HgConfigDialog::HgConfigDialog(QWidget *parent):
     KPageDialog(parent, Qt::Dialog)

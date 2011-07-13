@@ -20,12 +20,14 @@
 #include "updatedialog.h"
 #include "hgwrapper.h"
 
-#include <QtCore/QStringList>
 #include <QtGui/QLabel>
 #include <QtGui/QGroupBox>
 #include <QtGui/QFrame>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QCheckBox>
+#include <kpushbutton.h>
+#include <kcombobox.h>
 #include <klocale.h>
 #include <klistwidget.h>
 #include <kmessagebox.h>

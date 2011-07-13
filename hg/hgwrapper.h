@@ -23,12 +23,11 @@
 
 #include <QtCore/QProcess>
 #include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtCore/QTextCodec>
 #include <QtCore/QHash>
-#include <ktextedit.h>
 #include <kfileitem.h>
 #include <kversioncontrolplugin.h>
+
+class QTextCodec;
 
 
 //TODO: Make HgWrapper contain QProcess, rather than inherit
@@ -105,8 +104,6 @@ private:
     static HgWrapper *m_instance;
 
     QProcess m_process;
-    KTextEdit *m_outTextEdit;
-
     QStringList m_arguments;
     QTextCodec *m_localCodec;
 

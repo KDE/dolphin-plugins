@@ -21,10 +21,11 @@
 #define HGBRANCH_H
 
 #include <QtCore/QString>
-#include <QtGui/QLabel>
-#include <kpushbutton.h>
-#include <kcombobox.h>
 #include <kdialog.h>
+
+class KComboBox;
+class KPushButton;
+class QLabel;
 
 class HgBranchDialog : public KDialog
 {

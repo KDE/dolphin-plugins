@@ -21,10 +21,10 @@
 #define HGTAGDIALOG_H
 
 #include <QtCore/QString>
-#include <QtGui/QLabel>
-#include <kpushbutton.h>
-#include <kcombobox.h>
 #include <kdialog.h>
+
+class KComboBox;
+class KPushButton;
 
 class HgTagDialog : public KDialog
 {

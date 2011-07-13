@@ -21,9 +21,10 @@
 #define HGRENAMEDIALOG_H
 
 #include <kdialog.h>
-#include <klineedit.h>
-#include <kfileitem.h>
 #include <QtCore/QString>
+
+class KLineEdit;
+class KFileItem;
 
 class HgRenameDialog : public KDialog
 {

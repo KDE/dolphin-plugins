@@ -25,11 +25,14 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
-#include <QtCore/QStringList>
+#include <QtGui/QStackedLayout>
 #include <QtGui/QApplication>
+#include <QtGui/QCheckBox>
 #include <QtCore/QTextCodec>
 #include <kurl.h>
+#include <klineedit.h>
 #include <kpushbutton.h>
+#include <ktextedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>

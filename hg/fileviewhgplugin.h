@@ -23,13 +23,13 @@
 #include "hgwrapper.h"
 
 #include <kfileitem.h>
-#include <kaction.h>
 #include <kversioncontrolplugin.h>
 #include <kversioncontrolplugin2.h>
 #include <QtCore/QHash>
 #include <QtCore/QString>
 #include <QtCore/QProcess>
-#include <QtCore/QStringList>
+
+class KAction;
 
 //TODO: Redesign Push/Pull dialog. Make a base class implementing their common features. High Priority!!!!!!!!!
 

@@ -20,11 +20,12 @@
 #include "statuslist.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QVBoxLayout>
-#include <QtCore/QStringList>
 #include <QtCore/QHash>
-#include <QtGui/QHeaderView>
 #include <QtCore/QTextCodec>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QTableWidget>
+#include <klineedit.h>
 #include <klocale.h>
 #include <kurl.h>
 #include <kdebug.h>

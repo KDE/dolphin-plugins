@@ -20,12 +20,12 @@
 #include "branchdialog.h"
 #include "hgwrapper.h"
 
-#include <QtCore/QStringList>
 #include <QtGui/QLabel>
-#include <QtGui/QGroupBox>
 #include <QtGui/QFrame>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
+#include <kpushbutton.h>
+#include <kcombobox.h>
 #include <klocale.h>
 #include <klineedit.h>
 #include <kdebug.h>

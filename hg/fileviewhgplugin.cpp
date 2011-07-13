@@ -33,13 +33,13 @@
 
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
-#include <QtCore/QProcess>
 #include <kaction.h>
 #include <kicon.h>
 #include <klocale.h>
 #include <kdebug.h>
 #include <kurl.h>
 #include <kmessagebox.h>
+#include <kaction.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>

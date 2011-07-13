@@ -21,11 +21,11 @@
 #define HGUPDATEDIALOG_H
 
 #include <QtCore/QString>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
-#include <kpushbutton.h>
-#include <kcombobox.h>
 #include <kdialog.h>
+
+class KComboBox;
+class QLabel;
+class QCheckBox;
 
 class HgUpdateDialog : public KDialog
 {

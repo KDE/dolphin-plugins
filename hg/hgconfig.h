@@ -21,10 +21,10 @@
 #define HGCONFIG_H
 
 #include <QtCore/QString>
-#include <QtCore/QStringList>
 #include <QtCore/QProcess>
 #include <QtCore/QMap>
-#include <kconfig.h>
+
+class KConfig;
 
 class HgConfig 
 {

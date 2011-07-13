@@ -20,11 +20,11 @@
 #ifndef STATUSLIST_H
 #define STATUSLIST_H
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtGui/QTableWidget>
 #include <QtGui/QGroupBox>
-#include <klineedit.h>
+#include <QtCore/QString>
+
+class KLineEdit;
+class QTableWidget;
 
 class HgStatusList : public QGroupBox
 {

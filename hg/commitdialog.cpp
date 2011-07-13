@@ -28,8 +28,16 @@
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
 #include <QtGui/QGroupBox>
-#include <QtCore/QStringList>
 #include <QtGui/QActionGroup>
+#include <QtGui/QPlainTextEdit>
+#include <KTextEditor/Document>
+#include <KTextEditor/View>
+#include <KTextEditor/Editor>
+#include <KTextEditor/EditorChooser>
+#include <kmessagebox.h>
+#include <kmenu.h>
+#include <kaction.h>
+#include <klineedit.h>
 #include <kurl.h>
 #include <kpushbutton.h>
 #include <klocale.h>
@@ -146,8 +154,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     this->setInitialSize(QSize(settings->commitDialogWidth(),
                                settings->commitDialogHeight()));
     //
-    connect(m_statusList, 
-        SIGNAL(itemSelectionChanged(const char, const QString &)),
+    connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString &)),
         this, SLOT(slotItemSelectionChanged(const char, const QString &)));
     connect(m_commitMessage, SIGNAL(textChanged()),
          this, SLOT(slotMessageChanged()));

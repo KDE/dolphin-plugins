@@ -18,15 +18,20 @@
  ***************************************************************************/
 
 #include "pulldialog.h"
+#include "hgwrapper.h"
 #include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtCore/QStringList>
 #include <QtCore/QTextCodec>
 #include <QtGui/QHeaderView>
+#include <QtGui/QCheckBox>
+#include <QtGui/QTableWidget>
+#include <QtCore/QString>
+#include <ktextedit.h>
+#include <kcombobox.h>
 #include <klocale.h>
 #include <kurl.h>
 #include <kmessagebox.h>

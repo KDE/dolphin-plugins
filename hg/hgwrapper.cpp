@@ -20,6 +20,7 @@
 #include "hgwrapper.h"
 
 #include <QtGui/QApplication>
+#include <QtCore/QTextCodec>
 #include <kdebug.h>
 #include <kurl.h>
 

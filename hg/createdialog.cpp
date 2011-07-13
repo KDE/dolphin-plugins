@@ -21,10 +21,11 @@
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QHBoxLayout>
-#include <QtCore/QStringList>
 #include <QtCore/QProcess>
 #include <QtGui/QFrame>
+#include <QtGui/QLabel>
 #include <klocale.h>
+#include <klineedit.h>
 #include <kmessagebox.h>
 
 HgCreateDialog::HgCreateDialog(const QString &directory, QWidget *parent):

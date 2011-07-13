@@ -21,9 +21,10 @@
 #define HGCREATEDILAOG_H
 
 #include <QtCore/QString>
-#include <QtGui/QLabel>
 #include <kdialog.h>
-#include <klineedit.h>
+
+class KLineEdit;
+class QLabel;
 
 class HgCreateDialog : public KDialog
 {

@@ -20,19 +20,14 @@
 #ifndef HGPULLDILAOG_H
 #define HGPULLDILAOG_H
 
-#include "hgwrapper.h"
 #include "syncdialogbase.h"
 
-#include <QtCore/QString>
-#include <QtGui/QCheckBox>
-#include <QtGui/QTableWidget>
-#include <ktextedit.h>
-#include <kcombobox.h>
 
-//TODO: Save/Load dialog geometry
-//TODO: Resize dialog according to visibility of incoming changes
-//TODO: HTTPS login
-//TODO: Cancel current operation
+class QCheckBox;
+class QTableWidget;
+class KTextEdit;
+class KComboBox;
+class QString;
 
 class HgPullDialog : public HgSyncBaseDialog
 {

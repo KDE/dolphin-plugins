@@ -115,6 +115,7 @@ void HgSyncBaseDialog::setupUI()
     }
     m_changesButton->setSizePolicy(QSizePolicy::Fixed,
             QSizePolicy::Fixed);
+    m_changesButton->setCheckable(true);
 
     // dialog's main widget
     QWidget *widget = new QWidget;
@@ -159,6 +160,7 @@ void HgSyncBaseDialog::slotGetChanges()
 {
     if (m_haveChanges) {
         m_changesGroup->setVisible(!m_changesGroup->isVisible());
+        m_changesButton->setChecked(m_changesGroup->isVisible());
         if (m_changesGroup->isVisible()) {
             loadBigSize();
         }
@@ -171,7 +173,7 @@ void HgSyncBaseDialog::slotGetChanges()
         return;
     }
     m_changesButton->setEnabled(false);
-    
+
     QStringList args;
     getHgChangesArguments(args);
     m_process.setWorkingDirectory(m_hgw->getBaseDir());
@@ -215,6 +217,7 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     }
 
     m_changesGroup->setVisible(true);
+    m_changesButton->setChecked(true);
     loadBigSize();
     m_haveChanges = true; 
     emit changeListAvailable();

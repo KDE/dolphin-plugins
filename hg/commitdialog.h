@@ -23,16 +23,18 @@
 #include "statuslist.h"
 
 #include <QtCore/QString>
-#include <QtGui/QPlainTextEdit>
-#include <KTextEditor/Document>
-#include <KTextEditor/View>
-#include <KTextEditor/Editor>
-#include <KTextEditor/EditorChooser>
-#include <kmessagebox.h>
-#include <kmenu.h>
-#include <kaction.h>
 #include <kdialog.h>
 
+
+class QPlainTextEdit;
+class KAction;
+class KMenu;
+class QLabel;
+
+namespace KTextEditor {
+    class View;
+    class Document;
+};
 
 // TODO: Copy last commit messages
 // TODO: Filter in HgStatusList.

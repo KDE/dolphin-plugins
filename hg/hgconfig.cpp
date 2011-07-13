@@ -23,6 +23,7 @@
 #include <QtCore/QDir>
 #include <kdebug.h>
 #include <kurl.h>
+#include <kconfig.h>
 #include <kconfiggroup.h>
 
 HgConfig::HgConfig(ConfigType configType) :

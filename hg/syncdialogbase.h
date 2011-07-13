@@ -38,9 +38,7 @@
 #include <kpushbutton.h>
 
 //TODO: Save/Load dialog geometry
-//TODO: Resize dialog according to visibility of incoming changes
 //TODO: HTTPS login
-//TODO: Cancel current operation
 
 class HgSyncBaseDialog : public KDialog
 {

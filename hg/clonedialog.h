@@ -21,15 +21,14 @@
 #define HGCLONEDILAOG_H
 
 #include <QtCore/QString>
-#include <QtCore/QStringList>
 #include <QtCore/QProcess>
-#include <QtGui/QCheckBox>
-#include <QtGui/QStackedLayout>
-#include <kaction.h>
 #include <kdialog.h>
-#include <klineedit.h>
-#include <kpushbutton.h>
-#include <ktextedit.h>
+
+class KLineEdit;
+class KPushButton;
+class KTextEdit;
+class QStackedLayout;
+class QCheckBox;
 
 //TODO: Read output of clone as soon as available. 
 //TODO: Add buttons to cancel and go back during cloning.

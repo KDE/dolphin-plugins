@@ -27,6 +27,10 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTextCodec>
 #include <QtGui/QHeaderView>
+#include <QtCore/QString>
+#include <QtGui/QTableWidget>
+#include <ktextedit.h>
+#include <kcombobox.h>
 #include <klocale.h>
 #include <kurl.h>
 #include <kmessagebox.h>

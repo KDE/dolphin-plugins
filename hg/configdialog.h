@@ -22,9 +22,8 @@
 
 #include "config-widgets/generalsettings.h"
 
-#include <QtGui/QGroupBox>
-#include <klineedit.h>
 #include <kpagedialog.h>
+
 
 class HgConfigDialog : public KPageDialog
 {

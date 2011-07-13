@@ -23,15 +23,10 @@
 #include "hgwrapper.h"
 #include "syncdialogbase.h"
 
-#include <QtCore/QString>
-#include <QtGui/QTableWidget>
-#include <ktextedit.h>
-#include <kcombobox.h>
-
-//TODO: Save/Load dialog geometry
-//TODO: Resize dialog according to visibility of outgoing changes
-//TODO: HTTPS login
-//TODO: Cancel current operation
+class QCheckBox;
+class QTableWidget;
+class KTextEdit;
+class QGroupBox;
 
 class HgPushDialog : public HgSyncBaseDialog 
 {

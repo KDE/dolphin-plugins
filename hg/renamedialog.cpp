@@ -26,6 +26,8 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
+#include <klineedit.h>
+#include <kfileitem.h>
 
 HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
     KDialog(parent, Qt::Dialog),
