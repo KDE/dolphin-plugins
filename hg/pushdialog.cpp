@@ -21,14 +21,16 @@
 #include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
+#include <QtCore/QStringList>
+#include <QtCore/QString>
+#include <QtCore/QTextCodec>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
-#include <QtCore/QStringList>
-#include <QtCore/QTextCodec>
 #include <QtGui/QHeaderView>
-#include <QtCore/QString>
 #include <QtGui/QTableWidget>
+#include <QtGui/QCheckBox>
+#include <QtGui/QGroupBox>
 #include <ktextedit.h>
 #include <kcombobox.h>
 #include <klocale.h>

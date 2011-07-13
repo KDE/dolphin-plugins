@@ -33,6 +33,10 @@ class QTextCodec;
 //TODO: Make HgWrapper contain QProcess, rather than inherit
 //TODO: Create signals for infoMessage and errorMessage which will be 
 //      caught by main plugin interface.
+
+/**
+ * A singleton class providing implementation of many Mercurial commands
+ */
 class HgWrapper : public QObject
 {
     Q_OBJECT
@@ -42,18 +46,56 @@ public:
     static HgWrapper *instance();
     static void freeInstance();
 
+    /**
+     * Start a mercurial command with given arguments.
+     *
+     * @param hgCommand Command to be executed. eg. diff, status
+     * @param arguments Arguments for the given command
+     */
     void executeCommand(const QString &hgCommand,
                         const QStringList &arguments = QStringList());
+    /**
+     * Start a mercurial command with given arguments and return until
+     * process completes.
+     *
+     * @param hgCommand Command to be executed. eg. diff, status
+     * @param arguments Arguments for the given command
+     * @return true if operations completed successfully, otherwise false
+     */
     bool executeCommandTillFinished(const QString &hgCommand,
                         const QStringList &arguments = QStringList());
+    /**
+     * Start a mercurial command with given arguments, write standard output
+     * to output parameter and return till finished.
+     *
+     * @param hgCommand Command to be executed. eg. diff, status
+     * @param arguments Arguments for the given command
+     * @param output Append standard output of process to this string
+     * @return true if operations completed successfully, otherwise false
+     */
     bool executeCommand(const QString &hgCommand,
                         const QStringList &arguments,
                         QString &output);
 
+    /**
+     * Get the root directory of Mercurial repository. Using 'hg root'
+     *
+     * @return String containing path of the root directory.
+     */
     QString getBaseDir() const;
-    QString getCurrentDir() const;
-    void setBaseAsWorkingDir();
+
     void setCurrentDir(const QString &directory);
+
+    /**
+     * Get the directory path that is currently used as the working directory
+     * to execute the commands by the HgWrapper.
+     */
+    QString getCurrentDir() const;
+
+    /**
+     * Set the root directory of repository as working directory.
+     */
+    void setBaseAsWorkingDir();
     void getVersionStates(QHash<QString, KVersionControlPlugin::VersionState> &result);
 
     void addFiles(const KFileItemList &fileList);
@@ -78,22 +120,31 @@ public:
     inline QString readAllStandardOutput() {
         return m_process.readAllStandardOutput();
     }
-
+    
+    /**
+     * Check if some Mercurial operation is currently being executed or
+     * about to be started.
+     */
     inline bool isBusy() {
         return (m_process.state() == QProcess::Running ||
                 m_process.state() == QProcess::Starting);
     }
 
 public slots:
+    /**
+     * Try to terminate the currently running operation.
+     */
     void terminateCurrentProcess();
 
 signals:
+    ///equivalent to the signals of QProcess
     void finished(int exitCode, QProcess::ExitStatus exitStatus);
     void error(QProcess::ProcessError error);
     void started();
     void stateChanged(QProcess::ProcessState state);
 
 private:
+    ///Get and update m_hgBaseDir
     void updateBaseDir();
 
 private slots:
@@ -109,7 +160,6 @@ private:
 
     QString m_hgBaseDir;
     QString m_currentDir;
-    //QHash<QString, KVersionControlPlugin::VersionState> m_versionStateResult;
 };
 
 #endif // HGWRAPPER_H

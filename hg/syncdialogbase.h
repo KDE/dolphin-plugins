@@ -24,22 +24,27 @@
 
 #include <QtCore/QString>
 #include <QtCore/QProcess>
+#include <QtCore/QSize>
 #include <QtCore/QMap>
-#include <QtGui/QLabel>
-#include <QtGui/QComboBox>
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QTableWidget>
-#include <QtGui/QProgressBar>
 #include <kdialog.h>
-#include <klineedit.h>
-#include <ktextedit.h>
-#include <kcombobox.h>
-#include <kpushbutton.h>
+
+class QLabel;
+class QCheckBox;
+class QGroupBox;
+class QProgressBar;
+class KLineEdit;
+class KTextEdit;
+class KComboBox;
+class KPushButton;
 
 //TODO: Save/Load dialog geometry
 //TODO: HTTPS login
+//
 
+/**
+ * Abstract class which implements common features of Push and Pull dialog.
+ * Inherited by HgPushDialog and HgPullDialog.
+ */
 class HgSyncBaseDialog : public KDialog
 {
     Q_OBJECT

@@ -28,6 +28,7 @@
 #include <QtCore/QTextCodec>
 #include <QtGui/QHeaderView>
 #include <QtGui/QCheckBox>
+#include <QtGui/QGroupBox>
 #include <QtGui/QTableWidget>
 #include <QtCore/QString>
 #include <ktextedit.h>

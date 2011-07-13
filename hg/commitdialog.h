@@ -77,7 +77,9 @@ private:
     QString m_newBranchName;
 };
 
-
+/**
+ * Dialog which asks for the new branch name in commit dialog
+ */
 class NewBranchDialog : public KDialog 
 {
         Q_OBJECT

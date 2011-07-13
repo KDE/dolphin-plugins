@@ -31,8 +31,6 @@
 
 class KAction;
 
-//TODO: Redesign Push/Pull dialog. Make a base class implementing their common features. High Priority!!!!!!!!!
-
 class FileViewHgPlugin : public KVersionControlPlugin2
 {
     Q_OBJECT
@@ -49,6 +47,12 @@ public:
     virtual QList<QAction*> universalContextMenuActions(const QString &directory);
 
 private: 
+    /**
+     * Check if HgWrapper is created and connect some signals/slots. Created
+     * to ensure that HgWrapper singleton is instantiated not during
+     * plugin contruction hence not in other thread which ends up giving 
+     * a lot of warnings. 
+     */
     void createHgWrapper();
 
 private slots:

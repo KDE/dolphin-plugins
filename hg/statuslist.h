@@ -26,6 +26,10 @@
 class KLineEdit;
 class QTableWidget;
 
+/**
+ * Shows a list of files and their corresponding version states in a table.
+ * Used in commit dialog.
+ */
 class HgStatusList : public QGroupBox
 {
     Q_OBJECT

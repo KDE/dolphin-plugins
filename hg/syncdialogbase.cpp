@@ -28,6 +28,14 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTextCodec>
 #include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
+#include <QtGui/QGroupBox>
+#include <QtGui/QProgressBar>
+#include <klineedit.h>
+#include <ktextedit.h>
+#include <kcombobox.h>
+#include <kpushbutton.h>
 #include <klocale.h>
 #include <kurl.h>
 #include <kmessagebox.h>
