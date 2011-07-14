@@ -34,10 +34,10 @@ public:
     HgRenameDialog(const KFileItem &source, QWidget *parent = 0);
     QString source() const;
     QString destination() const;
+    void done(int r);
 
 private slots:
     void slotTextChanged(const QString &text);
-    void slotButtonClicked(int button);
 
 private:
     QString m_source;

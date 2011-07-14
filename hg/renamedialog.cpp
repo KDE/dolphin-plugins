@@ -67,8 +67,6 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
 
     connect(m_destinationFile, SIGNAL(textChanged(const QString &)),
             this, SLOT(slotTextChanged(const QString &)));
-    connect(this, SIGNAL(buttonClicked(KDialog::ButtonCode)),
-            this, SLOT(slotButtonClicked(KDialog::ButtonCode)));
 }
 
 void HgRenameDialog::slotTextChanged(const QString &text)
@@ -76,12 +74,13 @@ void HgRenameDialog::slotTextChanged(const QString &text)
     enableButtonOk(text.length() != 0);
 }
 
-void HgRenameDialog::slotButtonClicked(int button)
+void HgRenameDialog::done(int r)
 {
-    if (button == KDialog::Ok) {
+    if (r == KDialog::Accepted) {
         HgWrapper *hgi = HgWrapper::instance();
         hgi->renameFile(source(), destination());
     }
+    KDialog::done(r);
 }
 
 QString HgRenameDialog::source() const

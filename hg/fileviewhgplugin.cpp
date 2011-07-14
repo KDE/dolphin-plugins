@@ -71,7 +71,8 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_revertAction(0),
     m_revertAllAction(0),
     m_isCommitable(false),
-    m_hgWrapper(0)
+    m_hgWrapper(0),
+    m_retrievalHgw(0)
 {
     Q_UNUSED(args);
 
@@ -202,10 +203,16 @@ QString FileViewHgPlugin::fileName() const
 
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
-    createHgWrapper();
-    m_hgWrapper->setCurrentDir(directory);
+    m_currentDir = directory;
     m_versionInfoHash.clear();
-    m_hgWrapper->getVersionStates(m_versionInfoHash);
+    //createHgWrapper();
+    //m_hgWrapper->setCurrentDir(directory);
+    //m_hgWrapper->getVersionStates(m_versionInfoHash);
+    if (m_retrievalHgw == 0) {
+        m_retrievalHgw = new HgWrapper;
+    }
+    m_retrievalHgw->setCurrentDir(directory);
+    m_retrievalHgw->getVersionStates(m_versionInfoHash);
     return true;
 }
 
@@ -269,6 +276,8 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
 {
     Q_ASSERT(!items.isEmpty());
 
+    createHgWrapper();
+    m_hgWrapper->setCurrentDir(m_currentDir);
     if (!m_hgWrapper->isBusy()) {
         m_contextItems.clear();
         foreach (const KFileItem &item, items) {
@@ -319,7 +328,9 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
 
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
 {
-    QList<QAction *> actions;
+    QList<QAction*> actions;
+    createHgWrapper();
+    m_hgWrapper->setCurrentDir(directory);
     if (!m_hgWrapper->isBusy()) {
         actions.append(m_commitAction);
     }

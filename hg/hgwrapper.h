@@ -155,7 +155,6 @@ private:
     static HgWrapper *m_instance;
 
     QProcess m_process;
-    QStringList m_arguments;
     QTextCodec *m_localCodec;
 
     QString m_hgBaseDir;

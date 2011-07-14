@@ -125,6 +125,11 @@ void HgStatusList::reloadStatusTable()
                 fileName->setForeground(Qt::black);
                 currentStatusString = QLatin1String("I");
                 break;
+            case KVersionControlPlugin::MissingVersion:
+                status->setForeground(Qt::black);
+                fileName->setForeground(Qt::black);
+                currentStatusString = QLatin1String("!");
+                break;
             default:
                 break;
         }

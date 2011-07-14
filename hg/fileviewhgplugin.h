@@ -96,11 +96,13 @@ private:
 
     KFileItemList m_contextItems;
     QString m_universalCurrentDirectory;
+    QString m_currentDir;
     bool m_isCommitable;
 
     QString m_operationCompletedMsg;
     QString m_errorMsg;
     HgWrapper *m_hgWrapper;
+    HgWrapper *m_retrievalHgw;
 };
 
 #endif // FILEVIEWHGPLUGIN_H

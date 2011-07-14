@@ -66,17 +66,13 @@ void HgWrapper::freeInstance()
 void HgWrapper::slotOperationCompleted(int exitCode, 
                                        QProcess::ExitStatus exitStatus)
 {
-    kDebug() << "'hg' with arguments "
-        << m_arguments << " Exit Code: " << exitCode << "  Exit Status: "
+    kDebug() << "'hg' Exit Code: " << exitCode << "  Exit Status: "
         << exitStatus;
-    m_arguments.clear();
 }
 
 void HgWrapper::slotOperationError()
 {
-    kDebug() << "Error occurred while executing 'hg' with arguments "
-        << m_arguments;
-    m_arguments.clear();
+    kDebug() << "Error occurred while executing 'hg' with arguments ";
 }
 
 bool HgWrapper::executeCommand(const QString &hgCommand,
@@ -98,11 +94,11 @@ void HgWrapper::executeCommand(const QString &hgCommand,
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
-    m_arguments.clear(); //FIXME until signal not caught resolved
-    m_arguments << hgCommand;
-    m_arguments << arguments;
+    QStringList args;
+    args << hgCommand;
+    args << arguments;
     m_process.setWorkingDirectory(m_currentDir);
-    m_process.start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), args);
 }
 
 bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
@@ -110,11 +106,11 @@ bool HgWrapper::executeCommandTillFinished(const QString &hgCommand,
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
-    m_arguments.clear();
-    m_arguments << hgCommand;
-    m_arguments << arguments;
+    QStringList args;
+    args << hgCommand;
+    args << arguments;
     m_process.setWorkingDirectory(m_currentDir);
-    m_process.start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), args);
     m_process.waitForFinished();
 
     return (m_process.exitStatus() == QProcess::NormalExit &&
@@ -154,11 +150,12 @@ void HgWrapper::addFiles(const KFileItemList &fileList)
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
-    m_arguments << QLatin1String("add");
+    QStringList args;
+    args << QLatin1String("add");
     foreach (const KFileItem &item, fileList) {
-        m_arguments << item.localPath();
+        args << item.localPath();
     }
-    m_process.start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), args);
 }
 
 bool HgWrapper::renameFile(const QString &source, const QString &destination)
@@ -178,11 +175,12 @@ void HgWrapper::removeFiles(const KFileItemList &fileList)
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
-    m_arguments << QLatin1String("remove");
+    QStringList args;
+    args << QLatin1String("remove");
     foreach (const KFileItem &item, fileList) {
-        m_arguments << item.localPath();
+        args << item.localPath();
     }
-    m_process.start(QLatin1String("hg"), m_arguments);
+    m_process.start(QLatin1String("hg"), args);
 }
 
 bool HgWrapper::commit(const QString &message, const QStringList &files,
@@ -240,11 +238,11 @@ bool HgWrapper::revertAll()
 
 bool HgWrapper::revert(const KFileItemList &fileList)
 {
-    m_arguments << QLatin1String("revert");
+    QStringList arguments;
     foreach (const KFileItem &item, fileList) {
-        m_arguments << item.localPath();
+        arguments << item.localPath();
     }
-    return executeCommandTillFinished(QLatin1String("hg"), m_arguments);
+    return executeCommandTillFinished(QLatin1String("revert"), arguments);
 }
 
 bool HgWrapper::switchTag(const QString &name)
