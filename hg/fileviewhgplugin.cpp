@@ -173,6 +173,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Revert All"));
     connect(m_revertAllAction, SIGNAL(triggered()),
             this, SLOT(revertAll()));
+
+    m_rollbackAction = new KAction(this);
+    m_rollbackAction->setIcon(KIcon("hg-rollback"));
+    m_rollbackAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Rollback"));
+    connect(m_rollbackAction, SIGNAL(triggered()),
+            this, SLOT(rollback()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -340,6 +347,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_branchAction);
     actions.append(m_tagAction);
     actions.append(m_revertAllAction);
+    actions.append(m_rollbackAction);
     actions.append(m_configAction);
     return actions;
 }
@@ -498,6 +506,40 @@ void FileViewHgPlugin::revertAll()
 
     emit infoMessage(infoMsg);
     m_hgWrapper->revertAll();
+}
+
+void FileViewHgPlugin::rollback()
+{
+    // execute a dry run rollback first to see if there is anything to
+    // be rolled back, or check what will be rolled back
+    if (!m_hgWrapper->rollback(true)) {
+        KMessageBox::error(0, i18nc("@info:message", "No rollback "
+                                        "information available!"));
+        return;
+    }
+    // get what will be rolled back
+    QString lastTransaction = m_hgWrapper->readAllStandardOutput();
+    int cutOfFrom = lastTransaction.indexOf(QRegExp("\\d"));
+    lastTransaction = lastTransaction.mid(cutOfFrom);
+
+    // ask
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+                    "Would you like to rollback last transaction?")
+                        + "\nrevision: " + lastTransaction);
+    if (answer == KMessageBox::No) {
+        return;
+    }
+
+    QString infoMsg = i18nc("@info:status",
+         "Executing Rollback <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status",
+         "Rollback of <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+         "Rollback of <application>Hg</application> repository completed successfully.");
+
+    emit infoMessage(infoMsg);
+    m_hgWrapper->rollback();
+    KMessageBox::information(0, m_hgWrapper->readAllStandardOutput());
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

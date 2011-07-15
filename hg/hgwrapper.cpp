@@ -245,6 +245,15 @@ bool HgWrapper::revert(const KFileItemList &fileList)
     return executeCommandTillFinished(QLatin1String("revert"), arguments);
 }
 
+bool HgWrapper::rollback(bool dryRun)
+{
+    QStringList args;
+    if (dryRun) {
+        args << QLatin1String("-n");
+    }
+    return executeCommandTillFinished(QLatin1String("rollback"), args);
+}
+
 bool HgWrapper::switchTag(const QString &name)
 {
     QStringList args;

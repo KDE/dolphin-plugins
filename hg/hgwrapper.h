@@ -110,7 +110,7 @@ public:
     bool switchTag(const QString &name);
     bool revertAll();
     bool revert(const KFileItemList &fileList);
-    //bool update(const QString &name, bool discardChanges=false);
+    bool rollback(bool dryRun=false);
 
     QString getParentsOfHead();
     
