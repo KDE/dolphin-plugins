@@ -104,19 +104,15 @@ void HgUpdateDialog::slotUpdateDialog(int index)
     }
     m_selectFinal->setFocus();
 
+    /// get parents of current working directory
+    /// more precise informtaion using 'hg summary'
+    /// but no proper way to retrieve needed data
     QString output;
-    hgWrapper->executeCommand(QLatin1String("parents"), QStringList(), output);
-    QStringList outBreak = output.split('\n', QString::SkipEmptyParts);
-    output.clear();
-
-    foreach (QString line, outBreak) {
-        QStringList lineBreak =  line.split(QRegExp("\\s+"), 
-                QString::SkipEmptyParts);
-        output += QLatin1String("<b>") + lineBreak.first() 
-            + QLatin1String("</b>  ") + lineBreak.last() 
-            + QLatin1String("<br/>");
-    }
-
+    QStringList args;
+    args << QLatin1String("--template");
+    args << QLatin1String("{rev}:{node|short} ({branch})\n");
+    hgWrapper->executeCommand(QLatin1String("parents"), args, output);
+    output.replace(QLatin1String("\n"), QLatin1String("<br/>"));
     m_currentInfo->setText(output);
 }
 
@@ -131,7 +127,7 @@ void HgUpdateDialog::done(int r)
         else {
             args << "-c";
         }
-        if (m_updateTo == ToBranch) {
+        if (m_updateTo == ToRevision) {
             args << "-r";
         }
 

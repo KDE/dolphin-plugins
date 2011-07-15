@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGSYNCBASEDILAOG_H
-#define HGSYNCBASEDILAOG_H
+#ifndef HGSYNCBASEDIALOG_H
+#define HGSYNCBASEDIALOG_H
 
 #include "hgwrapper.h"
 
@@ -108,5 +108,5 @@ protected:
     QProcess m_main_process; //should I use another process?
 };
 
-#endif // HGSYNCBASEDILAOG_H
+#endif // HGSYNCBASEDIALOG_H
 

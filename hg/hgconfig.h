@@ -106,8 +106,10 @@ public:
     // user interface section
     QString username() const;
     void setUsername(const QString &userName);
+    
     QString editor() const;
     void setEditor(const QString &pathToEditor);
+
     QString merge() const;
     void setMerge(const QString &pathToMergeTool);
 

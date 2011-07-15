@@ -79,11 +79,12 @@ void HgStatusList::reloadStatusTable()
     while (it.hasNext()) {
         it.next();
         KVersionControlPlugin::VersionState currentStatus = it.value();
+        // Get path relative to root directory of repository
         // FIXME: preferred method, but not working :| bad hack below
         // QString currentFile 
         //    = KUrl::relativeUrl(hgWrapper->getBaseDir(), it.key()); 
         QString currentFile = it.key().mid(hgWrapper->getBaseDir().length()+1);
-        QString currentStatusString;
+        QString currentStatusString; //one character status indicator
 
         // Temporarily ignoring
         // TODO: Ask to add file if this is checked by user
@@ -158,12 +159,15 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
             files << m_statusTable->item(row, 2)->text();
         }
     }
+    // if all files are selected, clear the list
     if (nChecked == nRowCount) {
         files.clear();
     }
+    // atleast one file is checked
     if (nChecked > 0) {
         return true;
     }
+    //nothing is selected
     return false;
 }
 

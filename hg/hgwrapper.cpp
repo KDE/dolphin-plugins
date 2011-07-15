@@ -35,18 +35,21 @@ HgWrapper::HgWrapper(QObject *parent) :
 {
     m_localCodec = QTextCodec::codecForLocale();
 
-    connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)),
-            this, SIGNAL(stateChanged(QProcess::ProcessState)));
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
-            this, SLOT(slotOperationError()));
+    // re-emit QProcess signals
     connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
             this, SIGNAL(error(QProcess::ProcessError))); 
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SIGNAL(finished(int, QProcess::ExitStatus))),
+    connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)),
+            this, SIGNAL(stateChanged(QProcess::ProcessState)));
     connect(&m_process, SIGNAL(started()),
             this, SIGNAL(started()));
+
+    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
+            this, SLOT(slotOperationError()));
+
 }
 
 HgWrapper *HgWrapper::instance()
@@ -138,7 +141,7 @@ void HgWrapper::updateBaseDir()
 void HgWrapper::setCurrentDir(const QString &directory)
 {
     m_currentDir = directory;
-    updateBaseDir();
+    updateBaseDir(); //now get root directory of repository
 }
 
 void  HgWrapper::setBaseAsWorkingDir()
@@ -269,20 +272,12 @@ QString HgWrapper::getParentsOfHead()
 {
     Q_ASSERT(m_process.state() == QProcess::NotRunning);
 
-    QString line;
-    m_process.start(QLatin1String("hg parents"));
-    while (m_process.waitForReadyRead()) {
-        char buffer[1024];
-        while (m_process.readLine(buffer, sizeof(buffer))) {
-            QString bufferString = QString(buffer);
-            if (bufferString.contains("changeset:")) {
-                QStringList parts = bufferString.split(" ", QString::SkipEmptyParts);
-                line += parts.takeLast().trimmed();
-                line += "   ";
-            }
-        }
-    }
-    return line;
+    QString output;
+    QStringList args;
+    args << QLatin1String("--template");
+    args << QLatin1String("{rev}:{node|short}  ");
+    executeCommand(QLatin1String("parents"), args, output);
+    return output;
 }
 
 QStringList HgWrapper::getTags()
@@ -317,9 +312,10 @@ QStringList HgWrapper::getBranches()
 
 void HgWrapper::getVersionStates(QHash<QString, KVersionControlPlugin::VersionState> &result)
 {
-    int nTrimOutLeft = m_hgBaseDir.length();
+    /*int nTrimOutLeft = m_hgBaseDir.length();
     QString relativePrefix = m_currentDir.right(m_currentDir.length() -
                                                  nTrimOutLeft - 1);
+    kDebug() << m_hgBaseDir << "     " << relativePrefix;*/
 
     // Get status of files
     QStringList args;
@@ -338,9 +334,8 @@ void HgWrapper::getVersionStates(QHash<QString, KVersionControlPlugin::VersionSt
             const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
-            if (currentFile.startsWith(relativePrefix)) {
-                KVersionControlPlugin::VersionState vs = KVersionControlPlugin::NormalVersion;
-                switch (currentStatus) {
+            KVersionControlPlugin::VersionState vs = KVersionControlPlugin::NormalVersion;
+            switch (currentStatus) {
                 case 'A':
                     vs = KVersionControlPlugin::AddedVersion;
                     break;
@@ -362,13 +357,13 @@ void HgWrapper::getVersionStates(QHash<QString, KVersionControlPlugin::VersionSt
                 case '!':
                     vs = KVersionControlPlugin::MissingVersion;
                     break;
-                }
-                if (vs != KVersionControlPlugin::NormalVersion) {
-                    KUrl url = KUrl::fromPath(m_hgBaseDir);
-                    url.addPath(currentFile);
-                    QString filePath = url.path();
-                    result.insert(filePath, vs);
-                }
+            }
+            if (vs != KVersionControlPlugin::NormalVersion) {
+                // Get full path to file and insert it to result
+                KUrl url = KUrl::fromPath(m_hgBaseDir);
+                url.addPath(currentFile);
+                QString filePath = url.path();
+                result.insert(filePath, vs);
             }
         }
     }

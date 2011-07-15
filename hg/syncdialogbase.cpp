@@ -180,7 +180,6 @@ void HgSyncBaseDialog::slotGetChanges()
     if (m_process.state() == QProcess::Running) {
         return;
     }
-    m_changesButton->setEnabled(false);
 
     QStringList args;
     getHgChangesArguments(args);
@@ -197,12 +196,10 @@ void HgSyncBaseDialog::slotChangesProcessError()
 {
     kDebug() << "Cant get changes";
     KMessageBox::error(this, i18n("Error!"));
-    m_changesButton->setEnabled(true);
 }
 
 void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
 {
-    m_changesButton->setEnabled(true);
 
     if (exitCode != 0 || status != QProcess::NormalExit) {
         return;
@@ -266,7 +263,6 @@ void HgSyncBaseDialog::done(int r)
         args << remoteUrl();
         appendOptionArguments(args);
 
-        enableButtonOk(false);
         m_terminated = false;
         
         m_main_process.setWorkingDirectory(m_hgw->getBaseDir());
@@ -301,7 +297,6 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
         KDialog::done(KDialog::Accepted);
     }
     else {
-        enableButtonOk(true);
         if (!m_terminated) {
             KMessageBox::error(this, i18n("Error!"));
         }
@@ -310,7 +305,6 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
 
 void HgSyncBaseDialog::slotOperationError()
 {
-    enableButtonOk(true);
     KMessageBox::error(this, i18n("Error!"));
 }
 
@@ -318,9 +312,14 @@ void HgSyncBaseDialog::slotUpdateBusy(QProcess::ProcessState state)
 {
     if (state == QProcess::Running || state == QProcess::Starting) {
         m_statusProg->setRange(0, 0);
+        m_changesButton->setEnabled(false);
+        m_changesButton->setChecked(true);
+        this->enableButtonOk(false);
     }
     else {
         m_statusProg->setRange(0, 100);
+        m_changesButton->setEnabled(true);
+        this->enableButtonOk(true);
     }
     m_statusProg->repaint();
     QApplication::processEvents();

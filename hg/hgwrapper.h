@@ -84,6 +84,10 @@ public:
      */
     QString getBaseDir() const;
 
+    /**
+     * Sets the current directory being browsed with plugin enabled.
+     * Updates base directory of repository accordingly
+     */
     void setCurrentDir(const QString &directory);
 
     /**
@@ -96,25 +100,110 @@ public:
      * Set the root directory of repository as working directory.
      */
     void setBaseAsWorkingDir();
+
+    /**
+     * Get FileName-VersionState pairs of the repository returned by 
+     *
+     * $hg status --modified --added --removed --deleted --unknown --ignored
+     *
+     * Hence returns files with VersionState
+     *      - LocallyModifiedVersion
+     *      - AddedVersion
+     *      - RemovedVersion
+     *      - RemovedVersion
+     *      - UnversionedVersion
+     *      - IgnoredVersion
+     *      - MissingVersion
+     *
+     * @param result A hashmap containing FileName-VersionState pairs
+     *
+     */
     void getVersionStates(QHash<QString, KVersionControlPlugin::VersionState> &result);
 
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);
     bool renameFile(const QString &source, const QString &destination);
+
+    /**
+     * Commits changes made to the working directory.
+     * @param message Commit message. Should not be empty.
+     * @param files List of files to be committed. Files changed but not 
+     *              listed here will be ignored during commit. 
+     *              If the list is empty, all modified files will be 
+     *              committed, the deault behovior.
+     * @param closeCurrentBranch Closes the current branch after commit.
+     * @return true if successfull, otherwise false
+     */
     bool commit(const QString &message, 
                 const QStringList &files = QStringList(), 
                 bool closeCurrentBranch = false);
+
+    /**
+     * Create a new branch
+     * @param name Name of new branch to be createdialog
+     * @return true if successfully created, otherwise false
+     */
     bool createBranch(const QString &name);
+
+    /**
+     * Update current working directory to another branch
+     * @param name Name of the branch to which working directory
+     *              has to be updated.
+     * @return true if successfull, otherwise false
+     */
     bool switchBranch(const QString &name);
+
+    /**
+     * Create tag for current changeset(the changeset of working directory)
+     * @param name Name of the new tag to be createdialog
+     * @return true if successfull, otherwise false
+     */
     bool createTag(const QString &name);
+
+    /**
+     * Update working directory to a changeset named by given tag
+     * @param name Tag of the changeset to which working directory
+     *              has to be updated.
+     * @return true if successfull, otherwise false
+     */
     bool switchTag(const QString &name);
+
+    /**
+     * Reverts all local changes made to working directory. Will update to 
+     * last changeset of current branch, ie state just after last commit.
+     */
     bool revertAll();
+
+    /**
+     * Reverts local changes made to selected files. All changes made to 
+     * these files after last commit will be lost.
+     */
     bool revert(const KFileItemList &fileList);
+
+    /**
+     * Undo's last transaction. Like commit, pull, push(to this repo).
+     * Does not alter working directory.
+     *
+     * Use with care. Rollback cant be undone. See Mercurial man page FOR
+     * more info.
+     *
+     * @param dryRun Dont actually perform action, but just print ouput 
+     *              Used to check if Rollback can be done, and if yes then
+     *              what will be rolled back.
+     * @return true if successfull, otherwise false
+     */
     bool rollback(bool dryRun=false);
 
     QString getParentsOfHead();
     
+    /**
+     * Returns list of all branch names.
+     */
     QStringList getBranches();
+
+    /**
+     * Returns list of all tags
+     */
     QStringList getTags();
 
     inline QString readAllStandardOutput() {
