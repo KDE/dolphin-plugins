@@ -17,22 +17,25 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "generalsettings.h"
+#include "generalconfig.h"
 #include "hgconfig.h"
 
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtCore/QString>
+#include <QtGui/QCheckBox>
+#include <klineedit.h>
+#include <kpushbutton.h>
 #include <klocale.h>
 
-HgGeneralConfig::HgGeneralConfig(QWidget *parent):
+HgGeneralConfigWidget::HgGeneralConfigWidget(QWidget *parent):
     QWidget(parent)
 {
     setupUI();
     loadConfig();
 }
 
-void HgGeneralConfig::setupUI()
+void HgGeneralConfigWidget::setupUI()
 {
     m_userEdit = new KLineEdit;
     m_editorEdit = new KLineEdit;
@@ -55,7 +58,7 @@ void HgGeneralConfig::setupUI()
     setLayout(mainLayout);
 }
 
-void HgGeneralConfig::loadConfig()
+void HgGeneralConfigWidget::loadConfig()
 {
     HgConfig hgc(HgConfig::GlobalConfig);
 
@@ -72,7 +75,7 @@ void HgGeneralConfig::loadConfig()
     }
 }
 
-void HgGeneralConfig::saveConfig()
+void HgGeneralConfigWidget::saveConfig()
 {
     HgConfig hgc(HgConfig::GlobalConfig);
     hgc.setUsername(m_userEdit->text());
@@ -89,5 +92,5 @@ void HgGeneralConfig::saveConfig()
     }
 }
 
-#include "generalsettings.moc"
+#include "generalconfig.moc"
 

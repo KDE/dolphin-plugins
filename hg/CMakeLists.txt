@@ -18,7 +18,8 @@ set(fileviewhgplugin_SRCS
     pulldialog.cpp
     hgconfig.cpp
     configdialog.cpp
-    config-widgets/generalsettings.cpp
+    config-widgets/generalconfig.cpp
+    config-widgets/pathconfig.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

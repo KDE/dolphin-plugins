@@ -20,10 +20,10 @@
 #ifndef HGCONFIGDILAOG_H
 #define HGCONFIGDILAOG_H
 
-#include "config-widgets/generalsettings.h"
-
 #include <kpagedialog.h>
 
+class HgGeneralConfigWidget;
+class HgPathConfigWidget;
 
 class HgConfigDialog : public KPageDialog
 {
@@ -42,7 +42,8 @@ private slots:
     void saveSettings();
 
 private:
-    HgGeneralConfig *m_generalConfig;
+    HgGeneralConfigWidget *m_generalConfig;
+    HgPathConfigWidget *m_pathConfig;
 
 };
 

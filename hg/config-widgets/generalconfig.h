@@ -17,20 +17,20 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGGENERAL_CONFIG_H
-#define HGGENERAL_CONFIG_H
+#ifndef HGGENERAL_CONFIG_WIDGET_H
+#define HGGENERAL_CONFIG_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <QtGui/QCheckBox>
-#include <klineedit.h>
-#include <kpushbutton.h>
 
-class HgGeneralConfig : public QWidget
+class KLineEdit;
+class QCheckBox;
+
+class HgGeneralConfigWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    HgGeneralConfig(QWidget *parent = 0);
+    HgGeneralConfigWidget(QWidget *parent = 0);
 
 public slots:
     void saveConfig();
@@ -46,5 +46,5 @@ private:
     QCheckBox *m_verboseCheck;
 };
 
-#endif // HGGENERAL_CONFIG_H
+#endif // HGGENERAL_CONFIG_WIDGET_H
 

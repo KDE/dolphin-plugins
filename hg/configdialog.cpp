@@ -22,6 +22,9 @@
 #include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
+#include "config-widgets/generalconfig.h"
+#include "config-widgets/pathconfig.h"
+
 #include <QtGui/QWidget>
 #include <klocale.h>
 #include <kdebug.h>
@@ -43,8 +46,11 @@ HgConfigDialog::HgConfigDialog(QWidget *parent):
 
 void HgConfigDialog::setupUI()
 {
-    m_generalConfig = new HgGeneralConfig;
+    m_generalConfig = new HgGeneralConfigWidget;
     addPage(m_generalConfig, i18nc("@label:group", "General Settings"));
+
+    m_pathConfig = new HgPathConfigWidget;
+    addPage(m_pathConfig, i18nc("@label:group", "Repository Paths"));
 }
 
 void HgConfigDialog::saveSettings()
