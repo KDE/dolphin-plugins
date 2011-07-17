@@ -59,6 +59,7 @@ void HgConfigDialog::saveSettings()
 {
     kDebug() << "Saving Mercurial configuration";
     m_generalConfig->saveConfig();
+    m_pathConfig->saveConfig();
 }
 
 void HgConfigDialog::done(int r)

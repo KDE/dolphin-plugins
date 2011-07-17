@@ -45,10 +45,19 @@ public slots:
 
 private:
     void setupUI();
+    
+    /**
+     * Prepare context menu and its actions for table widget showing path.
+     */
     void setupContextMenu();
 
 private slots:
-    void slotContextMenuRequested(const QPoint &pos);
+    /**
+     * Show context menu and changed enabled status of actions according 
+     * to the position where menu is requested.
+     */
+    void slotContextMenuRequested(const QPoint &pos); 
+
     void slotAddPath();
     void slotModifyPath();
     void slotDeletePath();
@@ -63,10 +72,11 @@ private:
     KAction *m_addAction;
     KAction *m_modifyAction;
     KAction *m_deleteAction;
-
     KMenu *m_contextMenu;
 
     QMap<QString, QString> m_remotePathMap;
+    QStringList m_removeList;
+
 };
 
 #endif // HGPATH_CONFIG_H

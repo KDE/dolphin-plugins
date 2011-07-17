@@ -38,9 +38,6 @@ HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
     loadConfig();
 }
 
-/**
- * Context menu shown by right clicking on the path table
- */
 void HgPathConfigWidget::setupContextMenu()
 {
     m_addAction = new KAction(this);
@@ -77,9 +74,14 @@ void HgPathConfigWidget::setupUI()
     m_addPathButton = new KPushButton(i18nc("@label:button", "Add"));
     m_modifyPathButton = new KPushButton(i18nc("@label:button", "Edit"));
     m_deletePathButton = new KPushButton(i18nc("@label:button", "Remove"));
+
     actionsLayout->addWidget(m_addPathButton);
     actionsLayout->addWidget(m_modifyPathButton);
     actionsLayout->addWidget(m_deletePathButton);
+
+    connect(m_addPathButton, SIGNAL(clicked()), this, SLOT(slotAddPath()));
+    connect(m_modifyPathButton, SIGNAL(clicked()), this, SLOT(slotModifyPath()));
+    connect(m_deletePathButton, SIGNAL(clicked()), this, SLOT(slotDeletePath()));
 
     /// create and setup the Table Widget
     m_pathsListWidget = new QTableWidget;
@@ -90,14 +92,14 @@ void HgPathConfigWidget::setupUI()
     m_pathsListWidget->horizontalHeader()->hide();
     m_pathsListWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_pathsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
-    m_pathsListWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    m_pathsListWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
     m_pathsListWidget->horizontalHeader()->setStretchLastSection(true);
     m_pathsListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 
     // setup main layout 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addWidget(m_pathsListWidget);
     mainLayout->addLayout(actionsLayout);
+    mainLayout->addWidget(m_pathsListWidget);
     setLayout(mainLayout);
 }
 
@@ -107,6 +109,7 @@ void HgPathConfigWidget::loadConfig()
     m_remotePathMap = hgc.repoRemotePathList();
 
     m_pathsListWidget->clearContents();
+    m_removeList.clear();
 
     QMutableMapIterator<QString, QString> it(m_remotePathMap);
     int count = 0;
@@ -129,26 +132,59 @@ void HgPathConfigWidget::loadConfig()
 
 void HgPathConfigWidget::saveConfig()
 {
-    HgConfig hgc(HgConfig::GlobalConfig);
+    HgConfig hgc(HgConfig::RepoConfig);
+
+    // first delete the alias in remove list from hgrc 
+    foreach(QString alias, m_removeList) {
+        hgc.deleteRepoRemotePath(alias);
+    }
+
+    // now save the new list in table to hgrc
+    int rowCount = m_pathsListWidget->rowCount();
+    for (int i = 0; i < rowCount; i++) {
+        QString alias = m_pathsListWidget->item(i, 0)->text();
+        QString url = m_pathsListWidget->item(i, 1)->text();
+        hgc.setRepoRemotePath(alias, url);
+    }
 }
 
 void HgPathConfigWidget::slotContextMenuRequested(const QPoint &pos)
 {
     if (m_pathsListWidget->indexAt(pos).isValid()) {
-        m_contextMenu->exec(m_pathsListWidget->mapToGlobal(pos));
+        m_deleteAction->setEnabled(true);
+        m_modifyAction->setEnabled(true);
+    } else {
+        m_deleteAction->setEnabled(false);
+        m_modifyAction->setEnabled(false);
     }
+    m_addAction->setEnabled(true);
+    m_contextMenu->exec(m_pathsListWidget->mapToGlobal(pos));
 }
 
 void HgPathConfigWidget::slotAddPath()
 {
+    QTableWidgetItem *alias = new QTableWidgetItem;
+    QTableWidgetItem *path = new QTableWidgetItem;
+
+    int count = m_pathsListWidget->rowCount(); 
+    m_pathsListWidget->insertRow(count);
+    m_pathsListWidget->setItem(count, 0, alias);
+    m_pathsListWidget->setItem(count, 1, path);
+    m_pathsListWidget->resizeRowsToContents();
+    m_pathsListWidget->setCurrentItem(alias);
+    m_pathsListWidget->editItem(m_pathsListWidget->item(count, 0));
 }
 
 void HgPathConfigWidget::slotDeletePath()
 {
+    int currentRow = m_pathsListWidget->currentRow();
+    m_removeList << m_pathsListWidget->item(currentRow, 0)->text();
+    m_pathsListWidget->removeRow(currentRow);
 }
 
 void HgPathConfigWidget::slotModifyPath()
 {
+    m_pathsListWidget->editItem(m_pathsListWidget->currentItem());
 }
 
 #include "pathconfig.moc"
