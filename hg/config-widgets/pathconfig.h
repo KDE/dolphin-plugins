@@ -25,6 +25,7 @@
 #include <QtCore/QString>
 
 class QTableWidget;
+class QTableWidgetItem;
 class KPushButton;
 class KAction;
 class KMenu;
@@ -57,6 +58,8 @@ private slots:
      * to the position where menu is requested.
      */
     void slotContextMenuRequested(const QPoint &pos); 
+    void slotCellChanged(int row, int col);
+    void slotSelectionChanged();
 
     void slotAddPath();
     void slotModifyPath();
@@ -64,6 +67,8 @@ private slots:
 
 private:
     QTableWidget *m_pathsListWidget;
+    bool m_loadingCell;
+    bool m_allValidData;
 
     KPushButton *m_addPathButton;
     KPushButton *m_deletePathButton;
@@ -76,7 +81,6 @@ private:
 
     QMap<QString, QString> m_remotePathMap;
     QStringList m_removeList;
-
 };
 
 #endif // HGPATH_CONFIG_H

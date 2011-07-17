@@ -29,10 +29,13 @@
 #include <kaction.h>
 #include <klocale.h>
 #include <kmenu.h>
+#include <kmessagebox.h>
 #include <kdebug.h>
 
 HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
-    QWidget(parent)
+    QWidget(parent),
+    m_loadingCell(false),
+    m_allValidData(true)
 {
     setupUI();
     loadConfig();
@@ -63,6 +66,10 @@ void HgPathConfigWidget::setupContextMenu()
     m_contextMenu->addAction(m_modifyAction);
     m_contextMenu->addAction(m_deleteAction);
 
+    connect(m_pathsListWidget, SIGNAL(cellChanged(int, int)),
+            this, SLOT(slotCellChanged(int, int)));
+    connect(m_pathsListWidget, SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotSelectionChanged()));
     connect(m_pathsListWidget, SIGNAL(customContextMenuRequested(const QPoint&)),
             this, SLOT(slotContextMenuRequested(const QPoint&)));
 }
@@ -107,6 +114,7 @@ void HgPathConfigWidget::loadConfig()
 {
     HgConfig hgc(HgConfig::RepoConfig);
     m_remotePathMap = hgc.repoRemotePathList();
+    m_loadingCell = true;
 
     m_pathsListWidget->clearContents();
     m_removeList.clear();
@@ -128,22 +136,28 @@ void HgPathConfigWidget::loadConfig()
     }
 
     m_pathsListWidget->resizeRowsToContents();
+    m_loadingCell = false;
 }
 
 void HgPathConfigWidget::saveConfig()
 {
     HgConfig hgc(HgConfig::RepoConfig);
 
+    if (!m_allValidData) {
+        return;
+    }
+
     // first delete the alias in remove list from hgrc 
     foreach(QString alias, m_removeList) {
         hgc.deleteRepoRemotePath(alias);
     }
 
-    // now save the new list in table to hgrc
-    int rowCount = m_pathsListWidget->rowCount();
-    for (int i = 0; i < rowCount; i++) {
-        QString alias = m_pathsListWidget->item(i, 0)->text();
-        QString url = m_pathsListWidget->item(i, 1)->text();
+    // now save the new map in table to hgrc
+    QMutableMapIterator<QString, QString> it(m_remotePathMap);
+    while (it.hasNext()) {
+        it.next();
+        QString alias = it.key();
+        QString url = it.value();
         hgc.setRepoRemotePath(alias, url);
     }
 }
@@ -167,24 +181,59 @@ void HgPathConfigWidget::slotAddPath()
     QTableWidgetItem *path = new QTableWidgetItem;
 
     int count = m_pathsListWidget->rowCount(); 
+    m_loadingCell = true;
     m_pathsListWidget->insertRow(count);
     m_pathsListWidget->setItem(count, 0, alias);
     m_pathsListWidget->setItem(count, 1, path);
     m_pathsListWidget->resizeRowsToContents();
     m_pathsListWidget->setCurrentItem(alias);
     m_pathsListWidget->editItem(m_pathsListWidget->item(count, 0));
+    m_loadingCell = false;
 }
 
 void HgPathConfigWidget::slotDeletePath()
 {
     int currentRow = m_pathsListWidget->currentRow();
     m_removeList << m_pathsListWidget->item(currentRow, 0)->text();
+    m_remotePathMap.remove(m_pathsListWidget->item(currentRow, 0)->text());
     m_pathsListWidget->removeRow(currentRow);
 }
 
 void HgPathConfigWidget::slotModifyPath()
 {
     m_pathsListWidget->editItem(m_pathsListWidget->currentItem());
+}
+
+void HgPathConfigWidget::slotCellChanged(int row, int col) 
+{
+    if (m_loadingCell) {
+        return;
+    }
+
+    QTableWidgetItem *alias = m_pathsListWidget->item(row, 0);
+    QTableWidgetItem *url = m_pathsListWidget->item(row, 1);
+    if (alias->text().isEmpty() || url->text().isEmpty()) {
+        alias->setBackground(Qt::red);
+        url->setBackground(Qt::red);
+        m_allValidData = false;
+        return;
+    }  
+    else if (m_remotePathMap.contains(alias->text())) {
+        alias->setBackground(Qt::red);
+        url->setBackground(Qt::red);
+        m_allValidData = false;
+        return;
+    }
+    else {
+        alias->setBackground(Qt::NoBrush);
+        url->setBackground(Qt::NoBrush);
+        m_remotePathMap.insert(alias->text(), url->text());
+        m_allValidData = true;
+    }
+}
+
+void HgPathConfigWidget::slotSelectionChanged()
+{
 }
 
 #include "pathconfig.moc"
