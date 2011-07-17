@@ -40,6 +40,8 @@ private:
 
 private slots:
     void saveSettings();
+    void saveGeometry();
+    void loadGeometry();
 
 private:
     HgGeneralConfigWidget *m_generalConfig;

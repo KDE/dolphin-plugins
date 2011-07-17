@@ -14,6 +14,18 @@
             <min>500</min>
         </entry>
     </group>
+    <group name="ConfigDialogSettings">
+        <entry name="configDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+            <min>400</min>
+        </entry>
+        <entry name="configDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+            <min>500</min>
+        </entry>
+    </group>
     <group name="CloneDialogSettings">
         <entry name="cloneDialogHeight" type="Int">
             <label>Dialog height</label>

@@ -40,8 +40,10 @@ HgConfigDialog::HgConfigDialog(QWidget *parent):
     //this->enableButtonOk(false);
 
     setupUI();
+    loadGeometry();
 
     connect(this, SIGNAL(applyClicked()), this, SLOT(saveSettings()));   
+    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
 }
 
 void HgConfigDialog::setupUI()
@@ -68,6 +70,21 @@ void HgConfigDialog::done(int r)
     else {
         KDialog::done(r);
     }
+}
+
+void HgConfigDialog::loadGeometry()
+{
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    this->setInitialSize(QSize(settings->configDialogWidth(),
+                               settings->configDialogHeight()));
+}
+
+void HgConfigDialog::saveGeometry()
+{
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    settings->setConfigDialogHeight(this->height());
+    settings->setConfigDialogWidth(this->width());
+    settings->writeConfig();
 }
 
 #include "configdialog.moc"
