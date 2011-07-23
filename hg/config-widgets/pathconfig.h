@@ -69,6 +69,8 @@ private:
     QTableWidget *m_pathsListWidget;
     bool m_loadingCell;
     bool m_allValidData;
+    bool m_newAdd;
+    QString m_oldSelValue;
 
     KPushButton *m_addPathButton;
     KPushButton *m_deletePathButton;

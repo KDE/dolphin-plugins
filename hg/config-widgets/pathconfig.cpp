@@ -35,7 +35,8 @@
 HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
     QWidget(parent),
     m_loadingCell(false),
-    m_allValidData(true)
+    m_allValidData(true),
+    m_newAdd(false)
 {
     setupUI();
     loadConfig();
@@ -189,6 +190,7 @@ void HgPathConfigWidget::slotAddPath()
     m_pathsListWidget->setCurrentItem(alias);
     m_pathsListWidget->editItem(m_pathsListWidget->item(count, 0));
     m_loadingCell = false;
+    m_newAdd = true;
 }
 
 void HgPathConfigWidget::slotDeletePath()
@@ -206,7 +208,8 @@ void HgPathConfigWidget::slotModifyPath()
 
 void HgPathConfigWidget::slotCellChanged(int row, int col) 
 {
-    if (m_loadingCell) {
+    if (m_loadingCell || 
+            m_oldSelValue == m_pathsListWidget->currentItem()->text()) {
         return;
     }
 
@@ -218,22 +221,39 @@ void HgPathConfigWidget::slotCellChanged(int row, int col)
         m_allValidData = false;
         return;
     }  
-    else if (m_remotePathMap.contains(alias->text())) {
+    else if (m_remotePathMap.contains(alias->text()) && m_newAdd) {
+        m_oldSelValue = m_pathsListWidget->currentItem()->text();
+        alias->setBackground(Qt::red);
+        url->setBackground(Qt::red);
+        m_allValidData = false;
+        return;
+    }
+    else if (m_remotePathMap.contains(alias->text()) && col == 0) {
+        m_oldSelValue = m_pathsListWidget->currentItem()->text();
         alias->setBackground(Qt::red);
         url->setBackground(Qt::red);
         m_allValidData = false;
         return;
     }
     else {
+        kDebug() << "bingo";
+        if (!m_newAdd && col == 0) {
+            m_remotePathMap.remove(m_oldSelValue);
+            m_removeList << m_oldSelValue;
+        }
+        m_remotePathMap.insert(alias->text(), url->text());
+        m_oldSelValue = m_pathsListWidget->currentItem()->text();
         alias->setBackground(Qt::NoBrush);
         url->setBackground(Qt::NoBrush);
-        m_remotePathMap.insert(alias->text(), url->text());
         m_allValidData = true;
     }
+
+    m_newAdd = false;
 }
 
 void HgPathConfigWidget::slotSelectionChanged()
 {
+    m_oldSelValue = m_pathsListWidget->currentItem()->text();
 }
 
 #include "pathconfig.moc"
