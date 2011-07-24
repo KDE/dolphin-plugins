@@ -17,38 +17,43 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCONFIGDILAOG_H
-#define HGCONFIGDILAOG_H
+#ifndef HGCONFIG_IGNOREWIDGET_H
+#define HGCONFIG_IGNOREWIDGET_H
 
-#include <kpagedialog.h>
+#include <QtGui/QWidget>
 
-class HgGeneralConfigWidget;
-class HgPathConfigWidget;
-class HgIgnoreWidget;
+class QTreeView;
+class QListWidget;
+class QFileSystemModel;
+class KPushButton; 
 
-class HgConfigDialog : public KPageDialog
+class HgIgnoreWidget : public QWidget
 {
     Q_OBJECT
-
 public:
-    HgConfigDialog(QWidget *parent = 0);
+    HgIgnoreWidget(QWidget *parent = 0);
 
-private:
-    void done(int r);
-
-    // user interface
-    void setupUI();
+    void loadConfig();
+    void saveConfig();
 
 private slots:
-    void saveSettings();
-    void saveGeometry();
-    void loadGeometry();
+    void slotAddFiles();
+    void slotAddPattern();
+    void slotRemoveEntries();
+    void slotEditEntry();
 
 private:
-    HgGeneralConfigWidget *m_generalConfig;
-    HgPathConfigWidget *m_pathConfig;
-    HgIgnoreWidget *m_ignoreWidget;
+    void setupUI();
+
+private:
+    QListWidget *m_ignoreTable;
+    QTreeView *m_fsTable;
+    QFileSystemModel *m_fsModel;
+    KPushButton *m_addFiles;
+    KPushButton *m_addPattern;
+    KPushButton *m_removeEntries;
+    KPushButton *m_editEntry;
 };
 
-#endif // HGCONFIGDILAOG_H
+#endif /* HGCONFIG_IGNOREWIDGET_H */
 

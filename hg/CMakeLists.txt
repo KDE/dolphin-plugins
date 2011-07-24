@@ -20,6 +20,7 @@ set(fileviewhgplugin_SRCS
     configdialog.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
+    config-widgets/ignorewidget.cpp
 )
 
 kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)

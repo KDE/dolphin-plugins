@@ -24,6 +24,7 @@
 
 #include "config-widgets/generalconfig.h"
 #include "config-widgets/pathconfig.h"
+#include "config-widgets/ignorewidget.h"
 
 #include <QtGui/QWidget>
 #include <klocale.h>
@@ -53,6 +54,9 @@ void HgConfigDialog::setupUI()
 
     m_pathConfig = new HgPathConfigWidget;
     addPage(m_pathConfig, i18nc("@label:group", "Repository Paths"));
+
+    m_ignoreWidget = new HgIgnoreWidget;
+    addPage(m_ignoreWidget, i18nc("@label:group", "Ignored Files"));
 }
 
 void HgConfigDialog::saveSettings()
