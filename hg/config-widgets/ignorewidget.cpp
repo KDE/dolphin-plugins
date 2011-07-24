@@ -26,6 +26,9 @@
 #include <QtGui/QTreeView>
 #include <QtGui/QFileSystemModel>
 #include <QtCore/QString>
+#include <QtCore/QFile>
+#include <QtCore/QList>
+#include <QtCore/QTextStream>
 #include <kurl.h>
 #include <kpushbutton.h>
 #include <klocale.h>
@@ -35,6 +38,7 @@ HgIgnoreWidget::HgIgnoreWidget(QWidget *parent) :
     QWidget(parent)
 {
     setupUI();
+    loadConfig();
 }
 
 void HgIgnoreWidget::setupUI()
@@ -72,10 +76,42 @@ void HgIgnoreWidget::setupUI()
 
 void HgIgnoreWidget::loadConfig()
 {
+    KUrl url(HgWrapper::instance()->getBaseDir());
+    url.addPath(QLatin1String(".hgignore"));
+
+    QFile file(url.path());
+    if (!file.open(QFile::ReadOnly)) {
+        return;
+    }
+    
+    QTextStream fileStream(&file);
+
+    do {
+        QString buffer;
+        buffer = fileStream.readLine();
+        if (!buffer.isEmpty()) {
+            m_ignoreTable->addItem(buffer);
+        }
+    } while (!fileStream.atEnd());
 }
 
 void HgIgnoreWidget::saveConfig()
 {
+    KUrl url(HgWrapper::instance()->getBaseDir());
+    url.addPath(QLatin1String(".hgignore"));
+
+    QFile file(url.path());
+    if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
+        return;
+    }
+    
+    QTextStream fileStream(&file);
+    int count = m_ignoreTable->count();
+    for (int i=0; i<count; i++) {
+        QListWidgetItem *item = m_ignoreTable->item(i);
+        fileStream << item->text() << QLatin1String("\n");
+        kDebug() << item->text();
+    }
 }
 
 void HgIgnoreWidget::slotAddFiles()
@@ -88,6 +124,10 @@ void HgIgnoreWidget::slotAddPattern()
 
 void HgIgnoreWidget::slotRemoveEntries()
 {
+    QList<QListWidgetItem*> selectedItems = m_ignoreTable->selectedItems();
+    foreach (QListWidgetItem *item, selectedItems) {
+        m_ignoreTable->takeItem(m_ignoreTable->row(item));
+    }
 }
 void HgIgnoreWidget::slotEditEntry()
 {
