@@ -14,6 +14,7 @@ set(fileviewhgplugin_SRCS
     clonedialog.cpp
     createdialog.cpp
     syncdialogbase.cpp
+    mergedialog.cpp
     pushdialog.cpp
     pulldialog.cpp
     hgconfig.cpp

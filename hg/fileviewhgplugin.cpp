@@ -29,6 +29,7 @@
 #include "createdialog.h"
 #include "pushdialog.h"
 #include "pulldialog.h"
+#include "mergedialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -180,6 +181,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Rollback"));
     connect(m_rollbackAction, SIGNAL(triggered()),
             this, SLOT(rollback()));
+
+    m_mergeAction = new KAction(this);
+    m_mergeAction->setIcon(KIcon("hg-merge"));
+    m_mergeAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Merge"));
+    connect(m_mergeAction, SIGNAL(triggered()),
+            this, SLOT(merge()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -346,6 +354,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_updateAction);
     actions.append(m_branchAction);
     actions.append(m_tagAction);
+    actions.append(m_mergeAction);
     actions.append(m_revertAllAction);
     actions.append(m_rollbackAction);
     actions.append(m_configAction);
@@ -467,6 +476,13 @@ void FileViewHgPlugin::pull()
     HgPullDialog diag;
     diag.exec();
 }
+
+void FileViewHgPlugin::merge()
+{
+    HgMergeDialog diag;
+    diag.exec();
+}
+
 
 void FileViewHgPlugin::revert()
 {

@@ -71,6 +71,7 @@ private slots:
     void revert();
     void revertAll();
     void rollback();
+    void merge();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -93,6 +94,7 @@ private:
     KAction *m_revertAction;
     KAction *m_revertAllAction;
     KAction *m_rollbackAction;
+    KAction *m_mergeAction;
     //KAction *m_backoutAction;
 
     KFileItemList m_contextItems;
