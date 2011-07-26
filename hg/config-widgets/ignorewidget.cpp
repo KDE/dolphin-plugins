@@ -23,8 +23,7 @@
 #include <QtGui/QListWidget>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QHBoxLayout>
-#include <QtGui/QTreeView>
-#include <QtGui/QFileSystemModel>
+#include <QtGui/QInputDialog>
 #include <QtCore/QString>
 #include <QtCore/QFile>
 #include <QtCore/QList>
@@ -55,15 +54,14 @@ void HgIgnoreWidget::setupUI()
     sideBar->addStretch();
 
     m_ignoreTable = new QListWidget;
-    m_fsTable = new QTreeView;
-    m_fsModel = new QFileSystemModel;
+    m_untrackedList = new QListWidget;
+    setupUntrackedList();
 
-    m_fsModel->setRootPath(HgWrapper::instance()->getBaseDir());
-    kDebug() << m_fsModel->rootDirectory();
-    m_fsTable->setModel(m_fsModel);
+    m_ignoreTable->setSelectionMode(QListWidget::ExtendedSelection);
+    m_untrackedList->setSelectionMode(QListWidget::ExtendedSelection);
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
-    mainLayout->addWidget(m_fsTable);
+    mainLayout->addWidget(m_untrackedList);
     mainLayout->addWidget(m_ignoreTable);
     mainLayout->addLayout(sideBar);
     setLayout(mainLayout);
@@ -72,6 +70,20 @@ void HgIgnoreWidget::setupUI()
     connect(m_removeEntries, SIGNAL(clicked()), this, SLOT(slotRemoveEntries()));
     connect(m_addPattern, SIGNAL(clicked()), this, SLOT(slotAddPattern()));
     connect(m_editEntry, SIGNAL(clicked()), this, SLOT(slotEditEntry()));
+}
+
+void HgIgnoreWidget::setupUntrackedList()
+{
+    HgWrapper *hgw = HgWrapper::instance();
+    QStringList args;
+    args << QLatin1String("--unknown");
+    QString output;
+    hgw->executeCommand(QLatin1String("status"), args, output);
+    
+    QStringList result = output.split('\n', QString::SkipEmptyParts);
+    foreach (QString file, result) {
+        m_untrackedList->addItem(file.mid(2));
+    }
 }
 
 void HgIgnoreWidget::loadConfig()
@@ -93,6 +105,8 @@ void HgIgnoreWidget::loadConfig()
             m_ignoreTable->addItem(buffer);
         }
     } while (!fileStream.atEnd());
+
+    file.close();
 }
 
 void HgIgnoreWidget::saveConfig()
@@ -110,16 +124,32 @@ void HgIgnoreWidget::saveConfig()
     for (int i=0; i<count; i++) {
         QListWidgetItem *item = m_ignoreTable->item(i);
         fileStream << item->text() << QLatin1String("\n");
-        kDebug() << item->text();
     }
+
+    file.close();
 }
 
 void HgIgnoreWidget::slotAddFiles()
 {
+    QList<QListWidgetItem*> selectedItems = m_untrackedList->selectedItems();
+    foreach (QListWidgetItem *item, selectedItems) {
+        m_ignoreTable->addItem(item->text());
+        m_untrackedList->takeItem(m_untrackedList->row(item));
+    }
 }
 
 void HgIgnoreWidget::slotAddPattern()
 {
+    bool ok;
+    QString input = QInputDialog::getText(this, 
+                        i18nc("@title:dialog", "Add Pattern"),  
+                        QString(),
+                        QLineEdit::Normal,
+                        QString(),
+                        &ok);
+    if (ok && !input.isEmpty()) {
+        m_ignoreTable->addItem(input);
+    }
 }
 
 void HgIgnoreWidget::slotRemoveEntries()
@@ -131,7 +161,18 @@ void HgIgnoreWidget::slotRemoveEntries()
 }
 void HgIgnoreWidget::slotEditEntry()
 {
+    bool ok;
+    QString input = QInputDialog::getText(this, 
+                        i18nc("@title:dialog", "Edit Pattern"),  
+                        QString(),
+                        QLineEdit::Normal,
+                        m_ignoreTable->currentItem()->text(),
+                        &ok);
+    if (ok && !input.isEmpty()) {
+        m_ignoreTable->currentItem()->setText(input);
+    }
 }
 
 
 #include "ignorewidget.moc"
+

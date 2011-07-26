@@ -22,10 +22,9 @@
 
 #include <QtGui/QWidget>
 
-class QTreeView;
 class QListWidget;
-class QFileSystemModel;
 class KPushButton; 
+class QInputDialog;
 
 class HgIgnoreWidget : public QWidget
 {
@@ -44,11 +43,11 @@ private slots:
 
 private:
     void setupUI();
+    void setupUntrackedList();
 
 private:
     QListWidget *m_ignoreTable;
-    QTreeView *m_fsTable;
-    QFileSystemModel *m_fsModel;
+    QListWidget *m_untrackedList;
     KPushButton *m_addFiles;
     KPushButton *m_addPattern;
     KPushButton *m_removeEntries;
