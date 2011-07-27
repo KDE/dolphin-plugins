@@ -19,11 +19,14 @@
 
 #include "mergedialog.h"
 #include "hgwrapper.h"
+#include "commititemdelegate.h"
 
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QTextEdit>
+#include <QtCore/QTextCodec>
 #include <kpushbutton.h>
 #include <kcombobox.h>
 #include <klocale.h>
@@ -37,31 +40,35 @@ HgMergeDialog::HgMergeDialog(QWidget *parent):
     // dialog properties
     this->setCaption(i18nc("@title:window", 
                 "<application>Hg</application> Merge"));
-    this->setButtons(KDialog::None);
+    this->setButtons(KDialog::Ok | KDialog::Cancel);
+    this->setButtonText(KDialog::Ok, i18nc("@label:button", "Merge"));
 
     // UI 
-    QFrame *frame = new QFrame;
+
     QVBoxLayout *vbox = new QVBoxLayout;
-
     m_currentChangeset = new QLabel;
+
+    m_commitInfo = new QTextEdit;
+    m_headListWidget = new QListWidget;
+    m_commitInfo->setFontFamily(QLatin1String("Monospace"));
+    m_headListWidget->setItemDelegate(new CommitItemDelegate);
+
+    QHBoxLayout *midLayout = new QHBoxLayout;
+    midLayout->addWidget(m_headListWidget);
+    midLayout->addWidget(m_commitInfo);
+
     vbox->addWidget(m_currentChangeset);
+    vbox->addLayout(midLayout);
 
-    m_comboBox = new KComboBox;
-    m_comboBox->setEditable(true);
-    vbox->addWidget(m_comboBox);
+    QWidget *widget = new QWidget;
+    widget->setLayout(vbox);
+    setMainWidget(widget);
 
-    QHBoxLayout *buttonLayout = new QHBoxLayout;
-    m_mergeButton = new KPushButton(i18n("Merge"));
-    buttonLayout->addWidget(m_mergeButton);
-    vbox->addLayout(buttonLayout);
-
-    frame->setLayout(vbox);
     updateInitialDialog();
-    setMainWidget(frame);
 
     // connections
-    connect(m_mergeButton, SIGNAL(clicked()),
-            this, SLOT(slotMerge()));
+    connect(m_headListWidget, SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotUpdateInfo()));
 }
 
 void HgMergeDialog::updateInitialDialog()
@@ -69,29 +76,93 @@ void HgMergeDialog::updateInitialDialog()
     HgWrapper *hgWrapper = HgWrapper::instance();
 
     // update label - current branch
-    QString out;
-    hgWrapper->executeCommand(QLatin1String("branch"), QStringList(), out);
-    out = i18n("<b>Current Branch: </b>") + out;
-    m_currentChangeset->setText(out);
+    QString line("<b>parents:</b> ");
+    line += hgWrapper->getParentsOfHead();
+    m_currentChangeset->setText(line);
 
-    // update combo box
+    // update heads list
+    QProcess process;
+    process.setWorkingDirectory(hgWrapper->getBaseDir());
+
+    QStringList args;
+    args << QLatin1String("heads");
+    args << QLatin1String("--template");
+    args << QLatin1String("{rev}\n{node|short}\n{branch}\n"
+                          "{author}\n{desc|firstline}\n");
+
+    process.start(QLatin1String("hg"), args);
+    m_headListWidget->clear();
+
+    const int FINAL = 5;
+    char buffer[FINAL][1024];
+    int count = 0;
+    while (process.waitForReadyRead()) {
+        while (process.readLine(buffer[count], sizeof(buffer[count])) > 0) {
+            if (count == FINAL - 1) {
+                QString rev = QTextCodec::codecForLocale()->toUnicode(buffer[0]).trimmed();
+                QString changeset = QTextCodec::codecForLocale()->toUnicode(buffer[1]).trimmed();
+                QString branch = QTextCodec::codecForLocale()->toUnicode(buffer[2]).trimmed();
+                QString author = QTextCodec::codecForLocale()->toUnicode(buffer[3]).trimmed();
+                QString log = QTextCodec::codecForLocale()->toUnicode(buffer[4]).trimmed();
+
+                QListWidgetItem *item = new QListWidgetItem;
+                item->setData(Qt::DisplayRole, changeset);
+                item->setData(Qt::UserRole + 1, rev);
+                item->setData(Qt::UserRole + 2, branch);
+                item->setData(Qt::UserRole + 3, author);
+                item->setData(Qt::UserRole + 4, log);
+                m_headListWidget->addItem(item);
+
+            }
+            count = (count + 1)%FINAL;
+        }
+    }
 }
 
-void HgMergeDialog::slotMerge()
+void HgMergeDialog::slotUpdateInfo()
 {
-    HgWrapper *hgWrapper = HgWrapper::instance();
+    HgWrapper *hgw = HgWrapper::instance();
+    QString changeset = m_headListWidget->currentItem()->data(Qt::DisplayRole).toString();
+    QString output;
     QStringList args;
-    QString out;
 
-    if (!m_comboBox->currentText().isEmpty()) {
-        args << m_comboBox->currentText();
-    }
+    args << QLatin1String("-r");
+    args << changeset;
+    hgw->executeCommand(QLatin1String("diff"), args, output);
 
-    if (hgWrapper->executeCommand(QLatin1String("merge"), args, out)) {
-        done(KDialog::Ok);
+    m_commitInfo->clear();
+    m_commitInfo->setText(output);
+}
+
+void HgMergeDialog::done(int r)
+{
+    if (r == KDialog::Accepted) {
+        HgWrapper *hgw = HgWrapper::instance();
+
+        QListWidgetItem *currentItem = m_headListWidget->currentItem();
+        if (currentItem == 0) {
+            KMessageBox::error(this,
+                    i18nc("@message", "No head selected for merge!"));
+            return;
+        }
+
+        QString changeset = currentItem->data(Qt::DisplayRole).toString();
+        QStringList args;
+
+        args << QLatin1String("-r");
+        args << changeset;
+
+        if (hgw->executeCommandTillFinished(QLatin1String("merge"), args)) {
+            KDialog::done(r);
+        }
+        else {
+            KMessageBox::error(this,
+                    i18nc("@message", "Some error occurred!"));
+            return;
+        }
     }
     else {
-        KMessageBox::error(this, i18n("Some error occcurred"));
+        KDialog::done(r);
     }
 }
 

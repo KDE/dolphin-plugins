@@ -19,6 +19,7 @@ set(fileviewhgplugin_SRCS
     pulldialog.cpp
     hgconfig.cpp
     configdialog.cpp
+    commititemdelegate.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp

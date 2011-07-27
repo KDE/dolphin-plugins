@@ -17,37 +17,24 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGMERGE_H
-#define HGMERGE_H
+#ifndef COMMITITEMDELEGATE_H
+#define COMMITITEMDELEGATE_H
 
-#include <QtCore/QString>
-#include <QtGui/QListWidget>
-#include <kdialog.h>
+#include <QItemDelegate>
 
-class KComboBox;
-class KPushButton;
-class QLabel;
-class QTextEdit;
-
-class HgMergeDialog : public KDialog
+class CommitItemDelegate : public QItemDelegate
 {
     Q_OBJECT
-
 public:
-    HgMergeDialog(QWidget *parent = 0);
-    void done(int r);
+    CommitItemDelegate(QObject *parent = 0);
+    void paint(QPainter *painter, const QStyleOptionViewItem &option,
+                  const QModelIndex &index) const;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
-private slots:
-    void slotUpdateInfo();
+signals:
 
-private:
-    void updateInitialDialog();
+public slots:
 
-private:
-    QListWidget *m_headListWidget;
-    QLabel *m_currentChangeset;
-    QTextEdit *m_commitInfo;
 };
 
-#endif // HGMERGE_H
-
+#endif // COMMITITEMDELEGATE_H
