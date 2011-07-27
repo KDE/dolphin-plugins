@@ -62,6 +62,17 @@
             <min>500</min>
         </entry>
     </group>
-    
+    <group name="MergeDialogSettings">
+        <entry name="mergeDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+            <min>400</min>
+        </entry>
+        <entry name="mergeDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+            <min>500</min>
+        </entry>
+    </group>
 </kcfg>
 

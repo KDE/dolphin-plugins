@@ -39,6 +39,7 @@ public:
 
 private slots:
     void slotUpdateInfo();
+    void saveGeometry();
 
 private:
     void updateInitialDialog();

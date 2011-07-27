@@ -210,6 +210,10 @@ public:
         return m_process.readAllStandardOutput();
     }
     
+    inline QString readAllStandardError() {
+        return m_process.readAllStandardError();
+    }
+    
     /**
      * Check if some Mercurial operation is currently being executed or
      * about to be started.

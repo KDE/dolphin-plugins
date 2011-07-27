@@ -20,6 +20,7 @@
 #include "mergedialog.h"
 #include "hgwrapper.h"
 #include "commititemdelegate.h"
+#include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
@@ -54,8 +55,8 @@ HgMergeDialog::HgMergeDialog(QWidget *parent):
     m_headListWidget->setItemDelegate(new CommitItemDelegate);
 
     QHBoxLayout *midLayout = new QHBoxLayout;
-    midLayout->addWidget(m_headListWidget);
-    midLayout->addWidget(m_commitInfo);
+    midLayout->addWidget(m_headListWidget, 1);
+    midLayout->addWidget(m_commitInfo, 2);
 
     vbox->addWidget(m_currentChangeset);
     vbox->addLayout(midLayout);
@@ -66,7 +67,13 @@ HgMergeDialog::HgMergeDialog(QWidget *parent):
 
     updateInitialDialog();
 
+    // load saved geometry
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    this->setInitialSize(QSize(settings->mergeDialogWidth(),
+                               settings->mergeDialogHeight()));
+
     // connections
+    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
     connect(m_headListWidget, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotUpdateInfo()));
 }
@@ -154,17 +161,25 @@ void HgMergeDialog::done(int r)
         args << changeset;
 
         if (hgw->executeCommandTillFinished(QLatin1String("merge"), args)) {
+            KMessageBox::information(this, hgw->readAllStandardOutput());
             KDialog::done(r);
         }
         else {
-            KMessageBox::error(this,
-                    i18nc("@message", "Some error occurred!"));
+            KMessageBox::error(this, hgw->readAllStandardError());
             return;
         }
     }
     else {
         KDialog::done(r);
     }
+}
+
+void HgMergeDialog::saveGeometry()
+{
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    settings->setMergeDialogHeight(this->height());
+    settings->setMergeDialogWidth(this->width());
+    settings->writeConfig();
 }
 
 #include "mergedialog.moc"

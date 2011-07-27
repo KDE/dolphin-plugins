@@ -22,6 +22,12 @@
 
 #include <QItemDelegate>
 
+/**
+ * Custom Delgate to show Commit info in three lines
+ *  - Revision:Changeset (branch)
+ *  - Author
+ *  - Commit Log | First Line
+ */
 class CommitItemDelegate : public QItemDelegate
 {
     Q_OBJECT
