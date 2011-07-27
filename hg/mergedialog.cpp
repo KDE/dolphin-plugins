@@ -126,9 +126,10 @@ void HgMergeDialog::slotUpdateInfo()
     QString output;
     QStringList args;
 
+    args << QLatin1String("-v");
     args << QLatin1String("-r");
     args << changeset;
-    hgw->executeCommand(QLatin1String("diff"), args, output);
+    hgw->executeCommand(QLatin1String("log"), args, output);
 
     m_commitInfo->clear();
     m_commitInfo->setText(output);
