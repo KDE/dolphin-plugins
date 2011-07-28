@@ -62,7 +62,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
         return;
     }
     m_fileDiffDoc = editor->createDocument(0);
-    m_fileDiffView = qobject_cast<KTextEditor::View *>(m_fileDiffDoc->createView(this));
+    m_fileDiffView = qobject_cast<KTextEditor::View*>(m_fileDiffDoc->createView(this));
     m_fileDiffDoc->setReadWrite(false);
 
     // Setup actions
@@ -180,6 +180,7 @@ void HgCommitDialog::slotInitDiffOutput()
     hgWrapper->executeCommand(QLatin1String("diff"), QStringList(), diffOut);
     m_fileDiffDoc->setHighlightingMode("diff");
     m_fileDiffDoc->setText(diffOut);
+    m_fileDiffView->setCursorPosition( KTextEditor::Cursor(0, 0) );
 }
 
 void HgCommitDialog::slotItemSelectionChanged(const char status, 
@@ -204,6 +205,8 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
         url.addPath(fileName);
         m_fileDiffDoc->openUrl(url);
     }
+
+    m_fileDiffView->setCursorPosition( KTextEditor::Cursor(0, 0) );
 }
 
 void HgCommitDialog::slotMessageChanged()

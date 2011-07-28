@@ -20,6 +20,7 @@
 #include "mergedialog.h"
 #include "hgwrapper.h"
 #include "commititemdelegate.h"
+#include "commitinfowidget.h"
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QLabel>
@@ -27,6 +28,7 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QTextEdit>
+#include <QtGui/QListWidgetItem>
 #include <QtCore/QTextCodec>
 #include <kpushbutton.h>
 #include <kcombobox.h>
@@ -46,20 +48,12 @@ HgMergeDialog::HgMergeDialog(QWidget *parent):
 
     // UI 
 
-    QVBoxLayout *vbox = new QVBoxLayout;
     m_currentChangeset = new QLabel;
+    m_commitInfoWidget = new HgCommitInfoWidget;
 
-    m_commitInfo = new QTextEdit;
-    m_headListWidget = new QListWidget;
-    m_commitInfo->setFontFamily(QLatin1String("Monospace"));
-    m_headListWidget->setItemDelegate(new CommitItemDelegate);
-
-    QHBoxLayout *midLayout = new QHBoxLayout;
-    midLayout->addWidget(m_headListWidget, 1);
-    midLayout->addWidget(m_commitInfo, 2);
-
+    QVBoxLayout *vbox = new QVBoxLayout;
     vbox->addWidget(m_currentChangeset);
-    vbox->addLayout(midLayout);
+    vbox->addWidget(m_commitInfoWidget);
 
     QWidget *widget = new QWidget;
     widget->setLayout(vbox);
@@ -74,8 +68,6 @@ HgMergeDialog::HgMergeDialog(QWidget *parent):
 
     // connections
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
-    connect(m_headListWidget, SIGNAL(itemSelectionChanged()),
-            this, SLOT(slotUpdateInfo()));
 }
 
 void HgMergeDialog::updateInitialDialog()
@@ -98,7 +90,7 @@ void HgMergeDialog::updateInitialDialog()
                           "{author}\n{desc|firstline}\n");
 
     process.start(QLatin1String("hg"), args);
-    m_headListWidget->clear();
+    m_commitInfoWidget->clear();
 
     const int FINAL = 5;
     char buffer[FINAL][1024];
@@ -118,7 +110,7 @@ void HgMergeDialog::updateInitialDialog()
                 item->setData(Qt::UserRole + 2, branch);
                 item->setData(Qt::UserRole + 3, author);
                 item->setData(Qt::UserRole + 4, log);
-                m_headListWidget->addItem(item);
+                m_commitInfoWidget->addItem(item);
 
             }
             count = (count + 1)%FINAL;
@@ -126,36 +118,19 @@ void HgMergeDialog::updateInitialDialog()
     }
 }
 
-void HgMergeDialog::slotUpdateInfo()
-{
-    HgWrapper *hgw = HgWrapper::instance();
-    QString changeset = m_headListWidget->currentItem()->data(Qt::DisplayRole).toString();
-    QString output;
-    QStringList args;
-
-    args << QLatin1String("-p");
-    args << QLatin1String("-v");
-    args << QLatin1String("-r");
-    args << changeset;
-    hgw->executeCommand(QLatin1String("log"), args, output);
-
-    m_commitInfo->clear();
-    m_commitInfo->setText(output);
-}
-
 void HgMergeDialog::done(int r)
 {
     if (r == KDialog::Accepted) {
         HgWrapper *hgw = HgWrapper::instance();
 
-        QListWidgetItem *currentItem = m_headListWidget->currentItem();
+        QListWidgetItem *currentItem = m_commitInfoWidget->currentItem();
         if (currentItem == 0) {
             KMessageBox::error(this,
                     i18nc("@message", "No head selected for merge!"));
             return;
         }
 
-        QString changeset = currentItem->data(Qt::DisplayRole).toString();
+        QString changeset = m_commitInfoWidget->selectedChangeset();
         QStringList args;
 
         args << QLatin1String("-r");

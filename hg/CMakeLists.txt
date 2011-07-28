@@ -20,6 +20,7 @@ set(fileviewhgplugin_SRCS
     hgconfig.cpp
     configdialog.cpp
     commititemdelegate.cpp
+    commitinfowidget.cpp
     pathselector.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp

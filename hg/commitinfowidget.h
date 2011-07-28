@@ -17,35 +17,49 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGMERGE_H
-#define HGMERGE_H
+#ifndef HGCOMMITINFOWIDGET_H
+#define HGCOMMITINFOWIDGET_H
 
-#include <QtCore/QString>
-#include <kdialog.h>
+#include <QtGui/QWidget>
 
-class KComboBox;
-class KPushButton;
-class QLabel;
-class HgCommitInfoWidget;
-
-class HgMergeDialog : public KDialog
-{
-    Q_OBJECT
-
-public:
-    HgMergeDialog(QWidget *parent = 0);
-    void done(int r);
-
-private slots:
-    void saveGeometry();
-
-private:
-    void updateInitialDialog();
-
-private:
-    QLabel *m_currentChangeset;
-    HgCommitInfoWidget *m_commitInfoWidget;
+namespace KTextEditor {
+    class View;
+    class Document;
 };
 
-#endif // HGMERGE_H
+class QListWidget;
+class QListWidgetItem;
+
+class HgCommitInfoWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    HgCommitInfoWidget(QWidget *parent=0);
+    void addItem(const QString &revision, 
+                 const QString &changeset,
+                 const QString &branch,
+                 const QString &author,
+                 const QString &log);
+
+    void addItem(QListWidgetItem *item);
+
+    const QString selectedChangeset() const;
+
+    QListWidgetItem* currentItem() const;
+
+    void clear() const;
+
+private slots:
+    void slotUpdateInfo();
+
+private:
+    void setupUI();
+
+private:
+    KTextEditor::View *m_editorView;
+    KTextEditor::Document *m_editorDoc;
+    QListWidget *m_commitListWidget;
+};
+
+#endif /* HGCOMMITINFOWIDGET_H */
 
