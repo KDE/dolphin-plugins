@@ -20,6 +20,7 @@
 #include "pulldialog.h"
 #include "hgwrapper.h"
 #include "hgconfig.h"
+#include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QHBoxLayout>
@@ -92,7 +93,7 @@ void HgPullDialog::createChangesGroup()
 void HgPullDialog::getHgChangesArguments(QStringList &args)
 {
     args << QLatin1String("incoming");
-    args << remoteUrl();
+    args << m_pathSelector->remote();
     args << QLatin1String("--config");
     args << QLatin1String("ui.verbose=False");
     args << QLatin1String("--template");

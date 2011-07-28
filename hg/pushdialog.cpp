@@ -19,6 +19,7 @@
 
 #include "pushdialog.h"
 #include "hgconfig.h"
+#include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
 
 #include <QtCore/QStringList>
@@ -118,7 +119,7 @@ void HgPushDialog::slotOutSelChanged()
 void HgPushDialog::getHgChangesArguments(QStringList &args)
 {
     args << QLatin1String("outgoing");
-    args << remoteUrl();
+    args << m_pathSelector->remote();
     args << QLatin1String("--config");
     args << QLatin1String("ui.verbose=False");
     args << QLatin1String("--template");

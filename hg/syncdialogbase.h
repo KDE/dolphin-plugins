@@ -36,6 +36,7 @@ class KLineEdit;
 class KTextEdit;
 class KComboBox;
 class KPushButton;
+class HgPathSelector;
 
 //TODO: Save/Load dialog geometry
 //TODO: HTTPS login
@@ -58,7 +59,6 @@ signals:
     void changeListAvailable();
 
 protected:
-    QString remoteUrl() const;
     void done(int r);
     void setupUI();
     void createOptionGroup();
@@ -73,7 +73,6 @@ protected:
 
 protected slots:
     void slotGetChanges();
-    void slotChangeEditUrl(int index);
     void slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
     void slotChangesProcessError();
     void slotOperationComplete(int exitCode, QProcess::ExitStatus status);
@@ -84,9 +83,7 @@ protected slots:
     virtual void readBigSize() = 0;
 
 protected:
-    QMap<QString, QString> m_pathList;
-    KComboBox *m_selectPathAlias;
-    KLineEdit *m_urlEdit;
+    HgPathSelector *m_pathSelector;
     QProgressBar *m_statusProg;
     bool m_haveChanges;
     bool m_terminated;

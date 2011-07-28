@@ -133,6 +133,7 @@ void HgMergeDialog::slotUpdateInfo()
     QString output;
     QStringList args;
 
+    args << QLatin1String("-p");
     args << QLatin1String("-v");
     args << QLatin1String("-r");
     args << changeset;

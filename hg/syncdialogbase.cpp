@@ -19,6 +19,7 @@
 
 #include "syncdialogbase.h"
 #include "hgconfig.h"
+#include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
 
 #include <QtGui/QApplication>
@@ -54,12 +55,7 @@ void HgSyncBaseDialog::setup()
     createChangesGroup();
     readBigSize();
     setupUI();
-    slotChangeEditUrl(0);
     
-    connect(m_selectPathAlias, SIGNAL(currentIndexChanged(int)), 
-            this, SLOT(slotChangeEditUrl(int)));
-    connect(m_selectPathAlias, SIGNAL(highlighted(int)), 
-            this, SLOT(slotChangeEditUrl(int)));
     connect(m_changesButton, SIGNAL(clicked()),
             this, SLOT(slotGetChanges()));
     connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)), 
@@ -93,23 +89,8 @@ void HgSyncBaseDialog::createOptionGroup()
 
 void HgSyncBaseDialog::setupUI()
 {
-    HgConfig hgc(HgConfig::RepoConfig);
-    m_pathList = hgc.repoRemotePathList();
-
     // top url bar
-    QHBoxLayout *urlLayout = new QHBoxLayout;
-    m_selectPathAlias = new KComboBox;
-    m_urlEdit = new KLineEdit;
-    m_urlEdit->setReadOnly(true);
-    QMutableMapIterator<QString, QString> it(m_pathList);
-    while (it.hasNext()) {
-        it.next();
-        m_selectPathAlias->addItem(it.key());
-    }
-    m_selectPathAlias->addItem(i18nc("@label:combobox", 
-                "<edit>"));
-    urlLayout->addWidget(m_selectPathAlias);
-    urlLayout->addWidget(m_urlEdit);
+    m_pathSelector = new HgPathSelector;
 
     // changes button
     //FIXME not very good idea. Bad HACK 
@@ -128,7 +109,7 @@ void HgSyncBaseDialog::setupUI()
     // dialog's main widget
     QWidget *widget = new QWidget;
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addLayout(urlLayout);
+    mainLayout->addWidget(m_pathSelector);
 
     // changes
     m_changesGroup->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -148,20 +129,6 @@ void HgSyncBaseDialog::setupUI()
 
     createOptionGroup();
     setMainWidget(widget);
-}
-
-void HgSyncBaseDialog::slotChangeEditUrl(int index)
-{
-    if (index == m_selectPathAlias->count() - 1) {
-        m_urlEdit->setReadOnly(false);
-        m_urlEdit->clear();
-        m_urlEdit->setFocus();
-    }
-    else {
-        QString url = m_pathList[m_selectPathAlias->itemText(index)];
-        m_urlEdit->setText(url);
-        m_urlEdit->setReadOnly(true);
-    }
 }
 
 void HgSyncBaseDialog::slotGetChanges()
@@ -187,16 +154,6 @@ void HgSyncBaseDialog::slotGetChanges()
     m_process.start(QLatin1String("hg"), args);
 }
 
-QString HgSyncBaseDialog::remoteUrl() const
-{
-    return (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_urlEdit->text():m_selectPathAlias->currentText();
-}
-
-void HgSyncBaseDialog::slotChangesProcessError()
-{
-    kDebug() << "Cant get changes";
-    KMessageBox::error(this, i18n("Error!"));
-}
 
 void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
 {
@@ -226,6 +183,12 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     loadBigSize();
     m_haveChanges = true; 
     emit changeListAvailable();
+}
+
+void HgSyncBaseDialog::slotChangesProcessError()
+{
+    kDebug() << "Cant get changes";
+    KMessageBox::error(this, i18n("Error!"));
 }
 
 void HgSyncBaseDialog::loadSmallSize()
@@ -260,7 +223,7 @@ void HgSyncBaseDialog::done(int r)
         QStringList args;
         QString command = (m_dialogType==PullDialog)?"pull":"push";
         args << command;
-        args << remoteUrl();
+        args << m_pathSelector->remote();
         appendOptionArguments(args);
 
         m_terminated = false;
