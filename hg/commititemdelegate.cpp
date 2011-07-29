@@ -48,7 +48,7 @@ void CommitItemDelegate::paint(QPainter *painter,
     QString top = QString("%1:%2 (%3)").arg(revision, changeset, branch);
     font.setBold(true);
     painter->setFont(font);
-    painter->drawText(rect, top);
+    painter->drawText(rect, Qt::AlignLeft, top);
 
     font.setPixelSize(0.60f * static_cast<float>(fm.height()));
     font.setBold(false);
@@ -73,8 +73,10 @@ QSize CommitItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QMo
     QFontMetrics fm(font);
     int height = static_cast<float>(option.fontMetrics.height()) * (1.2f) + fm.height() + 15;
     size.setHeight(height);
+
     return size;
 }
 
 #include "commititemdelegate.moc"
+
 

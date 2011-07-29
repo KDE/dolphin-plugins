@@ -27,6 +27,7 @@ class QCheckBox;
 class KLineEdit;
 class HgCommitInfoWidget;
 class HgPathSelector;
+class KPushButton;
 
 class HgBundleDialog : public KDialog
 {
@@ -40,14 +41,21 @@ public slots:
 
 private slots:
     void saveGeometry();
+    void slotSelectChangeset();
+    void slotAllChangesCheckToggled(int state);
 
 private:
     void setupUI();
+    void createBundle(const QString &fileName);
+    void loadCommits();
 
 private:
     QGroupBox *m_mainGroup;
     HgPathSelector *m_pathSelect;
     HgCommitInfoWidget *m_commitInfo;
+    KPushButton *m_selectCommitButton;
+    KLineEdit *m_baseRevision;
+    QCheckBox *m_allChangesets;
 
     //options
     QGroupBox *m_optionGroup;
