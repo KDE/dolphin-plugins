@@ -43,6 +43,7 @@
 #include <kurl.h>
 #include <kmessagebox.h>
 #include <kaction.h>
+#include <kfiledialog.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -204,6 +205,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Export"));
     connect(m_exportAction, SIGNAL(triggered()),
             this, SLOT(exportChangesets()));
+
+    m_unbundleAction = new KAction(this);
+    m_unbundleAction->setIcon(KIcon("hg-unbundle"));
+    m_unbundleAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Unbundle"));
+    connect(m_unbundleAction, SIGNAL(triggered()),
+            this, SLOT(unbundle()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -374,6 +382,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_revertAllAction);
     actions.append(m_rollbackAction);
     actions.append(m_bundleAction);
+    actions.append(m_unbundleAction);
     actions.append(m_exportAction);
     actions.append(m_configAction);
     return actions;
@@ -505,6 +514,18 @@ void FileViewHgPlugin::bundle()
 {
     HgBundleDialog diag;
     diag.exec();
+}
+
+void FileViewHgPlugin::unbundle()
+{
+    QString bundle = KFileDialog::getOpenFileName();
+    QStringList args;
+    args << bundle;
+    if (m_hgWrapper->executeCommandTillFinished(QLatin1String("unbundle"), args)) {
+    }
+    else {
+        KMessageBox::error(0, m_hgWrapper->readAllStandardError());
+    }
 }
 
 void FileViewHgPlugin::exportChangesets()
