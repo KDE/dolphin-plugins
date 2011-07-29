@@ -22,6 +22,7 @@ set(fileviewhgplugin_SRCS
     commititemdelegate.cpp
     commitinfowidget.cpp
     pathselector.cpp
+    bundledialog.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp

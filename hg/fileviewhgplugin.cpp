@@ -30,6 +30,7 @@
 #include "pushdialog.h"
 #include "pulldialog.h"
 #include "mergedialog.h"
+#include "bundledialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -188,6 +189,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Merge"));
     connect(m_mergeAction, SIGNAL(triggered()),
             this, SLOT(merge()));
+
+    m_bundleAction = new KAction(this);
+    m_bundleAction->setIcon(KIcon("hg-bundle"));
+    m_bundleAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Bundle"));
+    connect(m_bundleAction, SIGNAL(triggered()),
+            this, SLOT(bundle()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -357,6 +365,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_mergeAction);
     actions.append(m_revertAllAction);
     actions.append(m_rollbackAction);
+    actions.append(m_bundleAction);
     actions.append(m_configAction);
     return actions;
 }
@@ -480,6 +489,12 @@ void FileViewHgPlugin::pull()
 void FileViewHgPlugin::merge()
 {
     HgMergeDialog diag;
+    diag.exec();
+}
+
+void FileViewHgPlugin::bundle()
+{
+    HgBundleDialog diag;
     diag.exec();
 }
 
