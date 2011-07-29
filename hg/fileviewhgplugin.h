@@ -73,6 +73,7 @@ private slots:
     void rollback();
     void merge();
     void bundle();
+    void exportChangesets();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -97,6 +98,7 @@ private:
     KAction *m_rollbackAction;
     KAction *m_mergeAction;
     KAction *m_bundleAction;
+    KAction *m_exportAction;
     //KAction *m_backoutAction;
 
     KFileItemList m_contextItems;

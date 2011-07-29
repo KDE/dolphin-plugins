@@ -23,6 +23,7 @@ set(fileviewhgplugin_SRCS
     commitinfowidget.cpp
     pathselector.cpp
     bundledialog.cpp
+    exportdialog.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp

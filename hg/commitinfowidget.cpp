@@ -121,5 +121,15 @@ void HgCommitInfoWidget::slotUpdateInfo()
     m_editorView->setCursorPosition( KTextEditor::Cursor(0, 0) );
 }
 
+void HgCommitInfoWidget::setSelectionMode(QAbstractItemView::SelectionMode mode)
+{
+    m_commitListWidget->setSelectionMode(mode);
+}
+
+QList<QListWidgetItem*> HgCommitInfoWidget::selectedItems() const
+{
+    return m_commitListWidget->selectedItems();
+}
+
 #include "commitinfowidget.h"
 

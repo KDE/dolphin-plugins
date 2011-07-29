@@ -76,5 +76,15 @@
             <default>900</default>
         </entry>
     </group>
+    <group name="ExportDialogSettings">
+        <entry name="exportDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="exportDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
 </kcfg>
 

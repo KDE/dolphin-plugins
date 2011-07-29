@@ -17,55 +17,43 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCOMMITINFOWIDGET_H
-#define HGCOMMITINFOWIDGET_H
+#ifndef HGEXPORTDIALOG_H
+#define HGEXPORTDIALOG_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QAbstractItemView>
-#include <QtCore/QList>
+#include <kdialog.h>
 
-namespace KTextEditor {
-    class View;
-    class Document;
-};
+class HgCommitInfoWidget;
+class QCheckBox;
+class QGroupBox;
+class KLineEdit;
 
-class QListWidget;
-class QListWidgetItem;
-
-class HgCommitInfoWidget : public QWidget
+class HgExportDialog : public KDialog
 {
     Q_OBJECT
+
 public:
-    HgCommitInfoWidget(QWidget *parent=0);
-    void addItem(const QString &revision, 
-                 const QString &changeset,
-                 const QString &branch,
-                 const QString &author,
-                 const QString &log);
+    HgExportDialog(QWidget *parent=0);
 
-    void addItem(QListWidgetItem *item);
-
-    const QString selectedChangeset() const;
-
-    QList<QListWidgetItem*> selectedItems() const;
-
-    QListWidgetItem* currentItem() const;
-    
-    void setSelectionMode(QAbstractItemView::SelectionMode mode);
-
-    void clear() const;
+public slots:
+    void done(int r);
 
 private slots:
-    void slotUpdateInfo();
+    void saveGeometry();
 
 private:
     void setupUI();
+    void loadCommits();
 
 private:
-    KTextEditor::View *m_editorView;
-    KTextEditor::Document *m_editorDoc;
-    QListWidget *m_commitListWidget;
+    HgCommitInfoWidget *m_commitInfoWidget;
+
+    //options
+    QGroupBox *m_optionGroup;
+    QCheckBox *m_optText;
+    QCheckBox *m_optGit;
+    QCheckBox *m_optNoDates;
+
 };
 
-#endif /* HGCOMMITINFOWIDGET_H */
+#endif /* HGEXPORTDIALOG_H */ 
 

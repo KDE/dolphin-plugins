@@ -31,6 +31,7 @@
 #include "pulldialog.h"
 #include "mergedialog.h"
 #include "bundledialog.h"
+#include "exportdialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -196,6 +197,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Bundle"));
     connect(m_bundleAction, SIGNAL(triggered()),
             this, SLOT(bundle()));
+
+    m_exportAction = new KAction(this);
+    m_exportAction->setIcon(KIcon("hg-export"));
+    m_exportAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Export"));
+    connect(m_exportAction, SIGNAL(triggered()),
+            this, SLOT(exportChangesets()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -366,6 +374,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_revertAllAction);
     actions.append(m_rollbackAction);
     actions.append(m_bundleAction);
+    actions.append(m_exportAction);
     actions.append(m_configAction);
     return actions;
 }
@@ -498,6 +507,11 @@ void FileViewHgPlugin::bundle()
     diag.exec();
 }
 
+void FileViewHgPlugin::exportChangesets()
+{
+    HgExportDialog diag;
+    diag.exec();
+}
 
 void FileViewHgPlugin::revert()
 {
