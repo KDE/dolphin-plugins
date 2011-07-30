@@ -32,6 +32,7 @@
 #include "mergedialog.h"
 #include "bundledialog.h"
 #include "exportdialog.h"
+#include "importdialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -205,6 +206,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Export"));
     connect(m_exportAction, SIGNAL(triggered()),
             this, SLOT(exportChangesets()));
+
+    m_importAction = new KAction(this);
+    m_importAction->setIcon(KIcon("hg-import"));
+    m_importAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Import"));
+    connect(m_importAction, SIGNAL(triggered()),
+            this, SLOT(importChangesets()));
 
     m_unbundleAction = new KAction(this);
     m_unbundleAction->setIcon(KIcon("hg-unbundle"));
@@ -384,6 +392,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_bundleAction);
     actions.append(m_unbundleAction);
     actions.append(m_exportAction);
+    actions.append(m_importAction);
     actions.append(m_configAction);
     return actions;
 }
@@ -519,6 +528,10 @@ void FileViewHgPlugin::bundle()
 void FileViewHgPlugin::unbundle()
 {
     QString bundle = KFileDialog::getOpenFileName();
+    if (bundle.isEmpty()) {
+        return;
+    }
+
     QStringList args;
     args << bundle;
     if (m_hgWrapper->executeCommandTillFinished(QLatin1String("unbundle"), args)) {
@@ -526,6 +539,12 @@ void FileViewHgPlugin::unbundle()
     else {
         KMessageBox::error(0, m_hgWrapper->readAllStandardError());
     }
+}
+
+void FileViewHgPlugin::importChangesets()
+{
+    HgImportDialog diag;
+    diag.exec();
 }
 
 void FileViewHgPlugin::exportChangesets()

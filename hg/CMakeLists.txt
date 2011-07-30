@@ -24,6 +24,7 @@ set(fileviewhgplugin_SRCS
     pathselector.cpp
     bundledialog.cpp
     exportdialog.cpp
+    importdialog.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp

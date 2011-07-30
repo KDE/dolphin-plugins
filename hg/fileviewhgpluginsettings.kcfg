@@ -86,5 +86,15 @@
             <default>900</default>
         </entry>
     </group>
+    <group name="ImportDialogSettings">
+        <entry name="importDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>540</default>
+        </entry>
+        <entry name="ImportDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>500</default>
+        </entry>
+    </group>
 </kcfg>
 

@@ -45,7 +45,15 @@ void CommitItemDelegate::paint(QPainter *painter,
     QFontMetrics fm(font);
     QRect rect = option.rect.adjusted(4, 4, 4, 4);
 
-    QString top = QString("%1:%2 (%3)").arg(revision, changeset, branch);
+    QString top;
+    if (!revision.isEmpty()) {
+        top = QString("%1:").arg(revision);
+    }
+    top += changeset;
+
+    if (!branch.isEmpty()) {
+        top += QString(" (%1)").arg(branch);
+    }
     font.setBold(true);
     painter->setFont(font);
     painter->drawText(rect, Qt::AlignLeft, top);

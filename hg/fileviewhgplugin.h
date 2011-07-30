@@ -75,6 +75,7 @@ private slots:
     void bundle();
     void unbundle();
     void exportChangesets();
+    void importChangesets();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -101,6 +102,7 @@ private:
     KAction *m_bundleAction;
     KAction *m_exportAction;
     KAction *m_unbundleAction;
+    KAction *m_importAction;
     //KAction *m_backoutAction;
 
     KFileItemList m_contextItems;
