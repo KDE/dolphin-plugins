@@ -210,6 +210,10 @@ void HgImportDialog::slotAddPatches()
 
 void HgImportDialog::slotRemovePatches()
 {
+    int count = m_patchList->count();
+    for (int i=0; i<count; i++) {
+        m_patchList->takeItem(i);
+    }
 }
 
 #include "importdialog.moc"
