@@ -36,12 +36,13 @@ class HgPullDialog : public HgSyncBaseDialog
 public:
     HgPullDialog(QWidget *parent = 0);
 
-protected:
+private:
     void setOptions();
     void parseUpdateChanges(const QString &input); 
     void appendOptionArguments(QStringList &args); 
     void createChangesGroup();
     void getHgChangesArguments(QStringList &args);
+    void noChangesMessage();
 
 private slots:
     void slotUpdateChangesGeometry();

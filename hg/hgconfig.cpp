@@ -77,7 +77,7 @@ QString HgConfig::property(const QString &section,
                            const QString &propertyName) const
 {
     KConfigGroup group(m_config, section);
-    return group.readEntry(propertyName, QString());
+    return group.readEntry(propertyName, QString()).trimmed();
 }
 
 void HgConfig::setProperty(const QString &section, 
@@ -89,7 +89,7 @@ void HgConfig::setProperty(const QString &section,
         uiGroup.deleteEntry(propertyName, KConfigGroup::Normal);
         return;
     }
-    uiGroup.writeEntry(propertyName, propertyValue);
+    uiGroup.writeEntry(propertyName, propertyValue.trimmed());
 }
 
 /* User Interface [ui] Section */

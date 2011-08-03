@@ -70,6 +70,7 @@ protected:
     virtual void parseUpdateChanges(const QString &input) = 0;
     virtual void appendOptionArguments(QStringList &args) = 0;
     virtual void getHgChangesArguments(QStringList &args) = 0;
+    virtual void noChangesMessage() = 0;
 
 protected slots:
     void slotGetChanges();

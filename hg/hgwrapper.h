@@ -24,6 +24,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 #include <QtCore/QHash>
+#include <QtCore/QTextCodec>
 #include <kfileitem.h>
 #include <kversioncontrolplugin.h>
 
@@ -207,11 +208,11 @@ public:
     QStringList getTags();
 
     inline QString readAllStandardOutput() {
-        return m_process.readAllStandardOutput();
+        return QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput());
     }
     
     inline QString readAllStandardError() {
-        return m_process.readAllStandardError();
+        return QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError());
     }
     
     /**

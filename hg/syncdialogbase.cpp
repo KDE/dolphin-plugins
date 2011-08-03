@@ -159,23 +159,43 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
 {
 
     if (exitCode != 0 || status != QProcess::NormalExit) {
+        KMessageBox::error(this, QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError()));
         return;
     }
 
     char buffer[512];
+
+    /**
+     * unwantedRead boolean to ensure that unwanted information messages
+     * by mercurial are filtered out.
+     *  eg. Comparing with /path/to/repository
+     *      Searching for changes
+     */
     bool unwantedRead = false;
+
+    /**
+     * hasChanges boolean checks whether there are any changes to be sent 
+     * or received and invoke noChangesMessage() if its false
+     */
+    bool hasChanges = false;
 
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
         QString line(QTextCodec::codecForLocale()->toUnicode(buffer));
         if (unwantedRead ) {
             line.remove(QLatin1String("Commit: "));
             parseUpdateChanges(line.trimmed());
+            hasChanges = true;;
         }
         else if (line.startsWith(QLatin1String("Commit: "))) {
             unwantedRead = true;
             line.remove(QLatin1String("Commit: "));
             parseUpdateChanges(line.trimmed());
+            hasChanges = true;
         }
+    }
+
+    if (!hasChanges) {
+        noChangesMessage();
     }
 
     m_changesGroup->setVisible(true);

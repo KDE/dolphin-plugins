@@ -32,6 +32,7 @@
 #include <kpushbutton.h>
 #include <klocale.h>
 #include <kdebug.h>
+#include <kmessagebox.h>
 
 HgIgnoreWidget::HgIgnoreWidget(QWidget *parent) :
     QWidget(parent)
@@ -161,6 +162,12 @@ void HgIgnoreWidget::slotRemoveEntries()
 }
 void HgIgnoreWidget::slotEditEntry()
 {
+    if (m_ignoreTable->currentItem() == 0) {
+        KMessageBox::error(this, i18nc("@message:error",
+                    "No entry selected for edit!"));
+        return;
+    }
+
     bool ok;
     QString input = QInputDialog::getText(this, 
                         i18nc("@title:dialog", "Edit Pattern"),  

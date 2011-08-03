@@ -34,7 +34,7 @@ HgStatusList::HgStatusList(QWidget *parent):
     QGroupBox(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    m_filter = new KLineEdit(this);
+    //m_filter = new KLineEdit(this);
     m_statusTable = new QTableWidget(this);
 
     m_statusTable->setColumnCount(3);
@@ -45,7 +45,7 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_statusTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_statusTable->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-    mainLayout->addWidget(m_filter);
+    //mainLayout->addWidget(m_filter);
     mainLayout->addWidget(m_statusTable);
 
     setTitle(i18nc("@title:group", "File Status"));

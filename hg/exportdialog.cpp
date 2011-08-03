@@ -34,7 +34,8 @@
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 
-HgExportDialog::HgExportDialog(QWidget *parent)
+HgExportDialog::HgExportDialog(QWidget *parent) :
+    KDialog(parent, Qt::Dialog)
 {
     // dialog properties
     this->setCaption(i18nc("@title:window", 

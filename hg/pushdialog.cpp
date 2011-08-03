@@ -183,5 +183,11 @@ void HgPushDialog::writeBigSize()
     settings->writeConfig();
 }
 
+void HgPushDialog::noChangesMessage()
+{
+    KMessageBox::information(this, i18nc("@message:info",
+                "No outgoing changes!"));
+}
+
 #include "pushdialog.moc"
 

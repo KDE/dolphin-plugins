@@ -162,5 +162,11 @@ void HgPullDialog::writeBigSize()
     settings->writeConfig();
 }
 
+void HgPullDialog::noChangesMessage()
+{
+    KMessageBox::information(this, i18nc("@message:info",
+                "No incoming changes!"));
+}
+
 #include "pulldialog.moc"
 

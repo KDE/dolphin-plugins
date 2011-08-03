@@ -24,6 +24,7 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
 #include <klineedit.h>
@@ -41,25 +42,21 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Rename"));
 
     QFrame *frame = new QFrame(this);
-    QVBoxLayout *vbox = new QVBoxLayout(frame);
+    QGridLayout *mainLayout = new QGridLayout(frame);
 
-    QHBoxLayout *sourceHBox = new QHBoxLayout(frame);
     QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file",
-                "Source:"), frame);
+                "Source "), frame);
     QLabel *sourceFileLabel = new QLabel("<b>" + m_source + "</b>");
-    sourceHBox->addWidget(sourceLabel);
-    sourceHBox->addWidget(sourceFileLabel);
+    mainLayout->addWidget(sourceLabel, 0, 0);
+    mainLayout->addWidget(sourceFileLabel, 0, 1);
 
-    QHBoxLayout *destinationHBox = new QHBoxLayout(frame);
-    QLabel *destinationLabel = new QLabel(i18nc("@label:rename", "Rename to:"), 
-            frame);
+    QLabel *destinationLabel 
+        = new QLabel(i18nc("@label:rename", "Rename to "), frame);
     m_destinationFile = new KLineEdit(m_source, frame);
-    destinationHBox->addWidget(destinationLabel);
-    destinationHBox->addWidget(m_destinationFile);
+    mainLayout->addWidget(destinationLabel, 1, 0);
+    mainLayout->addWidget(m_destinationFile, 1, 1);
 
-    vbox->addLayout(sourceHBox);
-    vbox->addLayout(destinationHBox);
-    frame->setLayout(vbox);
+    frame->setLayout(mainLayout);
     setMainWidget(frame);
 
     m_destinationFile->setFocus();

@@ -173,7 +173,7 @@ void HgCommitDialog::slotInitDiffOutput()
 {
     m_fileDiffDoc->setReadWrite(true);
     m_fileDiffDoc->setModified(false);
-    m_fileDiffDoc->closeUrl(false);
+    m_fileDiffDoc->closeUrl(true);
 
     QString diffOut;
     HgWrapper *hgWrapper = HgWrapper::instance();
@@ -181,6 +181,7 @@ void HgCommitDialog::slotInitDiffOutput()
     m_fileDiffDoc->setHighlightingMode("diff");
     m_fileDiffDoc->setText(diffOut);
     m_fileDiffView->setCursorPosition( KTextEditor::Cursor(0, 0) );
+    m_fileDiffDoc->setReadWrite(false);
 }
 
 void HgCommitDialog::slotItemSelectionChanged(const char status, 
@@ -188,7 +189,7 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
 {
     m_fileDiffDoc->setReadWrite(true);
     m_fileDiffDoc->setModified(false);
-    m_fileDiffDoc->closeUrl(false);
+    m_fileDiffDoc->closeUrl(true);
 
     if (status != '?') {
         QStringList arguments;
@@ -197,8 +198,9 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
 
         arguments << fileName;
         hgWrapper->executeCommand(QLatin1String("diff"), arguments, diffOut);
-        m_fileDiffDoc->setHighlightingMode("diff");
+        kDebug() << diffOut;
         m_fileDiffDoc->setText(diffOut);
+        m_fileDiffDoc->setHighlightingMode("diff");
     }
     else {
         KUrl url(HgWrapper::instance()->getBaseDir());
@@ -206,6 +208,7 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
         m_fileDiffDoc->openUrl(url);
     }
 
+    m_fileDiffDoc->setReadWrite(false);
     m_fileDiffView->setCursorPosition( KTextEditor::Cursor(0, 0) );
 }
 

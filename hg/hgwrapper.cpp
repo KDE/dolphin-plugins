@@ -180,6 +180,7 @@ void HgWrapper::removeFiles(const KFileItemList &fileList)
 
     QStringList args;
     args << QLatin1String("remove");
+    args << QLatin1String("--force");
     foreach (const KFileItem &item, fileList) {
         args << item.localPath();
     }

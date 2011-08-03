@@ -56,7 +56,7 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
     // Setup UI //
     //////////////
 
-    QGroupBox *urlGroup = new QGroupBox(i18n("URL's"));
+    QGroupBox *urlGroup = new QGroupBox(i18n("URLs"));
     QGridLayout *urlLayout = new QGridLayout;
     QLabel *sourceLabel = new QLabel(i18nc("@label", "Source"));
     QLabel *destLabel = new QLabel(i18nc("@lobel", "Destination"));

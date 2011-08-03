@@ -62,7 +62,7 @@ private:
     QString m_hgBaseDir;
 
     QTableWidget *m_statusTable;
-    KLineEdit *m_filter;
+    //KLineEdit *m_filter;
 };
 
 #endif // STATUSLIST_H

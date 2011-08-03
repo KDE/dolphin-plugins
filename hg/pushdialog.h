@@ -41,6 +41,7 @@ private:
     void parseUpdateChanges(const QString &input);
     void appendOptionArguments(QStringList &args);
     void getHgChangesArguments(QStringList &args);
+    void noChangesMessage();
 
 private slots:
     void slotOutSelChanged();
