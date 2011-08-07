@@ -220,6 +220,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Unbundle"));
     connect(m_unbundleAction, SIGNAL(triggered()),
             this, SLOT(unbundle()));
+
+    m_diffAction = new KAction(this);
+    m_diffAction->setIcon(KIcon("hg-diff"));
+    m_diffAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Diff"));
+    connect(m_diffAction, SIGNAL(triggered()),
+            this, SLOT(diff()));
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -250,6 +257,7 @@ QString FileViewHgPlugin::fileName() const
 
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
+    clearMessages();
     m_currentDir = directory;
     m_versionInfoHash.clear();
     //createHgWrapper();
@@ -323,6 +331,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
 {
     Q_ASSERT(!items.isEmpty());
 
+    clearMessages();
     createHgWrapper();
     m_hgWrapper->setCurrentDir(m_currentDir);
     if (!m_hgWrapper->isBusy()) {
@@ -354,6 +363,8 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         m_addAction->setEnabled(addableCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
         m_revertAction->setEnabled(revertableCount == items.count());
+        m_diffAction->setEnabled(revertableCount == items.count() &&
+                items.size() == 1);
         m_renameAction->setEnabled(items.size() == 1 &&
                 versionState(items.first()) != UnversionedVersion);
     }
@@ -362,6 +373,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         m_removeAction->setEnabled(false);
         m_renameAction->setEnabled(false);
         m_revertAction->setEnabled(false);
+        m_diffAction->setEnabled(false);
     }
 
     QList<QAction*> actions;
@@ -369,6 +381,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
     actions.append(m_removeAction);
     actions.append(m_renameAction);
     actions.append(m_revertAction);
+    actions.append(m_diffAction);
 
     return actions;
 }
@@ -376,6 +389,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
 QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
 {
     QList<QAction*> actions;
+    clearMessages();
     createHgWrapper();
     m_hgWrapper->setCurrentDir(directory);
     if (!m_hgWrapper->isBusy()) {
@@ -383,6 +397,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     }
     actions.append(m_pushAction);
     actions.append(m_pullAction);
+    actions.append(m_diffAction);
     actions.append(m_updateAction);
     actions.append(m_branchAction);
     actions.append(m_tagAction);
@@ -467,66 +482,77 @@ void FileViewHgPlugin::commit()
 
 void FileViewHgPlugin::tag()
 {
+    clearMessages();
     HgTagDialog dialog;
     dialog.exec();
 }
 
 void FileViewHgPlugin::update()
 {
+    clearMessages();
     HgUpdateDialog dialog;
     dialog.exec();
 }
 
 void FileViewHgPlugin::branch()
 {
+    clearMessages();
     HgBranchDialog dialog;
     dialog.exec();
 }
 
 void FileViewHgPlugin::clone()
 {
+    clearMessages();
     HgCloneDialog dialog(m_universalCurrentDirectory);
     dialog.exec();
 }
 
 void FileViewHgPlugin::create()
 {
+    clearMessages();
     HgCreateDialog dialog(m_universalCurrentDirectory);
     dialog.exec();
 }
 
 void FileViewHgPlugin::config()
 {
+    clearMessages();
     HgConfigDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::push()
 {
+    clearMessages();
     HgPushDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::pull()
 {
+    clearMessages();
     HgPullDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::merge()
 {
+    clearMessages();
     HgMergeDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::bundle()
 {
+    clearMessages();
     HgBundleDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::unbundle()
 {
+    clearMessages();
     QString bundle = KFileDialog::getOpenFileName();
     if (bundle.isEmpty()) {
         return;
@@ -543,18 +569,21 @@ void FileViewHgPlugin::unbundle()
 
 void FileViewHgPlugin::importChangesets()
 {
+    clearMessages();
     HgImportDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::exportChangesets()
 {
+    clearMessages();
     HgExportDialog diag;
     diag.exec();
 }
 
 void FileViewHgPlugin::revert()
 {
+    clearMessages();
     int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
                     "Would you like to revert changes "
                     "made to selected files?"));
@@ -592,6 +621,31 @@ void FileViewHgPlugin::revertAll()
     emit infoMessage(infoMsg);
     m_hgWrapper->revertAll();
 }
+
+void FileViewHgPlugin::diff()
+{
+    QString infoMsg = i18nc("@info:status",
+         "Generating diff for <application>Hg</application> repository...");
+    m_errorMsg = i18nc("@info:status",
+         "Couldnt get <application>Hg</application> repository diff.");
+    m_operationCompletedMsg = i18nc("@info:status",
+         "Generated <application>Hg</application> diff successfully.");
+
+    emit infoMessage(infoMsg);
+
+    QStringList args;
+    args << QLatin1String("--config");
+    args << QLatin1String("extensions.hgext.extdiff=");
+    args << QLatin1String("-p");
+    args << QLatin1String("kdiff3");
+    
+    if (m_contextItems.length() == 1) {
+        args << m_contextItems.takeFirst().localPath();
+    }
+
+    m_hgWrapper->executeCommand(QLatin1String("extdiff"), args);
+}
+
 
 void FileViewHgPlugin::rollback()
 {
@@ -643,6 +697,12 @@ void FileViewHgPlugin::slotOperationError()
 {
     m_contextItems.clear();
     emit errorMessage(m_errorMsg);
+}
+
+void FileViewHgPlugin::clearMessages()
+{
+    m_operationCompletedMsg.clear();
+    m_errorMsg.clear();
 }
 
 #include "fileviewhgplugin.moc"
