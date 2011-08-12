@@ -84,6 +84,7 @@ private slots:
     void revertAll();
     void rollback();
     void diff();
+    void serve();
     void merge();
     void bundle();
     void unbundle();
@@ -119,6 +120,7 @@ private:
     KAction *m_unbundleAction;
     KAction *m_importAction;
     KAction *m_diffAction;
+    KAction *m_serveAction;
     //KAction *m_backoutAction;
 
     KFileItemList m_contextItems;

@@ -33,6 +33,7 @@
 #include "bundledialog.h"
 #include "exportdialog.h"
 #include "importdialog.h"
+#include "servedialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -231,6 +232,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     connect(m_unbundleAction, SIGNAL(triggered()),
             this, SLOT(unbundle()));
 
+    m_serveAction = new KAction(this);
+    m_serveAction->setIcon(KIcon("hg-serve"));
+    m_serveAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Serve"));
+    connect(m_serveAction, SIGNAL(triggered()),
+            this, SLOT(serve()));
+
     m_diffAction = new KAction(this);
     m_diffAction->setIcon(KIcon("hg-diff"));
     m_diffAction->setText(i18nc("@action:inmenu",
@@ -418,6 +426,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_unbundleAction);
     actions.append(m_exportAction);
     actions.append(m_importAction);
+    actions.append(m_serveAction);
     actions.append(m_globalConfigAction);
     actions.append(m_repoConfigAction);
     return actions;
@@ -662,6 +671,13 @@ void FileViewHgPlugin::diff()
     }
 
     m_hgWrapper->executeCommand(QLatin1String("extdiff"), args);
+}
+
+void FileViewHgPlugin::serve()
+{
+    clearMessages();
+    HgServeDialog diag;
+    diag.exec();
 }
 
 
