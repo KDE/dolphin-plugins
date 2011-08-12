@@ -20,18 +20,20 @@
 #ifndef HGCONFIGDILAOG_H
 #define HGCONFIGDILAOG_H
 
+#include "hgconfig.h"
 #include <kpagedialog.h>
 
 class HgGeneralConfigWidget;
 class HgPathConfigWidget;
 class HgIgnoreWidget;
+class HgPluginSettingsWidget;
 
 class HgConfigDialog : public KPageDialog
 {
     Q_OBJECT
 
 public:
-    HgConfigDialog(QWidget *parent = 0);
+    HgConfigDialog(HgConfig::ConfigType type, QWidget *parent = 0);
 
 private:
     void done(int r);
@@ -48,6 +50,9 @@ private:
     HgGeneralConfigWidget *m_generalConfig;
     HgPathConfigWidget *m_pathConfig;
     HgIgnoreWidget *m_ignoreWidget;
+    HgPluginSettingsWidget *m_pluginSetting;
+
+    HgConfig::ConfigType m_configType;
 };
 
 #endif // HGCONFIGDILAOG_H

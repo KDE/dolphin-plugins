@@ -21,6 +21,7 @@
 #define HGGENERAL_CONFIG_WIDGET_H
 
 #include <QtGui/QWidget>
+#include "hgconfig.h"
 
 class KLineEdit;
 class QCheckBox;
@@ -30,7 +31,7 @@ class HgGeneralConfigWidget : public QWidget
     Q_OBJECT
 
 public:
-    HgGeneralConfigWidget(QWidget *parent = 0);
+    HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent = 0);
 
 public slots:
     void saveConfig();
@@ -44,6 +45,8 @@ private:
     KLineEdit *m_editorEdit;
     KLineEdit *m_mergeEdit;
     QCheckBox *m_verboseCheck;
+
+    HgConfig::ConfigType m_configType;
 };
 
 #endif // HGGENERAL_CONFIG_WIDGET_H

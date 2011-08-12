@@ -55,6 +55,7 @@ private:
      */
     void createHgWrapper();
     void clearMessages();
+    QString visualDiffExecPath();
 
 private slots:
     void addFiles();
@@ -66,7 +67,8 @@ private slots:
     void update();
     void clone();
     void create();
-    void config();
+    void global_config();
+    void repo_config();
     void push();
     void pull();
     void revert();
@@ -95,6 +97,8 @@ private:
     KAction *m_cloneAction;
     KAction *m_createAction;
     KAction *m_configAction;
+    KAction *m_globalConfigAction;
+    KAction *m_repoConfigAction;
     KAction *m_pushAction;
     KAction *m_pullAction;
     KAction *m_revertAction;

@@ -19,23 +19,29 @@
 
 #include "configdialog.h"
 #include "hgwrapper.h"
-#include "hgconfig.h"
 #include "fileviewhgpluginsettings.h"
 
 #include "config-widgets/generalconfig.h"
 #include "config-widgets/pathconfig.h"
 #include "config-widgets/ignorewidget.h"
+#include "config-widgets/pluginsettings.h"
 
 #include <QtGui/QWidget>
 #include <klocale.h>
 #include <kdebug.h>
 
-HgConfigDialog::HgConfigDialog(QWidget *parent):
-    KPageDialog(parent, Qt::Dialog)
+HgConfigDialog::HgConfigDialog(HgConfig::ConfigType type, QWidget *parent):
+    KPageDialog(parent, Qt::Dialog),
+    m_configType(type)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
-                "<application>Hg</application> Configuration"));
+    if (m_configType == HgConfig::RepoConfig) {
+        this->setCaption(i18nc("@title:window",     
+                    "<application>Hg</application> Repository Configuration"));
+    } else  {
+        this->setCaption(i18nc("@title:window",     
+                    "<application>Hg</application> Global Configuration"));
+    }
     this->setButtons(KDialog::Ok | KDialog::Apply | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     //this->enableButtonOk(false);
@@ -49,22 +55,33 @@ HgConfigDialog::HgConfigDialog(QWidget *parent):
 
 void HgConfigDialog::setupUI()
 {
-    m_generalConfig = new HgGeneralConfigWidget;
+    m_generalConfig = new HgGeneralConfigWidget(m_configType);
     addPage(m_generalConfig, i18nc("@label:group", "General Settings"));
 
-    m_pathConfig = new HgPathConfigWidget;
-    addPage(m_pathConfig, i18nc("@label:group", "Repository Paths"));
+    if (m_configType == HgConfig::RepoConfig) {
+        m_pathConfig = new HgPathConfigWidget;
+        addPage(m_pathConfig, i18nc("@label:group", "Repository Paths"));
 
-    m_ignoreWidget = new HgIgnoreWidget;
-    addPage(m_ignoreWidget, i18nc("@label:group", "Ignored Files"));
+        m_ignoreWidget = new HgIgnoreWidget;
+        addPage(m_ignoreWidget, i18nc("@label:group", "Ignored Files"));
+    }
+    else if (m_configType == HgConfig::GlobalConfig) {
+        m_pluginSetting = new HgPluginSettingsWidget;
+        addPage(m_pluginSetting, i18nc("@label:group", "Plugin Settings"));
+    }
 }
 
 void HgConfigDialog::saveSettings()
 {
     kDebug() << "Saving Mercurial configuration";
     m_generalConfig->saveConfig();
-    m_pathConfig->saveConfig();
-    m_ignoreWidget->saveConfig();
+    if (m_configType == HgConfig::RepoConfig) {
+        m_pathConfig->saveConfig();
+        m_ignoreWidget->saveConfig();
+    }
+    else if (m_configType == HgConfig::GlobalConfig) {
+        m_pluginSetting->saveConfig();
+    }
 }
 
 void HgConfigDialog::done(int r)

@@ -18,7 +18,6 @@
  ***************************************************************************/
 
 #include "generalconfig.h"
-#include "hgconfig.h"
 
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
@@ -28,8 +27,9 @@
 #include <kpushbutton.h>
 #include <klocale.h>
 
-HgGeneralConfigWidget::HgGeneralConfigWidget(QWidget *parent):
-    QWidget(parent)
+HgGeneralConfigWidget::HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent):
+    QWidget(parent),
+    m_configType(type)
 {
     setupUI();
     loadConfig();
@@ -60,7 +60,7 @@ void HgGeneralConfigWidget::setupUI()
 
 void HgGeneralConfigWidget::loadConfig()
 {
-    HgConfig hgc(HgConfig::GlobalConfig);
+    HgConfig hgc(m_configType);
 
     m_userEdit->setText(hgc.username());
     m_editorEdit->setText(hgc.editor());
@@ -77,7 +77,7 @@ void HgGeneralConfigWidget::loadConfig()
 
 void HgGeneralConfigWidget::saveConfig()
 {
-    HgConfig hgc(HgConfig::GlobalConfig);
+    HgConfig hgc(m_configType);
     hgc.setUsername(m_userEdit->text());
     hgc.setEditor(m_editorEdit->text());
     hgc.setMerge(m_mergeEdit->text());

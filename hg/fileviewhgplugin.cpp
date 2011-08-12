@@ -45,6 +45,9 @@
 #include <kmessagebox.h>
 #include <kaction.h>
 #include <kfiledialog.h>
+#include <kurl.h>
+#include <kconfig.h>
+#include <kconfiggroup.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -144,12 +147,19 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     connect(m_updateAction, SIGNAL(triggered()),
             this, SLOT(update()));
 
-    m_configAction = new KAction(this);
-    m_configAction->setIcon(KIcon("hg-config"));
-    m_configAction->setText(i18nc("@action:inmenu",
-                                  "<application>Hg</application> Config"));
-    connect(m_configAction, SIGNAL(triggered()),
-            this, SLOT(config()));
+    m_globalConfigAction = new KAction(this);
+    m_globalConfigAction->setIcon(KIcon("hg-config"));
+    m_globalConfigAction->setText(i18nc("@action:inmenu",
+                          "<application>Hg</application> Global Config"));
+    connect(m_globalConfigAction, SIGNAL(triggered()),
+            this, SLOT(global_config()));
+
+    m_repoConfigAction = new KAction(this);
+    m_repoConfigAction->setIcon(KIcon("hg-config"));
+    m_repoConfigAction->setText(i18nc("@action:inmenu",
+                      "<application>Hg</application> Repository Config"));
+    connect(m_repoConfigAction, SIGNAL(triggered()),
+            this, SLOT(repo_config()));
 
     m_pushAction = new KAction(this);
     m_pushAction->setIcon(KIcon("git-push"));
@@ -408,7 +418,8 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_unbundleAction);
     actions.append(m_exportAction);
     actions.append(m_importAction);
-    actions.append(m_configAction);
+    actions.append(m_globalConfigAction);
+    actions.append(m_repoConfigAction);
     return actions;
 }
 
@@ -515,10 +526,17 @@ void FileViewHgPlugin::create()
     dialog.exec();
 }
 
-void FileViewHgPlugin::config()
+void FileViewHgPlugin::global_config()
 {
     clearMessages();
-    HgConfigDialog diag;
+    HgConfigDialog diag(HgConfig::GlobalConfig);
+    diag.exec();
+}
+
+void FileViewHgPlugin::repo_config()
+{
+    clearMessages();
+    HgConfigDialog diag(HgConfig::RepoConfig);
     diag.exec();
 }
 
@@ -637,7 +655,7 @@ void FileViewHgPlugin::diff()
     args << QLatin1String("--config");
     args << QLatin1String("extensions.hgext.extdiff=");
     args << QLatin1String("-p");
-    args << QLatin1String("kdiff3");
+    args << this->visualDiffExecPath();
     
     if (m_contextItems.length() == 1) {
         args << m_contextItems.takeFirst().localPath();
@@ -703,6 +721,16 @@ void FileViewHgPlugin::clearMessages()
 {
     m_operationCompletedMsg.clear();
     m_errorMsg.clear();
+}
+
+QString FileViewHgPlugin::visualDiffExecPath()
+{
+    KUrl url = KUrl::fromPath(QDir::homePath());
+    url.addPath(".dolphin-hg");
+    KConfig config(url.path(), KConfig::SimpleConfig);
+    
+    KConfigGroup group(&config, QLatin1String("diff"));
+    return group.readEntry(QLatin1String("exec"), QString()).trimmed();
 }
 
 #include "fileviewhgplugin.moc"
