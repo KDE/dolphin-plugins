@@ -27,6 +27,10 @@ class KLineEdit;
 class KConfig;
 class KPushButton;
 
+/**
+ * Plugin Specific settings. Not those supposed to be saved in 
+ * .hgrc file, but in $HOME/.dolphin-hg 
+ */
 class HgPluginSettingsWidget : public QWidget
 {
     Q_OBJECT

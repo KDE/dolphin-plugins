@@ -54,6 +54,7 @@ void HgGeneralConfigWidget::setupUI()
     mainLayout->addWidget(mergeLabel, 2, 0);
     mainLayout->addWidget(m_mergeEdit, 2, 1);
     mainLayout->addWidget(m_verboseCheck, 3, 0, 2, 0);
+    mainLayout->setRowStretch(mainLayout->rowCount(), 1);
 
     setLayout(mainLayout);
 }

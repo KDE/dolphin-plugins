@@ -54,7 +54,16 @@ private:
      * a lot of warnings. 
      */
     void createHgWrapper();
+
+    /**
+     * Simply clear status messages ie m_errorMsg and m_operationCompletedMsg
+     */
     void clearMessages();
+
+    /**
+     * Read executable file path to open diff patches with from 
+     * $HOME/.dolphin-hg file in INI format
+     */
     QString visualDiffExecPath();
 
 private slots:

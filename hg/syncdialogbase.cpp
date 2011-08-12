@@ -159,7 +159,11 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
 {
 
     if (exitCode != 0 || status != QProcess::NormalExit) {
-        KMessageBox::error(this, QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError()));
+        QString message = QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError());
+        if (message.isEmpty()) {
+            message = i18nc("@message", "No changes found!");
+        }
+        KMessageBox::error(this, message);
         return;
     }
 
