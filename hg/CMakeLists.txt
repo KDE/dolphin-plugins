@@ -26,6 +26,8 @@ set(fileviewhgplugin_SRCS
     exportdialog.cpp
     importdialog.cpp
     servedialog.cpp
+    servewrapper.cpp
+    backoutdialog.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp
