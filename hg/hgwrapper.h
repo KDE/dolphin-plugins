@@ -195,6 +195,14 @@ public:
      */
     bool rollback(bool dryRun=false);
 
+    /**
+     * Checks if the working directory is clean, ie there are no 
+     * uncommited changes present.
+     *
+     * @return true if clean otherwise false
+     */
+    bool isWorkingDirectoryClean();
+
     QString getParentsOfHead();
     
     /**

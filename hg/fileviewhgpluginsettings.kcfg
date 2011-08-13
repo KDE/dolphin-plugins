@@ -97,13 +97,23 @@
         </entry>
     </group>
     <group name="ServeDialogSettings">
-        <entry name="ServeDialogHeight" type="Int">
+        <entry name="serveDialogHeight" type="Int">
             <label>Dialog height</label>
             <default>600</default>
         </entry>
-        <entry name="ServeDialogWidth" type="Int">
+        <entry name="serveDialogWidth" type="Int">
             <label>Dialog width</label>
             <default>300</default>
+        </entry>
+    </group>
+    <group name="BackoutDialogSettings">
+        <entry name="backoutDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>346</default>
+        </entry>
+        <entry name="backoutDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>537</default>
         </entry>
     </group>
 </kcfg>

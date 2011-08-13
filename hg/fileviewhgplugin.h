@@ -83,6 +83,7 @@ private slots:
     void revert();
     void revertAll();
     void rollback();
+    void backout();
     void diff();
     void serve();
     void merge();
@@ -121,7 +122,7 @@ private:
     KAction *m_importAction;
     KAction *m_diffAction;
     KAction *m_serveAction;
-    //KAction *m_backoutAction;
+    KAction *m_backoutAction;
 
     KFileItemList m_contextItems;
     QString m_universalCurrentDirectory;

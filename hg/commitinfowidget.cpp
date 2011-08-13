@@ -115,7 +115,7 @@ void HgCommitInfoWidget::slotUpdateInfo()
 
     m_editorDoc->setReadWrite(true);
     m_editorDoc->setModified(false);
-    m_editorDoc->closeUrl(false);
+    m_editorDoc->closeUrl(true);
     m_editorDoc->setHighlightingMode("diff");
     m_editorDoc->setText(output);
     m_editorView->setCursorPosition( KTextEditor::Cursor(0, 0) );

@@ -376,5 +376,19 @@ void HgWrapper::terminateCurrentProcess()
     m_process.terminate();
 }
 
+bool HgWrapper::isWorkingDirectoryClean()
+{
+    QStringList args;
+    args << QLatin1String("--modified");
+    args << QLatin1String("--added");
+    args << QLatin1String("--removed");
+    args << QLatin1String("--deleted");
+
+    QString output;
+    executeCommand(QLatin1String("status"), args, output);
+    
+    return output.trimmed().isEmpty();
+}
+
 #include "hgwrapper.moc"
 

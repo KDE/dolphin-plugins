@@ -22,13 +22,44 @@
 
 #include <kdialog.h>
 
+class QGroupBox;
+class QCheckBox;
+class KLineEdit;
+class HgCommitInfoWidget;
+class KPushButton;
+
 class HgBackoutDialog : public KDialog
 {
     Q_OBJECT
 
 public:
     HgBackoutDialog(QWidget *parent = 0);
+
+public slots:
+    void done(int r);
+
+private slots:
+    void saveGeometry();
+    void slotSelectBaseChangeset();
+    void slotSelectParentChangeset();
+    void slotUpdateOkButton(const QString &text);
+
+private:
     void setupUI();
+    void loadCommits();
+    QString selectChangeset();
+
+private:
+    QGroupBox *m_mainGroup;
+    HgCommitInfoWidget *m_commitInfo;
+
+    KPushButton *m_selectBaseCommitButton;
+    KLineEdit *m_baseRevision;
+
+    KPushButton *m_selectParentCommitButton;
+    KLineEdit *m_parentRevision;
+
+    QCheckBox *m_optMerge;
 };
 
 #endif /* HG_BACKOUT_DIALOG */

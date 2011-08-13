@@ -34,6 +34,7 @@
 #include "exportdialog.h"
 #include "importdialog.h"
 #include "servedialog.h"
+#include "backoutdialog.h"
 
 
 #include <QtCore/QTextCodec>
@@ -239,6 +240,13 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     connect(m_serveAction, SIGNAL(triggered()),
             this, SLOT(serve()));
 
+    m_backoutAction = new KAction(this);
+    m_backoutAction->setIcon(KIcon("hg-backout"));
+    m_backoutAction->setText(i18nc("@action:inmenu",
+                                 "<application>Hg</application> Backout"));
+    connect(m_backoutAction, SIGNAL(triggered()),
+            this, SLOT(backout()));
+
     m_diffAction = new KAction(this);
     m_diffAction->setIcon(KIcon("hg-diff"));
     m_diffAction->setText(i18nc("@action:inmenu",
@@ -422,6 +430,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
     actions.append(m_mergeAction);
     actions.append(m_revertAllAction);
     actions.append(m_rollbackAction);
+    actions.append(m_backoutAction);
     actions.append(m_bundleAction);
     actions.append(m_unbundleAction);
     actions.append(m_exportAction);
@@ -680,6 +689,19 @@ void FileViewHgPlugin::serve()
     diag.exec();
 }
 
+void FileViewHgPlugin::backout()
+{
+    clearMessages();
+    m_hgWrapper = HgWrapper::instance();
+    if (!m_hgWrapper->isWorkingDirectoryClean()) {
+        KMessageBox::error(0, i18nc("@message:error",
+                      "abort: Uncommited changes in working directory!"));
+        return;
+    }
+
+    HgBackoutDialog diag;
+    diag.exec();
+}
 
 void FileViewHgPlugin::rollback()
 {
