@@ -208,7 +208,7 @@ void HgBackoutDialog::done(int r)
             KDialog::done(r);
         }
         else {
-            KMessageBox::error(this, hgw->readAllStandardOutput());
+            KMessageBox::error(this, hgw->readAllStandardError());
         }
     }
     else {
