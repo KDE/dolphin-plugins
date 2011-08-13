@@ -36,6 +36,8 @@ class HgServeWrapper : public QObject
 
 public: 
     HgServeWrapper(QObject *parent=0);
+    ~HgServeWrapper();
+
     static HgServeWrapper *instance();
 
     void startServer(const QString &repoLocation, int portNumber);

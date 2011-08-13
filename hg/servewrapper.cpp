@@ -30,6 +30,19 @@ HgServeWrapper::HgServeWrapper(QObject *parent) :
 {
 }
 
+HgServeWrapper::~HgServeWrapper()
+{
+    QMutableHashIterator<QString, ServerProcessType*> it(m_serverList);
+    while (it.hasNext()) {
+        it.next();
+        if (it.value()->process.state() != QProcess::NotRunning) {
+            it.value()->process.terminate();
+        }
+        it.value()->deleteLater();
+        it.remove();
+    }
+}
+
 HgServeWrapper *HgServeWrapper::instance()
 {
     if (m_instance == 0) {
@@ -43,7 +56,7 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     ServerProcessType *server = m_serverList.value(repoLocation, 0);
     if (server != 0) {
         m_serverList.remove(repoLocation);
-        delete server;
+        server->deleteLater();
     }
     server = new ServerProcessType;
     m_serverList.insert(repoLocation, server);
@@ -126,7 +139,7 @@ void HgServeWrapper::cleanUnused()
     while (it.hasNext()) {
         it.next();
         if (it.value()->process.state() == QProcess::NotRunning) {
-            delete it.value();
+            it.value()->deleteLater();
             it.remove();
         }
     }
