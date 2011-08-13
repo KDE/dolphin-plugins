@@ -98,14 +98,6 @@ class NewBranchDialog : public KDialog
 
 };
 
-//TODO: Design and implement commit options dialog
-class CommitOptionsDialog : public KDialog
-{
-    Q_OBJECT
-public:
-    CommitOptionsDialog(QWidget *parent=0);
-};
-
 #endif // HGCOMMITDIALOG_H
 
 

@@ -116,9 +116,10 @@ void HgCommitInfoWidget::slotUpdateInfo()
     m_editorDoc->setReadWrite(true);
     m_editorDoc->setModified(false);
     m_editorDoc->closeUrl(true);
-    m_editorDoc->setHighlightingMode("diff");
     m_editorDoc->setText(output);
+    m_editorDoc->setHighlightingMode("diff");
     m_editorView->setCursorPosition( KTextEditor::Cursor(0, 0) );
+    m_editorDoc->setReadWrite(false);
 }
 
 void HgCommitInfoWidget::setSelectionMode(QAbstractItemView::SelectionMode mode)

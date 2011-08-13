@@ -338,13 +338,5 @@ QString NewBranchDialog::getBranchName() const
     return m_branchNameInput->text();
 }
 
-/******************/
-/* Options Dialog */
-/******************/
-
-CommitOptionsDialog::CommitOptionsDialog(QWidget *parent)
-{
-}
-
 #include "commitdialog.moc"
 
