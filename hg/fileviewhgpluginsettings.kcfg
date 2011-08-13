@@ -91,9 +91,19 @@
             <label>Dialog height</label>
             <default>540</default>
         </entry>
-        <entry name="ImportDialogWidth" type="Int">
+        <entry name="importDialogWidth" type="Int">
             <label>Dialog width</label>
             <default>500</default>
+        </entry>
+    </group>
+    <group name="ServeDialogSettings">
+        <entry name="ServeDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>600</default>
+        </entry>
+        <entry name="ServeDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>300</default>
         </entry>
     </group>
 </kcfg>

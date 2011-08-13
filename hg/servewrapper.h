@@ -22,17 +22,76 @@
 
 #include <QtCore/QHash>
 #include <QtCore/QProcess>
+#include <QtCore/QTextCodec>
 #include <QtCore/QString>
 
-class HgServeWrapper
+class ServerProcessType;
+
+/**
+ * Wrapper to manage web server instaces of mercurial repository
+ */
+class HgServeWrapper : public QObject
 {
+    Q_OBJECT
+
 public: 
-    HgServeWrapper(QWidget *parent=0);
+    HgServeWrapper(QObject *parent=0);
+    static HgServeWrapper *instance();
+
+    void startServer(const QString &repoLocation, int portNumber);
+    void stopServer(const QString &repoLocation);
+
+    bool running(const QString &repoLocation);
+
+    void cleanUnused();
+
+    QString errorMessage(const QString &repoLocation);
+    bool normalExit(const QString &repoLocation);
+
+signals:
+    void finished();
+    void error();
+    void started();
+    void readyReadLine(const QString &repoLocation, const QString &line);
 
 private:
-    static QHash<QString, QProcess> m_serverList;
+
+private slots:
+    void slotFinished(int exitCode, QProcess::ExitStatus status);
+
+private:
+    QHash<QString, ServerProcessType*> m_serverList;
+    static HgServeWrapper *m_instance;
 };
 
+//FIXME: Had to change struct to class and make it unnested. 
+// Hide member variables.
+class ServerProcessType : public QObject {
+    Q_OBJECT
+
+public:
+    QProcess process;
+    int port;
+
+    ServerProcessType() 
+    {
+        connect(&process, SIGNAL(readyRead()), 
+                this, SLOT(slotAppendOutput()));
+    }
+
+signals:    
+    void readyReadLine(const QString &repoLocation, const QString &line);
+
+private slots:
+    void slotAppendOutput() {
+        if (process.canReadLine()) {
+            char buffer[1024];
+            process.readLine(buffer, sizeof(buffer));
+            emit readyReadLine(process.workingDirectory(),
+                QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
+        }
+    }
+};
 
 #endif /* HG_SERVE_WRAPPER_H */
 

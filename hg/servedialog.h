@@ -22,6 +22,12 @@
 
 #include <kdialog.h>
 
+class QSpinBox;
+class KPushButton;
+class QTextEdit;
+class QLabel;
+class HgServeWrapper;
+
 class HgServeDialog : public KDialog
 {
     Q_OBJECT
@@ -29,6 +35,26 @@ class HgServeDialog : public KDialog
 public:
     HgServeDialog(QWidget *parent = 0);
     void setupUI();
+    void loadConfig();
+
+public slots:
+    void slotStart();
+    void slotStop();
+
+private slots:
+    void slotUpdateButtons();
+    void slotServerError();
+    void saveGeometry();
+    void appendServerOutput(const QString &repoLocation, const QString &line);
+
+private:
+    QSpinBox *m_portNumber; 
+    KPushButton *m_startButton;
+    KPushButton *m_stopButton;
+    QTextEdit *m_logEdit;
+    QLabel *m_repoPathLabel;
+
+    HgServeWrapper *m_serverWrapper;
 };
 
 #endif /* HG_SERVE_DIALOG */
