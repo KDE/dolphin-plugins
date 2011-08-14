@@ -21,6 +21,7 @@
 #include "hgwrapper.h"
 
 #include <QtCore/QTextCodec>
+#include <klocale.h>
 #include <kdebug.h>
 
 HgServeWrapper *HgServeWrapper::m_instance = 0;
@@ -78,6 +79,8 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     args << QString::number(portNumber);
     server->process.start(QLatin1String("stdbuf"), args);
     emit readyReadLine(repoLocation,
+            i18n("## Starting Server ##"));
+    emit readyReadLine(repoLocation,
             QString("% hg serve --port %1").arg(portNumber));
 }
 
@@ -87,9 +90,6 @@ void HgServeWrapper::stopServer(const QString &repoLocation)
     if (server == 0) {
         return;
     }
-
-    emit readyReadLine(repoLocation, QLatin1String("\n"));
-
     server->process.terminate();
 }
 

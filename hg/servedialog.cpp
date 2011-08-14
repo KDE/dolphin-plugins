@@ -146,14 +146,6 @@ void HgServeDialog::slotStop()
 
 void HgServeDialog::slotServerError()
 {
-    QString base = HgWrapper::instance()->getBaseDir();
-    if (!m_serverWrapper->normalExit(base)) {
-        QString msg = m_serverWrapper->errorMessage(base);
-        if (msg.contains(QLatin1String("killed!"))) {
-            return;
-        }
-        KMessageBox::error(this, msg);
-    }
     m_serverWrapper->cleanUnused();
 }
 

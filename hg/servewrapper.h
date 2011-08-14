@@ -24,6 +24,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QTextCodec>
 #include <QtCore/QString>
+#include <klocale.h>
 
 class ServerProcessType;
 
@@ -77,21 +78,36 @@ public:
 
     ServerProcessType() 
     {
-        connect(&process, SIGNAL(readyRead()), 
+        connect(&process, SIGNAL(readyReadStandardOutput()), 
                 this, SLOT(slotAppendOutput()));
+        connect(&process, SIGNAL(readyReadStandardError()),
+                this, SLOT(slotAppendRemainingOutput()));
+        connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)),
+                this, SLOT(slotFinished()));
     }
 
 signals:    
     void readyReadLine(const QString &repoLocation, const QString &line);
 
 private slots:
-    void slotAppendOutput() {
+    void slotAppendOutput() 
+    {
         if (process.canReadLine()) {
-            char buffer[1024];
-            process.readLine(buffer, sizeof(buffer));
             emit readyReadLine(process.workingDirectory(),
-                QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
+                QTextCodec::codecForLocale()->toUnicode(process.readAllStandardOutput()).trimmed());
         }
+    }
+
+    void slotAppendRemainingOutput() 
+    {
+            emit readyReadLine(process.workingDirectory(),
+                QTextCodec::codecForLocale()->toUnicode(process.readAllStandardError()).trimmed());
+    }
+
+    void slotFinished() 
+    {
+        emit readyReadLine(process.workingDirectory(),
+                               i18n("## Server Stopped! ##\n"));
     }
 };
 
