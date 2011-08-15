@@ -52,9 +52,11 @@ private slots:
     void saveGeometry();
     void slotBranchActions(QAction *action);
     void slotInitDiffOutput();
+    void slotInsertCopyMessage(QAction *action);
 
 private:
     QString getParentForLabel();
+    void createCopyMessageMenu();
     void done(int r);
 
 private:
@@ -67,11 +69,13 @@ private:
     KTextEditor::Document *m_fileDiffDoc;
 
     KPushButton *m_branchButton;
+    KPushButton *m_copyMessageButton;
 
     KAction *m_closeBranch;
     KAction *m_newBranch;
     KAction *m_useCurrentBranch;
     KMenu *m_branchMenu;
+    KMenu *m_copyMessageMenu;
 
     enum {CloseBranch, NewBranch, NoChanges} m_branchAction;
     QString m_newBranchName;

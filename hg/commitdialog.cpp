@@ -101,16 +101,18 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     // Top bar of buttons
     QHBoxLayout *topBarLayout = new QHBoxLayout;
-    KPushButton *copyMessageButton = new KPushButton(i18n("Copy Message"));
-    KPushButton *optionsButton = new KPushButton(i18n("Options"));
+    m_copyMessageButton = new KPushButton(i18n("Copy Message"));
     m_branchButton = new KPushButton(i18n("Branch"));
+
+    m_copyMessageMenu = new KMenu(this);
+    createCopyMessageMenu();
 
     topBarLayout->addWidget(new QLabel(getParentForLabel()));
     topBarLayout->addStretch();
     topBarLayout->addWidget(m_branchButton);
-    topBarLayout->addWidget(copyMessageButton);
-    topBarLayout->addWidget(optionsButton);
+    topBarLayout->addWidget(m_copyMessageButton);
     m_branchButton->setMenu(m_branchMenu);
+    m_copyMessageButton->setMenu(m_copyMessageMenu);
 
     // the commit box itself
     QGroupBox *messageGroupBox = new QGroupBox;
@@ -336,6 +338,34 @@ void NewBranchDialog::slotTextChanged(const QString &text)
 QString NewBranchDialog::getBranchName() const
 {
     return m_branchNameInput->text();
+}
+
+void HgCommitDialog::createCopyMessageMenu()
+{
+    QActionGroup *actionGroup = new QActionGroup(this);
+    connect(actionGroup, SIGNAL(triggered(QAction *)),
+            this, SLOT(slotInsertCopyMessage(QAction *)));
+
+    QStringList args;
+    args << QLatin1String("--limit");
+    args << QLatin1String("5");
+    args << QLatin1String("--template");
+    args << QLatin1String("{desc|short}\n");
+
+    HgWrapper *hgw = HgWrapper::instance();
+    QString output;
+    hgw->executeCommand(QLatin1String("log"), args, output);
+
+    QStringList messages = output.split('\n', QString::SkipEmptyParts);
+    foreach (QString msg, messages) {
+        QAction *action = m_copyMessageMenu->addAction(msg);
+        actionGroup->addAction(action);
+    }
+}
+
+void HgCommitDialog::slotInsertCopyMessage(QAction *action)
+{
+    m_commitMessage->insertPlainText(action->text());
 }
 
 #include "commitdialog.moc"
