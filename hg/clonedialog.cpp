@@ -76,10 +76,10 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
     QGroupBox *optionGroup = new QGroupBox(i18nc("@label", "Options"));
     QVBoxLayout *optionLayout = new QVBoxLayout;
 
-    m_optNoUpdate = new QCheckBox(i18n("Do not update the new working directory"));
+    m_optNoUpdate = new QCheckBox(i18n("Do not update the new working directory."));
     m_optUsePull = new QCheckBox(i18n("Use pull protocol to copy metadata."));
-    m_optUseUncmprdTrans = new QCheckBox(i18n("Use uncompressed transfer"));
-    m_optNoVerifyServCert = new QCheckBox(i18n("Do not verify server certificate (ignoring web.cacerts config)"));
+    m_optUseUncmprdTrans = new QCheckBox(i18n("Use uncompressed transfer."));
+    m_optNoVerifyServCert = new QCheckBox(i18n("Do not verify server certificate (ignoring web.cacerts config)."));
 
     optionLayout->addWidget(m_optNoUpdate);
     optionLayout->addWidget(m_optUsePull);

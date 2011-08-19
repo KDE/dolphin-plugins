@@ -50,6 +50,8 @@
 #include <kurl.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
+#include <kservice.h>
+#include <kmimetypetrader.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -773,8 +775,9 @@ QString FileViewHgPlugin::visualDiffExecPath()
     if (result.length() > 0) {
         return result;
     }
-    
-    return QString(); // find default viewer if something not set
+
+    KService::List services = KMimeTypeTrader::self()->query("text/x-diff");
+    return services.first()->exec().split(' ').takeFirst();
 }
 
 #include "fileviewhgplugin.moc"
