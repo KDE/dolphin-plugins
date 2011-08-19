@@ -26,11 +26,18 @@
 class KLineEdit;
 class QCheckBox;
 
+/**
+ * General configuration options, usually found [ui] group of hgrc file.
+ * Can be used with both, repository hgrc as well as global hgrc
+ */
 class HgGeneralConfigWidget : public QWidget
 {
     Q_OBJECT
 
 public:
+    /**
+     * @param type Which configuration file to use, Repo or Global
+     */
     HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent = 0);
 
 public slots:

@@ -77,7 +77,7 @@ void HgPathSelector::reload()
 
 void HgPathSelector::slotChangeEditUrl(int index)
 {
-    if (index == m_selectPathAlias->count() - 1) {
+    if (index == m_selectPathAlias->count() - 1) { ///enter URL manually
         m_urlEdit->setReadOnly(false);
         m_urlEdit->clear();
         m_urlEdit->setFocus();

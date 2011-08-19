@@ -37,7 +37,7 @@ HgCreateDialog::HgCreateDialog(const QString &directory, QWidget *parent):
                 "<application>Hg</application> Initialize Repository"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Create"));
+    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Initialize Repository"));
     //this->enableButtonOk(false);
 
 

@@ -26,6 +26,9 @@
 class KLineEdit;
 class KFileItem;
 
+/**
+ * Dialog to rename files Mercurial way
+ */
 class HgRenameDialog : public KDialog
 {
     Q_OBJECT

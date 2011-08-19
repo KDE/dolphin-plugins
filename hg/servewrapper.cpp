@@ -36,6 +36,7 @@ HgServeWrapper::~HgServeWrapper()
     QMutableHashIterator<QString, ServerProcessType*> it(m_serverList);
     while (it.hasNext()) {
         it.next();
+        ///terminate server if not terminated already
         if (it.value()->process.state() != QProcess::NotRunning) {
             it.value()->process.terminate();
         }

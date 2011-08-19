@@ -108,10 +108,10 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
 
     setMainWidget(mainFrame);
     // Load saved settings
-    /*FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
+    FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     this->setInitialSize(QSize(settings->cloneDialogWidth(),
                                settings->cloneDialogHeight()));
-    */
+    
     connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
     connect(m_source, SIGNAL(textChanged(const QString&)), 
                 this, SLOT(slotUpdateOkButton()));
@@ -147,8 +147,11 @@ void HgCloneDialog::slotBrowseSourceClicked()
 void HgCloneDialog::done(int r)
 {
     if (r == KDialog::Accepted && !m_cloned) {
+        // Will execute 'stdbuf' command to make the output of
+        // mercurial command line buffered and enable us to show 
+        // output of cloning as soon as new line is available
         QStringList args;
-        args << QLatin1String("-oL");
+        args << QLatin1String("-oL"); //argument for stdbuf. 
         args << QLatin1String("hg");
         args << QLatin1String("clone");
         args << QLatin1String("--verbose");

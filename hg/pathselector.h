@@ -26,12 +26,21 @@
 class KComboBox;
 class KLineEdit;
 
+/**
+ * A simple widget which presents a ComboBox to select list of Path aliases
+ * stored in .hgrc file and show their URL. URL's can be entered manually
+ * as well.
+ */
 class HgPathSelector : public QWidget
 {
     Q_OBJECT
 
 public:
     HgPathSelector(QWidget *parent=0);
+
+    /**
+     * @return Return QString containing the selected/entered alias/URL
+     */
     const QString remote() const;
 
 public slots:

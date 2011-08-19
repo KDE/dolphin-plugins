@@ -36,9 +36,14 @@ namespace KTextEditor {
     class Document;
 };
 
-// TODO: Copy last commit messages
 // TODO: Filter in HgStatusList.
 
+/**
+ * Implements dialog for Commit changes. User is presented with a list of
+ * changes/added/removed files, their diffs, a TextEdit to enter 
+ * commit message, options to change/create/close branch and last 5 commit
+ * messages.
+ */
 class HgCommitDialog : public KDialog
 {
     Q_OBJECT
@@ -47,10 +52,24 @@ public:
     HgCommitDialog(QWidget *parent = 0);
 
 private slots:
+    /**
+     * Shows diff of selected file in a KTextEditor widget when user selects
+     * one of the entry in HgStatusList widget.
+     */
     void slotItemSelectionChanged(const char status, const QString &fileName);
+
+    /**
+     * Will enable 'Ok' button of dialog if some message text is available or 
+     * disables it.
+     */
     void slotMessageChanged();
     void saveGeometry();
     void slotBranchActions(QAction *action);
+
+    /**
+     * Shows diff of whole working directory together in KTextEditor widget.
+     * Equivalent to plain 'hg diff'
+     */
     void slotInitDiffOutput();
     void slotInsertCopyMessage(QAction *action);
 
@@ -77,6 +96,12 @@ private:
     KMenu *m_branchMenu;
     KMenu *m_copyMessageMenu;
 
+    /** What will commit do with branch. 
+     *
+     * CloseBranch: Close the current branch
+     * NewBranch  : Creates new branch for this commit
+     * NoChanges  : No changes to branch are made. 
+     */
     enum {CloseBranch, NewBranch, NoChanges} m_branchAction;
     QString m_newBranchName;
 };

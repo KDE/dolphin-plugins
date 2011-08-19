@@ -768,7 +768,13 @@ QString FileViewHgPlugin::visualDiffExecPath()
     KConfig config(url.path(), KConfig::SimpleConfig);
     
     KConfigGroup group(&config, QLatin1String("diff"));
-    return group.readEntry(QLatin1String("exec"), QString()).trimmed();
+    QString result = group.readEntry(QLatin1String("exec"), QString()).trimmed();
+
+    if (result.length() > 0) {
+        return result;
+    }
+    
+    return QString(); // find default viewer if something not set
 }
 
 #include "fileviewhgplugin.moc"

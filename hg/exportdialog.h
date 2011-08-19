@@ -27,6 +27,13 @@ class QCheckBox;
 class QGroupBox;
 class KLineEdit;
 
+//TODO: Some helper for writing patterns
+//
+/**
+ * Dialog to implment mercurial export feature. Dialogs presents list of
+ * changesets from which the user will select entries and export a series of
+ * patch files for each changeset.
+ */
 class HgExportDialog : public KDialog
 {
     Q_OBJECT

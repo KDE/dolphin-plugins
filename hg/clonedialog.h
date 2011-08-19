@@ -30,9 +30,12 @@ class KTextEdit;
 class QStackedLayout;
 class QCheckBox;
 
-//TODO: Read output of clone as soon as available. 
-//TODO: Add buttons to cancel and go back during cloning.
+//TODO: Enable to enter username/passwords if not found in config as well
+//  as override within dialog
 
+/**
+ * Implements dialog to clone repository.
+ */
 class HgCloneDialog : public KDialog
 {
     Q_OBJECT
@@ -43,11 +46,20 @@ public:
 
 private slots:
     void saveGeometry();
+
+    /**
+     * Enables dialog's Ok button when user has entered some input in 
+     * source LineEdit
+     */
     void slotUpdateOkButton();
     void slotBrowseDestClicked();
     void slotBrowseSourceClicked();
     void slotCloningStarted();
     void slotCloningFinished(int exitCode, QProcess::ExitStatus);
+
+    /** 
+     * Show output of clone operation in TextEdit component.
+     */
     void slotUpdateCloneOutput();
 
 private:

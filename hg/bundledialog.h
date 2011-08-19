@@ -29,6 +29,15 @@ class HgCommitInfoWidget;
 class HgPathSelector;
 class KPushButton;
 
+/**
+ * Dialog which implements bundle feature of Mercurial. Bundle enables
+ * user to creates a file containg all the selected/desired changesets
+ * in mercurial's internal format rather than patches. 
+ * 
+ * Changesets can either be selected by user or after being compared by
+ * remote repository selected.
+ *
+ */
 class HgBundleDialog : public KDialog
 {
     Q_OBJECT
@@ -41,12 +50,28 @@ public slots:
 
 private slots:
     void saveGeometry();
+
+    /**
+     * Opens a dialog listing all changeset from which user will select a 
+     * changeset for base revision. 
+     */
     void slotSelectChangeset();
     void slotAllChangesCheckToggled(int state);
 
 private:
     void setupUI();
+
+    /**
+     * Creates bundle file.
+     *
+     * @param fileName Path to file where bundle will be created.
+     */
     void createBundle(const QString &fileName);
+
+    /**
+     * Find all changesets in respository and show them in Commit Selector in 
+     * Base Changeset selector.
+     */
     void loadCommits();
 
 private:

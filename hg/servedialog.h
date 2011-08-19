@@ -28,6 +28,10 @@ class QTextEdit;
 class QLabel;
 class HgServeWrapper;
 
+/**
+ * Implements dialog to Start and Stop Mercurial web server.
+ * Several server instances can be handled.
+ */
 class HgServeDialog : public KDialog
 {
     Q_OBJECT
@@ -45,6 +49,10 @@ private slots:
     void slotUpdateButtons();
     void slotServerError();
     void saveGeometry();
+
+    /**
+     * Append stdout and stderr to m_logEdit
+     */
     void appendServerOutput(const QString &repoLocation, const QString &line);
 
 private:

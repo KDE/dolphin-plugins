@@ -28,6 +28,9 @@ class KPushButton;
 class QLabel;
 class HgCommitInfoWidget;
 
+/**
+ * Implements dialog to perform merge operations
+ */
 class HgMergeDialog : public KDialog
 {
     Q_OBJECT

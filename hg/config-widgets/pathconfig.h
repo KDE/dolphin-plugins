@@ -31,7 +31,8 @@ class KAction;
 class KMenu;
 
 /**
- * UI to add, remove and modify paths in repository's hgrc file.
+ * UI to add, remove and modify paths in repository's hgrc file. Can be used with
+ * repository hgrc file only.
  */
 class HgPathConfigWidget : public QWidget
 {

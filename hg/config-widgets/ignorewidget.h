@@ -26,6 +26,10 @@ class QListWidget;
 class KPushButton; 
 class QInputDialog;
 
+/**
+ * Widget to manage ignored files. Used .hgignore file in repository.
+ * Repository only configuration
+ */
 class HgIgnoreWidget : public QWidget
 {
     Q_OBJECT

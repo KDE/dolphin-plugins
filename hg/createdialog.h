@@ -26,6 +26,9 @@
 class KLineEdit;
 class QLabel;
 
+/**
+ * Dialog to initialize new mercurial repository
+ */
 class HgCreateDialog : public KDialog
 {
     Q_OBJECT

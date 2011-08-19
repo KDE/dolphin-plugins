@@ -27,6 +27,10 @@ class KComboBox;
 class KPushButton;
 class QLabel;
 
+/**
+ * Implements dialog to list & create branches and update/switch working 
+ * directory to differnt branch.
+ */
 class HgBranchDialog : public KDialog
 {
     Q_OBJECT

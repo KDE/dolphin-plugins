@@ -29,6 +29,9 @@ class KTextEdit;
 class KComboBox;
 class QString;
 
+/**
+ * Dialog to implement pull operation
+ */
 class HgPullDialog : public HgSyncBaseDialog
 {
     Q_OBJECT

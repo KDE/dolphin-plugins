@@ -26,6 +26,10 @@
 class KComboBox;
 class KPushButton;
 
+/**
+ * Dialog to create/delete/list tags and update working directory to revision
+ * represented by a specific tag.
+ */
 class HgTagDialog : public KDialog
 {
     Q_OBJECT

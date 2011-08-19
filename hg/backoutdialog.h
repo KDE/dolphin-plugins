@@ -28,6 +28,9 @@ class KLineEdit;
 class HgCommitInfoWidget;
 class KPushButton;
 
+/**
+ * Implements dialog for Mercurial's backout feature.
+ */
 class HgBackoutDialog : public KDialog
 {
     Q_OBJECT
@@ -46,7 +49,17 @@ private slots:
 
 private:
     void setupUI();
+
+    /**
+     * Find appropiate changesets in repository and show them in 
+     * Commit Selector (CommitInfoWidget)
+     */
     void loadCommits();
+
+    /** 
+     * Opens a dialog showing all changesets in a list and their respective
+     * information when highlighted. 
+     */
     QString selectChangeset();
 
 private:

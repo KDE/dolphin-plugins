@@ -27,6 +27,10 @@ class KComboBox;
 class QLabel;
 class QCheckBox;
 
+/**
+ * Dialog to update working directory to specific revision/changeset/branch/tag.
+ * Also shows working directory summary.
+ */
 class HgUpdateDialog : public KDialog
 {
     Q_OBJECT

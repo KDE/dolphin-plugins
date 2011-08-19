@@ -28,6 +28,9 @@ class QTableWidget;
 class KTextEdit;
 class QGroupBox;
 
+/**
+ * Dialog to implement Push operation
+ */
 class HgPushDialog : public HgSyncBaseDialog 
 {
     Q_OBJECT

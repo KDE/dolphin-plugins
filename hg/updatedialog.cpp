@@ -113,6 +113,9 @@ void HgUpdateDialog::slotUpdateDialog(int index)
     args << QLatin1String("{rev}:{node|short} ({branch})\n");
     hgWrapper->executeCommand(QLatin1String("parents"), args, output);
     output.replace(QLatin1String("\n"), QLatin1String("<br/>"));
+    if (output.contains(QLatin1String("()"))) {
+        output.replace(QLatin1String("()"), QLatin1String("(default)"));
+    }
     m_currentInfo->setText(output);
 }
 

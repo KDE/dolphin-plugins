@@ -31,7 +31,6 @@
 class QTextCodec;
 
 
-//TODO: Make HgWrapper contain QProcess, rather than inherit
 //TODO: Create signals for infoMessage and errorMessage which will be 
 //      caught by main plugin interface.
 
