@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Service
+Name=Bazaar
+X-KDE-ServiceTypes=FileViewVersionControlPlugin
+MimeType=text/plain;
+X-KDE-Library=fileviewbazaarplugin
