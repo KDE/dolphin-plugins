@@ -2,7 +2,9 @@
 Type=Service
 Name=Bazaar
 Name[nds]=Bazaar
+Name[nl]=Bazaar
 Name[pt]=Bazaar
+Name[pt_BR]=Bazaar
 Name[sv]=Bazaar
 Name[uk]=Bazaar
 Name[x-test]=xxBazaarxx
