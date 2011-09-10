@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Peter Penz <peter.penz@gmx.at>             *
+ *   Copyright (C) 2009-2011 by Peter Penz <peter.penz19@gmail.com>        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -44,7 +44,7 @@ K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
 K_EXPORT_PLUGIN(FileViewSvnPluginFactory("fileviewsvnplugin"))
 
 FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& args) :
-    KVersionControlPlugin(parent),
+    KVersionControlPlugin2(parent),
     m_pendingOperation(false),
     m_versionInfoHash(),
     m_updateAction(0),
@@ -162,7 +162,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             // Only values with a different state as 'NormalVersion'
             // are added to the hash table. If a value is not in the
             // hash table, it is automatically defined as 'NormalVersion'
-            // (see FileViewSvnPlugin::versionState()).
+            // (see FileViewSvnPlugin::itemVersion()).
             if (state != NormalVersion) {
                 int pos = filePath.indexOf('/');
                 const int length = filePath.length() - pos - 1;
@@ -194,7 +194,7 @@ void FileViewSvnPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::VersionState FileViewSvnPlugin::versionState(const KFileItem& item)
+KVersionControlPlugin::VersionState FileViewSvnPlugin::itemVersion(const KFileItem& item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -224,9 +224,13 @@ KVersionControlPlugin::VersionState FileViewSvnPlugin::versionState(const KFileI
     return NormalVersion;
 }
 
-QList<QAction*> FileViewSvnPlugin::contextMenuActions(const KFileItemList& items)
+QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 {
-    Q_ASSERT(!items.isEmpty());
+    if (items.count() == 1 && items.first().isDir()) {
+        const QString directory = items.first().url().path(KUrl::AddTrailingSlash);
+        return directoryActions(directory);
+    }
+
     foreach (const KFileItem& item, items) {
         m_contextItems.append(item);
     }
@@ -240,7 +244,7 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const KFileItemList& items
         int versionedCount = 0;
         int editingCount = 0;
         foreach (const KFileItem& item, items) {
-            const VersionState state = versionState(item);
+            const VersionState state = itemVersion(item);
             if (state != UnversionedVersion) {
                 ++versionedCount;
             }
@@ -273,26 +277,6 @@ QList<QAction*> FileViewSvnPlugin::contextMenuActions(const KFileItemList& items
     return actions;
 }
 
-QList<QAction*> FileViewSvnPlugin::contextMenuActions(const QString& directory)
-{
-    m_contextDir = directory;
-    m_contextItems.clear();
-
-    // Only enable the SVN actions if no SVN commands are
-    // executed currently (see slotOperationCompleted() and
-    // startSvnCommandProcess()).
-    const bool enabled = !m_pendingOperation;
-    m_updateAction->setEnabled(enabled);
-    m_showLocalChangesAction->setEnabled(enabled);
-    m_commitAction->setEnabled(enabled);
-
-    QList<QAction*> actions;
-    actions.append(m_updateAction);
-    actions.append(m_showLocalChangesAction);
-    actions.append(m_commitAction);
-    actions.append(m_showUpdatesAction);
-    return actions;
-}
 
 void FileViewSvnPlugin::updateFiles()
 {
@@ -381,7 +365,7 @@ void FileViewSvnPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
         emit errorMessage(m_errorMsg);
     } else if (m_contextItems.isEmpty()) {
         emit operationCompletedMessage(m_operationCompletedMsg);
-        emit versionStatesChanged();
+        emit itemVersionsChanged();
     } else {
         startSvnCommandProcess();
     }
@@ -403,7 +387,7 @@ void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
     settings->setShowUpdates(checked);
     settings->writeConfig();
 
-    emit versionStatesChanged();
+    emit itemVersionsChanged();
 }
 
 void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,
@@ -440,4 +424,25 @@ void FileViewSvnPlugin::startSvnCommandProcess()
         // after the process has finished (see slotOperationFinished())
     }
     m_process.start(program, arguments);
+}
+
+QList<QAction*> FileViewSvnPlugin::directoryActions(const QString& directory) const
+{
+    m_contextDir = directory;
+    m_contextItems.clear();
+
+    // Only enable the SVN actions if no SVN commands are
+    // executed currently (see slotOperationCompleted() and
+    // startSvnCommandProcess()).
+    const bool enabled = !m_pendingOperation;
+    m_updateAction->setEnabled(enabled);
+    m_showLocalChangesAction->setEnabled(enabled);
+    m_commitAction->setEnabled(enabled);
+
+    QList<QAction*> actions;
+    actions.append(m_updateAction);
+    actions.append(m_showLocalChangesAction);
+    actions.append(m_commitAction);
+    actions.append(m_showUpdatesAction);
+    return actions;
 }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Peter Penz <peter.penz@gmx.at>             *
+ *   Copyright (C) 2009-2011 by Peter Penz <peter.penz19@gmail.com>        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,7 +21,7 @@
 #define FILEVIEWSVNPLUGIN_H
 
 #include <kfileitem.h>
-#include <kversioncontrolplugin.h>
+#include <kversioncontrolplugin2.h>
 #include <QHash>
 #include <QProcess>
 #include <QTemporaryFile>
@@ -29,7 +29,7 @@
 /**
  * @brief Subversion implementation for the KVersionControlPlugin interface.
  */
-class FileViewSvnPlugin : public KVersionControlPlugin
+class FileViewSvnPlugin : public KVersionControlPlugin2
 {
     Q_OBJECT
 
@@ -39,9 +39,8 @@ public:
     virtual QString fileName() const;
     virtual bool beginRetrieval(const QString& directory);
     virtual void endRetrieval();
-    virtual KVersionControlPlugin::VersionState versionState(const KFileItem& item);
-    virtual QList<QAction*> contextMenuActions(const KFileItemList& items);
-    virtual QList<QAction*> contextMenuActions(const QString& directory);
+    virtual VersionState itemVersion(const KFileItem& item) const;
+    virtual QList<QAction*> actions(const KFileItemList& items) const;
 
 private slots:
     void updateFiles();
@@ -74,6 +73,8 @@ private:
 
     void startSvnCommandProcess();
 
+    QList<QAction*> directoryActions(const QString& directory) const;
+
 private:
     bool m_pendingOperation;
     QHash<QString, VersionState> m_versionInfoHash;
@@ -90,8 +91,8 @@ private:
     QString m_errorMsg;
     QString m_operationCompletedMsg;
 
-    QString m_contextDir;
-    KFileItemList m_contextItems;
+    mutable QString m_contextDir;
+    mutable KFileItemList m_contextItems;
 
     QProcess m_process;
     QTemporaryFile m_tempFile;
