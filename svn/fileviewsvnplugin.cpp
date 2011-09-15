@@ -122,7 +122,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
 
     // Clear all entries for this directory including the entries
     // for sub directories
-    QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
+    QMutableHashIterator<QString, ItemVersion> it(m_versionInfoHash);
     while (it.hasNext()) {
         it.next();
         if (it.key().startsWith(directory)) {
@@ -142,7 +142,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            VersionState state = NormalVersion;
+            ItemVersion state = NormalVersion;
             QString filePath(buffer);
 
             switch (buffer[0]) {
@@ -194,7 +194,7 @@ void FileViewSvnPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::VersionState FileViewSvnPlugin::itemVersion(const KFileItem& item) const
+KVersionControlPlugin2::ItemVersion FileViewSvnPlugin::itemVersion(const KFileItem& item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -210,10 +210,10 @@ KVersionControlPlugin::VersionState FileViewSvnPlugin::itemVersion(const KFileIt
     // The item is a directory. Check whether an item listed by 'svn status' (= m_versionInfoHash)
     // is part of this directory. In this case a local modification should be indicated in the
     // directory already.
-    QHash<QString, VersionState>::const_iterator it = m_versionInfoHash.constBegin();
+    QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
         if (it.key().startsWith(itemUrl)) {
-            const VersionState state = m_versionInfoHash.value(it.key());
+            const ItemVersion state = m_versionInfoHash.value(it.key());
             if (state == LocallyModifiedVersion) {
                 return LocallyModifiedVersion;
             }
@@ -244,7 +244,7 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
         int versionedCount = 0;
         int editingCount = 0;
         foreach (const KFileItem& item, items) {
-            const VersionState state = itemVersion(item);
+            const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion) {
                 ++versionedCount;
             }

@@ -39,7 +39,7 @@ public:
     virtual QString fileName() const;
     virtual bool beginRetrieval(const QString& directory);
     virtual void endRetrieval();
-    virtual VersionState itemVersion(const KFileItem& item) const;
+    virtual ItemVersion itemVersion(const KFileItem& item) const;
     virtual QList<QAction*> actions(const KFileItemList& items) const;
 
 private slots:
@@ -77,7 +77,7 @@ private:
 
 private:
     bool m_pendingOperation;
-    QHash<QString, VersionState> m_versionInfoHash;
+    QHash<QString, ItemVersion> m_versionInfoHash;
 
     QAction* m_updateAction;
     QAction* m_showLocalChangesAction;
