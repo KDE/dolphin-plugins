@@ -142,33 +142,33 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            ItemVersion state = NormalVersion;
+            ItemVersion version = NormalVersion;
             QString filePath(buffer);
 
             switch (buffer[0]) {
             case 'I':
-            case '?': state = UnversionedVersion; break;
-            case 'M': state = LocallyModifiedVersion; break;
-            case 'A': state = AddedVersion; break;
-            case 'D': state = RemovedVersion; break;
-            case 'C': state = ConflictingVersion; break;
+            case '?': version = UnversionedVersion; break;
+            case 'M': version = LocallyModifiedVersion; break;
+            case 'A': version = AddedVersion; break;
+            case 'D': version = RemovedVersion; break;
+            case 'C': version = ConflictingVersion; break;
             default:
                 if (filePath.contains('*')) {
-                    state = UpdateRequiredVersion;
+                    version = UpdateRequiredVersion;
                 }
                 break;
             }
 
-            // Only values with a different state as 'NormalVersion'
+            // Only values with a different version as 'NormalVersion'
             // are added to the hash table. If a value is not in the
             // hash table, it is automatically defined as 'NormalVersion'
             // (see FileViewSvnPlugin::itemVersion()).
-            if (state != NormalVersion) {
+            if (version != NormalVersion) {
                 int pos = filePath.indexOf('/');
                 const int length = filePath.length() - pos - 1;
                 filePath = filePath.mid(pos, length);
                 if (!filePath.isEmpty()) {
-                    m_versionInfoHash.insert(filePath, state);
+                    m_versionInfoHash.insert(filePath, version);
                 }
             }
         }
@@ -213,8 +213,8 @@ KVersionControlPlugin2::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIt
     QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
         if (it.key().startsWith(itemUrl)) {
-            const ItemVersion state = m_versionInfoHash.value(it.key());
-            if (state == LocallyModifiedVersion) {
+            const ItemVersion version = m_versionInfoHash.value(it.key());
+            if (version == LocallyModifiedVersion) {
                 return LocallyModifiedVersion;
             }
         }
@@ -238,18 +238,18 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 
     const bool noPendingOperation = !m_pendingOperation;
     if (noPendingOperation) {
-        // iterate all items and check the version state to know which
+        // iterate all items and check the version version to know which
         // actions can be enabled
         const int itemsCount = items.count();
         int versionedCount = 0;
         int editingCount = 0;
         foreach (const KFileItem& item, items) {
-            const ItemVersion state = itemVersion(item);
-            if (state != UnversionedVersion) {
+            const ItemVersion version = itemVersion(item);
+            if (version != UnversionedVersion) {
                 ++versionedCount;
             }
 
-            switch (state) {
+            switch (version) {
                 case LocallyModifiedVersion:
                 case ConflictingVersion:
                     ++editingCount;
