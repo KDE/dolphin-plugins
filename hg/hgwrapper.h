@@ -26,7 +26,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QTextCodec>
 #include <kfileitem.h>
-#include <kversioncontrolplugin.h>
+#include <kversioncontrolplugin2.h>
 
 class QTextCodec;
 
@@ -102,11 +102,11 @@ public:
     void setBaseAsWorkingDir();
 
     /**
-     * Get FileName-VersionState pairs of the repository returned by 
+     * Get FileName-ItemVersion pairs of the repository returned by 
      *
      * $hg status --modified --added --removed --deleted --unknown --ignored
      *
-     * Hence returns files with VersionState
+     * Hence returns files with ItemVersion
      *      - LocallyModifiedVersion
      *      - AddedVersion
      *      - RemovedVersion
@@ -115,10 +115,10 @@ public:
      *      - IgnoredVersion
      *      - MissingVersion
      *
-     * @param result A hashmap containing FileName-VersionState pairs
+     * @param result A hashmap containing FileName-ItemVersion pairs
      *
      */
-    void getVersionStates(QHash<QString, KVersionControlPlugin::VersionState> &result);
+    void getItemVersions(QHash<QString, KVersionControlPlugin2::ItemVersion> &result);
 
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);

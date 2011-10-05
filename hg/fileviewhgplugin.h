@@ -23,7 +23,6 @@
 #include "hgwrapper.h"
 
 #include <kfileitem.h>
-#include <kversioncontrolplugin.h>
 #include <kversioncontrolplugin2.h>
 #include <QtCore/QHash>
 #include <QtCore/QString>
@@ -41,10 +40,11 @@ public:
     virtual QString fileName() const;
     virtual bool beginRetrieval(const QString &directory);
     virtual void endRetrieval();
-    virtual KVersionControlPlugin::VersionState versionState(const KFileItem &item);
-    virtual QList<QAction*> contextMenuActions(const KFileItemList &items);
-    virtual QList<QAction*> contextMenuActions(const QString &directory);
-    virtual QList<QAction*> universalContextMenuActions(const QString &directory);
+    virtual KVersionControlPlugin2::ItemVersion itemVersion(const KFileItem &item) const;
+    QList<QAction*> itemContextMenu(const KFileItemList &items);
+    QList<QAction*> directoryContextMenu(const QString &directory);
+    QList<QAction*> universalContextMenuActions(const QString &directory);
+    virtual QList<QAction*> actions(const KFileItemList &items) const;
 
 private: 
     /**
@@ -96,7 +96,7 @@ private slots:
     void slotOperationError();
 
 private:
-    QHash<QString, VersionState> m_versionInfoHash;
+    QHash<QString, ItemVersion> m_versionInfoHash;
 
     KAction *m_addAction;
     KAction *m_removeAction;

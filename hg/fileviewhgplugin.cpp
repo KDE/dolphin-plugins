@@ -290,12 +290,12 @@ bool FileViewHgPlugin::beginRetrieval(const QString &directory)
     m_versionInfoHash.clear();
     //createHgWrapper();
     //m_hgWrapper->setCurrentDir(directory);
-    //m_hgWrapper->getVersionStates(m_versionInfoHash);
+    //m_hgWrapper->getItemVersions(m_versionInfoHash);
     if (m_retrievalHgw == 0) {
         m_retrievalHgw = new HgWrapper;
     }
     m_retrievalHgw->setCurrentDir(directory);
-    m_retrievalHgw->getVersionStates(m_versionInfoHash);
+    m_retrievalHgw->getItemVersions(m_versionInfoHash);
     return true;
 }
 
@@ -303,16 +303,16 @@ void FileViewHgPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileItem &item)
+KVersionControlPlugin2::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem &item) const
 {
     //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
     if (item.isDir()) {
-        QHash<QString, VersionState>::const_iterator it 
+        QHash<QString, ItemVersion>::const_iterator it 
                                     = m_versionInfoHash.constBegin();
         while (it != m_versionInfoHash.constEnd()) {
             if (it.key().startsWith(itemUrl)) {
-                const VersionState state = m_versionInfoHash.value(it.key());
+                const ItemVersion state = m_versionInfoHash.value(it.key());
                 if (state == LocallyModifiedVersion ||
                         state == AddedVersion ||
                         state == RemovedVersion) {
@@ -334,7 +334,7 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
             KUrl tempUrl(dir.absoluteFilePath(fileName));
             KFileItem tempFileItem(KFileItem::Unknown,
                     KFileItem::Unknown, tempUrl);
-            if (versionState(tempFileItem) == NormalVersion) {
+            if (itemVersion(tempFileItem) == NormalVersion) {
                return NormalVersion;
           }
         }
@@ -346,7 +346,20 @@ KVersionControlPlugin::VersionState FileViewHgPlugin::versionState(const KFileIt
     return NormalVersion;
 }
 
-QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) 
+QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
+{ 
+    //TODO: Make it work with universal context menu when imlpemented 
+    //      in dolphin
+    if (items.isEmpty()) {
+        //return itemContextMenu(items);
+    }
+    else {
+        //return directoryContextMenu(m_currentDir);
+    }
+    return QList<QAction*>();
+}
+
+QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory)
 {
     QList<QAction*> result;
     m_universalCurrentDirectory = directory;
@@ -355,7 +368,7 @@ QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &dir
     return result;
 }
 
-QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
+QList<QAction*> FileViewHgPlugin::itemContextMenu(const KFileItemList &items)
 {
     Q_ASSERT(!items.isEmpty());
 
@@ -373,7 +386,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         int addableCount = 0;
         int revertableCount = 0;
         foreach (const KFileItem &item, items) {
-            const VersionState state = versionState(item);
+            const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion) {
                 ++versionedCount;
             }
@@ -394,7 +407,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
         m_diffAction->setEnabled(revertableCount == items.count() &&
                 items.size() == 1);
         m_renameAction->setEnabled(items.size() == 1 &&
-                versionState(items.first()) != UnversionedVersion);
+                itemVersion(items.first()) != UnversionedVersion);
     }
     else {
         m_addAction->setEnabled(false);
@@ -414,7 +427,7 @@ QList<QAction*> FileViewHgPlugin::contextMenuActions(const KFileItemList &items)
     return actions;
 }
 
-QList<QAction*> FileViewHgPlugin::contextMenuActions(const QString &directory)
+QList<QAction*> FileViewHgPlugin::directoryContextMenu(const QString &directory)
 {
     QList<QAction*> actions;
     clearMessages();
