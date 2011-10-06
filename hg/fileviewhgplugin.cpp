@@ -261,7 +261,7 @@ FileViewHgPlugin::~FileViewHgPlugin()
 {
 }
 
-void FileViewHgPlugin::createHgWrapper()
+void FileViewHgPlugin::createHgWrapper() const
 {
     static bool created = false;
 
@@ -350,16 +350,17 @@ QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
 { 
     //TODO: Make it work with universal context menu when imlpemented 
     //      in dolphin
-    if (items.isEmpty()) {
-        //return itemContextMenu(items);
+    kDebug() << items.count();
+    if (items.count() == 1 && items.first().isDir()) {
+        return directoryContextMenu(m_currentDir);
     }
     else {
-        //return directoryContextMenu(m_currentDir);
+        return itemContextMenu(items);
     }
     return QList<QAction*>();
 }
 
-QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory)
+QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) const
 {
     QList<QAction*> result;
     m_universalCurrentDirectory = directory;
@@ -368,7 +369,7 @@ QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &dir
     return result;
 }
 
-QList<QAction*> FileViewHgPlugin::itemContextMenu(const KFileItemList &items)
+QList<QAction*> FileViewHgPlugin::itemContextMenu(const KFileItemList &items) const
 {
     Q_ASSERT(!items.isEmpty());
 
@@ -427,7 +428,7 @@ QList<QAction*> FileViewHgPlugin::itemContextMenu(const KFileItemList &items)
     return actions;
 }
 
-QList<QAction*> FileViewHgPlugin::directoryContextMenu(const QString &directory)
+QList<QAction*> FileViewHgPlugin::directoryContextMenu(const QString &directory) const
 {
     QList<QAction*> actions;
     clearMessages();
@@ -770,7 +771,7 @@ void FileViewHgPlugin::slotOperationError()
     emit errorMessage(m_errorMsg);
 }
 
-void FileViewHgPlugin::clearMessages()
+void FileViewHgPlugin::clearMessages() const
 {
     m_operationCompletedMsg.clear();
     m_errorMsg.clear();

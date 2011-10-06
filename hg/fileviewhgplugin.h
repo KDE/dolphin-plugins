@@ -41,9 +41,9 @@ public:
     virtual bool beginRetrieval(const QString &directory);
     virtual void endRetrieval();
     virtual KVersionControlPlugin2::ItemVersion itemVersion(const KFileItem &item) const;
-    QList<QAction*> itemContextMenu(const KFileItemList &items);
-    QList<QAction*> directoryContextMenu(const QString &directory);
-    QList<QAction*> universalContextMenuActions(const QString &directory);
+    QList<QAction*> itemContextMenu(const KFileItemList &items) const;
+    QList<QAction*> directoryContextMenu(const QString &directory) const;
+    QList<QAction*> universalContextMenuActions(const QString &directory) const;
     virtual QList<QAction*> actions(const KFileItemList &items) const;
 
 private: 
@@ -53,12 +53,12 @@ private:
      * plugin contruction hence not in other thread which ends up giving 
      * a lot of warnings. 
      */
-    void createHgWrapper();
+    void createHgWrapper() const;
 
     /**
      * Simply clear status messages ie m_errorMsg and m_operationCompletedMsg
      */
-    void clearMessages();
+    void clearMessages() const;
 
     /**
      * Read executable file path to open diff patches with from 
@@ -124,14 +124,14 @@ private:
     KAction *m_serveAction;
     KAction *m_backoutAction;
 
-    KFileItemList m_contextItems;
-    QString m_universalCurrentDirectory;
-    QString m_currentDir;
+    mutable KFileItemList m_contextItems;
+    mutable QString m_universalCurrentDirectory;
+    mutable QString m_currentDir;
     bool m_isCommitable;
 
-    QString m_operationCompletedMsg;
-    QString m_errorMsg;
-    HgWrapper *m_hgWrapper;
+    mutable QString m_operationCompletedMsg;
+    mutable QString m_errorMsg;
+    mutable HgWrapper *m_hgWrapper;
     HgWrapper *m_retrievalHgw;
 };
 
