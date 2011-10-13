@@ -51,19 +51,25 @@ public:
      *
      * @param hgCommand Command to be executed. eg. diff, status
      * @param arguments Arguments for the given command
+     * @param primaryOperation Will emit primaryOperationFinished, 
+     *               primaryOperationError signals.
      */
     void executeCommand(const QString &hgCommand,
-                        const QStringList &arguments = QStringList());
+                        const QStringList &arguments = QStringList(),
+                        bool primaryOperation=false);
     /**
      * Start a mercurial command with given arguments and return until
      * process completes.
      *
      * @param hgCommand Command to be executed. eg. diff, status
      * @param arguments Arguments for the given command
+     * @param primaryOperation Will emit primaryOperationCompleted, 
+     *               primaryOperationError signals.
      * @return true if operations completed successfully, otherwise false
      */
     bool executeCommandTillFinished(const QString &hgCommand,
-                        const QStringList &arguments = QStringList());
+                        const QStringList &arguments = QStringList(),
+                        bool primaryOperation=false);
     /**
      * Start a mercurial command with given arguments, write standard output
      * to output parameter and return till finished.
@@ -71,11 +77,14 @@ public:
      * @param hgCommand Command to be executed. eg. diff, status
      * @param arguments Arguments for the given command
      * @param output Append standard output of process to this string
+     * @param primaryOperation Will emit primaryOperationCompleted, 
+     *               primaryOperationError signals.
      * @return true if operations completed successfully, otherwise false
      */
     bool executeCommand(const QString &hgCommand,
                         const QStringList &arguments,
-                        QString &output);
+                        QString &output,
+                        bool primaryOperation=false);
 
     /**
      * Get the root directory of Mercurial repository. Using 'hg root'
@@ -243,6 +252,8 @@ signals:
     void error(QProcess::ProcessError error);
     void started();
     void stateChanged(QProcess::ProcessState state);
+    void primaryOperationFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    void primaryOperationError(QProcess::ProcessError error);
 
 private:
     ///Get and update m_hgBaseDir
@@ -250,7 +261,7 @@ private:
 
 private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
-    void slotOperationError();
+    void slotOperationError(QProcess::ProcessError error);
 
 private:
     static HgWrapper *m_instance;
@@ -260,6 +271,8 @@ private:
 
     QString m_hgBaseDir;
     QString m_currentDir;
+
+    bool m_primaryOperation; // to differentiate intermediate process
 };
 
 #endif // HGWRAPPER_H
