@@ -529,21 +529,39 @@ void FileViewHgPlugin::commit()
 
 void FileViewHgPlugin::tag()
 {
-    clearMessages();
+    m_errorMsg = i18nc("@info:status", 
+           "Tag operation in <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+           "Tagging operation in <application>Hg</application> repository successfull.");
+    emit infoMessage(i18nc("@info:status",
+           "Tagging operation in <application>Hg</application> repository."));
+
     HgTagDialog dialog;
     dialog.exec();
 }
 
 void FileViewHgPlugin::update()
 {
-    clearMessages();
+    m_errorMsg = i18nc("@info:status", 
+           "Update of <application>Hg</application> working directory failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+           "Update of <application>Hg</application> working directory successfull.");
+    emit infoMessage(i18nc("@info:status",
+           "Updating <application>Hg</application> working directory."));
+
     HgUpdateDialog dialog;
     dialog.exec();
 }
 
 void FileViewHgPlugin::branch()
 {
-    clearMessages();
+    m_errorMsg = i18nc("@info:status", 
+           "Branch operation on <application>Hg</application> repository failed.");
+    m_operationCompletedMsg = i18nc("@info:status",
+           "Branch operation on <application>Hg</application> repository completed successfull.");
+    emit infoMessage(i18nc("@info:status",
+           "Branch operation on <application>Hg</application> repository."));
+
     HgBranchDialog dialog;
     dialog.exec();
 }
