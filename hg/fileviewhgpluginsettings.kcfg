@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0">
+    <kcfgfile name="fileviewhgpluginrc"/>
+    <group name="CommitDialogSettings">
+        <entry name="commitDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+            <min>400</min>
+        </entry>
+        <entry name="commitDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+            <min>500</min>
+        </entry>
+    </group>
+    <group name="ConfigDialogSettings">
+        <entry name="configDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+            <min>400</min>
+        </entry>
+        <entry name="configDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+            <min>500</min>
+        </entry>
+    </group>
+    <group name="CloneDialogSettings">
+        <entry name="cloneDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="cloneDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
+    <group name="PushDialogSettings">
+        <entry name="pushDialogBigHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="pushDialogBigWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
+    <group name="PullDialogSettings">
+        <entry name="pullDialogBigHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="pullDialogBigWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
+    <group name="MergeDialogSettings">
+        <entry name="mergeDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="mergeDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
+    <group name="BundleDialogSettings">
+        <entry name="bundleDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="bundleDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
+    <group name="ExportDialogSettings">
+        <entry name="exportDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>550</default>
+        </entry>
+        <entry name="exportDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>900</default>
+        </entry>
+    </group>
+    <group name="ImportDialogSettings">
+        <entry name="importDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>540</default>
+        </entry>
+        <entry name="importDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>500</default>
+        </entry>
+    </group>
+    <group name="ServeDialogSettings">
+        <entry name="serveDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>600</default>
+        </entry>
+        <entry name="serveDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>300</default>
+        </entry>
+    </group>
+    <group name="BackoutDialogSettings">
+        <entry name="backoutDialogHeight" type="Int">
+            <label>Dialog height</label>
+            <default>346</default>
+        </entry>
+        <entry name="backoutDialogWidth" type="Int">
+            <label>Dialog width</label>
+            <default>537</default>
+        </entry>
+    </group>
+</kcfg>
+
