@@ -519,7 +519,7 @@ void FileViewHgPlugin::commit()
     m_errorMsg = i18nc("@info:status", 
             "Commit to  <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
-            "Commit to <application>Hg</application> repository successfull.");
+            "Committed to <application>Hg</application> repository.");
     emit infoMessage(i18nc("@info:status",
             "Commit <application>Hg</application> repository."));
 
@@ -532,7 +532,7 @@ void FileViewHgPlugin::tag()
     m_errorMsg = i18nc("@info:status", 
            "Tag operation in <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
-           "Tagging operation in <application>Hg</application> repository successfull.");
+           "Tagging operation in <application>Hg</application> repository is successful.");
     emit infoMessage(i18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository."));
 
@@ -545,7 +545,7 @@ void FileViewHgPlugin::update()
     m_errorMsg = i18nc("@info:status", 
            "Update of <application>Hg</application> working directory failed.");
     m_operationCompletedMsg = i18nc("@info:status",
-           "Update of <application>Hg</application> working directory successfull.");
+           "Update of <application>Hg</application> working directory is successful.");
     emit infoMessage(i18nc("@info:status",
            "Updating <application>Hg</application> working directory."));
 
@@ -558,7 +558,7 @@ void FileViewHgPlugin::branch()
     m_errorMsg = i18nc("@info:status", 
            "Branch operation on <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
-           "Branch operation on <application>Hg</application> repository completed successfull.");
+           "Branch operation on <application>Hg</application> repository completed successfully.");
     emit infoMessage(i18nc("@info:status",
            "Branch operation on <application>Hg</application> repository."));
 
@@ -699,7 +699,7 @@ void FileViewHgPlugin::diff()
     QString infoMsg = i18nc("@info:status",
          "Generating diff for <application>Hg</application> repository...");
     m_errorMsg = i18nc("@info:status",
-         "Couldnt get <application>Hg</application> repository diff.");
+         "Could not get <application>Hg</application> repository diff.");
     m_operationCompletedMsg = i18nc("@info:status",
          "Generated <application>Hg</application> diff successfully.");
 
@@ -731,7 +731,7 @@ void FileViewHgPlugin::backout()
     m_hgWrapper = HgWrapper::instance();
     if (!m_hgWrapper->isWorkingDirectoryClean()) {
         KMessageBox::error(0, i18nc("@message:error",
-                      "abort: Uncommited changes in working directory!"));
+                      "abort: Uncommitted changes in working directory!"));
         return;
     }
 

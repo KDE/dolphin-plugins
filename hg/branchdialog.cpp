@@ -124,7 +124,7 @@ void HgBranchDialog::slotSwitch()
         done(KDialog::Ok);
     }
     else {
-        KMessageBox::error(this, i18n("Some error occcurred"));
+        KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
 
@@ -139,7 +139,7 @@ void HgBranchDialog::slotCreateBranch()
         done(KDialog::Ok);
     }
     else {
-        KMessageBox::error(this, i18n("Some error occcurred"));
+        KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
 

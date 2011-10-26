@@ -142,7 +142,7 @@ void HgExportDialog::done(int r)
         QList<QListWidgetItem*> items = m_commitInfoWidget->selectedItems();
         if (items.empty()) {
             KMessageBox::error(this, i18nc("@message:error",
-                     "Please select atleast one changeset to be exported!"));
+                     "Please select at least one changeset to be exported!"));
             return;
         }
 

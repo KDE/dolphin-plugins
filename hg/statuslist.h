@@ -39,12 +39,12 @@ public:
 
     /**
      * Appends the list of selected files whose changes should be 
-     * commited. If all files are selected, nothing is appended and true 
+     * committed. If all files are selected, nothing is appended and true 
      * is returned. If no files are selected, false is returned.
      *
      * @param files Append all the selected files to this. If all files are
      *              selected, nothing is appended
-     * @return If atleast one file is selected, true is returned; otherwise
+     * @return If at least one file is selected, true is returned; otherwise
      *          false.
      */
     bool getSelectionForCommit(QStringList &files);

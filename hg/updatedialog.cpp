@@ -143,7 +143,7 @@ void HgUpdateDialog::done(int r)
             KDialog::done(r);
         }
         else {
-            KMessageBox::error(this, i18n("Some error occcurred! "
+            KMessageBox::error(this, i18n("Some error occurred! "
                         "\nMaybe there are uncommitted changes."));
         }
     }

@@ -228,7 +228,7 @@ void HgCommitDialog::done(int r)
             if (m_branchAction == NewBranch) {
                 if (!hgWrapper->createBranch(m_newBranchName)) {
                     KMessageBox::error(this,
-                            i18n("Couldnt create branch! Aborting commit!"));
+                            i18n("Could not create branch! Aborting commit!"));
                     return;
                 }
             }

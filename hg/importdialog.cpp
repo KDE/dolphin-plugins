@@ -77,7 +77,7 @@ void HgImportDialog::setupUI()
     // options
     m_optionGroup = new QGroupBox(i18nc("@label:group", "Options"));
     m_optNoCommit = new QCheckBox(i18nc("@label", 
-                      "Dont commit, just update the working directory"));
+                      "Do not commit, just update the working directory"));
     m_optForce = new QCheckBox(i18nc("@label", 
                       "Skip test for outstanding uncommitted changes"));
     m_optExact = new QCheckBox(i18nc("@label",

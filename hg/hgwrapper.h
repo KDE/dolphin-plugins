@@ -196,7 +196,7 @@ public:
      * Use with care. Rollback cant be undone. See Mercurial man page FOR
      * more info.
      *
-     * @param dryRun Dont actually perform action, but just print ouput 
+     * @param dryRun Do not actually perform action, but just print ouput 
      *              Used to check if Rollback can be done, and if yes then
      *              what will be rolled back.
      * @return true if successfull, otherwise false
@@ -205,7 +205,7 @@ public:
 
     /**
      * Checks if the working directory is clean, ie there are no 
-     * uncommited changes present.
+     * uncommitted changes present.
      *
      * @return true if clean otherwise false
      */

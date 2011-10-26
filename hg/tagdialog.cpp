@@ -122,7 +122,7 @@ void HgTagDialog::slotSwitch()
         done(KDialog::Ok);
     }
     else {
-        KMessageBox::error(this, i18n("Some error occcurred"));
+        KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
 
@@ -138,7 +138,7 @@ void HgTagDialog::slotRemoveTag()
         done(KDialog::Ok);
     }
     else {
-        KMessageBox::error(this, i18n("Some error occcurred"));
+        KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
 
@@ -153,7 +153,7 @@ void HgTagDialog::slotCreateTag()
         done(KDialog::Ok);
     }
     else {
-        KMessageBox::error(this, i18n("Some error occcurred"));
+        KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
 

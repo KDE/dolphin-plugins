@@ -163,7 +163,7 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
     if (nChecked == nRowCount) {
         files.clear();
     }
-    // atleast one file is checked
+    // at least one file is checked
     if (nChecked > 0) {
         return true;
     }
