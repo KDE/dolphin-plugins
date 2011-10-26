@@ -517,7 +517,7 @@ void FileViewHgPlugin::commit()
 {
     //FIXME: Disable emitting of status messages when executing sub tasks.
     m_errorMsg = i18nc("@info:status", 
-            "Commit to  <application>Hg</application> repository failed.");
+            "Commit to <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
             "Committed to <application>Hg</application> repository.");
     emit infoMessage(i18nc("@info:status",

@@ -93,7 +93,7 @@ void HgBundleDialog::setupUI()
     m_optionGroup = new QGroupBox(i18nc("@label:group", "Options"));
     m_optForce = new QCheckBox(i18nc("@label:checkbox", 
                                      "Run even when the destination is "
-                                     " unrelated (force)"));
+                                     "unrelated (force)"));
     m_optInsecure = new QCheckBox(i18nc("@label:checkbox", 
                              "Do not verify server certificate"));
     
