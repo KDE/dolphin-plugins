@@ -1,7 +1,9 @@
 [Desktop Entry]
 Type=Service
 Name=Mercurial
+Name[nl]=Mercurial
 Name[pt]=Mercurial
+Name[pt_BR]=Mercurial
 Name[sv]=Mercurial
 Name[uk]=Mercurial
 Name[x-test]=xxMercurialxx
