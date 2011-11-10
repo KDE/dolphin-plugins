@@ -2,6 +2,7 @@
 Type=Service
 Name=Mercurial
 Name[ca]=Mercurial
+Name[de]=Mercurial
 Name[nl]=Mercurial
 Name[pt]=Mercurial
 Name[pt_BR]=Mercurial
