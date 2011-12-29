@@ -69,6 +69,12 @@ private:
      */
     QString parsePushOutput();
     /**
+     * Parses the output of the git pull command and returns an appropriate message,
+     * that should be displayed to the user.
+     * @returns The error or success message to be printed to the user
+     */
+    QString parsePullOutput();
+    /**
      * Executes the command "git {svnCommand}" for the files that have been
      * set by getting the context menu actions (see contextMenuActions()).
      * @param infoMsg     Message that should be shown before the command is executed.

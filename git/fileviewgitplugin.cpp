@@ -498,6 +498,7 @@ void FileViewGitPlugin::pull()
         emit infoMessage(i18nc("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
                     dialog.source()));
 
+        m_command = "pull";
         m_pendingOperation = true;
         m_process.start(QString("git pull %1 %2").arg(dialog.source()).arg(dialog.remoteBranch()));
     }
@@ -510,6 +511,10 @@ void FileViewGitPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
     QString message;
     if (m_command == QLatin1String("push")) { //output parsing for push
         message = parsePushOutput();
+        m_command = "";
+    }
+    if (m_command == QLatin1String("pull")) {
+        message = parsePullOutput();
         m_command = "";
     }
 
@@ -549,6 +554,21 @@ QString FileViewGitPlugin::parsePushOutput()
     return message;
 }
 
+QString FileViewGitPlugin::parsePullOutput()
+{
+    char buffer[256];
+    while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
+        const QString line(buffer);
+        if (line.contains("Already up-to-date")) {
+            return i18nc("@info:status", "Branch is already up-to-date.");
+        }
+        if (line.contains("CONFLICT")) {
+            emit versionStatesChanged();
+            return i18nc("@info:status", "Merge conflicts occured. Fix them and commit the result.");
+        }
+    }
+    return QString();
+}
 
 void FileViewGitPlugin::execGitCommand(const QString& gitCommand,
                                        const QStringList& arguments,
