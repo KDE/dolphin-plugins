@@ -510,6 +510,7 @@ void FileViewGitPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
     QString message;
     if (m_command == QLatin1String("push")) { //output parsing for push
         message = parsePushOutput();
+        m_command = "";
     }
 
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
