@@ -111,146 +111,121 @@ QString FileViewGitPlugin::fileName() const
     return QLatin1String(".git");
 }
 
+int FileViewGitPlugin::readUntilZeroChar(QIODevice* device, char* buffer, const int maxChars) {
+    if (buffer == 0) { // discard until next \0
+        char c;
+        while (device->getChar(&c) && c != '\0')
+            ;
+        return 0;
+    }
+    int index = -1;
+    while (++index < maxChars) {
+        if (!device->getChar(&buffer[index])) {
+            buffer[index] = '\0';
+            return index == 0 ? 0 : index + 1;
+        }
+        if (buffer[index] == '\0') {  // line end or we put it there (see above)
+            return index + 1;
+        }
+    }
+    return maxChars;
+}
+
 bool FileViewGitPlugin::beginRetrieval(const QString& directory)
 {
     Q_ASSERT(directory.endsWith('/'));
 
     GitWrapper::instance()->setWorkingDirectory(directory);
 
-    //find git base dir
-    int pathLengthBelowGitBaseDir = 0;
+    // ----- find path below git base dir -----
     QProcess process;
     process.setWorkingDirectory(directory);
     process.start(QLatin1String("git rev-parse --show-prefix"));
+    QString dirBelowBaseDir = "";
     while (process.waitForReadyRead()) {
         char buffer[512];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            pathLengthBelowGitBaseDir = QString(buffer).trimmed().length(); //ends with "/" or is empty
-        }
-    }
-    const QString gitBaseDir = directory.left(directory.length() - pathLengthBelowGitBaseDir);
-
-    // Clear hash map:
-    // Remove all entries that are not in this git repo or are below the current directory
-    QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
-    while (it.hasNext()) {
-        it.next();
-        if (it.key().startsWith(directory) || !it.key().startsWith(gitBaseDir)) {
-            it.remove();
+            dirBelowBaseDir = QString(buffer).trimmed(); // ends in "/" or is empty
         }
     }
 
-    //find files with special status
-
-    ///specifies in which part of the "git status" output we are
-    enum { UpToDateInIndex, UnmergedPaths, ChangedFromIndex, NotInIndex } gitStatusOutputPart = UpToDateInIndex;
-
-    process.start(QLatin1String("git status"));
+    m_versionInfoHash.clear();
+    
+    // ----- find files with special status -----
+    process.start(QLatin1String("git status --porcelain -z --ignored"));
     while (process.waitForReadyRead()) {
         char buffer[1024];
-        while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            const QString currentLine(buffer);
-            if (currentLine.length()<=2)
-                continue;
-            //check if the section of the "git status" output changed
-            if (currentLine.contains(QLatin1String("Unmerged paths:"))) {
-                gitStatusOutputPart = UnmergedPaths;
+        while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
+            QString line = QTextCodec::codecForLocale()->toUnicode(buffer);
+            // ----- recognize file status -----
+            char X = line[0].toAscii();  // X and Y from the table in `man git-status`
+            char Y = line[1].toAscii();
+            const QString fileName= line.mid(3);
+            VersionState state = NormalVersion;
+            switch (X) {
+                case '!': // handle ignored as unversioned
+                case '?':
+                    state = UnversionedVersion;
+                    break;
+                case 'C': // handle copied as added version
+                case 'A':
+                    state = AddedVersion;
+                    break;
+                case 'D':
+                    state = RemovedVersion;
+                    break;
+                case 'M':
+                    state = LocallyModifiedVersion;
+                    break;
+                case 'R':
+                    state = LocallyModifiedVersion;
+                    // Renames list the old file name directly afterwards, separated by \0.
+                    readUntilZeroChar(&process, 0, 0); // discard old file name
+                    break;
+            }
+            // overwrite status depending on the working tree
+            switch (Y) {
+                case 'D': // handle "deleted in working tree" as "modified in working tree"
+                case 'M':
+                    state = LocallyModifiedUnstagedVersion;
+                    break;
+            }
+            // overwrite status in case of conflicts (lower part of the table in `man git-status`)
+            if (X == 'U' ||
+                Y == 'U' ||
+                (X == 'A' && Y == 'A') ||
+                (X == 'D' && Y == 'D')) {
+                state = ConflictingVersion;
+            }
+            
+            // ----- decide what to record about that file -----
+            if (state == NormalVersion || !fileName.startsWith(dirBelowBaseDir)) {
                 continue;
             }
-            if (currentLine.contains(QLatin1String("Changed but not updated:"))) {
-                gitStatusOutputPart = ChangedFromIndex;
-                continue;
-            }
-            if (currentLine.contains(QLatin1String("Untracked files:"))) {
-                gitStatusOutputPart = NotInIndex;
-                //we don't list untracked files
-                break;
-            }
-            if (currentLine.startsWith(QLatin1String("#\t"))) {
-                //check for files
-                VersionState state = NormalVersion;
-                QString relativeFileName;
-                switch(gitStatusOutputPart){
-                    case UpToDateInIndex:
-                        if (currentLine.contains(QLatin1String("new file:"))) {
-                            relativeFileName = currentLine.simplified().section(QChar(' '), 3);
-                            state = AddedVersion;
-                        } else if (currentLine.contains(QLatin1String("deleted:"))) {
-                            relativeFileName = currentLine.simplified().section(QChar(' '), 2);
-                            state = RemovedVersion;
-                        } else if (currentLine.contains(QLatin1String("modified:"))) {
-                            relativeFileName = currentLine.simplified().section(QChar(' '), 2);
-                            state = LocallyModifiedVersion;
-                        } else if (currentLine.contains(QLatin1String("renamed:"))) {
-                            relativeFileName = currentLine.section(QLatin1String("->"), 1).simplified();
-                            state = LocallyModifiedVersion;
-                        }
-                        break;
-                    case UnmergedPaths:
-                        if (currentLine.contains(QLatin1String("both modified:"))) {
-                            relativeFileName = currentLine.simplified().section(QChar(' '), 3);
-                            state = ConflictingVersion;
-                        }
-                        break;
-                    case ChangedFromIndex:
-                        if (currentLine.contains(QLatin1String("modified:"))) {
-                            relativeFileName = currentLine.simplified().section(QChar(' '), 2);
-                            state = LocallyModifiedUnstagedVersion;
-                        }
-                        else if (currentLine.contains(QLatin1String("unmerged:"))) {
-                            relativeFileName = currentLine.simplified().section(QChar(' '), 2);
-                            state = ConflictingVersion;
-                        }
-                        break;
-                    case NotInIndex:
-                        break;
+            /// File name relative to the current working directory.
+            const QString relativeFileName = fileName.mid(dirBelowBaseDir.length());
+            //if file is part of a sub-directory, record the directory
+            if (relativeFileName.contains('/')) {
+                if (state == AddedVersion || state == RemovedVersion) {
+                    state = LocallyModifiedVersion;
                 }
-                //untracked files
-                if (state == NormalVersion || relativeFileName.isEmpty() || relativeFileName.startsWith(QLatin1String("../"))) {
-                    continue;
+                const QString absoluteDirName = directory + relativeFileName.left(relativeFileName.indexOf('/'));
+                if (m_versionInfoHash.contains(absoluteDirName)) {
+                    VersionState oldState = m_versionInfoHash.value(absoluteDirName);
+                    //only keep the most important state for a directory
+                    if (oldState == ConflictingVersion)
+                        continue;
+                    if (oldState == LocallyModifiedUnstagedVersion && state != ConflictingVersion)
+                        continue;
+                    if (oldState == LocallyModifiedVersion &&
+                        state != LocallyModifiedUnstagedVersion && state != ConflictingVersion)
+                        continue;
+                    m_versionInfoHash.insert(absoluteDirName, state);
+                } else {
+                    m_versionInfoHash.insert(absoluteDirName, state);
                 }
-                //if file is part of a directory, record the directory
-                if (relativeFileName.contains('/')) {
-                    if (state == AddedVersion || state == RemovedVersion) {
-                        state = LocallyModifiedVersion;
-                    }
-                    const QString absoluteDirName = directory + relativeFileName.left(relativeFileName.indexOf('/'));
-                    if (m_versionInfoHash.contains(absoluteDirName)) {
-                        VersionState oldState = m_versionInfoHash.value(absoluteDirName);
-                        //only keep the most important state for a directory
-                        if (oldState == ConflictingVersion)
-                            continue;
-                        if (oldState == LocallyModifiedUnstagedVersion && state != ConflictingVersion)
-                            continue;
-                        if (oldState == LocallyModifiedVersion &&
-                            state != LocallyModifiedUnstagedVersion && state != ConflictingVersion)
-                            continue;
-                        m_versionInfoHash.insert(absoluteDirName, state);
-                    } else {
-                        m_versionInfoHash.insert(absoluteDirName, state);
-                    }
-                } else { //normal file, no directory
+            } else { //normal file, no directory
                     m_versionInfoHash.insert(directory + relativeFileName, state);
-                }
-
-            }
-        }
-    }
-    //find normal tracked files
-    process.start(QLatin1String("git ls-files --cached -t"));
-    while (process.waitForReadyRead()) {
-        char buffer[1024];
-        while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            const QString currentLine(buffer);
-            if (currentLine.at(0) == QChar('H'))
-            {
-                const QString relativeFileName = currentLine.mid(2).simplified();
-                //if file is in a subdirectory, record the subdirectory
-                const QString absoluteFileName = directory + (relativeFileName.contains("/") ? relativeFileName.left(relativeFileName.indexOf('/')) : relativeFileName);
-                //do not overwrite other (more important) file status
-                if (!m_versionInfoHash.contains(absoluteFileName)) {
-                    m_versionInfoHash.insert(absoluteFileName, NormalVersion);
-                }
             }
         }
     }
@@ -267,8 +242,8 @@ KVersionControlPlugin::VersionState FileViewGitPlugin::versionState(const KFileI
     if (m_versionInfoHash.contains(itemUrl)) {
         return m_versionInfoHash.value(itemUrl);
     } else {
-        // files that are not in our map are not tracked by definition
-        return UnversionedVersion;
+        // files that are not in our map are normal, tracked files by definition
+        return NormalVersion;
     }
 }
 

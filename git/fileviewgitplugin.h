@@ -57,6 +57,11 @@ private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
 private:
+    /** 
+     * Reads into buffer from device until we reach the next \0 or maxChars have been read.
+     * @returns The number of characters read.
+     */
+    int readUntilZeroChar(QIODevice* device, char* buffer, const int maxChars);
     /**
      * Parses the output of the git push command and returns an appropriate message,
      * that should be displayed to the user.
@@ -81,7 +86,10 @@ private:
     void startGitCommandProcess();
 private:
     bool m_pendingOperation;
-    ///Contains all tracked files and directories containing tracked files in the current directory
+    /**
+     * Contains all files in the current directory, whose version state is not
+     * NormalVersion and directories containing such files.
+     */
     QHash<QString, VersionState> m_versionInfoHash;
     QAction* m_addAction;
     QAction* m_removeAction;
