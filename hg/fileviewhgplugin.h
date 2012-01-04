@@ -41,9 +41,6 @@ public:
     virtual bool beginRetrieval(const QString &directory);
     virtual void endRetrieval();
     virtual KVersionControlPlugin2::ItemVersion itemVersion(const KFileItem &item) const;
-    QList<QAction*> itemContextMenu(const KFileItemList &items) const;
-    QList<QAction*> directoryContextMenu(const QString &directory) const;
-    QList<QAction*> universalContextMenuActions(const QString &directory) const;
     virtual QList<QAction*> actions(const KFileItemList &items) const;
 
 private: 
@@ -65,6 +62,10 @@ private:
      * $HOME/.dolphin-hg file in INI format
      */
     QString visualDiffExecPath();
+
+    QList<QAction*> itemContextMenu(const KFileItemList &items) const;
+    QList<QAction*> directoryContextMenu(const QString &directory) const;
+    QList<QAction*> universalContextMenuActions(const QString &directory) const;
 
 private slots:
     void addFiles();
