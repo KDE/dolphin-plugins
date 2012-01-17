@@ -59,7 +59,6 @@ K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
 K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 
-//TODO: Emit versionStatesChanged() signals wherever required
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
 //TODO: Check if working directory is commitable
 //TODO: Organise Context Menu
@@ -273,7 +272,7 @@ void FileViewHgPlugin::createHgWrapper() const
 
     m_hgWrapper = HgWrapper::instance();
 
-    connect(m_hgWrapper, 
+    connect(m_hgWrapper,
             SIGNAL(primaryOperationFinished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
     connect(m_hgWrapper, SIGNAL(primaryOperationError(QProcess::ProcessError)),
@@ -310,7 +309,7 @@ KVersionControlPlugin2::ItemVersion FileViewHgPlugin::itemVersion(const KFileIte
     //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
     if (item.isDir()) {
-        QHash<QString, ItemVersion>::const_iterator it 
+        QHash<QString, ItemVersion>::const_iterator it
                                     = m_versionInfoHash.constBegin();
         while (it != m_versionInfoHash.constEnd()) {
             if (it.key().startsWith(itemUrl)) {
@@ -349,8 +348,8 @@ KVersionControlPlugin2::ItemVersion FileViewHgPlugin::itemVersion(const KFileIte
 }
 
 QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
-{ 
-    //TODO: Make it work with universal context menu when imlpemented 
+{
+    //TODO: Make it work with universal context menu when imlpemented
     //      in dolphin
     kDebug() << items.count();
     if (items.count() == 1 && items.first().isDir()) {
@@ -477,7 +476,7 @@ void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
 
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
                     "Would you like to remove selected files "
                     "from the repository?"));
     if (answer == KMessageBox::No) {
@@ -516,7 +515,7 @@ void FileViewHgPlugin::renameFile()
 void FileViewHgPlugin::commit()
 {
     //FIXME: Disable emitting of status messages when executing sub tasks.
-    m_errorMsg = i18nc("@info:status", 
+    m_errorMsg = i18nc("@info:status",
             "Commit to <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
             "Committed to <application>Hg</application> repository.");
@@ -524,12 +523,14 @@ void FileViewHgPlugin::commit()
             "Commit <application>Hg</application> repository."));
 
     HgCommitDialog dialog;
-    dialog.exec();
+    if (dialog.exec() == QDialog::Accepted) {
+        emit itemVersionsChanged();
+    };
 }
 
 void FileViewHgPlugin::tag()
 {
-    m_errorMsg = i18nc("@info:status", 
+    m_errorMsg = i18nc("@info:status",
            "Tag operation in <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository is successful.");
@@ -542,7 +543,7 @@ void FileViewHgPlugin::tag()
 
 void FileViewHgPlugin::update()
 {
-    m_errorMsg = i18nc("@info:status", 
+    m_errorMsg = i18nc("@info:status",
            "Update of <application>Hg</application> working directory failed.");
     m_operationCompletedMsg = i18nc("@info:status",
            "Update of <application>Hg</application> working directory is successful.");
@@ -555,7 +556,7 @@ void FileViewHgPlugin::update()
 
 void FileViewHgPlugin::branch()
 {
-    m_errorMsg = i18nc("@info:status", 
+    m_errorMsg = i18nc("@info:status",
            "Branch operation on <application>Hg</application> repository failed.");
     m_operationCompletedMsg = i18nc("@info:status",
            "Branch operation on <application>Hg</application> repository completed successfully.");
@@ -656,7 +657,7 @@ void FileViewHgPlugin::exportChangesets()
 void FileViewHgPlugin::revert()
 {
     clearMessages();
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
                     "Would you like to revert changes "
                     "made to selected files?"));
     if (answer == KMessageBox::No) {
@@ -676,7 +677,7 @@ void FileViewHgPlugin::revert()
 
 void FileViewHgPlugin::revertAll()
 {
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
                     "Would you like to revert all changes "
                     "made to current working directory?"));
     if (answer == KMessageBox::No) {
@@ -710,7 +711,7 @@ void FileViewHgPlugin::diff()
     args << QLatin1String("extensions.hgext.extdiff=");
     args << QLatin1String("-p");
     args << this->visualDiffExecPath();
-    
+
     if (m_contextItems.length() == 1) {
         args << m_contextItems.takeFirst().localPath();
     }
@@ -754,7 +755,7 @@ void FileViewHgPlugin::rollback()
     lastTransaction = lastTransaction.mid(cutOfFrom);
 
     // ask
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno", 
+    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
                     "Would you like to rollback last transaction?")
                         + "\nrevision: " + lastTransaction);
     if (answer == KMessageBox::No) {
@@ -771,6 +772,7 @@ void FileViewHgPlugin::rollback()
     emit infoMessage(infoMsg);
     m_hgWrapper->rollback();
     KMessageBox::information(0, m_hgWrapper->readAllStandardOutput());
+    emit itemVersionsChanged();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
@@ -802,7 +804,7 @@ QString FileViewHgPlugin::visualDiffExecPath()
     KUrl url = KUrl::fromPath(QDir::homePath());
     url.addPath(".dolphin-hg");
     KConfig config(url.path(), KConfig::SimpleConfig);
-    
+
     KConfigGroup group(&config, QLatin1String("diff"));
     QString result = group.readEntry(QLatin1String("exec"), QString()).trimmed();
 
