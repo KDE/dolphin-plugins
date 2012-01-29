@@ -564,7 +564,7 @@ QString FileViewGitPlugin::parsePullOutput()
         }
         if (line.contains("CONFLICT")) {
             emit versionStatesChanged();
-            return i18nc("@info:status", "Merge conflicts occured. Fix them and commit the result.");
+            return i18nc("@info:status", "Merge conflicts occurred. Fix them and commit the result.");
         }
     }
     return QString();
