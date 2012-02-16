@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Git
+Name[ar]=Git
 Name[ast]=Git
 Name[bg]=Git
 Name[bs]=Git
@@ -30,6 +31,7 @@ Name[pl]=Git
 Name[pt]=Git
 Name[pt_BR]=Git
 Name[ru]=Git
+Name[sk]=Git
 Name[sr]=Гит
 Name[sr@ijekavian]=Гит
 Name[sr@ijekavianlatin]=Git
