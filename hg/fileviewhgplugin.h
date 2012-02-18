@@ -29,6 +29,7 @@
 #include <QtCore/QProcess>
 
 class KAction;
+class KMenu;
 
 class FileViewHgPlugin : public KVersionControlPlugin2
 {
@@ -99,6 +100,9 @@ private slots:
 private:
     QHash<QString, ItemVersion> m_versionInfoHash;
 
+    KMenu *m_mainContextMenu;
+
+    KAction *m_menuAction;
     KAction *m_addAction;
     KAction *m_removeAction;
     KAction *m_renameAction;

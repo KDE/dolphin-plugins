@@ -40,6 +40,7 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QDir>
 #include <kaction.h>
+#include <kmenu.h>
 #include <kicon.h>
 #include <klocale.h>
 #include <kdebug.h>
@@ -61,12 +62,12 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
 //TODO: Check if working directory is commitable
-//TODO: Organise Context Menu
 //TODO: Show error messages and set their message approproately(hg output)
 //TODO: Use i18nc rather thn i18c throughout plugin
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin2(parent),
+    m_mainContextMenu(0),
     m_addAction(0),
     m_removeAction(0),
     m_renameAction(0),
@@ -77,10 +78,21 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_cloneAction(0),
     m_createAction(0),
     m_configAction(0),
+    m_globalConfigAction(0),
+    m_repoConfigAction(0),
     m_pushAction(0),
     m_pullAction(0),
     m_revertAction(0),
     m_revertAllAction(0),
+    m_rollbackAction(0),
+    m_mergeAction(0),
+    m_bundleAction(0),
+    m_exportAction(0),
+    m_unbundleAction(0),
+    m_importAction(0),
+    m_diffAction(0),
+    m_serveAction(0),
+    m_backoutAction(0),
     m_isCommitable(false),
     m_hgWrapper(0),
     m_retrievalHgw(0)
@@ -254,6 +266,29 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
                                  "<application>Hg</application> Diff"));
     connect(m_diffAction, SIGNAL(triggered()),
             this, SLOT(diff()));
+
+    /* Submenu to make the main menu less cluttered */
+    m_mainContextMenu = new KMenu;
+    m_mainContextMenu->addAction(m_updateAction);
+    m_mainContextMenu->addAction(m_branchAction);
+    m_mainContextMenu->addAction(m_tagAction);
+    m_mainContextMenu->addAction(m_mergeAction);
+    m_mainContextMenu->addAction(m_revertAllAction);
+    m_mainContextMenu->addAction(m_rollbackAction);
+    m_mainContextMenu->addAction(m_backoutAction);
+    m_mainContextMenu->addAction(m_bundleAction);
+    m_mainContextMenu->addAction(m_unbundleAction);
+    m_mainContextMenu->addAction(m_exportAction);
+    m_mainContextMenu->addAction(m_importAction);
+    m_mainContextMenu->addAction(m_serveAction);
+    m_mainContextMenu->addAction(m_globalConfigAction);
+    m_mainContextMenu->addAction(m_repoConfigAction);
+
+    m_menuAction = new KAction(this);
+    m_menuAction->setIcon(KIcon("hg-main"));
+    m_menuAction->setText(i18nc("@action:inmenu", 
+                                  "<application>Mercurial</application>"));
+    m_menuAction->setMenu(m_mainContextMenu);
 }
 
 FileViewHgPlugin::~FileViewHgPlugin()
@@ -441,20 +476,7 @@ QList<QAction*> FileViewHgPlugin::directoryContextMenu(const QString &directory)
     actions.append(m_pushAction);
     actions.append(m_pullAction);
     actions.append(m_diffAction);
-    actions.append(m_updateAction);
-    actions.append(m_branchAction);
-    actions.append(m_tagAction);
-    actions.append(m_mergeAction);
-    actions.append(m_revertAllAction);
-    actions.append(m_rollbackAction);
-    actions.append(m_backoutAction);
-    actions.append(m_bundleAction);
-    actions.append(m_unbundleAction);
-    actions.append(m_exportAction);
-    actions.append(m_importAction);
-    actions.append(m_serveAction);
-    actions.append(m_globalConfigAction);
-    actions.append(m_repoConfigAction);
+    actions.append(m_menuAction);
     return actions;
 }
 
