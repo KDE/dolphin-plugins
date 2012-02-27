@@ -61,7 +61,6 @@ K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
-//TODO: Check if working directory is commitable
 //TODO: Show error messages and set their message approproately(hg output)
 //TODO: Use i18nc rather thn i18c throughout plugin
 
@@ -536,6 +535,10 @@ void FileViewHgPlugin::renameFile()
 
 void FileViewHgPlugin::commit()
 {
+    if (m_hgWrapper->isWorkingDirectoryClean()) {
+        KMessageBox::information(0, i18nc("@message", "No changes for commit!"));
+        return;
+    }
     //FIXME: Disable emitting of status messages when executing sub tasks.
     m_errorMsg = i18nc("@info:status",
             "Commit to <application>Hg</application> repository failed.");
