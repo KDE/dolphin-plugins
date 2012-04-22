@@ -91,11 +91,13 @@ PushDialog::PushDialog (QWidget* parent ):
     for (int i=0; i < branches.size(); ++i){
         if (branches[i].startsWith(QLatin1String("remotes/"))) {
             const QStringList sections = branches[i].split('/');
-            QHash<QString,QStringList>::iterator entry = m_remoteBranches.find(sections.at(1));
-            if (entry == m_remoteBranches.end()) {
-                m_remoteBranches.insert(sections.at(1), QStringList() << sections.at(2));
-            } else {
-                entry.value().append(sections.at(2));
+            if (sections.size() > 2) {
+                QHash<QString,QStringList>::iterator entry = m_remoteBranches.find(sections.at(1));
+                if (entry == m_remoteBranches.end()) {
+                    m_remoteBranches.insert(sections.at(1), QStringList() << sections.at(2));
+                } else {
+                    entry.value().append(sections.at(2));
+                }
             }
         } else {
             m_localBranchComboBox->addItem(branches[i]);
