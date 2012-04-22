@@ -64,7 +64,8 @@ PullDialog::PullDialog(QWidget* parent):
     QStringList branches = gitWrapper->branches(&currentBranchIndex);
 
     for (int i=0; i < branches.size(); ++i) {
-        if (branches[i].startsWith(QLatin1String("remotes/"))) {
+        if (branches[i].startsWith(QLatin1String("remotes/")) &&
+            branches[i].count(QChar('/')) > 1) {
             const QStringList sections = branches[i].split('/');
             QHash<QString,QStringList>::iterator entry = m_remoteBranches.find(sections.at(1));
             if (entry == m_remoteBranches.end()) {
@@ -95,6 +96,7 @@ void PullDialog::remoteSelectionChanged(const QString& newRemote)
 {
     m_remoteBranchComboBox->clear();
     m_remoteBranchComboBox->addItems(m_remoteBranches.value(newRemote));
+    this->enableButtonOk(m_remoteBranchComboBox->count() > 0);
 }
 
 #include "pulldialog.moc"
