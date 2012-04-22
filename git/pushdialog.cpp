@@ -149,6 +149,7 @@ void PushDialog::localBranchSelectionChanged(const QString& newLocalBranch)
     if (index != -1) {
         m_remoteBranchComboBox->setCurrentIndex(index);
     }
+    this->enableButtonOk(m_remoteBranchComboBox->count() > 0);
 }
 
 #include "pushdialog.moc"
