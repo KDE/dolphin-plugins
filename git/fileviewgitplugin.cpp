@@ -33,6 +33,7 @@
 #include <kicon.h>
 #include <klocale.h>
 #include <ktemporaryfile.h>
+#include <kurl.h>
 #include <QProcess>
 #include <QString>
 #include <QStringList>
@@ -44,7 +45,7 @@ K_PLUGIN_FACTORY(FileViewGitPluginFactory, registerPlugin<FileViewGitPlugin>();)
 K_EXPORT_PLUGIN(FileViewGitPluginFactory("fileviewgitplugin"))
 
 FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& args) :
-    KVersionControlPlugin(parent),
+    KVersionControlPlugin2(parent),
     m_pendingOperation(false),
     m_addAction(0),
     m_removeAction(0),
@@ -150,7 +151,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     }
 
     m_versionInfoHash.clear();
-    
+
     // ----- find files with special status -----
     process.start(QLatin1String("git status --porcelain -z --ignored"));
     while (process.waitForReadyRead()) {
@@ -161,7 +162,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
             char X = line[0].toAscii();  // X and Y from the table in `man git-status`
             char Y = line[1].toAscii();
             const QString fileName= line.mid(3);
-            VersionState state = NormalVersion;
+            ItemVersion state = NormalVersion;
             switch (X) {
                 case '!': // handle ignored as unversioned
                 case '?':
@@ -197,7 +198,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
                 (X == 'D' && Y == 'D')) {
                 state = ConflictingVersion;
             }
-            
+
             // ----- decide what to record about that file -----
             if (state == NormalVersion || !fileName.startsWith(dirBelowBaseDir)) {
                 continue;
@@ -211,7 +212,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
                 }
                 const QString absoluteDirName = directory + relativeFileName.left(relativeFileName.indexOf('/'));
                 if (m_versionInfoHash.contains(absoluteDirName)) {
-                    VersionState oldState = m_versionInfoHash.value(absoluteDirName);
+                    ItemVersion oldState = m_versionInfoHash.value(absoluteDirName);
                     //only keep the most important state for a directory
                     if (oldState == ConflictingVersion)
                         continue;
@@ -236,7 +237,7 @@ void FileViewGitPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::VersionState FileViewGitPlugin::versionState(const KFileItem& item)
+KVersionControlPlugin2::ItemVersion FileViewGitPlugin::itemVersion(const KFileItem& item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -247,7 +248,16 @@ KVersionControlPlugin::VersionState FileViewGitPlugin::versionState(const KFileI
     }
 }
 
-QList<QAction*> FileViewGitPlugin::contextMenuActions(const KFileItemList& items)
+QList<QAction*> FileViewGitPlugin::actions(const KFileItemList &items) const
+{
+    if (items.count() == 1 && items.first().isDir()) {
+        return contextMenuDirectoryActions(items.first().url().path(KUrl::AddTrailingSlash));
+    } else {
+        return contextMenuFilesActions(items);
+    }
+}
+
+QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& items) const
 {
     Q_ASSERT(!items.isEmpty());
 
@@ -262,7 +272,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuActions(const KFileItemList& items
         int versionedCount = 0;
         int addableCount = 0;
         foreach(const KFileItem& item, items){
-            const VersionState state = versionState(item);
+            const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion){
                 ++versionedCount;
             }
@@ -285,7 +295,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuActions(const KFileItemList& items
     return actions;
 }
 
-QList<QAction*> FileViewGitPlugin::contextMenuActions(const QString& directory)
+QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& directory) const
 {
     QList<QAction*> actions;
     if (!m_pendingOperation){
@@ -295,9 +305,9 @@ QList<QAction*> FileViewGitPlugin::contextMenuActions(const QString& directory)
     actions.append(m_checkoutAction);
 
     bool canCommit = false;
-    QHash<QString, VersionState>::const_iterator it = m_versionInfoHash.constBegin();
+    QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
-        const VersionState state = it.value();
+        const ItemVersion state = it.value();
         if (state == LocallyModifiedVersion || state == AddedVersion || state == RemovedVersion) {
             canCommit = true;
         }
@@ -388,7 +398,7 @@ void FileViewGitPlugin::checkout()
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
             if (!completedMessage.isEmpty()) {
                 emit operationCompletedMessage(completedMessage);
-                emit versionStatesChanged();
+                emit itemVersionsChanged();
             }
         }
         else {
@@ -421,7 +431,7 @@ void FileViewGitPlugin::commit()
         }
         if (!completedMessage.isEmpty()) {
             emit operationCompletedMessage(completedMessage);
-            emit versionStatesChanged();
+            emit itemVersionsChanged();
         }
     }
 }
@@ -522,7 +532,7 @@ void FileViewGitPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
         emit errorMessage(message.isNull() ? m_errorMsg : message);
     } else if (m_contextItems.isEmpty()) {
         emit operationCompletedMessage(message.isNull() ? m_operationCompletedMsg : message);
-        emit versionStatesChanged();
+        emit itemVersionsChanged();
     } else {
         startGitCommandProcess();
     }
@@ -563,7 +573,7 @@ QString FileViewGitPlugin::parsePullOutput()
             return i18nc("@info:status", "Branch is already up-to-date.");
         }
         if (line.contains("CONFLICT")) {
-            emit versionStatesChanged();
+            emit itemVersionsChanged();
             return i18nc("@info:status", "Merge conflicts occurred. Fix them and commit the result.");
         }
     }

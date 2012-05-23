@@ -22,16 +22,16 @@
 #define FILEVIEWGITPLUGIN_H
 
 #include <kfileitem.h>
-#include <kversioncontrolplugin.h>
+#include <kversioncontrolplugin2.h>
 #include <QList>
 #include <QHash>
 #include <QProcess>
 #include <QString>
 
 /**
- * @brief Git implementation for the KVersionControlPlugin interface.
+ * @brief Git implementation for the KVersionControlPlugin2 interface.
  */
-class FileViewGitPlugin : public KVersionControlPlugin
+class FileViewGitPlugin : public KVersionControlPlugin2
 {
     Q_OBJECT
 
@@ -41,9 +41,8 @@ public:
     virtual QString fileName() const;
     virtual bool beginRetrieval(const QString& directory);
     virtual void endRetrieval();
-    virtual KVersionControlPlugin::VersionState versionState(const KFileItem& item);
-    virtual QList<QAction*> contextMenuActions(const KFileItemList& items);
-    virtual QList<QAction*> contextMenuActions(const QString& directory);
+    virtual KVersionControlPlugin2::ItemVersion itemVersion(const KFileItem& item) const;
+    virtual QList<QAction*> actions(const KFileItemList &items) const;
 
 private slots:
     void addFiles();
@@ -57,7 +56,9 @@ private slots:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
 private:
-    /** 
+    QList<QAction*> contextMenuFilesActions(const KFileItemList& items) const;
+    QList<QAction*> contextMenuDirectoryActions(const QString& directory) const;
+    /**
      * Reads into buffer from device until we reach the next \0 or maxChars have been read.
      * @returns The number of characters read.
      */
@@ -96,7 +97,7 @@ private:
      * Contains all files in the current directory, whose version state is not
      * NormalVersion and directories containing such files.
      */
-    QHash<QString, VersionState> m_versionInfoHash;
+    QHash<QString, ItemVersion> m_versionInfoHash;
     QAction* m_addAction;
     QAction* m_removeAction;
     QAction* m_checkoutAction;
@@ -112,8 +113,8 @@ private:
     QString m_errorMsg;
 
     //Current targets. m_contextItems is used if and only if m_contextDir is empty.
-    QString m_contextDir;
-    KFileItemList m_contextItems;
+    mutable QString m_contextDir;
+    mutable KFileItemList m_contextItems;
 };
 #endif // FILEVIEWGITPLUGIN_H
 
