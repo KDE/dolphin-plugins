@@ -137,6 +137,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     Q_ASSERT(directory.endsWith('/'));
 
     GitWrapper::instance()->setWorkingDirectory(directory);
+    m_currentDir = directory;
 
     // ----- find path below git base dir -----
     QProcess process;
@@ -250,7 +251,8 @@ KVersionControlPlugin2::ItemVersion FileViewGitPlugin::itemVersion(const KFileIt
 
 QList<QAction*> FileViewGitPlugin::actions(const KFileItemList &items) const
 {
-    if (items.count() == 1 && items.first().isDir()) {
+    if (items.count() == 1 && items.first().isDir() &&
+        items.first().url().path(KUrl::AddTrailingSlash) == m_currentDir) {
         return contextMenuDirectoryActions(items.first().url().path(KUrl::AddTrailingSlash));
     } else {
         return contextMenuFilesActions(items);

@@ -106,6 +106,7 @@ private:
     QAction* m_pushAction;
     QAction* m_pullAction;
 
+    QString m_currentDir;
     QProcess m_process;
     QString m_command;
     QStringList m_arguments;
