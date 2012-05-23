@@ -165,7 +165,9 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
             const QString fileName= line.mid(3);
             ItemVersion state = NormalVersion;
             switch (X) {
-                case '!': // handle ignored as unversioned
+                case '!':
+                    state = IgnoredVersion;
+                    break;
                 case '?':
                     state = UnversionedVersion;
                     break;
@@ -208,6 +210,8 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
             const QString relativeFileName = fileName.mid(dirBelowBaseDir.length());
             //if file is part of a sub-directory, record the directory
             if (relativeFileName.contains('/')) {
+                if (state == IgnoredVersion)
+                    continue;
                 if (state == AddedVersion || state == RemovedVersion) {
                     state = LocallyModifiedVersion;
                 }
@@ -275,10 +279,12 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
         int addableCount = 0;
         foreach(const KFileItem& item, items){
             const ItemVersion state = itemVersion(item);
-            if (state != UnversionedVersion && state != RemovedVersion){
+            if (state != UnversionedVersion && state != RemovedVersion &&
+                state != IgnoredVersion) {
                 ++versionedCount;
             }
-            if (state == UnversionedVersion || state == LocallyModifiedUnstagedVersion) {
+            if (state == UnversionedVersion || state == LocallyModifiedUnstagedVersion ||
+                state == IgnoredVersion) {
                 ++addableCount;
             }
         }

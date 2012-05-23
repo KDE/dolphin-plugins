@@ -95,7 +95,8 @@ private:
     bool m_pendingOperation;
     /**
      * Contains all files in the current directory, whose version state is not
-     * NormalVersion and directories containing such files.
+     * NormalVersion and directories containing such files (except for directories
+     * whose only special contained file type is IgnoredVersion).
      */
     QHash<QString, ItemVersion> m_versionInfoHash;
     QAction* m_addAction;
