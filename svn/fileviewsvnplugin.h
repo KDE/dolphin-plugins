@@ -42,6 +42,9 @@ public:
     virtual ItemVersion itemVersion(const KFileItem& item) const;
     virtual QList<QAction*> actions(const KFileItemList& items) const;
 
+signals:
+    /// Invokes m_showUpdatesAction->setChecked(checked) on the UI thread.
+    void setShowUpdatesChecked(bool checked);
 private slots:
     void updateFiles();
     void showLocalChanges();

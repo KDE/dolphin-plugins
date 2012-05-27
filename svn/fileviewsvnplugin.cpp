@@ -100,6 +100,8 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_showUpdatesAction->setChecked(FileViewSvnPluginSettings::showUpdates());
     connect(m_showUpdatesAction, SIGNAL(toggled(bool)),
             this, SLOT(slotShowUpdatesToggled(bool)));
+    connect(this, SIGNAL(setShowUpdatesChecked(bool)),
+            m_showUpdatesAction, SLOT(setChecked(bool)));
 
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -178,7 +180,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             // Network update failed. Unset ShowUpdates option, which triggers a refresh
             emit infoMessage(i18nc("@info:status", "SVN status update failed. Disabling Option "
                                    "\"Show SVN Updates\"."));
-            m_showUpdatesAction->setChecked(false);
+            emit setShowUpdatesChecked(false);
             // this is no fail, we just try again differently
             // furthermore returning false shows an error message that would override our info
             return true;
