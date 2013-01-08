@@ -2,6 +2,7 @@
 Type=Service
 Name=Bazaar
 Name[ar]=Bazaar
+Name[bs]=Bazaar
 Name[ca]=Bazaar
 Name[ca@valencia]=Bazaar
 Name[cs]=Bazaar
@@ -12,6 +13,7 @@ Name[es]=Bazaar
 Name[et]=Bazaar
 Name[fi]=Bazaar
 Name[fr]=Bazaar
+Name[gl]=Bazaar
 Name[hu]=Bazaar
 Name[it]=Bazaar
 Name[kk]=Bazaar

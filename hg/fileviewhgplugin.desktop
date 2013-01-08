@@ -2,6 +2,7 @@
 Type=Service
 Name=Mercurial
 Name[ar]=Mercurial
+Name[bs]=Mercurial
 Name[ca]=Mercurial
 Name[ca@valencia]=Mercurial
 Name[da]=Mercurial
@@ -11,6 +12,7 @@ Name[es]=Mercurial
 Name[et]=Mercurial
 Name[fi]=Mercurial
 Name[fr]=Mercurial
+Name[gl]=Mercurial
 Name[hu]=Mercurial
 Name[it]=Mercurial
 Name[kk]=Mercurial
