@@ -53,7 +53,7 @@ private slots:
     void reloadStatusTable();
 
 private slots:
-    void itemSelectionChangedSlot();
+    void currentItemChangedSlot();
 
 signals:
     void itemSelectionChanged(const char status, const QString &fileName);

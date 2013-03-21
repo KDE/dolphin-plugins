@@ -200,7 +200,6 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
 
         arguments << fileName;
         hgWrapper->executeCommand(QLatin1String("diff"), arguments, diffOut);
-        kDebug() << diffOut;
         m_fileDiffDoc->setText(diffOut);
         m_fileDiffDoc->setHighlightingMode("diff");
     }
