@@ -44,6 +44,7 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_statusTable->verticalHeader()->hide();
     m_statusTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_statusTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+    m_statusTable->setSelectionMode(QAbstractItemView::SingleSelection);
 
     //mainLayout->addWidget(m_filter);
     mainLayout->addWidget(m_statusTable);
@@ -53,11 +54,12 @@ HgStatusList::HgStatusList(QWidget *parent):
 
     reloadStatusTable();
 
-    connect(m_statusTable, SIGNAL(itemSelectionChanged()),
-            this, SLOT(itemSelectionChangedSlot()));
+    connect(m_statusTable,
+            SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)),
+            this, SLOT(currentItemChangedSlot()));
 }
 
-void HgStatusList::itemSelectionChangedSlot()
+void HgStatusList::currentItemChangedSlot()
 {
     emit itemSelectionChanged(
         m_statusTable->item(m_statusTable->currentRow(), 1)->text()[0].toLatin1(),
