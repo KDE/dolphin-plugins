@@ -44,7 +44,7 @@ public:
     HgCommitInfoWidget(QWidget *parent=0);
 
     /**
-     * Adds a new entry in the ListWidget with the chageset paramters
+     * Adds a new entry in the ListWidget with the chageset parameters
      * provided in its parameter.
      *
      * @param revision Revision number of changeset

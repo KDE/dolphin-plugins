@@ -31,7 +31,7 @@ class KPushButton;
 
 /**
  * Dialog which implements bundle feature of Mercurial. Bundle enables
- * user to creates a file containg all the selected/desired changesets
+ * user to creates a file containing all the selected/desired changesets
  * in mercurial's internal format rather than patches. 
  * 
  * Changesets can either be selected by user or after being compared by

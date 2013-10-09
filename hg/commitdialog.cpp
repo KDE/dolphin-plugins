@@ -27,7 +27,6 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QFrame>
-#include <QtGui/QGroupBox>
 #include <QtGui/QActionGroup>
 #include <QtGui/QPlainTextEdit>
 #include <KTextEditor/Document>

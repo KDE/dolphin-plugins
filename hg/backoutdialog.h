@@ -51,7 +51,7 @@ private:
     void setupUI();
 
     /**
-     * Find appropiate changesets in repository and show them in 
+     * Find appropriate changesets in repository and show them in 
      * Commit Selector (CommitInfoWidget)
      */
     void loadCommits();

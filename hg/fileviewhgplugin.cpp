@@ -46,9 +46,7 @@
 #include <kdebug.h>
 #include <kurl.h>
 #include <kmessagebox.h>
-#include <kaction.h>
 #include <kfiledialog.h>
-#include <kurl.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <kservice.h>

@@ -141,7 +141,7 @@ public:
      *              If the list is empty, all modified files will be 
      *              committed, the deault behovior.
      * @param closeCurrentBranch Closes the current branch after commit.
-     * @return true if successfull, otherwise false
+     * @return true if successful, otherwise false
      */
     bool commit(const QString &message, 
                 const QStringList &files = QStringList(), 
@@ -158,14 +158,14 @@ public:
      * Update current working directory to another branch
      * @param name Name of the branch to which working directory
      *              has to be updated.
-     * @return true if successfull, otherwise false
+     * @return true if successful, otherwise false
      */
     bool switchBranch(const QString &name);
 
     /**
      * Create tag for current changeset(the changeset of working directory)
      * @param name Name of the new tag to be createdialog
-     * @return true if successfull, otherwise false
+     * @return true if successful, otherwise false
      */
     bool createTag(const QString &name);
 
@@ -173,7 +173,7 @@ public:
      * Update working directory to a changeset named by given tag
      * @param name Tag of the changeset to which working directory
      *              has to be updated.
-     * @return true if successfull, otherwise false
+     * @return true if successful, otherwise false
      */
     bool switchTag(const QString &name);
 
@@ -196,10 +196,10 @@ public:
      * Use with care. Rollback cant be undone. See Mercurial man page FOR
      * more info.
      *
-     * @param dryRun Do not actually perform action, but just print ouput 
+     * @param dryRun Do not actually perform action, but just print output 
      *              Used to check if Rollback can be done, and if yes then
      *              what will be rolled back.
-     * @return true if successfull, otherwise false
+     * @return true if successful, otherwise false
      */
     bool rollback(bool dryRun=false);
 

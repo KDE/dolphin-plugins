@@ -22,7 +22,6 @@
 #include <QtCore/QDir>
 #include <QtGui/QLabel>
 #include <QtGui/QGridLayout>
-#include <QtGui/QGridLayout>
 #include <klineedit.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>

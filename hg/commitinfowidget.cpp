@@ -132,5 +132,3 @@ QList<QListWidgetItem*> HgCommitInfoWidget::selectedItems() const
     return m_commitListWidget->selectedItems();
 }
 
-#include "commitinfowidget.h"
-
