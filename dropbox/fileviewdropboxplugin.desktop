@@ -1,6 +1,15 @@
 [Desktop Entry]
 Type=Service
 Name=Dropbox
+Name[de]=Dropbox
+Name[es]=Dropbox
+Name[nl]=Dropbox
+Name[pt]=Dropbox
+Name[pt_BR]=Dropbox
+Name[sk]=Dropbox
+Name[sv]=Dropbox
+Name[uk]=Dropbox
+Name[x-test]=xxDropboxxx
 X-KDE-ServiceTypes=FileViewVersionControlPlugin
 MimeType=text/plain;
 X-KDE-Library=fileviewdropboxplugin
