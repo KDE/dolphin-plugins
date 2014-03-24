@@ -2,8 +2,10 @@
 Type=Service
 Name=Dropbox
 Name[ca]=Dropbox
+Name[ca@valencia]=Dropbox
 Name[da]=Dropbox
 Name[de]=Dropbox
+Name[el]=Dropbox
 Name[es]=Dropbox
 Name[fi]=Dropbox
 Name[fr]=DropBox
