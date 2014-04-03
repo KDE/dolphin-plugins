@@ -44,15 +44,9 @@ public:
         contextFilePaths(),
         controlSocketPath(),
         controlSocket(new QLocalSocket(parent)),
-        itemStateSocket(new QLocalSocket),
         databaseFileWatcher(new QFileSystemWatcher(parent)),
         contextActions(new KActionCollection(parent))
     {
-    }
-
-    ~Private()
-    {
-        delete itemStateSocket;
     }
 
     QStringList contextFilePaths;
@@ -106,6 +100,8 @@ bool FileViewDropboxPlugin::beginRetrieval(const QString& directory)
     qRegisterMetaType<QAbstractSocket::SocketError>("QAbstractSocket::SocketError");
     qRegisterMetaType<QAbstractSocket::SocketState>("QAbstractSocket::SocketState");
 
+    d->itemStateSocket = new QLocalSocket;
+
     return connectWithDropbox(d->itemStateSocket, LongTimeout);
 }
 
@@ -123,6 +119,7 @@ KVersionControlPlugin2::ItemVersion FileViewDropboxPlugin::itemVersion(const KFi
 
 void FileViewDropboxPlugin::endRetrieval()
 {
+    delete d->itemStateSocket;
 }
 
 QList<QAction*> FileViewDropboxPlugin::actions(const KFileItemList& items) const
