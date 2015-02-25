@@ -1,21 +1,12 @@
 project(fileviewdropboxplugin)
 
-add_definitions(-DTRANSLATION_DOMAIN=\"fileviewdropboxplugin\")
+include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${LIBKONQ_INCLUDE_DIR} )
 
 set(fileviewdropboxplugin_SRCS
     fileviewdropboxplugin.cpp
 )
 
-add_library(fileviewdropboxplugin MODULE ${fileviewdropboxplugin_SRCS})
-target_link_libraries(fileviewdropboxplugin
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Network
-    KF5::I18n
-    KF5::XmlGui
-    KF5::KIOCore
-    DolphinVcs
-)
-
-install(FILES fileviewdropboxplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
-install(TARGETS fileviewdropboxplugin DESTINATION ${KDE_INSTALL_PLUGINDIR})
+kde4_add_plugin(fileviewdropboxplugin  ${fileviewdropboxplugin_SRCS})
+target_link_libraries(fileviewdropboxplugin ${KDE4_KIO_LIBS} ${LIBKONQ_LIBRARY})
+install(FILES fileviewdropboxplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS fileviewdropboxplugin DESTINATION ${PLUGIN_INSTALL_DIR})

@@ -20,6 +20,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
+#include <KAction>
 #include <KFileItem>
 #include <KFileItemListProperties>
 #include <KLocalizedString>
@@ -30,11 +31,11 @@
 #include <QPointer>
 #include <QLocalSocket>
 #include <QFileSystemWatcher>
-#include <QStringBuilder>
 
 #include "fileviewdropboxplugin.h"
 
 K_PLUGIN_FACTORY(FileViewDropboxPluginFactory, registerPlugin<FileViewDropboxPlugin>();)
+K_EXPORT_PLUGIN(FileViewDropboxPluginFactory("fileviewdropboxplugin"))
 
 class FileViewDropboxPlugin::Private
 {
@@ -56,19 +57,19 @@ public:
     QPointer<KActionCollection> contextActions;
 };
 
-QMap<QString, KVersionControlPlugin::ItemVersion> FileViewDropboxPlugin::m_itemVersions;
+QMap<QString, KVersionControlPlugin2::ItemVersion> FileViewDropboxPlugin::m_itemVersions;
 
 FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList& args):
-    KVersionControlPlugin(parent),
+    KVersionControlPlugin2(parent),
     d(new Private(this))
 {
     Q_UNUSED(args);
 
     if (m_itemVersions.isEmpty()) {
-        m_itemVersions.insert("up to date", KVersionControlPlugin::NormalVersion);
-        m_itemVersions.insert("syncing",    KVersionControlPlugin::UpdateRequiredVersion);
-        m_itemVersions.insert("unsyncable", KVersionControlPlugin::ConflictingVersion);
-        m_itemVersions.insert("unwatched",  KVersionControlPlugin::UnversionedVersion);
+        m_itemVersions.insert("up to date", KVersionControlPlugin2::NormalVersion);
+        m_itemVersions.insert("syncing",    KVersionControlPlugin2::UpdateRequiredVersion);
+        m_itemVersions.insert("unsyncable", KVersionControlPlugin2::ConflictingVersion);
+        m_itemVersions.insert("unwatched",  KVersionControlPlugin2::UnversionedVersion);
     }
 
     const QString dropboxDir = QDir::home().path() % QDir::separator() % fileName() % QDir::separator();
@@ -104,16 +105,16 @@ bool FileViewDropboxPlugin::beginRetrieval(const QString& directory)
     return connectWithDropbox(d->itemStateSocket, LongTimeout);
 }
 
-KVersionControlPlugin::ItemVersion FileViewDropboxPlugin::itemVersion(const KFileItem& item) const
+KVersionControlPlugin2::ItemVersion FileViewDropboxPlugin::itemVersion(const KFileItem& item) const
 {
     const QStringList reply = sendCommand("icon_overlay_file_status\npath\t", QStringList() << QDir(item.localPath()).canonicalPath(),
                                           d->itemStateSocket, WaitForReply, LongTimeout);
     if(reply.count() < 2) {
         // file/dir is not served by dropbox
-        return KVersionControlPlugin::UnversionedVersion;
+        return KVersionControlPlugin2::UnversionedVersion;
     }
 
-    return m_itemVersions.value(reply.at(1), KVersionControlPlugin::UnversionedVersion);
+    return m_itemVersions.value(reply.at(1), KVersionControlPlugin2::UnversionedVersion);
 }
 
 void FileViewDropboxPlugin::endRetrieval()
@@ -149,10 +150,10 @@ QList<QAction*> FileViewDropboxPlugin::actions(const KFileItemList& items) const
         const QStringList options = replyLine.split("~");
 
         if (options.count() > 2) {
-            QAction* action = d->contextActions->addAction(options.at(2));
+            KAction* action = d->contextActions->addAction(options.at(2));
             action->setText(options.at(0));
             action->setToolTip(options.at(1));
-            action->setIcon(QIcon::fromTheme("dropbox"));
+            action->setIcon(KIcon("dropbox"));
         }
     }
 
