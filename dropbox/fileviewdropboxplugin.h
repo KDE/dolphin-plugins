@@ -23,7 +23,7 @@
 #ifndef FILEVIEWDROPBOXPLUGIN_H
 #define FILEVIEWDROPBOXPLUGIN_H
 
-#include <kversioncontrolplugin2.h>
+#include <Dolphin/KVersionControlPlugin>
 
 #include <QMap>
 
@@ -34,9 +34,9 @@ class QLocalSocket;
 //Thanks Steffen Schuldenzucker!
 
 /**
- * @brief Dropbox implementation for the KVersionControlPlugin2 interface.
+ * @brief Dropbox implementation for the KVersionControlPlugin interface.
  */
-class FileViewDropboxPlugin : public KVersionControlPlugin2
+class FileViewDropboxPlugin : public KVersionControlPlugin
 {
     Q_OBJECT
 
@@ -55,15 +55,15 @@ private:
 
 public:
     FileViewDropboxPlugin(QObject* parent, const QVariantList& args);
-    virtual ~FileViewDropboxPlugin();
+    ~FileViewDropboxPlugin() override;
 
-    virtual QString fileName() const;
+    QString fileName() const override;
 
-    virtual bool beginRetrieval(const QString& directory);
-    virtual KVersionControlPlugin2::ItemVersion itemVersion(const KFileItem& item) const;
-    virtual void endRetrieval();
+    bool beginRetrieval(const QString& directory) override;
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
+    void endRetrieval() override;
 
-    virtual QList<QAction*> actions(const KFileItemList& items) const;
+    QList<QAction*> actions(const KFileItemList& items) const override;
 
 private slots:
     void handleContextAction(QAction* action);
@@ -81,7 +81,7 @@ private:
     class Private;
     Private* const d;
 
-    static QMap<QString, KVersionControlPlugin2::ItemVersion> m_itemVersions;
+    static QMap<QString, KVersionControlPlugin::ItemVersion> m_itemVersions;
 };
 
 #endif // FILEVIEWDROPBOXPLUGIN_H
