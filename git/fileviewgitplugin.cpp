@@ -27,25 +27,20 @@
 #include "gitwrapper.h"
 #include "pulldialog.h"
 
-#include <kaction.h>
-#include <kdemacros.h>
-#include <kfileitem.h>
-#include <kicon.h>
-#include <klocale.h>
-#include <ktemporaryfile.h>
-#include <kurl.h>
+#include <KLocalizedString>
+#include <KUrl>
+#include <KPluginFactory>
+
+#include <QTemporaryFile>
 #include <QProcess>
 #include <QString>
 #include <QStringList>
 #include <QTextCodec>
 
-#include <KPluginFactory>
-#include <KPluginLoader>
 K_PLUGIN_FACTORY(FileViewGitPluginFactory, registerPlugin<FileViewGitPlugin>();)
-K_EXPORT_PLUGIN(FileViewGitPluginFactory("fileviewgitplugin"))
 
 FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& args) :
-    KVersionControlPlugin2(parent),
+    KVersionControlPlugin(parent),
     m_pendingOperation(false),
     m_addAction(0),
     m_removeAction(0),
@@ -57,41 +52,41 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
 {
     Q_UNUSED(args);
 
-    m_addAction = new KAction(this);
-    m_addAction->setIcon(KIcon("list-add"));
+    m_addAction = new QAction(this);
+    m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(i18nc("@action:inmenu", "<application>Git</application> Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
-    m_removeAction = new KAction(this);
-    m_removeAction->setIcon(KIcon("list-remove"));
+    m_removeAction = new QAction(this);
+    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
     m_removeAction->setText(i18nc("@action:inmenu", "<application>Git</application> Remove"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
-    m_checkoutAction = new KAction(this);
-//     m_checkoutAction->setIcon(KIcon("svn_switch")); does not exist in normal kde SC
+    m_checkoutAction = new QAction(this);
+//     m_checkoutAction->setIcon(QIcon::fromTheme("svn_switch")); does not exist in normal kde SC
     m_checkoutAction->setText(i18nc("@action:inmenu", "<application>Git</application> Checkout..."));
     connect(m_checkoutAction, SIGNAL(triggered()),
             this, SLOT(checkout()));
 
-    m_commitAction = new KAction(this);
-    m_commitAction->setIcon(KIcon("svn-commit"));
+    m_commitAction = new QAction(this);
+    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(i18nc("@action:inmenu", "<application>Git</application> Commit..."));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
 
-    m_tagAction = new KAction(this);
-//     m_tagAction->setIcon(KIcon("svn-commit"));
+    m_tagAction = new QAction(this);
+//     m_tagAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_tagAction->setText(i18nc("@action:inmenu", "<application>Git</application> Create Tag..."));
     connect(m_tagAction, SIGNAL(triggered()),
             this, SLOT(createTag()));
-    m_pushAction = new KAction(this);
-//     m_pushAction->setIcon(KIcon("svn-commit"));
+    m_pushAction = new QAction(this);
+//     m_pushAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_pushAction->setText(i18nc("@action:inmenu", "<application>Git</application> Push..."));
     connect(m_pushAction, SIGNAL(triggered()),
             this, SLOT(push()));
-    m_pullAction = new KAction(this);
+    m_pullAction = new QAction(this);
     m_pullAction->setText(i18nc("@action:inmenu", "<application>Git</application> Pull..."));
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pull()));
@@ -242,7 +237,7 @@ void FileViewGitPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin2::ItemVersion FileViewGitPlugin::itemVersion(const KFileItem& item) const
+KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileItem& item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -255,9 +250,17 @@ KVersionControlPlugin2::ItemVersion FileViewGitPlugin::itemVersion(const KFileIt
 
 QList<QAction*> FileViewGitPlugin::actions(const KFileItemList &items) const
 {
-    if (items.count() == 1 && items.first().isDir() &&
-        items.first().url().path(KUrl::AddTrailingSlash) == m_currentDir) {
-        return contextMenuDirectoryActions(items.first().url().path(KUrl::AddTrailingSlash));
+    if (items.count() == 1 && items.first().isDir()) {
+        QString directory = items.first().url().path();
+        if (!directory.endsWith(QLatin1Char('/'))) {
+            directory += QLatin1Char('/');
+        }
+
+        if (directory == m_currentDir) {
+            return contextMenuDirectoryActions(directory);
+        } else {
+            return contextMenuFilesActions(items);
+        }
     } else {
         return contextMenuFilesActions(items);
     }
@@ -420,7 +423,7 @@ void FileViewGitPlugin::commit()
 {
     CommitDialog dialog;
     if (dialog.exec() == QDialog::Accepted) {
-        KTemporaryFile tmpCommitMessageFile;
+        QTemporaryFile tmpCommitMessageFile;
         tmpCommitMessageFile.open();
         tmpCommitMessageFile.write(dialog.commitMessage());
         tmpCommitMessageFile.close();
@@ -448,7 +451,7 @@ void FileViewGitPlugin::createTag()
 {
    TagDialog dialog;
     if (dialog.exec() == QDialog::Accepted) {
-        KTemporaryFile tempTagMessageFile;
+        QTemporaryFile tempTagMessageFile;
         tempTagMessageFile.open();
         tempTagMessageFile.write(dialog.tagMessage());
         tempTagMessageFile.close();
@@ -612,7 +615,7 @@ void FileViewGitPlugin::startGitCommandProcess()
     m_pendingOperation = true;
 
     const KFileItem item = m_contextItems.takeLast();
-    m_process.setWorkingDirectory(item.url().directory());
+    m_process.setWorkingDirectory(m_contextDir);
     QStringList arguments;
     arguments << m_command;
     arguments << m_arguments;
