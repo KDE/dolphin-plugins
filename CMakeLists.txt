@@ -39,7 +39,7 @@ include(ECMMarkNonGuiExecutable)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-#add_subdirectory(svn)
+add_subdirectory(svn)
 add_subdirectory(git)
 #add_subdirectory(hg)
 #add_subdirectory(bazaar)
