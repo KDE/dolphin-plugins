@@ -251,7 +251,7 @@ KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileIte
 QList<QAction*> FileViewGitPlugin::actions(const KFileItemList &items) const
 {
     if (items.count() == 1 && items.first().isDir()) {
-        QString directory = items.first().url().path();
+        QString directory = items.first().localPath();
         if (!directory.endsWith(QLatin1Char('/'))) {
             directory += QLatin1Char('/');
         }
