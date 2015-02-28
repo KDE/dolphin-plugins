@@ -82,7 +82,6 @@ private:
 
     void startBazaarCommandProcess();
 
-private:
     bool m_pendingOperation;
     QHash<QString, ItemVersion> m_versionInfoHash;
 
