@@ -22,8 +22,10 @@
 #ifndef FILEVIEWBAZAARPLUGIN_H
 #define FILEVIEWBAZAARPLUGIN_H
 
-#include <kfileitem.h>
-#include <kversioncontrolplugin.h>
+#include <Dolphin/KVersionControlPlugin>
+
+#include <KFileItem>
+
 #include <QHash>
 #include <QProcess>
 #include <QTemporaryFile>
@@ -37,15 +39,18 @@ class FileViewBazaarPlugin : public KVersionControlPlugin
 
 public:
     FileViewBazaarPlugin(QObject* parent, const QList<QVariant>& args);
-    virtual ~FileViewBazaarPlugin();
-    virtual QString fileName() const;
-    virtual bool beginRetrieval(const QString& directory);
-    virtual void endRetrieval();
-    virtual KVersionControlPlugin::VersionState versionState(const KFileItem& item);
-    virtual QList<QAction*> contextMenuActions(const KFileItemList& items);
-    virtual QList<QAction*> contextMenuActions(const QString& directory);
+    ~FileViewBazaarPlugin() Q_DECL_OVERRIDE;
+    QString fileName() const  Q_DECL_OVERRIDE;
+    bool beginRetrieval(const QString& directory)  Q_DECL_OVERRIDE;
+    void endRetrieval() Q_DECL_OVERRIDE;
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const Q_DECL_OVERRIDE;
+    QList<QAction*> actions(const KFileItemList& items) const Q_DECL_OVERRIDE;
+
+
 
 private slots:
+    QList<QAction*> contextMenuFilesActions(const KFileItemList& items) const;
+    QList<QAction*> contextMenuDirectoryActions(const QString& directory) const;
     void updateFiles();
     void pullFiles();
     void pushFiles();
@@ -77,9 +82,8 @@ private:
 
     void startBazaarCommandProcess();
 
-private:
     bool m_pendingOperation;
-    QHash<QString, VersionState> m_versionInfoHash;
+    QHash<QString, ItemVersion> m_versionInfoHash;
 
     QAction* m_updateAction;
     QAction* m_pullAction;
@@ -95,8 +99,8 @@ private:
     QString m_errorMsg;
     QString m_operationCompletedMsg;
 
-    QString m_contextDir;
-    KFileItemList m_contextItems;
+    mutable QString m_contextDir;
+    mutable KFileItemList m_contextItems;
 
     QProcess m_process;
     QTemporaryFile m_tempFile;

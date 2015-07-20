@@ -21,15 +21,13 @@
 
 #include "fileviewsvnpluginsettings.h"
 
-#include <kaction.h>
-#include <kdemacros.h>
-#include <kdialog.h>
-#include <kfileitem.h>
-#include <kicon.h>
-#include <klocale.h>
-#include <krun.h>
-#include <kshell.h>
-#include <kvbox.h>
+#include <KLocalizedString>
+#include <KRun>
+#include <KShell>
+#include <KVBox>
+#include <KDialog>
+#include <KPluginFactory>
+
 #include <QDir>
 #include <QLabel>
 #include <QPlainTextEdit>
@@ -38,13 +36,10 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include <KPluginFactory>
-#include <KPluginLoader>
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
-K_EXPORT_PLUGIN(FileViewSvnPluginFactory("fileviewsvnplugin"))
 
 FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& args) :
-    KVersionControlPlugin2(parent),
+    KVersionControlPlugin(parent),
     m_pendingOperation(false),
     m_versionInfoHash(),
     m_updateAction(0),
@@ -64,37 +59,37 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
 {
     Q_UNUSED(args);
 
-    m_updateAction = new KAction(this);
-    m_updateAction->setIcon(KIcon("view-refresh"));
+    m_updateAction = new QAction(this);
+    m_updateAction->setIcon(QIcon::fromTheme("view-refresh"));
     m_updateAction->setText(i18nc("@item:inmenu", "SVN Update"));
     connect(m_updateAction, SIGNAL(triggered()),
             this, SLOT(updateFiles()));
 
-    m_showLocalChangesAction = new KAction(this);
-    m_showLocalChangesAction->setIcon(KIcon("view-split-left-right"));
+    m_showLocalChangesAction = new QAction(this);
+    m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
     m_showLocalChangesAction->setText(i18nc("@item:inmenu", "Show Local SVN Changes"));
     connect(m_showLocalChangesAction, SIGNAL(triggered()),
             this, SLOT(showLocalChanges()));
 
-    m_commitAction = new KAction(this);
-    m_commitAction->setIcon(KIcon("svn-commit"));
+    m_commitAction = new QAction(this);
+    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "SVN Commit..."));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commitFiles()));
 
-    m_addAction = new KAction(this);
-    m_addAction->setIcon(KIcon("list-add"));
+    m_addAction = new QAction(this);
+    m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(i18nc("@item:inmenu", "SVN Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
-    m_removeAction = new KAction(this);
-    m_removeAction->setIcon(KIcon("list-remove"));
+    m_removeAction = new QAction(this);
+    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
     m_removeAction->setText(i18nc("@item:inmenu", "SVN Delete"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
-    m_showUpdatesAction = new KAction(this);
+    m_showUpdatesAction = new QAction(this);
     m_showUpdatesAction->setCheckable(true);
     m_showUpdatesAction->setText(i18nc("@item:inmenu", "Show SVN Updates"));
     m_showUpdatesAction->setChecked(FileViewSvnPluginSettings::showUpdates());
@@ -196,7 +191,7 @@ void FileViewSvnPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin2::ItemVersion FileViewSvnPlugin::itemVersion(const KFileItem& item) const
+KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileItem& item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -229,7 +224,10 @@ KVersionControlPlugin2::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIt
 QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 {
     if (items.count() == 1 && items.first().isDir()) {
-        const QString directory = items.first().url().path(KUrl::AddTrailingSlash);
+        QString directory = items.first().localPath();
+        if (!directory.endsWith(QLatin1Char('/'))) {
+            directory += QLatin1Char('/');
+        }
         return directoryActions(directory);
     }
 

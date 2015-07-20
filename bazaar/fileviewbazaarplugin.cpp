@@ -21,16 +21,10 @@
 
 #include "fileviewbazaarplugin.h"
 
-#include <kaction.h>
-#include <kdemacros.h>
-#include <kdialog.h>
-#include <kdebug.h>
-#include <kfileitem.h>
-#include <kicon.h>
-#include <klocale.h>
-#include <krun.h>
-#include <kshell.h>
-#include <kvbox.h>
+#include <KLocalizedString>
+#include <KPluginFactory>
+
+#include <QAction>
 #include <QDir>
 #include <QLabel>
 #include <QPlainTextEdit>
@@ -39,10 +33,7 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include <KPluginFactory>
-#include <KPluginLoader>
-K_PLUGIN_FACTORY(FileViewBazaarPluginFactory,registerPlugin<FileViewBazaarPlugin>();)
-K_EXPORT_PLUGIN(FileViewBazaarPluginFactory("fileviewbazaarplugin"))
+K_PLUGIN_FACTORY(FileViewBazaarPluginFactory, registerPlugin<FileViewBazaarPlugin>();)
 
 FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant>& args) :
     KVersionControlPlugin(parent),
@@ -67,50 +58,50 @@ FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant
 {
     Q_UNUSED(args);
 
-    m_updateAction = new KAction(this);
-    m_updateAction->setIcon(KIcon("go-down"));
+    m_updateAction = new QAction(this);
+    m_updateAction->setIcon(QIcon::fromTheme("go-down"));
     m_updateAction->setText(i18nc("@item:inmenu", "Bazaar Update"));
     connect(m_updateAction, SIGNAL(triggered()),
             this, SLOT(updateFiles()));
 
-    m_pullAction = new KAction(this);
-    m_pullAction->setIcon(KIcon("go-bottom"));
+    m_pullAction = new QAction(this);
+    m_pullAction->setIcon(QIcon::fromTheme("go-bottom"));
     m_pullAction->setText(i18nc("@item:inmenu", "Bazaar Pull"));
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pullFiles()));
 
-    m_pushAction = new KAction(this);
-    m_pushAction->setIcon(KIcon("go-top"));
+    m_pushAction = new QAction(this);
+    m_pushAction->setIcon(QIcon::fromTheme("go-top"));
     m_pushAction->setText(i18nc("@item:inmenu", "Bazaar Push"));
     connect(m_pushAction, SIGNAL(triggered()),
             this, SLOT(pushFiles()));
 
-    m_showLocalChangesAction = new KAction(this);
-    m_showLocalChangesAction->setIcon(KIcon("view-split-left-right"));
+    m_showLocalChangesAction = new QAction(this);
+    m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
     m_showLocalChangesAction->setText(i18nc("@item:inmenu", "Show Local Bazaar Changes"));
     connect(m_showLocalChangesAction, SIGNAL(triggered()),
             this, SLOT(showLocalChanges()));
 
-    m_commitAction = new KAction(this);
-    m_commitAction->setIcon(KIcon("svn-commit"));
+    m_commitAction = new QAction(this);
+    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "Bazaar Commit..."));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commitFiles()));
 
-    m_addAction = new KAction(this);
-    m_addAction->setIcon(KIcon("list-add"));
+    m_addAction = new QAction(this);
+    m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(i18nc("@item:inmenu", "Bazaar Add..."));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
-    m_removeAction = new KAction(this);
-    m_removeAction->setIcon(KIcon("list-remove"));
+    m_removeAction = new QAction(this);
+    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
     m_removeAction->setText(i18nc("@item:inmenu", "Bazaar Delete"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
-    m_logAction = new KAction(this);
-    m_logAction->setIcon(KIcon("format-list-ordered"));
+    m_logAction = new QAction(this);
+    m_logAction->setIcon(QIcon::fromTheme("format-list-ordered"));
     m_logAction->setText(i18nc("@item:inmenu", "Bazaar Log"));
     connect(m_logAction, SIGNAL(triggered()),
             this, SLOT(log()));
@@ -151,7 +142,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
 
     // Clear all entries for this directory including the entries
     // for sub directories
-    QMutableHashIterator<QString, VersionState> it(m_versionInfoHash);
+    QMutableHashIterator<QString, ItemVersion> it(m_versionInfoHash);
     while (it.hasNext()) {
         it.next();
         if (it.key().startsWith(directory) || !it.key().startsWith(baseDir)) {
@@ -181,7 +172,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            VersionState state = NormalVersion;
+            ItemVersion state = NormalVersion;
             QString filePath = QString::fromUtf8(buffer);
 
             // This could probably do with being more consistent
@@ -232,7 +223,7 @@ void FileViewBazaarPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::VersionState FileViewBazaarPlugin::versionState(const KFileItem& item)
+KVersionControlPlugin::ItemVersion FileViewBazaarPlugin::itemVersion(const KFileItem& item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -248,10 +239,10 @@ KVersionControlPlugin::VersionState FileViewBazaarPlugin::versionState(const KFi
     // The item is a directory. Check whether an item listed by 'bzr status' (= m_versionInfoHash)
     // is part of this directory. In this case a local modification should be indicated in the
     // directory already.
-    QHash<QString, VersionState>::const_iterator it = m_versionInfoHash.constBegin();
+    QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
         if (it.key().startsWith(itemUrl)) {
-            const VersionState state = m_versionInfoHash.value(it.key());
+            const ItemVersion state = m_versionInfoHash.value(it.key());
             if (state == LocallyModifiedVersion) {
                 return LocallyModifiedVersion;
             }
@@ -262,7 +253,25 @@ KVersionControlPlugin::VersionState FileViewBazaarPlugin::versionState(const KFi
     return NormalVersion;
 }
 
-QList<QAction*> FileViewBazaarPlugin::contextMenuActions(const KFileItemList& items)
+QList<QAction*> FileViewBazaarPlugin::actions(const KFileItemList &items) const
+{
+    if (items.count() == 1 && items.first().isDir()) {
+        QString directory = items.first().localPath();
+        if (!directory.endsWith(QLatin1Char('/'))) {
+            directory += QLatin1Char('/');
+        }
+
+        if (directory == m_contextDir) {
+            return contextMenuDirectoryActions(directory);
+        } else {
+            return contextMenuFilesActions(items);
+        }
+    } else {
+        return contextMenuFilesActions(items);
+    }
+}
+
+QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemList& items) const
 {
     Q_ASSERT(!items.isEmpty());
     foreach (const KFileItem& item, items) {
@@ -278,7 +287,7 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuActions(const KFileItemList& it
         int versionedCount = 0;
         int editingCount = 0;
         foreach (const KFileItem& item, items) {
-            const VersionState state = versionState(item);
+            const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion) {
                 ++versionedCount;
             }
@@ -318,7 +327,7 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuActions(const KFileItemList& it
     return actions;
 }
 
-QList<QAction*> FileViewBazaarPlugin::contextMenuActions(const QString& directory)
+QList<QAction*> FileViewBazaarPlugin::contextMenuDirectoryActions(const QString& directory) const
 {
     m_contextDir = directory;
     m_contextItems.clear();
@@ -422,7 +431,7 @@ void FileViewBazaarPlugin::slotOperationCompleted(int exitCode, QProcess::ExitSt
         emit errorMessage(m_errorMsg);
     } else if (m_contextItems.isEmpty()) {
         emit operationCompletedMessage(m_operationCompletedMsg);
-        emit versionStatesChanged();
+        emit itemVersionsChanged();
     } else {
         startBazaarCommandProcess();
     }
@@ -491,3 +500,5 @@ void FileViewBazaarPlugin::startBazaarCommandProcess()
     }
     m_process.start(program, arguments);
 }
+
+#include "fileviewbazaarplugin.moc"

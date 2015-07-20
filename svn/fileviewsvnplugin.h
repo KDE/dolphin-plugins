@@ -20,8 +20,8 @@
 #ifndef FILEVIEWSVNPLUGIN_H
 #define FILEVIEWSVNPLUGIN_H
 
-#include <kfileitem.h>
-#include <kversioncontrolplugin2.h>
+#include <Dolphin/KVersionControlPlugin>
+
 #include <QHash>
 #include <QProcess>
 #include <QTemporaryFile>
@@ -29,18 +29,18 @@
 /**
  * @brief Subversion implementation for the KVersionControlPlugin interface.
  */
-class FileViewSvnPlugin : public KVersionControlPlugin2
+class FileViewSvnPlugin : public KVersionControlPlugin
 {
     Q_OBJECT
 
 public:
     FileViewSvnPlugin(QObject* parent, const QList<QVariant>& args);
-    virtual ~FileViewSvnPlugin();
-    virtual QString fileName() const;
-    virtual bool beginRetrieval(const QString& directory);
-    virtual void endRetrieval();
-    virtual ItemVersion itemVersion(const KFileItem& item) const;
-    virtual QList<QAction*> actions(const KFileItemList& items) const;
+    ~FileViewSvnPlugin() override;
+    QString fileName() const override;
+    bool beginRetrieval(const QString& directory) override;
+    void endRetrieval() override;
+    ItemVersion itemVersion(const KFileItem& item) const override;
+    QList<QAction*> actions(const KFileItemList& items) const override;
 
 signals:
     /// Invokes m_showUpdatesAction->setChecked(checked) on the UI thread.
