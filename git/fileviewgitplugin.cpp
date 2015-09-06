@@ -54,40 +54,40 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
 
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
-    m_addAction->setText(i18nc("@action:inmenu", "<application>Git</application> Add"));
+    m_addAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
-    m_removeAction->setText(i18nc("@action:inmenu", "<application>Git</application> Remove"));
+    m_removeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Remove"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
     m_checkoutAction = new QAction(this);
 //     m_checkoutAction->setIcon(QIcon::fromTheme("svn_switch")); does not exist in normal kde SC
-    m_checkoutAction->setText(i18nc("@action:inmenu", "<application>Git</application> Checkout..."));
+    m_checkoutAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Checkout..."));
     connect(m_checkoutAction, SIGNAL(triggered()),
             this, SLOT(checkout()));
 
     m_commitAction = new QAction(this);
     m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
-    m_commitAction->setText(i18nc("@action:inmenu", "<application>Git</application> Commit..."));
+    m_commitAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Commit..."));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
 
     m_tagAction = new QAction(this);
 //     m_tagAction->setIcon(QIcon::fromTheme("svn-commit"));
-    m_tagAction->setText(i18nc("@action:inmenu", "<application>Git</application> Create Tag..."));
+    m_tagAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Create Tag..."));
     connect(m_tagAction, SIGNAL(triggered()),
             this, SLOT(createTag()));
     m_pushAction = new QAction(this);
 //     m_pushAction->setIcon(QIcon::fromTheme("svn-commit"));
-    m_pushAction->setText(i18nc("@action:inmenu", "<application>Git</application> Push..."));
+    m_pushAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Push..."));
     connect(m_pushAction, SIGNAL(triggered()),
             this, SLOT(push()));
     m_pullAction = new QAction(this);
-    m_pullAction->setText(i18nc("@action:inmenu", "<application>Git</application> Pull..."));
+    m_pullAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Pull..."));
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pull()));
 
@@ -345,9 +345,9 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
 void FileViewGitPlugin::addFiles()
 {
     execGitCommand(QLatin1String("add"), QStringList(),
-                   i18nc("@info:status", "Adding files to <application>Git</application> repository..."),
-                   i18nc("@info:status", "Adding files to <application>Git</application> repository failed."),
-                   i18nc("@info:status", "Added files to <application>Git</application> repository."));
+                   xi18nd("@info:status", "Adding files to <application>Git</application> repository..."),
+                   xi18nd("@info:status", "Adding files to <application>Git</application> repository failed."),
+                   xi18nd("@info:status", "Added files to <application>Git</application> repository."));
 }
 
 void FileViewGitPlugin::removeFiles()
@@ -356,9 +356,9 @@ void FileViewGitPlugin::removeFiles()
     arguments << "-r"; //recurse through directories
     arguments << "--force"; //also remove files that have not been committed yet
     execGitCommand(QLatin1String("rm"), arguments,
-                   i18nc("@info:status", "Removing files from <application>Git</application> repository..."),
-                   i18nc("@info:status", "Removing files from <application>Git</application> repository failed."),
-                   i18nc("@info:status", "Removed files from <application>Git</application> repository."));
+                   xi18nd("@info:status", "Removing files from <application>Git</application> repository..."),
+                   xi18nd("@info:status", "Removing files from <application>Git</application> repository failed."),
+                   xi18nd("@info:status", "Removed files from <application>Git</application> repository."));
 
 }
 
@@ -392,17 +392,17 @@ void FileViewGitPlugin::checkout()
             while (process.readLine(buffer, sizeof(buffer)) > 0){
                 const QString currentLine(buffer);
                 if (currentLine.startsWith(QLatin1String("Switched to branch"))) {
-                    completedMessage = i18nc("@info:status", "Switched to branch '%1'", currentBranchName);
+                    completedMessage = xi18nd("@info:status", "Switched to branch '%1'", currentBranchName);
                 }
                 if (currentLine.startsWith(QLatin1String("HEAD is now at"))) {
                     const QString headIdentifier = currentLine.
                         mid(QString("HEAD is now at ").length()).trimmed();
-                    completedMessage = i18nc("@info:status Git HEAD pointer, parameter includes "
+                    completedMessage = xi18nd("@info:status Git HEAD pointer, parameter includes "
                     "short SHA-1 & commit message ", "HEAD is now at %1", headIdentifier);
                 }
                 //special output for checkout -b
                 if (currentLine.startsWith(QLatin1String("Switched to a new branch"))) {
-                    completedMessage = i18nc("@info:status", "Switched to a new branch '%1'", currentBranchName);
+                    completedMessage = xi18nd("@info:status", "Switched to a new branch '%1'", currentBranchName);
                 }
             }
         }
@@ -413,7 +413,7 @@ void FileViewGitPlugin::checkout()
             }
         }
         else {
-            emit errorMessage(i18nc("@info:status", "<application>Git</application> Checkout failed."
+            emit errorMessage(xi18nd("@info:status", "<application>Git</application> Checkout failed."
             " Maybe your working directory is dirty."));
         }
     }
@@ -472,14 +472,14 @@ void FileViewGitPlugin::createTag()
             }
         }
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
-            completedMessage = i18nc("@info:status","Successfully created tag '%1'", dialog.tagName());
+            completedMessage = xi18nd("@info:status","Successfully created tag '%1'", dialog.tagName());
             emit operationCompletedMessage(completedMessage);
         } else {
             //I don't know any other error, but in case one occurs, the user doesn't get FALSE error messages
             emit errorMessage(gotTagAlreadyExistsMessage ?
-                i18nc("@info:status", "<application>Git</application> tag creation failed."
+                xi18nd("@info:status", "<application>Git</application> tag creation failed."
                                       " A tag with the name '%1' already exists.", dialog.tagName()) :
-                i18nc("@info:status", "<application>Git</application> tag creation failed.")
+                xi18nd("@info:status", "<application>Git</application> tag creation failed.")
             );
         }
     }
@@ -491,11 +491,11 @@ void FileViewGitPlugin::push()
     if (dialog.exec() == QDialog::Accepted) {
         m_process.setWorkingDirectory(m_contextDir);
 
-        m_errorMsg = i18nc("@info:status", "Pushing branch %1 to %2:%3 failed.",
+        m_errorMsg = xi18nd("@info:status", "Pushing branch %1 to %2:%3 failed.",
                         dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
-        m_operationCompletedMsg = i18nc("@info:status", "Pushed branch %1 to %2:%3.",
+        m_operationCompletedMsg = xi18nd("@info:status", "Pushed branch %1 to %2:%3.",
                         dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
-        emit infoMessage(i18nc("@info:status", "Pushing branch %1 to %2:%3...",
+        emit infoMessage(xi18nd("@info:status", "Pushing branch %1 to %2:%3...",
                  dialog.localBranch(), dialog.destination(), dialog.remoteBranch()));
 
         m_command = "push";
@@ -512,11 +512,11 @@ void FileViewGitPlugin::pull()
     if (dialog.exec()  == QDialog::Accepted) {
         m_process.setWorkingDirectory(m_contextDir);
 
-        m_errorMsg = i18nc("@info:status", "Pulling branch %1 from %2 failed.",
+        m_errorMsg = xi18nd("@info:status", "Pulling branch %1 from %2 failed.",
                         dialog.remoteBranch(), dialog.source());
-        m_operationCompletedMsg = i18nc("@info:status", "Pulled branch %1 from %2 successfully.",
+        m_operationCompletedMsg = xi18nd("@info:status", "Pulled branch %1 from %2 successfully.",
                         dialog.remoteBranch(), dialog.source());
-        emit infoMessage(i18nc("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
+        emit infoMessage(xi18nd("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
                     dialog.source()));
 
         m_command = "pull";
@@ -569,7 +569,7 @@ QString FileViewGitPlugin::parsePushOutput()
             message = line.trimmed();
         }
         if (line.contains("Everything up-to-date") && message.isNull()) {
-            message = i18nc("@info:status", "Branch is already up-to-date.");
+            message = xi18nd("@info:status", "Branch is already up-to-date.");
         }
     }
     return message;
@@ -581,11 +581,11 @@ QString FileViewGitPlugin::parsePullOutput()
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
         const QString line(buffer);
         if (line.contains("Already up-to-date")) {
-            return i18nc("@info:status", "Branch is already up-to-date.");
+            return xi18nd("@info:status", "Branch is already up-to-date.");
         }
         if (line.contains("CONFLICT")) {
             emit itemVersionsChanged();
-            return i18nc("@info:status", "Merge conflicts occurred. Fix them and commit the result.");
+            return xi18nd("@info:status", "Merge conflicts occurred. Fix them and commit the result.");
         }
     }
     return QString();
