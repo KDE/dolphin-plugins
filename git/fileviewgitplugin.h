@@ -23,6 +23,8 @@
 
 #include <Dolphin/KVersionControlPlugin>
 
+#include <KFileItemList>
+
 #include <QList>
 #include <QHash>
 #include <QProcess>

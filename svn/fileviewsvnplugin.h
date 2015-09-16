@@ -22,6 +22,8 @@
 
 #include <Dolphin/KVersionControlPlugin>
 
+#include <KFileItemList>
+
 #include <QHash>
 #include <QProcess>
 #include <QTemporaryFile>
