@@ -22,11 +22,12 @@
 
 #include <kcombobox.h>
 #include <klocale.h>
-#include <kvbox.h>
+
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QVBoxLayout>
 
 PushDialog::PushDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog)
@@ -36,11 +37,13 @@ PushDialog::PushDialog (QWidget* parent ):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Push"));
 
-    KVBox * vbox = new KVBox(this);
-    this->setMainWidget(vbox);
+    QWidget * boxWidget = new QWidget(this);
+    QVBoxLayout * boxLayout = new QVBoxLayout(boxWidget);
+    this->setMainWidget(boxWidget);
 
     //Destination
-    QGroupBox * destinationGroupBox = new QGroupBox(vbox);
+    QGroupBox * destinationGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(destinationGroupBox);
     destinationGroupBox->setTitle(i18nc("@title:group The remote host", "Destination"));
     QHBoxLayout * destinationHBox = new QHBoxLayout(destinationGroupBox);
     destinationGroupBox->setLayout(destinationHBox);
@@ -52,7 +55,8 @@ PushDialog::PushDialog (QWidget* parent ):
     destinationHBox->addStretch();
 
     //Branches
-    QGroupBox* branchesGroupBox = new QGroupBox(vbox);
+    QGroupBox* branchesGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(branchesGroupBox);
     branchesGroupBox->setTitle(i18nc("@title:group", "Branches"));
     QHBoxLayout * branchesHBox = new QHBoxLayout(branchesGroupBox);
     branchesGroupBox->setLayout(branchesHBox);
@@ -69,7 +73,8 @@ PushDialog::PushDialog (QWidget* parent ):
     m_remoteBranchComboBox = new KComboBox(false, branchesGroupBox);
     branchesHBox->addWidget(m_remoteBranchComboBox);
 
-    QGroupBox* optionsGroupBox = new QGroupBox(vbox);
+    QGroupBox* optionsGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(optionsGroupBox);
     optionsGroupBox->setTitle(i18nc("@title:group", "Options"));
     QHBoxLayout * optionsHBox = new QHBoxLayout(optionsGroupBox);
     optionsGroupBox->setLayout(optionsHBox);

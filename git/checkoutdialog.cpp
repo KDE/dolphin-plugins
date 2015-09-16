@@ -24,12 +24,13 @@
 #include <kdialog.h>
 #include <klineedit.h>
 #include <klocale.h>
-#include <kvbox.h>
+
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QRadioButton>
 #include <QString>
+#include <QVBoxLayout>
 
 CheckoutDialog::CheckoutDialog(QWidget* parent):
     KDialog(parent, Qt::Dialog),
@@ -41,10 +42,12 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Checkout"));
 
-    KVBox * vbox = new KVBox(this);
-    this->setMainWidget(vbox);
+    QWidget *boxWidget = new QWidget(this);
+    QVBoxLayout *boxLayout = new QVBoxLayout(boxWidget);
+    this->setMainWidget(boxWidget);
 
-    m_branchSelectGroupBox = new QGroupBox(vbox);
+    m_branchSelectGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(m_branchSelectGroupBox);
 
     QGridLayout * gridLayout = new QGridLayout(m_branchSelectGroupBox);
     m_branchSelectGroupBox->setLayout(gridLayout);
@@ -63,7 +66,8 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     gridLayout->addWidget(m_tagComboBox,1,1);
 
     //options
-    QGroupBox * optionsGroupBox = new QGroupBox(vbox);
+    QGroupBox * optionsGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(optionsGroupBox);
     optionsGroupBox->setTitle(i18nc("@title:group", "Options"));
 
     QGridLayout * optionsGridLayout = new QGridLayout(optionsGroupBox);

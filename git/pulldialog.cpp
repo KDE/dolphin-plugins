@@ -22,10 +22,11 @@
 
 #include <kcombobox.h>
 #include <klocale.h>
-#include <kvbox.h>
+
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QVBoxLayout>
 
 PullDialog::PullDialog(QWidget* parent):
     KDialog(parent, Qt::Dialog)
@@ -35,10 +36,12 @@ PullDialog::PullDialog(QWidget* parent):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Pull"));
 
-    KVBox * vbox = new KVBox(this);
-    this->setMainWidget(vbox);
+    QWidget * boxWidget = new QWidget(this);
+    QVBoxLayout * boxLayout = new QVBoxLayout(boxWidget);
+    this->setMainWidget(boxWidget);
 
-    QGroupBox * sourceGroupBox = new QGroupBox(vbox);
+    QGroupBox * sourceGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(sourceGroupBox);
     sourceGroupBox->setTitle(i18nc("@title:group The source to pull from", "Source"));
     QHBoxLayout * sourceHBox = new QHBoxLayout(sourceGroupBox);
     sourceGroupBox->setLayout(sourceHBox);

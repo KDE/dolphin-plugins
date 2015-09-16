@@ -25,13 +25,14 @@
 #include <klineedit.h>
 #include <klocale.h>
 #include <ktextedit.h>
-#include <kvbox.h>
+
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QPushButton>
 #include <QTextCodec>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QVBoxLayout>
 
 TagDialog::TagDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog),
@@ -42,10 +43,12 @@ TagDialog::TagDialog (QWidget* parent ):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Create Tag"));
 
-    KVBox* vbox = new KVBox(this);
-    this->setMainWidget(vbox);
+    QWidget* boxWidget = new QWidget(this);
+    QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
+    this->setMainWidget(boxWidget);
 
-    QGroupBox* tagInformationGroupBox = new QGroupBox(vbox);
+    QGroupBox* tagInformationGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(tagInformationGroupBox);
     tagInformationGroupBox->setTitle(i18nc("@title:group", "Tag Information"));
     QVBoxLayout * tagInformationLayout = new QVBoxLayout(tagInformationGroupBox);
     tagInformationGroupBox->setLayout(tagInformationLayout);
@@ -66,7 +69,8 @@ TagDialog::TagDialog (QWidget* parent ):
     m_tagMessageTextEdit->setLineWrapColumnOrWidth(72);
     tagInformationLayout->addWidget(m_tagMessageTextEdit);
 
-    QGroupBox* attachToGroupBox = new QGroupBox(vbox);
+    QGroupBox* attachToGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(attachToGroupBox);
     attachToGroupBox->setTitle(i18nc("@title:group", "Attach to"));
 
     QHBoxLayout* attachToLayout = new QHBoxLayout();

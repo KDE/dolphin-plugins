@@ -24,7 +24,6 @@
 #include <KLocalizedString>
 #include <KRun>
 #include <KShell>
-#include <KVBox>
 #include <KDialog>
 #include <KPluginFactory>
 
@@ -35,6 +34,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTextStream>
+#include <QVBoxLayout>
 
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
 
@@ -301,11 +301,15 @@ void FileViewSvnPlugin::commitFiles()
 {
     KDialog dialog(0, Qt::Dialog);
 
-    KVBox* box = new KVBox(&dialog);
-    new QLabel(i18nc("@label", "Description:"), box);
-    QPlainTextEdit* editor = new QPlainTextEdit(box);
+    QWidget* boxWidget = new QWidget(&dialog);
+    QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
 
-    dialog.setMainWidget(box);
+    boxLayout->addWidget(new QLabel(i18nc("@label", "Description:"),
+                                    boxWidget));
+    QPlainTextEdit* editor = new QPlainTextEdit(boxWidget);
+    boxLayout->addWidget(editor);
+
+    dialog.setMainWidget(boxWidget);
     dialog.setCaption(i18nc("@title:window", "SVN Commit"));
     dialog.setButtons(KDialog::Ok | KDialog::Cancel);
     dialog.setDefaultButton(KDialog::Ok);

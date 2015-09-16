@@ -23,12 +23,12 @@
 
 #include <klocale.h>
 #include <ktextedit.h>
-#include <kvbox.h>
+
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QPushButton>
-#include <QVBoxLayout>
 #include <QTextCodec>
+#include <QVBoxLayout>
 
 CommitDialog::CommitDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog),
@@ -39,10 +39,12 @@ CommitDialog::CommitDialog (QWidget* parent ):
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Commit"));
 
-    KVBox* vbox = new KVBox(this);
-    this->setMainWidget(vbox);
+    QWidget* boxWidget = new QWidget(this);
+    QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
+    this->setMainWidget(boxWidget);
 
-    QGroupBox* messageGroupBox = new QGroupBox(vbox);
+    QGroupBox* messageGroupBox = new QGroupBox(boxWidget);
+    boxLayout->addWidget(messageGroupBox);
     messageGroupBox->setTitle(i18nc("@title:group", "Commit message"));
 
     QVBoxLayout * messageVBox = new QVBoxLayout(messageGroupBox);
