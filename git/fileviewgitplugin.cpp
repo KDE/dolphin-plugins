@@ -149,7 +149,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     m_versionInfoHash.clear();
 
     // ----- find files with special status -----
-    process.start(QLatin1String("git status --porcelain -z --ignored"));
+    process.start(QLatin1String("git status --porcelain -z -u --ignored"));
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
