@@ -623,7 +623,7 @@ void FileViewGitPlugin::startGitCommandProcess()
     if (m_command == "add" && !item.isDir()){
         arguments<< QLatin1String("-f");
     }
-    arguments << item.localPath();
+    arguments << item.url().fileName();
     m_process.start(QLatin1String("git"), arguments);
     // the remaining items of m_contextItems will be executed
     // after the process has finished (see slotOperationFinished())
