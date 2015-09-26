@@ -36,6 +36,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTextCodec>
+#include <QDir>
 
 K_PLUGIN_FACTORY(FileViewGitPluginFactory, registerPlugin<FileViewGitPlugin>();)
 
@@ -271,7 +272,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
     Q_ASSERT(!items.isEmpty());
 
     if (!m_pendingOperation){
-        m_contextDir.clear();
+        m_contextDir = QFileInfo(items.first().localPath()).canonicalPath();
         m_contextItems.clear();
         foreach(const KFileItem& item, items){
             m_contextItems.append(item);
