@@ -31,7 +31,7 @@
 PullDialog::PullDialog(QWidget* parent):
     KDialog(parent, Qt::Dialog)
 {
-    this->setCaption(i18nc("@title:window", "<application>Git</application> Pull"));
+    this->setCaption(xi18nc("@title:window", "<application>Git</application> Pull"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Pull"));

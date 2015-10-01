@@ -37,7 +37,7 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     m_userEditedNewBranchName(false)
 {
     //branch/tag selection
-    this->setCaption(i18nc("@title:window", "<application>Git</application> Checkout"));
+    this->setCaption(xi18nc("@title:window", "<application>Git</application> Checkout"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Checkout"));

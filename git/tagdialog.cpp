@@ -38,7 +38,7 @@ TagDialog::TagDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog),
     m_localCodec(QTextCodec::codecForLocale())
 {
-    this->setCaption(i18nc("@title:window", "<application>Git</application> Create Tag"));
+    this->setCaption(xi18nc("@title:window", "<application>Git</application> Create Tag"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Create Tag"));

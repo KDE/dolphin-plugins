@@ -34,7 +34,7 @@ CommitDialog::CommitDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog),
     m_localCodec(QTextCodec::codecForLocale())
 {
-    this->setCaption(i18nc("@title:window", "<application>Git</application> Commit"));
+    this->setCaption(xi18nc("@title:window", "<application>Git</application> Commit"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Commit"));

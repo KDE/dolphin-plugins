@@ -32,7 +32,7 @@
 PushDialog::PushDialog (QWidget* parent ):
     KDialog (parent, Qt::Dialog)
 {
-    this->setCaption(i18nc("@title:window", "<application>Git</application> Push"));
+    this->setCaption(xi18nc("@title:window", "<application>Git</application> Push"));
     this->setButtons(KDialog::Ok | KDialog::Cancel);
     this->setDefaultButton(KDialog::Ok);
     this->setButtonText(KDialog::Ok, i18nc("@action:button", "Push"));
