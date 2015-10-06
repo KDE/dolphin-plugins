@@ -37,10 +37,6 @@ public:
                   const QModelIndex &index) const;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
-signals:
-
-public slots:
-
 };
 
 #endif // COMMITITEMDELEGATE_H

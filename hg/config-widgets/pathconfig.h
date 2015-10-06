@@ -20,15 +20,15 @@
 #ifndef HGPATH_CONFIG_H
 #define HGPATH_CONFIG_H
 
-#include <QtGui/QWidget>
-#include <QtCore/QMap>
-#include <QtCore/QString>
+#include <QWidget>
+#include <QMap>
+#include <QString>
 
 class QTableWidget;
 class QTableWidgetItem;
-class KPushButton;
-class KAction;
-class KMenu;
+class QPushButton;
+class QAction;
+class QMenu;
 
 /**
  * UI to add, remove and modify paths in repository's hgrc file. Can be used with
@@ -73,14 +73,14 @@ private:
     bool m_newAdd;
     QString m_oldSelValue;
 
-    KPushButton *m_addPathButton;
-    KPushButton *m_deletePathButton;
-    KPushButton *m_modifyPathButton;
+    QPushButton *m_addPathButton;
+    QPushButton *m_deletePathButton;
+    QPushButton *m_modifyPathButton;
 
-    KAction *m_addAction;
-    KAction *m_modifyAction;
-    KAction *m_deleteAction;
-    KMenu *m_contextMenu;
+    QAction *m_addAction;
+    QAction *m_modifyAction;
+    QAction *m_deleteAction;
+    QMenu *m_contextMenu;
 
     QMap<QString, QString> m_remotePathMap;
     QStringList m_removeList;

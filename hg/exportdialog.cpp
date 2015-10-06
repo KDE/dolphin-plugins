@@ -22,27 +22,24 @@
 #include "commitinfowidget.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QListWidget>
-#include <QtCore/QProcess>
-#include <QtCore/QTextCodec>
-#include <klineedit.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QGridLayout>
+#include <QListWidget>
+#include <QProcess>
+#include <QTextCodec>
+#include <QFileDialog>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgExportDialog::HgExportDialog(QWidget *parent) :
-    KDialog(parent, Qt::Dialog)
+    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(i18nc("@title:window",
                 "<application>Hg</application> Export"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Export"));
+    okButton()->setText(xi18nc("@action:button", "Export"));
 
     //
     setupUI();
@@ -50,11 +47,11 @@ HgExportDialog::HgExportDialog(QWidget *parent) :
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->setInitialSize(QSize(settings->exportDialogWidth(),
+    this->resize(QSize(settings->exportDialogWidth(),
                                settings->exportDialogHeight()));
 
     //
-    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
+    connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
 }
 
 void HgExportDialog::setupUI()
@@ -79,12 +76,10 @@ void HgExportDialog::setupUI()
     m_optionGroup->setLayout(optionLayout);
 
     //setup main dialog widget
-    QWidget *widget = new QWidget;
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(mainGroup);
-    layout->addWidget(m_optionGroup);
-    widget->setLayout(layout);
-    setMainWidget(widget);
+    QVBoxLayout *lay = new QVBoxLayout;
+    lay->addWidget(mainGroup);
+    lay->addWidget(m_optionGroup);
+    layout()->insertLayout(0, lay);
 }
 
 void HgExportDialog::loadCommits()
@@ -133,12 +128,12 @@ void HgExportDialog::saveGeometry()
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setExportDialogHeight(this->height());
     settings->setExportDialogWidth(this->width());
-    settings->writeConfig();
+    settings->save();
 }
 
 void HgExportDialog::done(int r)
 {
-    if (r == KDialog::Accepted) {
+    if (r == QDialog::Accepted) {
         QList<QListWidgetItem*> items = m_commitInfoWidget->selectedItems();
         if (items.empty()) {
             KMessageBox::error(this, i18nc("@message:error",
@@ -162,7 +157,7 @@ void HgExportDialog::done(int r)
             args << item->data(Qt::DisplayRole).toString();
         }
 
-        QString directory = KFileDialog::getExistingDirectory();
+        QString directory = QFileDialog::getExistingDirectory(this);
         if (directory.isEmpty()) {
             return;
         }
@@ -175,14 +170,14 @@ void HgExportDialog::done(int r)
 
         HgWrapper *hgw = HgWrapper::instance();
         if (hgw->executeCommandTillFinished(QLatin1String("export"), args)) {
-            KDialog::done(r);
+            QDialog::done(r);
         }
         else {
             KMessageBox::error(this, hgw->readAllStandardError());
         }
     }
     else {
-        KDialog::done(r);
+        QDialog::done(r);
     }
 }
 

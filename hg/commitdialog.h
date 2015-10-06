@@ -22,14 +22,15 @@
 
 #include "statuslist.h"
 
-#include <QtCore/QString>
-#include <kdialog.h>
+#include <QString>
+#include "dialogbase.h"
 
 
 class QPlainTextEdit;
-class KAction;
-class KMenu;
+class QAction;
+class QMenu;
 class QLabel;
+class QLineEdit;
 
 namespace KTextEditor {
     class View;
@@ -44,7 +45,7 @@ namespace KTextEditor {
  * commit message, options to change/create/close branch and last 5 commit
  * messages.
  */
-class HgCommitDialog : public KDialog
+class HgCommitDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -79,22 +80,22 @@ private:
     void done(int r);
 
 private:
-    QString m_hgBaseDir;
+    QString                      m_hgBaseDir;
 
-    QPlainTextEdit *m_commitMessage;
-    HgStatusList *m_statusList;
+    QPlainTextEdit              *m_commitMessage;
+    HgStatusList                *m_statusList;
 
-    KTextEditor::View *m_fileDiffView;
-    KTextEditor::Document *m_fileDiffDoc;
+    KTextEditor::View           *m_fileDiffView;
+    KTextEditor::Document       *m_fileDiffDoc;
 
-    KPushButton *m_branchButton;
-    KPushButton *m_copyMessageButton;
+    QPushButton                 *m_branchButton;
+    QPushButton                 *m_copyMessageButton;
 
-    KAction *m_closeBranch;
-    KAction *m_newBranch;
-    KAction *m_useCurrentBranch;
-    KMenu *m_branchMenu;
-    KMenu *m_copyMessageMenu;
+    QAction                     *m_closeBranch;
+    QAction                     *m_newBranch;
+    QAction                     *m_useCurrentBranch;
+    QMenu                       *m_branchMenu;
+    QMenu                       *m_copyMessageMenu;
 
     /** What will commit do with branch. 
      *
@@ -109,7 +110,7 @@ private:
 /**
  * Dialog which asks for the new branch name in commit dialog
  */
-class NewBranchDialog : public KDialog 
+class NewBranchDialog : public QDialog
 {
         Q_OBJECT
 
@@ -121,9 +122,10 @@ class NewBranchDialog : public KDialog
         void slotTextChanged(const QString &text);
 
     private:
-        QLabel *m_errorLabel;
-        KLineEdit *m_branchNameInput;
-        QStringList m_branchList;
+        QLabel            *m_errorLabel;
+        QLineEdit         *m_branchNameInput;
+        QStringList        m_branchList;
+        QPushButton       *m_okButton;
 
 };
 

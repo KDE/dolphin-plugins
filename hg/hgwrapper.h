@@ -21,12 +21,12 @@
 #define HGWRAPPER_H
 
 
-#include <QtCore/QProcess>
-#include <QtCore/QString>
-#include <QtCore/QHash>
-#include <QtCore/QTextCodec>
-#include <kfileitem.h>
-#include <kversioncontrolplugin2.h>
+#include <QProcess>
+#include <QString>
+#include <QHash>
+#include <QTextCodec>
+#include <KFileItem>
+#include <Dolphin/KVersionControlPlugin>
 
 class QTextCodec;
 
@@ -127,7 +127,7 @@ public:
      * @param result A hashmap containing FileName-ItemVersion pairs
      *
      */
-    void getItemVersions(QHash<QString, KVersionControlPlugin2::ItemVersion> &result);
+    void getItemVersions(QHash<QString, KVersionControlPlugin::ItemVersion> &result);
 
     void addFiles(const KFileItemList &fileList);
     void removeFiles(const KFileItemList &fileList);

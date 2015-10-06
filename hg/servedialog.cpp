@@ -22,24 +22,20 @@
 #include "fileviewhgpluginsettings.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QSpinBox>
-#include <QtGui/QTextEdit>
-#include <QtGui/QLabel>
-#include <klocale.h>
-#include <kdebug.h>
-#include <klineedit.h>
-#include <kpushbutton.h>
-#include <kmessagebox.h>
+#include <QSpinBox>
+#include <QTextEdit>
+#include <QLabel>
+#include <QDesktopServices>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgServeDialog::HgServeDialog(QWidget *parent) :
-    KDialog(parent, Qt::Dialog)
+    DialogBase(QDialogButtonBox::NoButton)
 {
+    Q_UNUSED(parent)
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Serve"));
-    this->setButtons(KDialog::None);
 
     //
     m_serverWrapper = HgServeWrapper::instance();
@@ -50,13 +46,14 @@ HgServeDialog::HgServeDialog(QWidget *parent) :
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->setInitialSize(QSize(settings->serveDialogWidth(),
+    this->resize(QSize(settings->serveDialogWidth(),
                                settings->serveDialogHeight()));
 
     // connections
-    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
+    connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
     connect(m_startButton, SIGNAL(clicked()), this, SLOT(slotStart()));
     connect(m_stopButton, SIGNAL(clicked()), this, SLOT(slotStop()));
+    connect(m_browseButton, SIGNAL(clicked()), this, SLOT(slotBrowse()));
     connect(m_serverWrapper, SIGNAL(finished()), 
             this, SLOT(slotUpdateButtons()));
     connect(m_serverWrapper, SIGNAL(started()), 
@@ -78,8 +75,10 @@ void HgServeDialog::setupUI()
     m_portNumber->setMaximum(65535);
     m_portNumber->setValue(8000);
 
-    m_startButton = new KPushButton(i18nc("@label:button", "Start Server"));
-    m_stopButton = new KPushButton(i18nc("@label:button", "Stop Server"));
+    m_startButton = new QPushButton(xi18nc("@label:button", "Start Server"));
+    m_stopButton = new QPushButton(xi18nc("@label:button", "Stop Server"));
+    m_browseButton = new QPushButton(xi18nc("@label:button", "Open in browser"));
+    m_browseButton->setDisabled(true);
 
     m_logEdit = new QTextEdit;
     m_repoPathLabel = new QLabel;
@@ -89,10 +88,12 @@ void HgServeDialog::setupUI()
     QVBoxLayout *buttonLayout = new QVBoxLayout;
     buttonLayout->addWidget(m_startButton);
     buttonLayout->addWidget(m_stopButton);
-    buttonLayout->addStretch();
+    buttonLayout->addStretch(1);
+    buttonLayout->addWidget(m_browseButton);
+    buttonLayout->addStretch(2);
 
     QHBoxLayout *portLayout = new QHBoxLayout;
-    portLayout->addWidget(new QLabel(i18nc("@label", "Port")));
+    portLayout->addWidget(new QLabel(xi18nc("@label", "Port")));
     portLayout->addWidget(m_portNumber);
     portLayout->addStretch();
 
@@ -100,14 +101,12 @@ void HgServeDialog::setupUI()
     midLayout->addWidget(m_logEdit);
     midLayout->addLayout(buttonLayout);
 
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(m_repoPathLabel);
-    layout->addLayout(portLayout);
-    layout->addLayout(midLayout);
+    QVBoxLayout *lay = new QVBoxLayout;
+    lay->addWidget(m_repoPathLabel);
+    lay->addLayout(portLayout);
+    lay->addLayout(midLayout);
 
-    QWidget *widget = new QWidget;
-    widget->setLayout(layout);
-    setMainWidget(widget);
+    layout()->insertLayout(0, lay);
 }
 
 void HgServeDialog::loadConfig()
@@ -137,12 +136,21 @@ void HgServeDialog::slotStart()
 {
     m_serverWrapper->startServer(HgWrapper::instance()->getBaseDir(),
                                  m_portNumber->value());
+    m_browseButton->setDisabled(false);
 }
 
 void HgServeDialog::slotStop()
 {
     m_serverWrapper->stopServer(HgWrapper::instance()->getBaseDir());
+    m_browseButton->setDisabled(true);
 }
+
+void HgServeDialog::slotBrowse()
+{
+    QDesktopServices::openUrl(QUrl(QString("http://localhost:%1").
+        arg(m_portNumber->value())));
+}
+
 
 void HgServeDialog::slotServerError()
 {
@@ -161,7 +169,7 @@ void HgServeDialog::saveGeometry()
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setServeDialogHeight(this->height());
     settings->setServeDialogWidth(this->width());
-    settings->writeConfig();
+    settings->save();
 }
 
 #include "servedialog.moc"

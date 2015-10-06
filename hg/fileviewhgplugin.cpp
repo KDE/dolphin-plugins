@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2011 by Vishesh Yadav <vishesh3y@gmail.com>             *
+ *   Copyright (C) 2015 by Tomasz Bojczuk <seelook@gmail.com>              *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -37,33 +38,31 @@
 #include "backoutdialog.h"
 
 
-#include <QtCore/QTextCodec>
-#include <QtCore/QDir>
-#include <kaction.h>
-#include <kmenu.h>
-#include <kicon.h>
-#include <klocale.h>
-#include <kdebug.h>
-#include <kurl.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kservice.h>
-#include <kmimetypetrader.h>
+#include <QTextCodec>
+#include <QDir>
+#include <QAction>
+#include <QIcon>
+#include <QMenu>
+#include <QDebug>
+#include <KMessageBox>
+#include <QFileDialog>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KService>
+#include <KMimeTypeTrader>
 
+#include <KLocalizedString>
 #include <KPluginFactory>
-#include <KPluginLoader>
+
 K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
-K_EXPORT_PLUGIN(FileViewHgPluginFactory("fileviewhgplugin"))
 
 
 //TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
 //TODO: Show error messages and set their message approproately(hg output)
-//TODO: Use i18nc rather thn i18c throughout plugin
+//TODO: Use xi18nc rather thn i18c throughout plugin
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
-    KVersionControlPlugin2(parent),
+    KVersionControlPlugin(parent),
     m_mainContextMenu(0),
     m_addAction(0),
     m_removeAction(0),
@@ -96,176 +95,180 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
 {
     Q_UNUSED(args);
 
-    m_addAction = new KAction(this);
-    m_addAction->setIcon(KIcon("list-add"));
-    m_addAction->setText(i18nc("@action:inmenu",
+    qRegisterMetaType<QProcess::ProcessError>("QProcess::ProcessError");
+    qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
+    qRegisterMetaType<QProcess::ProcessState>("QProcess::ProcessState");
+
+    m_addAction = new QAction(this);
+    m_addAction->setIcon(QIcon::fromTheme("list-add"));
+    m_addAction->setText(xi18nc("@action:inmenu",
                                "<application>Hg</application> Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
 
-    m_removeAction = new KAction(this);
-    m_removeAction->setIcon(KIcon("list-remove"));
-    m_removeAction->setText(i18nc("@action:inmenu",
+    m_removeAction = new QAction(this);
+    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
+    m_removeAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Remove"));
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
-    m_renameAction = new KAction(this);
-    m_renameAction->setIcon(KIcon("list-rename"));
-    m_renameAction->setText(i18nc("@action:inmenu",
+    m_renameAction = new QAction(this);
+    m_renameAction->setIcon(QIcon::fromTheme("list-rename"));
+    m_renameAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Rename"));
     connect(m_renameAction, SIGNAL(triggered()),
             this, SLOT(renameFile()));
 
-    m_commitAction = new KAction(this);
-    m_commitAction->setIcon(KIcon("svn-commit"));
-    m_commitAction->setText(i18nc("@action:inmenu",
+    m_commitAction = new QAction(this);
+    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
+    m_commitAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Commit"));
     connect(m_commitAction, SIGNAL(triggered()),
             this, SLOT(commit()));
 
-    m_tagAction = new KAction(this);
-    m_tagAction->setIcon(KIcon("svn-tag"));
-    m_tagAction->setText(i18nc("@action:inmenu",
+    m_tagAction = new QAction(this);
+    m_tagAction->setIcon(QIcon::fromTheme("svn-tag"));
+    m_tagAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Tag"));
     connect(m_tagAction, SIGNAL(triggered()),
             this, SLOT(tag()));
 
-    m_branchAction = new KAction(this);
-    m_branchAction->setIcon(KIcon("svn-branch"));
-    m_branchAction->setText(i18nc("@action:inmenu",
+    m_branchAction = new QAction(this);
+    m_branchAction->setIcon(QIcon::fromTheme("svn-branch"));
+    m_branchAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Branch"));
     connect(m_branchAction, SIGNAL(triggered()),
             this, SLOT(branch()));
 
-    m_cloneAction = new KAction(this);
-    m_cloneAction->setIcon(KIcon("hg-clone"));
-    m_cloneAction->setText(i18nc("@action:inmenu",
+    m_cloneAction = new QAction(this);
+    m_cloneAction->setIcon(QIcon::fromTheme("hg-clone"));
+    m_cloneAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Clone"));
     connect(m_cloneAction, SIGNAL(triggered()),
             this, SLOT(clone()));
 
-    m_createAction = new KAction(this);
-    m_createAction->setIcon(KIcon("hg-create"));
-    m_createAction->setText(i18nc("@action:inmenu",
+    m_createAction = new QAction(this);
+    m_createAction->setIcon(QIcon::fromTheme("hg-create"));
+    m_createAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Init"));
     connect(m_createAction, SIGNAL(triggered()),
             this, SLOT(create()));
 
-    m_updateAction = new KAction(this);
-    m_updateAction->setIcon(KIcon("svn-update"));
-    m_updateAction->setText(i18nc("@action:inmenu",
+    m_updateAction = new QAction(this);
+    m_updateAction->setIcon(QIcon::fromTheme("svn-update"));
+    m_updateAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Update"));
     connect(m_updateAction, SIGNAL(triggered()),
             this, SLOT(update()));
 
-    m_globalConfigAction = new KAction(this);
-    m_globalConfigAction->setIcon(KIcon("hg-config"));
-    m_globalConfigAction->setText(i18nc("@action:inmenu",
+    m_globalConfigAction = new QAction(this);
+    m_globalConfigAction->setIcon(QIcon::fromTheme("hg-config"));
+    m_globalConfigAction->setText(xi18nc("@action:inmenu",
                           "<application>Hg</application> Global Config"));
     connect(m_globalConfigAction, SIGNAL(triggered()),
             this, SLOT(global_config()));
 
-    m_repoConfigAction = new KAction(this);
-    m_repoConfigAction->setIcon(KIcon("hg-config"));
-    m_repoConfigAction->setText(i18nc("@action:inmenu",
+    m_repoConfigAction = new QAction(this);
+    m_repoConfigAction->setIcon(QIcon::fromTheme("hg-config"));
+    m_repoConfigAction->setText(xi18nc("@action:inmenu",
                       "<application>Hg</application> Repository Config"));
     connect(m_repoConfigAction, SIGNAL(triggered()),
             this, SLOT(repo_config()));
 
-    m_pushAction = new KAction(this);
-    m_pushAction->setIcon(KIcon("git-push"));
-    m_pushAction->setText(i18nc("@action:inmenu",
+    m_pushAction = new QAction(this);
+    m_pushAction->setIcon(QIcon::fromTheme("git-push"));
+    m_pushAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Push"));
     connect(m_pushAction, SIGNAL(triggered()),
             this, SLOT(push()));
 
-    m_pullAction = new KAction(this);
-    m_pullAction->setIcon(KIcon("git-pull"));
-    m_pullAction->setText(i18nc("@action:inmenu",
+    m_pullAction = new QAction(this);
+    m_pullAction->setIcon(QIcon::fromTheme("git-pull"));
+    m_pullAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Pull"));
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pull()));
 
-    m_revertAction = new KAction(this);
-    m_revertAction->setIcon(KIcon("hg-revert"));
-    m_revertAction->setText(i18nc("@action:inmenu",
+    m_revertAction = new QAction(this);
+    m_revertAction->setIcon(QIcon::fromTheme("hg-revert"));
+    m_revertAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Revert"));
     connect(m_revertAction, SIGNAL(triggered()),
             this, SLOT(revert()));
 
-    m_revertAllAction = new KAction(this);
-    m_revertAllAction->setIcon(KIcon("hg-revert"));
-    m_revertAllAction->setText(i18nc("@action:inmenu",
+    m_revertAllAction = new QAction(this);
+    m_revertAllAction->setIcon(QIcon::fromTheme("hg-revert"));
+    m_revertAllAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Revert All"));
     connect(m_revertAllAction, SIGNAL(triggered()),
             this, SLOT(revertAll()));
 
-    m_rollbackAction = new KAction(this);
-    m_rollbackAction->setIcon(KIcon("hg-rollback"));
-    m_rollbackAction->setText(i18nc("@action:inmenu",
+    m_rollbackAction = new QAction(this);
+    m_rollbackAction->setIcon(QIcon::fromTheme("hg-rollback"));
+    m_rollbackAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Rollback"));
     connect(m_rollbackAction, SIGNAL(triggered()),
             this, SLOT(rollback()));
 
-    m_mergeAction = new KAction(this);
-    m_mergeAction->setIcon(KIcon("hg-merge"));
-    m_mergeAction->setText(i18nc("@action:inmenu",
+    m_mergeAction = new QAction(this);
+    m_mergeAction->setIcon(QIcon::fromTheme("hg-merge"));
+    m_mergeAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Merge"));
     connect(m_mergeAction, SIGNAL(triggered()),
             this, SLOT(merge()));
 
-    m_bundleAction = new KAction(this);
-    m_bundleAction->setIcon(KIcon("hg-bundle"));
-    m_bundleAction->setText(i18nc("@action:inmenu",
+    m_bundleAction = new QAction(this);
+    m_bundleAction->setIcon(QIcon::fromTheme("hg-bundle"));
+    m_bundleAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Bundle"));
     connect(m_bundleAction, SIGNAL(triggered()),
             this, SLOT(bundle()));
 
-    m_exportAction = new KAction(this);
-    m_exportAction->setIcon(KIcon("hg-export"));
-    m_exportAction->setText(i18nc("@action:inmenu",
+    m_exportAction = new QAction(this);
+    m_exportAction->setIcon(QIcon::fromTheme("hg-export"));
+    m_exportAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Export"));
     connect(m_exportAction, SIGNAL(triggered()),
             this, SLOT(exportChangesets()));
 
-    m_importAction = new KAction(this);
-    m_importAction->setIcon(KIcon("hg-import"));
-    m_importAction->setText(i18nc("@action:inmenu",
+    m_importAction = new QAction(this);
+    m_importAction->setIcon(QIcon::fromTheme("hg-import"));
+    m_importAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Import"));
     connect(m_importAction, SIGNAL(triggered()),
             this, SLOT(importChangesets()));
 
-    m_unbundleAction = new KAction(this);
-    m_unbundleAction->setIcon(KIcon("hg-unbundle"));
-    m_unbundleAction->setText(i18nc("@action:inmenu",
+    m_unbundleAction = new QAction(this);
+    m_unbundleAction->setIcon(QIcon::fromTheme("hg-unbundle"));
+    m_unbundleAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Unbundle"));
     connect(m_unbundleAction, SIGNAL(triggered()),
             this, SLOT(unbundle()));
 
-    m_serveAction = new KAction(this);
-    m_serveAction->setIcon(KIcon("hg-serve"));
-    m_serveAction->setText(i18nc("@action:inmenu",
+    m_serveAction = new QAction(this);
+    m_serveAction->setIcon(QIcon::fromTheme("hg-serve"));
+    m_serveAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Serve"));
     connect(m_serveAction, SIGNAL(triggered()),
             this, SLOT(serve()));
 
-    m_backoutAction = new KAction(this);
-    m_backoutAction->setIcon(KIcon("hg-backout"));
-    m_backoutAction->setText(i18nc("@action:inmenu",
+    m_backoutAction = new QAction(this);
+    m_backoutAction->setIcon(QIcon::fromTheme("hg-backout"));
+    m_backoutAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Backout"));
     connect(m_backoutAction, SIGNAL(triggered()),
             this, SLOT(backout()));
 
-    m_diffAction = new KAction(this);
-    m_diffAction->setIcon(KIcon("hg-diff"));
-    m_diffAction->setText(i18nc("@action:inmenu",
+    m_diffAction = new QAction(this);
+    m_diffAction->setIcon(QIcon::fromTheme("hg-diff"));
+    m_diffAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Diff"));
     connect(m_diffAction, SIGNAL(triggered()),
             this, SLOT(diff()));
 
     /* Submenu to make the main menu less cluttered */
-    m_mainContextMenu = new KMenu;
+    m_mainContextMenu = new QMenu;
     m_mainContextMenu->addAction(m_updateAction);
     m_mainContextMenu->addAction(m_branchAction);
     m_mainContextMenu->addAction(m_tagAction);
@@ -281,9 +284,9 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_mainContextMenu->addAction(m_globalConfigAction);
     m_mainContextMenu->addAction(m_repoConfigAction);
 
-    m_menuAction = new KAction(this);
-    m_menuAction->setIcon(KIcon("hg-main"));
-    m_menuAction->setText(i18nc("@action:inmenu", 
+    m_menuAction = new QAction(this);
+    m_menuAction->setIcon(QIcon::fromTheme("hg-main"));
+    m_menuAction->setText(xi18nc("@action:inmenu",
                                   "<application>Mercurial</application>"));
     m_menuAction->setMenu(m_mainContextMenu);
 }
@@ -336,7 +339,7 @@ void FileViewHgPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin2::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem &item) const
+KVersionControlPlugin::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem &item) const
 {
     //FIXME: When folder is empty or all files within untracked.
     const QString itemUrl = item.localPath();
@@ -364,9 +367,8 @@ KVersionControlPlugin2::ItemVersion FileViewHgPlugin::itemVersion(const KFileIte
             if (fileName == "." || fileName == ".." ) {
                 continue;
             }
-            KUrl tempUrl(dir.absoluteFilePath(fileName));
-            KFileItem tempFileItem(KFileItem::Unknown,
-                    KFileItem::Unknown, tempUrl);
+            QUrl tempUrl(dir.absoluteFilePath(fileName));
+            KFileItem tempFileItem(tempUrl);
             if (itemVersion(tempFileItem) == NormalVersion) {
                return NormalVersion;
           }
@@ -383,7 +385,7 @@ QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
 {
     //TODO: Make it work with universal context menu when imlpemented
     //      in dolphin
-    kDebug() << items.count();
+    qDebug() << items.count();
     if (items.count() == 1 && items.first().isDir()) {
         return directoryContextMenu(m_currentDir);
     }
@@ -480,33 +482,34 @@ QList<QAction*> FileViewHgPlugin::directoryContextMenu(const QString &directory)
 void FileViewHgPlugin::addFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
-    QString infoMsg = i18nc("@info:status",
+    QString infoMsg = xi18nc("@info:status",
          "Adding files to <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
          "Adding files to <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
          "Added files to <application>Hg</application> repository.");
 
     emit infoMessage(infoMsg);
     m_hgWrapper->addFiles(m_contextItems);
+    emit itemVersionsChanged();
 }
 
 void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
 
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
                     "Would you like to remove selected files "
                     "from the repository?"));
     if (answer == KMessageBox::No) {
         return;
     }
 
-    QString infoMsg = i18nc("@info:status",
+    QString infoMsg = xi18nc("@info:status",
          "Removing files from <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
          "Removing files from <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
          "Removed files from <application>Hg</application> repository.");
 
     emit infoMessage(infoMsg);
@@ -518,11 +521,11 @@ void FileViewHgPlugin::renameFile()
 {
     Q_ASSERT(m_contextItems.size() == 1);
 
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
         "Renaming of file in <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
         "Renamed file in <application>Hg</application> repository successfully.");
-    emit infoMessage(i18nc("@info:status",
+    emit infoMessage(xi18nc("@info:status",
         "Renaming file in <application>Hg</application> repository."));
 
     HgRenameDialog dialog(m_contextItems.first());
@@ -534,15 +537,15 @@ void FileViewHgPlugin::renameFile()
 void FileViewHgPlugin::commit()
 {
     if (m_hgWrapper->isWorkingDirectoryClean()) {
-        KMessageBox::information(0, i18nc("@message", "No changes for commit!"));
+        KMessageBox::information(0, xi18nc("@message", "No changes for commit!"));
         return;
     }
     //FIXME: Disable emitting of status messages when executing sub tasks.
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
             "Commit to <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
             "Committed to <application>Hg</application> repository.");
-    emit infoMessage(i18nc("@info:status",
+    emit infoMessage(xi18nc("@info:status",
             "Commit <application>Hg</application> repository."));
 
     HgCommitDialog dialog;
@@ -553,11 +556,11 @@ void FileViewHgPlugin::commit()
 
 void FileViewHgPlugin::tag()
 {
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
            "Tag operation in <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository is successful.");
-    emit infoMessage(i18nc("@info:status",
+    emit infoMessage(xi18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository."));
 
     HgTagDialog dialog;
@@ -566,11 +569,11 @@ void FileViewHgPlugin::tag()
 
 void FileViewHgPlugin::update()
 {
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
            "Update of <application>Hg</application> working directory failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
            "Update of <application>Hg</application> working directory is successful.");
-    emit infoMessage(i18nc("@info:status",
+    emit infoMessage(xi18nc("@info:status",
            "Updating <application>Hg</application> working directory."));
 
     HgUpdateDialog dialog;
@@ -579,11 +582,11 @@ void FileViewHgPlugin::update()
 
 void FileViewHgPlugin::branch()
 {
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
            "Branch operation on <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
            "Branch operation on <application>Hg</application> repository completed successfully.");
-    emit infoMessage(i18nc("@info:status",
+    emit infoMessage(xi18nc("@info:status",
            "Branch operation on <application>Hg</application> repository."));
 
     HgBranchDialog dialog;
@@ -649,7 +652,7 @@ void FileViewHgPlugin::bundle()
 void FileViewHgPlugin::unbundle()
 {
     clearMessages();
-    QString bundle = KFileDialog::getOpenFileName();
+    QString bundle = QFileDialog::getOpenFileName();
     if (bundle.isEmpty()) {
         return;
     }
@@ -680,18 +683,18 @@ void FileViewHgPlugin::exportChangesets()
 void FileViewHgPlugin::revert()
 {
     clearMessages();
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
                     "Would you like to revert changes "
                     "made to selected files?"));
     if (answer == KMessageBox::No) {
         return;
     }
 
-    QString infoMsg = i18nc("@info:status",
+    QString infoMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository completed successfully.");
 
     emit infoMessage(infoMsg);
@@ -700,18 +703,18 @@ void FileViewHgPlugin::revert()
 
 void FileViewHgPlugin::revertAll()
 {
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
                     "Would you like to revert all changes "
                     "made to current working directory?"));
     if (answer == KMessageBox::No) {
         return;
     }
 
-    QString infoMsg = i18nc("@info:status",
+    QString infoMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository completed successfully.");
 
     emit infoMessage(infoMsg);
@@ -720,11 +723,11 @@ void FileViewHgPlugin::revertAll()
 
 void FileViewHgPlugin::diff()
 {
-    QString infoMsg = i18nc("@info:status",
+    QString infoMsg = xi18nc("@info:status",
          "Generating diff for <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
          "Could not get <application>Hg</application> repository diff.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
          "Generated <application>Hg</application> diff successfully.");
 
     emit infoMessage(infoMsg);
@@ -754,7 +757,7 @@ void FileViewHgPlugin::backout()
     clearMessages();
     m_hgWrapper = HgWrapper::instance();
     if (!m_hgWrapper->isWorkingDirectoryClean()) {
-        KMessageBox::error(0, i18nc("@message:error",
+        KMessageBox::error(0, xi18nc("@message:error",
                       "abort: Uncommitted changes in working directory!"));
         return;
     }
@@ -768,7 +771,7 @@ void FileViewHgPlugin::rollback()
     // execute a dry run rollback first to see if there is anything to
     // be rolled back, or check what will be rolled back
     if (!m_hgWrapper->rollback(true)) {
-        KMessageBox::error(0, i18nc("@info:message", "No rollback "
+        KMessageBox::error(0, xi18nc("@info:message", "No rollback "
                                         "information available!"));
         return;
     }
@@ -778,18 +781,18 @@ void FileViewHgPlugin::rollback()
     lastTransaction = lastTransaction.mid(cutOfFrom);
 
     // ask
-    int answer = KMessageBox::questionYesNo(0, i18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
                     "Would you like to rollback last transaction?")
                         + "\nrevision: " + lastTransaction);
     if (answer == KMessageBox::No) {
         return;
     }
 
-    QString infoMsg = i18nc("@info:status",
+    QString infoMsg = xi18nc("@info:status",
          "Executing Rollback <application>Hg</application> repository...");
-    m_errorMsg = i18nc("@info:status",
+    m_errorMsg = xi18nc("@info:status",
          "Rollback of <application>Hg</application> repository failed.");
-    m_operationCompletedMsg = i18nc("@info:status",
+    m_operationCompletedMsg = xi18nc("@info:status",
          "Rollback of <application>Hg</application> repository completed successfully.");
 
     emit infoMessage(infoMsg);
@@ -806,7 +809,7 @@ void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus
     else {
         m_contextItems.clear();
         emit operationCompletedMessage(m_operationCompletedMsg);
-        emit versionStatesChanged();
+        emit itemVersionsChanged();
     }
 }
 
@@ -824,9 +827,8 @@ void FileViewHgPlugin::clearMessages() const
 
 QString FileViewHgPlugin::visualDiffExecPath()
 {
-    KUrl url = KUrl::fromPath(QDir::homePath());
-    url.addPath(".dolphin-hg");
-    KConfig config(url.path(), KConfig::SimpleConfig);
+    KConfig config("dolphin-hg", KConfig::SimpleConfig,
+                           QStandardPaths::GenericConfigLocation);
 
     KConfigGroup group(&config, QLatin1String("diff"));
     QString result = group.readEntry(QLatin1String("exec"), QString()).trimmed();

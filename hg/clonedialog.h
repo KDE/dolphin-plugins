@@ -20,11 +20,11 @@
 #ifndef HGCLONEDILAOG_H
 #define HGCLONEDILAOG_H
 
-#include <QtCore/QString>
-#include <QtCore/QProcess>
-#include <kdialog.h>
+#include <QString>
+#include <QProcess>
+#include "dialogbase.h"
 
-class KLineEdit;
+class QLineEdit;
 class KPushButton;
 class KTextEdit;
 class QStackedLayout;
@@ -36,7 +36,7 @@ class QCheckBox;
 /**
  * Implements dialog to clone repository.
  */
-class HgCloneDialog : public KDialog
+class HgCloneDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -64,12 +64,12 @@ private slots:
 
 private:
     void done(int r);
-    void browseDirectory(KLineEdit *dest);
+    void browseDirectory(QLineEdit *dest);
     void appendOptionArguments(QStringList &args);
 
 private:
-    KLineEdit *m_source;
-    KLineEdit *m_destination;
+    QLineEdit *m_source;
+    QLineEdit *m_destination;
     KPushButton *m_browse_dest;
     KPushButton *m_browse_source;
     KTextEdit *m_outputEdit;

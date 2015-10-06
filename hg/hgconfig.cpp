@@ -20,11 +20,10 @@
 #include "hgconfig.h"
 #include "hgwrapper.h"
 
-#include <QtCore/QDir>
-#include <kdebug.h>
-#include <kurl.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <QDir>
+#include <QDebug>
+#include <KConfig>
+#include <KConfigGroup>
 
 HgConfig::HgConfig(ConfigType configType) :
     m_configType(configType),
@@ -49,16 +48,12 @@ bool HgConfig::getConfigFilePath()
     switch (m_configType) {
     case RepoConfig:
         {
-            KUrl repoBase = KUrl(HgWrapper::instance()->getBaseDir());
-            repoBase.addPath(QLatin1String(".hg/hgrc"));
-            m_configFilePath = repoBase.path();
+            m_configFilePath = HgWrapper::instance()->getBaseDir() + "/.hg/hgrc";
             break;
         }
     case GlobalConfig:
         {
-            KUrl homeUrl = KUrl(QDir::homePath());
-            homeUrl.addPath(QLatin1String(".hgrc"));
-            m_configFilePath = homeUrl.path();
+            m_configFilePath = QDir::homePath() + "/.hgrc";
             break;
         }
     case TempConfig:

@@ -20,18 +20,17 @@
 #ifndef HGMERGE_H
 #define HGMERGE_H
 
-#include <QtCore/QString>
-#include <kdialog.h>
+#include <QString>
+#include "dialogbase.h"
 
 class KComboBox;
-class KPushButton;
 class QLabel;
 class HgCommitInfoWidget;
 
 /**
  * Implements dialog to perform merge operations
  */
-class HgMergeDialog : public KDialog
+class HgMergeDialog : public DialogBase
 {
     Q_OBJECT
 

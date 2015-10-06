@@ -22,27 +22,28 @@
 
 #include "hgwrapper.h"
 
-#include <kfileitem.h>
-#include <kversioncontrolplugin2.h>
-#include <QtCore/QHash>
-#include <QtCore/QString>
-#include <QtCore/QProcess>
+#include <KFileItem>
+#include <Dolphin/KVersionControlPlugin>
+#include <QHash>
+#include <QString>
+#include <QProcess>
 
-class KAction;
-class KMenu;
+class QAction;
+class QMenu;
 
-class FileViewHgPlugin : public KVersionControlPlugin2
+class FileViewHgPlugin : public KVersionControlPlugin
 {
     Q_OBJECT
 
 public:
     FileViewHgPlugin(QObject *parent, const QList<QVariant> &args);
-    virtual ~FileViewHgPlugin();
-    virtual QString fileName() const;
-    virtual bool beginRetrieval(const QString &directory);
-    virtual void endRetrieval();
-    virtual KVersionControlPlugin2::ItemVersion itemVersion(const KFileItem &item) const;
-    virtual QList<QAction*> actions(const KFileItemList &items) const;
+    ~FileViewHgPlugin() override;
+    QString fileName() const override;
+    bool beginRetrieval(const QString& directory) override;
+    void endRetrieval() override;
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
+    QList<QAction*> actions(const KFileItemList &items) const override;
+
 
 private: 
     /**
@@ -100,34 +101,34 @@ private slots:
 private:
     QHash<QString, ItemVersion> m_versionInfoHash;
 
-    KMenu *m_mainContextMenu;
+    QMenu *m_mainContextMenu;
 
-    KAction *m_menuAction;
-    KAction *m_addAction;
-    KAction *m_removeAction;
-    KAction *m_renameAction;
-    KAction *m_commitAction;
-    KAction *m_branchAction;
-    KAction *m_tagAction;
-    KAction *m_updateAction;
-    KAction *m_cloneAction;
-    KAction *m_createAction;
-    KAction *m_configAction;
-    KAction *m_globalConfigAction;
-    KAction *m_repoConfigAction;
-    KAction *m_pushAction;
-    KAction *m_pullAction;
-    KAction *m_revertAction;
-    KAction *m_revertAllAction;
-    KAction *m_rollbackAction;
-    KAction *m_mergeAction;
-    KAction *m_bundleAction;
-    KAction *m_exportAction;
-    KAction *m_unbundleAction;
-    KAction *m_importAction;
-    KAction *m_diffAction;
-    KAction *m_serveAction;
-    KAction *m_backoutAction;
+    QAction *m_menuAction;
+    QAction *m_addAction;
+    QAction *m_removeAction;
+    QAction *m_renameAction;
+    QAction *m_commitAction;
+    QAction *m_branchAction;
+    QAction *m_tagAction;
+    QAction *m_updateAction;
+    QAction *m_cloneAction;
+    QAction *m_createAction;
+    QAction *m_configAction;
+    QAction *m_globalConfigAction;
+    QAction *m_repoConfigAction;
+    QAction *m_pushAction;
+    QAction *m_pullAction;
+    QAction *m_revertAction;
+    QAction *m_revertAllAction;
+    QAction *m_rollbackAction;
+    QAction *m_mergeAction;
+    QAction *m_bundleAction;
+    QAction *m_exportAction;
+    QAction *m_unbundleAction;
+    QAction *m_importAction;
+    QAction *m_diffAction;
+    QAction *m_serveAction;
+    QAction *m_backoutAction;
 
     mutable KFileItemList m_contextItems;
     mutable QString m_universalCurrentDirectory;

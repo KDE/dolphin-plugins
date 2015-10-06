@@ -20,9 +20,7 @@
 #include "servewrapper.h"
 #include "hgwrapper.h"
 
-#include <QtCore/QTextCodec>
-#include <klocale.h>
-#include <kdebug.h>
+#include <QTextCodec>
 
 HgServeWrapper *HgServeWrapper::m_instance = 0;
 

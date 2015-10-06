@@ -23,44 +23,39 @@
 #include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtCore/QStringList>
-#include <QtCore/QTextCodec>
-#include <QtGui/QHeaderView>
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QTableWidget>
-#include <QtCore/QString>
-#include <ktextedit.h>
-#include <kcombobox.h>
-#include <klocale.h>
-#include <kurl.h>
-#include <kmessagebox.h>
+
+#include <QStringList>
+#include <QTextCodec>
+#include <QHeaderView>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QTableWidget>
+#include <QString>
+#include <KTextEdit>
+#include <KComboBox>
+#include <KLocalizedString>
+#include <KMessageBox>
+
 
 HgPullDialog::HgPullDialog(QWidget *parent):
     HgSyncBaseDialog(HgSyncBaseDialog::PullDialog, parent)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Pull Repository"));
-    this->setButtons(KDialog::Ok | KDialog::Details | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Pull"));
-    this->setButtonText(KDialog::Details, i18nc("@action:button", "Options"));
-
     setup();
+
 }
 
 void HgPullDialog::setOptions()
 {
-    m_optUpdate = new QCheckBox(i18nc("@label:checkbox",
+    m_optUpdate = new QCheckBox(xi18nc("@label:checkbox",
                 "Update to new branch head if changesets were pulled"));
-    m_optInsecure = new QCheckBox(i18nc("@label:checkbox",
+    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox",
                 "Do not verify server certificate"));
-    m_optForce = new QCheckBox(i18nc("@label:checkbox",
+    m_optForce = new QCheckBox(xi18nc("@label:checkbox",
                 "Force Pull"));
-    m_optionGroup = new QGroupBox(i18nc("@label:group",
+    m_optionGroup = new QGroupBox(xi18nc("@label:group",
                 "Options"));
 
     m_options << m_optForce;
@@ -70,7 +65,7 @@ void HgPullDialog::setOptions()
 
 void HgPullDialog::createChangesGroup()
 {
-    m_changesGroup = new QGroupBox(i18nc("@label:group", 
+    m_changesGroup = new QGroupBox(xi18nc("@label:group",
                 "Incoming Changes"));    
     QHBoxLayout *hbox = new QHBoxLayout;
     m_changesList = new QTableWidget;
@@ -155,16 +150,16 @@ void HgPullDialog::readBigSize()
 
 void HgPullDialog::writeBigSize()
 {
-    kDebug() << "Saving geometry";
+    qDebug() << "Saving geometry";
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setPullDialogBigWidth(m_bigSize.width());
     settings->setPullDialogBigHeight(m_bigSize.height());
-    settings->writeConfig();
+    settings->save();
 }
 
 void HgPullDialog::noChangesMessage()
 {
-    KMessageBox::information(this, i18nc("@message:info",
+    KMessageBox::information(this, xi18nc("@message:info",
                 "No incoming changes!"));
 }
 

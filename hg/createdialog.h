@@ -20,16 +20,16 @@
 #ifndef HGCREATEDILAOG_H
 #define HGCREATEDILAOG_H
 
-#include <QtCore/QString>
-#include <kdialog.h>
+#include <QString>
+#include "dialogbase.h"
 
-class KLineEdit;
+class QLineEdit;
 class QLabel;
 
 /**
  * Dialog to initialize new mercurial repository
  */
-class HgCreateDialog : public KDialog
+class HgCreateDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -42,7 +42,7 @@ private:
 
 private:
     QString m_workingDirectory;
-    KLineEdit *m_repoNameEdit;
+    QLineEdit *m_repoNameEdit;
     QLabel *m_directory;
 
 };

@@ -20,17 +20,17 @@
 #ifndef HGTAGDIALOG_H
 #define HGTAGDIALOG_H
 
-#include <QtCore/QString>
-#include <kdialog.h>
+#include <QStringList>
+#include "dialogbase.h"
 
 class KComboBox;
-class KPushButton;
+
 
 /**
  * Dialog to create/delete/list tags and update working directory to revision
  * represented by a specific tag.
  */
-class HgTagDialog : public KDialog
+class HgTagDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -48,9 +48,9 @@ private:
 
 private:
     KComboBox *m_tagComboBox;
-    KPushButton *m_createTag;
-    KPushButton *m_updateTag;
-    KPushButton *m_removeTag;
+    QPushButton *m_createTag;
+    QPushButton *m_updateTag;
+    QPushButton *m_removeTag;
     QStringList m_tagList;
 };
 

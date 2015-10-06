@@ -20,11 +20,11 @@
 #include "pathselector.h"
 #include "hgconfig.h"
 
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <kcombobox.h>
-#include <klineedit.h>
-#include <klocale.h>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QLineEdit>
+#include <KComboBox>
+#include <KLocalizedString>
 
 HgPathSelector::HgPathSelector(QWidget *parent) :
     QWidget(parent)
@@ -43,7 +43,7 @@ void HgPathSelector::setupUI()
 {
     QHBoxLayout *urlLayout = new QHBoxLayout;
     m_selectPathAlias = new KComboBox;
-    m_urlEdit = new KLineEdit;
+    m_urlEdit = new QLineEdit;
     m_urlEdit->setReadOnly(true);
 
     urlLayout->addWidget(m_selectPathAlias);
@@ -70,7 +70,7 @@ void HgPathSelector::reload()
         }
     }
 
-    m_selectPathAlias->addItem(i18nc("@label:combobox", "<edit>"));
+    m_selectPathAlias->addItem(xi18nc("@label:combobox", "edit"));
     slotChangeEditUrl(0);
 }
 

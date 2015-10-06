@@ -20,10 +20,10 @@
 #ifndef HGGENERAL_CONFIG_WIDGET_H
 #define HGGENERAL_CONFIG_WIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 #include "hgconfig.h"
 
-class KLineEdit;
+class QLineEdit;
 class QCheckBox;
 
 /**
@@ -48,9 +48,9 @@ private:
     void setupUI();
 
 private:
-    KLineEdit *m_userEdit;
-    KLineEdit *m_editorEdit;
-    KLineEdit *m_mergeEdit;
+    QLineEdit *m_userEdit;
+    QLineEdit *m_editorEdit;
+    QLineEdit *m_mergeEdit;
     QCheckBox *m_verboseCheck;
 
     HgConfig::ConfigType m_configType;

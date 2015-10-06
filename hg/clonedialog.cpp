@@ -20,36 +20,32 @@
 #include "clonedialog.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtGui/QGroupBox>
-#include <QtGui/QGridLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QFrame>
-#include <QtGui/QStackedLayout>
-#include <QtGui/QApplication>
-#include <QtGui/QCheckBox>
-#include <QtCore/QTextCodec>
-#include <kurl.h>
-#include <klineedit.h>
-#include <kpushbutton.h>
-#include <ktextedit.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <QGroupBox>
+#include <QGridLayout>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QFrame>
+#include <QStackedLayout>
+#include <QApplication>
+#include <QCheckBox>
+#include <QTextCodec>
+#include <QFileDialog>
+#include <QLineEdit>
+#include <KTextEdit>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
-    KDialog(parent, Qt::Dialog),
+    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent),
     m_cloned(false),
     m_terminated(true),
     m_workingDirectory(directory)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Clone"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Clone"));
-    this->enableButtonOk(false);
+    okButton()->setText(xi18nc("@action:button", "Clone"));
+    okButton()->setDisabled(true);
 
 
     //////////////
@@ -58,12 +54,12 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
 
     QGroupBox *urlGroup = new QGroupBox(i18n("URLs"));
     QGridLayout *urlLayout = new QGridLayout;
-    QLabel *sourceLabel = new QLabel(i18nc("@label", "Source"));
-    QLabel *destLabel = new QLabel(i18nc("@lobel", "Destination"));
-    KPushButton *m_browse_dest = new KPushButton(i18nc("@button", "Browse"));
-    KPushButton *m_browse_source = new KPushButton(i18nc("@button", "Browse"));
-    m_source = new KLineEdit;
-    m_destination = new KLineEdit;
+    QLabel *sourceLabel = new QLabel(xi18nc("@label", "Source"));
+    QLabel *destLabel = new QLabel(xi18nc("@lobel", "Destination"));
+    QPushButton *m_browse_dest = new QPushButton(xi18nc("@button", "Browse"));
+    QPushButton *m_browse_source = new QPushButton(xi18nc("@button", "Browse"));
+    m_source = new QLineEdit;
+    m_destination = new QLineEdit;
     urlLayout->addWidget(sourceLabel, 0, 0);
     urlLayout->addWidget(m_source, 0, 1);
     urlLayout->addWidget(m_browse_source, 0, 2);
@@ -101,18 +97,15 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
     m_outputEdit->setFontFamily(QLatin1String("Monospace"));
     m_stackLayout->addWidget(frame);
     m_stackLayout->addWidget(m_outputEdit);
-
-    QFrame *mainFrame = new QFrame;
-    mainFrame->setLayout(m_stackLayout);
     m_stackLayout->setCurrentIndex(0);
 
-    setMainWidget(mainFrame);
+    layout()->insertLayout(0, m_stackLayout);
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->setInitialSize(QSize(settings->cloneDialogWidth(),
+    this->resize(QSize(settings->cloneDialogWidth(),
                                settings->cloneDialogHeight()));
     
-    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
+    connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
     connect(m_source, SIGNAL(textChanged(const QString&)), 
                 this, SLOT(slotUpdateOkButton()));
     connect(m_browse_dest, SIGNAL(clicked()),
@@ -126,9 +119,9 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
                 this, SLOT(slotUpdateCloneOutput()));
 }
 
-void HgCloneDialog::browseDirectory(KLineEdit *dest)
+void HgCloneDialog::browseDirectory(QLineEdit *dest)
 {
-    QString result = KFileDialog::getExistingDirectory();
+    QString result = QFileDialog::getExistingDirectory(this);
     if (result.length() > 0) {
         dest->setText(result);
     }
@@ -146,7 +139,7 @@ void HgCloneDialog::slotBrowseSourceClicked()
 
 void HgCloneDialog::done(int r)
 {
-    if (r == KDialog::Accepted && !m_cloned) {
+    if (r == QDialog::Accepted && !m_cloned) {
         // Will execute 'stdbuf' command to make the output of
         // mercurial command line buffered and enable us to show 
         // output of cloning as soon as new line is available
@@ -165,24 +158,24 @@ void HgCloneDialog::done(int r)
         m_outputEdit->clear();
         m_stackLayout->setCurrentIndex(1);
         QApplication::processEvents();
-        enableButtonOk(false);
+        okButton()->setDisabled(true);
 
         m_process.setWorkingDirectory(m_workingDirectory);
         m_process.start(QLatin1String("stdbuf"), args);
     }
-    else if (r == KDialog::Accepted && m_cloned) {
-        KDialog::done(r);
+    else if (r == QDialog::Accepted && m_cloned) {
+        QDialog::done(r);
     }
     else {
         if (m_process.state() == QProcess::Running) {
             KMessageBox::error(this, i18n("Terminating cloning!"));
-            enableButtonOk(true);
+            okButton()->setDisabled(false);
             m_terminated = true;
             m_process.terminate();
             m_stackLayout->setCurrentIndex(0);
         }
         else {
-            KDialog::done(r);
+            QDialog::done(r);
         }
     }
 }
@@ -201,11 +194,11 @@ void HgCloneDialog::slotCloningFinished(int exitCode, QProcess::ExitStatus exitS
 {
     if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
         m_cloned = true;
-        this->setButtonText(KDialog::Ok, i18nc("@action:button", "Close"));
-        this->enableButtonOk(true);
+        okButton()->setText(xi18nc("@action:button", "Close"));
+        okButton()->setDisabled(false);
     }
     else if (!m_terminated) {
-        KMessageBox::error(this, i18nc("@message:error", 
+        KMessageBox::error(this, xi18nc("@message:error",
                                         "Error Cloning Repository!"));
     }
 }
@@ -231,16 +224,16 @@ void HgCloneDialog::saveGeometry()
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setCloneDialogHeight(this->height());
     settings->setCloneDialogWidth(this->width());
-    settings->writeConfig();
+    settings->save();
 }
 
 void HgCloneDialog::slotUpdateOkButton()
 {
     if (m_source->text().length() > 0) {
-        enableButtonOk(true);
+        okButton()->setDisabled(false);
     }
     else {
-        enableButtonOk(false);
+        okButton()->setDisabled(true);
     }
 }
 

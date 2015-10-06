@@ -32,6 +32,11 @@ set_package_properties(DolphinVcs PROPERTIES
     PURPOSE "Provides the version control plugin interface."
 )
 
+find_package(KF5 ${KF5_MIN_VERSION} OPTIONAL_COMPONENTS
+    TextEditor
+    WidgetsAddons
+)
+
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
@@ -41,8 +46,10 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(svn)
 add_subdirectory(git)
-#add_subdirectory(hg)
 add_subdirectory(bazaar)
 add_subdirectory(dropbox)
+if (KF5TextEditor_FOUND AND KF5WidgetsAddons_FOUND)
+    add_subdirectory(hg)
+endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

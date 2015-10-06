@@ -20,26 +20,19 @@
 #include "tagdialog.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QFrame>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <kpushbutton.h>
-#include <kcombobox.h>
-#include <klocale.h>
-#include <klineedit.h>
-#include <kdebug.h>
-#include <kmessagebox.h>
+#include <QLineEdit>
+#include <KComboBox>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgTagDialog::HgTagDialog(QWidget *parent):
-    KDialog(parent, Qt::Dialog)
+    DialogBase(QDialogButtonBox::NoButton, parent)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Tag"));
-    this->setButtons(KDialog::None);
 
     // UI 
-    QFrame *frame = new QFrame;
     QVBoxLayout *vbox = new QVBoxLayout;
 
     m_tagComboBox = new KComboBox;
@@ -47,9 +40,9 @@ HgTagDialog::HgTagDialog(QWidget *parent):
     vbox->addWidget(m_tagComboBox);
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;
-    m_createTag = new KPushButton(i18n("Create New Tag"));
-    m_removeTag = new KPushButton(i18n("Remove Tag"));
-    m_updateTag = new KPushButton(i18n("Switch Tag"));
+    m_createTag = new QPushButton(i18n("Create New Tag"));
+    m_removeTag = new QPushButton(i18n("Remove Tag"));
+    m_updateTag = new QPushButton(i18n("Switch Tag"));
     buttonLayout->addWidget(m_createTag);
     buttonLayout->addWidget(m_removeTag);
     buttonLayout->addWidget(m_updateTag);
@@ -59,14 +52,11 @@ HgTagDialog::HgTagDialog(QWidget *parent):
     m_updateTag->setEnabled(false);
     m_removeTag->setEnabled(false);
 
-    frame->setLayout(vbox);
     updateInitialDialog();
     slotUpdateDialog(QString());
-    setMainWidget(frame);
+    layout()->insertLayout(0, vbox);
 
     slotUpdateDialog(m_tagComboBox->currentText());
-
-    QLineEdit *m_lineEdit = m_tagComboBox->lineEdit();
     
     // connections
     connect(m_createTag, SIGNAL(clicked()), 
@@ -77,7 +67,7 @@ HgTagDialog::HgTagDialog(QWidget *parent):
             this, SLOT(slotSwitch()));
     connect(m_tagComboBox, SIGNAL(editTextChanged(const QString&)),
             this, SLOT(slotUpdateDialog(const QString&)));
-    connect(m_lineEdit, SIGNAL(textChanged(const QString&)), 
+    connect(m_tagComboBox->lineEdit(), SIGNAL(textChanged(const QString&)),
                 this, SLOT(slotUpdateDialog(const QString&)));
 }
 
@@ -119,7 +109,7 @@ void HgTagDialog::slotSwitch()
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("update"), args, out)) {
         //KMessageBox::information(this, i18n("Updated working directory!"));
-        done(KDialog::Ok);
+        done(QDialog::Accepted);
     }
     else {
         KMessageBox::error(this, i18n("Some error occurred"));
@@ -134,8 +124,8 @@ void HgTagDialog::slotRemoveTag()
     args << QLatin1String("--remove");
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("tag"), args, out)) {
-        //KMessageBox::information(this, i18n("Removed tag successfully!"));
-        done(KDialog::Ok);
+        //KMessageBox::information(this, xi18nc("Removed tag successfully!"));
+        done(QDialog::Accepted);
     }
     else {
         KMessageBox::error(this, i18n("Some error occurred"));
@@ -150,7 +140,7 @@ void HgTagDialog::slotCreateTag()
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("tag"), args, out)) {
         KMessageBox::information(this, i18n("Created tag successfully!"));
-        done(KDialog::Ok);
+        done(QDialog::Accepted);
     }
     else {
         KMessageBox::error(this, i18n("Some error occurred"));

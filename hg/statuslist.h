@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2011 by Vishesh Yadav <vishesh3y@gmail.com>             *
+ *   Copyright (C) 2015 by Tomasz Bojczuk <seelook@gmail.com>              *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -20,10 +21,10 @@
 #ifndef STATUSLIST_H
 #define STATUSLIST_H
 
-#include <QtGui/QGroupBox>
-#include <QtCore/QString>
+#include <QGroupBox>
+#include <QString>
 
-class KLineEdit;
+// class KLineEdit;
 class QTableWidget;
 
 /**
@@ -51,18 +52,18 @@ public:
 
 private slots:
     void reloadStatusTable();
-
-private slots:
     void currentItemChangedSlot();
+    void headerClickedSlot(int index);
 
 signals:
     void itemSelectionChanged(const char status, const QString &fileName);
 
 private:
-    QString m_hgBaseDir;
-
-    QTableWidget *m_statusTable;
+    QString         m_hgBaseDir;
+    QTableWidget   *m_statusTable;
     //KLineEdit *m_filter;
+    bool            m_allWhereChecked; // state of all check boxes
+    bool            m_sortIndex; // true - ascending, false - descending
 };
 
 #endif // STATUSLIST_H

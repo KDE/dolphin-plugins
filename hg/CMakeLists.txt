@@ -1,6 +1,6 @@
 project(fileviewhgplugin)
 
-include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${LIBKONQ_INCLUDE_DIR} ${QIMAGEBLITZ_INCLUDES} )
+add_definitions(-DTRANSLATION_DOMAIN=\"fileviewhgplugin\" -DQT_NO_URL_CAST_FROM_STRING)
 
 set(fileviewhgplugin_SRCS
     fileviewhgplugin.cpp
@@ -28,17 +28,32 @@ set(fileviewhgplugin_SRCS
     servedialog.cpp
     servewrapper.cpp
     backoutdialog.cpp
+    dialogbase.cpp
     config-widgets/generalconfig.cpp
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp
     config-widgets/pluginsettings.cpp
 )
 
-kde4_add_kcfg_files(fileviewhgplugin_SRCS fileviewhgpluginsettings.kcfgc)
-kde4_add_plugin(fileviewhgplugin  ${fileviewhgplugin_SRCS})
-target_link_libraries(fileviewhgplugin ${KDE4_KIO_LIBS} ${LIBKONQ_LIBRARY} ${KDE4_KTEXTEDITOR_LIBS} )
-install(FILES fileviewhgplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+
+kconfig_add_kcfg_files(fileviewhgplugin_SRCS
+    fileviewhgpluginsettings.kcfgc
+)
+
+add_library(fileviewhgplugin MODULE ${fileviewhgplugin_SRCS})
+target_link_libraries(fileviewhgplugin
+    Qt5::Core
+    Qt5::Widgets
+    KF5::KIOCore
+    KF5::I18n
+    KF5::CoreAddons
+    KF5::WidgetsAddons
+    KF5::TextEditor
+    DolphinVcs
+)
+
+install(FILES fileviewhgplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 install(FILES fileviewhgpluginsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
-install(TARGETS fileviewhgplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS fileviewhgplugin DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
 

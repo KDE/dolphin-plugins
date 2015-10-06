@@ -20,11 +20,11 @@
 #ifndef HG_SERVE_WRAPPER_H
 #define HG_SERVE_WRAPPER_H
 
-#include <QtCore/QHash>
-#include <QtCore/QProcess>
-#include <QtCore/QTextCodec>
-#include <QtCore/QString>
-#include <klocale.h>
+#include <QHash>
+#include <QProcess>
+#include <QTextCodec>
+#include <QString>
+#include <KLocalizedString>
 
 class ServerProcessType;
 

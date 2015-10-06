@@ -20,44 +20,41 @@
 #include "renamedialog.h"
 #include "hgwrapper.h"
 
-#include <klocale.h>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QFrame>
-#include <klineedit.h>
-#include <kfileitem.h>
+#include <QGroupBox>
+#include <QGridLayout>
+#include <QLabel>
+#include <QDir>
+#include <QLineEdit>
+#include <KLocalizedString>
+#include <KFileItem>
 
 HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
-    KDialog(parent, Qt::Dialog),
+    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent),
     m_source(source.name()),
-    m_source_dir(source.url().directory())
+    m_source_dir(QDir(source.url().fileName()).dirName()) //FIXME seems to be unused at all, anyway be careful porting to pure KF5
+//     m_source_dir(source.url().directory())
 {
-    this->setCaption(i18nc("@title:window",
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Rename"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Rename"));
 
-    QFrame *frame = new QFrame(this);
-    QGridLayout *mainLayout = new QGridLayout(frame);
+    okButton()->setText(xi18nc("@action:button", "Rename"));
+    okButton()->setIcon(QIcon::fromTheme("list-rename"));
 
-    QLabel *sourceLabel = new QLabel(i18nc("@label:label to source file",
-                "Source "), frame);
+    QGridLayout *mainLayout = new QGridLayout(this);
+
+    QLabel *sourceLabel = new QLabel(xi18nc("@label:label to source file",
+                "Source "), this);
     QLabel *sourceFileLabel = new QLabel("<b>" + m_source + "</b>");
     mainLayout->addWidget(sourceLabel, 0, 0);
     mainLayout->addWidget(sourceFileLabel, 0, 1);
 
     QLabel *destinationLabel 
-        = new QLabel(i18nc("@label:rename", "Rename to "), frame);
-    m_destinationFile = new KLineEdit(m_source, frame);
+        = new QLabel(xi18nc("@label:rename", "Rename to "), this);
+    m_destinationFile = new QLineEdit(m_source, this);
     mainLayout->addWidget(destinationLabel, 1, 0);
     mainLayout->addWidget(m_destinationFile, 1, 1);
 
-    frame->setLayout(mainLayout);
-    setMainWidget(frame);
+    layout()->insertLayout(0, mainLayout);
 
     m_destinationFile->setFocus();
     m_destinationFile->selectAll();
@@ -68,16 +65,16 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
 
 void HgRenameDialog::slotTextChanged(const QString &text)
 {
-    enableButtonOk(text.length() != 0);
+    okButton()->setEnabled(text.length() != 0);
 }
 
 void HgRenameDialog::done(int r)
 {
-    if (r == KDialog::Accepted) {
+    if (r == QDialog::Accepted) {
         HgWrapper *hgi = HgWrapper::instance();
         hgi->renameFile(source(), destination());
     }
-    KDialog::done(r);
+    QDialog::done(r);
 }
 
 QString HgRenameDialog::source() const

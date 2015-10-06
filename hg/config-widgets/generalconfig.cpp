@@ -19,13 +19,12 @@
 
 #include "generalconfig.h"
 
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtCore/QString>
-#include <QtGui/QCheckBox>
-#include <klineedit.h>
-#include <kpushbutton.h>
-#include <klocale.h>
+#include <QGridLayout>
+#include <QLabel>
+#include <QString>
+#include <QCheckBox>
+#include <QLineEdit>
+#include <KLocalizedString>
 
 HgGeneralConfigWidget::HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent):
     QWidget(parent),
@@ -37,14 +36,14 @@ HgGeneralConfigWidget::HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget 
 
 void HgGeneralConfigWidget::setupUI()
 {
-    m_userEdit = new KLineEdit;
-    m_editorEdit = new KLineEdit;
-    m_mergeEdit = new KLineEdit;
-    m_verboseCheck = new QCheckBox(i18nc("@label:checkbox", "Verbose Output"));
+    m_userEdit = new QLineEdit;
+    m_editorEdit = new QLineEdit;
+    m_mergeEdit = new QLineEdit;
+    m_verboseCheck = new QCheckBox(xi18nc("@label:checkbox", "Verbose Output"));
     
-    QLabel *userLabel = new QLabel(i18nc("@label", "Username"));
-    QLabel *editorLabel = new QLabel(i18nc("@label", "Default Editor"));
-    QLabel *mergeLabel = new QLabel(i18nc("@label", "Default Merge Tool"));
+    QLabel *userLabel = new QLabel(xi18nc("@label", "Username"));
+    QLabel *editorLabel = new QLabel(xi18nc("@label", "Default Editor"));
+    QLabel *mergeLabel = new QLabel(xi18nc("@label", "Default Merge Tool"));
 
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addWidget(userLabel, 0, 0);

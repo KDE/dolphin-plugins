@@ -20,18 +20,17 @@
 #ifndef HG_BACKOUT_DIALOG
 #define HG_BACKOUT_DIALOG
 
-#include <kdialog.h>
+#include "dialogbase.h"
 
 class QGroupBox;
 class QCheckBox;
-class KLineEdit;
+class QLineEdit;
 class HgCommitInfoWidget;
-class KPushButton;
 
 /**
  * Implements dialog for Mercurial's backout feature.
  */
-class HgBackoutDialog : public KDialog
+class HgBackoutDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -66,11 +65,11 @@ private:
     QGroupBox *m_mainGroup;
     HgCommitInfoWidget *m_commitInfo;
 
-    KPushButton *m_selectBaseCommitButton;
-    KLineEdit *m_baseRevision;
+    QPushButton *m_selectBaseCommitButton;
+    QLineEdit *m_baseRevision;
 
-    KPushButton *m_selectParentCommitButton;
-    KLineEdit *m_parentRevision;
+    QPushButton *m_selectParentCommitButton;
+    QLineEdit *m_parentRevision;
 
     QCheckBox *m_optMerge;
 };

@@ -41,6 +41,6 @@ Name[uk]=Mercurial
 Name[x-test]=xxMercurialxx
 Name[zh_CN]=Mercurial
 Name[zh_TW]=Mercurial
-X-KDE-ServiceTypes=FileViewVersionControlPlugin,FileViewVersionControlPlugin2
+X-KDE-ServiceTypes=FileViewVersionControlPlugin
 MimeType=text/plain;
 X-KDE-Library=fileviewhgplugin

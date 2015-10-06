@@ -20,12 +20,11 @@
 #ifndef HGEXPORTDIALOG_H
 #define HGEXPORTDIALOG_H
 
-#include <kdialog.h>
+#include "dialogbase.h"
 
 class HgCommitInfoWidget;
 class QCheckBox;
 class QGroupBox;
-class KLineEdit;
 
 //TODO: Some helper for writing patterns
 //
@@ -34,7 +33,7 @@ class KLineEdit;
  * changesets from which the user will select entries and export a series of
  * patch files for each changeset.
  */
-class HgExportDialog : public KDialog
+class HgExportDialog : public DialogBase
 {
     Q_OBJECT
 

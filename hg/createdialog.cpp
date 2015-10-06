@@ -20,25 +20,21 @@
 #include "createdialog.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtGui/QHBoxLayout>
-#include <QtCore/QProcess>
-#include <QtGui/QFrame>
-#include <QtGui/QLabel>
-#include <klocale.h>
-#include <klineedit.h>
-#include <kmessagebox.h>
+#include <QHBoxLayout>
+#include <QProcess>
+#include <QLabel>
+#include <KLocalizedString>
+#include <QLineEdit>
+#include <KMessageBox>
 
 HgCreateDialog::HgCreateDialog(const QString &directory, QWidget *parent):
-    KDialog(parent, Qt::Dialog),
+    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel ,parent),
     m_workingDirectory(directory)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Initialize Repository"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Initialize Repository"));
-    //this->enableButtonOk(false);
+    okButton()->setText(xi18nc("@action:button", "Initialize Repository"));
 
 
     //////////////
@@ -46,21 +42,19 @@ HgCreateDialog::HgCreateDialog(const QString &directory, QWidget *parent):
     //////////////
     
     m_directory = new QLabel("<b>" + m_workingDirectory + "</b>");
-    m_repoNameEdit = new KLineEdit;
+    m_repoNameEdit = new QLineEdit;
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
     mainLayout->addWidget(m_directory);
     mainLayout->addWidget(m_repoNameEdit);
 
-    QFrame *frame = new QFrame;
-    frame->setLayout(mainLayout);
-    setMainWidget(frame);
+    layout()->insertLayout(0, mainLayout);
     m_repoNameEdit->setFocus();
 }
 
 void HgCreateDialog::done(int r)
 {
-    if (r == KDialog::Accepted) {
+    if (r == QDialog::Accepted) {
         QProcess process;
         QStringList args;
         args << QLatin1String("init");
@@ -72,14 +66,14 @@ void HgCreateDialog::done(int r)
         process.waitForFinished();
         
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
-            KDialog::done(r);
+            QDialog::done(r);
         }
         else {
-            KMessageBox::error(this, i18nc("error message", "Error creating repository!"));
+            KMessageBox::error(this, xi18nc("error message", "Error creating repository!"));
         }
     }
     else {
-        KDialog::done(r);
+        QDialog::done(r);
     }
 }
 

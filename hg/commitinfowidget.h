@@ -20,9 +20,9 @@
 #ifndef HGCOMMITINFOWIDGET_H
 #define HGCOMMITINFOWIDGET_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QAbstractItemView>
-#include <QtCore/QList>
+#include <QWidget>
+#include <QAbstractItemView>
+#include <QList>
 
 namespace KTextEditor {
     class View;

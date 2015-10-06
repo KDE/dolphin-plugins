@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2011 by Vishesh Yadav <vishesh3y@gmail.com>             *
+ *   Copyright (C) 2015 by Tomasz Bojczuk <seelook@gmail.com>              *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -20,18 +21,18 @@
 #include "statuslist.h"
 #include "hgwrapper.h"
 
-#include <QtCore/QHash>
-#include <QtCore/QTextCodec>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QTableWidget>
-#include <klineedit.h>
-#include <klocale.h>
-#include <kurl.h>
-#include <kdebug.h>
+#include <QHash>
+#include <QTextCodec>
+#include <QVBoxLayout>
+#include <QHeaderView>
+#include <QTableWidget>
+// #include <klineedit.h>
+#include <KLocalizedString>
 
 HgStatusList::HgStatusList(QWidget *parent):
-    QGroupBox(parent)
+    QGroupBox(parent),
+    m_allWhereChecked(true),
+    m_sortIndex(false)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     //m_filter = new KLineEdit(this);
@@ -57,6 +58,8 @@ HgStatusList::HgStatusList(QWidget *parent):
     connect(m_statusTable,
             SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)),
             this, SLOT(currentItemChangedSlot()));
+    connect(m_statusTable->horizontalHeader(), SIGNAL(sectionClicked(int)),
+            this, SLOT(headerClickedSlot(int)));
 }
 
 void HgStatusList::currentItemChangedSlot()
@@ -74,13 +77,13 @@ void HgStatusList::reloadStatusTable()
     m_statusTable->horizontalHeader()->setStretchLastSection(true);
 
     HgWrapper *hgWrapper = HgWrapper::instance();
-    QHash<QString, KVersionControlPlugin2::ItemVersion> hgVsState;
+    QHash<QString, KVersionControlPlugin::ItemVersion> hgVsState;
     hgWrapper->getItemVersions(hgVsState);
-    QMutableHashIterator<QString, KVersionControlPlugin2::ItemVersion> it(hgVsState);
+    QMutableHashIterator<QString, KVersionControlPlugin::ItemVersion> it(hgVsState);
     int rowCount = 0;
     while (it.hasNext()) {
         it.next();
-        KVersionControlPlugin2::ItemVersion currentStatus = it.value();
+        KVersionControlPlugin::ItemVersion currentStatus = it.value();
         // Get path relative to root directory of repository
         // FIXME: preferred method, but not working :| bad hack below
         // QString currentFile 
@@ -90,8 +93,8 @@ void HgStatusList::reloadStatusTable()
 
         // Temporarily ignoring
         // TODO: Ask to add file if this is checked by user
-        if (currentStatus == KVersionControlPlugin2::UnversionedVersion ||
-                currentStatus == KVersionControlPlugin2::IgnoredVersion) {
+        if (currentStatus == KVersionControlPlugin::UnversionedVersion ||
+                currentStatus == KVersionControlPlugin::IgnoredVersion) {
             continue;
         }
 
@@ -100,35 +103,35 @@ void HgStatusList::reloadStatusTable()
         QTableWidgetItem *fileName = new QTableWidgetItem;
 
         switch (currentStatus) {
-            case KVersionControlPlugin2::AddedVersion:
+            case KVersionControlPlugin::AddedVersion:
                 status->setForeground(Qt::darkCyan);
                 fileName->setForeground(Qt::darkCyan);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("A");
                 break;
-            case KVersionControlPlugin2::LocallyModifiedVersion:
+            case KVersionControlPlugin::LocallyModifiedVersion:
                 status->setForeground(Qt::blue);
                 fileName->setForeground(Qt::blue);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("M");
                 break;
-            case KVersionControlPlugin2::RemovedVersion:
+            case KVersionControlPlugin::RemovedVersion:
                 status->setForeground(Qt::red);
                 fileName->setForeground(Qt::red);
                 check->setCheckState(Qt::Checked);
                 currentStatusString = QLatin1String("R");
                 break;
-            case KVersionControlPlugin2::UnversionedVersion:
+            case KVersionControlPlugin::UnversionedVersion:
                 status->setForeground(Qt::darkMagenta);
                 fileName->setForeground(Qt::darkMagenta);
                 currentStatusString = QLatin1String("?");
                 break;
-            case KVersionControlPlugin2::IgnoredVersion:
+            case KVersionControlPlugin::IgnoredVersion:
                 status->setForeground(Qt::black);
                 fileName->setForeground(Qt::black);
                 currentStatusString = QLatin1String("I");
                 break;
-            case KVersionControlPlugin2::MissingVersion:
+            case KVersionControlPlugin::MissingVersion:
                 status->setForeground(Qt::black);
                 fileName->setForeground(Qt::black);
                 currentStatusString = QLatin1String("!");
@@ -172,6 +175,29 @@ bool HgStatusList::getSelectionForCommit(QStringList &files)
     //nothing is selected
     return false;
 }
+
+void HgStatusList::headerClickedSlot(int index)
+{
+    if (index == 0) { // first column with check boxes
+        m_allWhereChecked = !m_allWhereChecked;
+        Qt::CheckState state = m_allWhereChecked ? Qt::Checked : Qt::Unchecked;
+        for (int row = 0; row < m_statusTable->rowCount(); row++) {
+            m_statusTable->item(row, 0)->setCheckState(state);
+        }
+        m_statusTable->horizontalHeader()->setSortIndicatorShown(false); // it might be set by 2-nd column
+    } else if (index == 2) { // column with file names
+        m_sortIndex = !m_sortIndex;;
+        if (m_sortIndex) {
+            m_statusTable->horizontalHeader()->setSortIndicator(index, Qt::AscendingOrder);
+        }
+        else {
+            m_statusTable->horizontalHeader()->setSortIndicator(index, Qt::DescendingOrder);
+        }
+        m_statusTable->horizontalHeader()->setSortIndicatorShown(true);
+        m_statusTable->sortByColumn(index);
+    }
+}
+
 
 #include "statuslist.moc"
 

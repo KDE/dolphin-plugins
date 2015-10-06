@@ -103,7 +103,7 @@
         </entry>
         <entry name="serveDialogWidth" type="Int">
             <label>Dialog width</label>
-            <default>300</default>
+            <default>500</default>
         </entry>
     </group>
     <group name="BackoutDialogSettings">

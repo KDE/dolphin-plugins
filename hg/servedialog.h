@@ -20,10 +20,9 @@
 #ifndef HG_SERVE_DIALOG
 #define HG_SERVE_DIALOG
 
-#include <kdialog.h>
+#include "dialogbase.h"
 
 class QSpinBox;
-class KPushButton;
 class QTextEdit;
 class QLabel;
 class HgServeWrapper;
@@ -32,7 +31,7 @@ class HgServeWrapper;
  * Implements dialog to Start and Stop Mercurial web server.
  * Several server instances can be handled.
  */
-class HgServeDialog : public KDialog
+class HgServeDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -44,6 +43,7 @@ public:
 public slots:
     void slotStart();
     void slotStop();
+    void slotBrowse(); // opens system defined browser with localhost:m_portNumber->value()
 
 private slots:
     void slotUpdateButtons();
@@ -56,13 +56,14 @@ private slots:
     void appendServerOutput(const QString &repoLocation, const QString &line);
 
 private:
-    QSpinBox *m_portNumber; 
-    KPushButton *m_startButton;
-    KPushButton *m_stopButton;
-    QTextEdit *m_logEdit;
-    QLabel *m_repoPathLabel;
+    QSpinBox          *m_portNumber;
+    QPushButton       *m_startButton;
+    QPushButton       *m_stopButton;
+    QPushButton       *m_browseButton;
+    QTextEdit         *m_logEdit;
+    QLabel            *m_repoPathLabel;
 
-    HgServeWrapper *m_serverWrapper;
+    HgServeWrapper    *m_serverWrapper;
 };
 
 #endif /* HG_SERVE_DIALOG */

@@ -22,41 +22,37 @@
 #include "commititemdelegate.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QListWidget>
-#include <QtCore/QProcess>
-#include <QtCore/QTextCodec>
-#include <QtCore/QFile>
-#include <QtCore/QTextStream>
-#include <klineedit.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <kpushbutton.h>
-#include <kfiledialog.h>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QGridLayout>
+#include <QListWidget>
+#include <QProcess>
+#include <QTextCodec>
+#include <QFile>
+#include <QTextStream>
+#include <QFileDialog>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgImportDialog::HgImportDialog(QWidget *parent) :
-    KDialog(parent, Qt::Dialog)
+    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Import"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Import"));
+    okButton()->setText(xi18nc("@action:button", "Import"));
 
     //
     setupUI();
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->setInitialSize(QSize(settings->importDialogWidth(),
+    this->resize(QSize(settings->importDialogWidth(),
                                settings->importDialogHeight()));
 
     //
-    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
+    connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
     connect(m_addPatches, SIGNAL(clicked()), 
             this, SLOT(slotAddPatches()));
     connect(m_removePatches, SIGNAL(clicked()),
@@ -75,14 +71,14 @@ void HgImportDialog::setupUI()
     mainGroup->setLayout(mainLayout);
 
     // options
-    m_optionGroup = new QGroupBox(i18nc("@label:group", "Options"));
-    m_optNoCommit = new QCheckBox(i18nc("@label", 
+    m_optionGroup = new QGroupBox(xi18nc("@label:group", "Options"));
+    m_optNoCommit = new QCheckBox(xi18nc("@label",
                       "Do not commit, just update the working directory"));
-    m_optForce = new QCheckBox(i18nc("@label", 
+    m_optForce = new QCheckBox(xi18nc("@label",
                       "Skip test for outstanding uncommitted changes"));
-    m_optExact = new QCheckBox(i18nc("@label",
+    m_optExact = new QCheckBox(xi18nc("@label",
                    "Apply patch to the nodes from which it was generated"));
-    m_optBypass = new QCheckBox(i18nc("@label", 
+    m_optBypass = new QCheckBox(xi18nc("@label",
                       "Apply patch without touching working directory"));
 
     QVBoxLayout *optionLayout = new QVBoxLayout;
@@ -94,22 +90,20 @@ void HgImportDialog::setupUI()
 
     // top buttons
     QHBoxLayout *topButtons = new QHBoxLayout;
-    m_addPatches = new KPushButton(i18nc("@label:button",
+    m_addPatches = new QPushButton(xi18nc("@label:button",
                         "Add Patches"));
-    m_removePatches = new KPushButton(i18nc("@label:button",
+    m_removePatches = new QPushButton(xi18nc("@label:button",
                         "Remove Patches"));
     topButtons->addWidget(m_addPatches);
     topButtons->addWidget(m_removePatches);
     topButtons->addStretch();
 
     //setup main dialog widget
-    QWidget *widget = new QWidget;
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addLayout(topButtons);
-    layout->addWidget(mainGroup);
-    layout->addWidget(m_optionGroup);
-    widget->setLayout(layout);
-    setMainWidget(widget);
+    QVBoxLayout *lay = new QVBoxLayout;
+    lay->addLayout(topButtons);
+    lay->addWidget(mainGroup);
+    lay->addWidget(m_optionGroup);
+    layout()->insertLayout(0, lay);
 }
 
 void HgImportDialog::saveGeometry()
@@ -117,12 +111,12 @@ void HgImportDialog::saveGeometry()
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setImportDialogHeight(this->height());
     settings->setImportDialogWidth(this->width());
-    settings->writeConfig();
+    settings->save();
 }
 
 void HgImportDialog::done(int r)
 {
-    if (r == KDialog::Accepted) {
+    if (r == QDialog::Accepted) {
         QStringList args;
         if (m_optForce->checkState() == Qt::Checked) {
             args << QLatin1String("--force");
@@ -147,14 +141,14 @@ void HgImportDialog::done(int r)
 
         HgWrapper *hgw = HgWrapper::instance();
         if (hgw->executeCommandTillFinished(QLatin1String("import"), args)) {
-            KDialog::done(r);
+            QDialog::done(r);
         }
         else {
             KMessageBox::error(this, hgw->readAllStandardError());
         }
     }
     else {
-        KDialog::done(r);
+        QDialog::done(r);
     }
 }
 
@@ -203,7 +197,7 @@ void HgImportDialog::getPatchInfo(const QString &fileName)
 
 void HgImportDialog::slotAddPatches()
 {
-    QStringList patches = KFileDialog::getOpenFileNames();
+    QStringList patches = QFileDialog::getOpenFileNames(this);
     foreach (QString fileName, patches) {
         getPatchInfo(fileName);
     }

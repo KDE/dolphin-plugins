@@ -20,17 +20,17 @@
 #include "pathconfig.h"
 #include "hgconfig.h"
 
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QTableWidget>
-#include <QtGui/QHeaderView>
-#include <QtCore/QEvent>
-#include <kpushbutton.h>
-#include <kaction.h>
-#include <klocale.h>
-#include <kmenu.h>
-#include <kmessagebox.h>
-#include <kdebug.h>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QTableWidget>
+#include <QHeaderView>
+#include <QEvent>
+#include <QPushButton>
+#include <QAction>
+#include <QMenu>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <QDebug>
 
 HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
     QWidget(parent),
@@ -44,25 +44,25 @@ HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
 
 void HgPathConfigWidget::setupContextMenu()
 {
-    m_addAction = new KAction(this);
-    m_addAction->setIcon(KIcon("add"));
-    m_addAction->setText(i18nc("@action:inmenu",
+    m_addAction = new QAction(this);
+    m_addAction->setIcon(QIcon::fromTheme("add"));
+    m_addAction->setText(xi18nc("@action:inmenu",
                                   "Add"));
     connect(m_addAction, SIGNAL(triggered()), this, SLOT(slotAddPath()));
 
-    m_modifyAction = new KAction(this);
-    m_modifyAction->setIcon(KIcon("edit"));
-    m_modifyAction->setText(i18nc("@action:inmenu",
+    m_modifyAction = new QAction(this);
+    m_modifyAction->setIcon(QIcon::fromTheme("edit"));
+    m_modifyAction->setText(xi18nc("@action:inmenu",
                                   "Edit"));
     connect(m_modifyAction, SIGNAL(triggered()), this, SLOT(slotModifyPath()));
 
-    m_deleteAction = new KAction(this);
-    m_deleteAction->setIcon(KIcon("remove"));
-    m_deleteAction->setText(i18nc("@action:inmenu",
+    m_deleteAction = new QAction(this);
+    m_deleteAction->setIcon(QIcon::fromTheme("remove"));
+    m_deleteAction->setText(xi18nc("@action:inmenu",
                                   "Remove"));
     connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(slotDeletePath()));
     
-    m_contextMenu = new KMenu(this);
+    m_contextMenu = new QMenu(this);
     m_contextMenu->addAction(m_addAction);
     m_contextMenu->addAction(m_modifyAction);
     m_contextMenu->addAction(m_deleteAction);
@@ -79,9 +79,9 @@ void HgPathConfigWidget::setupUI()
 {
     // add, remove, modify buttons goes here
     QHBoxLayout *actionsLayout = new QHBoxLayout; 
-    m_addPathButton = new KPushButton(i18nc("@label:button", "Add"));
-    m_modifyPathButton = new KPushButton(i18nc("@label:button", "Edit"));
-    m_deletePathButton = new KPushButton(i18nc("@label:button", "Remove"));
+    m_addPathButton = new QPushButton(xi18nc("@label:button", "Add"));
+    m_modifyPathButton = new QPushButton(xi18nc("@label:button", "Edit"));
+    m_deletePathButton = new QPushButton(xi18nc("@label:button", "Remove"));
 
     actionsLayout->addWidget(m_addPathButton);
     actionsLayout->addWidget(m_modifyPathButton);
@@ -236,7 +236,7 @@ void HgPathConfigWidget::slotCellChanged(int row, int col)
         return;
     }
     else {
-        kDebug() << "bingo";
+        qDebug() << "bingo";
         if (!m_newAdd && col == 0) {
             m_remotePathMap.remove(m_oldSelValue);
             m_removeList << m_oldSelValue;

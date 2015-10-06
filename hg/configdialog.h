@@ -21,7 +21,7 @@
 #define HGCONFIGDILAOG_H
 
 #include "hgconfig.h"
-#include <kpagedialog.h>
+#include <KPageDialog>
 
 class HgGeneralConfigWidget;
 class HgPathConfigWidget;

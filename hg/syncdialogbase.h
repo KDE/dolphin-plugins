@@ -22,20 +22,18 @@
 
 #include "hgwrapper.h"
 
-#include <QtCore/QString>
-#include <QtCore/QProcess>
-#include <QtCore/QSize>
-#include <QtCore/QMap>
-#include <kdialog.h>
+#include <QString>
+#include <QProcess>
+#include <QSize>
+#include <QMap>
+#include "dialogbase.h"
 
 class QLabel;
 class QCheckBox;
 class QGroupBox;
 class QProgressBar;
-class KLineEdit;
-class KTextEdit;
-class KComboBox;
-class KPushButton;
+class QTextEdit;
+class QComboBox;
 class HgPathSelector;
 
 //TODO: Save/Load dialog geometry
@@ -46,7 +44,7 @@ class HgPathSelector;
  * Abstract class which implements common features of Push and Pull dialog.
  * Inherited by HgPushDialog and HgPullDialog.
  */
-class HgSyncBaseDialog : public KDialog
+class HgSyncBaseDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -65,6 +63,9 @@ protected:
     void setup();
     void loadSmallSize();
     void loadBigSize();
+    /** Changes text of @p m_optionsButton to 'Options >>' (true) or 'Options <<' (false) */
+    void switchOptionsButton(bool switchOn);
+
     virtual void setOptions() = 0;
     virtual void createChangesGroup() = 0;
     virtual void parseUpdateChanges(const QString &input) = 0;
@@ -80,30 +81,33 @@ protected slots:
     void slotOperationError();
     void slotUpdateBusy(QProcess::ProcessState state);
     void slotWriteBigSize();
+    void slotOptionsButtonClick();
     virtual void writeBigSize() = 0;
     virtual void readBigSize() = 0;
 
 protected:
-    HgPathSelector *m_pathSelector;
-    QProgressBar *m_statusProg;
-    bool m_haveChanges;
-    bool m_terminated;
-    HgWrapper *m_hgw;
-    DialogType m_dialogType;
+    HgPathSelector          *m_pathSelector;
+    QProgressBar            *m_statusProg;
+    bool                     m_haveChanges;
+    bool                     m_terminated;
+    HgWrapper               *m_hgw;
+    DialogType               m_dialogType;
 
     // Options
-    QList<QCheckBox*> m_options;
-    QGroupBox *m_optionGroup;
+    QList<QCheckBox*>        m_options;
+    QGroupBox               *m_optionGroup;
 
     // geometry
-    QSize m_smallSize;
-    QSize m_bigSize;
+    QSize                    m_smallSize;
+    QSize                    m_bigSize;
 
     // changes
-    KPushButton *m_changesButton;
-    QGroupBox *m_changesGroup;
-    QProcess m_process;
-    QProcess m_main_process; //should I use another process?
+    QPushButton             *m_changesButton;
+    QPushButton             *m_optionsButton;
+    QGroupBox               *m_changesGroup;
+    QProcess                 m_process;
+    QProcess                 m_main_process; //should I use another process?
+
 };
 
 #endif // HGSYNCBASEDIALOG_H

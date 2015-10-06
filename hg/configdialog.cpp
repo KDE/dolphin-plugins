@@ -26,54 +26,52 @@
 #include "config-widgets/ignorewidget.h"
 #include "config-widgets/pluginsettings.h"
 
-#include <QtGui/QWidget>
-#include <klocale.h>
-#include <kdebug.h>
+#include <QWidget>
+#include <QDialogButtonBox>
+#include <KLocalizedString>
+#include <QDebug>
 
 HgConfigDialog::HgConfigDialog(HgConfig::ConfigType type, QWidget *parent):
-    KPageDialog(parent, Qt::Dialog),
+    KPageDialog(parent),
     m_configType(type)
 {
     // dialog properties
     if (m_configType == HgConfig::RepoConfig) {
-        this->setCaption(i18nc("@title:window",     
+        this->setWindowTitle(xi18nc("@title:window",
                     "<application>Hg</application> Repository Configuration"));
     } else  {
-        this->setCaption(i18nc("@title:window",     
+        this->setWindowTitle(xi18nc("@title:window",
                     "<application>Hg</application> Global Configuration"));
     }
-    this->setButtons(KDialog::Ok | KDialog::Apply | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    //this->enableButtonOk(false);
+    this->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel);
 
     setupUI();
     loadGeometry();
 
-    connect(this, SIGNAL(applyClicked()), this, SLOT(saveSettings()));   
-    connect(this, SIGNAL(finished()), this, SLOT(saveGeometry()));
+    connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
 }
 
 void HgConfigDialog::setupUI()
 {
     m_generalConfig = new HgGeneralConfigWidget(m_configType);
-    addPage(m_generalConfig, i18nc("@label:group", "General Settings"));
+    addPage(m_generalConfig, xi18nc("@label:group", "General Settings"));
 
     if (m_configType == HgConfig::RepoConfig) {
         m_pathConfig = new HgPathConfigWidget;
-        addPage(m_pathConfig, i18nc("@label:group", "Repository Paths"));
+        addPage(m_pathConfig, xi18nc("@label:group", "Repository Paths"));
 
         m_ignoreWidget = new HgIgnoreWidget;
-        addPage(m_ignoreWidget, i18nc("@label:group", "Ignored Files"));
+        addPage(m_ignoreWidget, xi18nc("@label:group", "Ignored Files"));
     }
     else if (m_configType == HgConfig::GlobalConfig) {
         m_pluginSetting = new HgPluginSettingsWidget;
-        addPage(m_pluginSetting, i18nc("@label:group", "Plugin Settings"));
+        addPage(m_pluginSetting, xi18nc("@label:group", "Plugin Settings"));
     }
 }
 
 void HgConfigDialog::saveSettings()
 {
-    kDebug() << "Saving Mercurial configuration";
+    qDebug() << "Saving Mercurial configuration";
     m_generalConfig->saveConfig();
     if (m_configType == HgConfig::RepoConfig) {
         m_pathConfig->saveConfig();
@@ -86,19 +84,19 @@ void HgConfigDialog::saveSettings()
 
 void HgConfigDialog::done(int r)
 {
-    if (r == KDialog::Accepted) {
+    if (r == QDialog::Accepted) {
         saveSettings();
-        KDialog::done(r);
+        QDialog::done(r);
     }
     else {
-        KDialog::done(r);
+        QDialog::done(r);
     }
 }
 
 void HgConfigDialog::loadGeometry()
 {
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->setInitialSize(QSize(settings->configDialogWidth(),
+    this->resize(QSize(settings->configDialogWidth(),
                                settings->configDialogHeight()));
 }
 
@@ -107,7 +105,7 @@ void HgConfigDialog::saveGeometry()
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setConfigDialogHeight(this->height());
     settings->setConfigDialogWidth(this->width());
-    settings->writeConfig();
+    settings->save();
 }
 
 #include "configdialog.moc"

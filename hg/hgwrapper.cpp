@@ -19,10 +19,10 @@
 
 #include "hgwrapper.h"
 
-#include <QtGui/QApplication>
-#include <QtCore/QTextCodec>
-#include <kdebug.h>
-#include <kurl.h>
+#include <QApplication>
+#include <QTextCodec>
+#include <QUrl>
+#include <QDebug>
 
 //TODO: Replace start() with executeCommand functions wherever possible.
 //FIXME: Add/Remove/Revert argument length limit. Divide the list.
@@ -69,7 +69,7 @@ void HgWrapper::freeInstance()
 void HgWrapper::slotOperationCompleted(int exitCode, 
                                        QProcess::ExitStatus exitStatus)
 {
-    kDebug() << "'hg' Exit Code: " << exitCode << "  Exit Status: "
+    qDebug() << "'hg' Exit Code: " << exitCode << "  Exit Status: "
         << exitStatus;
     if (m_primaryOperation) {
         emit primaryOperationFinished(exitCode, exitStatus);
@@ -78,7 +78,7 @@ void HgWrapper::slotOperationCompleted(int exitCode,
 
 void HgWrapper::slotOperationError(QProcess::ProcessError error)
 {
-    kDebug() << "Error occurred while executing 'hg' with arguments ";
+    qDebug() << "Error occurred while executing 'hg' with arguments ";
     if (m_primaryOperation) {
         emit primaryOperationError(error);
     }
@@ -107,7 +107,7 @@ void HgWrapper::executeCommand(const QString &hgCommand,
 
     m_primaryOperation = primaryOperation;
     if (m_primaryOperation) {
-        kDebug() << "Primary operation";
+        qDebug() << "Primary operation";
     }
 
     QStringList args;
@@ -327,12 +327,12 @@ QStringList HgWrapper::getBranches()
     return result;
 }
 
-void HgWrapper::getItemVersions(QHash<QString, KVersionControlPlugin2::ItemVersion> &result)
+void HgWrapper::getItemVersions(QHash<QString, KVersionControlPlugin::ItemVersion> &result)
 {
     /*int nTrimOutLeft = m_hgBaseDir.length();
     QString relativePrefix = m_currentDir.right(m_currentDir.length() -
                                                  nTrimOutLeft - 1);
-    kDebug() << m_hgBaseDir << "     " << relativePrefix;*/
+    qDebug() << m_hgBaseDir << "     " << relativePrefix;*/
 
     // Get status of files
     QStringList args;
@@ -351,34 +351,35 @@ void HgWrapper::getItemVersions(QHash<QString, KVersionControlPlugin2::ItemVersi
             const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
-            KVersionControlPlugin2::ItemVersion vs = KVersionControlPlugin2::NormalVersion;
+            KVersionControlPlugin::ItemVersion vs = KVersionControlPlugin::NormalVersion;
             switch (currentStatus) {
                 case 'A':
-                    vs = KVersionControlPlugin2::AddedVersion;
+                    vs = KVersionControlPlugin::AddedVersion;
                     break;
                 case 'M':
-                    vs = KVersionControlPlugin2::LocallyModifiedVersion;
+                    vs = KVersionControlPlugin::LocallyModifiedVersion;
                     break;
                 case '?':
-                    vs = KVersionControlPlugin2::UnversionedVersion;
+                    vs = KVersionControlPlugin::UnversionedVersion;
                     break;
                 case 'R':
-                    vs = KVersionControlPlugin2::RemovedVersion;
+                    vs = KVersionControlPlugin::RemovedVersion;
                     break;
                 case 'I':
-                    vs = KVersionControlPlugin2::IgnoredVersion;
+                    vs = KVersionControlPlugin::IgnoredVersion;
                     break;
                 case 'C':
-                    vs = KVersionControlPlugin2::NormalVersion;
+                    vs = KVersionControlPlugin::NormalVersion;
                     break;
                 case '!':
-                    vs = KVersionControlPlugin2::MissingVersion;
+                    vs = KVersionControlPlugin::MissingVersion;
                     break;
             }
-            if (vs != KVersionControlPlugin2::NormalVersion) {
+            if (vs != KVersionControlPlugin::NormalVersion) {
                 // Get full path to file and insert it to result
-                KUrl url = KUrl::fromPath(m_hgBaseDir);
-                url.addPath(currentFile);
+                QUrl url = QUrl::fromLocalFile(m_hgBaseDir);
+                url = url.adjusted(QUrl::StripTrailingSlash);
+                url.setPath(url.path() + "/" + currentFile);
                 QString filePath = url.path();
                 result.insert(filePath, vs);
             }
@@ -388,7 +389,7 @@ void HgWrapper::getItemVersions(QHash<QString, KVersionControlPlugin2::ItemVersi
 
 void HgWrapper::terminateCurrentProcess()
 {
-    kDebug() << "terminating";
+    qDebug() << "terminating";
     m_process.terminate();
 }
 

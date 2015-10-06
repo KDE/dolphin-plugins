@@ -22,45 +22,39 @@
 #include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QString>
-#include <QtCore/QTextCodec>
-#include <QtGui/QGridLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QTableWidget>
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <ktextedit.h>
-#include <kcombobox.h>
-#include <klocale.h>
-#include <kurl.h>
-#include <kmessagebox.h>
+#include <QStringList>
+#include <QString>
+#include <QTextCodec>
+#include <QGridLayout>
+#include <QHeaderView>
+#include <QTableWidget>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <KTextEdit>
+#include <KComboBox>
+#include <KLocalizedString>
+#include <KMessageBox>
+
 
 HgPushDialog::HgPushDialog(QWidget *parent):
     HgSyncBaseDialog(HgSyncBaseDialog::PushDialog, parent)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Push Repository"));
-    this->setButtons(KDialog::Ok | KDialog::Details | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Push"));
-    this->setButtonText(KDialog::Details, i18nc("@action:button", "Options"));
-
     setup();
+
 }
 
 void HgPushDialog::setOptions()
 {
-    m_optAllowNewBranch = new QCheckBox(i18nc("@label:checkbox",
+    m_optAllowNewBranch = new QCheckBox(xi18nc("@label:checkbox",
                 "Allow pushing a new branch"));
-    m_optInsecure = new QCheckBox(i18nc("@label:checkbox",
+    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox",
                 "Do not verify server certificate"));
-    m_optForce = new QCheckBox(i18nc("@label:checkbox",
+    m_optForce = new QCheckBox(xi18nc("@label:checkbox",
                 "Force Push"));
-    m_optionGroup = new QGroupBox(i18nc("@label:group",
+    m_optionGroup = new QGroupBox(xi18nc("@label:group",
                 "Options"));
 
     m_options << m_optForce;
@@ -70,7 +64,7 @@ void HgPushDialog::setOptions()
 
 void HgPushDialog::createChangesGroup()
 {
-    m_changesGroup = new QGroupBox(i18nc("@label:group", 
+    m_changesGroup = new QGroupBox(xi18nc("@label:group",
                 "Outgoing Changes"));    
     QHBoxLayout *hbox = new QHBoxLayout;
     m_outChangesList = new QTableWidget;
@@ -176,16 +170,16 @@ void HgPushDialog::readBigSize()
 
 void HgPushDialog::writeBigSize()
 {
-    kDebug() << "Saving geometry";
+    qDebug() << "Saving geometry";
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setPushDialogBigWidth(m_bigSize.width());
     settings->setPushDialogBigHeight(m_bigSize.height());
-    settings->writeConfig();
+    settings->save();
 }
 
 void HgPushDialog::noChangesMessage()
 {
-    KMessageBox::information(this, i18nc("@message:info",
+    KMessageBox::information(this, xi18nc("@message:info",
                 "No outgoing changes!"));
 }
 

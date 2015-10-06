@@ -20,11 +20,11 @@
 #ifndef HGPATHSELECTOR_H
 #define HGPATHSELECTOR_H
 
-#include <QtGui/QWidget>
-#include <QtCore/QMap>
+#include <QWidget>
+#include <QMap>
 
 class KComboBox;
-class KLineEdit;
+class QLineEdit;
 
 /**
  * A simple widget which presents a ComboBox to select list of Path aliases
@@ -55,7 +55,7 @@ private slots:
 private:
     QMap<QString, QString> m_pathList;
     KComboBox *m_selectPathAlias;
-    KLineEdit *m_urlEdit;
+    QLineEdit *m_urlEdit;
 };
 
 #endif /* HGPATHSELECTOR_H */

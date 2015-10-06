@@ -20,29 +20,24 @@
 #include "updatedialog.h"
 #include "hgwrapper.h"
 
-#include <QtGui/QLabel>
-#include <QtGui/QGroupBox>
-#include <QtGui/QFrame>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QCheckBox>
-#include <kpushbutton.h>
-#include <kcombobox.h>
-#include <klocale.h>
-#include <klistwidget.h>
-#include <kmessagebox.h>
-#include <kdebug.h>
+#include <QLabel>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QCheckBox>
+#include <KComboBox>
+#include <KLocalizedString>
+#include <KMessageBox>
+
 
 HgUpdateDialog::HgUpdateDialog(QWidget *parent):
-    KDialog(parent, Qt::Dialog)
+    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setCaption(i18nc("@title:window", 
+    this->setWindowTitle(xi18nc("@title:window",
                 "<application>Hg</application> Update"));
-    this->setButtons(KDialog::None);
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Update"));
+
+    this->okButton()->setText(xi18nc("@action:button", "Update"));
 
     // UI 
     QGroupBox *selectGroup = new QGroupBox(i18n("New working directory"));
@@ -64,20 +59,18 @@ HgUpdateDialog::HgUpdateDialog(QWidget *parent):
 
     QGroupBox *optionGroup = new QGroupBox(i18n("Options"));
     QVBoxLayout *optionLayout = new QVBoxLayout;
-    m_discardChanges = new QCheckBox("Discard uncommitted changes");
+    m_discardChanges = new QCheckBox(i18n("Discard uncommitted changes"));
     m_discardChanges->setCheckState(Qt::Unchecked);
     optionLayout->addWidget(m_discardChanges);
     optionGroup->setLayout(optionLayout);
 
-    QFrame *frame = new QFrame;
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(infoGroup);
     mainLayout->addWidget(selectGroup);
     mainLayout->addWidget(optionGroup);
-    frame->setLayout(mainLayout);
 
     slotUpdateDialog(0);
-    setMainWidget(frame);
+    layout()->insertLayout(0, mainLayout);
 
     // connections
     connect(m_selectType, SIGNAL(currentIndexChanged(int)), this,
@@ -121,7 +114,7 @@ void HgUpdateDialog::slotUpdateDialog(int index)
 
 void HgUpdateDialog::done(int r)
 {
-    if (r == KDialog::Accepted) {
+    if (r == QDialog::Accepted) {
         QStringList args;
         // Should we discard uncommitted changes
         if (m_discardChanges->checkState() == Qt::Checked) {
@@ -140,7 +133,7 @@ void HgUpdateDialog::done(int r)
         // execute mercurial command
         HgWrapper *hgw = HgWrapper::instance();
         if (hgw->executeCommandTillFinished(QLatin1String("update"), args)) {
-            KDialog::done(r);
+            QDialog::done(r);
         }
         else {
             KMessageBox::error(this, i18n("Some error occurred! "
@@ -148,7 +141,7 @@ void HgUpdateDialog::done(int r)
         }
     }
     else {
-        KDialog::done(r);
+        QDialog::done(r);
     }
 }
 #include "updatedialog.moc"

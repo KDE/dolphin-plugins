@@ -20,8 +20,8 @@
 #ifndef HGUPDATEDIALOG_H
 #define HGUPDATEDIALOG_H
 
-#include <QtCore/QString>
-#include <kdialog.h>
+#include <QString>
+#include "dialogbase.h"
 
 class KComboBox;
 class QLabel;
@@ -31,7 +31,7 @@ class QCheckBox;
  * Dialog to update working directory to specific revision/changeset/branch/tag.
  * Also shows working directory summary.
  */
-class HgUpdateDialog : public KDialog
+class HgUpdateDialog : public DialogBase
 {
     Q_OBJECT
 

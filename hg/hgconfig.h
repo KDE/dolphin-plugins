@@ -20,9 +20,9 @@
 #ifndef HGCONFIG_H
 #define HGCONFIG_H
 
-#include <QtCore/QString>
-#include <QtCore/QProcess>
-#include <QtCore/QMap>
+#include <QString>
+#include <QProcess>
+#include <QMap>
 
 class KConfig;
 

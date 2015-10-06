@@ -19,8 +19,8 @@
 
 #include "commititemdelegate.h"
 
-#include <QtGui/QPainter>
-#include <QtGui/QFontMetrics>
+#include <QPainter>
+#include <QFontMetrics>
 
 CommitItemDelegate::CommitItemDelegate(QObject *parent) :
     QItemDelegate(parent)

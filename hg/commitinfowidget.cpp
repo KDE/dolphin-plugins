@@ -21,16 +21,15 @@
 #include "commititemdelegate.h"
 #include "hgwrapper.h"
 
-#include <QtCore/QString>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QListWidget>
+#include <QString>
+#include <QHBoxLayout>
+#include <QListWidget>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
 #include <KTextEditor/Editor>
-#include <KTextEditor/EditorChooser>
 #include <KTextEditor/Cursor>
-#include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgCommitInfoWidget::HgCommitInfoWidget(QWidget *parent) :
     QWidget(parent)
@@ -46,7 +45,7 @@ void HgCommitInfoWidget::setupUI()
     m_commitListWidget = new QListWidget;
     m_commitListWidget->setItemDelegate(new CommitItemDelegate);
 
-    KTextEditor::Editor *editor = KTextEditor::EditorChooser::editor();
+    KTextEditor::Editor *editor = KTextEditor::Editor::instance();
     if (!editor) {
         KMessageBox::error(this, 
                 i18n("A KDE text-editor component could not be found;"
@@ -55,6 +54,7 @@ void HgCommitInfoWidget::setupUI()
     }
     m_editorDoc = editor->createDocument(0);
     m_editorView = qobject_cast<KTextEditor::View*>(m_editorDoc->createView(this));
+    m_editorView->setStatusBarEnabled(false);
     m_editorDoc->setReadWrite(false);
 
     QHBoxLayout *layout = new QHBoxLayout;

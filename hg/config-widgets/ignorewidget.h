@@ -20,10 +20,10 @@
 #ifndef HGCONFIG_IGNOREWIDGET_H
 #define HGCONFIG_IGNOREWIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class QListWidget;
-class KPushButton; 
+class QPushButton;
 class QInputDialog;
 
 /**
@@ -52,10 +52,10 @@ private:
 private:
     QListWidget *m_ignoreTable;
     QListWidget *m_untrackedList;
-    KPushButton *m_addFiles;
-    KPushButton *m_addPattern;
-    KPushButton *m_removeEntries;
-    KPushButton *m_editEntry;
+    QPushButton *m_addFiles;
+    QPushButton *m_addPattern;
+    QPushButton *m_removeEntries;
+    QPushButton *m_editEntry;
 };
 
 #endif /* HGCONFIG_IGNOREWIDGET_H */

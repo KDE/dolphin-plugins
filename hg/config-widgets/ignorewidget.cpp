@@ -20,19 +20,18 @@
 #include "ignorewidget.h"
 #include "../hgwrapper.h"
 
-#include <QtGui/QListWidget>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QInputDialog>
-#include <QtCore/QString>
-#include <QtCore/QFile>
-#include <QtCore/QList>
-#include <QtCore/QTextStream>
-#include <kurl.h>
-#include <kpushbutton.h>
-#include <klocale.h>
-#include <kdebug.h>
-#include <kmessagebox.h>
+#include <QListWidget>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QInputDialog>
+#include <QString>
+#include <QFile>
+#include <QList>
+#include <QTextStream>
+#include <QPushButton>
+#include <QUrl>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 HgIgnoreWidget::HgIgnoreWidget(QWidget *parent) :
     QWidget(parent)
@@ -44,10 +43,10 @@ HgIgnoreWidget::HgIgnoreWidget(QWidget *parent) :
 void HgIgnoreWidget::setupUI()
 {
     QVBoxLayout *sideBar = new QVBoxLayout;
-    m_addFiles = new KPushButton(i18nc("@label:button", "Add Files"));
-    m_addPattern = new KPushButton(i18nc("@label:button", "Add Pattern"));
-    m_editEntry = new KPushButton(i18nc("@label:button", "Edit Entry"));
-    m_removeEntries = new KPushButton(i18nc("@label:button", "Remove Entries"));
+    m_addFiles = new QPushButton(xi18nc("@label:button", "Add Files"));
+    m_addPattern = new QPushButton(xi18nc("@label:button", "Add Pattern"));
+    m_editEntry = new QPushButton(xi18nc("@label:button", "Edit Entry"));
+    m_removeEntries = new QPushButton(xi18nc("@label:button", "Remove Entries"));
     sideBar->addWidget(m_addFiles);
     sideBar->addWidget(m_addPattern);
     sideBar->addWidget(m_editEntry);
@@ -89,10 +88,7 @@ void HgIgnoreWidget::setupUntrackedList()
 
 void HgIgnoreWidget::loadConfig()
 {
-    KUrl url(HgWrapper::instance()->getBaseDir());
-    url.addPath(QLatin1String(".hgignore"));
-
-    QFile file(url.path());
+    QFile file(HgWrapper::instance()->getBaseDir() + QLatin1String("/.hgignore"));
     if (!file.open(QFile::ReadOnly)) {
         return;
     }
@@ -112,10 +108,7 @@ void HgIgnoreWidget::loadConfig()
 
 void HgIgnoreWidget::saveConfig()
 {
-    KUrl url(HgWrapper::instance()->getBaseDir());
-    url.addPath(QLatin1String(".hgignore"));
-
-    QFile file(url.path());
+    QFile file(HgWrapper::instance()->getBaseDir() + QLatin1String("/.hgignore"));
     if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
         return;
     }
@@ -143,7 +136,7 @@ void HgIgnoreWidget::slotAddPattern()
 {
     bool ok;
     QString input = QInputDialog::getText(this, 
-                        i18nc("@title:dialog", "Add Pattern"),  
+                        xi18nc("@title:dialog", "Add Pattern"),
                         QString(),
                         QLineEdit::Normal,
                         QString(),
@@ -163,14 +156,14 @@ void HgIgnoreWidget::slotRemoveEntries()
 void HgIgnoreWidget::slotEditEntry()
 {
     if (m_ignoreTable->currentItem() == 0) {
-        KMessageBox::error(this, i18nc("@message:error",
+        KMessageBox::error(this, xi18nc("@message:error",
                     "No entry selected for edit!"));
         return;
     }
 
     bool ok;
     QString input = QInputDialog::getText(this, 
-                        i18nc("@title:dialog", "Edit Pattern"),  
+                        xi18nc("@title:dialog", "Edit Pattern"),
                         QString(),
                         QLineEdit::Normal,
                         m_ignoreTable->currentItem()->text(),

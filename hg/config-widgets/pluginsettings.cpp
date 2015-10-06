@@ -19,18 +19,15 @@
 
 #include "pluginsettings.h"
 #include "hgconfig.h"
-#include <QtCore/QDir>
-#include <QtGui/QLabel>
-#include <QtGui/QGridLayout>
-#include <klineedit.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kfiledialog.h>
-#include <klocale.h>
-#include <kdebug.h>
-#include <kurl.h>
-#include <kpushbutton.h>
-
+#include <QDir>
+#include <QLabel>
+#include <QGridLayout>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QFileDialog>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KLocalizedString>
 
 HgPluginSettingsWidget::HgPluginSettingsWidget(QWidget *parent) :
     QWidget(parent),
@@ -52,10 +49,17 @@ void HgPluginSettingsWidget::saveConfig()
 
 void HgPluginSettingsWidget::loadConfig()
 {
-    KUrl url = KUrl::fromPath(QDir::homePath());
-    url.addPath(".dolphin-hg");
-    m_config = new KConfig(url.path(), KConfig::SimpleConfig);
-    
+    QString oldPath = QDir::homePath() + QLatin1String("/.dolphin-hg");
+    if (QFile::exists(oldPath)) {
+        // Copy old config file into user .config directory
+        QFile::copy(oldPath,
+            QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
+            + QLatin1String("/dolphin-hg"));
+        QFile::remove(oldPath);
+    }
+    m_config = new KConfig("dolphin-hg", KConfig::SimpleConfig,
+                           QStandardPaths::GenericConfigLocation);
+
     KConfigGroup group(m_config, QLatin1String("diff"));
     QString diffExec = group.readEntry(QLatin1String("exec"), QString()).trimmed();
     m_diffProg->setText(diffExec);
@@ -63,9 +67,9 @@ void HgPluginSettingsWidget::loadConfig()
 
 void HgPluginSettingsWidget::setupUI()
 {
-    m_diffProg = new KLineEdit;
-    m_diffBrowseButton = new KPushButton(i18nc("@label", "Browse"));
-    QLabel *diffProgLabel = new QLabel(i18nc("@label", 
+    m_diffProg = new QLineEdit;
+    m_diffBrowseButton = new QPushButton(xi18nc("@label", "Browse"));
+    QLabel *diffProgLabel = new QLabel(xi18nc("@label",
                                 "Visual Diff Executable"));
 
     QGridLayout *layout = new QGridLayout;
@@ -79,7 +83,7 @@ void HgPluginSettingsWidget::setupUI()
 
 void HgPluginSettingsWidget::browse_diff()
 {
-    QString path = KFileDialog::getOpenFileName();
+    QString path = QFileDialog::getOpenFileName();
     if (path.isEmpty()) {
         return;
     }

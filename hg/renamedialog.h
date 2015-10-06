@@ -20,16 +20,17 @@
 #ifndef HGRENAMEDIALOG_H
 #define HGRENAMEDIALOG_H
 
-#include <kdialog.h>
-#include <QtCore/QString>
+#include "dialogbase.h"
+#include <QString>
 
-class KLineEdit;
+class QLineEdit;
 class KFileItem;
+class QPushButton;
 
 /**
  * Dialog to rename files Mercurial way
  */
-class HgRenameDialog : public KDialog
+class HgRenameDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -43,9 +44,9 @@ private slots:
     void slotTextChanged(const QString &text);
 
 private:
-    QString m_source;
-    QString m_source_dir;
-    KLineEdit *m_destinationFile;
+    QString           m_source;
+    QString           m_source_dir;
+    QLineEdit        *m_destinationFile;
 };
 
 #endif // HGRENAMEDIALOG_H

@@ -20,14 +20,13 @@
 #ifndef HGBUNDLEDIALOG_H
 #define HGBUNDLEDIALOG_H
 
-#include <kdialog.h>
+#include "dialogbase.h"
 
 class QGroupBox;
 class QCheckBox;
-class KLineEdit;
+class QLineEdit;
 class HgCommitInfoWidget;
 class HgPathSelector;
-class KPushButton;
 
 /**
  * Dialog which implements bundle feature of Mercurial. Bundle enables
@@ -38,7 +37,7 @@ class KPushButton;
  * remote repository selected.
  *
  */
-class HgBundleDialog : public KDialog
+class HgBundleDialog : public DialogBase
 {
     Q_OBJECT
 
@@ -78,8 +77,8 @@ private:
     QGroupBox *m_mainGroup;
     HgPathSelector *m_pathSelect;
     HgCommitInfoWidget *m_commitInfo;
-    KPushButton *m_selectCommitButton;
-    KLineEdit *m_baseRevision;
+    QPushButton *m_selectCommitButton;
+    QLineEdit *m_baseRevision;
     QCheckBox *m_allChangesets;
 
     //options

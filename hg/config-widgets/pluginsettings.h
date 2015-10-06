@@ -20,12 +20,12 @@
 #ifndef HG_PLUGIN_SETTINGS_WIDGET_H
 #define HG_PLUGIN_SETTINGS_WIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 #include "hgconfig.h"
 
-class KLineEdit;
+class QLineEdit;
 class KConfig;
-class KPushButton;
+class QPushButton;
 
 /**
  * Plugin Specific settings. Not those supposed to be saved in 
@@ -49,9 +49,9 @@ private:
     void setupUI();
 
 private:
-    KLineEdit *m_diffProg;
+    QLineEdit *m_diffProg;
     KConfig *m_config;
-    KPushButton *m_diffBrowseButton;
+    QPushButton *m_diffBrowseButton;
 };
 
 #endif // HG_PLUGIN_SETTINGS_WIDGET_H
