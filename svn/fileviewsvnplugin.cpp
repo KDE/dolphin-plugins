@@ -207,9 +207,10 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
     // The item is a directory. Check whether an item listed by 'svn status' (= m_versionInfoHash)
     // is part of this directory. In this case a local modification should be indicated in the
     // directory already.
+    const QString itemDir = itemUrl + QDir::separator();
     QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
-        if (it.key().startsWith(itemUrl)) {
+        if (it.key().startsWith(itemDir)) {
             const ItemVersion version = m_versionInfoHash.value(it.key());
             if (version == LocallyModifiedVersion) {
                 return LocallyModifiedVersion;

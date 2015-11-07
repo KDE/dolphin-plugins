@@ -239,9 +239,10 @@ KVersionControlPlugin::ItemVersion FileViewBazaarPlugin::itemVersion(const KFile
     // The item is a directory. Check whether an item listed by 'bzr status' (= m_versionInfoHash)
     // is part of this directory. In this case a local modification should be indicated in the
     // directory already.
+    const QString itemDir = itemUrl + QDir::separator();
     QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
-        if (it.key().startsWith(itemUrl)) {
+        if (it.key().startsWith(itemDir)) {
             const ItemVersion state = m_versionInfoHash.value(it.key());
             if (state == LocallyModifiedVersion) {
                 return LocallyModifiedVersion;
