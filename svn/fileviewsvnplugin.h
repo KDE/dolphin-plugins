@@ -53,6 +53,7 @@ private slots:
     void commitFiles();
     void addFiles();
     void removeFiles();
+    void revertFiles();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -89,6 +90,7 @@ private:
     QAction* m_commitAction;
     QAction* m_addAction;
     QAction* m_removeAction;
+    QAction* m_revertAction;
     QAction* m_showUpdatesAction;
 
     QString m_command;

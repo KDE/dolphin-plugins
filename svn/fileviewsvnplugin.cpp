@@ -89,6 +89,12 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     connect(m_removeAction, SIGNAL(triggered()),
             this, SLOT(removeFiles()));
 
+    m_revertAction = new QAction(this);
+    m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertAction->setText(i18nc("@item:inmenu", "SVN Revert"));
+    connect(m_revertAction, SIGNAL(triggered()),
+            this, SLOT(revertFiles()));
+
     m_showUpdatesAction = new QAction(this);
     m_showUpdatesAction->setCheckable(true);
     m_showUpdatesAction->setText(i18nc("@item:inmenu", "Show SVN Updates"));
@@ -261,10 +267,12 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
         }
         m_commitAction->setEnabled(editingCount > 0);
         m_addAction->setEnabled(versionedCount == 0);
+        m_revertAction->setEnabled(editingCount == itemsCount);
         m_removeAction->setEnabled(versionedCount == itemsCount);
     } else {
         m_commitAction->setEnabled(false);
         m_addAction->setEnabled(false);
+        m_revertAction->setEnabled(false);
         m_removeAction->setEnabled(false);
     }
     m_updateAction->setEnabled(noPendingOperation);
@@ -274,6 +282,7 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
     actions.append(m_commitAction);
     actions.append(m_addAction);
     actions.append(m_removeAction);
+    actions.append(m_revertAction);
     actions.append(m_showUpdatesAction);
     return actions;
 }
@@ -360,6 +369,14 @@ void FileViewSvnPlugin::removeFiles()
                    i18nc("@info:status", "Removing files from SVN repository..."),
                    i18nc("@info:status", "Removing of files from SVN repository failed."),
                    i18nc("@info:status", "Removed files from SVN repository."));
+}
+
+void FileViewSvnPlugin::revertFiles()
+{
+    execSvnCommand(QStringLiteral("revert"), QStringList(),
+                   i18nc("@info:status", "Reverting files from SVN repository..."),
+                   i18nc("@info:status", "Reverting of files from SVN repository failed."),
+                   i18nc("@info:status", "Reverted files from SVN repository."));
 }
 
 void FileViewSvnPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
