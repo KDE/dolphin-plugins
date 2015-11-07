@@ -66,16 +66,11 @@ PullDialog::PullDialog(QWidget* parent):
     int currentBranchIndex;
     QStringList branches = gitWrapper->branches(&currentBranchIndex);
 
-    for (int i=0; i < branches.size(); ++i) {
-        if (branches[i].startsWith(QLatin1String("remotes/")) &&
-            branches[i].count(QChar('/')) > 1) {
-            const QStringList sections = branches[i].split('/');
-            QHash<QString,QStringList>::iterator entry = m_remoteBranches.find(sections.at(1));
-            if (entry == m_remoteBranches.end()) {
-                m_remoteBranches.insert(sections.at(1), QStringList() << sections.at(2));
-            } else {
-                entry.value().append(sections.at(2));
-            }
+    foreach (const QString& branch, branches) {
+        if (branch.startsWith(QLatin1String("remotes/"))) {
+            const QString remote = branch.section('/', 1, 1);
+            const QString name = branch.section('/', 2);
+            m_remoteBranches[remote] << name;
         }
     }
     remoteSelectionChanged(m_remoteComboBox->currentText());

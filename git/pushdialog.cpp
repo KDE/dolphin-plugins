@@ -93,24 +93,16 @@ PushDialog::PushDialog (QWidget* parent ):
     int currentBranchIndex;
     QStringList branches = gitWrapper->branches(&currentBranchIndex);
 
-    for (int i=0; i < branches.size(); ++i){
-        if (branches[i].startsWith(QLatin1String("remotes/"))) {
-            const QStringList sections = branches[i].split('/');
-            if (sections.size() > 2) {
-                QHash<QString,QStringList>::iterator entry = m_remoteBranches.find(sections.at(1));
-                if (entry == m_remoteBranches.end()) {
-                    m_remoteBranches.insert(sections.at(1), QStringList() << sections.at(2));
-                } else {
-                    entry.value().append(sections.at(2));
-                }
-            }
+    foreach (const QString& branch, branches) {
+        if (branch.startsWith(QLatin1String("remotes/"))) {
+            const QString remote = branch.section('/', 1, 1);
+            const QString name = branch.section('/', 2);
+            m_remoteBranches[remote] << name;
         } else {
-            m_localBranchComboBox->addItem(branches[i]);
-            if (i == currentBranchIndex) {
-                 m_localBranchComboBox->setCurrentIndex(m_localBranchComboBox->count()-1);
-             }
+            m_localBranchComboBox->addItem(branch);
         }
     }
+    m_localBranchComboBox->setCurrentText(branches.at(currentBranchIndex));
     remoteSelectionChanged(m_remoteComboBox->currentText());
 
     //Signals
