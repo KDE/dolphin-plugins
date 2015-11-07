@@ -229,11 +229,7 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
 QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 {
     if (items.count() == 1 && items.first().isDir()) {
-        QString directory = items.first().localPath();
-        if (!directory.endsWith(QLatin1Char('/'))) {
-            directory += QLatin1Char('/');
-        }
-        return directoryActions(directory);
+        return directoryActions(items.first());
     }
 
     foreach (const KFileItem& item, items) {
@@ -435,9 +431,12 @@ void FileViewSvnPlugin::startSvnCommandProcess()
     m_process.start(program, arguments);
 }
 
-QList<QAction*> FileViewSvnPlugin::directoryActions(const QString& directory) const
+QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) const
 {
-    m_contextDir = directory;
+    m_contextDir = directory.localPath();
+    if (!m_contextDir.endsWith(QLatin1Char('/'))) {
+        m_contextDir += QLatin1Char('/');
+    }
     m_contextItems.clear();
 
     // Only enable the SVN actions if no SVN commands are
@@ -445,8 +444,10 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const QString& directory) co
     // startSvnCommandProcess()).
     const bool enabled = !m_pendingOperation;
     m_updateAction->setEnabled(enabled);
-    m_showLocalChangesAction->setEnabled(enabled);
-    m_commitAction->setEnabled(enabled);
+
+    const ItemVersion version = itemVersion(directory);
+    m_showLocalChangesAction->setEnabled(enabled && (version != NormalVersion));
+    m_commitAction->setEnabled(enabled && (version == LocallyModifiedVersion));
 
     QList<QAction*> actions;
     actions.append(m_updateAction);

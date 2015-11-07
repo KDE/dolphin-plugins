@@ -78,7 +78,7 @@ private:
 
     void startSvnCommandProcess();
 
-    QList<QAction*> directoryActions(const QString& directory) const;
+    QList<QAction*> directoryActions(const KFileItem &directory) const;
 
 private:
     bool m_pendingOperation;
