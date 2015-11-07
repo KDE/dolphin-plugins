@@ -152,6 +152,8 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             default:
                 if (filePath.contains('*')) {
                     version = UpdateRequiredVersion;
+                } else if (filePath.contains("W155010")) {
+                    version = UnversionedVersion;
                 }
                 break;
             }
@@ -201,7 +203,9 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
     if (!item.isDir()) {
         // files that have not been listed by 'svn status' (= m_versionInfoHash)
         // are under version control per definition
-        return NormalVersion;
+        // NOTE: svn status does not report files in unversioned paths
+        const QString path = QFileInfo(itemUrl).path();
+        return m_versionInfoHash.value(path, NormalVersion);
     }
 
     // The item is a directory. Check whether an item listed by 'svn status' (= m_versionInfoHash)
