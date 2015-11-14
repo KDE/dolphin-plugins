@@ -1,5 +1,10 @@
 project(fileviewhgplugin)
 
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+    TextEditor
+    WidgetsAddons
+)
+
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewhgplugin\" -DQT_NO_URL_CAST_FROM_STRING)
 
 set(fileviewhgplugin_SRCS
