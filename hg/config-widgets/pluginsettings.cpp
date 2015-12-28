@@ -40,6 +40,11 @@ HgPluginSettingsWidget::HgPluginSettingsWidget(QWidget *parent) :
             this, SLOT(browse_diff()));
 }
 
+HgPluginSettingsWidget::~HgPluginSettingsWidget()
+{
+    delete m_config;
+}
+
 void HgPluginSettingsWidget::saveConfig()
 {
     KConfigGroup group(m_config, QLatin1String("diff"));
@@ -57,7 +62,7 @@ void HgPluginSettingsWidget::loadConfig()
             + QLatin1String("/dolphin-hg"));
         QFile::remove(oldPath);
     }
-    m_config = new KConfig("dolphin-hg", KConfig::SimpleConfig,
+    m_config = new KConfig(QLatin1String("dolphin-hg"), KConfig::SimpleConfig,
                            QStandardPaths::GenericConfigLocation);
 
     KConfigGroup group(m_config, QLatin1String("diff"));
