@@ -30,6 +30,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QLineEdit>
+#include <QSplitter>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
 #include <KTextEditor/Editor>
@@ -111,8 +112,12 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     // the commit box itself
     QGroupBox *messageGroupBox = new QGroupBox;
     QVBoxLayout *commitLayout = new QVBoxLayout;
-    m_commitMessage = new QPlainTextEdit;
-    commitLayout->addWidget(m_commitMessage);
+    m_commitMessage = editor->createDocument(0);
+    KTextEditor::View *messageView =
+              qobject_cast<KTextEditor::View*>(m_commitMessage->createView(this));
+    messageView->setStatusBarEnabled(false);
+    messageView->setMinimumHeight(fontMetrics().height() * 4);
+    commitLayout->addWidget(messageView);
     messageGroupBox->setTitle(xi18nc("@title:group", "Commit Message"));
     messageGroupBox->setLayout(commitLayout);
 
@@ -124,20 +129,18 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     diffGroupBox->setLayout(diffLayout);
 
     // Set up layout for Status, Commit and Diff boxes
-    QGridLayout *bodyLayout = new QGridLayout;
+    m_verticalSplitter = new QSplitter(Qt::Horizontal);
+    m_horizontalSplitter = new QSplitter(Qt::Vertical);
+    m_horizontalSplitter->addWidget(messageGroupBox);
+    m_horizontalSplitter->addWidget(diffGroupBox);
     m_statusList = new HgStatusList;
-    bodyLayout->addWidget(m_statusList, 0, 0, 0, 1);
-    bodyLayout->addWidget(messageGroupBox, 0, 1);
-    bodyLayout->addWidget(diffGroupBox, 1, 1);
-    bodyLayout->setColumnStretch(0, 1);
-    bodyLayout->setColumnStretch(1, 2);
-    bodyLayout->setRowStretch(0, 1);
-    bodyLayout->setRowStretch(1, 1);
+    m_verticalSplitter->addWidget(m_statusList);
+    m_verticalSplitter->addWidget(m_horizontalSplitter);
 
     // Set up layout and container for main dialog
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addLayout(topBarLayout);
-    mainLayout->addLayout(bodyLayout);
+    mainLayout->addWidget(m_verticalSplitter);
     layout()->insertLayout(0, mainLayout);
 
     slotBranchActions(m_useCurrentBranch);
@@ -147,10 +150,15 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     this->resize(QSize(settings->commitDialogWidth(),
                                settings->commitDialogHeight()));
-    //
+
+    m_verticalSplitter->setSizes(settings->verticalSplitterSizes());
+    m_horizontalSplitter->setSizes(settings->horizontalSplitterSizes());
+
+    messageView->setFocus(); // message editor ready to get a text
+
     connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString &)),
         this, SLOT(slotItemSelectionChanged(const char, const QString &)));
-    connect(m_commitMessage, SIGNAL(textChanged()),
+    connect(m_commitMessage, SIGNAL(textChanged(KTextEditor::Document*)),
          this, SLOT(slotMessageChanged()));
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
 }
@@ -208,7 +216,7 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
 
 void HgCommitDialog::slotMessageChanged()
 {
-    okButton()->setDisabled(m_commitMessage->toPlainText().isEmpty());
+    okButton()->setDisabled(m_commitMessage->isEmpty());
 }
 
 void HgCommitDialog::done(int r)
@@ -224,7 +232,7 @@ void HgCommitDialog::done(int r)
                     return;
                 }
             }
-            bool success = hgWrapper->commit(m_commitMessage->toPlainText(),
+            bool success = hgWrapper->commit(m_commitMessage->text(),
                     files, m_branchAction==CloseBranch);
             if (success) {
                 QDialog::done(r);
@@ -247,6 +255,8 @@ void HgCommitDialog::saveGeometry()
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
     settings->setCommitDialogHeight(this->height());
     settings->setCommitDialogWidth(this->width());
+    settings->setHorizontalSplitterSizes(m_horizontalSplitter->sizes());
+    settings->setVerticalSplitterSizes(m_verticalSplitter->sizes());
     settings->save();
 }
 
@@ -366,7 +376,7 @@ void HgCommitDialog::createCopyMessageMenu()
 
 void HgCommitDialog::slotInsertCopyMessage(QAction *action)
 {
-    m_commitMessage->insertPlainText(action->data().toString());
+    m_commitMessage->setText(action->data().toString());
 }
 
 #include "commitdialog.moc"

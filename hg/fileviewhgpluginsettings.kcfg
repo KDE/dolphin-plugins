@@ -13,6 +13,14 @@
             <default>900</default>
             <min>500</min>
         </entry>
+        <entry name="verticalSplitterSizes" type="IntList">
+            <label>Divides file list and editors with commit details</label>
+            <default>200,700</default>
+        </entry>
+        <entry name="horizontalSplitterSizes" type="IntList">
+            <label>Divides commit editor and diff editor</label>
+            <default>100,350</default>
+        </entry>
     </group>
     <group name="ConfigDialogSettings">
         <entry name="configDialogHeight" type="Int">

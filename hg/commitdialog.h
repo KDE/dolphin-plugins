@@ -31,6 +31,7 @@ class QAction;
 class QMenu;
 class QLabel;
 class QLineEdit;
+class QSplitter;
 
 namespace KTextEditor {
     class View;
@@ -82,7 +83,7 @@ private:
 private:
     QString                      m_hgBaseDir;
 
-    QPlainTextEdit              *m_commitMessage;
+    KTextEditor::Document       *m_commitMessage;
     HgStatusList                *m_statusList;
 
     KTextEditor::View           *m_fileDiffView;
@@ -96,6 +97,9 @@ private:
     QAction                     *m_useCurrentBranch;
     QMenu                       *m_branchMenu;
     QMenu                       *m_copyMessageMenu;
+
+    QSplitter                   *m_verticalSplitter; // Divides file list and editors
+    QSplitter                   *m_horizontalSplitter; // Divides commit editor and diff editor
 
     /** What will commit do with branch. 
      *
