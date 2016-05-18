@@ -55,6 +55,12 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
 {
     Q_UNUSED(args);
 
+    m_revertAction = new QAction(this);
+    m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Revert"));
+    connect(m_revertAction, SIGNAL(triggered()),
+            this, SLOT(revertFiles()));
+
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Add"));
@@ -289,6 +295,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
         //see which actions should be enabled
         int versionedCount = 0;
         int addableCount = 0;
+        int revertCount = 0;
         foreach(const KFileItem& item, items){
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion &&
@@ -299,19 +306,26 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
                 state == IgnoredVersion) {
                 ++addableCount;
             }
+            if (state == LocallyModifiedVersion || state == LocallyModifiedUnstagedVersion ||
+                state == ConflictingVersion) {
+                ++revertCount;
+            }
         }
 
         m_addAction->setEnabled(addableCount == items.count());
+        m_revertAction->setEnabled(revertCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
     }
     else{
         m_addAction->setEnabled(false);
+        m_revertAction->setEnabled(false);
         m_removeAction->setEnabled(false);
     }
 
     QList<QAction*> actions;
     actions.append(m_addAction);
     actions.append(m_removeAction);
+    actions.append(m_revertAction);
     return actions;
 }
 
@@ -376,6 +390,14 @@ void FileViewGitPlugin::removeFiles()
                    xi18nd("@info:status", "Removing files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Removing files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Removed files from <application>Git</application> repository."));
+}
+
+void FileViewGitPlugin::revertFiles()
+{
+    execGitCommand(QLatin1String("checkout -- "), QStringList(),
+                   xi18nd("@info:status", "Reverting files from <application>Git</application> repository..."),
+                   xi18nd("@info:status", "Reverting files from <application>Git</application> repository failed."),
+                   xi18nd("@info:status", "Reverted files from <application>Git</application> repository."));
 }
 
 void FileViewGitPlugin::showLocalChanges()

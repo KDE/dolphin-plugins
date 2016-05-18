@@ -48,6 +48,7 @@ public:
 
 private slots:
     void addFiles();
+    void revertFiles();
     void showLocalChanges();
     void removeFiles();
     void checkout();
@@ -103,6 +104,7 @@ private:
      */
     QHash<QString, ItemVersion> m_versionInfoHash;
     QAction* m_addAction;
+    QAction* m_revertAction;
     QAction* m_showLocalChangesAction;
     QAction* m_removeAction;
     QAction* m_checkoutAction;
