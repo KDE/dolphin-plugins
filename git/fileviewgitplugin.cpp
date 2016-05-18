@@ -29,6 +29,8 @@
 
 #include <KLocalizedString>
 #include <KUrl>
+#include <KRun>
+#include <KShell>
 #include <KPluginFactory>
 
 #include <QTemporaryFile>
@@ -58,6 +60,12 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_addAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
+
+    m_showLocalChangesAction = new QAction(this);
+    m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
+    m_showLocalChangesAction->setText(xi18nd("@item:inmenu", "Show Local <application>Git</application> Changes"));
+    connect(m_showLocalChangesAction, SIGNAL(triggered()),
+            this, SLOT(showLocalChanges()));
 
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
@@ -317,18 +325,26 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
     actions.append(m_checkoutAction);
 
     bool canCommit = false;
+    bool showChanges = false;
     QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
         const ItemVersion state = it.value();
         if (state == LocallyModifiedVersion || state == AddedVersion || state == RemovedVersion) {
             canCommit = true;
         }
+        if (state == LocallyModifiedUnstagedVersion || state == LocallyModifiedVersion) {
+            showChanges = true;
+        }
         if (state == ConflictingVersion) {
             canCommit = false;
+            showChanges = true;
             break;
         }
         ++it;
     }
+
+    m_showLocalChangesAction->setEnabled(!m_pendingOperation && showChanges);
+    actions.append(m_showLocalChangesAction);
 
     m_commitAction->setEnabled(!m_pendingOperation && canCommit);
     actions.append(m_commitAction);
@@ -360,7 +376,13 @@ void FileViewGitPlugin::removeFiles()
                    xi18nd("@info:status", "Removing files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Removing files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Removed files from <application>Git</application> repository."));
+}
 
+void FileViewGitPlugin::showLocalChanges()
+{
+    Q_ASSERT(!m_contextDir.isEmpty());
+
+    KRun::runCommand(QLatin1String("git difftool --dir-diff ."), nullptr, m_contextDir);
 }
 
 void FileViewGitPlugin::checkout()
