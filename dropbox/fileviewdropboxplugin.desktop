@@ -37,6 +37,7 @@ Name[sv]=Dropbox
 Name[tr]=Dropbox
 Name[uk]=Dropbox
 Name[x-test]=xxDropboxxx
+Name[zh_CN]=Dropbox
 Name[zh_TW]=Dropbox
 X-KDE-ServiceTypes=FileViewVersionControlPlugin
 MimeType=text/plain;
