@@ -394,7 +394,7 @@ void FileViewGitPlugin::removeFiles()
 
 void FileViewGitPlugin::revertFiles()
 {
-    execGitCommand(QLatin1String("checkout -- "), QStringList(),
+    execGitCommand(QLatin1String("checkout"), { "--" },
                    xi18nd("@info:status", "Reverting files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Reverting files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Reverted files from <application>Git</application> repository."));
