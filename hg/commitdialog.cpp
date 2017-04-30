@@ -51,8 +51,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     KTextEditor::Editor *editor = KTextEditor::Editor::instance();
     if (!editor) {
         KMessageBox::error(this, 
-                i18n("A KDE text-editor component could not be found;"
-                     "\nplease check your KDE installation."));
+                i18n("The KTextEditor component could not be found;"
+                     "\nplease check your KDE Frameworks installation."));
         return;
     }
     m_fileDiffDoc = editor->createDocument(0);
