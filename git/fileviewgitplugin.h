@@ -56,6 +56,8 @@ private slots:
     void createTag();
     void push();
     void pull();
+    void log();
+    void showDiff(const QUrl &link);
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -112,6 +114,7 @@ private:
     QAction* m_tagAction;
     QAction* m_pushAction;
     QAction* m_pullAction;
+    QAction* m_logAction;
 
     QString m_currentDir;
     QProcess m_process;

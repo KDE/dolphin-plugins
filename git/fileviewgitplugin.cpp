@@ -39,6 +39,7 @@
 #include <QStringList>
 #include <QTextCodec>
 #include <QDir>
+#include <QTextBrowser>
 
 K_PLUGIN_FACTORY(FileViewGitPluginFactory, registerPlugin<FileViewGitPlugin>();)
 
@@ -105,6 +106,10 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_pullAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Pull..."));
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pull()));
+
+    m_logAction = new QAction(this);
+    m_logAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Log..."));
+    connect(m_logAction, &QAction::triggered, this, &FileViewGitPlugin::log);
 
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
@@ -357,6 +362,9 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
         ++it;
     }
 
+    m_logAction->setEnabled(!m_pendingOperation);
+    actions.append(m_logAction);
+
     m_showLocalChangesAction->setEnabled(!m_pendingOperation && showChanges);
     actions.append(m_showLocalChangesAction);
 
@@ -405,6 +413,75 @@ void FileViewGitPlugin::showLocalChanges()
     Q_ASSERT(!m_contextDir.isEmpty());
 
     KRun::runCommand(QLatin1String("git difftool --dir-diff ."), nullptr, m_contextDir);
+}
+
+void FileViewGitPlugin::showDiff(const QUrl &link)
+{
+    if (link.scheme() != QLatin1String("rev")) {
+        return;
+    }
+    KRun::runCommand(QStringLiteral("git difftool --dir-diff %1^ %1").arg(link.path()), nullptr, m_contextDir);
+}
+
+void FileViewGitPlugin::log()
+{
+    QProcess process;
+    process.setWorkingDirectory(m_contextDir);
+    process.start(
+        QLatin1String("git"),
+        QStringList {
+            QStringLiteral("log"),
+            QStringLiteral("--relative=."),
+            QStringLiteral("--date=format:%d-%m-%Y"),
+            QStringLiteral("-n 100"),
+            QStringLiteral("--pretty=format:<tr> <td><a href=\"rev:%h\">%h</a></td> <td>%ad</td> <td>%s</td> <td>%an</td> </tr>")
+        }
+    );
+
+    if (!process.waitForFinished() || process.exitCode() != 0) {
+        emit errorMessage(xi18nd("@info:status", "<application>Git</application> Log failed."));
+        return;
+    }
+
+    const QString gitOutput = process.readAllStandardOutput();
+
+    QPalette palette;
+    const QString styleSheet = QStringLiteral(
+        "body { background: %1; color: %2; }" \
+        "table.logtable td { padding: 9px 8px 9px; }" \
+        "a { color: %3; }" \
+        "a:visited { color: %4; } "
+    ).arg(palette.background().color().name(),
+          palette.text().color().name(),
+          palette.link().color().name(),
+          palette.linkVisited().color().name());
+
+    auto view = new QTextBrowser();
+    view->setAttribute(Qt::WA_DeleteOnClose);
+    view->setWindowTitle(xi18nd("@title:window", "<application>Git</application> Log"));
+    view->setOpenLinks(false);
+    view->setOpenExternalLinks(false);
+    connect(view, &QTextBrowser::anchorClicked, this, &FileViewGitPlugin::showDiff);
+    view->setHtml(QStringLiteral(
+        "<html>" \
+        "<style> %1 </style>" \
+        "<table class=\"logtable\">" \
+        "<tr bgcolor=\"%2\">" \
+        "<td> %3 </td> <td> %4 </td> <td> %5 </p> </td> <td> %6 </td>" \
+        "</tr>" \
+        "%7" \
+        "</table>" \
+        "</html>"
+    ).arg(styleSheet,
+          palette.highlight().color().name(),
+          i18nc("Git commit hash", "Commit"),
+          i18nc("Git commit date", "Date"),
+          i18nc("Git commit message", "Message"),
+          i18nc("Git commit author", "Author"),
+          gitOutput));
+
+    view->resize(QSize(720, 560));
+    view->show();
 }
 
 void FileViewGitPlugin::checkout()
