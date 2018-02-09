@@ -106,6 +106,10 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_pullAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Pull..."));
     connect(m_pullAction, SIGNAL(triggered()),
             this, SLOT(pull()));
+    m_mergeAction = new QAction(this);
+    m_mergeAction->setIcon(QIcon::fromTheme("merge"));
+    m_mergeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Merge..."));
+    connect(m_mergeAction, &QAction::triggered, this, &FileViewGitPlugin::merge);
 
     m_logAction = new QAction(this);
     m_logAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Log..."));
@@ -345,6 +349,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
 
     bool canCommit = false;
     bool showChanges = false;
+    bool shouldMerge = false;
     QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
     while (it != m_versionInfoHash.constEnd()) {
         const ItemVersion state = it.value();
@@ -357,6 +362,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
         if (state == ConflictingVersion) {
             canCommit = false;
             showChanges = true;
+            shouldMerge = true;
             break;
         }
         ++it;
@@ -368,8 +374,13 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
     m_showLocalChangesAction->setEnabled(!m_pendingOperation && showChanges);
     actions.append(m_showLocalChangesAction);
 
-    m_commitAction->setEnabled(!m_pendingOperation && canCommit);
-    actions.append(m_commitAction);
+    if (!shouldMerge) {
+        m_commitAction->setEnabled(!m_pendingOperation && canCommit);
+        actions.append(m_commitAction);
+    } else {
+        m_mergeAction->setEnabled(!m_pendingOperation);
+        actions.append(m_mergeAction);
+    }
 
     m_tagAction->setEnabled(!m_pendingOperation);
     actions.append(m_tagAction);
@@ -482,6 +493,13 @@ void FileViewGitPlugin::log()
 
     view->resize(QSize(720, 560));
     view->show();
+}
+
+void FileViewGitPlugin::merge()
+{
+    Q_ASSERT(!m_contextDir.isEmpty());
+
+    KRun::runCommand(QStringLiteral("git mergetool"), nullptr, m_contextDir);
 }
 
 void FileViewGitPlugin::checkout()
