@@ -49,6 +49,7 @@ public:
 private slots:
     void addFiles();
     void revertFiles();
+    void diffFiles();
     void showLocalChanges();
     void removeFiles();
     void checkout();
@@ -117,6 +118,7 @@ private:
     QAction* m_pullAction;
     QAction* m_logAction;
     QAction* m_mergeAction;
+    QAction* m_diffFileAction;
 
     QString m_currentDir;
     QProcess m_process;

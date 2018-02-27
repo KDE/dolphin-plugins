@@ -52,7 +52,8 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_commitAction(0),
     m_tagAction(0),
     m_pushAction(0),
-    m_pullAction(0)
+    m_pullAction(0),
+    m_diffFileAction(0)
 {
     Q_UNUSED(args);
 
@@ -67,6 +68,12 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_addAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Add"));
     connect(m_addAction, SIGNAL(triggered()),
             this, SLOT(addFiles()));
+
+    m_diffFileAction = new QAction(this);
+    m_diffFileAction->setIcon(QIcon::fromTheme("kdiff3"));
+    m_diffFileAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Diff"));
+    connect(m_diffFileAction, SIGNAL(triggered()),
+            this, SLOT(diffFiles()));
 
     m_showLocalChangesAction = new QAction(this);
     m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
@@ -305,6 +312,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
         int versionedCount = 0;
         int addableCount = 0;
         int revertCount = 0;
+        int modifiedCount = 0;
         foreach(const KFileItem& item, items){
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion &&
@@ -319,22 +327,28 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
                 state == ConflictingVersion) {
                 ++revertCount;
             }
+            if (state == LocallyModifiedVersion || state == LocallyModifiedUnstagedVersion) {
+                ++modifiedCount;
+            }
         }
 
         m_addAction->setEnabled(addableCount == items.count());
         m_revertAction->setEnabled(revertCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
+        m_diffFileAction->setEnabled(modifiedCount == items.count());
     }
     else{
         m_addAction->setEnabled(false);
         m_revertAction->setEnabled(false);
         m_removeAction->setEnabled(false);
+        m_diffFileAction->setEnabled(false);
     }
 
     QList<QAction*> actions;
     actions.append(m_addAction);
     actions.append(m_removeAction);
     actions.append(m_revertAction);
+    actions.append(m_diffFileAction);
     return actions;
 }
 
@@ -417,6 +431,18 @@ void FileViewGitPlugin::revertFiles()
                    xi18nd("@info:status", "Reverting files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Reverting files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Reverted files from <application>Git</application> repository."));
+}
+
+void FileViewGitPlugin::diffFiles()
+{
+    QStringList arguments;
+    arguments << "-y"; //do not prompt before launching a diff tool
+    arguments << "HEAD";
+    arguments << "--";
+    execGitCommand(QLatin1String("difftool"), arguments,
+                   xi18nd("@info:status", "Launching <application>Git</application> diff tool..."),
+                   xi18nd("@info:status", "Launching <application>Git</application> diff tool failed."),
+                   xi18nd("@info:status", "Successfully launched <application>Git</application> diff tool."));
 }
 
 void FileViewGitPlugin::showLocalChanges()
