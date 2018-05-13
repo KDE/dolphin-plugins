@@ -23,7 +23,6 @@ target_link_libraries(fileviewgitplugin
     KF5::I18n
     KF5::XmlGui
     KF5::KIOCore
-    KF5::KDELibs4Support
     DolphinVcs
 )
 

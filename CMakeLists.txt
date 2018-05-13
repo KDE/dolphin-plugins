@@ -21,7 +21,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     XmlGui
     I18n
     KIO
-    KDELibs4Support
 )
 
 find_package(DolphinVcs)

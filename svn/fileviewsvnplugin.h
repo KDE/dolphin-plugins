@@ -22,7 +22,7 @@
 
 #include <Dolphin/KVersionControlPlugin>
 
-#include <KFileItemList>
+#include <KFileItem>
 
 #include <QHash>
 #include <QProcess>
