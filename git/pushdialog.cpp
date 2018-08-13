@@ -21,7 +21,7 @@
 #include "gitwrapper.h"
 
 #include <KConfigGroup>
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QCheckBox>
 #include <QComboBox>

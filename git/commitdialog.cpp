@@ -22,7 +22,7 @@
 #include "gitwrapper.h"
 
 #include <KConfigGroup>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <ktextedit.h>
 
 #include <QDialogButtonBox>
