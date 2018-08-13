@@ -178,8 +178,8 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
         while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
             QString line = QTextCodec::codecForLocale()->toUnicode(buffer);
             // ----- recognize file status -----
-            char X = line[0].toAscii();  // X and Y from the table in `man git-status`
-            char Y = line[1].toAscii();
+            char X = line[0].toLatin1();  // X and Y from the table in `man git-status`
+            char Y = line[1].toLatin1();
             const QString fileName= line.mid(3);
             ItemVersion state = NormalVersion;
             switch (X) {
