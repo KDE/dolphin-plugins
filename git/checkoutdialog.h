@@ -24,9 +24,9 @@
 #include <QSet>
 #include <QString>
 
-class KComboBox;
 class KLineEdit;
 class QCheckBox;
+class QComboBox;
 class QDialogButtonBox;
 class QGroupBox;
 class QRadioButton;
@@ -80,8 +80,8 @@ private:
     QDialogButtonBox *m_buttonBox;
     QGroupBox * m_branchSelectGroupBox;
     QRadioButton * m_branchRadioButton;
-    KComboBox * m_branchComboBox;
-    KComboBox * m_tagComboBox;
+    QComboBox * m_branchComboBox;
+    QComboBox * m_tagComboBox;
     QCheckBox * m_newBranchCheckBox;
     KLineEdit * m_newBranchName;
     QCheckBox * m_forceCheckBox;

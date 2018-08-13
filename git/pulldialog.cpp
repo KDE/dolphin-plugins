@@ -20,10 +20,10 @@
 #include "pulldialog.h"
 #include "gitwrapper.h"
 
-#include <kcombobox.h>
 #include <KConfigGroup>
 #include <klocale.h>
 
+#include <QComboBox>
 #include <QDialogButtonBox>
 #include <QGroupBox>
 #include <QHBoxLayout>
@@ -62,12 +62,12 @@ PullDialog::PullDialog(QWidget* parent):
 
     QLabel * remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), sourceGroupBox);
     sourceHBox->addWidget(remoteLabel);
-    m_remoteComboBox = new KComboBox(false, sourceGroupBox);
+    m_remoteComboBox = new QComboBox(sourceGroupBox);
     sourceHBox->addWidget(m_remoteComboBox);
 
     QLabel * remoteBranchLabel = new QLabel(i18nc("@label:listbox", "Remote branch:"), sourceGroupBox);
     sourceHBox->addWidget(remoteBranchLabel);
-    m_remoteBranchComboBox = new KComboBox(false, sourceGroupBox);
+    m_remoteBranchComboBox = new QComboBox(sourceGroupBox);
     sourceHBox->addWidget(m_remoteBranchComboBox);
 
     //populate UI

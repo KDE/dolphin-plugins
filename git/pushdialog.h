@@ -22,8 +22,8 @@
 
 #include <QDialog>
 
-class KComboBox;
 class QCheckBox;
+class QComboBox;
 class QDialogButtonBox;
 
 class PushDialog : public QDialog
@@ -42,9 +42,9 @@ private slots:
 private:
     QHash<QString, QStringList> m_remoteBranches;
 
-    KComboBox * m_remoteComboBox;
-    KComboBox * m_localBranchComboBox;
-    KComboBox * m_remoteBranchComboBox;
+    QComboBox * m_remoteComboBox;
+    QComboBox * m_localBranchComboBox;
+    QComboBox * m_remoteBranchComboBox;
     QCheckBox * m_forceCheckBox;
     QDialogButtonBox * m_buttonBox;
 };

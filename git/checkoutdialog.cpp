@@ -20,12 +20,12 @@
 #include "checkoutdialog.h"
 #include "gitwrapper.h"
 
-#include <kcombobox.h>
 #include <KConfigGroup>
 #include <klineedit.h>
 #include <klocale.h>
 
 #include <QCheckBox>
+#include <QComboBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QRadioButton>
@@ -67,12 +67,12 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     m_branchRadioButton->setChecked(true);
     gridLayout->addWidget(m_branchRadioButton,0,0);
     m_branchRadioButton->setFocus();
-    m_branchComboBox = new KComboBox(false, m_branchSelectGroupBox);
+    m_branchComboBox = new QComboBox(m_branchSelectGroupBox);
     gridLayout->addWidget(m_branchComboBox,0,1);
 
     QRadioButton * tagRadioButton = new QRadioButton(i18nc("@option:radio Git Checkout", "Tag:"), m_branchSelectGroupBox);
     gridLayout->addWidget(tagRadioButton,1,0);
-    m_tagComboBox = new KComboBox(false, m_branchSelectGroupBox);
+    m_tagComboBox = new QComboBox(m_branchSelectGroupBox);
     m_tagComboBox->setEnabled(false);
     gridLayout->addWidget(m_tagComboBox,1,1);
 

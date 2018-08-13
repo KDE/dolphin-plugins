@@ -21,13 +21,13 @@
 #include "tagdialog.h"
 #include "gitwrapper.h"
 
-#include <kcombobox.h>
 #include <KConfigGroup>
 #include <klineedit.h>
 #include <klocale.h>
 #include <ktextedit.h>
 
 #include <QCheckBox>
+#include <QComboBox>
 #include <QGroupBox>
 #include <QPushButton>
 #include <QTextCodec>
@@ -94,7 +94,7 @@ TagDialog::TagDialog (QWidget* parent ):
     QLabel* branchLabel = new QLabel(i18nc("@label:listbox", "Branch:"), attachToGroupBox);
     attachToLayout->addWidget(branchLabel);
 
-    m_branchComboBox = new KComboBox(false, attachToGroupBox);
+    m_branchComboBox = new QComboBox(attachToGroupBox);
     attachToLayout->addWidget(m_branchComboBox);
     attachToLayout->addStretch();
 

@@ -22,7 +22,7 @@
 
 #include <QDialog>
 
-class KComboBox;
+class QComboBox;
 class QDialogButtonBox;
 
 class PullDialog : public QDialog
@@ -35,8 +35,8 @@ public:
     QString remoteBranch() const;
 private:
     QDialogButtonBox *m_buttonBox;
-    KComboBox * m_remoteComboBox;
-    KComboBox * m_remoteBranchComboBox;
+    QComboBox * m_remoteComboBox;
+    QComboBox * m_remoteBranchComboBox;
     QHash<QString, QStringList> m_remoteBranches;
 private slots:
     void remoteSelectionChanged(const QString& newRemote);

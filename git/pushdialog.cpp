@@ -20,11 +20,11 @@
 #include "pushdialog.h"
 #include "gitwrapper.h"
 
-#include <kcombobox.h>
 #include <KConfigGroup>
 #include <klocale.h>
 
 #include <QCheckBox>
+#include <QComboBox>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -63,7 +63,7 @@ PushDialog::PushDialog (QWidget* parent ):
 
     QLabel * remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), destinationGroupBox);
     destinationHBox->addWidget(remoteLabel);
-    m_remoteComboBox = new KComboBox(false, destinationGroupBox);
+    m_remoteComboBox = new QComboBox(destinationGroupBox);
     destinationHBox->addWidget(m_remoteComboBox);
     destinationHBox->addStretch();
 
@@ -77,14 +77,14 @@ PushDialog::PushDialog (QWidget* parent ):
 
     QLabel * localBranchLabel = new QLabel(i18nc("@label:listbox", "Local Branch:"), branchesGroupBox);
     branchesHBox->addWidget(localBranchLabel);
-    m_localBranchComboBox = new KComboBox(false, branchesGroupBox);
+    m_localBranchComboBox = new QComboBox(branchesGroupBox);
     branchesHBox->addWidget(m_localBranchComboBox);
 
     branchesHBox->addStretch();
 
     QLabel * remoteBranchLabel = new QLabel(i18nc("@label:listbox", "Remote Branch:"), branchesGroupBox);
     branchesHBox->addWidget(remoteBranchLabel);
-    m_remoteBranchComboBox = new KComboBox(false, branchesGroupBox);
+    m_remoteBranchComboBox = new QComboBox(branchesGroupBox);
     branchesHBox->addWidget(m_remoteBranchComboBox);
 
     QGroupBox* optionsGroupBox = new QGroupBox(boxWidget);
