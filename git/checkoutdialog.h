@@ -24,11 +24,11 @@
 #include <QSet>
 #include <QString>
 
-class KLineEdit;
 class QCheckBox;
 class QComboBox;
 class QDialogButtonBox;
 class QGroupBox;
+class QLineEdit;
 class QRadioButton;
 
 /**
@@ -83,7 +83,7 @@ private:
     QComboBox * m_branchComboBox;
     QComboBox * m_tagComboBox;
     QCheckBox * m_newBranchCheckBox;
-    KLineEdit * m_newBranchName;
+    QLineEdit * m_newBranchName;
     QCheckBox * m_forceCheckBox;
 };
 

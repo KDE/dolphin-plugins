@@ -24,7 +24,6 @@
 #include <QGroupBox>
 #include <QString>
 
-// class KLineEdit;
 class QTableWidget;
 
 /**
@@ -61,7 +60,6 @@ signals:
 private:
     QString         m_hgBaseDir;
     QTableWidget   *m_statusTable;
-    //KLineEdit *m_filter;
     bool            m_allWhereChecked; // state of all check boxes
     bool            m_sortIndex; // true - ascending, false - descending
 };

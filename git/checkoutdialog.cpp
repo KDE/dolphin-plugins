@@ -21,13 +21,13 @@
 #include "gitwrapper.h"
 
 #include <KConfigGroup>
-#include <klineedit.h>
 #include <klocale.h>
 
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
 #include <QGroupBox>
+#include <QLineEdit>
 #include <QRadioButton>
 #include <QString>
 #include <QVBoxLayout>
@@ -91,9 +91,9 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
 
     mainLayout->addWidget(m_buttonBox);
 
-    m_newBranchName = new KLineEdit(optionsGroupBox);
+    m_newBranchName = new QLineEdit(optionsGroupBox);
     m_newBranchName->setMinimumWidth(150);
-    m_newBranchName->setClearButtonShown(true);
+    m_newBranchName->setClearButtonEnabled(true);
     optionsGridLayout->addWidget(m_newBranchName, 0, 1);
 
     //initialize alternate color scheme for errors

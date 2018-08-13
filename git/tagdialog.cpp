@@ -22,7 +22,6 @@
 #include "gitwrapper.h"
 
 #include <KConfigGroup>
-#include <klineedit.h>
 #include <klocale.h>
 #include <ktextedit.h>
 
@@ -33,6 +32,7 @@
 #include <QTextCodec>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QLineEdit>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 
@@ -68,7 +68,7 @@ TagDialog::TagDialog (QWidget* parent ):
     QLabel* nameLabel = new QLabel(i18nc("@label:textbox", "Tag Name:"), tagInformationGroupBox);
     tagInformationLayout->addWidget(nameLabel);
 
-    m_tagNameTextEdit = new KLineEdit(tagInformationGroupBox);
+    m_tagNameTextEdit = new QLineEdit(tagInformationGroupBox);
     tagInformationLayout->addWidget(m_tagNameTextEdit);
     setOkButtonState();
     connect(m_tagNameTextEdit, SIGNAL(textChanged(QString)), this, SLOT(setOkButtonState()));

@@ -26,7 +26,6 @@
 #include <QVBoxLayout>
 #include <QHeaderView>
 #include <QTableWidget>
-// #include <klineedit.h>
 #include <KLocalizedString>
 
 HgStatusList::HgStatusList(QWidget *parent):
@@ -35,7 +34,6 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_sortIndex(false)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    //m_filter = new KLineEdit(this);
     m_statusTable = new QTableWidget(this);
 
     m_statusTable->setColumnCount(3);
@@ -47,7 +45,6 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_statusTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_statusTable->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    //mainLayout->addWidget(m_filter);
     mainLayout->addWidget(m_statusTable);
 
     setTitle(i18nc("@title:group", "File Status"));

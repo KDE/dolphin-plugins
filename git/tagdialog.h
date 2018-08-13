@@ -24,9 +24,9 @@
 #include <QSet>
 
 class KTextEdit;
-class KLineEdit;
 class QComboBox;
 class QDialogButtonBox;
+class QLineEdit;
 class QTextCodec;
 class QRadioButton;
 
@@ -59,7 +59,7 @@ private:
 private:
     QSet<QString> m_tagNames;
     KTextEdit* m_tagMessageTextEdit;
-    KLineEdit* m_tagNameTextEdit;
+    QLineEdit* m_tagNameTextEdit;
     QComboBox* m_branchComboBox;
     QDialogButtonBox* m_buttonBox;
     QRadioButton* branchRadioButton;
