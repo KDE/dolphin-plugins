@@ -5,7 +5,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     WidgetsAddons
 )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"fileviewhgplugin\" -DQT_NO_URL_CAST_FROM_STRING)
+add_definitions(-DTRANSLATION_DOMAIN=\"fileviewhgplugin\")
 
 set(fileviewhgplugin_SRCS
     fileviewhgplugin.cpp
