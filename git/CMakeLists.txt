@@ -24,6 +24,7 @@ target_link_libraries(fileviewgitplugin
     KF5::XmlGui
     KF5::KIOCore
     KF5::KIOFileWidgets
+    KF5::TextWidgets
     DolphinVcs
 )
 
