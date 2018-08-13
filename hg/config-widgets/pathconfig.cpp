@@ -256,5 +256,4 @@ void HgPathConfigWidget::slotSelectionChanged()
     m_oldSelValue = m_pathsListWidget->currentItem()->text();
 }
 
-#include "pathconfig.moc"
 

@@ -149,4 +149,3 @@ void PushDialog::localBranchSelectionChanged(const QString& newLocalBranch)
     this->enableButtonOk(m_remoteBranchComboBox->count() > 0);
 }
 
-#include "pushdialog.moc"

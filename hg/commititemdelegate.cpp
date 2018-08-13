@@ -85,6 +85,5 @@ QSize CommitItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QMo
     return size;
 }
 
-#include "commititemdelegate.moc"
 
 

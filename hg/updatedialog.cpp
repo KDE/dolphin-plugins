@@ -144,5 +144,4 @@ void HgUpdateDialog::done(int r)
         QDialog::done(r);
     }
 }
-#include "updatedialog.moc"
 

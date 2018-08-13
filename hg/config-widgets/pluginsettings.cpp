@@ -96,5 +96,4 @@ void HgPluginSettingsWidget::browse_diff()
     m_diffProg->setText(path);
 }
 
-#include "pluginsettings.moc"
 

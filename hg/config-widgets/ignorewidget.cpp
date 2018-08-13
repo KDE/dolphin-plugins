@@ -174,5 +174,4 @@ void HgIgnoreWidget::slotEditEntry()
 }
 
 
-#include "ignorewidget.moc"
 

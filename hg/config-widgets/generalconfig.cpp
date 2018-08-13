@@ -92,5 +92,4 @@ void HgGeneralConfigWidget::saveConfig()
     }
 }
 
-#include "generalconfig.moc"
 

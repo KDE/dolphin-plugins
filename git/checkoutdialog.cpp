@@ -257,4 +257,3 @@ void CheckoutDialog::setLineEditErrorModeActive(bool active)
     m_newBranchName->setPalette(active ? m_errorColors : QPalette());
 }
 
-#include "checkoutdialog.moc"

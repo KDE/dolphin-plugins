@@ -97,4 +97,3 @@ void PullDialog::remoteSelectionChanged(const QString& newRemote)
     this->enableButtonOk(m_remoteBranchComboBox->count() > 0);
 }
 
-#include "pulldialog.moc"

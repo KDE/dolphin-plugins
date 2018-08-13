@@ -172,6 +172,5 @@ void HgServeDialog::saveGeometry()
     settings->save();
 }
 
-#include "servedialog.moc"
 
 

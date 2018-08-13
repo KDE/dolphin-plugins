@@ -379,5 +379,4 @@ void HgCommitDialog::slotInsertCopyMessage(QAction *action)
     m_commitMessage->setText(action->data().toString());
 }
 
-#include "commitdialog.moc"
 

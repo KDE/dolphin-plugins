@@ -181,5 +181,4 @@ void HgExportDialog::done(int r)
     }
 }
 
-#include "exportdialog.moc"
 

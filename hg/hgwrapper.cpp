@@ -407,5 +407,4 @@ bool HgWrapper::isWorkingDirectoryClean()
     return output.trimmed().isEmpty();
 }
 
-#include "hgwrapper.moc"
 

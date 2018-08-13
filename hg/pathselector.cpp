@@ -94,5 +94,4 @@ const QString HgPathSelector::remote() const
     return (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_urlEdit->text():m_selectPathAlias->currentText();
 }
 
-#include "pathselector.moc"
 

@@ -183,5 +183,4 @@ void HgPushDialog::noChangesMessage()
                 "No outgoing changes!"));
 }
 
-#include "pushdialog.moc"
 

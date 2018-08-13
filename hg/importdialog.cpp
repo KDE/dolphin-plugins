@@ -211,5 +211,4 @@ void HgImportDialog::slotRemovePatches()
     }
 }
 
-#include "importdialog.moc"
 

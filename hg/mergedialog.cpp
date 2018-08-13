@@ -151,5 +151,4 @@ void HgMergeDialog::saveGeometry()
     settings->save();
 }
 
-#include "mergedialog.moc"
 

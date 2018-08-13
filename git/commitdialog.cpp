@@ -133,4 +133,3 @@ void CommitDialog::setOkButtonState()
             "" : i18nc("@info:tooltip", "You must enter a commit message first."));
 }
 
-#include "commitdialog.moc"
