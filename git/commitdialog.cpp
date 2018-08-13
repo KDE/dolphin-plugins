@@ -37,7 +37,7 @@ CommitDialog::CommitDialog (QWidget* parent ):
     m_localCodec(QTextCodec::codecForLocale())
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Commit"));
-    QDialogButtonBox *m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     this->setLayout(mainLayout);
@@ -143,7 +143,7 @@ void CommitDialog::setOkButtonState()
     bool enable = !m_commitMessageTextEdit->toPlainText().isEmpty();
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setEnabled(enable);
-    this->setButtonToolTip(QDialog::Ok, enable ?
+    okButton->setToolTip(enable ?
             "" : i18nc("@info:tooltip", "You must enter a commit message first."));
 }
 

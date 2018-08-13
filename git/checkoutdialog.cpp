@@ -217,21 +217,21 @@ void CheckoutDialog::setOkButtonState()
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "You must enter a valid name for the new branch first.");
             m_newBranchName->setToolTip(tt);
-            okButton->setToolTip(tt));
+            okButton->setToolTip(tt);
         }
         if (m_branchNames.contains(newBranchName)) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "A branch with the name '%1' already exists.", newBranchName);
             m_newBranchName->setToolTip(tt);
-            okButton->setToolTip(tt));
+            okButton->setToolTip(tt);
         }
         if (newBranchName.contains(QRegExp("\\s"))) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "Branch names may not contain any whitespace.");
             m_newBranchName->setToolTip(tt);
-            okButton->setToolTip(tt));
+            okButton->setToolTip(tt);
         }
     } //if we create a new branch and no valid branch is selected we create one based on the currently checked out version
     else if (m_branchRadioButton->isChecked() && m_branchComboBox->currentText().at(0) == '('){

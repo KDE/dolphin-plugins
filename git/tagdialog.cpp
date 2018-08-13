@@ -41,7 +41,7 @@ TagDialog::TagDialog (QWidget* parent ):
     m_localCodec(QTextCodec::codecForLocale())
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Create Tag"));
-    QDialogButtonBox *m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     this->setLayout(mainLayout);
@@ -149,7 +149,7 @@ void TagDialog::setOkButtonState()
       okButton->setEnabled(toolTip.isEmpty());
       setLineEditErrorModeActive(!toolTip.isEmpty());
       m_tagNameTextEdit->setToolTip(toolTip);
-      okButton->setToolTip(toolTip));
+      okButton->setToolTip(toolTip);
 }
 
 void TagDialog::setLineEditErrorModeActive(bool active)
