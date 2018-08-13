@@ -26,7 +26,6 @@
 class QCheckBox;
 class QTableWidget;
 class KTextEdit;
-class KComboBox;
 class QString;
 
 /**

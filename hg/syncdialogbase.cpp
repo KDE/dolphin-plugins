@@ -35,7 +35,6 @@
 #include <QProgressBar>
 #include <QStringList>
 #include <KTextEdit>
-#include <KComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
 

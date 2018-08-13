@@ -31,7 +31,6 @@
 #include <QCheckBox>
 #include <QGroupBox>
 #include <KTextEdit>
-#include <KComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
 

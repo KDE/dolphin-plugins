@@ -31,7 +31,6 @@
 #include <QTextCodec>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KComboBox>
 
 HgMergeDialog::HgMergeDialog(QWidget *parent):
     DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)

@@ -23,7 +23,6 @@
 #include <QString>
 #include "dialogbase.h"
 
-class KComboBox;
 class QLabel;
 class HgCommitInfoWidget;
 

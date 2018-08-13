@@ -32,7 +32,6 @@
 #include <QTableWidget>
 #include <QString>
 #include <KTextEdit>
-#include <KComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
 
