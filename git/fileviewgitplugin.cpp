@@ -28,7 +28,6 @@
 #include "pulldialog.h"
 
 #include <KLocalizedString>
-#include <KUrl>
 #include <KRun>
 #include <KShell>
 #include <KPluginFactory>
