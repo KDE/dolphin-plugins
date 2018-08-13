@@ -20,16 +20,17 @@
 #ifndef TAGDIALOG_H
 #define TAGDIALOG_H
 
-#include <kdialog.h>
+#include <QDialog>
 #include <QSet>
 
 class KTextEdit;
 class KLineEdit;
 class KComboBox;
+class QDialogButtonBox;
 class QTextCodec;
 class QRadioButton;
 
-class TagDialog : public KDialog
+class TagDialog : public QDialog
 {
     Q_OBJECT
 
@@ -60,6 +61,7 @@ private:
     KTextEdit* m_tagMessageTextEdit;
     KLineEdit* m_tagNameTextEdit;
     KComboBox* m_branchComboBox;
+    QDialogButtonBox* m_buttonBox;
     QRadioButton* branchRadioButton;
     QTextCodec* m_localCodec;
     QPalette m_errorColors;

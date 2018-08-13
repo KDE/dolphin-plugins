@@ -20,12 +20,13 @@
 #ifndef PUSHDIALOG_H
 #define PUSHDIALOG_H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class KComboBox;
 class QCheckBox;
+class QDialogButtonBox;
 
-class PushDialog : public KDialog
+class PushDialog : public QDialog
 {
     Q_OBJECT
 
@@ -45,6 +46,7 @@ private:
     KComboBox * m_localBranchComboBox;
     KComboBox * m_remoteBranchComboBox;
     QCheckBox * m_forceCheckBox;
+    QDialogButtonBox * m_buttonBox;
 };
 
 #endif // PUSHDIALOG_H

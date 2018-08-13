@@ -21,9 +21,11 @@
 #include "fileviewgitpluginsettings.h"
 #include "gitwrapper.h"
 
+#include <KConfigGroup>
 #include <klocale.h>
 #include <ktextedit.h>
 
+#include <QDialogButtonBox>
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QPushButton>
@@ -31,21 +33,32 @@
 #include <QVBoxLayout>
 
 CommitDialog::CommitDialog (QWidget* parent ):
-    KDialog (parent, Qt::Dialog),
+    QDialog (parent, Qt::Dialog),
     m_localCodec(QTextCodec::codecForLocale())
 {
-    this->setCaption(xi18nc("@title:window", "<application>Git</application> Commit"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Commit"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Commit"));
+    QDialogButtonBox *m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    this->setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    okButton->setText(i18nc("@action:button", "Commit"));
 
     QWidget* boxWidget = new QWidget(this);
     QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
-    this->setMainWidget(boxWidget);
+    mainLayout->addWidget(boxWidget);
 
     QGroupBox* messageGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(messageGroupBox);
     boxLayout->addWidget(messageGroupBox);
     messageGroupBox->setTitle(i18nc("@title:group", "Commit message"));
+
+    mainLayout->addWidget(m_buttonBox);
 
     QVBoxLayout * messageVBox = new QVBoxLayout(messageGroupBox);
     messageGroupBox->setLayout(messageVBox);
@@ -80,7 +93,7 @@ CommitDialog::CommitDialog (QWidget* parent ):
 
     //restore dialog size
     FileViewGitPluginSettings* settings = FileViewGitPluginSettings::self();
-    this->setInitialSize(QSize(settings->commitDialogWidth(), settings->commitDialogHeight()));
+    this->resize(QSize(settings->commitDialogWidth(), settings->commitDialogHeight()));
 
     connect(this, SIGNAL(finished()), this, SLOT(saveDialogSize()));
     connect(signOffButton, SIGNAL(clicked(bool)), this, SLOT(signOffButtonClicked()));
@@ -128,8 +141,9 @@ void CommitDialog::saveDialogSize()
 void CommitDialog::setOkButtonState()
 {
     bool enable = !m_commitMessageTextEdit->toPlainText().isEmpty();
-    this->enableButtonOk(enable);
-    this->setButtonToolTip(KDialog::Ok, enable ?
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(enable);
+    this->setButtonToolTip(QDialog::Ok, enable ?
             "" : i18nc("@info:tooltip", "You must enter a commit message first."));
 }
 

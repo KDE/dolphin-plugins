@@ -21,6 +21,7 @@
 #include "gitwrapper.h"
 
 #include <kcombobox.h>
+#include <KConfigGroup>
 #include <klocale.h>
 
 #include <QCheckBox>
@@ -28,21 +29,33 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 PushDialog::PushDialog (QWidget* parent ):
-    KDialog (parent, Qt::Dialog)
+    QDialog (parent, Qt::Dialog)
 {
-    this->setCaption(xi18nc("@title:window", "<application>Git</application> Push"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Push"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Push"));
+    QDialogButtonBox *m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    this->setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    m_buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
+    okButton->setText(i18nc("@action:button", "Push"));
 
     QWidget * boxWidget = new QWidget(this);
     QVBoxLayout * boxLayout = new QVBoxLayout(boxWidget);
-    this->setMainWidget(boxWidget);
+    mainLayout->addWidget(boxWidget);
 
     //Destination
     QGroupBox * destinationGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(destinationGroupBox);
     boxLayout->addWidget(destinationGroupBox);
     destinationGroupBox->setTitle(i18nc("@title:group The remote host", "Destination"));
     QHBoxLayout * destinationHBox = new QHBoxLayout(destinationGroupBox);
@@ -56,6 +69,7 @@ PushDialog::PushDialog (QWidget* parent ):
 
     //Branches
     QGroupBox* branchesGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(branchesGroupBox);
     boxLayout->addWidget(branchesGroupBox);
     branchesGroupBox->setTitle(i18nc("@title:group", "Branches"));
     QHBoxLayout * branchesHBox = new QHBoxLayout(branchesGroupBox);
@@ -74,6 +88,7 @@ PushDialog::PushDialog (QWidget* parent ):
     branchesHBox->addWidget(m_remoteBranchComboBox);
 
     QGroupBox* optionsGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(optionsGroupBox);
     boxLayout->addWidget(optionsGroupBox);
     optionsGroupBox->setTitle(i18nc("@title:group", "Options"));
     QHBoxLayout * optionsHBox = new QHBoxLayout(optionsGroupBox);
@@ -81,6 +96,8 @@ PushDialog::PushDialog (QWidget* parent ):
     m_forceCheckBox = new QCheckBox(i18nc("@option:check", "Force"), optionsGroupBox);
     m_forceCheckBox->setToolTip(i18nc("@info:tooltip", "Proceed even if the remote branch is not an ancestor of the local branch."));
     optionsHBox->addWidget(m_forceCheckBox);
+
+    mainLayout->addWidget(m_buttonBox);
 
     //populate UI
     GitWrapper * gitWrapper = GitWrapper::instance();
@@ -146,6 +163,7 @@ void PushDialog::localBranchSelectionChanged(const QString& newLocalBranch)
     if (index != -1) {
         m_remoteBranchComboBox->setCurrentIndex(index);
     }
-    this->enableButtonOk(m_remoteBranchComboBox->count() > 0);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(m_remoteBranchComboBox->count() > 0);
 }
 

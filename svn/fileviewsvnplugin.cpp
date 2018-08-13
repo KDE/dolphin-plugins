@@ -24,17 +24,21 @@
 #include <KLocalizedString>
 #include <KRun>
 #include <KShell>
-#include <KDialog>
 #include <KPluginFactory>
 
+#include <QDialog>
+#include <QDialogButtonBox>
 #include <QDir>
 #include <QLabel>
 #include <QPlainTextEdit>
 #include <QProcess>
+#include <QPushButton>
 #include <QString>
 #include <QStringList>
 #include <QTextStream>
 #include <QVBoxLayout>
+#include <KConfigGroup>
+#include <KWindowConfig>
 
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
 
@@ -309,7 +313,7 @@ void FileViewSvnPlugin::showLocalChanges()
 
 void FileViewSvnPlugin::commitFiles()
 {
-    KDialog dialog(0, Qt::Dialog);
+    QDialog dialog(0, Qt::Dialog);
 
     QWidget* boxWidget = new QWidget(&dialog);
     QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
@@ -319,15 +323,17 @@ void FileViewSvnPlugin::commitFiles()
     QPlainTextEdit* editor = new QPlainTextEdit(boxWidget);
     boxLayout->addWidget(editor);
 
-    dialog.setMainWidget(boxWidget);
-    dialog.setCaption(i18nc("@title:window", "SVN Commit"));
-    dialog.setButtons(KDialog::Ok | KDialog::Cancel);
-    dialog.setDefaultButton(KDialog::Ok);
-    dialog.setButtonText(KDialog::Ok, i18nc("@action:button", "Commit"));
+    dialog.setWindowTitle(i18nc("@title:window", "SVN Commit"));
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+    auto okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setText(i18nc("@action:button", "Commit"));
 
     KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"),
                               "SvnCommitDialog");
-    dialog.restoreDialogSize(dialogConfig);
+    KWindowConfig::restoreWindowSize(dialog.windowHandle(), dialogConfig);
 
     if (dialog.exec() == QDialog::Accepted) {
         // Write the commit description into a temporary file, so
@@ -352,7 +358,7 @@ void FileViewSvnPlugin::commitFiles()
                        i18nc("@info:status", "Committed SVN changes."));
     }
 
-    dialog.saveDialogSize(dialogConfig, KConfigBase::Persistent);
+    KWindowConfig::saveWindowSize(dialog.windowHandle(), dialogConfig, KConfigBase::Persistent);
 }
 
 void FileViewSvnPlugin::addFiles()

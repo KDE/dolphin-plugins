@@ -20,13 +20,14 @@
 #ifndef COMMITDIALOG_H
 #define COMMITDIALOG_H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class QCheckBox;
+class QDialogButtonBox;
 class QTextCodec;
 class KTextEdit;
 
-class CommitDialog : public KDialog
+class CommitDialog : public QDialog
 {
     Q_OBJECT
 
@@ -50,6 +51,7 @@ private slots:
 private:
     KTextEdit* m_commitMessageTextEdit;
     QCheckBox* m_amendCheckBox;
+    QDialogButtonBox *m_buttonBox;
     /**
      * @brief Holds an alternative message, that is not displayed currently.
      * One message is the amend message, the other one for normal commits.

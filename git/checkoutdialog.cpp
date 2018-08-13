@@ -21,7 +21,7 @@
 #include "gitwrapper.h"
 
 #include <kcombobox.h>
-#include <kdialog.h>
+#include <KConfigGroup>
 #include <klineedit.h>
 #include <klocale.h>
 
@@ -31,22 +31,33 @@
 #include <QRadioButton>
 #include <QString>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 CheckoutDialog::CheckoutDialog(QWidget* parent):
-    KDialog(parent, Qt::Dialog),
+    QDialog(parent, Qt::Dialog),
     m_userEditedNewBranchName(false)
 {
     //branch/tag selection
-    this->setCaption(xi18nc("@title:window", "<application>Git</application> Checkout"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Checkout"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Checkout"));
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    this->setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    okButton->setText(i18nc("@action:button", "Checkout"));
 
     QWidget *boxWidget = new QWidget(this);
     QVBoxLayout *boxLayout = new QVBoxLayout(boxWidget);
-    this->setMainWidget(boxWidget);
+    mainLayout->addWidget(boxWidget);
 
     m_branchSelectGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(m_branchSelectGroupBox);
     boxLayout->addWidget(m_branchSelectGroupBox);
 
     QGridLayout * gridLayout = new QGridLayout(m_branchSelectGroupBox);
@@ -67,6 +78,7 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
 
     //options
     QGroupBox * optionsGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(optionsGroupBox);
     boxLayout->addWidget(optionsGroupBox);
     optionsGroupBox->setTitle(i18nc("@title:group", "Options"));
 
@@ -76,6 +88,8 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     m_newBranchCheckBox = new QCheckBox(i18nc("@option:check", "Create New Branch: "), optionsGroupBox);
     m_newBranchCheckBox->setToolTip(i18nc("@info:tooltip", "Create a new branch based on a selected branch or tag."));
     optionsGridLayout->addWidget(m_newBranchCheckBox, 0,0);
+
+    mainLayout->addWidget(m_buttonBox);
 
     m_newBranchName = new KLineEdit(optionsGroupBox);
     m_newBranchName->setMinimumWidth(150);
@@ -193,6 +207,7 @@ void CheckoutDialog::setOkButtonState()
     //default to enabled
     bool enableButton = true;
     bool newNameError = false;
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
 
     //------------disable on these conditions---------------//
     if (m_newBranchCheckBox->isChecked()) {
@@ -202,36 +217,36 @@ void CheckoutDialog::setOkButtonState()
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "You must enter a valid name for the new branch first.");
             m_newBranchName->setToolTip(tt);
-            this->setButtonToolTip(KDialog::Ok, tt);
+            okButton->setToolTip(tt));
         }
         if (m_branchNames.contains(newBranchName)) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "A branch with the name '%1' already exists.", newBranchName);
             m_newBranchName->setToolTip(tt);
-            this->setButtonToolTip(KDialog::Ok, tt);
+            okButton->setToolTip(tt));
         }
         if (newBranchName.contains(QRegExp("\\s"))) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "Branch names may not contain any whitespace.");
             m_newBranchName->setToolTip(tt);
-            this->setButtonToolTip(KDialog::Ok, tt);
+            okButton->setToolTip(tt));
         }
     } //if we create a new branch and no valid branch is selected we create one based on the currently checked out version
     else if (m_branchRadioButton->isChecked() && m_branchComboBox->currentText().at(0) == '('){
         enableButton = false;
-        this->setButtonToolTip(KDialog::Ok, i18nc("@info:tooltip", "You must select a valid branch first."));
+        okButton->setToolTip(i18nc("@info:tooltip", "You must select a valid branch first."));
     }
     //------------------------------------------------------//
 
     setLineEditErrorModeActive(newNameError);
-    this->enableButtonOk(enableButton);
+    okButton->setEnabled(enableButton);
     if (!newNameError) {
         m_newBranchName->setToolTip(QString());
     }
     if (enableButton) {
-        this->setButtonToolTip(KDialog::Ok, QString());
+        okButton->setToolTip(QString());
     }
 }
 

@@ -22,6 +22,7 @@
 #include "gitwrapper.h"
 
 #include <kcombobox.h>
+#include <KConfigGroup>
 #include <klineedit.h>
 #include <klocale.h>
 #include <ktextedit.h>
@@ -33,21 +34,32 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
 
 TagDialog::TagDialog (QWidget* parent ):
-    KDialog (parent, Qt::Dialog),
+    QDialog (parent, Qt::Dialog),
     m_localCodec(QTextCodec::codecForLocale())
 {
-    this->setCaption(xi18nc("@title:window", "<application>Git</application> Create Tag"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Create Tag"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Create Tag"));
+    QDialogButtonBox *m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    this->setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    m_buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
+    okButton->setText(i18nc("@action:button", "Create Tag"));
 
     QWidget* boxWidget = new QWidget(this);
     QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
-    this->setMainWidget(boxWidget);
+    mainLayout->addWidget(boxWidget);
 
     QGroupBox* tagInformationGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(tagInformationGroupBox);
     boxLayout->addWidget(tagInformationGroupBox);
     tagInformationGroupBox->setTitle(i18nc("@title:group", "Tag Information"));
     QVBoxLayout * tagInformationLayout = new QVBoxLayout(tagInformationGroupBox);
@@ -70,8 +82,11 @@ TagDialog::TagDialog (QWidget* parent ):
     tagInformationLayout->addWidget(m_tagMessageTextEdit);
 
     QGroupBox* attachToGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(attachToGroupBox);
     boxLayout->addWidget(attachToGroupBox);
     attachToGroupBox->setTitle(i18nc("@title:group", "Attach to"));
+
+    mainLayout->addWidget(m_buttonBox);
 
     QHBoxLayout* attachToLayout = new QHBoxLayout();
     attachToGroupBox->setLayout(attachToLayout);
@@ -83,7 +98,7 @@ TagDialog::TagDialog (QWidget* parent ):
     attachToLayout->addWidget(m_branchComboBox);
     attachToLayout->addStretch();
 
-    this->setInitialSize(QSize(300,200));
+    this->resize(QSize(300,200));
 
     //initialize alternate color scheme for errors
     m_errorColors = m_tagNameTextEdit->palette();
@@ -130,11 +145,11 @@ void TagDialog::setOkButtonState()
       else if (m_tagNames.contains(tagName)) {
         toolTip = i18nc("@info:tooltip", "A tag named '%1' already exists.", tagName);
       }
-      this->enableButtonOk(toolTip.isEmpty());
+      QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+      okButton->setEnabled(toolTip.isEmpty());
       setLineEditErrorModeActive(!toolTip.isEmpty());
       m_tagNameTextEdit->setToolTip(toolTip);
-      this->setButtonToolTip(KDialog::Ok, toolTip);
-
+      okButton->setToolTip(toolTip));
 }
 
 void TagDialog::setLineEditErrorModeActive(bool active)

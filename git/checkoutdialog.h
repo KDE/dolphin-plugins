@@ -20,20 +20,21 @@
 #ifndef CHECKOUTDIALOG_H
 #define CHECKOUTDIALOG_H
 
-#include <kdialog.h>
+#include <QDialog>
 #include <QSet>
 #include <QString>
 
 class KComboBox;
 class KLineEdit;
 class QCheckBox;
+class QDialogButtonBox;
 class QGroupBox;
 class QRadioButton;
 
 /**
  * @brief The dialog for checking out Branches or Tags in Git.
  */
-class CheckoutDialog : public KDialog
+class CheckoutDialog : public QDialog
 {
     Q_OBJECT
 
@@ -76,6 +77,7 @@ private:
     bool m_userEditedNewBranchName;
     QSet<QString> m_branchNames;
     QPalette m_errorColors;
+    QDialogButtonBox *m_buttonBox;
     QGroupBox * m_branchSelectGroupBox;
     QRadioButton * m_branchRadioButton;
     KComboBox * m_branchComboBox;

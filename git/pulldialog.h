@@ -20,10 +20,12 @@
 #ifndef PULLDIALOG_H
 #define PULLDIALOG_H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class KComboBox;
-class PullDialog : public KDialog
+class QDialogButtonBox;
+
+class PullDialog : public QDialog
 {
     Q_OBJECT
 
@@ -32,6 +34,7 @@ public:
     QString source() const;
     QString remoteBranch() const;
 private:
+    QDialogButtonBox *m_buttonBox;
     KComboBox * m_remoteComboBox;
     KComboBox * m_remoteBranchComboBox;
     QHash<QString, QStringList> m_remoteBranches;

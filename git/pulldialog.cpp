@@ -21,30 +21,44 @@
 #include "gitwrapper.h"
 
 #include <kcombobox.h>
+#include <KConfigGroup>
 #include <klocale.h>
 
+#include <QDialogButtonBox>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QPushButton>
 
 PullDialog::PullDialog(QWidget* parent):
-    KDialog(parent, Qt::Dialog)
+    QDialog(parent, Qt::Dialog)
 {
-    this->setCaption(xi18nc("@title:window", "<application>Git</application> Pull"));
-    this->setButtons(KDialog::Ok | KDialog::Cancel);
-    this->setDefaultButton(KDialog::Ok);
-    this->setButtonText(KDialog::Ok, i18nc("@action:button", "Pull"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Pull"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    this->setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    okButton->setText(i18nc("@action:button", "Pull"));
 
     QWidget * boxWidget = new QWidget(this);
     QVBoxLayout * boxLayout = new QVBoxLayout(boxWidget);
-    this->setMainWidget(boxWidget);
+    mainLayout->addWidget(boxWidget);
 
     QGroupBox * sourceGroupBox = new QGroupBox(boxWidget);
+    mainLayout->addWidget(sourceGroupBox);
     boxLayout->addWidget(sourceGroupBox);
     sourceGroupBox->setTitle(i18nc("@title:group The source to pull from", "Source"));
     QHBoxLayout * sourceHBox = new QHBoxLayout(sourceGroupBox);
     sourceGroupBox->setLayout(sourceHBox);
+
+    mainLayout->addWidget(m_buttonBox);
 
     QLabel * remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), sourceGroupBox);
     sourceHBox->addWidget(remoteLabel);
@@ -94,6 +108,7 @@ void PullDialog::remoteSelectionChanged(const QString& newRemote)
 {
     m_remoteBranchComboBox->clear();
     m_remoteBranchComboBox->addItems(m_remoteBranches.value(newRemote));
-    this->enableButtonOk(m_remoteBranchComboBox->count() > 0);
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(m_remoteBranchComboBox->count() > 0);
 }
 
