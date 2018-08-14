@@ -249,7 +249,7 @@ public slots:
 signals:
     ///equivalent to the signals of QProcess
     void finished(int exitCode, QProcess::ExitStatus exitStatus);
-    void error(QProcess::ProcessError error);
+    void errorOccurred(QProcess::ProcessError error);
     void started();
     void stateChanged(QProcess::ProcessState state);
     void primaryOperationFinished(int exitCode, QProcess::ExitStatus exitStatus);

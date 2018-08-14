@@ -116,8 +116,8 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
 
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
-            this, SLOT(slotOperationError()));
+    connect(&m_process, &QProcess::errorOccurred,
+            this, &FileViewGitPlugin::slotOperationError);
 }
 
 FileViewGitPlugin::~FileViewGitPlugin()

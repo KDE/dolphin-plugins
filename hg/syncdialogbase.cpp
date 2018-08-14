@@ -61,10 +61,10 @@ void HgSyncBaseDialog::setup()
             this, SLOT(slotUpdateBusy(QProcess::ProcessState)));
     connect(&m_main_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
             this, SLOT(slotOperationComplete(int, QProcess::ExitStatus)));
-    connect(&m_main_process, SIGNAL(error(QProcess::ProcessError)), 
-            this, SLOT(slotOperationError()));
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)), 
-            this, SLOT(slotChangesProcessError()));
+    connect(&m_main_process, &QProcess::errorOccurred,
+            this, &HgSyncBaseDialog::slotOperationError);
+    connect(&m_process, &QProcess::errorOccurred,
+            this, &HgSyncBaseDialog::slotOperationError);
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), 
             this, SLOT(slotChangesProcessComplete(int, QProcess::ExitStatus)));
     connect(this, SIGNAL(finished(int)), this, SLOT(slotWriteBigSize()));

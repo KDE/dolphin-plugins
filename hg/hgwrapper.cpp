@@ -36,8 +36,8 @@ HgWrapper::HgWrapper(QObject *parent) :
     m_localCodec = QTextCodec::codecForLocale();
 
     // re-emit QProcess signals
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
-            this, SIGNAL(error(QProcess::ProcessError))); 
+    connect(&m_process, &QProcess::errorOccurred,
+            this, &HgWrapper::errorOccurred);
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SIGNAL(finished(int, QProcess::ExitStatus))),
     connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)),
@@ -47,8 +47,8 @@ HgWrapper::HgWrapper(QObject *parent) :
 
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
-    connect(&m_process, SIGNAL(error(QProcess::ProcessError)),
-            this, SLOT(slotOperationError(QProcess::ProcessError)));
+    connect(&m_process, &QProcess::errorOccurred,
+            this, &HgWrapper::slotOperationError);
 
 }
 
