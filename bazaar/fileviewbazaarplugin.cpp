@@ -106,8 +106,8 @@ FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant
     connect(m_logAction, SIGNAL(triggered()),
             this, SLOT(log()));
 
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, &FileViewBazaarPlugin::slotOperationCompleted);
     connect(&m_process, &QProcess::errorOccurred,
             this, &FileViewBazaarPlugin::slotOperationError);
 }

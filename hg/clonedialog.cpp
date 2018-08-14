@@ -106,15 +106,15 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
                                settings->cloneDialogHeight()));
     
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_source, SIGNAL(textChanged(const QString&)), 
-                this, SLOT(slotUpdateOkButton()));
+    connect(m_source, &QLineEdit::textChanged,
+            this, &HgCloneDialog::slotUpdateOkButton);
     connect(m_browse_dest, SIGNAL(clicked()),
                 this, SLOT(slotBrowseDestClicked()));
     connect(m_browse_source, SIGNAL(clicked()),
                 this, SLOT(slotBrowseSourceClicked()));
     connect(&m_process, SIGNAL(started()), this, SLOT(slotCloningStarted()));
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-                this, SLOT(slotCloningFinished(int, QProcess::ExitStatus)));
+    connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, &HgCloneDialog::slotCloningFinished);
     connect(&m_process, SIGNAL(readyReadStandardOutput()),
                 this, SLOT(slotUpdateCloneOutput()));
 }

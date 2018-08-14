@@ -114,8 +114,8 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_logAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Log..."));
     connect(m_logAction, &QAction::triggered, this, &FileViewGitPlugin::log);
 
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, &FileViewGitPlugin::slotOperationCompleted);
     connect(&m_process, &QProcess::errorOccurred,
             this, &FileViewGitPlugin::slotOperationError);
 }

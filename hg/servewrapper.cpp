@@ -65,10 +65,10 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
 
     connect(&server->process, SIGNAL(started()), 
             this, SIGNAL(started()));
-    connect(&server->process, SIGNAL(finished(int, QProcess::ExitStatus)), 
-            this, SLOT(slotFinished(int, QProcess::ExitStatus)));
-    connect(server, SIGNAL(readyReadLine(const QString&, const QString&)),
-            this, SIGNAL(readyReadLine(const QString&, const QString&)));
+    connect(&server->process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, &HgServeWrapper::slotFinished);
+    connect(server, &ServerProcessType::readyReadLine,
+            this, &HgServeWrapper::readyReadLine);
 
     QStringList args;
     args << QLatin1String("-oL");

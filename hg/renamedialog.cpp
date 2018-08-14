@@ -59,8 +59,8 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
     m_destinationFile->setFocus();
     m_destinationFile->selectAll();
 
-    connect(m_destinationFile, SIGNAL(textChanged(const QString &)),
-            this, SLOT(slotTextChanged(const QString &)));
+    connect(m_destinationFile, &QLineEdit::textChanged,
+            this, &HgRenameDialog::slotTextChanged);
 }
 
 void HgRenameDialog::slotTextChanged(const QString &text)

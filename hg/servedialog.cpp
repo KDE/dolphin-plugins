@@ -62,10 +62,8 @@ HgServeDialog::HgServeDialog(QWidget *parent) :
             this, SLOT(slotUpdateButtons()));
     connect(m_serverWrapper, SIGNAL(error()), 
             this, SLOT(slotServerError()));
-    connect(m_serverWrapper, 
-            SIGNAL(readyReadLine(const QString&, const QString&)),
-            this,
-            SLOT(appendServerOutput(const QString&, const QString&)));
+    connect(m_serverWrapper, &HgServeWrapper::readyReadLine,
+            this, &HgServeDialog::appendServerOutput);
 }
 
 void HgServeDialog::setupUI()

@@ -136,8 +136,8 @@ public:
                 this, SLOT(slotAppendOutput()));
         connect(&process, SIGNAL(readyReadStandardError()),
                 this, SLOT(slotAppendRemainingOutput()));
-        connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)),
-                this, SLOT(slotFinished()));
+        connect(&process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                this, &ServerProcessType::slotFinished);
     }
 
 signals:    

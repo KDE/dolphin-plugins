@@ -67,12 +67,12 @@ void HgPathConfigWidget::setupContextMenu()
     m_contextMenu->addAction(m_modifyAction);
     m_contextMenu->addAction(m_deleteAction);
 
-    connect(m_pathsListWidget, SIGNAL(cellChanged(int, int)),
-            this, SLOT(slotCellChanged(int, int)));
+    connect(m_pathsListWidget, &QTableWidget::cellChanged,
+            this, &HgPathConfigWidget::slotCellChanged);
     connect(m_pathsListWidget, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotSelectionChanged()));
-    connect(m_pathsListWidget, SIGNAL(customContextMenuRequested(const QPoint&)),
-            this, SLOT(slotContextMenuRequested(const QPoint&)));
+    connect(m_pathsListWidget, &QTableWidget::customContextMenuRequested,
+            this, &HgPathConfigWidget::slotContextMenuRequested);
 }
 
 void HgPathConfigWidget::setupUI()

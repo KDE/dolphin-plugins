@@ -52,9 +52,8 @@ HgStatusList::HgStatusList(QWidget *parent):
 
     reloadStatusTable();
 
-    connect(m_statusTable,
-            SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)),
-            this, SLOT(currentItemChangedSlot()));
+    connect(m_statusTable, &QTableWidget::currentItemChanged,
+            this, &HgStatusList::currentItemChangedSlot);
     connect(m_statusTable->horizontalHeader(), SIGNAL(sectionClicked(int)),
             this, SLOT(headerClickedSlot(int)));
 }

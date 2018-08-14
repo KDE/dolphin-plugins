@@ -86,8 +86,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     branchActionGroup->addAction(m_newBranch);
     branchActionGroup->addAction(m_closeBranch);
     m_useCurrentBranch->setChecked(true);
-    connect(branchActionGroup, SIGNAL(triggered(QAction *)),
-            this, SLOT(slotBranchActions(QAction *)));
+    connect(branchActionGroup, &QActionGroup::triggered,
+            this, &HgCommitDialog::slotBranchActions);
 
 
     //////////////
@@ -156,8 +156,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     messageView->setFocus(); // message editor ready to get a text
 
-    connect(m_statusList, SIGNAL(itemSelectionChanged(const char, const QString &)),
-        this, SLOT(slotItemSelectionChanged(const char, const QString &)));
+    connect(m_statusList, &HgStatusList::itemSelectionChanged,
+        this, &HgCommitDialog::slotItemSelectionChanged);
     connect(m_commitMessage, SIGNAL(textChanged(KTextEditor::Document*)),
          this, SLOT(slotMessageChanged()));
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
@@ -322,8 +322,8 @@ NewBranchDialog::NewBranchDialog(QWidget *parent):
 
     setLayout(layout);
 
-    connect(m_branchNameInput, SIGNAL(textChanged(const QString&)),
-            this, SLOT(slotTextChanged(const QString&)));
+    connect(m_branchNameInput, &QLineEdit::textChanged,
+            this, &NewBranchDialog::slotTextChanged);
     connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 }
@@ -352,8 +352,8 @@ QString NewBranchDialog::getBranchName() const
 void HgCommitDialog::createCopyMessageMenu()
 {
     QActionGroup *actionGroup = new QActionGroup(this);
-    connect(actionGroup, SIGNAL(triggered(QAction *)),
-            this, SLOT(slotInsertCopyMessage(QAction *)));
+    connect(actionGroup, &QActionGroup::triggered,
+            this, &HgCommitDialog::slotInsertCopyMessage);
 
     QStringList args;
     args << QLatin1String("--limit");

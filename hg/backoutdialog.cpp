@@ -60,8 +60,8 @@ HgBackoutDialog::HgBackoutDialog(QWidget *parent) :
             this, SLOT(slotSelectBaseChangeset()));
     connect(m_selectParentCommitButton, SIGNAL(clicked()), 
             this, SLOT(slotSelectParentChangeset()));
-    connect(m_baseRevision, SIGNAL(textChanged(const QString&)),
-            this, SLOT(slotUpdateOkButton(const QString&)));
+    connect(m_baseRevision, &QLineEdit::textChanged,
+            this, &HgBackoutDialog::slotUpdateOkButton);
 }
 
 void HgBackoutDialog::setupUI()

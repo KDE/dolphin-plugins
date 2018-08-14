@@ -108,8 +108,8 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     connect(this, SIGNAL(setShowUpdatesChecked(bool)),
             m_showUpdatesAction, SLOT(setChecked(bool)));
 
-    connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, &FileViewSvnPlugin::slotOperationCompleted);
     connect(&m_process, &QProcess::errorOccurred,
             this, &FileViewSvnPlugin::slotOperationError);
 }

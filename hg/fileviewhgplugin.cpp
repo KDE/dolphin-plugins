@@ -307,9 +307,8 @@ void FileViewHgPlugin::createHgWrapper() const
 
     m_hgWrapper = HgWrapper::instance();
 
-    connect(m_hgWrapper,
-            SIGNAL(primaryOperationFinished(int, QProcess::ExitStatus)),
-            this, SLOT(slotOperationCompleted(int, QProcess::ExitStatus)));
+    connect(m_hgWrapper, &HgWrapper::primaryOperationFinished,
+            this, &FileViewHgPlugin::slotOperationCompleted);
     connect(m_hgWrapper, &HgWrapper::primaryOperationError,
             this, &FileViewHgPlugin::slotOperationError);
 }
