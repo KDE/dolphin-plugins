@@ -49,8 +49,6 @@ public:
 
 
 private slots:
-    QList<QAction*> contextMenuFilesActions(const KFileItemList& items) const;
-    QList<QAction*> contextMenuDirectoryActions(const QString& directory) const;
     void updateFiles();
     void pullFiles();
     void pushFiles();
@@ -81,6 +79,9 @@ private:
                         const QString& operationCompletedMsg);
 
     void startBazaarCommandProcess();
+
+    QList<QAction*> contextMenuFilesActions(const KFileItemList& items) const;
+    QList<QAction*> contextMenuDirectoryActions(const QString& directory) const;
 
     bool m_pendingOperation;
     QHash<QString, ItemVersion> m_versionInfoHash;
