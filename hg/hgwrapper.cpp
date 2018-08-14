@@ -39,7 +39,7 @@ HgWrapper::HgWrapper(QObject *parent) :
     connect(&m_process, &QProcess::errorOccurred,
             this, &HgWrapper::errorOccurred);
     connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SIGNAL(finished(int, QProcess::ExitStatus))),
+            this, SIGNAL(finished(int, QProcess::ExitStatus)));
     connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)),
             this, SIGNAL(stateChanged(QProcess::ProcessState)));
     connect(&m_process, SIGNAL(started()),
