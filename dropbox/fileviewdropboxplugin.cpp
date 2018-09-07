@@ -20,6 +20,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
  *****************************************************************************/
 
+#include "fileviewdropboxplugin.h"
+
 #include <KFileItem>
 #include <KFileItemListProperties>
 #include <KLocalizedString>
@@ -31,8 +33,6 @@
 #include <QLocalSocket>
 #include <QFileSystemWatcher>
 #include <QStringBuilder>
-
-#include "fileviewdropboxplugin.h"
 
 K_PLUGIN_FACTORY(FileViewDropboxPluginFactory, registerPlugin<FileViewDropboxPlugin>();)
 

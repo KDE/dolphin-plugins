@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCONFIGDILAOG_H
-#define HGCONFIGDILAOG_H
+#ifndef HGCONFIGDIALOG_H
+#define HGCONFIGDIALOG_H
 
 #include "hgconfig.h"
 #include <KPageDialog>
@@ -59,5 +59,5 @@ private:
     HgConfig::ConfigType m_configType;
 };
 
-#endif // HGCONFIGDILAOG_H
+#endif // HGCONFIGDIALOG_H
 

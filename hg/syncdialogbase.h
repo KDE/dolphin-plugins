@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGSYNCBASEDIALOG_H
-#define HGSYNCBASEDIALOG_H
+#ifndef HGSYNCDIALOGBASE_H
+#define HGSYNCDIALOGBASE_H
 
 #include "hgwrapper.h"
 
@@ -110,5 +110,5 @@ protected:
 
 };
 
-#endif // HGSYNCBASEDIALOG_H
+#endif // HGSYNCDIALOGBASE_H
 

@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGPULLDILAOG_H
-#define HGPULLDILAOG_H
+#ifndef HGPULLDIALOG_H
+#define HGPULLDIALOG_H
 
 #include "syncdialogbase.h"
 
@@ -62,5 +62,5 @@ private:
     QTableWidget *m_changesList;
 };
 
-#endif // HGPULLDILAOG_H
+#endif // HGPULLDIALOG_H
 

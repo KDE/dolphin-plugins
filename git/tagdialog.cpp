@@ -33,7 +33,6 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QVBoxLayout>
 #include <QDialogButtonBox>
 
 TagDialog::TagDialog (QWidget* parent ):

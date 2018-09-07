@@ -136,7 +136,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
         }
     }
     // if bzr is not installed
-    if (baseDir == "") {
+    if (baseDir.isEmpty()) {
             return false;
     }
 

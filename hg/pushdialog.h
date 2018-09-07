@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGPUSHDILAOG_H
-#define HGPUSHDILAOG_H
+#ifndef HGPUSHDIALOG_H
+#define HGPUSHDIALOG_H
 
 #include "hgwrapper.h"
 #include "syncdialogbase.h"
@@ -64,5 +64,5 @@ private:
     KTextEdit *m_changesetInfo;
 };
 
-#endif // HGPUSHDILAOG_H
+#endif // HGPUSHDIALOG_H
 

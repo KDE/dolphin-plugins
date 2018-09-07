@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCREATEDILAOG_H
-#define HGCREATEDILAOG_H
+#ifndef HGCREATEDIALOG_H
+#define HGCREATEDIALOG_H
 
 #include <QString>
 #include "dialogbase.h"
@@ -47,5 +47,5 @@ private:
 
 };
 
-#endif // HGCREATEDILAOG_H
+#endif // HGCREATEDIALOG_H
 

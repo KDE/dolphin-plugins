@@ -33,7 +33,6 @@
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QProgressBar>
-#include <QStringList>
 #include <KTextEdit>
 #include <KLocalizedString>
 #include <KMessageBox>

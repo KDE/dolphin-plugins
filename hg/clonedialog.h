@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGCLONEDILAOG_H
-#define HGCLONEDILAOG_H
+#ifndef HGCLONEDIALOG_H
+#define HGCLONEDIALOG_H
 
 #include <QString>
 #include <QProcess>
@@ -88,5 +88,5 @@ private:
 
 };
 
-#endif // HGCLONEDILAOG_H
+#endif // HGCLONEDIALOG_H
 

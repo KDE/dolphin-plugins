@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGBRANCH_H
-#define HGBRANCH_H
+#ifndef HGBRANCHDIALOG_H
+#define HGBRANCHDIALOG_H
 
 #include <QString>
 #include "dialogbase.h"
@@ -54,5 +54,5 @@ private:
     QStringList          m_branchList;
 };
 
-#endif // HGBRANCH_H
+#endif // HGBRANCHDIALOG_H
 

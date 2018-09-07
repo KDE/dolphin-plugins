@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef HGMERGE_H
-#define HGMERGE_H
+#ifndef HGMERGEDIALOG_H
+#define HGMERGEDIALOG_H
 
 #include <QString>
 #include "dialogbase.h"
@@ -48,5 +48,5 @@ private:
     HgCommitInfoWidget *m_commitInfoWidget;
 };
 
-#endif // HGMERGE_H
+#endif // HGMERGEDIALOG_H
 
