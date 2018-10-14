@@ -135,7 +135,7 @@ void CommitDialog::saveDialogSize()
     FileViewGitPluginSettings* settings = FileViewGitPluginSettings::self();
     settings->setCommitDialogHeight(this->height());
     settings->setCommitDialogWidth(this->width());
-    settings->writeConfig();
+    settings->save();
 }
 
 void CommitDialog::setOkButtonState()

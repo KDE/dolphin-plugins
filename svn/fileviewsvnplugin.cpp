@@ -413,7 +413,7 @@ void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
     FileViewSvnPluginSettings* settings = FileViewSvnPluginSettings::self();
     Q_ASSERT(settings != 0);
     settings->setShowUpdates(checked);
-    settings->writeConfig();
+    settings->save();
 
     emit itemVersionsChanged();
 }
