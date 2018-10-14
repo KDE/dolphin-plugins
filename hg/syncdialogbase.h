@@ -51,7 +51,7 @@ class HgSyncBaseDialog : public DialogBase
 public:
     enum DialogType {PushDialog, PullDialog};
 
-    HgSyncBaseDialog(DialogType dialogType, QWidget *parent = 0);
+    explicit HgSyncBaseDialog(DialogType dialogType, QWidget *parent = 0);
 
 signals:
     void changeListAvailable();

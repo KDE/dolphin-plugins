@@ -34,7 +34,7 @@ class HgMergeDialog : public DialogBase
     Q_OBJECT
 
 public:
-    HgMergeDialog(QWidget *parent = 0);
+    explicit HgMergeDialog(QWidget *parent = 0);
     void done(int r);
 
 private slots:

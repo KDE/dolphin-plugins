@@ -146,7 +146,7 @@ QList<QAction*> FileViewDropboxPlugin::actions(const KFileItemList& items) const
 
     // analyze item options and dynamically form a menu
     foreach (const QString& replyLine, reply) {
-        const QStringList options = replyLine.split("~");
+        const QStringList options = replyLine.split('~');
 
         if (options.count() > 2) {
             QAction* action = d->contextActions->addAction(options.at(2));

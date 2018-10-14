@@ -34,7 +34,7 @@ class HgCreateDialog : public DialogBase
     Q_OBJECT
 
 public:
-    HgCreateDialog(const QString &directory, QWidget *parent = 0);
+    explicit HgCreateDialog(const QString &directory, QWidget *parent = 0);
 
 private:
     void done(int r);

@@ -57,9 +57,9 @@
 K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
 
 
-//TODO: Build a proper status signal system to sync HgWrapper/Dialgs with this
-//TODO: Show error messages and set their message approproately(hg output)
-//TODO: Use xi18nc rather thn i18c throughout plugin
+//TODO: Build a proper status signal system to sync HgWrapper/Dialogs with this
+//TODO: Show error messages and set their message appropriately(hg output)
+//TODO: Use xi18nc rather than i18c throughout plugin
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin(parent),
@@ -382,7 +382,7 @@ KVersionControlPlugin::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem
 
 QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
 {
-    //TODO: Make it work with universal context menu when imlpemented
+    //TODO: Make it work with universal context menu when implemented
     //      in dolphin
     qDebug() << items.count();
     if (items.count() == 1 && items.first().isDir()) {

@@ -36,7 +36,7 @@ class HgPushDialog : public HgSyncBaseDialog
     Q_OBJECT
 
 public:
-    HgPushDialog(QWidget *parent = 0);
+    explicit HgPushDialog(QWidget *parent = 0);
 
 private:
     void setOptions();

@@ -29,7 +29,7 @@ class HgIgnoreWidget;
 class HgPluginSettingsWidget;
 
 /**
- * Implemets a dialog which provides an easy way to edit several
+ * Implements a dialog which provides an easy way to edit several
  * configuration options for Mercurial and the plugin.
  */
 class HgConfigDialog : public KPageDialog
@@ -37,7 +37,7 @@ class HgConfigDialog : public KPageDialog
     Q_OBJECT
 
 public:
-    HgConfigDialog(HgConfig::ConfigType type, QWidget *parent = 0);
+    explicit HgConfigDialog(HgConfig::ConfigType type, QWidget *parent = 0);
 
 private:
     void done(int r);

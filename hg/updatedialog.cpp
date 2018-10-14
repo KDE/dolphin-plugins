@@ -98,7 +98,7 @@ void HgUpdateDialog::slotUpdateDialog(int index)
     m_selectFinal->setFocus();
 
     /// get parents of current working directory
-    /// more precise informtaion using 'hg summary'
+    /// more precise information using 'hg summary'
     /// but no proper way to retrieve needed data
     QString output;
     QStringList args;

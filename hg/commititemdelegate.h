@@ -23,7 +23,7 @@
 #include <QItemDelegate>
 
 /**
- * Custom Delgate to show Commit info in three lines
+ * Custom Delegate to show Commit info in three lines
  *  - Revision:Changeset (branch)
  *  - Author
  *  - Commit Log | First Line
@@ -32,7 +32,7 @@ class CommitItemDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    CommitItemDelegate(QObject *parent = 0);
+    explicit CommitItemDelegate(QObject *parent = 0);
     void paint(QPainter *painter, const QStyleOptionViewItem &option,
                   const QModelIndex &index) const;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;

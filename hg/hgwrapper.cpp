@@ -379,7 +379,7 @@ void HgWrapper::getItemVersions(QHash<QString, KVersionControlPlugin::ItemVersio
                 // Get full path to file and insert it to result
                 QUrl url = QUrl::fromLocalFile(m_hgBaseDir);
                 url = url.adjusted(QUrl::StripTrailingSlash);
-                url.setPath(url.path() + "/" + currentFile);
+                url.setPath(url.path() + '/' + currentFile);
                 QString filePath = url.path();
                 result.insert(filePath, vs);
             }

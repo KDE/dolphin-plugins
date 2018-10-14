@@ -47,7 +47,7 @@ public:
         RepoConfig, GlobalConfig, TempConfig
     };
 
-    HgConfig(ConfigType configFile);
+    explicit HgConfig(ConfigType configFile);
     ~HgConfig();
     
     // Related to config file
@@ -97,7 +97,7 @@ public:
      * @param section The settings group in hgrc file.
      * @param propertyName Name of the property in section whose value is
      *                     to be modified.
-     * @param propertyValue Value to be set of given propery. Deletes the 
+     * @param propertyValue Value to be set of given property. Deletes the 
      *                      entry if empty.
      */
     void setProperty(const QString &section, const QString &propertyName,

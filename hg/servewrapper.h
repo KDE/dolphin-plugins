@@ -29,7 +29,7 @@
 class ServerProcessType;
 
 /**
- * Wrapper to manage web server instaces of mercurial repository. More than one 
+ * Wrapper to manage web server instances of mercurial repository. More than one 
  * server can be handled. 
  *
  * This wrapper should be singleton hence only one instance should be created 
@@ -41,7 +41,7 @@ class HgServeWrapper : public QObject
     Q_OBJECT
 
 public: 
-    HgServeWrapper(QObject *parent=0);
+    explicit HgServeWrapper(QObject *parent=0);
     ~HgServeWrapper();
 
     /**
@@ -74,7 +74,7 @@ public:
      * wrapper.
      *
      * @param repoLocation Path to repository
-     * @return true if runnning/started else false
+     * @return true if running/started else false
      */
     bool running(const QString &repoLocation);
 
@@ -84,7 +84,7 @@ public:
     void cleanUnused();
 
     /**
-     * If terminated, get error message of that server instaces
+     * If terminated, get error message of that server instances
      */
     QString errorMessage(const QString &repoLocation);
 
@@ -121,7 +121,7 @@ private:
 // Hide member variables.
 
 /**
- * Represents a Mercurial Server instace. 
+ * Represents a Mercurial Server instance. 
  */
 class ServerProcessType : public QObject {
     Q_OBJECT

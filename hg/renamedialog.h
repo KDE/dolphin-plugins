@@ -35,7 +35,7 @@ class HgRenameDialog : public DialogBase
     Q_OBJECT
 
 public:
-    HgRenameDialog(const KFileItem &source, QWidget *parent = 0);
+    explicit HgRenameDialog(const KFileItem &source, QWidget *parent = 0);
     QString source() const;
     QString destination() const;
     void done(int r);

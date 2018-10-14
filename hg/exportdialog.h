@@ -29,7 +29,7 @@ class QGroupBox;
 //TODO: Some helper for writing patterns
 //
 /**
- * Dialog to implment mercurial export feature. Dialogs presents list of
+ * Dialog to implement mercurial export feature. Dialogs presents list of
  * changesets from which the user will select entries and export a series of
  * patch files for each changeset.
  */
@@ -38,7 +38,7 @@ class HgExportDialog : public DialogBase
     Q_OBJECT
 
 public:
-    HgExportDialog(QWidget *parent=0);
+    explicit HgExportDialog(QWidget *parent=0);
 
 public slots:
     void done(int r);

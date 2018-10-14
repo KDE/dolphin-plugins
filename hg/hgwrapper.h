@@ -41,7 +41,7 @@ class HgWrapper : public QObject
 {
     Q_OBJECT
 public:
-    HgWrapper(QObject *parent = 0);
+    explicit HgWrapper(QObject *parent = 0);
 
     static HgWrapper *instance();
     static void freeInstance();
@@ -139,7 +139,7 @@ public:
      * @param files List of files to be committed. Files changed but not 
      *              listed here will be ignored during commit. 
      *              If the list is empty, all modified files will be 
-     *              committed, the deault behovior.
+     *              committed, the default behavior.
      * @param closeCurrentBranch Closes the current branch after commit.
      * @return true if successful, otherwise false
      */

@@ -32,7 +32,7 @@ class CommitDialog : public QDialog
     Q_OBJECT
 
 public:
-    CommitDialog(QWidget* parent = 0);
+    explicit CommitDialog(QWidget* parent = 0);
     /**
      * Returns the commit message given by the user.
      * @returns The commit message.

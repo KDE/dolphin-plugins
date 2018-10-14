@@ -49,7 +49,7 @@ private:
     /**
      * Check if HgWrapper is created and connect some signals/slots. Created
      * to ensure that HgWrapper singleton is instantiated not during
-     * plugin contruction hence not in other thread which ends up giving 
+     * plugin construction hence not in other thread which ends up giving 
      * a lot of warnings. 
      */
     void createHgWrapper() const;

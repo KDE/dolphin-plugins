@@ -41,7 +41,7 @@ public:
      * But only OK and Cancel are supported so far
      * and available through @p okButton() and @p cancelButton()
      */
-    DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* parent = 0);
+    explicit DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* parent = 0);
 
     QPushButton* okButton() { return m_okButton; }
     QPushButton* cancelButton() { return m_cancelButton; }

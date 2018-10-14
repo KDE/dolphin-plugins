@@ -206,7 +206,7 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
     else {
         QUrl url = QUrl::fromLocalFile(HgWrapper::instance()->getBaseDir());
         url = url.adjusted(QUrl::StripTrailingSlash);
-        url.setPath(url.path() + "/" + fileName);
+        url.setPath(url.path() + '/' + fileName);
         m_fileDiffDoc->openUrl(url);
     }
 
@@ -265,8 +265,8 @@ void HgCommitDialog::slotBranchActions(QAction *action)
     HgWrapper *hgWrapper = HgWrapper::instance();
     QString currentBranch;
     hgWrapper->executeCommand(QLatin1String("branch"), QStringList(), currentBranch);
-    currentBranch.replace("\n", "");
-    currentBranch = " (" + currentBranch + ")";
+    currentBranch.replace('\n', QString());
+    currentBranch = " (" + currentBranch + ')';
     if (action == m_useCurrentBranch) {
         m_branchAction = NoChanges;
         m_branchButton->setText(i18n("Branch: Current Branch") + currentBranch);

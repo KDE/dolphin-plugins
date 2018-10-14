@@ -157,8 +157,8 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
         char buffer[512];
         while (process2.readLine(buffer, sizeof(buffer)) > 0)  {
             QString line = QString(buffer).trimmed();
-            QStringList list = line.split(" ");
-            QString file = baseDir + "/" + list[0];
+            QStringList list = line.split(' ');
+            QString file = baseDir + '/' + list[0];
             m_versionInfoHash.insert(file, UnversionedVersion);
         }
     }
@@ -201,9 +201,9 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
                 if (filePath.startsWith("C   Text conflict")) {
                     filePath = filePath.mid(17, length);
                 }
-                filePath = baseDir + "/" + filePath.mid(pos, length);
+                filePath = baseDir + '/' + filePath.mid(pos, length);
                 //remove type symbols from directories, links and executables
-                if (filePath.endsWith("/") || filePath.endsWith("@") || filePath.endsWith("*")) {
+                if (filePath.endsWith('/') || filePath.endsWith('@') || filePath.endsWith('*')) {
                     filePath = filePath.left(filePath.length() - 1);
                 }
                 if (!filePath.isEmpty()) {

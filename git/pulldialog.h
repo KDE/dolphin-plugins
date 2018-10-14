@@ -30,7 +30,7 @@ class PullDialog : public QDialog
     Q_OBJECT
 
 public:
-    PullDialog(QWidget* parent = 0);
+    explicit PullDialog(QWidget* parent = 0);
     QString source() const;
     QString remoteBranch() const;
 private:

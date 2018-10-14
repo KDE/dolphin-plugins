@@ -42,7 +42,7 @@ class HgBundleDialog : public DialogBase
     Q_OBJECT
 
 public:
-    HgBundleDialog(QWidget *parent=0);
+    explicit HgBundleDialog(QWidget *parent=0);
 
 public slots:
     void done(int r);
@@ -68,7 +68,7 @@ private:
     void createBundle(const QString &fileName);
 
     /**
-     * Find all changesets in respository and show them in Commit Selector in 
+     * Find all changesets in repository and show them in Commit Selector in 
      * Base Changeset selector.
      */
     void loadCommits();

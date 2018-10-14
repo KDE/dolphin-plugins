@@ -38,7 +38,7 @@ public:
     /**
      * @param type Which configuration file to use, Repo or Global
      */
-    HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent = 0);
+    explicit HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent = 0);
 
 public slots:
     void saveConfig();

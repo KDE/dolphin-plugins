@@ -34,7 +34,7 @@ class HgIgnoreWidget : public QWidget
 {
     Q_OBJECT
 public:
-    HgIgnoreWidget(QWidget *parent = 0);
+    explicit HgIgnoreWidget(QWidget *parent = 0);
 
     void loadConfig();
     void saveConfig();

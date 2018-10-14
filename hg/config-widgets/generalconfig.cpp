@@ -66,7 +66,7 @@ void HgGeneralConfigWidget::loadConfig()
     m_editorEdit->setText(hgc.editor());
     m_mergeEdit->setText(hgc.merge());
 
-    QString verbose = hgc.property(QLatin1String("ui"), QLatin1String("verobose"));
+    QString verbose = hgc.property(QLatin1String("ui"), QLatin1String("verbose"));
     if (verbose.isEmpty() || verbose == "False") {
         m_verboseCheck->setChecked(false);
     }

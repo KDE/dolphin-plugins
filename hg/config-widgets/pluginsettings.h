@@ -36,7 +36,7 @@ class HgPluginSettingsWidget : public QWidget
     Q_OBJECT
 
 public:
-    HgPluginSettingsWidget(QWidget *parent = 0);
+    explicit HgPluginSettingsWidget(QWidget *parent = 0);
     virtual ~HgPluginSettingsWidget();
 
 public slots:

@@ -35,7 +35,7 @@ class HgStatusList : public QGroupBox
     Q_OBJECT
 
 public:
-    HgStatusList(QWidget *parent = 0);
+    explicit HgStatusList(QWidget *parent = 0);
 
     /**
      * Appends the list of selected files whose changes should be 
