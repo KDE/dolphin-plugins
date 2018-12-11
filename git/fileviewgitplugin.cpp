@@ -320,17 +320,20 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
             }
         }
 
+        m_logAction->setEnabled(versionedCount == items.count());
         m_addAction->setEnabled(addableCount == items.count());
         m_revertAction->setEnabled(revertCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
     }
     else{
+        m_logAction->setEnabled(false);
         m_addAction->setEnabled(false);
         m_revertAction->setEnabled(false);
         m_removeAction->setEnabled(false);
     }
 
     QList<QAction*> actions;
+    actions.append(m_logAction);
     actions.append(m_addAction);
     actions.append(m_removeAction);
     actions.append(m_revertAction);
@@ -340,7 +343,8 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
 QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& directory) const
 {
     QList<QAction*> actions;
-    if (!m_pendingOperation){
+    if (!m_pendingOperation) {
+        m_contextItems.clear();
         m_contextDir = directory;
     }
     m_checkoutAction->setEnabled(!m_pendingOperation);
@@ -435,17 +439,25 @@ void FileViewGitPlugin::showDiff(const QUrl &link)
 
 void FileViewGitPlugin::log()
 {
+    QStringList items;
+    if (m_contextItems.isEmpty()) {
+        items << QLatin1String(".");
+    } else {
+        for (auto &item : qAsConst(m_contextItems)) {
+            items << item.url().fileName();
+        }
+    }
+
     QProcess process;
     process.setWorkingDirectory(m_contextDir);
     process.start(
         QLatin1String("git"),
         QStringList {
             QStringLiteral("log"),
-            QStringLiteral("--relative=."),
             QStringLiteral("--date=format:%d-%m-%Y"),
             QStringLiteral("-n 100"),
             QStringLiteral("--pretty=format:<tr> <td><a href=\"rev:%h\">%h</a></td> <td>%ad</td> <td>%s</td> <td>%an</td> </tr>")
-        }
+        } + items
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
