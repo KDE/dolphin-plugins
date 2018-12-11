@@ -311,7 +311,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
                 ++versionedCount;
             }
             if (state == UnversionedVersion || state == LocallyModifiedUnstagedVersion ||
-                state == IgnoredVersion) {
+                state == IgnoredVersion || state == ConflictingVersion) {
                 ++addableCount;
             }
             if (state == LocallyModifiedVersion || state == LocallyModifiedUnstagedVersion ||
