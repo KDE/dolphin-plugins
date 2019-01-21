@@ -119,7 +119,9 @@ PushDialog::PushDialog (QWidget* parent ):
             m_localBranchComboBox->addItem(branch);
         }
     }
-    m_localBranchComboBox->setCurrentText(branches.at(currentBranchIndex));
+    if (currentBranchIndex >= 0) {
+        m_localBranchComboBox->setCurrentText(branches.at(currentBranchIndex));
+    }
     remoteSelectionChanged(m_remoteComboBox->currentText());
 
     //Signals
