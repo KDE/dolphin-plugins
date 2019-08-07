@@ -75,9 +75,20 @@ FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList
     d->controlSocketPath = QDir::toNativeSeparators(dropboxDir % QLatin1String("command_socket"));
     d->controlSocket->connectToServer(d->controlSocketPath);
 
-    connect(d->databaseFileWatcher, SIGNAL(fileChanged(QString)), SIGNAL(itemVersionsChanged()));
-    d->databaseFileWatcher->addPath(QDir::toNativeSeparators(dropboxDir % QLatin1String("aggregation.dbx")));
+    // Find and watch aggregation.dbx file
+    QDir dir(dropboxDir);
+    QStringList nameFilter("instance*");
+    QStringList instanceDirs = dir.entryList(nameFilter);
+    QString aggregationDB = "";
+    for (const QString &instance : instanceDirs) {
+        aggregationDB = dropboxDir + "/" + instance + "/" + "aggregation.dbx";
+        if (QFile::exists(aggregationDB)) {
+            d->databaseFileWatcher->addPath(aggregationDB);
+            break;
+        }
+    }
 
+    connect(d->databaseFileWatcher, SIGNAL(fileChanged(QString)), SIGNAL(itemVersionsChanged()));
     connect(d->contextActions, SIGNAL(actionTriggered(QAction*)), SLOT(handleContextAction(QAction*)));
 }
 
