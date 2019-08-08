@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="addon">
-  <id>org.kde.kio_gdrive</id>
+  <id>org.kde.dolphin_plugins</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <extends>org.kde.dolphin.desktop</extends>
