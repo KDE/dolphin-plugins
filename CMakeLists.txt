@@ -47,4 +47,7 @@ ecm_optional_add_subdirectory(bazaar)
 ecm_optional_add_subdirectory(dropbox)
 ecm_optional_add_subdirectory(hg)
 
+install(FILES org.kde.dolphin-plugins.metainfo.xml
+        DESTINATION ${KDE_INSTALL_METAINFODIR})
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

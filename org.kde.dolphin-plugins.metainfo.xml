@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="addon">
+  <id>org.kde.kio_gdrive</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <extends>org.kde.dolphin.desktop</extends>
+  <name>Dolphin Plugins</name>
+  <summary>Dolphin integration for revision control systems and Dropbox</summary>
+  <description>
+      <p>These plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git.  A Dropbox plugin gives action items to keep your files synced to the Dropbox service.</p>
+  </description>
+  <url type="homepage">https://www.kde.org</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=dolphin</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://cdn.kde.org/screenshots/dolphin-plugins/dolphin-plugins.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <categories>
+    <category>System</category>
+  </categories>
+  <icon type="stock">system-file-manager</icon>
+</component>
