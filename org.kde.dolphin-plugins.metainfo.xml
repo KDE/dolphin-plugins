@@ -14,6 +14,7 @@
   <name xml:lang="nl">Plug-ins van Dolphin</name>
   <name xml:lang="pl">Wtyczki Dolphina</name>
   <name xml:lang="pt">'Plugins' do Dolphin</name>
+  <name xml:lang="sk">Pluginy Dolphinu</name>
   <name xml:lang="sv">Dolphin insticksprogram</name>
   <name xml:lang="uk">Додатки до Dolphin</name>
   <name xml:lang="x-test">xxDolphin Pluginsxx</name>
@@ -27,6 +28,7 @@
   <summary xml:lang="nl">Integratie van Dolphin voor besturingssystemen voor revisie en Dropbox</summary>
   <summary xml:lang="pl">Integracja Dolphina z systemami do zarządzania wersjami oraz Dropbox</summary>
   <summary xml:lang="pt">Integração do Dolphin com sistemas de controlo de versões e com o Dropbox</summary>
+  <summary xml:lang="sk">Integrátor Dolphinu pre systémy na správu revízií a Dropbox</summary>
   <summary xml:lang="sv">Integrering av versionshanteringssystemen och Dropbox i Dolphin</summary>
   <summary xml:lang="uk">Інтеграція Dolphin з системами керування версіями та Dropbox</summary>
   <summary xml:lang="x-test">xxDolphin integration for revision control systems and Dropboxxx</summary>
