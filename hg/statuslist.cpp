@@ -190,7 +190,7 @@ void HgStatusList::headerClickedSlot(int index)
             m_statusTable->horizontalHeader()->setSortIndicator(index, Qt::DescendingOrder);
         }
         m_statusTable->horizontalHeader()->setSortIndicatorShown(true);
-        m_statusTable->sortByColumn(index);
+        m_statusTable->sortByColumn(index, Qt::AscendingOrder);
     }
 }
 

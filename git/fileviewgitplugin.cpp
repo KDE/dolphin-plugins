@@ -473,7 +473,7 @@ void FileViewGitPlugin::log()
         "table.logtable td { padding: 9px 8px 9px; }" \
         "a { color: %3; }" \
         "a:visited { color: %4; } "
-    ).arg(palette.background().color().name(),
+    ).arg(palette.window().color().name(),
           palette.text().color().name(),
           palette.link().color().name(),
           palette.linkVisited().color().name());
