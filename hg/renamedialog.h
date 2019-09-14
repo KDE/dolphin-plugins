@@ -38,7 +38,7 @@ public:
     explicit HgRenameDialog(const KFileItem &source, QWidget *parent = 0);
     QString source() const;
     QString destination() const;
-    void done(int r);
+    void done(int r) override;
 
 private slots:
     void slotTextChanged(const QString &text);

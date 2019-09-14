@@ -42,7 +42,7 @@ public slots:
     void slotUpdateDialog(int index);
 
 private:
-    void done(int r);
+    void done(int r) override;
 
 private:
     enum {ToBranch, ToTag, ToRevision} m_updateTo;

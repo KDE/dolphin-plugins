@@ -35,7 +35,7 @@ class HgMergeDialog : public DialogBase
 
 public:
     explicit HgMergeDialog(QWidget *parent = 0);
-    void done(int r);
+    void done(int r) override;
 
 private slots:
     void saveGeometry();

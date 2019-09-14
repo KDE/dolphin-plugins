@@ -57,7 +57,7 @@ signals:
     void changeListAvailable();
 
 protected:
-    void done(int r);
+    void done(int r) override;
     void setupUI();
     void createOptionGroup();
     void setup();

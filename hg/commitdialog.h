@@ -78,7 +78,7 @@ private slots:
 private:
     QString getParentForLabel();
     void createCopyMessageMenu();
-    void done(int r);
+    void done(int r) override;
 
 private:
     QString                      m_hgBaseDir;

@@ -63,7 +63,7 @@ private slots:
     void slotUpdateCloneOutput();
 
 private:
-    void done(int r);
+    void done(int r) override;
     void browseDirectory(QLineEdit *dest);
     void appendOptionArguments(QStringList &args);
 

@@ -55,7 +55,7 @@ public:
     QBoxLayout* layout() { return m_layout; }
 
 protected:
-    virtual void keyReleaseEvent(QKeyEvent* event); // to handle CTRL+Enter shortcut to accept dialog
+    void keyReleaseEvent(QKeyEvent* event) override; // to handle CTRL+Enter shortcut to accept dialog
 
 private:
     QPushButton               *m_okButton;
