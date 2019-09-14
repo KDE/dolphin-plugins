@@ -39,17 +39,17 @@ public:
     explicit HgPullDialog(QWidget *parent = 0);
 
 private:
-    void setOptions();
-    void parseUpdateChanges(const QString &input); 
-    void appendOptionArguments(QStringList &args); 
-    void createChangesGroup();
-    void getHgChangesArguments(QStringList &args);
-    void noChangesMessage();
+    void setOptions() override;
+    void parseUpdateChanges(const QString &input) override;
+    void appendOptionArguments(QStringList &args) override;
+    void createChangesGroup() override;
+    void getHgChangesArguments(QStringList &args) override;
+    void noChangesMessage() override;
 
 private slots:
     void slotUpdateChangesGeometry();
-    void readBigSize();
-    void writeBigSize();
+    void readBigSize() override;
+    void writeBigSize() override;
 
 private:
     // Options

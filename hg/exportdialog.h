@@ -41,7 +41,7 @@ public:
     explicit HgExportDialog(QWidget *parent=0);
 
 public slots:
-    void done(int r);
+    void done(int r) override;
 
 private slots:
     void saveGeometry();

@@ -42,7 +42,7 @@ class HgServeWrapper : public QObject
 
 public: 
     explicit HgServeWrapper(QObject *parent=0);
-    ~HgServeWrapper();
+    ~HgServeWrapper() override;
 
     /**
      * Returns pointer to singleton instance of the wrapper. An instance is 

@@ -37,7 +37,7 @@ class HgPluginSettingsWidget : public QWidget
 
 public:
     explicit HgPluginSettingsWidget(QWidget *parent = 0);
-    virtual ~HgPluginSettingsWidget();
+    ~HgPluginSettingsWidget() override;
 
 public slots:
     void saveConfig();

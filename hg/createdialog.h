@@ -37,7 +37,7 @@ public:
     explicit HgCreateDialog(const QString &directory, QWidget *parent = 0);
 
 private:
-    void done(int r);
+    void done(int r) override;
     void setWorkingDirectory(const QString &directory);
 
 private:

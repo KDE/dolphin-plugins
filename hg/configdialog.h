@@ -40,7 +40,7 @@ public:
     explicit HgConfigDialog(HgConfig::ConfigType type, QWidget *parent = 0);
 
 private:
-    void done(int r);
+    void done(int r) override;
 
     // user interface
     void setupUI();
