@@ -140,8 +140,13 @@ int FileViewGitPlugin::readUntilZeroChar(QIODevice* device, char* buffer, const 
     int index = -1;
     while (++index < maxChars) {
         if (!device->getChar(&buffer[index])) {
-            buffer[index] = '\0';
-            return index == 0 ? 0 : index + 1;
+            if (device->waitForReadyRead(30000)) {  // 30 seconds to be consistent with QProcess::waitForReadyRead default
+                --index;
+                continue;
+            } else {
+                buffer[index] = '\0';
+                return index <= 0 ? 0 : index + 1;
+            }
         }
         if (buffer[index] == '\0') {  // line end or we put it there (see above)
             return index + 1;
