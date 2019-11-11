@@ -21,7 +21,7 @@
 #define PULLDIALOG_H
 
 #include <QDialog>
-
+#include <QHash>
 class QComboBox;
 class QDialogButtonBox;
 

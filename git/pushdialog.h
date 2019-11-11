@@ -21,7 +21,7 @@
 #define PUSHDIALOG_H
 
 #include <QDialog>
-
+#include <QHash>
 class QCheckBox;
 class QComboBox;
 class QDialogButtonBox;
