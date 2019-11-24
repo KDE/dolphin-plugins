@@ -39,7 +39,7 @@ class CheckoutDialog : public QDialog
     Q_OBJECT
 
 public:
-    CheckoutDialog(QWidget* parent = 0);
+    explicit CheckoutDialog(QWidget* parent = 0);
     /**
      * Returns the name of the selected tag or branch to be checkout out
      * @returns The name of the selected tag or branch

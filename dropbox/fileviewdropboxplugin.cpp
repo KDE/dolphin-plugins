@@ -81,7 +81,7 @@ FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList
     QStringList instanceDirs = dir.entryList(nameFilter);
     QString aggregationDB = "";
     for (const QString &instance : instanceDirs) {
-        aggregationDB = dropboxDir + "/" + instance + "/" + "aggregation.dbx";
+        aggregationDB = dropboxDir + '/' + instance + '/' + "aggregation.dbx";
         if (QFile::exists(aggregationDB)) {
             d->databaseFileWatcher->addPath(aggregationDB);
             break;

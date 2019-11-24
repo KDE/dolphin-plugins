@@ -30,7 +30,7 @@
 class QLocalSocket;
 
 //The dropbox protocol info can be found in the dropboxd-protocol file
-//it can be found here http://dl.dropbox.com/u/4577542/dropbox/dropboxd-protocol.txt
+//it can be found here https://build.opensuse.org/package/view_file/home:faco84/dolphin-box-plugin/dropboxd-protocol
 //Thanks Steffen Schuldenzucker!
 
 /**

@@ -198,7 +198,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
                 const int length = filePath.length() - pos - 1;
                 //conflicts annoyingly have a human readable text before the filename
                 //TODO cover other conflict types
-                if (filePath.startsWith("C   Text conflict")) {
+                if (filePath.startsWith(QLatin1String("C   Text conflict"))) {
                     filePath = filePath.mid(17, length);
                 }
                 filePath = baseDir + '/' + filePath.mid(pos, length);
@@ -462,7 +462,7 @@ void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
         char buffer[512];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
             QString output = QString(buffer).trimmed();
-            if (output.startsWith("qbzr")) {
+            if (output.startsWith(QLatin1String("qbzr"))) {
                 foundQbzr = true;
                 break;
             }

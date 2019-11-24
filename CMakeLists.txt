@@ -26,7 +26,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 find_package(DolphinVcs)
 set_package_properties(DolphinVcs PROPERTIES
     DESCRIPTION "the Dolphin version control plugin library"
-    URL "http://dolphin.kde.org/"
+    URL "https://kde.org/applications/system/org.kde.dolphin"
     TYPE REQUIRED
     PURPOSE "Provides the version control plugin interface."
 )

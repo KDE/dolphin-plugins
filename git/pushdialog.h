@@ -31,7 +31,7 @@ class PushDialog : public QDialog
     Q_OBJECT
 
 public:
-    PushDialog(QWidget* parent = 0);
+    explicit PushDialog(QWidget* parent = 0);
     QString destination() const;
     QString localBranch() const;
     QString remoteBranch() const;
