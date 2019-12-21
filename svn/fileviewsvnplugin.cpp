@@ -315,21 +315,21 @@ void FileViewSvnPlugin::commitFiles()
 {
     QDialog dialog(0, Qt::Dialog);
 
-    QWidget* boxWidget = new QWidget(&dialog);
-    QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
+    QVBoxLayout* boxLayout = new QVBoxLayout(&dialog);
 
     boxLayout->addWidget(new QLabel(i18nc("@label", "Description:"),
-                                    boxWidget));
-    QPlainTextEdit* editor = new QPlainTextEdit(boxWidget);
+                                    &dialog));
+    QPlainTextEdit* editor = new QPlainTextEdit(&dialog);
     boxLayout->addWidget(editor);
 
     dialog.setWindowTitle(i18nc("@title:window", "SVN Commit"));
-    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
     connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
     auto okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setText(i18nc("@action:button", "Commit"));
+    boxLayout->addWidget(buttonBox);
 
     KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"),
                               "SvnCommitDialog");
