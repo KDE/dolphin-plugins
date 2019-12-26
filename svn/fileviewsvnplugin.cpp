@@ -226,7 +226,7 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
     while (it != m_versionInfoHash.constEnd()) {
         if (it.key().startsWith(itemDir)) {
             const ItemVersion version = m_versionInfoHash.value(it.key());
-            if (version == LocallyModifiedVersion) {
+            if (version == LocallyModifiedVersion || version == AddedVersion || version == RemovedVersion) {
                 return LocallyModifiedVersion;
             }
         }
@@ -263,6 +263,8 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
             switch (version) {
                 case LocallyModifiedVersion:
                 case ConflictingVersion:
+                case AddedVersion:
+                case RemovedVersion:
                     ++editingCount;
                     break;
                 default:
@@ -470,7 +472,11 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) 
 
     const ItemVersion version = itemVersion(directory);
     m_showLocalChangesAction->setEnabled(enabled && (version != NormalVersion));
-    m_commitAction->setEnabled(enabled && (version == LocallyModifiedVersion));
+    if (version == LocallyModifiedVersion || version == AddedVersion || version == RemovedVersion) {
+        m_commitAction->setEnabled(enabled);
+    } else {
+        m_commitAction->setEnabled(false);
+    }
 
     QList<QAction*> actions;
     actions.append(m_updateAction);
