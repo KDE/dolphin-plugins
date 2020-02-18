@@ -307,10 +307,42 @@ void FileViewSvnPlugin::showLocalChanges()
     Q_ASSERT(!m_contextDir.isEmpty());
     Q_ASSERT(m_contextItems.isEmpty());
 
-    const QString command = QLatin1String("mkfifo /tmp/fifo; svn diff ") +
-                            KShell::quoteArg(m_contextDir) +
-                            QLatin1String(" > /tmp/fifo & kompare /tmp/fifo; rm /tmp/fifo");
-    KRun::runCommand(command, 0);
+    // This temporary file will be deleted on Dolphin close. We make an assumption:
+    // when the file gets deleted kompare has already loaded it and no longer needs it.
+    const QString tmpFileNameTemplate = QString("%1/%2.XXXXXX").arg(QDir::tempPath(), QDir(m_contextDir).dirName());
+    QTemporaryFile *file = new QTemporaryFile(tmpFileNameTemplate, this);
+
+    if (!file->open()) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes."));
+        return;
+    }
+
+    QProcess process;
+    process.setStandardOutputFile(file->fileName());
+    process.start(
+        QLatin1String("svn"),
+        QStringList {
+            QLatin1String("diff"),
+            QLatin1String("--git"),
+            m_contextDir
+        }
+    );
+    if (!process.waitForFinished() || process.exitCode() != 0) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: svn diff failed."));
+        file->deleteLater();
+        return;
+    }
+
+    const bool started = QProcess::startDetached(
+        QLatin1String("kompare"),
+        QStringList {
+            file->fileName()
+        }
+    );
+    if (!started) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
+        file->deleteLater();
+    }
 }
 
 void FileViewSvnPlugin::commitFiles()
