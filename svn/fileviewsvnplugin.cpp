@@ -37,8 +37,12 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QVBoxLayout>
+#include <QListWidget>
 #include <KConfigGroup>
 #include <KWindowConfig>
+#include <QWindow>
+#include <QTableWidget>
+#include <QHeaderView>
 
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
 
@@ -354,20 +358,84 @@ void FileViewSvnPlugin::commitFiles()
     boxLayout->addWidget(new QLabel(i18nc("@label", "Description:"),
                                     &dialog));
     QPlainTextEdit* editor = new QPlainTextEdit(&dialog);
-    boxLayout->addWidget(editor);
+    boxLayout->addWidget(editor, 1);
+
+    QFrame* line = new QFrame(&dialog);
+    line->setFrameShape(QFrame::HLine);
+    line->setFrameShadow(QFrame::Sunken);
+    boxLayout->addWidget(line);
+
+    const QStringList header = { i18nc("@title:column", "Path"),
+                                 i18nc("@title:column", "Status") };
+    const int columnPath = 0;
+    const int columnStatus = 1;
+    QTableWidget *changes = new QTableWidget(m_versionInfoHash.size(), header.size(), &dialog);
+    changes->setHorizontalHeaderLabels(header);
+    changes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    changes->horizontalHeader()->setSectionResizeMode(columnStatus, QHeaderView::ResizeToContents);
+    changes->verticalHeader()->setVisible(false);
+    changes->setSortingEnabled(false);
+
+    QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.cbegin();
+    for ( int row = 0 ; it != m_versionInfoHash.cend(); ++it, ++row ) {
+        QTableWidgetItem *path = new QTableWidgetItem( it.key() );
+        QTableWidgetItem *status = new QTableWidgetItem;
+
+        path->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+        status->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+
+        changes->setItem(row, columnPath, path);
+        changes->setItem(row, columnStatus, status);
+
+        switch(it.value()) {
+        case UnversionedVersion:
+            status->setText( i18nc("@item:intable", "Unversioned") );
+            break;
+        case LocallyModifiedVersion:
+            status->setText( i18nc("@item:intable", "Modified") );
+            break;
+        case AddedVersion:
+            status->setText( i18nc("@item:intable", "Added") );
+            break;
+        case RemovedVersion:
+            status->setText( i18nc("@item:intable", "Deleted") );
+            break;
+        case ConflictingVersion:
+            status->setText( i18nc("@item:intable", "Conflict") );
+            break;
+        case MissingVersion:
+            status->setText( i18nc("@item:intable", "Missing") );
+            break;
+        case UpdateRequiredVersion:
+            status->setText( i18nc("@item:intable", "Update required") );
+            break;
+        default:
+            // For SVN normaly we shouldn't be here with:
+            // NormalVersion, LocallyModifiedUnstagedVersion, IgnoredVersion.
+            // 'default' is for any future changes in ItemVersion enum.
+            qWarning() << QString("Unknown SVN status for item %1, ItemVersion = %2").arg(it.key()).arg(it.value());
+            status->setText("");
+        }
+    }
+    // Sort by status: unversioned is at the bottom.
+    changes->sortByColumn(columnStatus, Qt::AscendingOrder);
+    boxLayout->addWidget(changes, 3);
 
     dialog.setWindowTitle(i18nc("@title:window", "SVN Commit"));
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
     connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
     auto okButton = buttonBox->button(QDialogButtonBox::Ok);
+
     okButton->setDefault(true);
     okButton->setText(i18nc("@action:button", "Commit"));
     boxLayout->addWidget(buttonBox);
 
     KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"),
                               "SvnCommitDialog");
+    dialog.winId();                                 // Workaround for QTBUG-40584, line 1/2. See KWindowConfig::restoreWindowSize() docs.
     KWindowConfig::restoreWindowSize(dialog.windowHandle(), dialogConfig);
+    dialog.resize(dialog.windowHandle()->size());   // Workaround for QTBUG-40584, line 2/2. See KWindowConfig::restoreWindowSize() docs.
 
     if (dialog.exec() == QDialog::Accepted) {
         // Write the commit description into a temporary file, so
