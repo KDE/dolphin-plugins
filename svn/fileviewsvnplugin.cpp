@@ -44,6 +44,9 @@
 #include <QTableWidget>
 #include <QHeaderView>
 
+#include "svncommitdialog.h"
+#include "svncommands.h"
+
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
 
 FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& args) :
@@ -83,7 +86,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "SVN Commit..."));
     connect(m_commitAction, SIGNAL(triggered()),
-            this, SLOT(commitFiles()));
+            this, SLOT(commitDialog()));
 
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
@@ -163,6 +166,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             case 'A': version = AddedVersion; break;
             case 'D': version = RemovedVersion; break;
             case 'C': version = ConflictingVersion; break;
+            case '!': version = MissingVersion; break;
             default:
                 if (filePath.contains('*')) {
                     version = UpdateRequiredVersion;
@@ -205,6 +209,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
 
 void FileViewSvnPlugin::endRetrieval()
 {
+    emit versionInfoUpdated();
 }
 
 KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileItem& item) const
@@ -300,7 +305,7 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 
 void FileViewSvnPlugin::updateFiles()
 {
-    execSvnCommand("update", QStringList(),
+    execSvnCommand(QLatin1String("update"), QStringList(),
                    i18nc("@info:status", "Updating SVN repository..."),
                    i18nc("@info:status", "Update of SVN repository failed."),
                    i18nc("@info:status", "Updated SVN repository."));
@@ -349,118 +354,28 @@ void FileViewSvnPlugin::showLocalChanges()
     }
 }
 
-void FileViewSvnPlugin::commitFiles()
+void FileViewSvnPlugin::commitDialog()
 {
-    QDialog dialog(0, Qt::Dialog);
-
-    QVBoxLayout* boxLayout = new QVBoxLayout(&dialog);
-
-    boxLayout->addWidget(new QLabel(i18nc("@label", "Description:"),
-                                    &dialog));
-    QPlainTextEdit* editor = new QPlainTextEdit(&dialog);
-    boxLayout->addWidget(editor, 1);
-
-    QFrame* line = new QFrame(&dialog);
-    line->setFrameShape(QFrame::HLine);
-    line->setFrameShadow(QFrame::Sunken);
-    boxLayout->addWidget(line);
-
-    const QStringList header = { i18nc("@title:column", "Path"),
-                                 i18nc("@title:column", "Status") };
-    const int columnPath = 0;
-    const int columnStatus = 1;
-    QTableWidget *changes = new QTableWidget(m_versionInfoHash.size(), header.size(), &dialog);
-    changes->setHorizontalHeaderLabels(header);
-    changes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    changes->horizontalHeader()->setSectionResizeMode(columnStatus, QHeaderView::ResizeToContents);
-    changes->verticalHeader()->setVisible(false);
-    changes->setSortingEnabled(false);
-
-    QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.cbegin();
-    for ( int row = 0 ; it != m_versionInfoHash.cend(); ++it, ++row ) {
-        QTableWidgetItem *path = new QTableWidgetItem( it.key() );
-        QTableWidgetItem *status = new QTableWidgetItem;
-
-        path->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-        status->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-
-        changes->setItem(row, columnPath, path);
-        changes->setItem(row, columnStatus, status);
-
-        switch(it.value()) {
-        case UnversionedVersion:
-            status->setText( i18nc("@item:intable", "Unversioned") );
-            break;
-        case LocallyModifiedVersion:
-            status->setText( i18nc("@item:intable", "Modified") );
-            break;
-        case AddedVersion:
-            status->setText( i18nc("@item:intable", "Added") );
-            break;
-        case RemovedVersion:
-            status->setText( i18nc("@item:intable", "Deleted") );
-            break;
-        case ConflictingVersion:
-            status->setText( i18nc("@item:intable", "Conflict") );
-            break;
-        case MissingVersion:
-            status->setText( i18nc("@item:intable", "Missing") );
-            break;
-        case UpdateRequiredVersion:
-            status->setText( i18nc("@item:intable", "Update required") );
-            break;
-        default:
-            // For SVN normaly we shouldn't be here with:
-            // NormalVersion, LocallyModifiedUnstagedVersion, IgnoredVersion.
-            // 'default' is for any future changes in ItemVersion enum.
-            qWarning() << QString("Unknown SVN status for item %1, ItemVersion = %2").arg(it.key()).arg(it.value());
-            status->setText("");
+    QStringList context;
+    if (!m_contextDir.isEmpty()) {
+        context << m_contextDir;
+    } else {
+        for (const auto &i : m_contextItems) {
+            context << i.localPath();
         }
     }
-    // Sort by status: unversioned is at the bottom.
-    changes->sortByColumn(columnStatus, Qt::AscendingOrder);
-    boxLayout->addWidget(changes, 3);
 
-    dialog.setWindowTitle(i18nc("@title:window", "SVN Commit"));
-    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
-    connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
-    connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
-    auto okButton = buttonBox->button(QDialogButtonBox::Ok);
+    SvnCommitDialog *svnCommitDialog = new SvnCommitDialog(&m_versionInfoHash, context);
 
-    okButton->setDefault(true);
-    okButton->setText(i18nc("@action:button", "Commit"));
-    boxLayout->addWidget(buttonBox);
+    connect(this, &FileViewSvnPlugin::versionInfoUpdated, svnCommitDialog, &SvnCommitDialog::refreshChangesList);
 
-    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"),
-                              "SvnCommitDialog");
-    dialog.winId();                                 // Workaround for QTBUG-40584, line 1/2. See KWindowConfig::restoreWindowSize() docs.
-    KWindowConfig::restoreWindowSize(dialog.windowHandle(), dialogConfig);
-    dialog.resize(dialog.windowHandle()->size());   // Workaround for QTBUG-40584, line 2/2. See KWindowConfig::restoreWindowSize() docs.
+    connect(svnCommitDialog, &SvnCommitDialog::revertFiles, this, QOverload<const QStringList&>::of(&FileViewSvnPlugin::revertFiles));
+    connect(svnCommitDialog, &SvnCommitDialog::diffFile, this, &FileViewSvnPlugin::diffFile);
+    connect(svnCommitDialog, &SvnCommitDialog::addFiles, this, QOverload<const QStringList&>::of(&FileViewSvnPlugin::addFiles));
+    connect(svnCommitDialog, &SvnCommitDialog::commit, this, &FileViewSvnPlugin::commitFiles);
 
-    if (dialog.exec() == QDialog::Accepted) {
-        // Write the commit description into a temporary file, so
-        // that it can be read by the command "svn commit -F". The temporary
-        // file must stay alive until slotOperationCompleted() is invoked and will
-        // be destroyed when the version plugin is destructed.
-        if (!m_tempFile.open())  {
-            emit errorMessage(i18nc("@info:status", "Commit of SVN changes failed."));
-            return;
-        }
-
-        QTextStream out(&m_tempFile);
-        const QString fileName = m_tempFile.fileName();
-        out << editor->toPlainText();
-        m_tempFile.close();
-
-        QStringList arguments;
-        arguments << "-F" << fileName;
-        execSvnCommand("commit", arguments,
-                       i18nc("@info:status", "Committing SVN changes..."),
-                       i18nc("@info:status", "Commit of SVN changes failed."),
-                       i18nc("@info:status", "Committed SVN changes."));
-    }
-
-    KWindowConfig::saveWindowSize(dialog.windowHandle(), dialogConfig, KConfigBase::Persistent);
+    svnCommitDialog->setAttribute(Qt::WA_DeleteOnClose);
+    svnCommitDialog->show();
 }
 
 void FileViewSvnPlugin::addFiles()
@@ -520,6 +435,88 @@ void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
     emit itemVersionsChanged();
 }
 
+void FileViewSvnPlugin::revertFiles(const QStringList& filesPath)
+{
+    for (const auto &i : qAsConst(filesPath)) {
+        m_contextItems.append( QUrl::fromLocalFile(i) );
+    }
+    m_contextDir.clear();
+
+    execSvnCommand(QLatin1String("revert"), QStringList() << filesPath,
+                   i18nc("@info:status", "Reverting changes to file..."),
+                   i18nc("@info:status", "Revert file failed."),
+                   i18nc("@info:status", "File reverted."));
+}
+
+void FileViewSvnPlugin::diffFile(const QString& filePath)
+{
+    // For a diff we will export last known file local revision from a remote and compare. We will
+    // not use basic SVN action 'svn diff --extensions -U<lines> <fileName>' because we should count
+    // lines or set maximum number for this.
+    // With a maximum number (2147483647) 'svn diff' starts to work slowly.
+
+    QTemporaryFile *file = new QTemporaryFile(this);
+    // TODO: Calling a blocking operation: with a slow connection this might take some time. Work
+    //       should be done in a separate thread or process.
+    if (!SVNCommands::exportLocalFile(filePath, SVNCommands::localRevision(filePath), file)) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
+        file->deleteLater();
+    }
+
+    const bool started = QProcess::startDetached(
+        QLatin1String("kompare"),
+        QStringList {
+            file->fileName(),
+            filePath
+        }
+    );
+    if (!started) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
+        file->deleteLater();
+    }
+}
+
+void FileViewSvnPlugin::addFiles(const QStringList& filesPath)
+{
+    for (const auto &i : qAsConst(filesPath)) {
+        m_contextItems.append( QUrl::fromLocalFile(i) );
+    }
+    m_contextDir.clear();
+
+    addFiles();
+}
+
+void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& msg)
+{
+    // Write the commit description into a temporary file, so
+    // that it can be read by the command "svn commit -F". The temporary
+    // file must stay alive until slotOperationCompleted() is invoked and will
+    // be destroyed when the version plugin is destructed.
+    if (!m_tempFile.open())  {
+        emit errorMessage(i18nc("@info:status", "Commit of SVN changes failed."));
+        return;
+    }
+
+    QTextStream out(&m_tempFile);
+    const QString fileName = m_tempFile.fileName();
+    out << msg;
+    m_tempFile.close();
+
+    QStringList arguments;
+    arguments << context << "-F" << fileName;
+
+    // Lets clear m_contextDir and m_contextItems variables: we will pass everything in arguments.
+    // This is needed because startSvnCommandProcess() uses only one QString for svn transaction at
+    // a time but we want to commit everything.
+    m_contextDir.clear();
+    m_contextItems.clear();
+
+    execSvnCommand(QLatin1String("commit"), arguments,
+                   i18nc("@info:status", "Committing SVN changes..."),
+                   i18nc("@info:status", "Commit of SVN changes failed."),
+                   i18nc("@info:status", "Committed SVN changes."));
+}
+
 void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,
                                        const QStringList& arguments,
                                        const QString& infoMsg,
@@ -548,10 +545,14 @@ void FileViewSvnPlugin::startSvnCommandProcess()
         arguments << m_contextDir;
         m_contextDir.clear();
     } else {
-        const KFileItem item = m_contextItems.takeLast();
-        arguments << item.localPath();
-        // the remaining items of m_contextItems will be executed
-        // after the process has finished (see slotOperationFinished())
+        // If m_contextDir is empty and m_contextItems is empty then all svn arguments are in
+        // m_arguments (for example see commitFiles()).
+        if (!m_contextItems.isEmpty()) {
+            const KFileItem item = m_contextItems.takeLast();
+            arguments << item.localPath();
+            // the remaining items of m_contextItems will be executed
+            // after the process has finished (see slotOperationFinished())
+        }
     }
     m_process.start(program, arguments);
 }

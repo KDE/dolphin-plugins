@@ -4,6 +4,8 @@ add_definitions(-DTRANSLATION_DOMAIN=\"fileviewsvnplugin\")
 
 set(fileviewsvnplugin_SRCS
     fileviewsvnplugin.cpp
+    svncommands.cpp
+    svncommitdialog.cpp
 )
 
 kconfig_add_kcfg_files(fileviewsvnplugin_SRCS

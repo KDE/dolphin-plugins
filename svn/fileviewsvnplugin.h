@@ -47,10 +47,17 @@ public:
 signals:
     /// Invokes m_showUpdatesAction->setChecked(checked) on the UI thread.
     void setShowUpdatesChecked(bool checked);
+
+    /**
+     * Is emitted if current SVN directory status got updated. Not necessarily means
+     * it's changed. Emitted right after #endRetrieval().
+     */
+    void versionInfoUpdated();
+
 private slots:
     void updateFiles();
     void showLocalChanges();
-    void commitFiles();
+    void commitDialog();
     void addFiles();
     void removeFiles();
     void revertFiles();
@@ -59,6 +66,11 @@ private slots:
     void slotOperationError();
 
     void slotShowUpdatesToggled(bool checked);
+
+    void revertFiles(const QStringList& filesPath);
+    void diffFile(const QString& filePath);
+    void addFiles(const QStringList& filesPath);
+    void commitFiles(const QStringList& context, const QString& msg);
 
 private:
     /**
