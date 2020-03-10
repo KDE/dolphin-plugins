@@ -396,7 +396,14 @@ void FileViewSvnPlugin::removeFiles()
 
 void FileViewSvnPlugin::revertFiles()
 {
-    execSvnCommand(QStringLiteral("revert"), QStringList(),
+    QStringList arguments;
+
+    // If we are reverting a directory let's revert everything in it.
+    if (!m_contextDir.isEmpty()) {
+        arguments << QLatin1String("--depth") << QLatin1String("infinity");
+    }
+
+    execSvnCommand(QStringLiteral("revert"), arguments,
                    i18nc("@info:status", "Reverting files from SVN repository..."),
                    i18nc("@info:status", "Reverting of files from SVN repository failed."),
                    i18nc("@info:status", "Reverted files from SVN repository."));
@@ -573,10 +580,14 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) 
 
     const ItemVersion version = itemVersion(directory);
     m_showLocalChangesAction->setEnabled(enabled && (version != NormalVersion));
+    m_addAction->setEnabled(enabled && (version == UnversionedVersion));
+    m_removeAction->setEnabled(enabled && (version == NormalVersion));
     if (version == LocallyModifiedVersion || version == AddedVersion || version == RemovedVersion) {
         m_commitAction->setEnabled(enabled);
+        m_revertAction->setEnabled(enabled);
     } else {
         m_commitAction->setEnabled(false);
+        m_revertAction->setEnabled(false);
     }
 
     QList<QAction*> actions;
@@ -584,6 +595,9 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) 
     actions.append(m_showLocalChangesAction);
     actions.append(m_commitAction);
     actions.append(m_showUpdatesAction);
+    actions.append(m_addAction);
+    actions.append(m_removeAction);
+    actions.append(m_revertAction);
     return actions;
 }
 
