@@ -45,6 +45,7 @@
 #include <QHeaderView>
 
 #include "svncommitdialog.h"
+#include "svnlogdialog.h"
 #include "svncommands.h"
 
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
@@ -59,6 +60,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_addAction(0),
     m_removeAction(0),
     m_showUpdatesAction(0),
+    m_logAction(nullptr),
     m_command(),
     m_arguments(),
     m_errorMsg(),
@@ -114,6 +116,11 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
             this, SLOT(slotShowUpdatesToggled(bool)));
     connect(this, SIGNAL(setShowUpdatesChecked(bool)),
             m_showUpdatesAction, SLOT(setChecked(bool)));
+
+    m_logAction = new QAction(this);
+    m_logAction->setText(xi18nc("@action:inmenu", "SVN Log..."));
+    connect(m_logAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::logDialog);
 
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &FileViewSvnPlugin::slotOperationCompleted);
@@ -370,7 +377,7 @@ void FileViewSvnPlugin::commitDialog()
     connect(this, &FileViewSvnPlugin::versionInfoUpdated, svnCommitDialog, &SvnCommitDialog::refreshChangesList);
 
     connect(svnCommitDialog, &SvnCommitDialog::revertFiles, this, QOverload<const QStringList&>::of(&FileViewSvnPlugin::revertFiles));
-    connect(svnCommitDialog, &SvnCommitDialog::diffFile, this, &FileViewSvnPlugin::diffFile);
+    connect(svnCommitDialog, &SvnCommitDialog::diffFile, this, QOverload<const QString&>::of(&FileViewSvnPlugin::diffFile));
     connect(svnCommitDialog, &SvnCommitDialog::addFiles, this, QOverload<const QStringList&>::of(&FileViewSvnPlugin::addFiles));
     connect(svnCommitDialog, &SvnCommitDialog::commit, this, &FileViewSvnPlugin::commitFiles);
 
@@ -407,6 +414,19 @@ void FileViewSvnPlugin::revertFiles()
                    i18nc("@info:status", "Reverting files from SVN repository..."),
                    i18nc("@info:status", "Reverting of files from SVN repository failed."),
                    i18nc("@info:status", "Reverted files from SVN repository."));
+}
+
+void FileViewSvnPlugin::logDialog()
+{
+    SvnLogDialog *svnLogDialog = new SvnLogDialog(m_contextDir);
+
+    connect(svnLogDialog, &SvnLogDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
+    connect(svnLogDialog, &SvnLogDialog::operationCompletedMessage, this, &FileViewSvnPlugin::operationCompletedMessage);
+    connect(svnLogDialog, &SvnLogDialog::diffAgainstWorkingCopy, this, &FileViewSvnPlugin::diffAgainstWorkingCopy);
+    connect(svnLogDialog, &SvnLogDialog::diffBetweenRevs, this, &FileViewSvnPlugin::diffBetweenRevs);
+
+    svnLogDialog->setAttribute(Qt::WA_DeleteOnClose);
+    svnLogDialog->show();
 }
 
 void FileViewSvnPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
@@ -462,24 +482,58 @@ void FileViewSvnPlugin::diffFile(const QString& filePath)
     // lines or set maximum number for this.
     // With a maximum number (2147483647) 'svn diff' starts to work slowly.
 
+    diffAgainstWorkingCopy(filePath, SVNCommands::localRevision(filePath));
+}
+
+void FileViewSvnPlugin::diffAgainstWorkingCopy(const QString& localFilePath, ulong rev)
+{
     QTemporaryFile *file = new QTemporaryFile(this);
-    // TODO: Calling a blocking operation: with a slow connection this might take some time. Work
-    //       should be done in a separate thread or process.
-    if (!SVNCommands::exportLocalFile(filePath, SVNCommands::localRevision(filePath), file)) {
+    if (!SVNCommands::exportFile(QUrl::fromLocalFile(localFilePath), rev, file)) {
         emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file->deleteLater();
+        return;
     }
 
     const bool started = QProcess::startDetached(
         QLatin1String("kompare"),
         QStringList {
             file->fileName(),
-            filePath
+            localFilePath
         }
     );
     if (!started) {
         emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
         file->deleteLater();
+    }
+}
+
+void FileViewSvnPlugin::diffBetweenRevs(const QString& remoteFilePath, ulong rev1, ulong rev2)
+{
+    QTemporaryFile *file1 = new QTemporaryFile(this);
+    QTemporaryFile *file2 = new QTemporaryFile(this);
+    if (!SVNCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev1, file1)) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
+        file1->deleteLater();
+        return;
+    }
+    if (!SVNCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev2, file2)) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
+        file1->deleteLater();
+        file2->deleteLater();
+        return;
+    }
+
+    const bool started = QProcess::startDetached(
+        QLatin1String("kompare"),
+        QStringList {
+            file2->fileName(),
+            file1->fileName()
+        }
+    );
+    if (!started) {
+        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
+        file1->deleteLater();
+        file2->deleteLater();
     }
 }
 
@@ -598,6 +652,7 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) 
     actions.append(m_addAction);
     actions.append(m_removeAction);
     actions.append(m_revertAction);
+    actions.append(m_logAction);
     return actions;
 }
 

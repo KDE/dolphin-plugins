@@ -70,11 +70,16 @@ QStringList makeContext(const QStringList &list, const QHash<QString, KVersionCo
 
 }
 
-struct svnInfo_t {
-    QString filePath;
-    KVersionControlPlugin::ItemVersion fileVersion;
+struct svnCommitEntryInfo_t {
+    svnCommitEntryInfo_t() :
+        localPath(QString()),
+        fileVersion( KVersionControlPlugin::NormalVersion )
+    {}
+
+    QString localPath;                              ///< Affected local path.
+    KVersionControlPlugin::ItemVersion fileVersion; ///< File status in terms of KVersionControlPlugin
 };
-Q_DECLARE_METATYPE(svnInfo_t);
+Q_DECLARE_METATYPE(svnCommitEntryInfo_t);
 
 enum columns_t {
     columnPath,
@@ -126,21 +131,21 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
     m_actRevertFile = new QAction(i18nc("@item:inmenu", "Revert"), this);
     m_actRevertFile->setIcon(QIcon::fromTheme("document-revert"));
     connect(m_actRevertFile, &QAction::triggered, [this] () {
-        const QString filePath = m_actRevertFile->data().value<svnInfo_t>().filePath;
+        const QString filePath = m_actRevertFile->data().value<svnCommitEntryInfo_t>().localPath;
         emit revertFiles(QStringList() << filePath);
     } );
 
     m_actDiffFile = new QAction(i18nc("@item:inmenu", "Show changes"), this);
     m_actDiffFile->setIcon(QIcon::fromTheme("view-split-left-right"));
     connect(m_actDiffFile, &QAction::triggered, [this] () {
-        const QString filePath = m_actDiffFile->data().value<svnInfo_t>().filePath;
+        const QString filePath = m_actDiffFile->data().value<svnCommitEntryInfo_t>().localPath;
         emit diffFile(filePath);
     } );
 
     m_actAddFile = new QAction(i18nc("@item:inmenu", "Add file"), this);
     m_actAddFile->setIcon(QIcon::fromTheme("list-add"));
     connect(m_actAddFile, &QAction::triggered, [this] () {
-        const QString filePath = m_actAddFile->data().value<svnInfo_t>().filePath;
+        const QString filePath = m_actAddFile->data().value<svnCommitEntryInfo_t>().localPath;
         emit addFiles(QStringList() << filePath);
     } );
 
@@ -208,7 +213,9 @@ void SvnCommitDialog::refreshChangesList()
         m_changes->setItem(row, columnStatus, status);
         row++;
 
-        svnInfo_t info { it.key(), it.value() };
+        svnCommitEntryInfo_t info;
+        info.localPath = it.key();
+        info.fileVersion = it.value();
         path->setData(Qt::UserRole, QVariant::fromValue(info));
         status->setData(Qt::UserRole, QVariant::fromValue(info));
 
@@ -272,7 +279,7 @@ void SvnCommitDialog::contextMenu(const QPoint& pos)
     m_actDiffFile->setEnabled(false);
     m_actAddFile->setEnabled(false);
 
-    const svnInfo_t info = data.value<svnInfo_t>();
+    const svnCommitEntryInfo_t info = data.value<svnCommitEntryInfo_t>();
     switch(info.fileVersion) {
     case KVersionControlPlugin::UnversionedVersion:
         m_actAddFile->setEnabled(true);

@@ -61,6 +61,7 @@ private slots:
     void addFiles();
     void removeFiles();
     void revertFiles();
+    void logDialog();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -69,6 +70,8 @@ private slots:
 
     void revertFiles(const QStringList& filesPath);
     void diffFile(const QString& filePath);
+    void diffAgainstWorkingCopy(const QString& localFilePath, ulong rev);
+    void diffBetweenRevs(const QString& remoteFilePath, ulong rev1, ulong rev2);
     void addFiles(const QStringList& filesPath);
     void commitFiles(const QStringList& context, const QString& msg);
 
@@ -104,6 +107,7 @@ private:
     QAction* m_removeAction;
     QAction* m_revertAction;
     QAction* m_showUpdatesAction;
+    QAction* m_logAction;
 
     QString m_command;
     QStringList m_arguments;
