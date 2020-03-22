@@ -49,10 +49,10 @@ bool resetAndRevertFileToRevision(const QString &filePath, ulong revision)
         }
     }
 
-    if (!SVNCommands::revertLocalChanges(filePath)) {
+    if (!SvnCommands::revertLocalChanges(filePath)) {
         return false;
     }
-    if (!SVNCommands::revertToRevision(filePath, revision)) {
+    if (!SvnCommands::revertToRevision(filePath, revision)) {
         if (preserveFile) {
             QFile::remove(filePath);
             QFile::copy(file.fileName(), filePath);
@@ -164,7 +164,7 @@ void SvnLogDialog::setCurrentRevision(ulong revision)
 
 void SvnLogDialog::refreshLog()
 {
-    m_log = SVNCommands::getLog(m_contextDir, m_logLength);
+    m_log = SvnCommands::getLog(m_contextDir, m_logLength);
     m_ui.tLog->clearContents();
     m_ui.teMessage->clear();
     m_ui.lPaths->clear();
@@ -184,7 +184,7 @@ void SvnLogDialog::refreshLog()
         m_ui.tLog->setItem(i, columnMessage, msg);
     }
 
-    SvnLogDialog::setCurrentRevision( SVNCommands::localRevision(m_contextDir) );
+    SvnLogDialog::setCurrentRevision( SvnCommands::localRevision(m_contextDir) );
 }
 
 void SvnLogDialog::on_tLog_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn)
@@ -203,7 +203,7 @@ void SvnLogDialog::on_tLog_currentCellChanged(int currentRow, int currentColumn,
         return;
     }
 
-    const QString rootUrl = SVNCommands::remoteRootUrl(m_contextDir);
+    const QString rootUrl = SvnCommands::remoteRootUrl(m_contextDir);
     if (rootUrl.isEmpty()) {
         return;
     }
@@ -267,7 +267,7 @@ void SvnLogDialog::updateRepoToRevision()
 {
     bool convert = false;
     uint revision = m_updateToRev->data().toUInt(&convert);
-    if (!convert || !SVNCommands::updateToRevision(m_contextDir, revision)) {
+    if (!convert || !SvnCommands::updateToRevision(m_contextDir, revision)) {
         emit errorMessage(i18nc("@info:status", "SVN log: update to revision failed."));
     } else {
         emit operationCompletedMessage(i18nc("@info:status", "SVN log: update to revision %1 successful.", revision));
@@ -280,7 +280,7 @@ void SvnLogDialog::revertRepoToRevision()
 {
     bool convert = false;
     uint revision = m_revertToRev->data().toUInt(&convert);
-    if (!convert || !SVNCommands::revertToRevision(m_contextDir, revision)) {
+    if (!convert || !SvnCommands::revertToRevision(m_contextDir, revision)) {
         emit errorMessage(i18nc("@info:status", "SVN log: revert to revision failed."));
     } else {
         emit operationCompletedMessage(i18nc("@info:status", "SVN log: revert to revision %1 successful.", revision));

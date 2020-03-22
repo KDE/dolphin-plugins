@@ -39,7 +39,7 @@ QString templateFileName(const QString& url, ulong rev)
 
 }
 
-ulong SVNCommands::localRevision(const QString& filePath)
+ulong SvnCommands::localRevision(const QString& filePath)
 {
     QProcess process;
 
@@ -68,9 +68,9 @@ ulong SVNCommands::localRevision(const QString& filePath)
     }
 }
 
-ulong SVNCommands::remoteRevision(const QString& filePath)
+ulong SvnCommands::remoteRevision(const QString& filePath)
 {
-    const QString url = SVNCommands::remoteItemUrl(filePath);
+    const QString url = SvnCommands::remoteItemUrl(filePath);
 
     if (url.isNull()) {
         return 0;
@@ -103,7 +103,7 @@ ulong SVNCommands::remoteRevision(const QString& filePath)
     }
 }
 
-QString SVNCommands::remoteItemUrl(const QString& filePath)
+QString SvnCommands::remoteItemUrl(const QString& filePath)
 {
     QProcess process;
 
@@ -132,7 +132,7 @@ QString SVNCommands::remoteItemUrl(const QString& filePath)
     }
 }
 
-QString SVNCommands::remoteRootUrl(const QString& filePath)
+QString SvnCommands::remoteRootUrl(const QString& filePath)
 {
     QProcess process;
 
@@ -161,7 +161,7 @@ QString SVNCommands::remoteRootUrl(const QString& filePath)
     }
 }
 
-QString SVNCommands::remoteRelativeUrl(const QString& filePath)
+QString SvnCommands::remoteRelativeUrl(const QString& filePath)
 {
     QProcess process;
 
@@ -190,7 +190,7 @@ QString SVNCommands::remoteRelativeUrl(const QString& filePath)
     }
 }
 
-bool SVNCommands::updateToRevision(const QString& filePath, ulong revision)
+bool SvnCommands::updateToRevision(const QString& filePath, ulong revision)
 {
     QProcess process;
 
@@ -210,7 +210,7 @@ bool SVNCommands::updateToRevision(const QString& filePath, ulong revision)
     return true;
 }
 
-bool SVNCommands::revertLocalChanges(const QString& filePath)
+bool SvnCommands::revertLocalChanges(const QString& filePath)
 {
     QProcess process;
 
@@ -229,11 +229,11 @@ bool SVNCommands::revertLocalChanges(const QString& filePath)
     }
 }
 
-bool SVNCommands::revertToRevision(const QString& filePath, ulong revision)
+bool SvnCommands::revertToRevision(const QString& filePath, ulong revision)
 {
     // TODO: No conflict resolve while merging.
 
-    ulong currentRevision = SVNCommands::localRevision(filePath);
+    ulong currentRevision = SvnCommands::localRevision(filePath);
     if (currentRevision == 0) {
         return false;
     }
@@ -256,7 +256,7 @@ bool SVNCommands::revertToRevision(const QString& filePath, ulong revision)
     return true;
 }
 
-bool SVNCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
+bool SvnCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
 {
     if (file == nullptr || !path.isValid()) {
         return false;
@@ -296,7 +296,7 @@ bool SVNCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
     }
 }
 
-bool SVNCommands::exportFile(const QUrl& path, ulong rev, QTemporaryFile *file)
+bool SvnCommands::exportFile(const QUrl& path, ulong rev, QTemporaryFile *file)
 {
     if (file == nullptr || !path.isValid()) {
         return false;
@@ -307,11 +307,11 @@ bool SVNCommands::exportFile(const QUrl& path, ulong rev, QTemporaryFile *file)
     return exportFile(path, rev, dynamic_cast<QFileDevice*>(file));
 }
 
-QSharedPointer< QVector<logEntry> > SVNCommands::getLog(const QString& filePath, uint maxEntries, ulong fromRevision)
+QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath, uint maxEntries, ulong fromRevision)
 {
     ulong rev = fromRevision;
     if (rev == 0) {
-        rev = SVNCommands::remoteRevision(filePath);
+        rev = SvnCommands::remoteRevision(filePath);
         if (rev == 0) {
             return QSharedPointer< QVector<logEntry> >{};
         }

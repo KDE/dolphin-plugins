@@ -54,12 +54,12 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     KVersionControlPlugin(parent),
     m_pendingOperation(false),
     m_versionInfoHash(),
-    m_updateAction(0),
-    m_showLocalChangesAction(0),
-    m_commitAction(0),
-    m_addAction(0),
-    m_removeAction(0),
-    m_showUpdatesAction(0),
+    m_updateAction(nullptr),
+    m_showLocalChangesAction(nullptr),
+    m_commitAction(nullptr),
+    m_addAction(nullptr),
+    m_removeAction(nullptr),
+    m_showUpdatesAction(nullptr),
     m_logAction(nullptr),
     m_command(),
     m_arguments(),
@@ -75,47 +75,47 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_updateAction = new QAction(this);
     m_updateAction->setIcon(QIcon::fromTheme("view-refresh"));
     m_updateAction->setText(i18nc("@item:inmenu", "SVN Update"));
-    connect(m_updateAction, SIGNAL(triggered()),
-            this, SLOT(updateFiles()));
+    connect(m_updateAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::updateFiles);
 
     m_showLocalChangesAction = new QAction(this);
     m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
     m_showLocalChangesAction->setText(i18nc("@item:inmenu", "Show Local SVN Changes"));
-    connect(m_showLocalChangesAction, SIGNAL(triggered()),
-            this, SLOT(showLocalChanges()));
+    connect(m_showLocalChangesAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::showLocalChanges);
 
     m_commitAction = new QAction(this);
     m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "SVN Commit..."));
-    connect(m_commitAction, SIGNAL(triggered()),
-            this, SLOT(commitDialog()));
+    connect(m_commitAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::commitDialog);
 
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(i18nc("@item:inmenu", "SVN Add"));
-    connect(m_addAction, SIGNAL(triggered()),
-            this, SLOT(addFiles()));
+    connect(m_addAction, &QAction::triggered,
+            this, QOverload<>::of(&FileViewSvnPlugin::addFiles));
 
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
     m_removeAction->setText(i18nc("@item:inmenu", "SVN Delete"));
-    connect(m_removeAction, SIGNAL(triggered()),
-            this, SLOT(removeFiles()));
+    connect(m_removeAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::removeFiles);
 
     m_revertAction = new QAction(this);
     m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
     m_revertAction->setText(i18nc("@item:inmenu", "SVN Revert"));
-    connect(m_revertAction, SIGNAL(triggered()),
-            this, SLOT(revertFiles()));
+    connect(m_revertAction, &QAction::triggered,
+            this, QOverload<>::of(&FileViewSvnPlugin::revertFiles));
 
     m_showUpdatesAction = new QAction(this);
     m_showUpdatesAction->setCheckable(true);
     m_showUpdatesAction->setText(i18nc("@item:inmenu", "Show SVN Updates"));
     m_showUpdatesAction->setChecked(FileViewSvnPluginSettings::showUpdates());
-    connect(m_showUpdatesAction, SIGNAL(toggled(bool)),
-            this, SLOT(slotShowUpdatesToggled(bool)));
-    connect(this, SIGNAL(setShowUpdatesChecked(bool)),
-            m_showUpdatesAction, SLOT(setChecked(bool)));
+    connect(m_showUpdatesAction, &QAction::toggled,
+            this, &FileViewSvnPlugin::slotShowUpdatesToggled);
+    connect(this, &FileViewSvnPlugin::setShowUpdatesChecked,
+            m_showUpdatesAction, &QAction::setChecked);
 
     m_logAction = new QAction(this);
     m_logAction->setText(xi18nc("@action:inmenu", "SVN Log..."));
@@ -482,13 +482,13 @@ void FileViewSvnPlugin::diffFile(const QString& filePath)
     // lines or set maximum number for this.
     // With a maximum number (2147483647) 'svn diff' starts to work slowly.
 
-    diffAgainstWorkingCopy(filePath, SVNCommands::localRevision(filePath));
+    diffAgainstWorkingCopy(filePath, SvnCommands::localRevision(filePath));
 }
 
 void FileViewSvnPlugin::diffAgainstWorkingCopy(const QString& localFilePath, ulong rev)
 {
     QTemporaryFile *file = new QTemporaryFile(this);
-    if (!SVNCommands::exportFile(QUrl::fromLocalFile(localFilePath), rev, file)) {
+    if (!SvnCommands::exportFile(QUrl::fromLocalFile(localFilePath), rev, file)) {
         emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file->deleteLater();
         return;
@@ -511,12 +511,12 @@ void FileViewSvnPlugin::diffBetweenRevs(const QString& remoteFilePath, ulong rev
 {
     QTemporaryFile *file1 = new QTemporaryFile(this);
     QTemporaryFile *file2 = new QTemporaryFile(this);
-    if (!SVNCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev1, file1)) {
+    if (!SvnCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev1, file1)) {
         emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file1->deleteLater();
         return;
     }
-    if (!SVNCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev2, file2)) {
+    if (!SvnCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev2, file2)) {
         emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file1->deleteLater();
         file2->deleteLater();

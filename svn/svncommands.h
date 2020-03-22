@@ -58,7 +58,7 @@ struct logEntry {
  *
  * \note All functions are synchronous i.e. blocking. Each of them waits for svn process to finish.
  */
-class SVNCommands {
+class SvnCommands {
 public:
     /**
      * Returns file \p filePath local revision. Local revision means last known file revision, not

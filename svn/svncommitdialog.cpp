@@ -161,7 +161,8 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
 
     connect(m_changes, &QWidget::customContextMenuRequested, this, &SvnCommitDialog::contextMenu);
 
-    QShortcut *refreshShortcut = new QShortcut(QKeySequence::Refresh, this, SLOT(refreshChangesList()));
+    QShortcut *refreshShortcut = new QShortcut(QKeySequence::Refresh, this);
+    connect(refreshShortcut, &QShortcut::activated, this, &SvnCommitDialog::refreshChangesList);
     refreshShortcut->setAutoRepeat(false);
 
     /*
