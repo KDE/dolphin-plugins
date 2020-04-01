@@ -88,6 +88,12 @@ PullDialog::PullDialog(QWidget* parent):
         }
     }
     remoteSelectionChanged(m_remoteComboBox->currentText());
+    if (currentBranchIndex >= 0) {
+        const int index = m_remoteBranchComboBox->findText(branches.at(currentBranchIndex));
+        if (index != -1) {
+            m_remoteBranchComboBox->setCurrentIndex(index);
+        }
+    }
 
     //Signals
     connect(m_remoteComboBox, SIGNAL(currentIndexChanged(QString)),
