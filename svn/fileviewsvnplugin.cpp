@@ -226,6 +226,11 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
         return m_versionInfoHash.value(itemUrl);
     }
 
+    // If parent directory is unversioned item itself is unversioned.
+    if (isInUnversionedDir(item)) {
+        return UnversionedVersion;
+    }
+
     if (!item.isDir()) {
         // files that have not been listed by 'svn status' (= m_versionInfoHash)
         // are under version control per definition
@@ -254,6 +259,14 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
 
 QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 {
+    // Special case: if any item is in unversioned directory we shouldn't add any actions because
+    // we can do nothing with this item.
+    for (const auto &i : items) {
+        if (isInUnversionedDir(i)) {
+            return {};
+        }
+    }
+
     if (items.count() == 1 && items.first().isDir()) {
         return directoryActions(items.first());
     }
@@ -654,6 +667,20 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) 
     actions.append(m_revertAction);
     actions.append(m_logAction);
     return actions;
+}
+
+bool FileViewSvnPlugin::isInUnversionedDir(const KFileItem& item) const
+{
+    const QString itemPath = item.localPath();
+
+    for (auto it = m_versionInfoHash.cbegin(); it != m_versionInfoHash.cend(); ++it) {
+        // Add QDir::separator() to m_versionInfoHash entry to ensure this is a directory.
+        if (it.value() == UnversionedVersion && itemPath.startsWith(it.key() + QDir::separator())) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 #include "fileviewsvnplugin.moc"
