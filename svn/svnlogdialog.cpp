@@ -147,6 +147,10 @@ SvnLogDialog::~SvnLogDialog() = default;
 
 void SvnLogDialog::setCurrentRevision(ulong revision)
 {
+    if (m_log.isNull()) {
+        return;
+    }
+
     for (int i = 0; i < m_log->size(); ++i) {
         if (m_log->at(i).revision == revision) {
             QFont font;
@@ -165,6 +169,11 @@ void SvnLogDialog::setCurrentRevision(ulong revision)
 void SvnLogDialog::refreshLog()
 {
     m_log = SvnCommands::getLog(m_contextDir, m_logLength);
+
+    if (m_log.isNull()) {
+        return;
+    }
+
     m_ui.tLog->clearContents();
     m_ui.teMessage->clear();
     m_ui.lPaths->clear();
@@ -194,6 +203,9 @@ void SvnLogDialog::on_tLog_currentCellChanged(int currentRow, int currentColumn,
     Q_UNUSED(previousColumn)
 
     if (currentRow < 0) {
+        return;
+    }
+    if (m_log.isNull()) {
         return;
     }
     if (m_log->size() < currentRow) {

@@ -156,7 +156,7 @@ public:
      * absolute paths accepted). Log starts from revision \p fromRevision and goes for \p maxEntries
      * previous revisions. The default revision (0) means current revision.
      *
-     * \return Full log, empty QVector in case of error.
+     * \return Full log, nullptr in case of error.
      *
      * \note This function is really time consuming.
      */
