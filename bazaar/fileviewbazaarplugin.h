@@ -44,7 +44,8 @@ public:
     bool beginRetrieval(const QString& directory)  Q_DECL_OVERRIDE;
     void endRetrieval() Q_DECL_OVERRIDE;
     KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const Q_DECL_OVERRIDE;
-    QList<QAction*> actions(const KFileItemList& items) const Q_DECL_OVERRIDE;
+    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
+    QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
 
 
 

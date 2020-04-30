@@ -132,7 +132,7 @@ void FileViewDropboxPlugin::endRetrieval()
     delete d->itemStateSocket;
 }
 
-QList<QAction*> FileViewDropboxPlugin::actions(const KFileItemList& items) const
+QList<QAction*> FileViewDropboxPlugin::versionControlActions(const KFileItemList &items) const
 {
     Q_ASSERT(!items.isEmpty());
 
@@ -168,6 +168,13 @@ QList<QAction*> FileViewDropboxPlugin::actions(const KFileItemList& items) const
     }
 
     return d->contextActions->actions();
+}
+
+QList<QAction*> FileViewDropboxPlugin::outOfVersionControlActions(const KFileItemList& items) const
+{
+    Q_UNUSED(items)
+
+    return {};
 }
 
 void FileViewDropboxPlugin::handleContextAction(QAction* action)

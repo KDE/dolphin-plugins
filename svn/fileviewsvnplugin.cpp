@@ -257,7 +257,7 @@ KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileIte
     return NormalVersion;
 }
 
-QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
+QList<QAction*> FileViewSvnPlugin::versionControlActions(const KFileItemList& items) const
 {
     // Special case: if any item is in unversioned directory we shouldn't add any actions because
     // we can do nothing with this item.
@@ -322,6 +322,12 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
     return actions;
 }
 
+QList<QAction*> FileViewSvnPlugin::outOfVersionControlActions(const KFileItemList& items) const
+{
+    Q_UNUSED(items)
+
+    return {};
+}
 
 void FileViewSvnPlugin::updateFiles()
 {

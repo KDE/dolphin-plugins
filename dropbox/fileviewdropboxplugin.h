@@ -63,7 +63,8 @@ public:
     KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
     void endRetrieval() override;
 
-    QList<QAction*> actions(const KFileItemList& items) const override;
+    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
+    QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
 
 private slots:
     void handleContextAction(QAction* action);

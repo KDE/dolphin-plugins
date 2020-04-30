@@ -254,7 +254,7 @@ KVersionControlPlugin::ItemVersion FileViewBazaarPlugin::itemVersion(const KFile
     return NormalVersion;
 }
 
-QList<QAction*> FileViewBazaarPlugin::actions(const KFileItemList &items) const
+QList<QAction*> FileViewBazaarPlugin::versionControlActions(const KFileItemList &items) const
 {
     if (items.count() == 1 && items.first().isDir()) {
         QString directory = items.first().localPath();
@@ -270,6 +270,13 @@ QList<QAction*> FileViewBazaarPlugin::actions(const KFileItemList &items) const
     } else {
         return contextMenuFilesActions(items);
     }
+}
+
+QList<QAction*> FileViewBazaarPlugin::outOfVersionControlActions(const KFileItemList& items) const
+{
+    Q_UNUSED(items)
+
+    return {};
 }
 
 QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemList& items) const

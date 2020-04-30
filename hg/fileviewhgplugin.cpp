@@ -380,7 +380,7 @@ KVersionControlPlugin::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem
     return NormalVersion;
 }
 
-QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
+QList<QAction*> FileViewHgPlugin::versionControlActions(const KFileItemList &items) const
 {
     //TODO: Make it work with universal context menu when implemented
     //      in dolphin
@@ -392,6 +392,13 @@ QList<QAction*> FileViewHgPlugin::actions(const KFileItemList &items) const
         return itemContextMenu(items);
     }
     return QList<QAction*>();
+}
+
+QList<QAction*> FileViewHgPlugin::outOfVersionControlActions(const KFileItemList &items) const
+{
+    Q_UNUSED(items)
+
+    return {};
 }
 
 QList<QAction*> FileViewHgPlugin::universalContextMenuActions(const QString &directory) const

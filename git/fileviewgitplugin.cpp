@@ -276,7 +276,7 @@ KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileIte
     }
 }
 
-QList<QAction*> FileViewGitPlugin::actions(const KFileItemList &items) const
+QList<QAction*> FileViewGitPlugin::versionControlActions(const KFileItemList& items) const
 {
     if (items.count() == 1 && items.first().isDir()) {
         QString directory = items.first().localPath();
@@ -292,6 +292,13 @@ QList<QAction*> FileViewGitPlugin::actions(const KFileItemList &items) const
     } else {
         return contextMenuFilesActions(items);
     }
+}
+
+QList<QAction*> FileViewGitPlugin::outOfVersionControlActions(const KFileItemList& items) const
+{
+    Q_UNUSED(items)
+
+    return {};
 }
 
 QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& items) const

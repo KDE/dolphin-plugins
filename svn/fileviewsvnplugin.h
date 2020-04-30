@@ -42,7 +42,8 @@ public:
     bool beginRetrieval(const QString& directory) override;
     void endRetrieval() override;
     ItemVersion itemVersion(const KFileItem& item) const override;
-    QList<QAction*> actions(const KFileItemList& items) const override;
+    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
+    QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
 
 signals:
     /// Invokes m_showUpdatesAction->setChecked(checked) on the UI thread.
