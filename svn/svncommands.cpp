@@ -403,3 +403,24 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
 
     return log;
 }
+
+bool SvnCommands::checkoutRepository(const QString& url, bool ignoreExternals, const QString& whereto)
+{
+    QStringList params;
+    params.append(QStringLiteral("checkout"));
+    params.append(url);
+    if (ignoreExternals) {
+        params.append(QStringLiteral("--ignore-externals"));
+    }
+    params.append(whereto);
+
+    QProcess process;
+    process.start(QLatin1String("svn"), params);
+
+    // Without timeout because it could be expensive time consuming operation.
+    if (!process.waitForFinished(-1) || process.exitCode() != 0) {
+        return false;
+    } else {
+        return true;
+    }
+}

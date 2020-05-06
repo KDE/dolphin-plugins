@@ -46,6 +46,8 @@
 
 #include "svncommitdialog.h"
 #include "svnlogdialog.h"
+#include "svncheckoutdialog.h"
+
 #include "svncommands.h"
 
 K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
@@ -118,9 +120,14 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
             m_showUpdatesAction, &QAction::setChecked);
 
     m_logAction = new QAction(this);
-    m_logAction->setText(xi18nc("@action:inmenu", "SVN Log..."));
+    m_logAction->setText(i18nc("@action:inmenu", "SVN Log..."));
     connect(m_logAction, &QAction::triggered,
             this, &FileViewSvnPlugin::logDialog);
+
+    m_checkoutAction = new QAction(this);
+    m_checkoutAction->setText(i18nc("@action:inmenu", "SVN Checkout..."));
+    connect(m_checkoutAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::checkoutDialog);
 
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &FileViewSvnPlugin::slotOperationCompleted);
@@ -324,9 +331,14 @@ QList<QAction*> FileViewSvnPlugin::versionControlActions(const KFileItemList& it
 
 QList<QAction*> FileViewSvnPlugin::outOfVersionControlActions(const KFileItemList& items) const
 {
-    Q_UNUSED(items)
+    // Only for a single directory.
+    if (items.count() != 1 || !items.first().isDir()) {
+        return {};
+    }
 
-    return {};
+    m_contextDir = items.first().localPath();
+
+    return QList<QAction*>{} << m_checkoutAction;
 }
 
 void FileViewSvnPlugin::updateFiles()
@@ -446,6 +458,18 @@ void FileViewSvnPlugin::logDialog()
 
     svnLogDialog->setAttribute(Qt::WA_DeleteOnClose);
     svnLogDialog->show();
+}
+
+void FileViewSvnPlugin::checkoutDialog()
+{
+    SvnCheckoutDialog *svnCheckoutDialog = new SvnCheckoutDialog(m_contextDir);
+
+    connect(svnCheckoutDialog, &SvnCheckoutDialog::infoMessage, this, &FileViewSvnPlugin::infoMessage);
+    connect(svnCheckoutDialog, &SvnCheckoutDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
+    connect(svnCheckoutDialog, &SvnCheckoutDialog::operationCompletedMessage, this, &FileViewSvnPlugin::operationCompletedMessage);
+
+    svnCheckoutDialog->setAttribute(Qt::WA_DeleteOnClose);
+    svnCheckoutDialog->show();
 }
 
 void FileViewSvnPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)

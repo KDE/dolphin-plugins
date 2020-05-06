@@ -161,6 +161,16 @@ public:
      * \note This function is really time consuming.
      */
     static QSharedPointer< QVector<logEntry> > getLog(const QString& filePath, uint maxEntries = 255, ulong fromRevision = 0);
+
+    /**
+     * Check out a working copy of repository \p URL (local URL starts with a 'file://') to a local
+     * path \p whereto (could be relative ot absolute).
+     *
+     * \return True if check out success, false either.
+     *
+     * \note This function can be really time consuming.
+     */
+    static bool checkoutRepository(const QString& url, bool ignoreExternals, const QString& whereto);
 };
 
 #endif  // SVNCOMMANDS_H

@@ -63,6 +63,7 @@ private slots:
     void removeFiles();
     void revertFiles();
     void logDialog();
+    void checkoutDialog();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -116,6 +117,7 @@ private:
     QAction* m_revertAction;
     QAction* m_showUpdatesAction;
     QAction* m_logAction;
+    QAction* m_checkoutAction;
 
     QString m_command;
     QStringList m_arguments;
