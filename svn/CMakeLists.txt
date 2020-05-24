@@ -8,9 +8,10 @@ set(fileviewsvnplugin_SRCS
     svncommitdialog.cpp
     svnlogdialog.cpp
     svncheckoutdialog.cpp
+    svnprogressdialog.cpp
 )
 
-ki18n_wrap_ui(fileviewsvnplugin_SRCS svnlogdialog.ui svncheckoutdialog.ui)
+ki18n_wrap_ui(fileviewsvnplugin_SRCS svnlogdialog.ui svncheckoutdialog.ui svnprogressdialog.ui)
 
 kconfig_add_kcfg_files(fileviewsvnplugin_SRCS
     fileviewsvnpluginsettings.kcfgc

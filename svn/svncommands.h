@@ -112,17 +112,26 @@ public:
     static QString remoteRelativeUrl(const QString& filePath);
 
     /**
-     * Updates selected \p filePath to revision \p revision. \p filePath could be a sigle file or a
+     * From file \p filePath returns full working copy root path this file contains.
+     *
+     * \return Full local working copy root path, empty QString in case of error.
+     *
+     * \note This function uses only local SVN data without connection to a remote so it's fast.
+     */
+    static QString localRoot(const QString& filePath);
+
+    /**
+     * Updates selected \p filePath to revision \p revision. \p filePath could be a single file or a
      * directory. It also could be an absolute or relative.
      *
      * \return True on success, false either.
      *
-     * \note This function uses only local SVN data without connection to a remote so it's fast.
+     * \note This function can be really time consuming.
      */
     static bool updateToRevision(const QString& filePath, ulong revision);
 
     /**
-     * Discards all local changes in a \p filePath. \p filePath could be a sigle file or a directory.
+     * Discards all local changes in a \p filePath. \p filePath could be a single file or a directory.
      * It also could be an absolute or relative.
      *
      * \return True on success, false either.
@@ -132,12 +141,21 @@ public:
     static bool revertLocalChanges(const QString& filePath);
 
     /**
-     * Reverts selected \p filePath to revision \p revision. \p filePath could be a sigle file or a
+     * Reverts selected \p filePath to revision \p revision. \p filePath could be a single file or a
      * directory. It also could be an absolute or relative.
      *
      * \return True on success, false either.
      */
     static bool revertToRevision(const QString& filePath, ulong revision);
+
+    /**
+     * Runs 'svn cleanup' on a \p dir to remove write locks, resume unfinished operations, etc. Its
+     * restores directory state if Subversion client has crushed.
+     * Also this command could be used to remove unversioned or ignored files.
+     *
+     * \return True on success, false either.
+     */
+    static bool cleanup(const QString& dir, bool removeUnversioned = false, bool removeIgnored = false, bool includeExternals = false);
 
     /**
      * Export URL \p path at revision \p rev to a file \p file. URL could be a remote URL to a file

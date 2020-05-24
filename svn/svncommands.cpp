@@ -190,6 +190,35 @@ QString SvnCommands::remoteRelativeUrl(const QString& filePath)
     }
 }
 
+QString SvnCommands::localRoot(const QString& filePath)
+{
+    QProcess process;
+
+    process.start(
+        QLatin1String("svn"),
+        QStringList {
+            QStringLiteral("info"),
+            QStringLiteral("--show-item"),
+            QStringLiteral("wc-root"),
+            filePath
+        }
+    );
+
+    if (!process.waitForFinished() || process.exitCode() != 0) {
+        return 0;
+    }
+
+    QTextStream stream(&process);
+    QString wcroot;
+    stream >> wcroot;
+
+    if (stream.status() == QTextStream::Ok) {
+        return wcroot;
+    } else {
+        return QString();
+    }
+}
+
 bool SvnCommands::updateToRevision(const QString& filePath, ulong revision)
 {
     QProcess process;
@@ -254,6 +283,33 @@ bool SvnCommands::revertToRevision(const QString& filePath, ulong revision)
     }
 
     return true;
+}
+
+bool SvnCommands::cleanup(const QString& dir, bool removeUnversioned, bool removeIgnored, bool includeExternals)
+{
+    QStringList arguments;
+    arguments << QStringLiteral("cleanup") << dir;
+    if (removeUnversioned) {
+        arguments << QStringLiteral("--remove-unversioned");
+    }
+    if (removeIgnored) {
+        arguments << QStringLiteral("--remove-ignored");
+    }
+    if (includeExternals) {
+        arguments << QStringLiteral("--include-externals");
+    }
+
+    QProcess process;
+    process.start(
+        QLatin1String("svn"),
+        arguments
+    );
+
+    if (!process.waitForFinished() || process.exitCode() != 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 bool SvnCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)

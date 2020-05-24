@@ -47,6 +47,7 @@
 #include "svncommitdialog.h"
 #include "svnlogdialog.h"
 #include "svncheckoutdialog.h"
+#include "svnprogressdialog.h"
 
 #include "svncommands.h"
 
@@ -153,7 +154,9 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     QMutableHashIterator<QString, ItemVersion> it(m_versionInfoHash);
     while (it.hasNext()) {
         it.next();
-        if (it.key().startsWith(directory)) {
+        // 'svn status' return dirs without trailing slash, so without it we can't remove current
+        // directory from hash.
+        if ((it.key() + QLatin1Char('/')).startsWith(directory)) {
             it.remove();
         }
     }
@@ -343,6 +346,9 @@ QList<QAction*> FileViewSvnPlugin::outOfVersionControlActions(const KFileItemLis
 
 void FileViewSvnPlugin::updateFiles()
 {
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Update"), m_contextDir);
+    progressDialog->connectToProcess(&m_process);
+
     execSvnCommand(QLatin1String("update"), QStringList(),
                    i18nc("@info:status", "Updating SVN repository..."),
                    i18nc("@info:status", "Update of SVN repository failed."),
@@ -434,12 +440,23 @@ void FileViewSvnPlugin::removeFiles()
 
 void FileViewSvnPlugin::revertFiles()
 {
+    if (m_contextDir.isEmpty() && m_contextItems.empty()) {
+        return;
+    }
+
     QStringList arguments;
+    QString root;
 
     // If we are reverting a directory let's revert everything in it.
     if (!m_contextDir.isEmpty()) {
         arguments << QLatin1String("--depth") << QLatin1String("infinity");
+        root = m_contextDir;
+    } else {
+        root = SvnCommands::localRoot( m_contextItems.last().localPath() );
     }
+
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Revert"), root);
+    progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QStringLiteral("revert"), arguments,
                    i18nc("@info:status", "Reverting files from SVN repository..."),
@@ -507,10 +524,17 @@ void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
 
 void FileViewSvnPlugin::revertFiles(const QStringList& filesPath)
 {
+    if (filesPath.empty()) {
+        return;
+    }
+
     for (const auto &i : qAsConst(filesPath)) {
         m_contextItems.append( QUrl::fromLocalFile(i) );
     }
     m_contextDir.clear();
+
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Revert"), SvnCommands::localRoot(filesPath.first()));
+    progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QLatin1String("revert"), QStringList() << filesPath,
                    i18nc("@info:status", "Reverting changes to file..."),
@@ -592,6 +616,10 @@ void FileViewSvnPlugin::addFiles(const QStringList& filesPath)
 
 void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& msg)
 {
+    if (context.empty()) {
+        return;
+    }
+
     // Write the commit description into a temporary file, so
     // that it can be read by the command "svn commit -F". The temporary
     // file must stay alive until slotOperationCompleted() is invoked and will
@@ -614,6 +642,9 @@ void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& m
     // a time but we want to commit everything.
     m_contextDir.clear();
     m_contextItems.clear();
+
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Commit"), SvnCommands::localRoot(context.first()));
+    progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QLatin1String("commit"), arguments,
                    i18nc("@info:status", "Committing SVN changes..."),
