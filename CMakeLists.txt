@@ -21,6 +21,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     KIO
     TextWidgets
+    CoreAddons
+    Solid
 )
 
 find_package(DolphinVcs)
@@ -46,6 +48,9 @@ ecm_optional_add_subdirectory(git)
 ecm_optional_add_subdirectory(bazaar)
 ecm_optional_add_subdirectory(dropbox)
 ecm_optional_add_subdirectory(hg)
+if(UNIX AND NOT APPLE)
+    ecm_optional_add_subdirectory(mountiso)
+endif()
 
 install(FILES org.kde.dolphin-plugins.metainfo.xml
         DESTINATION ${KDE_INSTALL_METAINFODIR})

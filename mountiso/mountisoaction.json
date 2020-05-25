@@ -1,0 +1,13 @@
+{
+    "KPlugin": {
+        "Icon": "application-x-cd-image",
+        "MimeTypes": [
+            "application/x-cd-image"
+        ],
+        "Name": "Mount and unmount iso image",
+        "ServiceTypes": [
+            "KFileItemAction/Plugin"
+        ]
+    },
+    "MimeType": "application/x-cd-image;"
+}
