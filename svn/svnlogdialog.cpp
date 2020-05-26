@@ -161,6 +161,8 @@ void SvnLogDialog::setCurrentRevision(ulong revision)
             m_ui.tLog->item(i, columnDate)->setFont(font);
             m_ui.tLog->item(i, columnMessage)->setFont(font);
 
+            m_ui.tLog->selectRow(i);
+
             break;
         }
     }
@@ -283,9 +285,8 @@ void SvnLogDialog::updateRepoToRevision()
         emit errorMessage(i18nc("@info:status", "SVN log: update to revision failed."));
     } else {
         emit operationCompletedMessage(i18nc("@info:status", "SVN log: update to revision %1 successful.", revision));
+        SvnLogDialog::refreshLog();
     }
-
-    SvnLogDialog::refreshLog();
 }
 
 void SvnLogDialog::revertRepoToRevision()
