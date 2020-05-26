@@ -11,6 +11,7 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     Widgets
     Network
+    DBus
 )
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
