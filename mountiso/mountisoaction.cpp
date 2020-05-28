@@ -22,7 +22,7 @@
 
 #include <fcntl.h>
 #include <unistd.h>
-#include <error.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
