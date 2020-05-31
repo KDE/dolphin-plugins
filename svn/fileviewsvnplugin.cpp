@@ -48,6 +48,7 @@
 #include "svnlogdialog.h"
 #include "svncheckoutdialog.h"
 #include "svnprogressdialog.h"
+#include "svncleanupdialog.h"
 
 #include "svncommands.h"
 
@@ -64,6 +65,8 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_removeAction(nullptr),
     m_showUpdatesAction(nullptr),
     m_logAction(nullptr),
+    m_checkoutAction(nullptr),
+    m_cleanupAction(nullptr),
     m_command(),
     m_arguments(),
     m_errorMsg(),
@@ -129,6 +132,11 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_checkoutAction->setText(i18nc("@action:inmenu", "SVN Checkout..."));
     connect(m_checkoutAction, &QAction::triggered,
             this, &FileViewSvnPlugin::checkoutDialog);
+
+    m_cleanupAction = new QAction(this);
+    m_cleanupAction->setText(i18nc("@action:inmenu", "SVN Cleanup..."));
+    connect(m_cleanupAction, &QAction::triggered,
+            this, &FileViewSvnPlugin::cleanupDialog);
 
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &FileViewSvnPlugin::slotOperationCompleted);
@@ -489,6 +497,14 @@ void FileViewSvnPlugin::checkoutDialog()
     svnCheckoutDialog->show();
 }
 
+void FileViewSvnPlugin::cleanupDialog()
+{
+    SvnCleanupDialog *svnCleanupDialog = new SvnCleanupDialog(m_contextDir);
+
+    connect(svnCleanupDialog, &SvnCleanupDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
+    connect(svnCleanupDialog, &SvnCleanupDialog::operationCompletedMessage, this, &FileViewSvnPlugin::operationCompletedMessage);
+}
+
 void FileViewSvnPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
 {
     m_pendingOperation = false;
@@ -727,6 +743,7 @@ QList<QAction*> FileViewSvnPlugin::directoryActions(const KFileItem& directory) 
     actions.append(m_removeAction);
     actions.append(m_revertAction);
     actions.append(m_logAction);
+    actions.append(m_cleanupAction);
     return actions;
 }
 

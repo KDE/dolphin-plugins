@@ -31,6 +31,15 @@ class QTemporaryFile;
 class QFileDevice;
 
 /**
+ * SVN commands execution results.
+ */
+struct CommandResult {
+    bool success;       ///< True if return code is '0' (normal execution).
+    QString stdout;     ///< Process stdout.
+    QString stderr;     ///< Process stderr.
+};
+
+/**
  * Path information for log entry.
  */
 struct affectedPath {
@@ -153,9 +162,9 @@ public:
      * restores directory state if Subversion client has crushed.
      * Also this command could be used to remove unversioned or ignored files.
      *
-     * \return True on success, false either.
+     * \return Filled up \p commandResult structure.
      */
-    static bool cleanup(const QString& dir, bool removeUnversioned = false, bool removeIgnored = false, bool includeExternals = false);
+    static CommandResult cleanup(const QString& dir, bool removeUnversioned = false, bool removeIgnored = false, bool includeExternals = false);
 
     /**
      * Export URL \p path at revision \p rev to a file \p file. URL could be a remote URL to a file

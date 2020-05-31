@@ -285,7 +285,7 @@ bool SvnCommands::revertToRevision(const QString& filePath, ulong revision)
     return true;
 }
 
-bool SvnCommands::cleanup(const QString& dir, bool removeUnversioned, bool removeIgnored, bool includeExternals)
+CommandResult SvnCommands::cleanup(const QString& dir, bool removeUnversioned, bool removeIgnored, bool includeExternals)
 {
     QStringList arguments;
     arguments << QStringLiteral("cleanup") << dir;
@@ -305,11 +305,16 @@ bool SvnCommands::cleanup(const QString& dir, bool removeUnversioned, bool remov
         arguments
     );
 
+    CommandResult result;
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return false;
+        result.success = false;
     } else {
-        return true;
+        result.success = true;
     }
+    result.stdout = process.readAllStandardOutput();
+    result.stderr = process.readAllStandardError();
+
+    return result;
 }
 
 bool SvnCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
