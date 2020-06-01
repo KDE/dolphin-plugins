@@ -29,8 +29,10 @@
   <name xml:lang="x-test">xxDolphin Pluginsxx</name>
   <name xml:lang="zh-CN">Dolphin 插件</name>
   <summary>Dolphin integration for revision control systems, Dropbox, and disk images.</summary>
+  <summary xml:lang="x-test">xxDolphin integration for revision control systems, Dropbox, and disk images.xx</summary>
   <description>
     <p>These plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git.  A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.</p>
+    <p xml:lang="x-test">xxThese plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git. A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.xx</p>
   </description>
   <url type="homepage">https://www.kde.org</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=dolphin</url>
