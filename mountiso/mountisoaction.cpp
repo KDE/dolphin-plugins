@@ -162,7 +162,7 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 
     if (device.isEmpty()) {
         const QIcon icon = QIcon::fromTheme(QStringLiteral("media-mount"));
-        const QString title = i18nc("@action Action to mount an iso image", "Mount this iso image");
+        const QString title = i18nc("@action:inmenu Action to mount an ISO image", "Mount ISO");
 
         QAction *action = new QAction(icon, title, parentWidget);
 
@@ -172,7 +172,7 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
         // fileItem is mounted on device
         const QIcon icon = QIcon::fromTheme(QStringLiteral("media-eject"));
         const QString title =
-            i18nc("@action Action to unmount an iso image", "Unmount this iso image");
+            i18nc("@action:inmenu Action to unmount an ISO image", "Unmount ISO");
         QAction *action = new QAction(icon, title, parentWidget);
 
         connect(action, &QAction::triggered, this, [device]() { unmount(device); });
