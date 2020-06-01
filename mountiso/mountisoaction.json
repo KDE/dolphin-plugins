@@ -5,6 +5,7 @@
             "application/x-cd-image"
         ],
         "Name": "Mount and unmount iso image",
+        "Name[x-test]": "xxMount and unmount iso imagexx",
         "ServiceTypes": [
             "KFileItemAction/Plugin"
         ]
