@@ -5,6 +5,10 @@
             "application/x-cd-image"
         ],
         "Name": "Mount and unmount iso image",
+        "Name[ca]": "Muntatge i desmuntatge d'una imatge ISO",
+        "Name[cs]": "Připojit a odpojit obraz iso",
+        "Name[nl]": "Aan- en afkoppelen van iso-image",
+        "Name[uk]": "Монтування і демонтування образів ISO",
         "Name[x-test]": "xxMount and unmount iso imagexx",
         "ServiceTypes": [
             "KFileItemAction/Plugin"
