@@ -7,8 +7,11 @@
         "Name": "Mount and unmount iso image",
         "Name[ca]": "Muntatge i desmuntatge d'una imatge ISO",
         "Name[cs]": "Připojit a odpojit obraz iso",
+        "Name[et]": "ISO-tõmmise ühendamine ja lahutamine",
+        "Name[it]": "Monta e smonta immagine iso",
         "Name[nl]": "Aan- en afkoppelen van iso-image",
         "Name[pt]": "Montar e desmontar a imagem ISO",
+        "Name[sk]": "Pripojiť a odpojiť ISO obraz",
         "Name[uk]": "Монтування і демонтування образів ISO",
         "Name[x-test]": "xxMount and unmount iso imagexx",
         "ServiceTypes": [
