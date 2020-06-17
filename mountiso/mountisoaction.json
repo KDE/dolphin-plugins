@@ -21,7 +21,6 @@
         "Name[sl]": "Priklopi in odklopi iso sliko sistema",
         "Name[sv]": "Montera och avmontera ISO-avbild",
         "Name[uk]": "Монтування і демонтування образів ISO",
-        "Name[x-test]": "xxMount and unmount iso imagexx",
         "ServiceTypes": [
             "KFileItemAction/Plugin"
         ]
