@@ -12,6 +12,7 @@
   <name xml:lang="en-GB">Dolphin Plugins</name>
   <name xml:lang="es">Complementos de Dolphin</name>
   <name xml:lang="et">Dolphini pluginad</name>
+  <name xml:lang="eu">Dolphin pluginak</name>
   <name xml:lang="fi">Dolphin-liitännäiset</name>
   <name xml:lang="fr">Modules externes de Dolphin</name>
   <name xml:lang="gl">Complementos de Dolphin</name>
@@ -35,6 +36,7 @@
   <summary xml:lang="en-GB">Dolphin integration for revision control systems and Dropbox</summary>
   <summary xml:lang="es">Integración en Dolphin de sistemas de control de versiones y de Dropbox</summary>
   <summary xml:lang="et">Dolphini lõimimine versioonihaldussüsteemide ja Dropboxiga</summary>
+  <summary xml:lang="eu">Dolphin-en bateratzea berrikuspen kontrol sistemekin eta Dropbox-ekin</summary>
   <summary xml:lang="fi">Dolphin-integrointi versionhallintajärjestelmille ja Dropboxille</summary>
   <summary xml:lang="fr">Intégration des systèmes de gestion de version et de Dropbox à Dolphin</summary>
   <summary xml:lang="gl">Integración de Dolphin con sistemas de control de revisións e Dropbox</summary>
@@ -59,6 +61,7 @@
     <p xml:lang="en-GB">These plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git. A Dropbox plugin gives action items to keep your files synced to the Dropbox service.</p>
     <p xml:lang="es">Este complemento proporciona a Dolphin los sistemas de control de versiones Bazaar, Mercurial y Git. El complemento de Dropbox proporciona acciones para mantener archivos sincronizados mediante el servicio Dropbox.</p>
     <p xml:lang="et">Need pluginad lõimivad Dolphini versioonihaldussüsteemidega Bazaar, Mercurial ja Git. Dropboxi plugin võimaldab hoida faile sünkroonis Dropboxi teenusega.</p>
+    <p xml:lang="eu">Plugin hauek Dolphin Bazaar, Mercurial eta Git berrikuspen kontrol sistemekin bateratzen du. Dropbox plugin batek ekintza elementuak ematen ditu zure fitxategiak Dropbox zerbitzuarekin sinkronizatuta mantentzeko.</p>
     <p xml:lang="fi">Nämä liitännäiset integroivat Dolphinin Bazaar-, Mercurial- ja Git-versionhallintajärjestelmiin. Dropbox-liitännäinen luo toiminnot tiedostojen synkronoimiseksi Dropbox-palveluun.</p>
     <p xml:lang="fr">Ces modules externes intègrent Dolphin avec les systèmes de gestion de version Bazaar, Mercurial et Git. Un module externe Dropbox ajoute des éléments d'action permettant de synchroniser vos fichiers au service Dropbox.</p>
     <p xml:lang="gl">Estes complementos integran Dolphin cos sistemas de control de revisións Bazaar, Mercurial e Git. Un complemento de Dropbox fornece elementos de acción para manter os seus ficheiros sincronizados co servizo Dropbox.</p>
