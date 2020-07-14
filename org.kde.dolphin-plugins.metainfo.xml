@@ -31,8 +31,18 @@
   <name xml:lang="x-test">xxDolphin Pluginsxx</name>
   <name xml:lang="zh-CN">Dolphin 插件</name>
   <summary>Dolphin integration for revision control systems, Dropbox, and disk images.</summary>
+  <summary xml:lang="ca">Integració al Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc.</summary>
+  <summary xml:lang="fr">Intégration de Dolphin avec les systèmes de gestion de versions, Dropbox et les images de disques.</summary>
+  <summary xml:lang="nl">Integratie van Dolphin voor revisie besturingssystemen, Dropbox en images van schijven.</summary>
+  <summary xml:lang="uk">Інтеграція Dolphin з системами керування версіями, Dropbox та образами дисків.</summary>
+  <summary xml:lang="x-test">xxDolphin integration for revision control systems, Dropbox, and disk images.xx</summary>
   <description>
     <p>These plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git.  A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.</p>
+    <p xml:lang="ca">Aquests connectors integren el Dolphin amb els sistemes de control de revisions Bazaar, Mercurial i Git. I un connector de Dropbox proporciona elements d'acció per a mantenir els vostres fitxers sincronitzats amb el servei de Dropbox. Un connector d'integració d'imatge de disc afegeix una acció de muntar o desmuntar.</p>
+    <p xml:lang="fr">Ces modules externes intègrent Dolphin avec les systèmes de gestion de versions Bazaar, Mercurial et Git. Un module externe pour Dropbox ajoute des éléments d'action permettant de synchroniser vos fichiers au service Dropbox. Un module externe d'intégration pour les images de disque permet les actions de montage et libération.</p>
+    <p xml:lang="nl">Deze plug-ins integreren Dolphin met het besturen van de revisiesystemen Bazaar, Mercurial en Git. Een Dropbox-plug-in geeft actie-items om uw bestanden gesynchroniseerd te houden met de Dropbox service. Een plug-in voor integratie van images van schijven voegt een functie toe voor een actie aan- en afkoppelen.</p>
+    <p xml:lang="uk">За допомогою цих додатків можна інтегрувати Dolphin із системами керування версіями Bazaar, Mercurial та Git. Додаток Dropbox надасть у ваше розпорядження пункти меню дій, які допоможуть підтримувати синхронізацію ваших файлів із службою Dropbox. Додаток інтеграції з образами дисків додає дії для монтування та демонтування образів.</p>
+    <p xml:lang="x-test">xxThese plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git. A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.xx</p>
   </description>
   <url type="homepage">https://www.kde.org</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=dolphin</url>
