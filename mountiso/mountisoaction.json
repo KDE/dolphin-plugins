@@ -5,6 +5,7 @@
             "application/x-cd-image"
         ],
         "Name": "Mount and unmount iso image",
+        "Name[az]": "İSO faylını qoşmaq və ayırmaq",
         "Name[ca@valencia]": "Muntatge i desmuntatge d'una imatge ISO",
         "Name[ca]": "Muntatge i desmuntatge d'una imatge ISO",
         "Name[cs]": "Připojit a odpojit obraz iso",
