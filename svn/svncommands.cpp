@@ -311,8 +311,8 @@ CommandResult SvnCommands::cleanup(const QString& dir, bool removeUnversioned, b
     } else {
         result.success = true;
     }
-    result.stdout = process.readAllStandardOutput();
-    result.stderr = process.readAllStandardError();
+    result.stdOut = process.readAllStandardOutput();
+    result.stdErr = process.readAllStandardError();
 
     return result;
 }
