@@ -35,8 +35,8 @@ class QFileDevice;
  */
 struct CommandResult {
     bool success;       ///< True if return code is '0' (normal execution).
-    QString stdout;     ///< Process stdout.
-    QString stderr;     ///< Process stderr.
+    QString stdOut;     ///< Process stdout.
+    QString stdErr;     ///< Process stderr.
 };
 
 /**

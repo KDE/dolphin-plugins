@@ -115,7 +115,7 @@ void SvnProgressDialog::operationCompeleted()
         const CommandResult result = SvnCommands::cleanup(m_workingDir);
         if (!result.success) {
             qWarning() << QString("'svn cleanup' failed for %1").arg(m_workingDir);
-            qWarning() << result.stderr;
+            qWarning() << result.stdErr;
         }
         m_svnTerminated = false;
     }

@@ -74,7 +74,7 @@ void SvnCleanupDialog::on_buttonOk_clicked()
         emit operationCompletedMessage(i18nc("@info:status", "SVN clean up completed successfully."));
     } else {
         emit errorMessage(i18nc("@info:status", "SVN clean up failed for %1", workDir));
-        qDebug() << result.stderr;
+        qDebug() << result.stdErr;
     }
 
     QDialog::accept();
