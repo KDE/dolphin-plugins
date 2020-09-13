@@ -165,7 +165,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     // ----- find path below git base dir -----
     QProcess process;
     process.setWorkingDirectory(directory);
-    process.start(QLatin1String("git rev-parse --show-prefix"));
+    process.start("git", {"rev-parse", "--show-prefix"});
     QString dirBelowBaseDir = "";
     while (process.waitForReadyRead()) {
         char buffer[512];
@@ -177,7 +177,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     m_versionInfoHash.clear();
 
     // ----- find files with special status -----
-    process.start(QLatin1String("git status --porcelain -z -u --ignored"));
+    process.start("git", {"status", "--porcelain", "-z", "-u", "--ignored"});
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
@@ -592,7 +592,13 @@ void FileViewGitPlugin::commit()
         tmpCommitMessageFile.close();
         QProcess process;
         process.setWorkingDirectory(m_contextDir);
-        process.start(QString("git commit") + (dialog.amend() ? " --amend" : "")+ " -F " + tmpCommitMessageFile.fileName());
+        QStringList args = {"commit"};
+        if (dialog.amend()) {
+            args << "--amend";
+        }
+        args << "-F";
+        args << tmpCommitMessageFile.fileName();
+        process.start("git", args);
         QString completedMessage;
         while (process.waitForReadyRead()){
             char buffer[512];
@@ -621,8 +627,7 @@ void FileViewGitPlugin::createTag()
         QProcess process;
         process.setWorkingDirectory(m_contextDir);
         process.setReadChannel(QProcess::StandardError);
-        process.start(QString("git tag -a -F %1 %2 %3").arg(tempTagMessageFile.fileName()).
-            arg(dialog.tagName()).arg(dialog.baseBranch()));
+        process.start("git", {"tag", "-a", "-F", tempTagMessageFile.fileName(), dialog.tagName(), dialog.baseBranch()});
         QString completedMessage;
         bool gotTagAlreadyExistsMessage = false;
         while (process.waitForReadyRead()) {
@@ -684,7 +689,7 @@ void FileViewGitPlugin::pull()
 
         m_command = "pull";
         m_pendingOperation = true;
-        m_process.start(QString("git pull %1 %2").arg(dialog.source()).arg(dialog.remoteBranch()));
+        m_process.start("git", {"pull", dialog.source(), dialog.remoteBranch()});
     }
 }
 

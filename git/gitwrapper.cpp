@@ -49,7 +49,7 @@ QString GitWrapper::userName()
 {
     QString result("");
     char buffer[SMALL_BUFFER_SIZE];
-    m_process.start("git config --get user.name");
+    m_process.start("git", {"config", "--get", "user.name"});
     while (m_process.waitForReadyRead()) {
         if (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result = m_localCodec->toUnicode(buffer).trimmed();
@@ -62,7 +62,7 @@ QString GitWrapper::userEmail()
 {
     QString result("");
     char buffer[SMALL_BUFFER_SIZE];
-    m_process.start("git config --get user.email");
+    m_process.start("git", {"config", "--get", "user.email"});
     while (m_process.waitForReadyRead()) {
         if (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result = m_localCodec->toUnicode(buffer).trimmed();
@@ -78,7 +78,7 @@ QStringList GitWrapper::branches(int* currentBranchIndex)
     if (currentBranchIndex != 0) {
         *currentBranchIndex = -1;
     }
-    m_process.start(QLatin1String("git branch -a"));
+    m_process.start("git", {"branch", "-a"});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
@@ -97,7 +97,7 @@ QStringList GitWrapper::branches(int* currentBranchIndex)
 
 void GitWrapper::tagSet(QSet<QString>& result)
 {
-    m_process.start(QLatin1String("git tag"));
+    m_process.start("git", {"tag"});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
@@ -110,7 +110,7 @@ void GitWrapper::tagSet(QSet<QString>& result)
 QStringList GitWrapper::tags()
 {
     QStringList result;
-    m_process.start(QLatin1String("git tag"));
+    m_process.start("git", {"tag"});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
@@ -124,7 +124,7 @@ QStringList GitWrapper::tags()
 inline QStringList GitWrapper::remotes(QLatin1String lineEnd)
 {
     QStringList result;
-    m_process.start(QLatin1String("git remote -v"));
+    m_process.start("git", {"remote", "-v"});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
@@ -151,7 +151,7 @@ QString GitWrapper::lastCommitMessage()
 {
     QString result;
     char buffer[BUFFER_SIZE];
-    m_process.start("git log -1");
+    m_process.start("git", {"log", "-1"});
     while (m_process.waitForReadyRead()) {
         bool inMessage = false;
         QStringList message;
