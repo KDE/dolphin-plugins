@@ -88,8 +88,8 @@ FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList
         }
     }
 
-    connect(d->databaseFileWatcher, SIGNAL(fileChanged(QString)), SIGNAL(itemVersionsChanged()));
-    connect(d->contextActions, SIGNAL(actionTriggered(QAction*)), SLOT(handleContextAction(QAction*)));
+    connect(d->databaseFileWatcher.data(), &QFileSystemWatcher::fileChanged, this, &KVersionControlPlugin::itemVersionsChanged);
+    connect(d->contextActions.data(), &KActionCollection::actionTriggered, this, &FileViewDropboxPlugin::handleContextAction);
 }
 
 FileViewDropboxPlugin::~FileViewDropboxPlugin()

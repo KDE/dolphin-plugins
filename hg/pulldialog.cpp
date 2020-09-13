@@ -80,8 +80,8 @@ void HgPullDialog::createChangesGroup()
     m_changesGroup->setLayout(hbox);
     m_changesGroup->setVisible(false);
 
-    connect(this, SIGNAL(changeListAvailable()), 
-            this, SLOT(slotUpdateChangesGeometry()));
+    connect(this, &HgSyncBaseDialog::changeListAvailable,
+            this, &HgPullDialog::slotUpdateChangesGeometry);
 }
 
 void HgPullDialog::getHgChangesArguments(QStringList &args)

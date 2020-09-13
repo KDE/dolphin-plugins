@@ -36,8 +36,8 @@ HgCommitInfoWidget::HgCommitInfoWidget(QWidget *parent) :
 {
     setupUI();
 
-    connect(m_commitListWidget, SIGNAL(itemSelectionChanged()),
-            this, SLOT(slotUpdateInfo()));
+    connect(m_commitListWidget, &QListWidget::itemSelectionChanged,
+            this, &HgCommitInfoWidget::slotUpdateInfo);
 }
 
 void HgCommitInfoWidget::setupUI()

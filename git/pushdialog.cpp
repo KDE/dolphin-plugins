@@ -44,8 +44,8 @@ PushDialog::PushDialog (QWidget* parent ):
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    this->connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    this->connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     m_buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
     okButton->setText(i18nc("@action:button", "Push"));
 

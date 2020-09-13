@@ -53,10 +53,10 @@ HgImportDialog::HgImportDialog(QWidget *parent) :
 
     //
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_addPatches, SIGNAL(clicked()), 
-            this, SLOT(slotAddPatches()));
-    connect(m_removePatches, SIGNAL(clicked()),
-            this, SLOT(slotRemovePatches()));
+    connect(m_addPatches, &QAbstractButton::clicked,
+            this, &HgImportDialog::slotAddPatches);
+    connect(m_removePatches, &QAbstractButton::clicked,
+            this, &HgImportDialog::slotRemovePatches);
 }
 
 void HgImportDialog::setupUI()

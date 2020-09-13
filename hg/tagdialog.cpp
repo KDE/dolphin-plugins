@@ -59,12 +59,12 @@ HgTagDialog::HgTagDialog(QWidget *parent):
     slotUpdateDialog(m_tagComboBox->currentText());
     
     // connections
-    connect(m_createTag, SIGNAL(clicked()), 
-            this, SLOT(slotCreateTag()));
-    connect(m_removeTag, SIGNAL(clicked()), 
-            this, SLOT(slotRemoveTag()));
-    connect(m_updateTag, SIGNAL(clicked()),
-            this, SLOT(slotSwitch()));
+    connect(m_createTag, &QAbstractButton::clicked,
+            this, &HgTagDialog::slotCreateTag);
+    connect(m_removeTag, &QAbstractButton::clicked,
+            this, &HgTagDialog::slotRemoveTag);
+    connect(m_updateTag, &QAbstractButton::clicked,
+            this, &HgTagDialog::slotSwitch);
     connect(m_tagComboBox, &QComboBox::editTextChanged,
             this, &HgTagDialog::slotUpdateDialog);
     connect(m_tagComboBox->lineEdit(), &QLineEdit::textChanged,

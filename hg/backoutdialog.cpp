@@ -56,10 +56,10 @@ HgBackoutDialog::HgBackoutDialog(QWidget *parent) :
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_selectBaseCommitButton, SIGNAL(clicked()), 
-            this, SLOT(slotSelectBaseChangeset()));
-    connect(m_selectParentCommitButton, SIGNAL(clicked()), 
-            this, SLOT(slotSelectParentChangeset()));
+    connect(m_selectBaseCommitButton, &QAbstractButton::clicked,
+            this, &HgBackoutDialog::slotSelectBaseChangeset);
+    connect(m_selectParentCommitButton, &QAbstractButton::clicked,
+            this, &HgBackoutDialog::slotSelectParentChangeset);
     connect(m_baseRevision, &QLineEdit::textChanged,
             this, &HgBackoutDialog::slotUpdateOkButton);
 }

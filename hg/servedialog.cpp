@@ -51,17 +51,17 @@ HgServeDialog::HgServeDialog(QWidget *parent) :
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_startButton, SIGNAL(clicked()), this, SLOT(slotStart()));
-    connect(m_stopButton, SIGNAL(clicked()), this, SLOT(slotStop()));
-    connect(m_browseButton, SIGNAL(clicked()), this, SLOT(slotBrowse()));
-    connect(m_serverWrapper, SIGNAL(finished()), 
-            this, SLOT(slotUpdateButtons()));
-    connect(m_serverWrapper, SIGNAL(started()), 
-            this, SLOT(slotUpdateButtons()));
-    connect(m_serverWrapper, SIGNAL(error()), 
-            this, SLOT(slotUpdateButtons()));
-    connect(m_serverWrapper, SIGNAL(error()), 
-            this, SLOT(slotServerError()));
+    connect(m_startButton, &QAbstractButton::clicked, this, &HgServeDialog::slotStart);
+    connect(m_stopButton, &QAbstractButton::clicked, this, &HgServeDialog::slotStop);
+    connect(m_browseButton, &QAbstractButton::clicked, this, &HgServeDialog::slotBrowse);
+    connect(m_serverWrapper, &HgServeWrapper::finished,
+            this, &HgServeDialog::slotUpdateButtons);
+    connect(m_serverWrapper, &HgServeWrapper::started,
+            this, &HgServeDialog::slotUpdateButtons);
+    connect(m_serverWrapper, &HgServeWrapper::error,
+            this, &HgServeDialog::slotUpdateButtons);
+    connect(m_serverWrapper, &HgServeWrapper::error,
+            this, &HgServeDialog::slotServerError);
     connect(m_serverWrapper, &HgServeWrapper::readyReadLine,
             this, &HgServeDialog::appendServerOutput);
 }

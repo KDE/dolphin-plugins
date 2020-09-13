@@ -108,15 +108,15 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
     connect(m_source, &QLineEdit::textChanged,
             this, &HgCloneDialog::slotUpdateOkButton);
-    connect(m_browse_dest, SIGNAL(clicked()),
-                this, SLOT(slotBrowseDestClicked()));
-    connect(m_browse_source, SIGNAL(clicked()),
-                this, SLOT(slotBrowseSourceClicked()));
-    connect(&m_process, SIGNAL(started()), this, SLOT(slotCloningStarted()));
+    connect(m_browse_dest, &QAbstractButton::clicked,
+                this, &HgCloneDialog::slotBrowseDestClicked);
+    connect(m_browse_source, &QAbstractButton::clicked,
+                this, &HgCloneDialog::slotBrowseSourceClicked);
+    connect(&m_process, &QProcess::started, this, &HgCloneDialog::slotCloningStarted);
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &HgCloneDialog::slotCloningFinished);
-    connect(&m_process, SIGNAL(readyReadStandardOutput()),
-                this, SLOT(slotUpdateCloneOutput()));
+    connect(&m_process, &QProcess::readyReadStandardOutput,
+                this, &HgCloneDialog::slotUpdateCloneOutput);
 }
 
 void HgCloneDialog::browseDirectory(QLineEdit *dest)

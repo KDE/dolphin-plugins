@@ -83,10 +83,10 @@ void HgPushDialog::createChangesGroup()
     m_changesGroup->setLayout(hbox);
     m_changesGroup->setVisible(false);
 
-    connect(m_outChangesList, SIGNAL(itemSelectionChanged()),
-            this, SLOT(slotOutSelChanged()));
-    connect(this, SIGNAL(changeListAvailable()), 
-            this, SLOT(slotUpdateChangesGeometry()));
+    connect(m_outChangesList, &QTableWidget::itemSelectionChanged,
+            this, &HgPushDialog::slotOutSelChanged);
+    connect(this, &HgSyncBaseDialog::changeListAvailable,
+            this, &HgPushDialog::slotUpdateChangesGeometry);
 }
 
 void HgPushDialog::slotOutSelChanged()

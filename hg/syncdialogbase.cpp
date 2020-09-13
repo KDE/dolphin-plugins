@@ -52,12 +52,12 @@ void HgSyncBaseDialog::setup()
     readBigSize();
     setupUI();
     
-    connect(m_changesButton, SIGNAL(clicked()),
-            this, SLOT(slotGetChanges()));
-    connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)), 
-            this, SLOT(slotUpdateBusy(QProcess::ProcessState)));
-    connect(&m_main_process, SIGNAL(stateChanged(QProcess::ProcessState)), 
-            this, SLOT(slotUpdateBusy(QProcess::ProcessState)));
+    connect(m_changesButton, &QAbstractButton::clicked,
+            this, &HgSyncBaseDialog::slotGetChanges);
+    connect(&m_process, &QProcess::stateChanged,
+            this, &HgSyncBaseDialog::slotUpdateBusy);
+    connect(&m_main_process, &QProcess::stateChanged,
+            this, &HgSyncBaseDialog::slotUpdateBusy);
     connect(&m_main_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &HgSyncBaseDialog::slotOperationComplete);
     connect(&m_main_process, &QProcess::errorOccurred,
@@ -66,7 +66,7 @@ void HgSyncBaseDialog::setup()
             this, &HgSyncBaseDialog::slotOperationError);
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &HgSyncBaseDialog::slotChangesProcessComplete);
-    connect(this, SIGNAL(finished(int)), this, SLOT(slotWriteBigSize()));
+    connect(this, &QDialog::finished, this, &HgSyncBaseDialog::slotWriteBigSize);
 }
 
 void HgSyncBaseDialog::createOptionGroup()
@@ -140,7 +140,7 @@ void HgSyncBaseDialog::setupUI()
     buttonBox()->addButton(m_optionsButton, QDialogButtonBox::ResetRole);
     layout()->insertLayout(0, mainLayout);
 
-    connect(m_optionsButton, SIGNAL(clicked()), this, SLOT(slotOptionsButtonClick()));
+    connect(m_optionsButton, &QAbstractButton::clicked, this, &HgSyncBaseDialog::slotOptionsButtonClick);
 }
 
 void HgSyncBaseDialog::slotGetChanges()

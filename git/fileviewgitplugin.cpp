@@ -58,53 +58,53 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_revertAction = new QAction(this);
     m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
     m_revertAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Revert"));
-    connect(m_revertAction, SIGNAL(triggered()),
-            this, SLOT(revertFiles()));
+    connect(m_revertAction, &QAction::triggered,
+            this, &FileViewGitPlugin::revertFiles);
 
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Add"));
-    connect(m_addAction, SIGNAL(triggered()),
-            this, SLOT(addFiles()));
+    connect(m_addAction, &QAction::triggered,
+            this, &FileViewGitPlugin::addFiles);
 
     m_showLocalChangesAction = new QAction(this);
     m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
     m_showLocalChangesAction->setText(xi18nd("@item:inmenu", "Show Local <application>Git</application> Changes"));
-    connect(m_showLocalChangesAction, SIGNAL(triggered()),
-            this, SLOT(showLocalChanges()));
+    connect(m_showLocalChangesAction, &QAction::triggered,
+            this, &FileViewGitPlugin::showLocalChanges);
 
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
     m_removeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Remove"));
-    connect(m_removeAction, SIGNAL(triggered()),
-            this, SLOT(removeFiles()));
+    connect(m_removeAction, &QAction::triggered,
+            this, &FileViewGitPlugin::removeFiles);
 
     m_checkoutAction = new QAction(this);
 //     m_checkoutAction->setIcon(QIcon::fromTheme("svn_switch")); does not exist in normal kde SC
     m_checkoutAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Checkout..."));
-    connect(m_checkoutAction, SIGNAL(triggered()),
-            this, SLOT(checkout()));
+    connect(m_checkoutAction, &QAction::triggered,
+            this, &FileViewGitPlugin::checkout);
 
     m_commitAction = new QAction(this);
     m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Commit..."));
-    connect(m_commitAction, SIGNAL(triggered()),
-            this, SLOT(commit()));
+    connect(m_commitAction, &QAction::triggered,
+            this, &FileViewGitPlugin::commit);
 
     m_tagAction = new QAction(this);
 //     m_tagAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_tagAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Create Tag..."));
-    connect(m_tagAction, SIGNAL(triggered()),
-            this, SLOT(createTag()));
+    connect(m_tagAction, &QAction::triggered,
+            this, &FileViewGitPlugin::createTag);
     m_pushAction = new QAction(this);
 //     m_pushAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_pushAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Push..."));
-    connect(m_pushAction, SIGNAL(triggered()),
-            this, SLOT(push()));
+    connect(m_pushAction, &QAction::triggered,
+            this, &FileViewGitPlugin::push);
     m_pullAction = new QAction(this);
     m_pullAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Pull..."));
-    connect(m_pullAction, SIGNAL(triggered()),
-            this, SLOT(pull()));
+    connect(m_pullAction, &QAction::triggered,
+            this, &FileViewGitPlugin::pull);
     m_mergeAction = new QAction(this);
     m_mergeAction->setIcon(QIcon::fromTheme("merge"));
     m_mergeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Merge..."));

@@ -158,8 +158,8 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 
     connect(m_statusList, &HgStatusList::itemSelectionChanged,
         this, &HgCommitDialog::slotItemSelectionChanged);
-    connect(m_commitMessage, SIGNAL(textChanged(KTextEditor::Document*)),
-         this, SLOT(slotMessageChanged()));
+    connect(m_commitMessage, &KTextEditor::Document::textChanged,
+         this, &HgCommitDialog::slotMessageChanged);
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
 }
 
@@ -324,8 +324,8 @@ NewBranchDialog::NewBranchDialog(QWidget *parent):
 
     connect(m_branchNameInput, &QLineEdit::textChanged,
             this, &NewBranchDialog::slotTextChanged);
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
 void NewBranchDialog::slotTextChanged(const QString &text)

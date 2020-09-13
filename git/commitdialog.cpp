@@ -45,8 +45,8 @@ CommitDialog::CommitDialog (QWidget* parent ):
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    this->connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    this->connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     okButton->setText(i18nc("@action:button", "Commit"));
 
     QWidget* boxWidget = new QWidget(this);
@@ -68,7 +68,7 @@ CommitDialog::CommitDialog (QWidget* parent ):
     m_commitMessageTextEdit->setLineWrapColumnOrWidth(72);
     messageVBox->addWidget(m_commitMessageTextEdit);
     setOkButtonState();
-    connect(m_commitMessageTextEdit, SIGNAL(textChanged()), this, SLOT(setOkButtonState()));
+    connect(m_commitMessageTextEdit, &QTextEdit::textChanged, this, &CommitDialog::setOkButtonState);
 
     QHBoxLayout* messageHBox = new QHBoxLayout();
     messageVBox->addLayout(messageHBox);
@@ -81,8 +81,8 @@ CommitDialog::CommitDialog (QWidget* parent ):
         m_amendCheckBox->setEnabled(false);
         m_amendCheckBox->setToolTip(i18nc("@info:tooltip", "There is nothing to amend."));
     } else {
-        connect(m_amendCheckBox, SIGNAL(stateChanged(int)),
-                this, SLOT(amendCheckBoxStateChanged()));
+        connect(m_amendCheckBox, &QCheckBox::stateChanged,
+                this, &CommitDialog::amendCheckBoxStateChanged);
     }
 
     QPushButton * signOffButton = new QPushButton(
@@ -95,8 +95,8 @@ CommitDialog::CommitDialog (QWidget* parent ):
     FileViewGitPluginSettings* settings = FileViewGitPluginSettings::self();
     this->resize(QSize(settings->commitDialogWidth(), settings->commitDialogHeight()));
 
-    connect(this, SIGNAL(finished()), this, SLOT(saveDialogSize()));
-    connect(signOffButton, SIGNAL(clicked(bool)), this, SLOT(signOffButtonClicked()));
+    connect(this, &QDialog::finished, this, &CommitDialog::saveDialogSize);
+    connect(signOffButton, &QAbstractButton::clicked, this, &CommitDialog::signOffButtonClicked);
 }
 
 void CommitDialog::signOffButtonClicked()

@@ -40,10 +40,10 @@ HgWrapper::HgWrapper(QObject *parent) :
             this, &HgWrapper::errorOccurred);
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &HgWrapper::finished);
-    connect(&m_process, SIGNAL(stateChanged(QProcess::ProcessState)),
-            this, SIGNAL(stateChanged(QProcess::ProcessState)));
-    connect(&m_process, SIGNAL(started()),
-            this, SIGNAL(started()));
+    connect(&m_process, &QProcess::stateChanged,
+            this, &HgWrapper::stateChanged);
+    connect(&m_process, &QProcess::started,
+            this, &HgWrapper::started);
 
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &HgWrapper::slotOperationCompleted);

@@ -63,8 +63,8 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     server->port = portNumber;
     server->process.setWorkingDirectory(HgWrapper::instance()->getBaseDir());
 
-    connect(&server->process, SIGNAL(started()), 
-            this, SIGNAL(started()));
+    connect(&server->process, &QProcess::started,
+            this, &HgServeWrapper::started);
     connect(&server->process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &HgServeWrapper::slotFinished);
     connect(server, &ServerProcessType::readyReadLine,

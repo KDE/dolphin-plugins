@@ -48,8 +48,8 @@ TagDialog::TagDialog (QWidget* parent ):
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    this->connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    this->connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     m_buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
     okButton->setText(i18nc("@action:button", "Create Tag"));
 
@@ -70,7 +70,7 @@ TagDialog::TagDialog (QWidget* parent ):
     m_tagNameTextEdit = new QLineEdit(tagInformationGroupBox);
     tagInformationLayout->addWidget(m_tagNameTextEdit);
     setOkButtonState();
-    connect(m_tagNameTextEdit, SIGNAL(textChanged(QString)), this, SLOT(setOkButtonState()));
+    connect(m_tagNameTextEdit, &QLineEdit::textChanged, this, &TagDialog::setOkButtonState);
 
     QLabel* messageLabel = new QLabel(i18nc("@label:textbox", "Tag Message:"), tagInformationGroupBox);
     tagInformationLayout->addWidget(messageLabel);

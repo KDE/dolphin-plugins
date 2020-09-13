@@ -54,8 +54,8 @@ HgStatusList::HgStatusList(QWidget *parent):
 
     connect(m_statusTable, &QTableWidget::currentItemChanged,
             this, &HgStatusList::currentItemChangedSlot);
-    connect(m_statusTable->horizontalHeader(), SIGNAL(sectionClicked(int)),
-            this, SLOT(headerClickedSlot(int)));
+    connect(m_statusTable->horizontalHeader(), &QHeaderView::sectionClicked,
+            this, &HgStatusList::headerClickedSlot);
 }
 
 void HgStatusList::currentItemChangedSlot()

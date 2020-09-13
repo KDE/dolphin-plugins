@@ -53,10 +53,10 @@ HgBundleDialog::HgBundleDialog(QWidget *parent) :
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_selectCommitButton, SIGNAL(clicked()), 
-            this, SLOT(slotSelectChangeset()));
-    connect(m_allChangesets, SIGNAL(stateChanged(int)), 
-            this, SLOT(slotAllChangesCheckToggled(int)));
+    connect(m_selectCommitButton, &QAbstractButton::clicked,
+            this, &HgBundleDialog::slotSelectChangeset);
+    connect(m_allChangesets, &QCheckBox::stateChanged,
+            this, &HgBundleDialog::slotAllChangesCheckToggled);
 }
 
 void HgBundleDialog::setupUI()

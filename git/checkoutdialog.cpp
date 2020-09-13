@@ -48,8 +48,8 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    this->connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    this->connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    this->connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    this->connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     okButton->setText(i18nc("@action:button", "Checkout"));
 
     QWidget *boxWidget = new QWidget(this);
@@ -140,20 +140,20 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     }
 
     //signals
-    connect(m_branchRadioButton, SIGNAL(toggled(bool)),
-            this, SLOT(branchRadioButtonToggled(bool)));
+    connect(m_branchRadioButton, &QAbstractButton::toggled,
+            this, &CheckoutDialog::branchRadioButtonToggled);
     connect(m_branchComboBox, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(setDefaultNewBranchName(QString)));
     connect(m_branchComboBox, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(setOkButtonState()));
     connect(m_tagComboBox, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(setDefaultNewBranchName(QString)));
-    connect(m_newBranchCheckBox, SIGNAL(stateChanged(int)),
-             this, SLOT(newBranchCheckBoxStateToggled(int)));
-    connect(m_newBranchName, SIGNAL(textChanged(QString)),
-            this, SLOT(setOkButtonState()));
-    connect(m_newBranchName, SIGNAL(textEdited(QString)),
-            this, SLOT(noteUserEditedNewBranchName()));
+    connect(m_newBranchCheckBox, &QCheckBox::stateChanged,
+             this, &CheckoutDialog::newBranchCheckBoxStateToggled);
+    connect(m_newBranchName, &QLineEdit::textChanged,
+            this, &CheckoutDialog::setOkButtonState);
+    connect(m_newBranchName, &QLineEdit::textEdited,
+            this, &CheckoutDialog::noteUserEditedNewBranchName);
     //set initial widget states
     newBranchCheckBoxStateToggled(Qt::Unchecked);
 }

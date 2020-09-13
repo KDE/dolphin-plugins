@@ -63,10 +63,10 @@ HgBranchDialog::HgBranchDialog(QWidget *parent):
     slotUpdateDialog(m_branchComboBox->currentText());
     
     // connections
-    connect(m_createBranch, SIGNAL(clicked()), 
-            this, SLOT(slotCreateBranch()));
-    connect(m_updateBranch, SIGNAL(clicked()),
-            this, SLOT(slotSwitch()));
+    connect(m_createBranch, &QAbstractButton::clicked,
+            this, &HgBranchDialog::slotCreateBranch);
+    connect(m_updateBranch, &QAbstractButton::clicked,
+            this, &HgBranchDialog::slotSwitch);
     connect(m_branchComboBox, &QComboBox::editTextChanged,
             this, &HgBranchDialog::slotUpdateDialog);
     connect(m_branchComboBox->lineEdit(), &QLineEdit::textChanged,

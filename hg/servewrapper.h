@@ -132,10 +132,10 @@ public:
 
     ServerProcessType() 
     {
-        connect(&process, SIGNAL(readyReadStandardOutput()), 
-                this, SLOT(slotAppendOutput()));
-        connect(&process, SIGNAL(readyReadStandardError()),
-                this, SLOT(slotAppendRemainingOutput()));
+        connect(&process, &QProcess::readyReadStandardOutput,
+                this, &ServerProcessType::slotAppendOutput);
+        connect(&process, &QProcess::readyReadStandardError,
+                this, &ServerProcessType::slotAppendRemainingOutput);
         connect(&process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
                 this, &ServerProcessType::slotFinished);
     }

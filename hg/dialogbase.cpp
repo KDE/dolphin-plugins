@@ -38,8 +38,8 @@ DialogBase::DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* paren
 
     setLayout(m_layout);
 
-    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
 void DialogBase::keyReleaseEvent(QKeyEvent* event)

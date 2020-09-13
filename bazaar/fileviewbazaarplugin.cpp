@@ -61,50 +61,50 @@ FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant
     m_updateAction = new QAction(this);
     m_updateAction->setIcon(QIcon::fromTheme("go-down"));
     m_updateAction->setText(i18nc("@item:inmenu", "Bazaar Update"));
-    connect(m_updateAction, SIGNAL(triggered()),
-            this, SLOT(updateFiles()));
+    connect(m_updateAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::updateFiles);
 
     m_pullAction = new QAction(this);
     m_pullAction->setIcon(QIcon::fromTheme("go-bottom"));
     m_pullAction->setText(i18nc("@item:inmenu", "Bazaar Pull"));
-    connect(m_pullAction, SIGNAL(triggered()),
-            this, SLOT(pullFiles()));
+    connect(m_pullAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::pullFiles);
 
     m_pushAction = new QAction(this);
     m_pushAction->setIcon(QIcon::fromTheme("go-top"));
     m_pushAction->setText(i18nc("@item:inmenu", "Bazaar Push"));
-    connect(m_pushAction, SIGNAL(triggered()),
-            this, SLOT(pushFiles()));
+    connect(m_pushAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::pushFiles);
 
     m_showLocalChangesAction = new QAction(this);
     m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
     m_showLocalChangesAction->setText(i18nc("@item:inmenu", "Show Local Bazaar Changes"));
-    connect(m_showLocalChangesAction, SIGNAL(triggered()),
-            this, SLOT(showLocalChanges()));
+    connect(m_showLocalChangesAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::showLocalChanges);
 
     m_commitAction = new QAction(this);
     m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "Bazaar Commit..."));
-    connect(m_commitAction, SIGNAL(triggered()),
-            this, SLOT(commitFiles()));
+    connect(m_commitAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::commitFiles);
 
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(i18nc("@item:inmenu", "Bazaar Add..."));
-    connect(m_addAction, SIGNAL(triggered()),
-            this, SLOT(addFiles()));
+    connect(m_addAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::addFiles);
 
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
     m_removeAction->setText(i18nc("@item:inmenu", "Bazaar Delete"));
-    connect(m_removeAction, SIGNAL(triggered()),
-            this, SLOT(removeFiles()));
+    connect(m_removeAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::removeFiles);
 
     m_logAction = new QAction(this);
     m_logAction->setIcon(QIcon::fromTheme("format-list-ordered"));
     m_logAction->setText(i18nc("@item:inmenu", "Bazaar Log"));
-    connect(m_logAction, SIGNAL(triggered()),
-            this, SLOT(log()));
+    connect(m_logAction, &QAction::triggered,
+            this, &FileViewBazaarPlugin::log);
 
     connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &FileViewBazaarPlugin::slotOperationCompleted);
