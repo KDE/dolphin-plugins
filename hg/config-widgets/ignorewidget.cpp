@@ -80,8 +80,8 @@ void HgIgnoreWidget::setupUntrackedList()
     QString output;
     hgw->executeCommand(QLatin1String("status"), args, output);
     
-    QStringList result = output.split('\n', QString::SkipEmptyParts);
-    foreach (QString file, result) {
+    const QStringList result = output.split('\n', QString::SkipEmptyParts);
+    for (const QString &file : result) {
         m_untrackedList->addItem(file.mid(2));
     }
 }
@@ -125,8 +125,8 @@ void HgIgnoreWidget::saveConfig()
 
 void HgIgnoreWidget::slotAddFiles()
 {
-    QList<QListWidgetItem*> selectedItems = m_untrackedList->selectedItems();
-    foreach (QListWidgetItem *item, selectedItems) {
+    const QList<QListWidgetItem*> selectedItems = m_untrackedList->selectedItems();
+    for (QListWidgetItem *item : selectedItems) {
         m_ignoreTable->addItem(item->text());
         m_untrackedList->takeItem(m_untrackedList->row(item));
     }
@@ -148,8 +148,8 @@ void HgIgnoreWidget::slotAddPattern()
 
 void HgIgnoreWidget::slotRemoveEntries()
 {
-    QList<QListWidgetItem*> selectedItems = m_ignoreTable->selectedItems();
-    foreach (QListWidgetItem *item, selectedItems) {
+    const QList<QListWidgetItem*> selectedItems = m_ignoreTable->selectedItems();
+    for (QListWidgetItem *item : selectedItems) {
         m_ignoreTable->takeItem(m_ignoreTable->row(item));
     }
 }

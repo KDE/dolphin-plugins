@@ -103,7 +103,7 @@ public:
      */
     void clear() const;
 
-private slots:
+private Q_SLOTS:
     /**
      * Show selected changeset information when an entry is selected
      */

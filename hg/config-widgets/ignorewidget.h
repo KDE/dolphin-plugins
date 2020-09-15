@@ -39,7 +39,7 @@ public:
     void loadConfig();
     void saveConfig();
 
-private slots:
+private Q_SLOTS:
     void slotAddFiles();
     void slotAddPattern();
     void slotRemoveEntries();

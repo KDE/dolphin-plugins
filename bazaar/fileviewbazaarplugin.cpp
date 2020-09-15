@@ -282,7 +282,7 @@ QList<QAction*> FileViewBazaarPlugin::outOfVersionControlActions(const KFileItem
 QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemList& items) const
 {
     Q_ASSERT(!items.isEmpty());
-    foreach (const KFileItem& item, items) {
+    for (const KFileItem& item : items) {
         m_contextItems.append(item);
     }
     m_contextDir.clear();
@@ -294,7 +294,7 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemLis
         const int itemsCount = items.count();
         int versionedCount = 0;
         int editingCount = 0;
-        foreach (const KFileItem& item, items) {
+        for (const KFileItem& item : items) {
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion) {
                 ++versionedCount;
@@ -436,10 +436,10 @@ void FileViewBazaarPlugin::slotOperationCompleted(int exitCode, QProcess::ExitSt
     m_pendingOperation = false;
 
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
-        emit errorMessage(m_errorMsg);
+        Q_EMIT errorMessage(m_errorMsg);
     } else if (m_contextItems.isEmpty()) {
-        emit operationCompletedMessage(m_operationCompletedMsg);
-        emit itemVersionsChanged();
+        Q_EMIT operationCompletedMessage(m_operationCompletedMsg);
+        Q_EMIT itemVersionsChanged();
     } else {
         startBazaarCommandProcess();
     }
@@ -451,7 +451,7 @@ void FileViewBazaarPlugin::slotOperationError()
     m_contextItems.clear();
     m_pendingOperation = false;
 
-    emit errorMessage(m_errorMsg);
+    Q_EMIT errorMessage(m_errorMsg);
 }
 
 void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
@@ -460,7 +460,7 @@ void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
                                        const QString& errorMsg,
                                        const QString& operationCompletedMsg)
 {
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
 
     QProcess process;
     process.start(QLatin1String("bzr plugins"));
@@ -477,7 +477,7 @@ void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
     }
 
     if (!foundQbzr) {
-        emit infoMessage("Please Install QBzr");
+        Q_EMIT infoMessage("Please Install QBzr");
         return;
     }
     

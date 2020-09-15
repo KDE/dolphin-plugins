@@ -38,7 +38,7 @@ private:
     QComboBox * m_remoteComboBox;
     QComboBox * m_remoteBranchComboBox;
     QHash<QString, QStringList> m_remoteBranches;
-private slots:
+private Q_SLOTS:
     void remoteSelectionChanged(const QString& newRemote);
 };
 

@@ -40,12 +40,12 @@ public:
     void setupUI();
     void loadConfig();
 
-public slots:
+public Q_SLOTS:
     void slotStart();
     void slotStop();
     void slotBrowse(); // opens system defined browser with localhost:m_portNumber->value()
 
-private slots:
+private Q_SLOTS:
     void slotUpdateButtons();
     void slotServerError();
     void saveGeometry();

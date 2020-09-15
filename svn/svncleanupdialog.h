@@ -40,11 +40,11 @@ public:
     SvnCleanupDialog(const QString& workingDir, QWidget *parent = nullptr);
     virtual ~SvnCleanupDialog() override;
 
-public slots:
+public Q_SLOTS:
     void on_lineEditDirectory_textChanged(const QString &text);
     void on_buttonOk_clicked();
 
-signals:
+Q_SIGNALS:
     /**
      * Is emitted if an error occuers with a message \a msg.
      */

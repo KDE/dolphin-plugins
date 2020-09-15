@@ -36,7 +36,7 @@ public:
     QString localBranch() const;
     QString remoteBranch() const;
     bool force() const;
-private slots:
+private Q_SLOTS:
     void remoteSelectionChanged(const QString& newRemote);
     void localBranchSelectionChanged(const QString& newLocalBranch);
 private:

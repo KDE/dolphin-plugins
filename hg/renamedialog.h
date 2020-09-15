@@ -40,7 +40,7 @@ public:
     QString destination() const;
     void done(int r) override;
 
-private slots:
+private Q_SLOTS:
     void slotTextChanged(const QString &text);
 
 private:

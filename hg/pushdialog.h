@@ -46,7 +46,7 @@ private:
     void getHgChangesArguments(QStringList &args) override;
     void noChangesMessage() override;
 
-private slots:
+private Q_SLOTS:
     void slotOutSelChanged();
     void slotUpdateChangesGeometry();
     void readBigSize() override;

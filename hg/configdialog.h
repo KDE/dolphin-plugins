@@ -45,7 +45,7 @@ private:
     // user interface
     void setupUI();
 
-private slots:
+private Q_SLOTS:
     void saveSettings();
     void saveGeometry();
     void loadGeometry();

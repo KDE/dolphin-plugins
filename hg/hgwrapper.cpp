@@ -72,7 +72,7 @@ void HgWrapper::slotOperationCompleted(int exitCode,
     qDebug() << "'hg' Exit Code: " << exitCode << "  Exit Status: "
         << exitStatus;
     if (m_primaryOperation) {
-        emit primaryOperationFinished(exitCode, exitStatus);
+        Q_EMIT primaryOperationFinished(exitCode, exitStatus);
     }
 }
 
@@ -80,7 +80,7 @@ void HgWrapper::slotOperationError(QProcess::ProcessError error)
 {
     qDebug() << "Error occurred while executing 'hg' with arguments ";
     if (m_primaryOperation) {
-        emit primaryOperationError(error);
+        Q_EMIT primaryOperationError(error);
     }
 }
 
@@ -171,7 +171,7 @@ void HgWrapper::addFiles(const KFileItemList &fileList)
 
     QStringList args;
     args << QLatin1String("add");
-    foreach (const KFileItem &item, fileList) {
+    for (const KFileItem &item : fileList) {
         args << item.localPath();
     }
     m_process.start(QLatin1String("hg"), args);
@@ -197,7 +197,7 @@ void HgWrapper::removeFiles(const KFileItemList &fileList)
     QStringList args;
     args << QLatin1String("remove");
     args << QLatin1String("--force");
-    foreach (const KFileItem &item, fileList) {
+    for (const KFileItem &item : fileList) {
         args << item.localPath();
     }
     m_process.start(QLatin1String("hg"), args);
@@ -259,7 +259,7 @@ bool HgWrapper::revertAll()
 bool HgWrapper::revert(const KFileItemList &fileList)
 {
     QStringList arguments;
-    foreach (const KFileItem &item, fileList) {
+    for (const KFileItem &item : fileList) {
         arguments << item.localPath();
     }
     return executeCommandTillFinished(QLatin1String("revert"), arguments, true);

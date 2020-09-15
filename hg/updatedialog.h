@@ -38,7 +38,7 @@ class HgUpdateDialog : public DialogBase
 public:
     explicit HgUpdateDialog(QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void slotUpdateDialog(int index);
 
 private:

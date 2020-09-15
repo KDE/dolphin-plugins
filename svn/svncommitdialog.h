@@ -49,7 +49,7 @@ public:
 
     virtual ~SvnCommitDialog() override;
 
-signals:
+Q_SIGNALS:
     /**
      * Is emitted for SVN commit.
      *
@@ -64,11 +64,11 @@ signals:
     void diffFile(const QString& filePath);
     void addFiles(const QStringList& filesPath);
 
-public slots:
+public Q_SLOTS:
     void refreshChangesList();
     void show();
 
-private slots:
+private Q_SLOTS:
     void contextMenu(const QPoint& pos);
 
 private:

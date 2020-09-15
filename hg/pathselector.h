@@ -43,13 +43,13 @@ public:
      */
     const QString remote() const;
 
-public slots:
+public Q_SLOTS:
     void reload();
 
 private:
     void setupUI();
 
-private slots:
+private Q_SLOTS:
     void slotChangeEditUrl(int index);
 
 private:

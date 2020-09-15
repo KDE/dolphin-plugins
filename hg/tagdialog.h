@@ -37,7 +37,7 @@ class HgTagDialog : public DialogBase
 public:
     explicit HgTagDialog(QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void slotUpdateDialog(const QString &text);
     void slotCreateTag();
     void slotSwitch();

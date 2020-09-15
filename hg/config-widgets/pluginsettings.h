@@ -39,11 +39,11 @@ public:
     explicit HgPluginSettingsWidget(QWidget *parent = 0);
     ~HgPluginSettingsWidget() override;
 
-public slots:
+public Q_SLOTS:
     void saveConfig();
     void loadConfig();
 
-private slots:
+private Q_SLOTS:
     void browse_diff();
 
 private:

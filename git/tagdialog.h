@@ -52,7 +52,7 @@ public:
      */
 
     QString baseBranch() const;
-private slots:
+private Q_SLOTS:
     void setOkButtonState();
 private:
     inline void setLineEditErrorModeActive(bool active);

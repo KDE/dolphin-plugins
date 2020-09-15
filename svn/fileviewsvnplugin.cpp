@@ -218,9 +218,9 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
     if ((process.exitCode() != 0 || process.exitStatus() != QProcess::NormalExit)) {
         if (FileViewSvnPluginSettings::showUpdates()) {
             // Network update failed. Unset ShowUpdates option, which triggers a refresh
-            emit infoMessage(i18nc("@info:status", "SVN status update failed. Disabling Option "
+            Q_EMIT infoMessage(i18nc("@info:status", "SVN status update failed. Disabling Option "
                                    "\"Show SVN Updates\"."));
-            emit setShowUpdatesChecked(false);
+            Q_EMIT setShowUpdatesChecked(false);
             // this is no fail, we just try again differently
             // furthermore returning false shows an error message that would override our info
             return true;
@@ -234,7 +234,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
 
 void FileViewSvnPlugin::endRetrieval()
 {
-    emit versionInfoUpdated();
+    Q_EMIT versionInfoUpdated();
 }
 
 KVersionControlPlugin::ItemVersion FileViewSvnPlugin::itemVersion(const KFileItem& item) const
@@ -289,7 +289,7 @@ QList<QAction*> FileViewSvnPlugin::versionControlActions(const KFileItemList& it
         return directoryActions(items.first());
     }
 
-    foreach (const KFileItem& item, items) {
+    for (const KFileItem& item : items) {
         m_contextItems.append(item);
     }
     m_contextDir.clear();
@@ -301,7 +301,7 @@ QList<QAction*> FileViewSvnPlugin::versionControlActions(const KFileItemList& it
         const int itemsCount = items.count();
         int versionedCount = 0;
         int editingCount = 0;
-        foreach (const KFileItem& item, items) {
+        for (const KFileItem& item : items) {
             const ItemVersion version = itemVersion(item);
             if (version != UnversionedVersion) {
                 ++versionedCount;
@@ -374,7 +374,7 @@ void FileViewSvnPlugin::showLocalChanges()
     QTemporaryFile *file = new QTemporaryFile(tmpFileNameTemplate, this);
 
     if (!file->open()) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes."));
         return;
     }
 
@@ -389,7 +389,7 @@ void FileViewSvnPlugin::showLocalChanges()
         }
     );
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: svn diff failed."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes: svn diff failed."));
         file->deleteLater();
         return;
     }
@@ -401,7 +401,7 @@ void FileViewSvnPlugin::showLocalChanges()
         }
     );
     if (!started) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
         file->deleteLater();
     }
 }
@@ -412,7 +412,7 @@ void FileViewSvnPlugin::commitDialog()
     if (!m_contextDir.isEmpty()) {
         context << m_contextDir;
     } else {
-        for (const auto &i : m_contextItems) {
+        for (const auto &i : qAsConst(m_contextItems)) {
             context << i.localPath();
         }
     }
@@ -510,10 +510,10 @@ void FileViewSvnPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
     m_pendingOperation = false;
 
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
-        emit errorMessage(m_errorMsg);
+        Q_EMIT errorMessage(m_errorMsg);
     } else if (m_contextItems.isEmpty()) {
-        emit operationCompletedMessage(m_operationCompletedMsg);
-        emit itemVersionsChanged();
+        Q_EMIT operationCompletedMessage(m_operationCompletedMsg);
+        Q_EMIT itemVersionsChanged();
     } else {
         startSvnCommandProcess();
     }
@@ -525,7 +525,7 @@ void FileViewSvnPlugin::slotOperationError()
     m_contextItems.clear();
     m_pendingOperation = false;
 
-    emit errorMessage(m_errorMsg);
+    Q_EMIT errorMessage(m_errorMsg);
 }
 
 void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
@@ -535,7 +535,7 @@ void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
     settings->setShowUpdates(checked);
     settings->save();
 
-    emit itemVersionsChanged();
+    Q_EMIT itemVersionsChanged();
 }
 
 void FileViewSvnPlugin::revertFiles(const QStringList& filesPath)
@@ -572,7 +572,7 @@ void FileViewSvnPlugin::diffAgainstWorkingCopy(const QString& localFilePath, ulo
 {
     QTemporaryFile *file = new QTemporaryFile(this);
     if (!SvnCommands::exportFile(QUrl::fromLocalFile(localFilePath), rev, file)) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file->deleteLater();
         return;
     }
@@ -585,7 +585,7 @@ void FileViewSvnPlugin::diffAgainstWorkingCopy(const QString& localFilePath, ulo
         }
     );
     if (!started) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
         file->deleteLater();
     }
 }
@@ -595,12 +595,12 @@ void FileViewSvnPlugin::diffBetweenRevs(const QString& remoteFilePath, ulong rev
     QTemporaryFile *file1 = new QTemporaryFile(this);
     QTemporaryFile *file2 = new QTemporaryFile(this);
     if (!SvnCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev1, file1)) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file1->deleteLater();
         return;
     }
     if (!SvnCommands::exportFile(QUrl::fromLocalFile(remoteFilePath), rev2, file2)) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes for a file: could not get file."));
         file1->deleteLater();
         file2->deleteLater();
         return;
@@ -614,7 +614,7 @@ void FileViewSvnPlugin::diffBetweenRevs(const QString& remoteFilePath, ulong rev
         }
     );
     if (!started) {
-        emit errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Could not show local SVN changes: could not start kompare."));
         file1->deleteLater();
         file2->deleteLater();
     }
@@ -641,7 +641,7 @@ void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& m
     // file must stay alive until slotOperationCompleted() is invoked and will
     // be destroyed when the version plugin is destructed.
     if (!m_tempFile.open())  {
-        emit errorMessage(i18nc("@info:status", "Commit of SVN changes failed."));
+        Q_EMIT errorMessage(i18nc("@info:status", "Commit of SVN changes failed."));
         return;
     }
 
@@ -674,7 +674,7 @@ void FileViewSvnPlugin::execSvnCommand(const QString& svnCommand,
                                        const QString& errorMsg,
                                        const QString& operationCompletedMsg)
 {
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
 
     m_command = svnCommand;
     m_arguments = arguments;

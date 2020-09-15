@@ -117,14 +117,14 @@ SvnLogDialog::SvnLogDialog(const QString& contextDir, QWidget *parent) :
     m_diffFilePrev->setIcon(QIcon::fromTheme("view-split-left-right"));
     QObject::connect(m_diffFilePrev, &QAction::triggered, this, [this] () {
         svnLogEntryInfo_t info = m_diffFilePrev->data().value<svnLogEntryInfo_t>();
-        emit diffBetweenRevs(info.remotePath, info.revision, info.revision - 1);
+        Q_EMIT diffBetweenRevs(info.remotePath, info.revision, info.revision - 1);
     } );
 
     m_diffFileCurrent = new QAction(i18n("Changes against working copy"), this);
     m_diffFileCurrent->setIcon(QIcon::fromTheme("view-split-left-right"));
     QObject::connect(m_diffFileCurrent, &QAction::triggered, this, [this] () {
         svnLogEntryInfo_t info = m_diffFileCurrent->data().value<svnLogEntryInfo_t>();
-        emit diffAgainstWorkingCopy(info.localPath, info.revision);
+        Q_EMIT diffAgainstWorkingCopy(info.localPath, info.revision);
     } );
 
     m_fileRevertToRev = new QAction(i18n("Revert to revision"), this);
@@ -282,9 +282,9 @@ void SvnLogDialog::updateRepoToRevision()
     bool convert = false;
     uint revision = m_updateToRev->data().toUInt(&convert);
     if (!convert || !SvnCommands::updateToRevision(m_contextDir, revision)) {
-        emit errorMessage(i18nc("@info:status", "SVN log: update to revision failed."));
+        Q_EMIT errorMessage(i18nc("@info:status", "SVN log: update to revision failed."));
     } else {
-        emit operationCompletedMessage(i18nc("@info:status", "SVN log: update to revision %1 successful.", revision));
+        Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN log: update to revision %1 successful.", revision));
         SvnLogDialog::refreshLog();
     }
 }
@@ -294,9 +294,9 @@ void SvnLogDialog::revertRepoToRevision()
     bool convert = false;
     uint revision = m_revertToRev->data().toUInt(&convert);
     if (!convert || !SvnCommands::revertToRevision(m_contextDir, revision)) {
-        emit errorMessage(i18nc("@info:status", "SVN log: revert to revision failed."));
+        Q_EMIT errorMessage(i18nc("@info:status", "SVN log: revert to revision failed."));
     } else {
-        emit operationCompletedMessage(i18nc("@info:status", "SVN log: revert to revision %1 successful.", revision));
+        Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN log: revert to revision %1 successful.", revision));
     }
 }
 
@@ -305,8 +305,8 @@ void SvnLogDialog::revertFileToRevision()
     svnLogEntryInfo_t info = m_fileRevertToRev->data().value<svnLogEntryInfo_t>();
 
     if (!resetAndRevertFileToRevision(info.localPath, info.revision)) {
-        emit errorMessage(i18nc("@info:status", "SVN log: revert to revision failed."));
+        Q_EMIT errorMessage(i18nc("@info:status", "SVN log: revert to revision failed."));
     } else {
-        emit operationCompletedMessage(i18nc("@info:status", "SVN log: revert to revision %1 successful.", info.revision));
+        Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN log: revert to revision %1 successful.", info.revision));
     }
 }

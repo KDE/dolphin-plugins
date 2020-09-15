@@ -37,7 +37,7 @@ public:
     explicit HgMergeDialog(QWidget *parent = 0);
     void done(int r) override;
 
-private slots:
+private Q_SLOTS:
     void saveGeometry();
 
 private:

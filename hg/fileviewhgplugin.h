@@ -70,7 +70,7 @@ private:
     QList<QAction*> directoryContextMenu(const QString &directory) const;
     QList<QAction*> universalContextMenuActions(const QString &directory) const;
 
-private slots:
+private Q_SLOTS:
     void addFiles();
     void removeFiles();
     void renameFile();

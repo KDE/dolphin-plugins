@@ -134,7 +134,7 @@ void HgExportDialog::saveGeometry()
 void HgExportDialog::done(int r)
 {
     if (r == QDialog::Accepted) {
-        QList<QListWidgetItem*> items = m_commitInfoWidget->selectedItems();
+        const QList<QListWidgetItem*> items = m_commitInfoWidget->selectedItems();
         if (items.empty()) {
             KMessageBox::error(this, i18nc("@message:error",
                      "Please select at least one changeset to be exported!"));
@@ -153,7 +153,7 @@ void HgExportDialog::done(int r)
         }
 
         args << QLatin1String("-r");
-        foreach (QListWidgetItem *item, items) {
+        for (QListWidgetItem *item : items) {
             args << item->data(Qt::DisplayRole).toString();
         }
 

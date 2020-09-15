@@ -77,9 +77,9 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     args << QLatin1String("--port");
     args << QString::number(portNumber);
     server->process.start(QLatin1String("stdbuf"), args);
-    emit readyReadLine(repoLocation,
+    Q_EMIT readyReadLine(repoLocation,
             i18n("## Starting Server ##"));
-    emit readyReadLine(repoLocation,
+    Q_EMIT readyReadLine(repoLocation,
             QString("% hg serve --port %1").arg(portNumber));
 }
 
@@ -105,10 +105,10 @@ bool HgServeWrapper::running(const QString &repoLocation)
 void HgServeWrapper::slotFinished(int exitCode, QProcess::ExitStatus status)
 {
     if (exitCode == 0 && status == QProcess::NormalExit) {
-        emit finished();
+        Q_EMIT finished();
     }
     else {
-        emit error();
+        Q_EMIT error();
     }
 }
 

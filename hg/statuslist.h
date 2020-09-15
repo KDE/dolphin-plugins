@@ -49,12 +49,12 @@ public:
      */
     bool getSelectionForCommit(QStringList &files);
 
-private slots:
+private Q_SLOTS:
     void reloadStatusTable();
     void currentItemChangedSlot();
     void headerClickedSlot(int index);
 
-signals:
+Q_SIGNALS:
     void itemSelectionChanged(const char status, const QString &fileName);
 
 private:

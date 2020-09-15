@@ -113,12 +113,12 @@ void SvnCheckoutDialog::on_pbOk_clicked()
     const bool omitExternals = m_ui.cbOmitExternals->isChecked();
     const QString &whereto = m_ui.leCheckoutDir->text();
 
-    emit infoMessage(i18nc("@info:status", "SVN checkout: checkout in process..."));
+    Q_EMIT infoMessage(i18nc("@info:status", "SVN checkout: checkout in process..."));
 
     if (!SvnCommands::checkoutRepository(url, omitExternals, whereto)) {
-        emit errorMessage(i18nc("@info:status", "SVN checkout: checkout failed."));
+        Q_EMIT errorMessage(i18nc("@info:status", "SVN checkout: checkout failed."));
     } else {
-        emit operationCompletedMessage(i18nc("@info:status", "SVN checkout: checkout successful."));
+        Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN checkout: checkout successful."));
     }
 
     close();

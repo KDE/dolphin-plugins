@@ -120,7 +120,7 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
     setDefaultNewBranchName(m_branchComboBox->currentText());
 
     //keep local branches to prevent creating an equally named new branch
-    foreach (const QString& b, branches) {
+    for (const QString& b : branches) {
         if (!b.startsWith(QLatin1String("remotes/"))) {
             //you CAN create local branches called "remotes/...", but since no sane person
             //would do that, we save the effort of another call to "git branch"

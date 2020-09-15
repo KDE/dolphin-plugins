@@ -34,18 +34,18 @@ public:
     SvnLogDialog(const QString& contextDir, QWidget *parent = nullptr);
     virtual ~SvnLogDialog() override;
 
-public slots:
+public Q_SLOTS:
     void setCurrentRevision(ulong revision);
     void refreshLog();
     void on_tLog_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn);
 
-signals:
+Q_SIGNALS:
     void errorMessage(const QString& msg);
     void operationCompletedMessage(const QString& msg);
     void diffAgainstWorkingCopy(const QString& localFilePath, ulong rev);
     void diffBetweenRevs(const QString& remoteFilePath, ulong rev1, ulong rev2);
 
-private slots:
+private Q_SLOTS:
     void showContextMenuLog(const QPoint &pos);
     void showContextMenuChangesList(const QPoint &pos);
     void updateRepoToRevision();

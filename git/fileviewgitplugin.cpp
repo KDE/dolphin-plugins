@@ -308,7 +308,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
     if (!m_pendingOperation){
         m_contextDir = QFileInfo(items.first().localPath()).canonicalPath();
         m_contextItems.clear();
-        foreach(const KFileItem& item, items){
+        for (const KFileItem& item : items){
             m_contextItems.append(item);
         }
 
@@ -316,7 +316,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
         int versionedCount = 0;
         int addableCount = 0;
         int revertCount = 0;
-        foreach(const KFileItem& item, items){
+        for (const KFileItem& item : items){
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion &&
                 state != IgnoredVersion) {
@@ -473,7 +473,7 @@ void FileViewGitPlugin::log()
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        emit errorMessage(xi18nd("@info:status", "<application>Git</application> Log failed."));
+        Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> Log failed."));
         return;
     }
 
@@ -571,12 +571,12 @@ void FileViewGitPlugin::checkout()
         }
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
             if (!completedMessage.isEmpty()) {
-                emit operationCompletedMessage(completedMessage);
-                emit itemVersionsChanged();
+                Q_EMIT operationCompletedMessage(completedMessage);
+                Q_EMIT itemVersionsChanged();
             }
         }
         else {
-            emit errorMessage(xi18nd("@info:status", "<application>Git</application> Checkout failed."
+            Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> Checkout failed."
             " Maybe your working directory is dirty."));
         }
     }
@@ -610,8 +610,8 @@ void FileViewGitPlugin::commit()
             }
         }
         if (!completedMessage.isEmpty()) {
-            emit operationCompletedMessage(completedMessage);
-            emit itemVersionsChanged();
+            Q_EMIT operationCompletedMessage(completedMessage);
+            Q_EMIT itemVersionsChanged();
         }
     }
 }
@@ -641,10 +641,10 @@ void FileViewGitPlugin::createTag()
         }
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
             completedMessage = xi18nd("@info:status","Successfully created tag '%1'", dialog.tagName());
-            emit operationCompletedMessage(completedMessage);
+            Q_EMIT operationCompletedMessage(completedMessage);
         } else {
             //I don't know any other error, but in case one occurs, the user doesn't get FALSE error messages
-            emit errorMessage(gotTagAlreadyExistsMessage ?
+            Q_EMIT errorMessage(gotTagAlreadyExistsMessage ?
                 xi18nd("@info:status", "<application>Git</application> tag creation failed."
                                       " A tag with the name '%1' already exists.", dialog.tagName()) :
                 xi18nd("@info:status", "<application>Git</application> tag creation failed.")
@@ -663,7 +663,7 @@ void FileViewGitPlugin::push()
                         dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
         m_operationCompletedMsg = xi18nd("@info:status", "Pushed branch %1 to %2:%3.",
                         dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
-        emit infoMessage(xi18nd("@info:status", "Pushing branch %1 to %2:%3...",
+        Q_EMIT infoMessage(xi18nd("@info:status", "Pushing branch %1 to %2:%3...",
                  dialog.localBranch(), dialog.destination(), dialog.remoteBranch()));
 
         m_command = "push";
@@ -684,7 +684,7 @@ void FileViewGitPlugin::pull()
                         dialog.remoteBranch(), dialog.source());
         m_operationCompletedMsg = xi18nd("@info:status", "Pulled branch %1 from %2 successfully.",
                         dialog.remoteBranch(), dialog.source());
-        emit infoMessage(xi18nd("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
+        Q_EMIT infoMessage(xi18nd("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
                     dialog.source()));
 
         m_command = "pull";
@@ -708,10 +708,10 @@ void FileViewGitPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
     }
 
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
-        emit errorMessage(message.isNull() ? m_errorMsg : message);
+        Q_EMIT errorMessage(message.isNull() ? m_errorMsg : message);
     } else if (m_contextItems.isEmpty()) {
-        emit operationCompletedMessage(message.isNull() ? m_operationCompletedMsg : message);
-        emit itemVersionsChanged();
+        Q_EMIT operationCompletedMessage(message.isNull() ? m_operationCompletedMsg : message);
+        Q_EMIT itemVersionsChanged();
     } else {
         startGitCommandProcess();
     }
@@ -723,7 +723,7 @@ void FileViewGitPlugin::slotOperationError()
     m_contextItems.clear();
     m_pendingOperation = false;
 
-    emit errorMessage(m_errorMsg);
+    Q_EMIT errorMessage(m_errorMsg);
 }
 
 QString FileViewGitPlugin::parsePushOutput()
@@ -752,7 +752,7 @@ QString FileViewGitPlugin::parsePullOutput()
             return xi18nd("@info:status", "Branch is already up-to-date.");
         }
         if (line.contains("CONFLICT")) {
-            emit itemVersionsChanged();
+            Q_EMIT itemVersionsChanged();
             return xi18nd("@info:status", "Merge conflicts occurred. Fix them and commit the result.");
         }
     }
@@ -765,7 +765,7 @@ void FileViewGitPlugin::execGitCommand(const QString& gitCommand,
                                        const QString& errorMsg,
                                        const QString& operationCompletedMsg)
 {
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
 
     m_command = gitCommand;
     m_arguments = arguments;

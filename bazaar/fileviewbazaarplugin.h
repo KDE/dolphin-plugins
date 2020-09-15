@@ -49,7 +49,7 @@ public:
 
 
 
-private slots:
+private Q_SLOTS:
     void updateFiles();
     void pullFiles();
     void pushFiles();

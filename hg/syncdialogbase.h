@@ -53,7 +53,7 @@ public:
 
     explicit HgSyncBaseDialog(DialogType dialogType, QWidget *parent = 0);
 
-signals:
+Q_SIGNALS:
     void changeListAvailable();
 
 protected:
@@ -73,7 +73,7 @@ protected:
     virtual void getHgChangesArguments(QStringList &args) = 0;
     virtual void noChangesMessage() = 0;
 
-protected slots:
+protected Q_SLOTS:
     void slotGetChanges();
     void slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status);
     void slotChangesProcessError();

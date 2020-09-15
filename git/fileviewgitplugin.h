@@ -47,7 +47,7 @@ public:
     QList<QAction*> versionControlActions(const KFileItemList& items) const override;
     QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
 
-private slots:
+private Q_SLOTS:
     void addFiles();
     void revertFiles();
     void showLocalChanges();

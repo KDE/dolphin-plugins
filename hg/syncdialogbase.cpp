@@ -74,7 +74,7 @@ void HgSyncBaseDialog::createOptionGroup()
     setOptions();
     QVBoxLayout *layout = new QVBoxLayout;
 
-    foreach (QCheckBox *cb, m_options) {
+    for (QCheckBox *cb : qAsConst(m_options)) {
         layout->addWidget(cb);
     }
 
@@ -218,7 +218,7 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     m_changesButton->setChecked(true);
     loadBigSize();
     m_haveChanges = true; 
-    emit changeListAvailable();
+    Q_EMIT changeListAvailable();
 }
 
 void HgSyncBaseDialog::slotChangesProcessError()

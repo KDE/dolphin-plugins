@@ -71,9 +71,9 @@ void SvnCleanupDialog::on_buttonOk_clicked()
 
     const CommandResult result = SvnCommands::cleanup(workDir, removeUnversioned, removeIgnored, includeExternals);
     if (result.success) {
-        emit operationCompletedMessage(i18nc("@info:status", "SVN clean up completed successfully."));
+        Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN clean up completed successfully."));
     } else {
-        emit errorMessage(i18nc("@info:status", "SVN clean up failed for %1", workDir));
+        Q_EMIT errorMessage(i18nc("@info:status", "SVN clean up failed for %1", workDir));
         qDebug() << result.stdErr;
     }
 

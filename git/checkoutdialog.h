@@ -55,7 +55,7 @@ public:
      */
     QString newBranchName() const;
 
-private slots:
+private Q_SLOTS:
     void branchRadioButtonToggled(bool checked);
     void newBranchCheckBoxStateToggled(int state);
    /**

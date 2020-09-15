@@ -78,7 +78,7 @@ FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList
     // Find and watch aggregation.dbx file
     QDir dir(dropboxDir);
     QStringList nameFilter("instance*");
-    QStringList instanceDirs = dir.entryList(nameFilter);
+    const QStringList instanceDirs = dir.entryList(nameFilter);
     QString aggregationDB = "";
     for (const QString &instance : instanceDirs) {
         aggregationDB = dropboxDir + '/' + instance + '/' + "aggregation.dbx";
@@ -145,7 +145,7 @@ QList<QAction*> FileViewDropboxPlugin::versionControlActions(const KFileItemList
         return QList<QAction*>();
     }
 
-    foreach (const KFileItem& item, items) {
+    for (const KFileItem& item : items) {
         d->contextFilePaths << QDir(item.localPath()).canonicalPath();
     }
 
@@ -156,7 +156,7 @@ QList<QAction*> FileViewDropboxPlugin::versionControlActions(const KFileItemList
     }
 
     // analyze item options and dynamically form a menu
-    foreach (const QString& replyLine, reply) {
+    for (const QString& replyLine : reply) {
         const QStringList options = replyLine.split('~');
 
         if (options.count() > 2) {

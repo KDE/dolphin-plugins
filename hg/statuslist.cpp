@@ -60,7 +60,7 @@ HgStatusList::HgStatusList(QWidget *parent):
 
 void HgStatusList::currentItemChangedSlot()
 {
-    emit itemSelectionChanged(
+    Q_EMIT itemSelectionChanged(
         m_statusTable->item(m_statusTable->currentRow(), 1)->text()[0].toLatin1(),
         m_statusTable->item(m_statusTable->currentRow(), 2)->text());
 }

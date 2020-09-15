@@ -37,10 +37,10 @@ class HgBackoutDialog : public DialogBase
 public:
     explicit HgBackoutDialog(QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void done(int r) override;
 
-private slots:
+private Q_SLOTS:
     void saveGeometry();
     void slotSelectBaseChangeset();
     void slotSelectParentChangeset();

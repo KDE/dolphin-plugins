@@ -59,7 +59,7 @@ public:
      */
     void disconnectFromProcess();
 
-public slots:
+public Q_SLOTS:
     void appendInfoText(const QString& text);
     void appendErrorText(const QString& text);
     void operationCompeleted();

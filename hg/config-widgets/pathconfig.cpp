@@ -149,7 +149,7 @@ void HgPathConfigWidget::saveConfig()
     }
 
     // first delete the alias in remove list from hgrc 
-    foreach(QString alias, m_removeList) {
+    for (const QString &alias : qAsConst(m_removeList)) {
         hgc.deleteRepoRemotePath(alias);
     }
 

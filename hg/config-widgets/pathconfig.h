@@ -41,7 +41,7 @@ class HgPathConfigWidget : public QWidget
 public:
     explicit HgPathConfigWidget(QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void saveConfig();
     void loadConfig();
 
@@ -53,7 +53,7 @@ private:
      */
     void setupContextMenu();
 
-private slots:
+private Q_SLOTS:
     /**
      * Show context menu and changed enabled status of actions according 
      * to the position where menu is requested.

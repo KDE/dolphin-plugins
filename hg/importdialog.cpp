@@ -197,8 +197,8 @@ void HgImportDialog::getPatchInfo(const QString &fileName)
 
 void HgImportDialog::slotAddPatches()
 {
-    QStringList patches = QFileDialog::getOpenFileNames(this);
-    foreach (QString fileName, patches) {
+    const QStringList patches = QFileDialog::getOpenFileNames(this);
+    for (const QString &fileName : patches) {
         getPatchInfo(fileName);
     }
 }

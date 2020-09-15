@@ -240,13 +240,13 @@ public:
                 m_process.state() == QProcess::Starting);
     }
 
-public slots:
+public Q_SLOTS:
     /**
      * Try to terminate the currently running operation.
      */
     void terminateCurrentProcess();
 
-signals:
+Q_SIGNALS:
     ///equivalent to the signals of QProcess
     void finished(int exitCode, QProcess::ExitStatus exitStatus);
     void errorOccurred(QProcess::ProcessError error);
@@ -259,7 +259,7 @@ private:
     ///Get and update m_hgBaseDir
     void updateBaseDir();
 
-private slots:
+private Q_SLOTS:
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError(QProcess::ProcessError error);
 

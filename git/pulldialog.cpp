@@ -78,9 +78,9 @@ PullDialog::PullDialog(QWidget* parent):
 
     //get branch names
     int currentBranchIndex;
-    QStringList branches = gitWrapper->branches(&currentBranchIndex);
+    const QStringList branches = gitWrapper->branches(&currentBranchIndex);
 
-    foreach (const QString& branch, branches) {
+    for (const QString& branch : branches) {
         if (branch.startsWith(QLatin1String("remotes/"))) {
             const QString remote = branch.section('/', 1, 1);
             const QString name = branch.section('/', 2);

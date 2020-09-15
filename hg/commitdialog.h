@@ -53,7 +53,7 @@ class HgCommitDialog : public DialogBase
 public:
     explicit HgCommitDialog(QWidget *parent = 0);
 
-private slots:
+private Q_SLOTS:
     /**
      * Shows diff of selected file in a KTextEditor widget when user selects
      * one of the entry in HgStatusList widget.
@@ -122,7 +122,7 @@ class NewBranchDialog : public QDialog
         explicit NewBranchDialog(QWidget *parent = 0);
         QString getBranchName() const;
 
-    private slots:
+    private Q_SLOTS:
         void slotTextChanged(const QString &text);
 
     private:

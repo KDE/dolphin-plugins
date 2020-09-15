@@ -132,28 +132,28 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
     m_actRevertFile->setIcon(QIcon::fromTheme("document-revert"));
     connect(m_actRevertFile, &QAction::triggered, [this] () {
         const QString filePath = m_actRevertFile->data().value<svnCommitEntryInfo_t>().localPath;
-        emit revertFiles(QStringList() << filePath);
+        Q_EMIT revertFiles(QStringList() << filePath);
     } );
 
     m_actDiffFile = new QAction(i18nc("@item:inmenu", "Show changes"), this);
     m_actDiffFile->setIcon(QIcon::fromTheme("view-split-left-right"));
     connect(m_actDiffFile, &QAction::triggered, [this] () {
         const QString filePath = m_actDiffFile->data().value<svnCommitEntryInfo_t>().localPath;
-        emit diffFile(filePath);
+        Q_EMIT diffFile(filePath);
     } );
 
     m_actAddFile = new QAction(i18nc("@item:inmenu", "Add file"), this);
     m_actAddFile->setIcon(QIcon::fromTheme("list-add"));
     connect(m_actAddFile, &QAction::triggered, [this] () {
         const QString filePath = m_actAddFile->data().value<svnCommitEntryInfo_t>().localPath;
-        emit addFiles(QStringList() << filePath);
+        Q_EMIT addFiles(QStringList() << filePath);
     } );
 
     connect(buttonBox, &QDialogButtonBox::accepted, [this] () {
         // Form a new context list from an existing one and a possibly modified m_versionInfoHash (some
         // files from original context might no longer be in m_versionInfoHash).
         QStringList context = makeContext(m_context, m_versionInfoHash);
-        emit commit(context, m_editor->toPlainText());
+        Q_EMIT commit(context, m_editor->toPlainText());
         QDialog::accept();
     } );
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);

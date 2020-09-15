@@ -45,7 +45,7 @@ public:
     QList<QAction*> versionControlActions(const KFileItemList& items) const override;
     QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
 
-signals:
+Q_SIGNALS:
     /// Invokes m_showUpdatesAction->setChecked(checked) on the UI thread.
     void setShowUpdatesChecked(bool checked);
 
@@ -55,7 +55,7 @@ signals:
      */
     void versionInfoUpdated();
 
-private slots:
+private Q_SLOTS:
     void updateFiles();
     void showLocalChanges();
     void commitDialog();

@@ -43,7 +43,7 @@ public:
      * @returns True if the last commit is to be amended, false otherwise
      */
     bool amend() const;
-private slots:
+private Q_SLOTS:
     void signOffButtonClicked();
     void amendCheckBoxStateChanged();
     void saveDialogSize();

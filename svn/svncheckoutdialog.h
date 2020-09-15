@@ -31,11 +31,11 @@ public:
     SvnCheckoutDialog(const QString& contextDir, QWidget *parent = nullptr);
     virtual ~SvnCheckoutDialog() override;
 
-public slots:
+public Q_SLOTS:
     void on_leRepository_textChanged(const QString &text);
     void on_pbOk_clicked();
 
-signals:
+Q_SIGNALS:
     void infoMessage(const QString& msg);
     void errorMessage(const QString& msg);
     void operationCompletedMessage(const QString& msg);

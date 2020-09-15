@@ -44,7 +44,7 @@ public:
     explicit HgCloneDialog(const QString &directory, QWidget *parent = 0);
     void setWorkingDirectory(const QString &directory);
 
-private slots:
+private Q_SLOTS:
     void saveGeometry();
 
     /**

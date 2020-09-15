@@ -37,10 +37,10 @@ class HgImportDialog : public DialogBase
 public:
     explicit HgImportDialog(QWidget *parent=0);
 
-public slots:
+public Q_SLOTS:
     void done(int r) override;
 
-private slots:
+private Q_SLOTS:
     void saveGeometry();
     void slotAddPatches();
     void slotRemovePatches();

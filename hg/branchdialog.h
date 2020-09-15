@@ -37,7 +37,7 @@ class HgBranchDialog : public DialogBase
 public:
     explicit HgBranchDialog(QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void slotUpdateDialog(const QString &text);
     void slotCreateBranch();
     void slotSwitch();

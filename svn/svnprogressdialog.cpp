@@ -129,6 +129,6 @@ void SvnProgressDialog::reject()
     if (m_ui.buttonOk->isEnabled()) {
         QDialog::reject();
     } else {
-        emit m_ui.buttonCancel->clicked();
+        Q_EMIT m_ui.buttonCancel->clicked();
     }
 }

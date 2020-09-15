@@ -97,7 +97,7 @@ public:
      */
     bool normalExit(const QString &repoLocation);
 
-signals:
+Q_SIGNALS:
     // These signals are emitted for every ServerProcessType in list. Its upto
     // the owner of this wrapper to decide which server was updated. If any of
     // these signals are emitted cleanUnused() is called and every initiater
@@ -109,7 +109,7 @@ signals:
 
 private:
 
-private slots:
+private Q_SLOTS:
     void slotFinished(int exitCode, QProcess::ExitStatus status);
 
 private:
@@ -140,27 +140,27 @@ public:
                 this, &ServerProcessType::slotFinished);
     }
 
-signals:    
+Q_SIGNALS:    
     void readyReadLine(const QString &repoLocation, const QString &line);
 
-private slots:
+private Q_SLOTS:
     void slotAppendOutput() 
     {
         if (process.canReadLine()) {
-            emit readyReadLine(process.workingDirectory(),
+            Q_EMIT readyReadLine(process.workingDirectory(),
                 QTextCodec::codecForLocale()->toUnicode(process.readAllStandardOutput()).trimmed());
         }
     }
 
     void slotAppendRemainingOutput() 
     {
-            emit readyReadLine(process.workingDirectory(),
+            Q_EMIT readyReadLine(process.workingDirectory(),
                 QTextCodec::codecForLocale()->toUnicode(process.readAllStandardError()).trimmed());
     }
 
     void slotFinished() 
     {
-        emit readyReadLine(process.workingDirectory(),
+        Q_EMIT readyReadLine(process.workingDirectory(),
                                i18n("## Server Stopped! ##\n"));
     }
 };

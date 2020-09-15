@@ -40,7 +40,7 @@ public:
      */
     explicit HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void saveConfig();
     void loadConfig();
 

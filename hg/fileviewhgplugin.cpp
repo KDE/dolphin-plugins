@@ -361,8 +361,8 @@ KVersionControlPlugin::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem
         // will disable the context menu there. Will enable recursive
         // add however.
         QDir dir(item.localPath());
-        QStringList filesInside = dir.entryList();
-        foreach (const QString &fileName, filesInside) {
+        const QStringList filesInside = dir.entryList();
+        for (const QString &fileName : filesInside) {
             if (fileName == "." || fileName == ".." ) {
                 continue;
             }
@@ -419,7 +419,7 @@ QList<QAction*> FileViewHgPlugin::itemContextMenu(const KFileItemList &items) co
     m_hgWrapper->setCurrentDir(m_currentDir);
     if (!m_hgWrapper->isBusy()) {
         m_contextItems.clear();
-        foreach (const KFileItem &item, items) {
+        for (const KFileItem &item : items) {
             m_contextItems.append(item);
         }
 
@@ -427,7 +427,7 @@ QList<QAction*> FileViewHgPlugin::itemContextMenu(const KFileItemList &items) co
         int versionedCount = 0;
         int addableCount = 0;
         int revertableCount = 0;
-        foreach (const KFileItem &item, items) {
+        for (const KFileItem &item : items) {
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion) {
                 ++versionedCount;
@@ -495,9 +495,9 @@ void FileViewHgPlugin::addFiles()
     m_operationCompletedMsg = xi18nc("@info:status",
          "Added files to <application>Hg</application> repository.");
 
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
     m_hgWrapper->addFiles(m_contextItems);
-    emit itemVersionsChanged();
+    Q_EMIT itemVersionsChanged();
 }
 
 void FileViewHgPlugin::removeFiles()
@@ -518,7 +518,7 @@ void FileViewHgPlugin::removeFiles()
     m_operationCompletedMsg = xi18nc("@info:status",
          "Removed files from <application>Hg</application> repository.");
 
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
     m_hgWrapper->removeFiles(m_contextItems);
 }
 
@@ -531,7 +531,7 @@ void FileViewHgPlugin::renameFile()
         "Renaming of file in <application>Hg</application> repository failed.");
     m_operationCompletedMsg = xi18nc("@info:status",
         "Renamed file in <application>Hg</application> repository successfully.");
-    emit infoMessage(xi18nc("@info:status",
+    Q_EMIT infoMessage(xi18nc("@info:status",
         "Renaming file in <application>Hg</application> repository."));
 
     HgRenameDialog dialog(m_contextItems.first());
@@ -551,12 +551,12 @@ void FileViewHgPlugin::commit()
             "Commit to <application>Hg</application> repository failed.");
     m_operationCompletedMsg = xi18nc("@info:status",
             "Committed to <application>Hg</application> repository.");
-    emit infoMessage(xi18nc("@info:status",
+    Q_EMIT infoMessage(xi18nc("@info:status",
             "Commit <application>Hg</application> repository."));
 
     HgCommitDialog dialog;
     if (dialog.exec() == QDialog::Accepted) {
-        emit itemVersionsChanged();
+        Q_EMIT itemVersionsChanged();
     };
 }
 
@@ -566,7 +566,7 @@ void FileViewHgPlugin::tag()
            "Tag operation in <application>Hg</application> repository failed.");
     m_operationCompletedMsg = xi18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository is successful.");
-    emit infoMessage(xi18nc("@info:status",
+    Q_EMIT infoMessage(xi18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository."));
 
     HgTagDialog dialog;
@@ -579,7 +579,7 @@ void FileViewHgPlugin::update()
            "Update of <application>Hg</application> working directory failed.");
     m_operationCompletedMsg = xi18nc("@info:status",
            "Update of <application>Hg</application> working directory is successful.");
-    emit infoMessage(xi18nc("@info:status",
+    Q_EMIT infoMessage(xi18nc("@info:status",
            "Updating <application>Hg</application> working directory."));
 
     HgUpdateDialog dialog;
@@ -592,7 +592,7 @@ void FileViewHgPlugin::branch()
            "Branch operation on <application>Hg</application> repository failed.");
     m_operationCompletedMsg = xi18nc("@info:status",
            "Branch operation on <application>Hg</application> repository completed successfully.");
-    emit infoMessage(xi18nc("@info:status",
+    Q_EMIT infoMessage(xi18nc("@info:status",
            "Branch operation on <application>Hg</application> repository."));
 
     HgBranchDialog dialog;
@@ -703,7 +703,7 @@ void FileViewHgPlugin::revert()
     m_operationCompletedMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository completed successfully.");
 
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
     m_hgWrapper->revert(m_contextItems);
 }
 
@@ -723,7 +723,7 @@ void FileViewHgPlugin::revertAll()
     m_operationCompletedMsg = xi18nc("@info:status",
          "Reverting files in <application>Hg</application> repository completed successfully.");
 
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
     m_hgWrapper->revertAll();
 }
 
@@ -736,7 +736,7 @@ void FileViewHgPlugin::diff()
     m_operationCompletedMsg = xi18nc("@info:status",
          "Generated <application>Hg</application> diff successfully.");
 
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
 
     QStringList args;
     args << QLatin1String("--config");
@@ -801,28 +801,28 @@ void FileViewHgPlugin::rollback()
     m_operationCompletedMsg = xi18nc("@info:status",
          "Rollback of <application>Hg</application> repository completed successfully.");
 
-    emit infoMessage(infoMsg);
+    Q_EMIT infoMessage(infoMsg);
     m_hgWrapper->rollback();
     KMessageBox::information(0, m_hgWrapper->readAllStandardOutput());
-    emit itemVersionsChanged();
+    Q_EMIT itemVersionsChanged();
 }
 
 void FileViewHgPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
 {
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
-        emit errorMessage(m_errorMsg);
+        Q_EMIT errorMessage(m_errorMsg);
     }
     else {
         m_contextItems.clear();
-        emit operationCompletedMessage(m_operationCompletedMsg);
-        emit itemVersionsChanged();
+        Q_EMIT operationCompletedMessage(m_operationCompletedMsg);
+        Q_EMIT itemVersionsChanged();
     }
 }
 
 void FileViewHgPlugin::slotOperationError()
 {
     m_contextItems.clear();
-    emit errorMessage(m_errorMsg);
+    Q_EMIT errorMessage(m_errorMsg);
 }
 
 void FileViewHgPlugin::clearMessages() const
