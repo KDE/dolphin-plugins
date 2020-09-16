@@ -668,9 +668,14 @@ void FileViewGitPlugin::push()
 
         m_command = "push";
         m_pendingOperation = true;
-        m_process.start(QString("git push%4 %1 %2:%3").arg(dialog.destination()).
-            arg(dialog.localBranch()).arg(dialog.remoteBranch()).
-            arg(dialog.force() ? QLatin1String(" --force") : QLatin1String("")));
+        QStringList args;
+        args << "push";
+        if (dialog.force()) {
+            args << "--force";
+        }
+        args << dialog.destination();
+        args << QStringLiteral("%1:%2").arg(dialog.localBranch(), dialog.remoteBranch());
+        m_process.start("git", args);
     }
 }
 
