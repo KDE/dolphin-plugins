@@ -128,7 +128,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
     QString baseDir;
     QProcess process1;
     process1.setWorkingDirectory(directory);
-    process1.start(QLatin1String("bzr root"));
+    process1.start(QLatin1String("bzr"), {"root"});
     while (process1.waitForReadyRead()) {
         char buffer[512];
         while (process1.readLine(buffer, sizeof(buffer)) > 0)  {
@@ -152,7 +152,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
 
     QProcess process2;
     process2.setWorkingDirectory(directory);
-    process2.start(QLatin1String("bzr ignored"));
+    process2.start(QLatin1String("bzr"), {"ignored"});
     while (process2.waitForReadyRead()) {
         char buffer[512];
         while (process2.readLine(buffer, sizeof(buffer)) > 0)  {
@@ -463,7 +463,7 @@ void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
     Q_EMIT infoMessage(infoMsg);
 
     QProcess process;
-    process.start(QLatin1String("bzr plugins"));
+    process.start(QLatin1String("bzr"), {"plugins"});
     bool foundQbzr = false;
     while (process.waitForReadyRead()) {
         char buffer[512];
