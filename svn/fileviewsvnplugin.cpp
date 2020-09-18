@@ -22,7 +22,6 @@
 #include "fileviewsvnpluginsettings.h"
 
 #include <KLocalizedString>
-#include <KRun>
 #include <KShell>
 #include <KPluginFactory>
 

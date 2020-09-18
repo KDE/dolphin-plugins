@@ -22,6 +22,9 @@
 #define FILEVIEWGITPLUGIN_H
 
 #include <Dolphin/KVersionControlPlugin>
+#include <KIO/CommandLauncherJob>
+#include <KJobUiDelegate>
+#include <KDialogJobUiDelegate>
 
 #include <KFileItem>
 
@@ -129,6 +132,15 @@ private:
     //Current targets. m_contextItems is used if and only if m_contextDir is empty.
     mutable QString m_contextDir;
     mutable KFileItemList m_contextItems;
+
+    // Utility method, because the method call is the same except for the command
+    void runCommand(const QString &command)
+    {
+        auto *job = new KIO::CommandLauncherJob(command);
+        job->setWorkingDirectory(m_currentDir);
+        job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+        job->start();
+    }
 };
 #endif // FILEVIEWGITPLUGIN_H
 

@@ -28,7 +28,6 @@
 #include "pulldialog.h"
 
 #include <KLocalizedString>
-#include <KRun>
 #include <KShell>
 #include <KPluginFactory>
 
@@ -438,7 +437,7 @@ void FileViewGitPlugin::showLocalChanges()
 {
     Q_ASSERT(!m_contextDir.isEmpty());
 
-    KRun::runCommand(QLatin1String("git difftool --dir-diff ."), nullptr, m_contextDir);
+    runCommand(QLatin1String("git difftool --dir-diff ."));
 }
 
 void FileViewGitPlugin::showDiff(const QUrl &link)
@@ -446,7 +445,7 @@ void FileViewGitPlugin::showDiff(const QUrl &link)
     if (link.scheme() != QLatin1String("rev")) {
         return;
     }
-    KRun::runCommand(QStringLiteral("git difftool --dir-diff %1^ %1").arg(link.path()), nullptr, m_contextDir);
+    runCommand(QStringLiteral("git difftool --dir-diff %1^ %1").arg(link.path()));
 }
 
 void FileViewGitPlugin::log()
@@ -522,7 +521,7 @@ void FileViewGitPlugin::merge()
 {
     Q_ASSERT(!m_contextDir.isEmpty());
 
-    KRun::runCommand(QStringLiteral("git mergetool"), nullptr, m_contextDir);
+    runCommand(QStringLiteral("git mergetool"));
 }
 
 void FileViewGitPlugin::checkout()
