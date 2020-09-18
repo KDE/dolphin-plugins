@@ -35,6 +35,7 @@
   <name xml:lang="uk">Додатки до Dolphin</name>
   <name xml:lang="x-test">xxDolphin Pluginsxx</name>
   <name xml:lang="zh-CN">Dolphin 插件</name>
+  <name xml:lang="zh-TW">Dolphin 外掛程式</name>
   <summary>Dolphin integration for revision control systems, Dropbox, and disk images.</summary>
   <summary xml:lang="az">Versiyaya nəzarət sistemi və həmçinin Dropbox və disk rəqəmsal təsvirləri üçün Dolphin inteqrasiyası.</summary>
   <summary xml:lang="ca">Integració al Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc.</summary>
@@ -60,6 +61,7 @@
   <summary xml:lang="uk">Інтеграція Dolphin з системами керування версіями, Dropbox та образами дисків.</summary>
   <summary xml:lang="x-test">xxDolphin integration for revision control systems, Dropbox, and disk images.xx</summary>
   <summary xml:lang="zh-CN">Dolphin 的文件版本控制系统、Dropbox 和磁盘镜像集成。</summary>
+  <summary xml:lang="zh-TW">Dolphin 的版本控制系統、Dropbox 與磁碟映像檔整合。</summary>
   <description>
     <p>These plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git.  A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.</p>
     <p xml:lang="az">Bu əlavələr Bazaar, Git və Mercutial kimi versiyaya nəzarət sistemlərinin Dolphin ilə inteqrasiyasını təmin edir. Dropbox əlavəsi Faylları Dropbox xidməti ilə sinxronizasiya etməyə imkan verir. İSO inteqrasiyası əlavəsi disk rəqəmsal surətlərini qoşmaq və onları ayırmaq əməlini əlavə edir.</p>
@@ -86,6 +88,7 @@
     <p xml:lang="uk">За допомогою цих додатків можна інтегрувати Dolphin із системами керування версіями Bazaar, Mercurial та Git. Додаток Dropbox надасть у ваше розпорядження пункти меню дій, які допоможуть підтримувати синхронізацію ваших файлів із службою Dropbox. Додаток інтеграції з образами дисків додає дії для монтування та демонтування образів.</p>
     <p xml:lang="x-test">xxThese plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git. A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.xx</p>
     <p xml:lang="zh-CN">这些插件使 Dolphin 整合版本控制系统(Bazaar、Mercurial、Git) 。Dropbox 插件提供菜单项以同步文件到 Dropbox 服务。磁盘镜像插件提供挂载、卸载菜单项。</p>
+    <p xml:lang="zh-TW">這些外掛程式將 Dolphin 與版本控制系統 Bazzar、Mercurial 與 Git 整合。Dropbox 外掛程式則提供了一些動作選項，讓您的檔案可以與 Dropbox 同步。磁碟映像檔整合外掛程式則加入了掛載與卸載的選項。</p>
   </description>
   <url type="homepage">https://www.kde.org</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=dolphin</url>
