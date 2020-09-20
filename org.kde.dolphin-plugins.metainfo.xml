@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <extends>org.kde.dolphin.desktop</extends>
   <name>Dolphin Plugins</name>
+  <name xml:lang="az">Dolphin əlavələri</name>
   <name xml:lang="ca">Connectors del Dolphin</name>
   <name xml:lang="ca-valencia">Connectors del Dolphin</name>
   <name xml:lang="cs">Moduly pro Dolphin</name>
@@ -35,6 +36,7 @@
   <name xml:lang="x-test">xxDolphin Pluginsxx</name>
   <name xml:lang="zh-CN">Dolphin 插件</name>
   <summary>Dolphin integration for revision control systems, Dropbox, and disk images.</summary>
+  <summary xml:lang="az">Versiyaya nəzarət sistemi və həmçinin Dropbox və disk rəqəmsal təsvirləri üçün Dolphin inteqrasiyası.</summary>
   <summary xml:lang="ca">Integració al Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc.</summary>
   <summary xml:lang="ca-valencia">Integració al Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc.</summary>
   <summary xml:lang="da">Dolphin-integration af revisionsstyringssystemer, Dropbox, og disk-imagefiler.</summary>
@@ -56,6 +58,7 @@
   <summary xml:lang="zh-CN">Dolphin 的文件版本控制系统、Dropbox 和磁盘镜像集成。</summary>
   <description>
     <p>These plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git.  A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.</p>
+    <p xml:lang="az">Bu əlavələr Bazaar, Git və Mercutial kimi versiyaya nəzarət sistemlərinin Dolphin ilə inteqrasiyasını təmin edir. Dropbox əlavəsi Faylları Dropbox xidməti ilə sinxronizasiya etməyə imkan verir. İSO inteqrasiyası əlavəsi disk rəqəmsal surətlərini qoşmaq və onları ayırmaq əməlini əlavə edir.</p>
     <p xml:lang="ca">Aquests connectors integren el Dolphin amb els sistemes de control de revisions Bazaar, Mercurial i Git. I un connector de Dropbox proporciona elements d'acció per a mantenir els vostres fitxers sincronitzats amb el servei de Dropbox. Un connector d'integració d'imatge de disc afegeix una acció de muntar o desmuntar.</p>
     <p xml:lang="ca-valencia">Aquests connectors integren el Dolphin amb els sistemes de control de revisions Bazaar, Mercurial i Git. I un connector de Dropbox proporciona elements d'acció per a mantindre els vostres fitxers sincronitzats amb el servei de Dropbox. Un connector d'integració d'imatge de disc afig una acció de muntar o desmuntar.</p>
     <p xml:lang="da">Disse plugins integrerer Dolphin med revisionsstyringssystemerne Bazaar, Mercurial og Git. Et Dropbox-plugin giver handlingselementer til at holde dine filer synkroniserede med Dropbox-tjenesten. Et plugin til disk-imagefil-integration giver en montér- eller afmontér-handling.</p>
