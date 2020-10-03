@@ -33,10 +33,13 @@
 #include <QDBusReply>
 #include <QDBusUnixFileDescriptor>
 #include <QDebug>
+#include <QEventLoop>
 #include <QIcon>
 #include <QMap>
+#include <QObject>
 #include <QProcess>
 #include <QString>
+#include <QTimer>
 #include <QVariant>
 
 #include <KLocalizedString>
@@ -44,7 +47,10 @@
 #include <Solid/Block>
 #include <Solid/Device>
 #include <Solid/DeviceInterface>
+#include <Solid/DeviceNotifier>
 #include <Solid/GenericInterface>
+#include <Solid/StorageAccess>
+#include <Solid/StorageVolume>
 
 K_PLUGIN_CLASS_WITH_JSON(MountIsoAction, "mountisoaction.json")
 
@@ -117,6 +123,47 @@ void mount(const QString &file)
     if (!reply.isValid()) {
         qWarning() << "Error mounting " << file << ":" << reply.error().name()
                    << reply.error().message();
+        return;
+    }
+
+    // Need to wait for UDisks2 to send a signal to Solid to update its database
+    auto notifier = Solid::DeviceNotifier::instance();
+
+    // The following code can not be put into a slot because the MountIsoAction object is destroyed
+    // as soon as this function ends
+    QEventLoop loop;
+    QTimer timer;
+    timer.setSingleShot(true);
+    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    QObject::connect(notifier, &Solid::DeviceNotifier::deviceAdded, &loop, &QEventLoop::quit);
+
+    int i = 0, maxDeviceRace = 4;
+    Solid::Device device;
+    while (i < maxDeviceRace) {
+        timer.start(5000); // 5s timeout
+        loop.exec();
+
+        device = Solid::Device(reply.value().path());
+        if (!device.is<Solid::StorageVolume>()) {
+            i++;
+        } else {
+            break;
+        }
+    }
+
+    if (i == maxDeviceRace) {
+        // Something really wrong happened
+        return;
+    }
+
+    auto storageVolume = device.as<Solid::StorageVolume>();
+    const QString uuid = storageVolume->uuid();
+
+    QList<Solid::Device> devices = Solid::Device::listFromQuery(
+        QStringLiteral("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid));
+    for (auto dev : devices) {
+        auto storageAccess = dev.as<Solid::StorageAccess>();
+        storageAccess->setup();
     }
 }
 
