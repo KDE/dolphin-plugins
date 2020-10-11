@@ -361,12 +361,9 @@ KVersionControlPlugin::ItemVersion FileViewHgPlugin::itemVersion(const KFileItem
         // will disable the context menu there. Will enable recursive
         // add however.
         QDir dir(item.localPath());
-        const QStringList filesInside = dir.entryList();
+        const QStringList filesInside = dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot);
         for (const QString &fileName : filesInside) {
-            if (fileName == "." || fileName == ".." ) {
-                continue;
-            }
-            QUrl tempUrl(dir.absoluteFilePath(fileName));
+            const QUrl tempUrl(dir.absoluteFilePath(fileName));
             KFileItem tempFileItem(tempUrl);
             if (itemVersion(tempFileItem) == NormalVersion) {
                return NormalVersion;
