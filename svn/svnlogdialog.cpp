@@ -86,7 +86,7 @@ enum columns_t {
 };
 
 SvnLogDialog::SvnLogDialog(const QString& contextDir, QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     m_contextDir(contextDir),
     m_logLength(100)
 {

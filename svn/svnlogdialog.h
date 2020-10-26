@@ -21,14 +21,14 @@
 #ifndef SVNLOGDIALOG_H
 #define SVNLOGDIALOG_H
 
-#include <QWidget>
+#include <QDialog>
 #include <QVector>
 
 #include "svncommands.h"
 
 #include "ui_svnlogdialog.h"
 
-class SvnLogDialog : public QWidget {
+class SvnLogDialog : public QDialog {
     Q_OBJECT
 public:
     SvnLogDialog(const QString& contextDir, QWidget *parent = nullptr);
