@@ -176,7 +176,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     m_versionInfoHash.clear();
 
     // ----- find files with special status -----
-    process.start("git", {"status", "--porcelain", "-z", "-u", "--ignored"});
+    process.start("git", {"--no-optional-locks", "status", "--porcelain", "-z", "-u", "--ignored"});
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
