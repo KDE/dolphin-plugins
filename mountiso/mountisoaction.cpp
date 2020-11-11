@@ -184,7 +184,8 @@ void mount(const QString &file)
  */
 void unmount(const Solid::Device &device)
 {
-    for (Solid::Device storageAccessDevice : getStorageAccessFromDevice(device)) {
+    const QList<Solid::Device> devices = getStorageAccessFromDevice(device);
+    for (Solid::Device storageAccessDevice : devices) {
         auto storageAccess = storageAccessDevice.as<Solid::StorageAccess>();
         if (storageAccess->isAccessible()) {
             storageAccess->teardown();
