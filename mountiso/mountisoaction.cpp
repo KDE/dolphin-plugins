@@ -118,7 +118,6 @@ void mount(const QString &file)
         return;
     }
     QMap<QString, QVariant> options;
-    options["read-only"] = QVariant::fromValue(true);
 
     QDBusInterface manager(
             "org.freedesktop.UDisks2",
