@@ -3,7 +3,9 @@ project(fileviewbazaarplugin)
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewbazaarplugin\")
 
 set(fileviewbazaarplugin_SRCS fileviewbazaarplugin.cpp)
-add_library(fileviewbazaarplugin MODULE ${fileviewbazaarplugin_SRCS})
+
+kcoreaddons_add_plugin(fileviewbazaarplugin SOURCES fileviewbazaarplugin.cpp INSTALL_NAMESPACE "dolphin/vcs")
+
 target_link_libraries(fileviewbazaarplugin
     KF5::KIOCore
     KF5::I18n
@@ -11,5 +13,4 @@ target_link_libraries(fileviewbazaarplugin
     DolphinVcs
 )
 
-install(FILES fileviewbazaarplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
-install(TARGETS fileviewbazaarplugin DESTINATION ${KDE_INSTALL_PLUGINDIR})
+kcoreaddons_desktop_to_json(fileviewbazaarplugin fileviewbazaarplugin.desktop)

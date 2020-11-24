@@ -18,7 +18,8 @@ kconfig_add_kcfg_files(fileviewsvnplugin_SRCS
     fileviewsvnpluginsettings.kcfgc
 )
 
-add_library(fileviewsvnplugin MODULE ${fileviewsvnplugin_SRCS})
+kcoreaddons_add_plugin(fileviewsvnplugin SOURCES ${fileviewsvnplugin_SRCS} INSTALL_NAMESPACE "dolphin/vcs")
+
 target_link_libraries(fileviewsvnplugin
     Qt5::Core
     Qt5::Widgets
@@ -29,6 +30,6 @@ target_link_libraries(fileviewsvnplugin
     DolphinVcs
 )
 
-install(FILES fileviewsvnplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+kcoreaddons_desktop_to_json(fileviewsvnplugin fileviewsvnplugin.desktop)
+
 install(FILES fileviewsvnpluginsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
-install(TARGETS fileviewsvnplugin DESTINATION ${KDE_INSTALL_PLUGINDIR})

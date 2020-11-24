@@ -6,7 +6,8 @@ set(fileviewdropboxplugin_SRCS
     fileviewdropboxplugin.cpp
 )
 
-add_library(fileviewdropboxplugin MODULE ${fileviewdropboxplugin_SRCS})
+kcoreaddons_add_plugin(fileviewdropboxplugin SOURCES fileviewdropboxplugin.cpp INSTALL_NAMESPACE "dolphin/vcs")
+
 target_link_libraries(fileviewdropboxplugin
     Qt5::Core
     Qt5::Widgets
@@ -17,5 +18,4 @@ target_link_libraries(fileviewdropboxplugin
     DolphinVcs
 )
 
-install(FILES fileviewdropboxplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
-install(TARGETS fileviewdropboxplugin DESTINATION ${KDE_INSTALL_PLUGINDIR})
+kcoreaddons_desktop_to_json(fileviewdropboxplugin fileviewdropboxplugin.desktop)
