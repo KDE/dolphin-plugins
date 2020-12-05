@@ -129,6 +129,17 @@ QString FileViewGitPlugin::fileName() const
     return QLatin1String(".git");
 }
 
+QString FileViewGitPlugin::localRepositoryRoot(const QString& directory) const
+{
+    QProcess process;
+    process.setWorkingDirectory(directory);
+    process.start("git", {"rev-parse", "--show-toplevel"});
+    if (process.waitForReadyRead(100) && process.exitCode() == 0) {
+        return QString::fromUtf8(process.readAll().chopped(1));
+    }
+    return QString();
+}
+
 int FileViewGitPlugin::readUntilZeroChar(QIODevice* device, char* buffer, const int maxChars) {
     if (buffer == 0) { // discard until next \0
         char c;
@@ -253,7 +264,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
                     m_versionInfoHash.insert(absoluteDirName, state);
                 }
             } else { //normal file, no directory
-                    m_versionInfoHash.insert(directory + relativeFileName, state);
+                m_versionInfoHash.insert(directory + relativeFileName, state);
             }
         }
     }

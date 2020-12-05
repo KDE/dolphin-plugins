@@ -152,6 +152,17 @@ QString FileViewSvnPlugin::fileName() const
     return QLatin1String(".svn");
 }
 
+QString FileViewSvnPlugin::localRepositoryRoot(const QString& directory) const
+{
+    QProcess process;
+    process.setWorkingDirectory(directory);
+    process.start("svn", {"info", "--show-item", "wc-root"});
+    if (process.waitForReadyRead(100) && process.exitCode() == 0) {
+        return QString::fromUtf8(process.readAll().chopped(1));
+    }
+    return QString();
+}
+
 bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
 {
     Q_ASSERT(directory.endsWith(QLatin1Char('/')));

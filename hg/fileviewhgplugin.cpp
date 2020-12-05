@@ -318,6 +318,17 @@ QString FileViewHgPlugin::fileName() const
     return QLatin1String(".hg");
 }
 
+QString FileViewHgPlugin::localRepositoryRoot(const QString& directory) const
+{
+    QProcess process;
+    process.setWorkingDirectory(directory);
+    process.start("hg", {"root"});
+    if (process.waitForReadyRead(100) && process.exitCode() == 0) {
+        return QString::fromUtf8(process.readAll().chopped(1));
+    }
+    return QString();
+}
+
 bool FileViewHgPlugin::beginRetrieval(const QString &directory)
 {
     clearMessages();

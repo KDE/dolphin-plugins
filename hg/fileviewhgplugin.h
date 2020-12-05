@@ -39,6 +39,7 @@ public:
     FileViewHgPlugin(QObject *parent, const QList<QVariant> &args);
     ~FileViewHgPlugin() override;
     QString fileName() const override;
+    QString localRepositoryRoot(const QString& directory) const override;
     bool beginRetrieval(const QString& directory) override;
     void endRetrieval() override;
     KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
