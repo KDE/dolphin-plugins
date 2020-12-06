@@ -1,3 +1,3 @@
 #! /bin/sh
 $EXTRACTRC *.kcfg >> rc.cpp
-$XGETTEXT *.cpp -o $podir/fileviewhgplugin.pot
+$XGETTEXT *.cpp *.h -o $podir/fileviewhgplugin.pot
