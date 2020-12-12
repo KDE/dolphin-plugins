@@ -44,12 +44,13 @@
 #include <QIcon>
 #include <QMenu>
 #include <QDebug>
+
+#include <KApplicationTrader>
 #include <KMessageBox>
 #include <QFileDialog>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KService>
-#include <KMimeTypeTrader>
 
 #include <KLocalizedString>
 #include <KPluginFactory>
@@ -851,8 +852,8 @@ QString FileViewHgPlugin::visualDiffExecPath()
         return result;
     }
 
-    KService::List services = KMimeTypeTrader::self()->query("text/x-diff");
-    return services.first()->exec().split(' ').takeFirst();
+    KService::Ptr service = KApplicationTrader::preferredService(QStringLiteral("text/x-diff"));
+    return service ? service->exec().split(' ').takeFirst() : QString();
 }
 
 #include "fileviewhgplugin.moc"
