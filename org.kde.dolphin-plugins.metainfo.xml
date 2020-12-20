@@ -24,6 +24,7 @@
   <name xml:lang="ko">Dolphin 플러그인</name>
   <name xml:lang="nl">Plug-ins van Dolphin</name>
   <name xml:lang="nn">Dolphin-tillegg</name>
+  <name xml:lang="pa">ਡਾਲਫਿਨ ਪਲੱਗਇਨ</name>
   <name xml:lang="pl">Wtyczki Dolphina</name>
   <name xml:lang="pt">'Plugins' do Dolphin</name>
   <name xml:lang="pt-BR">Plugins do Dolphin</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="ko">Dolphin용 버전 관리 시스템, Dropbox, 디스크 이미지 통합</summary>
   <summary xml:lang="nl">Integratie van Dolphin voor revisie besturingssystemen, Dropbox en images van schijven.</summary>
   <summary xml:lang="nn">Dolphin-integrering med versjonskontrollsystem, Dropbox og diskbilete.</summary>
+  <summary xml:lang="pa">ਰੀਵਿਜ਼ਨ ਕੰਟਰੋਲ ਸਿਸਟਮ, ਡਰੌਪਬਾਕਸ ਅਤੇ ਡਿਸਕ ਈਮੇਜ਼ ਲਈ ਡਾਲਫਿਨ ਜੋੜ ਹੈ।</summary>
   <summary xml:lang="pl">Integracja Dolphina z systemami do zarządzania wersjami, Dropboksem oraz obrazami dysków</summary>
   <summary xml:lang="pt">Integração do Dolphin com sistemas de controlo de versões, o Dropbox e imagens de discos.</summary>
   <summary xml:lang="pt-BR">Integração do Dolphin para sistemas de controle de versão, Dropbox e imagens de disco.</summary>
