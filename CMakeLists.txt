@@ -23,7 +23,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     KIO
     TextWidgets
     CoreAddons
-    Solid
 )
 
 find_package(DolphinVcs)

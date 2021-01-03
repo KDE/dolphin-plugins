@@ -11,5 +11,4 @@ kcoreaddons_add_plugin(
 target_link_libraries(mountisoaction
     Qt5::DBus
     KF5::I18n
-    KF5::KIOWidgets
-    KF5::Solid)
+    KF5::KIOWidgets)

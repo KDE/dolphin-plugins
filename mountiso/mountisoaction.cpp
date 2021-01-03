@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2020 Kwon-Young Choi <kwon-young.choi@hotmail.fr>
+ * Copyright (C) 2021 Kai Uwe Broulik <kde@broulik.de>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,64 +30,32 @@
 
 #include <QAction>
 #include <QDBusConnection>
-#include <QDBusInterface>
-#include <QDBusReply>
+#include <QDBusMetaType>
+#include <QDBusPendingCall>
+#include <QDBusPendingCallWatcher>
+#include <QDBusPendingReply>
 #include <QDBusUnixFileDescriptor>
 #include <QDebug>
-#include <QEventLoop>
 #include <QIcon>
 #include <QMap>
-#include <QObject>
-#include <QProcess>
 #include <QString>
-#include <QTimer>
 #include <QVariant>
 
 #include <KLocalizedString>
 #include <KPluginFactory>
-#include <Solid/Block>
-#include <Solid/Device>
-#include <Solid/DeviceInterface>
-#include <Solid/DeviceNotifier>
-#include <Solid/GenericInterface>
-#include <Solid/StorageAccess>
-#include <Solid/StorageVolume>
+
+using VariantMapMap = QMap<QString, QVariantMap>;
+using DBusObjectMap = QMap<QDBusObjectPath, VariantMapMap>;
+
+static const QString s_udisks2Service = QStringLiteral("org.freedesktop.UDisks2");
+static const QString s_udisks2FilesystemInterface = QStringLiteral("org.freedesktop.UDisks2.Filesystem");
+static const QString s_udisks2LoopInterface = QStringLiteral("org.freedesktop.UDisks2.Loop");
 
 K_PLUGIN_CLASS_WITH_JSON(MountIsoAction, "mountisoaction.json")
 
 MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
     : KAbstractFileItemActionPlugin(parent)
 {
-}
-
-/**
- * Get block device udi ("/org/freedesktop/UDisks2/block_devices/loop0") using
- * its backing file name.
- *
- * Use the Solid framework to iterate through all block devices to check if the
- * backing file correspond to the given backingFile.
- *
- * Warning: The use of GenericInterface makes this function non portable,
- * especially to non Unix-like OS.
- *
- * @backingFile: backing file of the device we want.
- *
- * @return: device udi of the found block device. If no corresponding device
- * was found, return a null QString.
- */
-const QString getDeviceFromBackingFile(const QString &backingFile)
-{
-    const QList<Solid::Device> blockDevices =
-        Solid::Device::listFromQuery("[ IS Block AND IS GenericInterface ]");
-
-    for (const Solid::Device &device : blockDevices) {
-        QMap<QString, QVariant> properties = device.as<Solid::GenericInterface>()->allProperties();
-        if (properties.contains("BackingFile")
-            && backingFile == properties["BackingFile"].value<QString>()) {
-            return device.udi();
-        }
-    }
-    return QString();
 }
 
 /**
@@ -109,62 +78,41 @@ void mount(const QString &file)
         qWarning() << "Error closing " << file << ": " << strerror(errno);
         return;
     }
-    QMap<QString, QVariant> options;
-    options["read-only"] = QVariant::fromValue(true);
 
-    QDBusInterface manager(
-            "org.freedesktop.UDisks2",
-            "/org/freedesktop/UDisks2/Manager",
-            "org.freedesktop.UDisks2.Manager",
-            QDBusConnection::systemBus());
-    QDBusReply<QDBusObjectPath> reply =
-        manager.call("LoopSetup", QVariant::fromValue(qtFd), options);
-
-    if (!reply.isValid()) {
-        qWarning() << "Error mounting " << file << ":" << reply.error().name()
-                   << reply.error().message();
-        return;
-    }
-
-    // Need to wait for UDisks2 to send a signal to Solid to update its database
-    auto notifier = Solid::DeviceNotifier::instance();
-
-    // The following code can not be put into a slot because the MountIsoAction object is destroyed
-    // as soon as this function ends
-    QEventLoop loop;
-    QTimer timer;
-    timer.setSingleShot(true);
-    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
-    QObject::connect(notifier, &Solid::DeviceNotifier::deviceAdded, &loop, &QEventLoop::quit);
-
-    int i = 0, maxDeviceRace = 4;
-    Solid::Device device;
-    while (i < maxDeviceRace) {
-        timer.start(5000); // 5s timeout
-        loop.exec();
-
-        device = Solid::Device(reply.value().path());
-        if (!device.is<Solid::StorageVolume>()) {
-            i++;
-        } else {
-            break;
+    auto msg = QDBusMessage::createMethodCall(s_udisks2Service,
+                                              QStringLiteral("/org/freedesktop/UDisks2/Manager"),
+                                              QStringLiteral("org.freedesktop.UDisks2.Manager"),
+                                              QStringLiteral("LoopSetup"));
+    msg.setArguments({
+        QVariant::fromValue(qtFd),
+        QVariantMap{
+            {QStringLiteral("read-only"), true}
         }
-    }
+    });
 
-    if (i == maxDeviceRace) {
-        // Something really wrong happened
-        return;
-    }
+    auto reply = QDBusConnection::systemBus().asyncCall(msg);
+    auto *watcher = new QDBusPendingCallWatcher(reply);
+    QObject::connect(watcher, &QDBusPendingCallWatcher::finished, [file](QDBusPendingCallWatcher *watcher) {
+        QDBusPendingReply<QDBusObjectPath> reply = *watcher;
+        watcher->deleteLater();
 
-    auto storageVolume = device.as<Solid::StorageVolume>();
-    const QString uuid = storageVolume->uuid();
+        if (reply.isError()) {
+            qWarning() << "Failed to do a LoopSetup for" << file << reply.error().message();
+            return;
+        }
 
-    QList<Solid::Device> devices = Solid::Device::listFromQuery(
-        QStringLiteral("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid));
-    for (auto dev : devices) {
-        auto storageAccess = dev.as<Solid::StorageAccess>();
-        storageAccess->setup();
-    }
+        const auto devicePath = reply.value();
+
+        auto msg = QDBusMessage::createMethodCall(s_udisks2Service,
+                                                  devicePath.path(),
+                                                  s_udisks2FilesystemInterface,
+                                                  QStringLiteral("Mount"));
+        msg.setArguments({
+            QVariantMap() /*options*/
+        });
+
+        QDBusConnection::systemBus().call(msg, QDBus::NoBlock);
+    });
 }
 
 /**
@@ -176,57 +124,124 @@ void mount(const QString &file)
  */
 void unmount(const QString &device)
 {
-    // Empty argument required for Loop Delete method to work
-    QMap<QString, QVariant> options;
+    // First delete the loop device, it will still remain in Places panel if mounted
+    auto msg = QDBusMessage::createMethodCall(s_udisks2Service,
+                                              device,
+                                              s_udisks2LoopInterface,
+                                              QStringLiteral("Delete"));
+    msg.setArguments({
+        QVariantMap() // options
+    });
 
-    QDBusInterface manager(
-            "org.freedesktop.UDisks2",
-            device,
-            "org.freedesktop.UDisks2.Loop",
-            QDBusConnection::systemBus());
-    manager.call("Delete", options);
+    auto reply = QDBusConnection::systemBus().asyncCall(msg);
+    auto *watcher = new QDBusPendingCallWatcher(reply);
+    QObject::connect(watcher, &QDBusPendingCallWatcher::finished, [device](QDBusPendingCallWatcher *watcher) {
+        QDBusPendingReply<> reply = *watcher;
+        watcher->deleteLater();
+
+        if (reply.isError()) {
+            qWarning() << "Failed to delete loop device" << device << reply.error().message();
+            return;
+        }
+
+        // Now unmount it
+        auto msg = QDBusMessage::createMethodCall(s_udisks2Service,
+                                                  device,
+                                                  s_udisks2FilesystemInterface,
+                                                  QStringLiteral("Unmount"));
+        msg.setArguments({
+            QVariantMap() /*options*/
+        });
+
+        QDBusConnection::systemBus().call(msg, QDBus::NoBlock);
+    });
 }
 
 QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItemInfos,
                                          QWidget *parentWidget)
 {
-    if (fileItemInfos.urlList().size() != 1
-        || fileItemInfos.mimeType() != QLatin1String("application/x-cd-image")
-        || !fileItemInfos.isLocal()) {
-        return {};
-    };
+    Q_UNUSED(parentWidget);
 
-    auto file = fileItemInfos.urlList().at(0).toLocalFile();
+    if (fileItemInfos.urlList().size() != 1
+            || !fileItemInfos.isLocal()) {
+        return {};
+    }
+
+    if (fileItemInfos.mimeType() != QLatin1String("application/x-cd-image")
+            && fileItemInfos.mimeType() != QLatin1String("application/x-raw-disk-image")) {
+        return {};
+    }
 
     // Check if dbus can handle file descriptor
-    auto connection = QDBusConnection::sessionBus();
-    QDBusConnection::ConnectionCapabilities capabilities = connection.connectionCapabilities();
-    if (!(capabilities & QDBusConnection::UnixFileDescriptorPassing)) {
+    const auto capabilities = QDBusConnection::systemBus().connectionCapabilities();
+    if (!capabilities.testFlag(QDBusConnection::UnixFileDescriptorPassing)) {
         return {};
     }
 
-    const QString device = getDeviceFromBackingFile(file);
+    const QString file = fileItemInfos.urlList().at(0).toLocalFile();
 
-    if (device.isEmpty()) {
-        const QIcon icon = QIcon::fromTheme(QStringLiteral("media-mount"));
-        const QString title = i18nc("@action:inmenu Action to mount an ISO image", "Mount ISO");
+    QAction *action = new QAction(QIcon::fromTheme(QStringLiteral("media-mount")),
+                                  i18nc("@action:inmenu Waiting for determining whether disk image is mounted", "Checking Image..."));
+    action->setEnabled(false);
 
-        QAction *action = new QAction(icon, title, parentWidget);
+    qDBusRegisterMetaType<DBusObjectMap>();
+    qDBusRegisterMetaType<VariantMapMap>();
+    auto msg = QDBusMessage::createMethodCall(s_udisks2Service,
+                                              QStringLiteral("/org/freedesktop/UDisks2"),
+                                              QStringLiteral("org.freedesktop.DBus.ObjectManager"),
+                                              QStringLiteral("GetManagedObjects"));
+    auto reply = QDBusConnection::systemBus().asyncCall(msg);
+    auto *watcher = new QDBusPendingCallWatcher(reply, action);
+    connect(watcher, &QDBusPendingCallWatcher::finished, action, [action, file](QDBusPendingCallWatcher *watcher) {
+        QDBusPendingReply<DBusObjectMap> reply = *watcher;
+        watcher->deleteLater();
 
-        connect(action, &QAction::triggered, this, [file]() { mount(file); });
-        return { action };
-    } else {
-        // fileItem is mounted on device
-        const QIcon icon = QIcon::fromTheme(QStringLiteral("media-eject"));
-        const QString title =
-            i18nc("@action:inmenu Action to unmount an ISO image", "Unmount ISO");
-        QAction *action = new QAction(icon, title, parentWidget);
+        if (reply.isError()) {
+            qWarning() << "Failed to query UDisks objects for determining whether image at" << file << "is mounted:" << reply.error().message();
+            action->setVisible(false);
+            return;
+        }
 
-        connect(action, &QAction::triggered, this, [device]() { unmount(device); });
-        return { action };
-    }
+        const auto objects = reply.value();
 
-    return {};
+        QString devicePath;
+
+        for (auto it = objects.begin(), end = objects.end(); it != end; ++it) {
+            const auto deviceObjectPath = it.key();
+            const auto deviceProperties = it.value();
+
+            const QVariantMap loopProperties = deviceProperties.value(s_udisks2LoopInterface);
+            if (loopProperties.isEmpty()) {
+                continue;
+            }
+
+            const QString backingFile = QString::fromUtf8(loopProperties.value(QStringLiteral("BackingFile")).toByteArray());
+            if (backingFile != file) {
+                continue;
+            }
+
+            devicePath = deviceObjectPath.path();
+            break;
+        }
+
+        if (devicePath.isEmpty()) { // not mounted
+            action->setIcon(QIcon::fromTheme(QStringLiteral("media-mount")));
+            action->setText(i18nc("@action:inmenu Action to mount a disk image", "Mount Image"));
+            connect(action, &QAction::triggered, [file] {
+                mount(file);
+            });
+        } else { // mounted
+            action->setIcon(QIcon::fromTheme(QStringLiteral("media-eject")));
+            action->setText(i18nc("@action:inmenu Action to unmount a disk image", "Unmount Image"));
+            connect(action, &QAction::triggered, [devicePath] {
+                unmount(devicePath);
+            });
+        }
+
+        action->setEnabled(true);
+    });
+
+    return {action};
 }
 
 #include "mountisoaction.moc"
