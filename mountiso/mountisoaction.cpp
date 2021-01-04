@@ -77,12 +77,11 @@ MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
 const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 {
     const QList<Solid::Device> blockDevices =
-        Solid::Device::listFromQuery("[ IS Block AND IS GenericInterface ]");
+        Solid::Device::listFromQuery("[ IS StorageAccess AND IS GenericInterface ]");
 
     for (const Solid::Device &device : blockDevices) {
-        QMap<QString, QVariant> properties = device.as<Solid::GenericInterface>()->allProperties();
-        if (properties.contains("BackingFile")
-            && backingFile == properties["BackingFile"].value<QString>()) {
+        auto genericDevice = device.as<Solid::GenericInterface>();
+        if (backingFile == genericDevice->property(QStringLiteral("BackingFile")).toString()) {
             return device;
         }
     }
