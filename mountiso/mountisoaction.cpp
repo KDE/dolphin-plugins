@@ -74,19 +74,26 @@ MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
  * @return: device udi of the found block device. If no corresponding device
  * was found, return a null QString.
  */
-const QString getDeviceFromBackingFile(const QString &backingFile)
+const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 {
     const QList<Solid::Device> blockDevices =
-        Solid::Device::listFromQuery("[ IS Block AND IS GenericInterface ]");
+        Solid::Device::listFromQuery("[ IS StorageAccess AND IS GenericInterface ]");
 
     for (const Solid::Device &device : blockDevices) {
-        QMap<QString, QVariant> properties = device.as<Solid::GenericInterface>()->allProperties();
-        if (properties.contains("BackingFile")
-            && backingFile == properties["BackingFile"].value<QString>()) {
-            return device.udi();
+        auto genericDevice = device.as<Solid::GenericInterface>();
+        if (backingFile == genericDevice->property(QStringLiteral("BackingFile")).toString()) {
+            return device;
         }
     }
-    return QString();
+    return Solid::Device();
+}
+
+const QList<Solid::Device> getStorageAccessFromDevice(const Solid::Device &device)
+{
+    auto genericInterface = device.as<Solid::GenericInterface>();
+    const QString uuid = genericInterface->property(QLatin1String("IdUUID")).value<QString>();
+    auto query = QString("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid);
+    return Solid::Device::listFromQuery(query);
 }
 
 /**
@@ -110,7 +117,6 @@ void mount(const QString &file)
         return;
     }
     QMap<QString, QVariant> options;
-    options["read-only"] = QVariant::fromValue(true);
 
     QDBusInterface manager(
             "org.freedesktop.UDisks2",
@@ -174,14 +180,22 @@ void mount(const QString &file)
  *
  * @file: iso file to mount
  */
-void unmount(const QString &device)
+void unmount(const Solid::Device &device)
 {
+    const QList<Solid::Device> devices = getStorageAccessFromDevice(device);
+    for (Solid::Device storageAccessDevice : devices) {
+        auto storageAccess = storageAccessDevice.as<Solid::StorageAccess>();
+        if (storageAccess->isAccessible()) {
+            storageAccess->teardown();
+        }
+    }
+
     // Empty argument required for Loop Delete method to work
     QMap<QString, QVariant> options;
 
     QDBusInterface manager(
             "org.freedesktop.UDisks2",
-            device,
+            device.udi(),
             "org.freedesktop.UDisks2.Loop",
             QDBusConnection::systemBus());
     manager.call("Delete", options);
@@ -205,9 +219,9 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
         return {};
     }
 
-    const QString device = getDeviceFromBackingFile(file);
+    const Solid::Device device = getDeviceFromBackingFile(file);
 
-    if (device.isEmpty()) {
+    if (!device.isValid()) {
         const QIcon icon = QIcon::fromTheme(QStringLiteral("media-mount"));
         const QString title = i18nc("@action:inmenu Action to mount an ISO image", "Mount ISO");
 
