@@ -35,6 +35,7 @@
 #include <QStringBuilder>
 
 K_PLUGIN_FACTORY(FileViewDropboxPluginFactory, registerPlugin<FileViewDropboxPlugin>();)
+K_EXPORT_PLUGIN_VERSION(2)
 
 class FileViewDropboxPlugin::Private
 {

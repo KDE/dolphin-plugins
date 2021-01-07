@@ -56,6 +56,7 @@
 #include <KPluginFactory>
 
 K_PLUGIN_FACTORY(FileViewHgPluginFactory, registerPlugin<FileViewHgPlugin>();)
+K_EXPORT_PLUGIN_VERSION(2)
 
 
 //TODO: Build a proper status signal system to sync HgWrapper/Dialogs with this
