@@ -2,9 +2,10 @@
     "KPlugin": {
         "Icon": "application-x-cd-image",
         "MimeTypes": [
-            "application/x-cd-image"
+            "application/x-cd-image",
+            "application/x-raw-disk-image"
         ],
-        "Name": "Mount and unmount iso image",
+        "Name": "Mount ISO and disk images",
         "Name[az]": "İSO faylını qoşmaq və ayırmaq",
         "Name[ca@valencia]": "Muntatge i desmuntatge d'una imatge ISO",
         "Name[ca]": "Muntatge i desmuntatge d'una imatge ISO",
@@ -45,5 +46,5 @@
             "KFileItemAction/Plugin"
         ]
     },
-    "MimeType": "application/x-cd-image;"
+    "MimeType": "application/x-cd-image;application/x-raw-disk-image;"
 }

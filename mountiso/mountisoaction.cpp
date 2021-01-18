@@ -190,11 +190,16 @@ void unmount(const Solid::Device &device)
 QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItemInfos,
                                          QWidget *parentWidget)
 {
-    if (fileItemInfos.urlList().size() != 1
-        || fileItemInfos.mimeType() != QLatin1String("application/x-cd-image")
-        || !fileItemInfos.isLocal()) {
+    if (fileItemInfos.urlList().size() != 1 || !fileItemInfos.isLocal()) {
         return {};
     };
+
+    const QString mimeType = fileItemInfos.mimeType();
+
+    if (mimeType != QLatin1String("application/x-cd-image")
+            && mimeType != QLatin1String("application/x-raw-disk-image")) {
+        return {};
+    }
 
     auto file = fileItemInfos.urlList().at(0).toLocalFile();
 
@@ -209,7 +214,7 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 
     if (!device.isValid()) {
         const QIcon icon = QIcon::fromTheme(QStringLiteral("media-mount"));
-        const QString title = i18nc("@action:inmenu Action to mount an ISO image", "Mount ISO");
+        const QString title = i18nc("@action:inmenu Action to mount a disk image", "Mount");
 
         QAction *action = new QAction(icon, title, parentWidget);
 
@@ -218,8 +223,8 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
     } else {
         // fileItem is mounted on device
         const QIcon icon = QIcon::fromTheme(QStringLiteral("media-eject"));
-        const QString title =
-            i18nc("@action:inmenu Action to unmount an ISO image", "Unmount ISO");
+        const QString title = i18nc("@action:inmenu Action to unmount a disk image", "Unmount");
+
         QAction *action = new QAction(icon, title, parentWidget);
 
         connect(action, &QAction::triggered, this, [device]() { unmount(device); });
