@@ -33,6 +33,7 @@
         "Name[sl]": "Priklopi in odklopi iso sliko sistema",
         "Name[sv]": "Montera och avmontera ISO-avbild",
         "Name[uk]": "Монтування і демонтування образів ISO",
+        "Name[vi]": "Gắn kết và bỏ gắn kết ảnh ISO",
         "Name[x-test]": "xxMount and unmount iso imagexx",
         "Name[zh_CN]": "挂载和卸载iso镜像",
         "ServiceTypes": [
