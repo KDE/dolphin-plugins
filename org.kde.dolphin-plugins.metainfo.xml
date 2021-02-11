@@ -33,6 +33,7 @@
   <name xml:lang="sk">Pluginy Dolphinu</name>
   <name xml:lang="sl">Dolphinovi vtičniki</name>
   <name xml:lang="sv">Dolphin insticksprogram</name>
+  <name xml:lang="tr">Dolphin Eklentileri</name>
   <name xml:lang="uk">Додатки до Dolphin</name>
   <name xml:lang="vi">Phần cài cắm cho Dolphin</name>
   <name xml:lang="x-test">xxDolphin Pluginsxx</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="ru">Поддержка работы с системами управления версиями, а также с Dropbox и образами дисков.</summary>
   <summary xml:lang="sl">Dolphinova integracija za nadzorne sisteme verzij izvornih programov, Dropbox in slike diskov.</summary>
   <summary xml:lang="sv">Integrering av versionshanteringssystemen, Dropbox och diskavbilder i Dolphin</summary>
+  <summary xml:lang="tr">Sürüm kontrol sistemleri, Dropbox ve disk görüntüleri için Dolphin bütünleştirmesi.</summary>
   <summary xml:lang="uk">Інтеграція Dolphin з системами керування версіями, Dropbox та образами дисків.</summary>
   <summary xml:lang="vi">Phần tích hợp vào Dolphin cho các hệ thống quản lí phiên bản, Dropbox, và ảnh đĩa.</summary>
   <summary xml:lang="x-test">xxDolphin integration for revision control systems, Dropbox, and disk images.xx</summary>
@@ -95,6 +97,7 @@
     <p xml:lang="ru">Эти модули Dolphin обеспечивают поддержку систем управления версиями Bazaar, Mercurial и Git. Модуль поддержки Dropbox позволяет выполнять синхронизацию файлы со службой Dropbox. Модуль поддержки работы с образами ISO позволяет подключать и отключать таких образы из меню действий.</p>
     <p xml:lang="sl">Ti vtičniki se vklapljajo v Dolphin s sistemi za nadzor verzij izvornih programov Bazaar, Mercurial in Git. Vtičnik Dropbox pa nudi ukrepe, s katerimi lahko datoteke sinhronizirate s storitvijo Dropbox. Integracija s slikami diskov dodaja še operaciji priklopa in odklopa.</p>
     <p xml:lang="sv">Insticksprogrammen integrerar Dolphin med versionshanteringssystemen Bazaar, Mercurial och Git. Ett Dropbox-insticksprogram ger åtgärdsobjekt för att hålla filer synkroniserade med Dropbox-tjänsten. Ett insticksprogram för integrering av diskavbilder lägger till en monterings- eller avmonteringsåtgärder.</p>
+    <p xml:lang="tr">Bu eklentiler Dolphin'i sürüm kontrol sistemleri Bazaar, Mercurial ve Git ile bütünleştirir. Dropbox eklentisi, dosyalarınızı Dropbox hizmetiyle senkronize tutmak için eylem öğeleri bulundurur. Bir disk görüntüsü bütünleştirme eklentisi bir bağlama veya ayırma eylemi ekler.</p>
     <p xml:lang="uk">За допомогою цих додатків можна інтегрувати Dolphin із системами керування версіями Bazaar, Mercurial та Git. Додаток Dropbox надасть у ваше розпорядження пункти меню дій, які допоможуть підтримувати синхронізацію ваших файлів із службою Dropbox. Додаток інтеграції з образами дисків додає дії для монтування та демонтування образів.</p>
     <p xml:lang="vi">Các phần cài cắm này tích hợp vào Dolphin các hệ thống quản lí phiên bản Bazaar, Mercurial và Git. Một phần cài cắm Dropbox cung cấp các mục hành động để giữ các tệp của bạn được đồng bộ với dịch vụ Dropbox. Một phần cài cắm tích hợp ảnh đĩa cung cấp hành động gắn kết hoặc bỏ gắn kết.</p>
     <p xml:lang="x-test">xxThese plugins integrate Dolphin with the revision control systems Bazaar, Mercurial and Git. A Dropbox plugin gives action items to keep your files synced to the Dropbox service. A disk image integration plugin adds a mount or unmount action.xx</p>
