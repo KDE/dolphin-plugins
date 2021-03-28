@@ -78,7 +78,7 @@ MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
 const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 {
     const QList<Solid::Device> blockDevices =
-        Solid::Device::listFromQuery("[ IS StorageAccess AND IS GenericInterface ]");
+        Solid::Device::listFromQuery("[ IS StorageVolume AND IS GenericInterface ]");
 
     for (const Solid::Device &device : blockDevices) {
         auto genericDevice = device.as<Solid::GenericInterface>();
