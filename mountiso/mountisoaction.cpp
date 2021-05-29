@@ -53,7 +53,6 @@
 #include <Solid/StorageVolume>
 
 K_PLUGIN_CLASS_WITH_JSON(MountIsoAction, "mountisoaction.json")
-K_EXPORT_PLUGIN_VERSION(2)
 
 MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
     : KAbstractFileItemActionPlugin(parent)

@@ -35,7 +35,6 @@
 #include <QStringBuilder>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewDropboxPlugin, "fileviewdropboxplugin.json")
-K_EXPORT_PLUGIN_VERSION(2)
 
 class FileViewDropboxPlugin::Private
 {

@@ -56,7 +56,6 @@
 #include <KPluginFactory>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewHgPlugin, "fileviewhgplugin.json")
-K_EXPORT_PLUGIN_VERSION(2)
 
 //TODO: Build a proper status signal system to sync HgWrapper/Dialogs with this
 //TODO: Show error messages and set their message appropriately(hg output)

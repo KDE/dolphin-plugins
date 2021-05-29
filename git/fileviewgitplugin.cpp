@@ -40,7 +40,6 @@
 #include <QTextBrowser>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewGitPlugin, "fileviewgitplugin.json")
-K_EXPORT_PLUGIN_VERSION(2);
 
 FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& args) :
     KVersionControlPlugin(parent),
