@@ -1,5 +1,3 @@
-project(fileviewsvnplugin)
-
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewsvnplugin\")
 
 kcoreaddons_add_plugin(fileviewsvnplugin INSTALL_NAMESPACE "dolphin/vcs")

@@ -1,5 +1,3 @@
-project(mountisoplugin)
-
 add_definitions(-DTRANSLATION_DOMAIN=\"mountisoaction\")
 
 kcoreaddons_add_plugin(

@@ -1,5 +1,3 @@
-project(fileviewgitplugin)
-
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewgitplugin\")
 
 kcoreaddons_add_plugin(fileviewgitplugin INSTALL_NAMESPACE "dolphin/vcs")
