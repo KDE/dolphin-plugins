@@ -149,7 +149,7 @@ QString HgWrapper::getCurrentDir() const
 void HgWrapper::updateBaseDir()
 {
     m_process.setWorkingDirectory(m_currentDir);
-    m_process.start(QLatin1String("hg root"));
+    m_process.start(QStringLiteral("hg"), QStringList{QStringLiteral("root")});
     m_process.waitForFinished();
     m_hgBaseDir = QString(m_process.readAllStandardOutput()).trimmed();
 }
