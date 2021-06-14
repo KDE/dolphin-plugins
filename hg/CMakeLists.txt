@@ -57,6 +57,6 @@ target_link_libraries(fileviewhgplugin
 )
 
 kcoreaddons_desktop_to_json(fileviewhgplugin fileviewhgplugin.desktop)
-install(FILES fileviewhgpluginsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES fileviewhgpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
 

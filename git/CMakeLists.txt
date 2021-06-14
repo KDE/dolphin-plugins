@@ -29,4 +29,4 @@ target_link_libraries(fileviewgitplugin
 
 kcoreaddons_desktop_to_json(fileviewgitplugin fileviewgitplugin.desktop)
 
-install(FILES fileviewgitpluginsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES fileviewgitpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

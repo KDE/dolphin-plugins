@@ -35,4 +35,4 @@ target_link_libraries(fileviewsvnplugin
 
 kcoreaddons_desktop_to_json(fileviewsvnplugin fileviewsvnplugin.desktop)
 
-install(FILES fileviewsvnpluginsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES fileviewsvnpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
