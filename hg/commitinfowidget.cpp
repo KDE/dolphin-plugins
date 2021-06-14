@@ -52,7 +52,7 @@ void HgCommitInfoWidget::setupUI()
                      "\nplease check your KDE installation."));
         return;
     }
-    m_editorDoc = editor->createDocument(0);
+    m_editorDoc = editor->createDocument(nullptr);
     m_editorView = qobject_cast<KTextEditor::View*>(m_editorDoc->createView(this));
     m_editorView->setStatusBarEnabled(false);
     m_editorDoc->setReadWrite(false);

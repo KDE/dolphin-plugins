@@ -63,35 +63,35 @@ K_PLUGIN_CLASS_WITH_JSON(FileViewHgPlugin, "fileviewhgplugin.json")
 
 FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args):
     KVersionControlPlugin(parent),
-    m_mainContextMenu(0),
-    m_addAction(0),
-    m_removeAction(0),
-    m_renameAction(0),
-    m_commitAction(0),
-    m_branchAction(0),
-    m_tagAction(0),
-    m_updateAction(0),
-    m_cloneAction(0),
-    m_createAction(0),
-    m_configAction(0),
-    m_globalConfigAction(0),
-    m_repoConfigAction(0),
-    m_pushAction(0),
-    m_pullAction(0),
-    m_revertAction(0),
-    m_revertAllAction(0),
-    m_rollbackAction(0),
-    m_mergeAction(0),
-    m_bundleAction(0),
-    m_exportAction(0),
-    m_unbundleAction(0),
-    m_importAction(0),
-    m_diffAction(0),
-    m_serveAction(0),
-    m_backoutAction(0),
+    m_mainContextMenu(nullptr),
+    m_addAction(nullptr),
+    m_removeAction(nullptr),
+    m_renameAction(nullptr),
+    m_commitAction(nullptr),
+    m_branchAction(nullptr),
+    m_tagAction(nullptr),
+    m_updateAction(nullptr),
+    m_cloneAction(nullptr),
+    m_createAction(nullptr),
+    m_configAction(nullptr),
+    m_globalConfigAction(nullptr),
+    m_repoConfigAction(nullptr),
+    m_pushAction(nullptr),
+    m_pullAction(nullptr),
+    m_revertAction(nullptr),
+    m_revertAllAction(nullptr),
+    m_rollbackAction(nullptr),
+    m_mergeAction(nullptr),
+    m_bundleAction(nullptr),
+    m_exportAction(nullptr),
+    m_unbundleAction(nullptr),
+    m_importAction(nullptr),
+    m_diffAction(nullptr),
+    m_serveAction(nullptr),
+    m_backoutAction(nullptr),
     m_isCommitable(false),
-    m_hgWrapper(0),
-    m_retrievalHgw(0)
+    m_hgWrapper(nullptr),
+    m_retrievalHgw(nullptr)
 {
     Q_UNUSED(args);
 
@@ -299,7 +299,7 @@ void FileViewHgPlugin::createHgWrapper() const
 {
     static bool created = false;
 
-    if (created && m_hgWrapper != 0) {
+    if (created && m_hgWrapper != nullptr) {
         return;
     }
 
@@ -337,7 +337,7 @@ bool FileViewHgPlugin::beginRetrieval(const QString &directory)
     //createHgWrapper();
     //m_hgWrapper->setCurrentDir(directory);
     //m_hgWrapper->getItemVersions(m_versionInfoHash);
-    if (m_retrievalHgw == 0) {
+    if (m_retrievalHgw == nullptr) {
         m_retrievalHgw = new HgWrapper;
     }
     m_retrievalHgw->setCurrentDir(directory);
@@ -512,7 +512,7 @@ void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
 
-    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(nullptr, xi18nc("@message:yesorno",
                     "Would you like to remove selected files "
                     "from the repository?"));
     if (answer == KMessageBox::No) {
@@ -551,7 +551,7 @@ void FileViewHgPlugin::renameFile()
 void FileViewHgPlugin::commit()
 {
     if (m_hgWrapper->isWorkingDirectoryClean()) {
-        KMessageBox::information(0, xi18nc("@message", "No changes for commit!"));
+        KMessageBox::information(nullptr, xi18nc("@message", "No changes for commit!"));
         return;
     }
     //FIXME: Disable emitting of status messages when executing sub tasks.
@@ -676,7 +676,7 @@ void FileViewHgPlugin::unbundle()
     if (m_hgWrapper->executeCommandTillFinished(QLatin1String("unbundle"), args)) {
     }
     else {
-        KMessageBox::error(0, m_hgWrapper->readAllStandardError());
+        KMessageBox::error(nullptr, m_hgWrapper->readAllStandardError());
     }
 }
 
@@ -697,7 +697,7 @@ void FileViewHgPlugin::exportChangesets()
 void FileViewHgPlugin::revert()
 {
     clearMessages();
-    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(nullptr, xi18nc("@message:yesorno",
                     "Would you like to revert changes "
                     "made to selected files?"));
     if (answer == KMessageBox::No) {
@@ -717,7 +717,7 @@ void FileViewHgPlugin::revert()
 
 void FileViewHgPlugin::revertAll()
 {
-    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(nullptr, xi18nc("@message:yesorno",
                     "Would you like to revert all changes "
                     "made to current working directory?"));
     if (answer == KMessageBox::No) {
@@ -771,7 +771,7 @@ void FileViewHgPlugin::backout()
     clearMessages();
     m_hgWrapper = HgWrapper::instance();
     if (!m_hgWrapper->isWorkingDirectoryClean()) {
-        KMessageBox::error(0, xi18nc("@message:error",
+        KMessageBox::error(nullptr, xi18nc("@message:error",
                       "abort: Uncommitted changes in working directory!"));
         return;
     }
@@ -785,7 +785,7 @@ void FileViewHgPlugin::rollback()
     // execute a dry run rollback first to see if there is anything to
     // be rolled back, or check what will be rolled back
     if (!m_hgWrapper->rollback(true)) {
-        KMessageBox::error(0, xi18nc("@info:message", "No rollback "
+        KMessageBox::error(nullptr, xi18nc("@info:message", "No rollback "
                                         "information available!"));
         return;
     }
@@ -795,7 +795,7 @@ void FileViewHgPlugin::rollback()
     lastTransaction = lastTransaction.mid(cutOfFrom);
 
     // ask
-    int answer = KMessageBox::questionYesNo(0, xi18nc("@message:yesorno",
+    int answer = KMessageBox::questionYesNo(nullptr, xi18nc("@message:yesorno",
                     "Would you like to rollback last transaction?")
                         + "\nrevision: " + lastTransaction);
     if (answer == KMessageBox::No) {
@@ -811,7 +811,7 @@ void FileViewHgPlugin::rollback()
 
     Q_EMIT infoMessage(infoMsg);
     m_hgWrapper->rollback();
-    KMessageBox::information(0, m_hgWrapper->readAllStandardOutput());
+    KMessageBox::information(nullptr, m_hgWrapper->readAllStandardOutput());
     Q_EMIT itemVersionsChanged();
 }
 

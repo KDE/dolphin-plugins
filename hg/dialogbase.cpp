@@ -21,8 +21,8 @@
 
 DialogBase::DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* parent):
     QDialog(parent),
-    m_okButton(0),
-    m_cancelButton(0)
+    m_okButton(nullptr),
+    m_cancelButton(nullptr)
 {
     m_buttonBox = new QDialogButtonBox(this);
     if (buttons & QDialogButtonBox::Ok) {

@@ -39,7 +39,7 @@ class HgPathConfigWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit HgPathConfigWidget(QWidget *parent = 0);
+    explicit HgPathConfigWidget(QWidget *parent = nullptr);
 
 public Q_SLOTS:
     void saveConfig();

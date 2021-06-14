@@ -116,7 +116,7 @@ void HgMergeDialog::done(int r)
         HgWrapper *hgw = HgWrapper::instance();
 
         QListWidgetItem *currentItem = m_commitInfoWidget->currentItem();
-        if (currentItem == 0) {
+        if (currentItem == nullptr) {
             KMessageBox::error(this,
                     xi18nc("@message", "No head selected for merge!"));
             return;

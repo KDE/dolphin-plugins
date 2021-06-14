@@ -71,7 +71,7 @@ class GitWrapper
          *          within the returned QStringList. Set to -1 if currently not on any branch.
          * @returns A StringList containing the names of all local and remote branches.
          */
-        QStringList branches(int * currentBranchIndex = 0);
+        QStringList branches(int * currentBranchIndex = nullptr);
 
         /**
          * Gets a list of all tags in the repository.

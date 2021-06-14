@@ -41,7 +41,7 @@ class HgWrapper : public QObject
 {
     Q_OBJECT
 public:
-    explicit HgWrapper(QObject *parent = 0);
+    explicit HgWrapper(QObject *parent = nullptr);
 
     static HgWrapper *instance();
     static void freeInstance();

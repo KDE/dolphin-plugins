@@ -28,7 +28,7 @@
 //FIXME: Add/Remove/Revert argument length limit. Divide the list.
 //FIXME: Cannot create thread for parent that is in different thread.
 
-HgWrapper *HgWrapper::m_instance = 0;
+HgWrapper *HgWrapper::m_instance = nullptr;
 
 HgWrapper::HgWrapper(QObject *parent) :
     QObject(parent)
@@ -63,7 +63,7 @@ HgWrapper *HgWrapper::instance()
 void HgWrapper::freeInstance()
 {
     delete m_instance;
-    m_instance = 0;
+    m_instance = nullptr;
 }
 
 void HgWrapper::slotOperationCompleted(int exitCode, 

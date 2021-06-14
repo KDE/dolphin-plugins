@@ -55,7 +55,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
                      "\nplease check your KDE Frameworks installation."));
         return;
     }
-    m_fileDiffDoc = editor->createDocument(0);
+    m_fileDiffDoc = editor->createDocument(nullptr);
     m_fileDiffView = qobject_cast<KTextEditor::View*>(m_fileDiffDoc->createView(this));
     m_fileDiffView->setStatusBarEnabled(false);
     m_fileDiffDoc->setReadWrite(false);
@@ -112,7 +112,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
     // the commit box itself
     QGroupBox *messageGroupBox = new QGroupBox;
     QVBoxLayout *commitLayout = new QVBoxLayout;
-    m_commitMessage = editor->createDocument(0);
+    m_commitMessage = editor->createDocument(nullptr);
     KTextEditor::View *messageView =
               qobject_cast<KTextEditor::View*>(m_commitMessage->createView(this));
     messageView->setStatusBarEnabled(false);

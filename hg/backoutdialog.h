@@ -35,7 +35,7 @@ class HgBackoutDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgBackoutDialog(QWidget *parent = 0);
+    explicit HgBackoutDialog(QWidget *parent = nullptr);
 
 public Q_SLOTS:
     void done(int r) override;

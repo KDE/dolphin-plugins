@@ -44,13 +44,13 @@ K_PLUGIN_CLASS_WITH_JSON(FileViewGitPlugin, "fileviewgitplugin.json")
 FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& args) :
     KVersionControlPlugin(parent),
     m_pendingOperation(false),
-    m_addAction(0),
-    m_removeAction(0),
-    m_checkoutAction(0),
-    m_commitAction(0),
-    m_tagAction(0),
-    m_pushAction(0),
-    m_pullAction(0)
+    m_addAction(nullptr),
+    m_removeAction(nullptr),
+    m_checkoutAction(nullptr),
+    m_commitAction(nullptr),
+    m_tagAction(nullptr),
+    m_pushAction(nullptr),
+    m_pullAction(nullptr)
 {
     Q_UNUSED(args);
 
@@ -141,7 +141,7 @@ QString FileViewGitPlugin::localRepositoryRoot(const QString& directory) const
 }
 
 int FileViewGitPlugin::readUntilZeroChar(QIODevice* device, char* buffer, const int maxChars) {
-    if (buffer == 0) { // discard until next \0
+    if (buffer == nullptr) { // discard until next \0
         char c;
         while (device->getChar(&c) && c != '\0')
             ;
@@ -217,7 +217,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
                 case 'R':
                     state = LocallyModifiedVersion;
                     // Renames list the old file name directly afterwards, separated by \0.
-                    readUntilZeroChar(&process, 0, 0); // discard old file name
+                    readUntilZeroChar(&process, nullptr, 0); // discard old file name
                     break;
             }
             // overwrite status depending on the working tree

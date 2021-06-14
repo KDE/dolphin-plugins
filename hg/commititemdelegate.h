@@ -32,7 +32,7 @@ class CommitItemDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    explicit CommitItemDelegate(QObject *parent = 0);
+    explicit CommitItemDelegate(QObject *parent = nullptr);
     void paint(QPainter *painter, const QStyleOptionViewItem &option,
                   const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;

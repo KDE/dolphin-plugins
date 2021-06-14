@@ -37,7 +37,7 @@ class HgConfigDialog : public KPageDialog
     Q_OBJECT
 
 public:
-    explicit HgConfigDialog(HgConfig::ConfigType type, QWidget *parent = 0);
+    explicit HgConfigDialog(HgConfig::ConfigType type, QWidget *parent = nullptr);
 
 private:
     void done(int r) override;

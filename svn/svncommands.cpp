@@ -118,7 +118,7 @@ QString SvnCommands::remoteItemUrl(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return 0;
+        return nullptr;
     }
 
     QTextStream stream(&process);
@@ -147,7 +147,7 @@ QString SvnCommands::remoteRootUrl(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return 0;
+        return nullptr;
     }
 
     QTextStream stream(&process);
@@ -176,7 +176,7 @@ QString SvnCommands::remoteRelativeUrl(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return 0;
+        return nullptr;
     }
 
     QTextStream stream(&process);
@@ -205,7 +205,7 @@ QString SvnCommands::localRoot(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return 0;
+        return nullptr;
     }
 
     QTextStream stream(&process);

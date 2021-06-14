@@ -155,7 +155,7 @@ void HgIgnoreWidget::slotRemoveEntries()
 }
 void HgIgnoreWidget::slotEditEntry()
 {
-    if (m_ignoreTable->currentItem() == 0) {
+    if (m_ignoreTable->currentItem() == nullptr) {
         KMessageBox::error(this, xi18nc("@message:error",
                     "No entry selected for edit!"));
         return;

@@ -22,7 +22,7 @@
 
 #include <QTextCodec>
 
-HgServeWrapper *HgServeWrapper::m_instance = 0;
+HgServeWrapper *HgServeWrapper::m_instance = nullptr;
 
 HgServeWrapper::HgServeWrapper(QObject *parent) :
     QObject(parent)
@@ -45,7 +45,7 @@ HgServeWrapper::~HgServeWrapper()
 
 HgServeWrapper *HgServeWrapper::instance()
 {
-    if (m_instance == 0) {
+    if (m_instance == nullptr) {
         m_instance = new HgServeWrapper;
     }
     return m_instance;
@@ -53,8 +53,8 @@ HgServeWrapper *HgServeWrapper::instance()
 
 void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
 {
-    ServerProcessType *server = m_serverList.value(repoLocation, 0);
-    if (server != 0) {
+    ServerProcessType *server = m_serverList.value(repoLocation, nullptr);
+    if (server != nullptr) {
         m_serverList.remove(repoLocation);
         server->deleteLater();
     }
@@ -85,8 +85,8 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
 
 void HgServeWrapper::stopServer(const QString &repoLocation)
 {
-    ServerProcessType *server = m_serverList.value(repoLocation, 0);
-    if (server == 0) {
+    ServerProcessType *server = m_serverList.value(repoLocation, nullptr);
+    if (server == nullptr) {
         return;
     }
     server->process.terminate();
@@ -94,8 +94,8 @@ void HgServeWrapper::stopServer(const QString &repoLocation)
 
 bool HgServeWrapper::running(const QString &repoLocation)
 {
-    ServerProcessType *server = m_serverList.value(repoLocation, 0);
-    if (server == 0) {
+    ServerProcessType *server = m_serverList.value(repoLocation, nullptr);
+    if (server == nullptr) {
         return false;
     }
     return ( server->process.state() == QProcess::Running || 
@@ -114,8 +114,8 @@ void HgServeWrapper::slotFinished(int exitCode, QProcess::ExitStatus status)
 
 QString HgServeWrapper::errorMessage(const QString &repoLocation)
 {
-    ServerProcessType *server = m_serverList.value(repoLocation, 0);
-    if (server == 0) {
+    ServerProcessType *server = m_serverList.value(repoLocation, nullptr);
+    if (server == nullptr) {
         return QString();
     }
     return QTextCodec::codecForLocale()->toUnicode(server->process.readAllStandardError());
@@ -123,8 +123,8 @@ QString HgServeWrapper::errorMessage(const QString &repoLocation)
 
 bool HgServeWrapper::normalExit(const QString &repoLocation)
 {
-    ServerProcessType *server = m_serverList.value(repoLocation, 0);
-    if (server == 0) {
+    ServerProcessType *server = m_serverList.value(repoLocation, nullptr);
+    if (server == nullptr) {
         return true;
     }
 

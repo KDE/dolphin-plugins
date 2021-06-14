@@ -31,7 +31,7 @@
 
 HgPluginSettingsWidget::HgPluginSettingsWidget(QWidget *parent) :
     QWidget(parent),
-    m_config(0)
+    m_config(nullptr)
 {
     setupUI();
     loadConfig();

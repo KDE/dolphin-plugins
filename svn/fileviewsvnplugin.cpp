@@ -541,7 +541,7 @@ void FileViewSvnPlugin::slotOperationError()
 void FileViewSvnPlugin::slotShowUpdatesToggled(bool checked)
 {
     FileViewSvnPluginSettings* settings = FileViewSvnPluginSettings::self();
-    Q_ASSERT(settings != 0);
+    Q_ASSERT(settings != nullptr);
     settings->setShowUpdates(checked);
     settings->save();
 

@@ -41,7 +41,7 @@ class HgCloneDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgCloneDialog(const QString &directory, QWidget *parent = 0);
+    explicit HgCloneDialog(const QString &directory, QWidget *parent = nullptr);
     void setWorkingDirectory(const QString &directory);
 
 private Q_SLOTS:

@@ -36,7 +36,7 @@ class HgServeDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgServeDialog(QWidget *parent = 0);
+    explicit HgServeDialog(QWidget *parent = nullptr);
     void setupUI();
     void loadConfig();
 

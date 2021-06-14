@@ -42,7 +42,7 @@ class HgBundleDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgBundleDialog(QWidget *parent=0);
+    explicit HgBundleDialog(QWidget *parent=nullptr);
 
 public Q_SLOTS:
     void done(int r) override;

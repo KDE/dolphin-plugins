@@ -38,7 +38,7 @@ class HgExportDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgExportDialog(QWidget *parent=0);
+    explicit HgExportDialog(QWidget *parent=nullptr);
 
 public Q_SLOTS:
     void done(int r) override;

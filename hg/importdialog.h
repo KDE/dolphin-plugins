@@ -35,7 +35,7 @@ class HgImportDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgImportDialog(QWidget *parent=0);
+    explicit HgImportDialog(QWidget *parent=nullptr);
 
 public Q_SLOTS:
     void done(int r) override;

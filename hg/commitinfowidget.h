@@ -41,7 +41,7 @@ class HgCommitInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HgCommitInfoWidget(QWidget *parent=0);
+    explicit HgCommitInfoWidget(QWidget *parent=nullptr);
 
     /**
      * Adds a new entry in the ListWidget with the chageset parameters

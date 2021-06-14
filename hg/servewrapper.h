@@ -41,7 +41,7 @@ class HgServeWrapper : public QObject
     Q_OBJECT
 
 public: 
-    explicit HgServeWrapper(QObject *parent=0);
+    explicit HgServeWrapper(QObject *parent=nullptr);
     ~HgServeWrapper() override;
 
     /**

@@ -27,7 +27,7 @@
 
 HgConfig::HgConfig(ConfigType configType) :
     m_configType(configType),
-    m_config(0)
+    m_config(nullptr)
 {
     getConfigFilePath();
     loadConfig();

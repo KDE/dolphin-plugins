@@ -35,7 +35,7 @@ class TagDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit TagDialog(QWidget* parent = 0);
+    explicit TagDialog(QWidget* parent = nullptr);
     /**
      * Returns the tag message given by the user.
      * @returns The tag message.

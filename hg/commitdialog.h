@@ -51,7 +51,7 @@ class HgCommitDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgCommitDialog(QWidget *parent = 0);
+    explicit HgCommitDialog(QWidget *parent = nullptr);
 
 private Q_SLOTS:
     /**
@@ -119,7 +119,7 @@ class NewBranchDialog : public QDialog
         Q_OBJECT
 
     public:
-        explicit NewBranchDialog(QWidget *parent = 0);
+        explicit NewBranchDialog(QWidget *parent = nullptr);
         QString getBranchName() const;
 
     private Q_SLOTS:

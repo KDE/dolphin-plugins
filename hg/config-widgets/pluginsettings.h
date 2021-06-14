@@ -36,7 +36,7 @@ class HgPluginSettingsWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit HgPluginSettingsWidget(QWidget *parent = 0);
+    explicit HgPluginSettingsWidget(QWidget *parent = nullptr);
     ~HgPluginSettingsWidget() override;
 
 public Q_SLOTS:

@@ -36,7 +36,7 @@ class HgPathSelector : public QWidget
     Q_OBJECT
 
 public:
-    explicit HgPathSelector(QWidget *parent=0);
+    explicit HgPathSelector(QWidget *parent=nullptr);
 
     /**
      * @return Return QString containing the selected/entered alias/URL

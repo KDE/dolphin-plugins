@@ -21,7 +21,7 @@
 
 #include <QTextCodec>
 
-GitWrapper* GitWrapper::m_instance = 0;
+GitWrapper* GitWrapper::m_instance = nullptr;
 const int GitWrapper::BUFFER_SIZE = 256;
 const int GitWrapper::SMALL_BUFFER_SIZE = 128;
 
@@ -33,7 +33,7 @@ GitWrapper::GitWrapper()
 
 GitWrapper* GitWrapper::instance()
 {
-    if (m_instance == 0) {
+    if (m_instance == nullptr) {
         m_instance = new GitWrapper();
     }
     return m_instance;
@@ -42,7 +42,7 @@ GitWrapper* GitWrapper::instance()
 void GitWrapper::freeInstance()
 {
     delete m_instance;
-    m_instance = 0;
+    m_instance = nullptr;
 }
 
 QString GitWrapper::userName()
@@ -75,7 +75,7 @@ QString GitWrapper::userEmail()
 QStringList GitWrapper::branches(int* currentBranchIndex)
 {
     QStringList result;
-    if (currentBranchIndex != 0) {
+    if (currentBranchIndex != nullptr) {
         *currentBranchIndex = -1;
     }
     m_process.start("git", {"branch", "-a"});
@@ -86,7 +86,7 @@ QStringList GitWrapper::branches(int* currentBranchIndex)
             //don't list non-branches and HEAD-branches directly pointing to other branches
             if (!branchName.contains("->") && !branchName.startsWith('(')) {
                 result.append(branchName);
-                if (currentBranchIndex !=0 && buffer[0]=='*') {
+                if (currentBranchIndex !=nullptr && buffer[0]=='*') {
                     *currentBranchIndex = result.size() - 1;
                 }
             }
