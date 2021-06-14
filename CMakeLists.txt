@@ -2,10 +2,19 @@ cmake_minimum_required(VERSION 3.16)
 
 project(dolphin-plugins)
 
-include(FeatureSummary)
-
 set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.83.0")
+
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
+
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+
+include(ECMMarkNonGuiExecutable)
+include(ECMOptionalAddSubdirectory)
+include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
@@ -13,9 +22,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Network
     DBus
 )
-
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     XmlGui
@@ -33,12 +39,6 @@ set_package_properties(DolphinVcs PROPERTIES
     TYPE REQUIRED
     PURPOSE "Provides the version control plugin interface."
 )
-
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings)
-include(ECMMarkNonGuiExecutable)
-include(ECMOptionalAddSubdirectory)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
