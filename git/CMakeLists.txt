@@ -2,7 +2,9 @@ project(fileviewgitplugin)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewgitplugin\")
 
-set(fileviewgitplugin_SRCS
+kcoreaddons_add_plugin(fileviewgitplugin INSTALL_NAMESPACE "dolphin/vcs")
+
+target_sources(fileviewgitplugin PRIVATE
     fileviewgitplugin.cpp
     checkoutdialog.cpp
     commitdialog.cpp
@@ -12,11 +14,9 @@ set(fileviewgitplugin_SRCS
     gitwrapper.cpp
 )
 
-kconfig_add_kcfg_files(fileviewgitplugin_SRCS
+kconfig_add_kcfg_files(fileviewgitplugin
     fileviewgitpluginsettings.kcfgc
 )
-
-kcoreaddons_add_plugin(fileviewgitplugin SOURCES ${fileviewgitplugin_SRCS} INSTALL_NAMESPACE "dolphin/vcs")
 
 target_link_libraries(fileviewgitplugin
     Qt5::Core

@@ -7,7 +7,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewhgplugin\")
 
-set(fileviewhgplugin_SRCS
+kcoreaddons_add_plugin(fileviewhgplugin INSTALL_NAMESPACE "dolphin/vcs")
+
+target_sources(fileviewhgplugin PRIVATE
     fileviewhgplugin.cpp
     renamedialog.cpp
     commitdialog.cpp
@@ -41,11 +43,9 @@ set(fileviewhgplugin_SRCS
 )
 
 
-kconfig_add_kcfg_files(fileviewhgplugin_SRCS
+kconfig_add_kcfg_files(fileviewhgplugin
     fileviewhgpluginsettings.kcfgc
 )
-
-kcoreaddons_add_plugin(fileviewhgplugin SOURCES ${fileviewhgplugin_SRCS} INSTALL_NAMESPACE "dolphin/vcs")
 
 target_link_libraries(fileviewhgplugin
     Qt5::Core
