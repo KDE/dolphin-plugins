@@ -2,8 +2,6 @@ project(fileviewbazaarplugin)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewbazaarplugin\")
 
-set(fileviewbazaarplugin_SRCS fileviewbazaarplugin.cpp)
-
 kcoreaddons_add_plugin(fileviewbazaarplugin SOURCES fileviewbazaarplugin.cpp INSTALL_NAMESPACE "dolphin/vcs")
 
 target_link_libraries(fileviewbazaarplugin

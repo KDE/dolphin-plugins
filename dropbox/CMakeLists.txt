@@ -2,10 +2,6 @@ project(fileviewdropboxplugin)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"fileviewdropboxplugin\")
 
-set(fileviewdropboxplugin_SRCS
-    fileviewdropboxplugin.cpp
-)
-
 kcoreaddons_add_plugin(fileviewdropboxplugin SOURCES fileviewdropboxplugin.cpp INSTALL_NAMESPACE "dolphin/vcs")
 
 target_link_libraries(fileviewdropboxplugin
