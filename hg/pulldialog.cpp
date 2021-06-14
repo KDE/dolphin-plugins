@@ -98,7 +98,7 @@ void HgPullDialog::getHgChangesArguments(QStringList &args)
 
 void HgPullDialog::parseUpdateChanges(const QString &input)
 {
-    QStringList list = input.split("  ", QString::SkipEmptyParts);
+    QStringList list = input.split("  ", Qt::SkipEmptyParts);
     QTableWidgetItem *author = new QTableWidgetItem;
     QTableWidgetItem *changeset = new QTableWidgetItem;
     QTableWidgetItem *date = new QTableWidgetItem;

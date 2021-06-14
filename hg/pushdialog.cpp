@@ -95,7 +95,7 @@ void HgPushDialog::slotOutSelChanged()
         return;
     }
 
-    QString changeset = m_outChangesList->item(m_outChangesList->currentRow(), 0)->text().split(' ', QString::SkipEmptyParts).takeLast();
+    QString changeset = m_outChangesList->item(m_outChangesList->currentRow(), 0)->text().split(' ', Qt::SkipEmptyParts).takeLast();
 
     QStringList args; 
     args << QLatin1String("-r");
@@ -122,7 +122,7 @@ void HgPushDialog::getHgChangesArguments(QStringList &args)
 
 void HgPushDialog::parseUpdateChanges(const QString &input)
 {
-    QStringList list = input.split("  ", QString::SkipEmptyParts);
+    QStringList list = input.split("  ", Qt::SkipEmptyParts);
     QTableWidgetItem *changeset = new QTableWidgetItem;
     QTableWidgetItem *date = new QTableWidgetItem;
     QTableWidgetItem *summary = new QTableWidgetItem;

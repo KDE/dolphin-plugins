@@ -366,7 +366,7 @@ void HgCommitDialog::createCopyMessageMenu()
     QString output;
     hgw->executeCommand(QLatin1String("log"), args, output);
 
-    const QStringList messages = output.split('\n', QString::SkipEmptyParts);
+    const QStringList messages = output.split('\n', Qt::SkipEmptyParts);
     for (const QString &msg : messages) {
         QAction *action = m_copyMessageMenu->addAction(msg.left(40)); // max 40 characters
         action->setData(msg); // entire description into action data

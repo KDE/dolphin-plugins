@@ -218,7 +218,7 @@ QStringList FileViewDropboxPlugin::sendCommand(const QString& command,
     reply.remove(done);
     reply.remove(ok);
 
-    return reply.split(parameterSeperator, QString::SkipEmptyParts);
+    return reply.split(parameterSeperator, Qt::SkipEmptyParts);
 }
 
 bool FileViewDropboxPlugin::connectWithDropbox(const QPointer<QLocalSocket>& socket, SendCommandTimeout timeout) const

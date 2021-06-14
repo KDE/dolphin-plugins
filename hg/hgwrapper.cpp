@@ -305,7 +305,7 @@ QStringList HgWrapper::getTags()
         char buffer[1048];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result << QString(buffer).split(QRegExp("\\s+"),
-                                            QString::SkipEmptyParts).first();
+                                            Qt::SkipEmptyParts).first();
         }
     }
     return result;

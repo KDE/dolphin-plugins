@@ -80,7 +80,7 @@ void HgIgnoreWidget::setupUntrackedList()
     QString output;
     hgw->executeCommand(QLatin1String("status"), args, output);
     
-    const QStringList result = output.split('\n', QString::SkipEmptyParts);
+    const QStringList result = output.split('\n', Qt::SkipEmptyParts);
     for (const QString &file : result) {
         m_untrackedList->addItem(file.mid(2));
     }
