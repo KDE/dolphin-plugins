@@ -1,24 +1,11 @@
-/*****************************************************************************
- *   Copyright (C) 2014 by Emmanuel Pescosta <emmanuelpescosta099@gmail.com> *
- *   Copyright (C) 2012 by Sergei Stolyarov <sergei@regolit.com>             *
- *   Copyright (C) 2010 by Thomas Richard <thomas.richard@proan.be>          *
- *   Copyright (C) 2009-2010 by Peter Penz <peter.penz19@gmail.com>          *
- *                                                                           *
- *   This program is free software; you can redistribute it and/or modify    *
- *   it under the terms of the GNU General Public License as published by    *
- *   the Free Software Foundation; either version 2 of the License, or       *
- *   (at your option) any later version.                                     *
- *                                                                           *
- *   This program is distributed in the hope that it will be useful,         *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
- *   GNU General Public License for more details.                            *
- *                                                                           *
- *   You should have received a copy of the GNU General Public License       *
- *   along with this program; if not, write to the                           *
- *   Free Software Foundation, Inc.,                                         *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA              *
- *****************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2014 Emmanuel Pescosta <emmanuelpescosta099@gmail.com>
+    SPDX-FileCopyrightText: 2012 Sergei Stolyarov <sergei@regolit.com>
+    SPDX-FileCopyrightText: 2010 Thomas Richard <thomas.richard@proan.be>
+    SPDX-FileCopyrightText: 2009-2010 Peter Penz <peter.penz19@gmail.com>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
 
 #include "fileviewdropboxplugin.h"
 
