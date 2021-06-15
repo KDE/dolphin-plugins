@@ -46,8 +46,6 @@ set_package_properties(DolphinVcs PROPERTIES
     PURPOSE "Provides the version control plugin interface."
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING -DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 
 ecm_optional_add_subdirectory(svn)
