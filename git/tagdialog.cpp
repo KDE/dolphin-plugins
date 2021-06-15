@@ -10,7 +10,7 @@
 
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <ktextedit.h>
+#include <KTextEdit>
 
 #include <QCheckBox>
 #include <QComboBox>
