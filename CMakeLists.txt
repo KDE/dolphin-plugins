@@ -19,7 +19,6 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-include(ECMMarkNonGuiExecutable)
 include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
