@@ -57,10 +57,7 @@
         "Name[vi]": "Git",
         "Name[x-test]": "xxGitxx",
         "Name[zh_CN]": "Git",
-        "Name[zh_TW]": "Git",
-        "ServiceTypes": [
-            "FileViewVersionControlPlugin"
-        ]
+        "Name[zh_TW]": "Git"
     },
     "MimeType": "text/plain;"
 }

@@ -52,10 +52,7 @@
         "Name[vi]": "Mercurial",
         "Name[x-test]": "xxMercurialxx",
         "Name[zh_CN]": "Mercurial",
-        "Name[zh_TW]": "Mercurial",
-        "ServiceTypes": [
-            "FileViewVersionControlPlugin"
-        ]
+        "Name[zh_TW]": "Mercurial"
     },
     "MimeType": "text/plain;"
 }

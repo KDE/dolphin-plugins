@@ -54,10 +54,7 @@
         "Name[vi]": "Bazaar",
         "Name[x-test]": "xxBazaarxx",
         "Name[zh_CN]": "Bazaar",
-        "Name[zh_TW]": "Bazaar",
-        "ServiceTypes": [
-            "FileViewVersionControlPlugin"
-        ]
+        "Name[zh_TW]": "Bazaar"
     },
     "MimeType": "text/plain;"
 }

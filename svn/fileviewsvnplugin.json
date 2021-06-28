@@ -58,10 +58,7 @@
         "Name[vi]": "Subversion",
         "Name[x-test]": "xxSubversionxx",
         "Name[zh_CN]": "Subversion",
-        "Name[zh_TW]": "Subversion",
-        "ServiceTypes": [
-            "FileViewVersionControlPlugin"
-        ]
+        "Name[zh_TW]": "Subversion"
     },
     "MimeType": "text/plain;"
 }
