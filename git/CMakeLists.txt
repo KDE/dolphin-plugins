@@ -27,6 +27,4 @@ target_link_libraries(fileviewgitplugin
     DolphinVcs
 )
 
-kcoreaddons_desktop_to_json(fileviewgitplugin fileviewgitplugin.desktop)
-
 install(FILES fileviewgitpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

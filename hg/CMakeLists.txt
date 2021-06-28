@@ -56,7 +56,6 @@ target_link_libraries(fileviewhgplugin
     DolphinVcs
 )
 
-kcoreaddons_desktop_to_json(fileviewhgplugin fileviewhgplugin.desktop)
 install(FILES fileviewhgpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
 

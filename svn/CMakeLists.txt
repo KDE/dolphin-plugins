@@ -33,6 +33,4 @@ target_link_libraries(fileviewsvnplugin
     DolphinVcs
 )
 
-kcoreaddons_desktop_to_json(fileviewsvnplugin fileviewsvnplugin.desktop)
-
 install(FILES fileviewsvnpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

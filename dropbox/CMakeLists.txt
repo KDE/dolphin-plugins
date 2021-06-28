@@ -11,5 +11,3 @@ target_link_libraries(fileviewdropboxplugin
     KF5::KIOCore
     DolphinVcs
 )
-
-kcoreaddons_desktop_to_json(fileviewdropboxplugin fileviewdropboxplugin.desktop)
