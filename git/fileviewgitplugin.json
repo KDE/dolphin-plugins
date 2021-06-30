@@ -3,7 +3,15 @@
         "MimeTypes": [
             "text/plain"
         ],
-        "Name": "Git"
+        "Name": "Git",
+        "Name[az]": "Git",
+        "Name[ca]": "Git",
+        "Name[es]": "Git",
+        "Name[nl]": "Git",
+        "Name[pt_BR]": "Git",
+        "Name[sv]": "Git",
+        "Name[uk]": "Git",
+        "Name[x-test]": "xxGitxx"
     },
     "MimeType": "text/plain;"
 }

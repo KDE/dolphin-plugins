@@ -3,7 +3,15 @@
         "MimeTypes": [
             "text/plain"
         ],
-        "Name": "Mercurial"
+        "Name": "Mercurial",
+        "Name[az]": "Mercurial",
+        "Name[ca]": "Mercurial",
+        "Name[es]": "Mercurial",
+        "Name[nl]": "Mercurial",
+        "Name[pt_BR]": "Mercurial",
+        "Name[sv]": "Mercurial",
+        "Name[uk]": "Mercurial",
+        "Name[x-test]": "xxMercurialxx"
     },
     "MimeType": "text/plain;"
 }

@@ -3,7 +3,15 @@
         "MimeTypes": [
             "text/plain"
         ],
-        "Name": "Bazaar"
+        "Name": "Bazaar",
+        "Name[az]": "Bazaar",
+        "Name[ca]": "Bazaar",
+        "Name[es]": "Bazaar",
+        "Name[nl]": "Bazaar",
+        "Name[pt_BR]": "Bazaar",
+        "Name[sv]": "Bazaar",
+        "Name[uk]": "Bazaar",
+        "Name[x-test]": "xxBazaarxx"
     },
     "MimeType": "text/plain;"
 }

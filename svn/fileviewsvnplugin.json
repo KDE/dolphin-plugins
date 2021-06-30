@@ -3,7 +3,15 @@
         "MimeTypes": [
             "text/plain"
         ],
-        "Name": "Subversion"
+        "Name": "Subversion",
+        "Name[az]": "Subversion",
+        "Name[ca]": "Subversion",
+        "Name[es]": "Subversion",
+        "Name[nl]": "Subversion",
+        "Name[pt_BR]": "Subversion",
+        "Name[sv]": "Subversion",
+        "Name[uk]": "Subversion",
+        "Name[x-test]": "xxSubversionxx"
     },
     "MimeType": "text/plain;"
 }

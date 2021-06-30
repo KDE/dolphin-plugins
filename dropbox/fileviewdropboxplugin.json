@@ -3,7 +3,15 @@
         "MimeTypes": [
             "text/plain"
         ],
-        "Name": "Dropbox"
+        "Name": "Dropbox",
+        "Name[az]": "Dropbox",
+        "Name[ca]": "Dropbox",
+        "Name[es]": "Dropbox",
+        "Name[nl]": "Dropbox",
+        "Name[pt_BR]": "Dropbox",
+        "Name[sv]": "Dropbox",
+        "Name[uk]": "Dropbox",
+        "Name[x-test]": "xxDropboxxx"
     },
     "MimeType": "text/plain;"
 }
