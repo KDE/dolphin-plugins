@@ -19,7 +19,8 @@
         "Name[pt_BR]": "Subversion",
         "Name[sv]": "Subversion",
         "Name[uk]": "Subversion",
-        "Name[x-test]": "xxSubversionxx"
+        "Name[x-test]": "xxSubversionxx",
+        "Name[zh_CN]": "Subversion"
     },
     "MimeType": "text/plain;"
 }

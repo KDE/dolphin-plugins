@@ -19,7 +19,8 @@
         "Name[pt_BR]": "Bazaar",
         "Name[sv]": "Bazaar",
         "Name[uk]": "Bazaar",
-        "Name[x-test]": "xxBazaarxx"
+        "Name[x-test]": "xxBazaarxx",
+        "Name[zh_CN]": "Bazaar"
     },
     "MimeType": "text/plain;"
 }

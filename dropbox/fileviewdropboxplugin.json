@@ -19,7 +19,8 @@
         "Name[pt_BR]": "Dropbox",
         "Name[sv]": "Dropbox",
         "Name[uk]": "Dropbox",
-        "Name[x-test]": "xxDropboxxx"
+        "Name[x-test]": "xxDropboxxx",
+        "Name[zh_CN]": "Dropbox"
     },
     "MimeType": "text/plain;"
 }

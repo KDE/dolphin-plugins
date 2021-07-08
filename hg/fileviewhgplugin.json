@@ -19,7 +19,8 @@
         "Name[pt_BR]": "Mercurial",
         "Name[sv]": "Mercurial",
         "Name[uk]": "Mercurial",
-        "Name[x-test]": "xxMercurialxx"
+        "Name[x-test]": "xxMercurialxx",
+        "Name[zh_CN]": "Mercurial"
     },
     "MimeType": "text/plain;"
 }

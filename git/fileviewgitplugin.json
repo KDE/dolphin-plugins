@@ -19,7 +19,8 @@
         "Name[pt_BR]": "Git",
         "Name[sv]": "Git",
         "Name[uk]": "Git",
-        "Name[x-test]": "xxGitxx"
+        "Name[x-test]": "xxGitxx",
+        "Name[zh_CN]": "Git"
     },
     "MimeType": "text/plain;"
 }
