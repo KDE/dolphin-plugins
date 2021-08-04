@@ -123,4 +123,7 @@
     <category>System</category>
   </categories>
   <icon type="stock">system-file-manager</icon>
+  <releases>
+    <release version="21.08.0" date="2021-08-12"/>
+  </releases>
 </component>
