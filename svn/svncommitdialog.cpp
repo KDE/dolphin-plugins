@@ -72,9 +72,6 @@ enum columns_t {
     columnStatus
 };
 
-const QStringList tableHeader = { i18nc("@title:column", "Path"),
-                                  i18nc("@title:column", "Status") };
-
 SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::ItemVersion> *versionInfo, const QStringList& context, QWidget *parent) :
     QDialog(parent),
     m_versionInfoHash(versionInfo),
@@ -156,6 +153,8 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
      */
     setWindowTitle(i18nc("@title:window", "SVN Commit"));
 
+    const QStringList tableHeader = { i18nc("@title:column", "Path"),
+                                      i18nc("@title:column", "Status") };
     m_changes->setColumnCount(tableHeader.size());
     m_changes->setHorizontalHeaderLabels(tableHeader);
     m_changes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
