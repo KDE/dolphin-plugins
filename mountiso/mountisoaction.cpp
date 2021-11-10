@@ -151,7 +151,7 @@ void mount(const QString &file)
     auto storageVolume = device.as<Solid::StorageVolume>();
     const QString uuid = storageVolume->uuid();
 
-    QList<Solid::Device> devices = Solid::Device::listFromQuery(
+    const QList<Solid::Device> devices = Solid::Device::listFromQuery(
         QStringLiteral("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid));
     for (auto dev : devices) {
         auto storageAccess = dev.as<Solid::StorageAccess>();
