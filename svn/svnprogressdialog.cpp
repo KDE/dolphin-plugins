@@ -43,20 +43,20 @@ void SvnProgressDialog::connectToProcess(QProcess *process)
 
     m_svnTerminated = false;
 
-    m_conCancel = connect(m_ui.buttonCancel, &QPushButton::clicked, [this, process] () {
+    m_conCancel = connect(m_ui.buttonCancel, &QPushButton::clicked, this, [this, process] () {
         process->terminate();
         m_svnTerminated = true;
     } );
     m_conCompeted = connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &SvnProgressDialog::operationCompeleted);
-    m_conProcessError = connect(process, &QProcess::errorOccurred, [this, process] (QProcess::ProcessError) {
+    m_conProcessError = connect(process, &QProcess::errorOccurred, this, [this, process] (QProcess::ProcessError) {
         const QString commandLine = process->program() + process->arguments().join(' ');
         appendErrorText(i18nc("@info:status", "Error starting: %1", commandLine));
         operationCompeleted();
     } );
-    m_conStdOut = connect(process, &QProcess::readyReadStandardOutput, [this, process] () {
+    m_conStdOut = connect(process, &QProcess::readyReadStandardOutput, this, [this, process] () {
         appendInfoText( process->readAllStandardOutput() );
     } );
-    m_conStrErr = connect(process, &QProcess::readyReadStandardError, [this, process] () {
+    m_conStrErr = connect(process, &QProcess::readyReadStandardError, this, [this, process] () {
         appendErrorText( process->readAllStandardError() );
     } );
 }
