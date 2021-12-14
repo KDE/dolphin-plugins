@@ -77,7 +77,8 @@ const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 const QList<Solid::Device> getStorageAccessFromDevice(const Solid::Device &device)
 {
     auto genericInterface = device.as<Solid::GenericInterface>();
-    const QString uuid = genericInterface->property(QLatin1String("IdUUID")).value<QString>();
+    // Solid always returns UUID lower-case
+    const QString uuid = genericInterface->property(QLatin1String("IdUUID")).value<QString>().toLower();
     auto query = QString("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid);
     return Solid::Device::listFromQuery(query);
 }
