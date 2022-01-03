@@ -124,7 +124,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     connect(m_cleanupAction, &QAction::triggered,
             this, &FileViewSvnPlugin::cleanupDialog);
 
-    connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+    connect(&m_process, &QProcess::finished,
             this, &FileViewSvnPlugin::slotOperationCompleted);
     connect(&m_process, &QProcess::errorOccurred,
             this, &FileViewSvnPlugin::slotOperationError);

@@ -100,7 +100,7 @@ HgCloneDialog::HgCloneDialog(const QString &directory, QWidget *parent):
     connect(m_browse_source, &QAbstractButton::clicked,
                 this, &HgCloneDialog::slotBrowseSourceClicked);
     connect(&m_process, &QProcess::started, this, &HgCloneDialog::slotCloningStarted);
-    connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+    connect(&m_process, &QProcess::finished,
             this, &HgCloneDialog::slotCloningFinished);
     connect(&m_process, &QProcess::readyReadStandardOutput,
                 this, &HgCloneDialog::slotUpdateCloneOutput);

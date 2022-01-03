@@ -52,7 +52,7 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
 
     connect(&server->process, &QProcess::started,
             this, &HgServeWrapper::started);
-    connect(&server->process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+    connect(&server->process, &QProcess::finished,
             this, &HgServeWrapper::slotFinished);
     connect(server, &ServerProcessType::readyReadLine,
             this, &HgServeWrapper::readyReadLine);

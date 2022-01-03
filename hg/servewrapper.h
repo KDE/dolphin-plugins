@@ -123,7 +123,7 @@ public:
                 this, &ServerProcessType::slotAppendOutput);
         connect(&process, &QProcess::readyReadStandardError,
                 this, &ServerProcessType::slotAppendRemainingOutput);
-        connect(&process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+        connect(&process, &QProcess::finished,
                 this, &ServerProcessType::slotFinished);
     }
 

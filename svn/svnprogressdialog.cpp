@@ -47,7 +47,7 @@ void SvnProgressDialog::connectToProcess(QProcess *process)
         process->terminate();
         m_svnTerminated = true;
     } );
-    m_conCompeted = connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &SvnProgressDialog::operationCompeleted);
+    m_conCompeted = connect(process, &QProcess::finished, this, &SvnProgressDialog::operationCompeleted);
     m_conProcessError = connect(process, &QProcess::errorOccurred, this, [this, process] (QProcess::ProcessError) {
         const QString commandLine = process->program() + process->arguments().join(' ');
         appendErrorText(i18nc("@info:status", "Error starting: %1", commandLine));
