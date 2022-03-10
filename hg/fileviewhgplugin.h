@@ -119,6 +119,8 @@ private:
     QAction *m_serveAction;
     QAction *m_backoutAction;
 
+    QWidget* m_parentWidget;
+
     mutable KFileItemList m_contextItems;
     mutable QString m_universalCurrentDirectory;
     mutable QString m_currentDir;

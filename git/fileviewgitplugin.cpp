@@ -25,6 +25,7 @@
 #include <QTextCodec>
 #include <QDir>
 #include <QTextBrowser>
+#include <QVBoxLayout>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewGitPlugin, "fileviewgitplugin.json")
 
@@ -40,6 +41,8 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_pullAction(nullptr)
 {
     Q_UNUSED(args);
+
+    m_parentWidget = qobject_cast<QWidget*>(parent);
 
     m_revertAction = new QAction(this);
     m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
@@ -487,9 +490,13 @@ void FileViewGitPlugin::log()
           palette.link().color().name(),
           palette.linkVisited().color().name());
 
-    auto view = new QTextBrowser();
-    view->setAttribute(Qt::WA_DeleteOnClose);
-    view->setWindowTitle(xi18nd("@title:window", "<application>Git</application> Log"));
+    QDialog* dlg = new QDialog(m_parentWidget);
+    QVBoxLayout* layout = new QVBoxLayout;
+    auto view = new QTextBrowser(dlg);
+    layout->addWidget(view);
+    dlg->setLayout(layout);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
+    dlg->setWindowTitle(xi18nd("@title:window", "<application>Git</application> Log"));
     view->setOpenLinks(false);
     view->setOpenExternalLinks(false);
     connect(view, &QTextBrowser::anchorClicked, this, &FileViewGitPlugin::showDiff);
@@ -511,8 +518,8 @@ void FileViewGitPlugin::log()
           i18nc("Git commit author", "Author"),
           gitOutput));
 
-    view->resize(QSize(720, 560));
-    view->show();
+    dlg->resize(QSize(720, 560));
+    dlg->show();
 }
 
 void FileViewGitPlugin::merge()
@@ -524,7 +531,7 @@ void FileViewGitPlugin::merge()
 
 void FileViewGitPlugin::checkout()
 {
-    CheckoutDialog dialog;
+    CheckoutDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted){
         QProcess process;
         process.setWorkingDirectory(m_contextDir);
@@ -581,7 +588,7 @@ void FileViewGitPlugin::checkout()
 
 void FileViewGitPlugin::commit()
 {
-    CommitDialog dialog;
+    CommitDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
         QTemporaryFile tmpCommitMessageFile;
         tmpCommitMessageFile.open();
@@ -615,7 +622,7 @@ void FileViewGitPlugin::commit()
 
 void FileViewGitPlugin::createTag()
 {
-   TagDialog dialog;
+   TagDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
         QTemporaryFile tempTagMessageFile;
         tempTagMessageFile.open();
@@ -652,7 +659,7 @@ void FileViewGitPlugin::createTag()
 
 void FileViewGitPlugin::push()
 {
-    PushDialog dialog;
+    PushDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
         m_process.setWorkingDirectory(m_contextDir);
 
@@ -678,7 +685,7 @@ void FileViewGitPlugin::push()
 
 void FileViewGitPlugin::pull()
 {
-    PullDialog dialog;
+    PullDialog dialog(m_parentWidget);
     if (dialog.exec()  == QDialog::Accepted) {
         m_process.setWorkingDirectory(m_contextDir);
 

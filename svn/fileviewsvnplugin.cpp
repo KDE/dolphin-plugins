@@ -64,6 +64,8 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
 {
     Q_UNUSED(args);
 
+    m_parentWidget = qobject_cast<QWidget*>(parent);
+
     m_updateAction = new QAction(this);
     m_updateAction->setIcon(QIcon::fromTheme("view-refresh"));
     m_updateAction->setText(i18nc("@item:inmenu", "SVN Update"));
@@ -351,7 +353,7 @@ QList<QAction*> FileViewSvnPlugin::outOfVersionControlActions(const KFileItemLis
 
 void FileViewSvnPlugin::updateFiles()
 {
-    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Update"), m_contextDir);
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Update"), m_contextDir, m_parentWidget);
     progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QLatin1String("update"), QStringList(),
@@ -414,7 +416,7 @@ void FileViewSvnPlugin::commitDialog()
         }
     }
 
-    SvnCommitDialog *svnCommitDialog = new SvnCommitDialog(&m_versionInfoHash, context);
+    SvnCommitDialog *svnCommitDialog = new SvnCommitDialog(&m_versionInfoHash, context, m_parentWidget);
 
     connect(this, &FileViewSvnPlugin::versionInfoUpdated, svnCommitDialog, &SvnCommitDialog::refreshChangesList);
 
@@ -460,7 +462,7 @@ void FileViewSvnPlugin::revertFiles()
         root = SvnCommands::localRoot( m_contextItems.last().localPath() );
     }
 
-    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Revert"), root);
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Revert"), root, m_parentWidget);
     progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QStringLiteral("revert"), arguments,
@@ -471,7 +473,7 @@ void FileViewSvnPlugin::revertFiles()
 
 void FileViewSvnPlugin::logDialog()
 {
-    SvnLogDialog *svnLogDialog = new SvnLogDialog(m_contextDir);
+    SvnLogDialog *svnLogDialog = new SvnLogDialog(m_contextDir, m_parentWidget);
 
     connect(svnLogDialog, &SvnLogDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
     connect(svnLogDialog, &SvnLogDialog::operationCompletedMessage, this, &FileViewSvnPlugin::operationCompletedMessage);
@@ -484,7 +486,7 @@ void FileViewSvnPlugin::logDialog()
 
 void FileViewSvnPlugin::checkoutDialog()
 {
-    SvnCheckoutDialog *svnCheckoutDialog = new SvnCheckoutDialog(m_contextDir);
+    SvnCheckoutDialog *svnCheckoutDialog = new SvnCheckoutDialog(m_contextDir, m_parentWidget);
 
     connect(svnCheckoutDialog, &SvnCheckoutDialog::infoMessage, this, &FileViewSvnPlugin::infoMessage);
     connect(svnCheckoutDialog, &SvnCheckoutDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
@@ -496,7 +498,7 @@ void FileViewSvnPlugin::checkoutDialog()
 
 void FileViewSvnPlugin::cleanupDialog()
 {
-    SvnCleanupDialog *svnCleanupDialog = new SvnCleanupDialog(m_contextDir);
+    SvnCleanupDialog *svnCleanupDialog = new SvnCleanupDialog(m_contextDir, m_parentWidget);
 
     connect(svnCleanupDialog, &SvnCleanupDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
     connect(svnCleanupDialog, &SvnCleanupDialog::operationCompletedMessage, this, &FileViewSvnPlugin::operationCompletedMessage);
@@ -546,7 +548,7 @@ void FileViewSvnPlugin::revertFiles(const QStringList& filesPath)
     }
     m_contextDir.clear();
 
-    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Revert"), SvnCommands::localRoot(filesPath.first()));
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Revert"), SvnCommands::localRoot(filesPath.first()), m_parentWidget);
     progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QLatin1String("revert"), QStringList() << filesPath,
@@ -656,7 +658,7 @@ void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& m
     m_contextDir.clear();
     m_contextItems.clear();
 
-    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Commit"), SvnCommands::localRoot(context.first()));
+    SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Commit"), SvnCommands::localRoot(context.first()), m_parentWidget);
     progressDialog->connectToProcess(&m_process);
 
     execSvnCommand(QLatin1String("commit"), arguments,

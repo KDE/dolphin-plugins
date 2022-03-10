@@ -114,6 +114,8 @@ private:
     QString m_errorMsg;
     QString m_operationCompletedMsg;
 
+    QWidget* m_parentWidget;
+
     mutable QString m_contextDir;
     mutable KFileItemList m_contextItems;
 

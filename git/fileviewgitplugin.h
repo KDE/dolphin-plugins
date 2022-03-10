@@ -117,6 +117,8 @@ private:
     QString m_operationCompletedMsg;
     QString m_errorMsg;
 
+    QWidget* m_parentWidget;
+
     //Current targets. m_contextItems is used if and only if m_contextDir is empty.
     mutable QString m_contextDir;
     mutable KFileItemList m_contextItems;

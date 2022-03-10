@@ -86,6 +86,8 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
     qRegisterMetaType<QProcess::ProcessState>("QProcess::ProcessState");
 
+    m_parentWidget = qobject_cast<QWidget*>(parent);
+
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme("list-add"));
     m_addAction->setText(xi18nc("@action:inmenu",
@@ -529,7 +531,7 @@ void FileViewHgPlugin::renameFile()
     Q_EMIT infoMessage(xi18nc("@info:status",
         "Renaming file in <application>Hg</application> repository."));
 
-    HgRenameDialog dialog(m_contextItems.first());
+    HgRenameDialog dialog(m_contextItems.first(), m_parentWidget);
     dialog.exec();
     m_contextItems.clear();
 }
@@ -549,7 +551,7 @@ void FileViewHgPlugin::commit()
     Q_EMIT infoMessage(xi18nc("@info:status",
             "Commit <application>Hg</application> repository."));
 
-    HgCommitDialog dialog;
+    HgCommitDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
         Q_EMIT itemVersionsChanged();
     };
@@ -564,7 +566,7 @@ void FileViewHgPlugin::tag()
     Q_EMIT infoMessage(xi18nc("@info:status",
            "Tagging operation in <application>Hg</application> repository."));
 
-    HgTagDialog dialog;
+    HgTagDialog dialog(m_parentWidget);
     dialog.exec();
 }
 
@@ -577,7 +579,7 @@ void FileViewHgPlugin::update()
     Q_EMIT infoMessage(xi18nc("@info:status",
            "Updating <application>Hg</application> working directory."));
 
-    HgUpdateDialog dialog;
+    HgUpdateDialog dialog(m_parentWidget);
     dialog.exec();
 }
 
@@ -590,63 +592,63 @@ void FileViewHgPlugin::branch()
     Q_EMIT infoMessage(xi18nc("@info:status",
            "Branch operation on <application>Hg</application> repository."));
 
-    HgBranchDialog dialog;
+    HgBranchDialog dialog(m_parentWidget);
     dialog.exec();
 }
 
 void FileViewHgPlugin::clone()
 {
     clearMessages();
-    HgCloneDialog dialog(m_universalCurrentDirectory);
+    HgCloneDialog dialog(m_universalCurrentDirectory, m_parentWidget);
     dialog.exec();
 }
 
 void FileViewHgPlugin::create()
 {
     clearMessages();
-    HgCreateDialog dialog(m_universalCurrentDirectory);
+    HgCreateDialog dialog(m_universalCurrentDirectory, m_parentWidget);
     dialog.exec();
 }
 
 void FileViewHgPlugin::global_config()
 {
     clearMessages();
-    HgConfigDialog diag(HgConfig::GlobalConfig);
+    HgConfigDialog diag(HgConfig::GlobalConfig, m_parentWidget);
     diag.exec();
 }
 
 void FileViewHgPlugin::repo_config()
 {
     clearMessages();
-    HgConfigDialog diag(HgConfig::RepoConfig);
+    HgConfigDialog diag(HgConfig::RepoConfig, m_parentWidget);
     diag.exec();
 }
 
 void FileViewHgPlugin::push()
 {
     clearMessages();
-    HgPushDialog diag;
+    HgPushDialog diag(m_parentWidget);
     diag.exec();
 }
 
 void FileViewHgPlugin::pull()
 {
     clearMessages();
-    HgPullDialog diag;
+    HgPullDialog diag(m_parentWidget);
     diag.exec();
 }
 
 void FileViewHgPlugin::merge()
 {
     clearMessages();
-    HgMergeDialog diag;
+    HgMergeDialog diag(m_parentWidget);
     diag.exec();
 }
 
 void FileViewHgPlugin::bundle()
 {
     clearMessages();
-    HgBundleDialog diag;
+    HgBundleDialog diag(m_parentWidget);
     diag.exec();
 }
 
@@ -670,14 +672,14 @@ void FileViewHgPlugin::unbundle()
 void FileViewHgPlugin::importChangesets()
 {
     clearMessages();
-    HgImportDialog diag;
+    HgImportDialog diag(m_parentWidget);
     diag.exec();
 }
 
 void FileViewHgPlugin::exportChangesets()
 {
     clearMessages();
-    HgExportDialog diag;
+    HgExportDialog diag(m_parentWidget);
     diag.exec();
 }
 
@@ -749,7 +751,7 @@ void FileViewHgPlugin::diff()
 void FileViewHgPlugin::serve()
 {
     clearMessages();
-    HgServeDialog diag;
+    HgServeDialog diag(m_parentWidget);
     diag.exec();
 }
 
@@ -763,7 +765,7 @@ void FileViewHgPlugin::backout()
         return;
     }
 
-    HgBackoutDialog diag;
+    HgBackoutDialog diag(m_parentWidget);
     diag.exec();
 }
 
