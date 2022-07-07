@@ -110,7 +110,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, &FileViewHgPlugin::renameFile);
 
     m_commitAction = new QAction(this);
-    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
+    m_commitAction->setIcon(QIcon::fromTheme("vcs-commit"));
     m_commitAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Commit"));
     connect(m_commitAction, &QAction::triggered,
@@ -124,7 +124,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, &FileViewHgPlugin::tag);
 
     m_branchAction = new QAction(this);
-    m_branchAction->setIcon(QIcon::fromTheme("svn-branch"));
+    m_branchAction->setIcon(QIcon::fromTheme("vcs-branch"));
     m_branchAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Branch"));
     connect(m_branchAction, &QAction::triggered,
@@ -145,7 +145,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, &FileViewHgPlugin::create);
 
     m_updateAction = new QAction(this);
-    m_updateAction->setIcon(QIcon::fromTheme("svn-update"));
+    m_updateAction->setIcon(QIcon::fromTheme("vcs-pull"));
     m_updateAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Update"));
     connect(m_updateAction, &QAction::triggered,
@@ -166,28 +166,28 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, &FileViewHgPlugin::repo_config);
 
     m_pushAction = new QAction(this);
-    m_pushAction->setIcon(QIcon::fromTheme("git-push"));
+    m_pushAction->setIcon(QIcon::fromTheme("vcs-push"));
     m_pushAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Push"));
     connect(m_pushAction, &QAction::triggered,
             this, &FileViewHgPlugin::push);
 
     m_pullAction = new QAction(this);
-    m_pullAction->setIcon(QIcon::fromTheme("git-pull"));
+    m_pullAction->setIcon(QIcon::fromTheme("vcs-pull"));
     m_pullAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Pull"));
     connect(m_pullAction, &QAction::triggered,
             this, &FileViewHgPlugin::pull);
 
     m_revertAction = new QAction(this);
-    m_revertAction->setIcon(QIcon::fromTheme("hg-revert"));
+    m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
     m_revertAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Revert"));
     connect(m_revertAction, &QAction::triggered,
             this, &FileViewHgPlugin::revert);
 
     m_revertAllAction = new QAction(this);
-    m_revertAllAction->setIcon(QIcon::fromTheme("hg-revert"));
+    m_revertAllAction->setIcon(QIcon::fromTheme("document-revert"));
     m_revertAllAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Revert All"));
     connect(m_revertAllAction, &QAction::triggered,
@@ -201,7 +201,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, &FileViewHgPlugin::rollback);
 
     m_mergeAction = new QAction(this);
-    m_mergeAction->setIcon(QIcon::fromTheme("hg-merge"));
+    m_mergeAction->setIcon(QIcon::fromTheme("vcs-merge"));
     m_mergeAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Merge"));
     connect(m_mergeAction, &QAction::triggered,
@@ -250,7 +250,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
             this, &FileViewHgPlugin::backout);
 
     m_diffAction = new QAction(this);
-    m_diffAction->setIcon(QIcon::fromTheme("hg-diff"));
+    m_diffAction->setIcon(QIcon::fromTheme("vcs-diff"));
     m_diffAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Diff"));
     connect(m_diffAction, &QAction::triggered,

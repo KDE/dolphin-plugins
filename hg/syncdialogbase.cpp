@@ -76,7 +76,7 @@ void HgSyncBaseDialog::setupUI()
     m_pathSelector = new HgPathSelector;
 
     // changes button
-    //FIXME not very good idea. Bad HACK 
+    //FIXME not very good idea. Bad HACK
     if (m_dialogType == PullDialog) {
         m_changesButton = new QPushButton(i18nc("@label:button",
                 "Show Incoming Changes"));
@@ -120,7 +120,7 @@ void HgSyncBaseDialog::setupUI()
     okButton()->setText(xi18nc("@action:button",
                                m_dialogType == PullDialog ? "Pull" : "Push"));
     okButton()->setIcon(QIcon::fromTheme(
-                               m_dialogType == PullDialog ? "git-pull" : "git-push"));
+                               m_dialogType == PullDialog ? "vcs-pull" : "vcs-push"));
     m_optionsButton = new QPushButton(buttonBox());
     m_optionsButton->setIcon(QIcon::fromTheme("help-about"));
     switchOptionsButton(true);

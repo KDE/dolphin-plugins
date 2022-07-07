@@ -79,7 +79,7 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
             this, &FileViewSvnPlugin::showLocalChanges);
 
     m_commitAction = new QAction(this);
-    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
+    m_commitAction->setIcon(QIcon::fromTheme("vcs-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "SVN Commit..."));
     connect(m_commitAction, &QAction::triggered,
             this, &FileViewSvnPlugin::commitDialog);

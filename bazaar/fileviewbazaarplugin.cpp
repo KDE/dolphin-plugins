@@ -46,19 +46,18 @@ FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant
     Q_UNUSED(args);
 
     m_updateAction = new QAction(this);
-    m_updateAction->setIcon(QIcon::fromTheme("go-down"));
     m_updateAction->setText(i18nc("@item:inmenu", "Bazaar Update"));
     connect(m_updateAction, &QAction::triggered,
             this, &FileViewBazaarPlugin::updateFiles);
 
     m_pullAction = new QAction(this);
-    m_pullAction->setIcon(QIcon::fromTheme("go-bottom"));
+    m_pullAction->setIcon(QIcon::fromTheme("vcs-pull"));
     m_pullAction->setText(i18nc("@item:inmenu", "Bazaar Pull"));
     connect(m_pullAction, &QAction::triggered,
             this, &FileViewBazaarPlugin::pullFiles);
 
     m_pushAction = new QAction(this);
-    m_pushAction->setIcon(QIcon::fromTheme("go-top"));
+    m_pushAction->setIcon(QIcon::fromTheme("vcs-push"));
     m_pushAction->setText(i18nc("@item:inmenu", "Bazaar Push"));
     connect(m_pushAction, &QAction::triggered,
             this, &FileViewBazaarPlugin::pushFiles);
@@ -70,7 +69,7 @@ FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant
             this, &FileViewBazaarPlugin::showLocalChanges);
 
     m_commitAction = new QAction(this);
-    m_commitAction->setIcon(QIcon::fromTheme("svn-commit"));
+    m_commitAction->setIcon(QIcon::fromTheme("vcs-commit"));
     m_commitAction->setText(i18nc("@item:inmenu", "Bazaar Commit..."));
     connect(m_commitAction, &QAction::triggered,
             this, &FileViewBazaarPlugin::commitFiles);
@@ -467,7 +466,7 @@ void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
         Q_EMIT infoMessage("Please Install QBzr");
         return;
     }
-    
+
     m_command = command;
     m_arguments = arguments;
     m_errorMsg = errorMsg;
