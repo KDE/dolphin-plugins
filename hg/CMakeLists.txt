@@ -46,8 +46,8 @@ kconfig_add_kcfg_files(fileviewhgplugin
 )
 
 target_link_libraries(fileviewhgplugin
-    Qt5::Core
-    Qt5::Widgets
+    Qt::Core
+    Qt::Widgets
     KF5::KIOCore
     KF5::I18n
     KF5::CoreAddons

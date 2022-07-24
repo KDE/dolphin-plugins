@@ -24,8 +24,8 @@ kconfig_add_kcfg_files(fileviewsvnplugin
 )
 
 target_link_libraries(fileviewsvnplugin
-    Qt5::Core
-    Qt5::Widgets
+    Qt::Core
+    Qt::Widgets
     KF5::I18n
     KF5::XmlGui
     KF5::KIOCore
