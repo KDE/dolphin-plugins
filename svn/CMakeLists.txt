@@ -10,6 +10,14 @@ target_sources(fileviewsvnplugin PRIVATE
     svncheckoutdialog.cpp
     svnprogressdialog.cpp
     svncleanupdialog.cpp
+
+    fileviewsvnplugin.h
+    svncommands.h
+    svncommitdialog.h
+    svnlogdialog.h
+    svncheckoutdialog.h
+    svnprogressdialog.h
+    svncleanupdialog.h
 )
 
 ki18n_wrap_ui(fileviewsvnplugin

@@ -38,6 +38,37 @@ target_sources(fileviewhgplugin PRIVATE
     config-widgets/pathconfig.cpp
     config-widgets/ignorewidget.cpp
     config-widgets/pluginsettings.cpp
+
+    fileviewhgplugin.h
+    renamedialog.h
+    commitdialog.h
+    hgwrapper.h
+    statuslist.h
+    branchdialog.h
+    tagdialog.h
+    updatedialog.h
+    clonedialog.h
+    createdialog.h
+    syncdialogbase.h
+    mergedialog.h
+    pushdialog.h
+    pulldialog.h
+    hgconfig.h
+    configdialog.h
+    commititemdelegate.h
+    commitinfowidget.h
+    pathselector.h
+    bundledialog.h
+    exportdialog.h
+    importdialog.h
+    servedialog.h
+    servewrapper.h
+    backoutdialog.h
+    dialogbase.h
+    config-widgets/generalconfig.h
+    config-widgets/pathconfig.h
+    config-widgets/ignorewidget.h
+    config-widgets/pluginsettings.h
 )
 
 

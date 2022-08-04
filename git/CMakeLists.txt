@@ -10,6 +10,14 @@ target_sources(fileviewgitplugin PRIVATE
     pushdialog.cpp
     pulldialog.cpp
     gitwrapper.cpp
+
+    fileviewgitplugin.h
+    checkoutdialog.h
+    commitdialog.h
+    tagdialog.h
+    pushdialog.h
+    pulldialog.h
+    gitwrapper.h
 )
 
 kconfig_add_kcfg_files(fileviewgitplugin

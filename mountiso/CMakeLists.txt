@@ -2,7 +2,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"mountisoaction\")
 
 kcoreaddons_add_plugin(
     mountisoaction
-    SOURCES mountisoaction.cpp
+    SOURCES mountisoaction.cpp mountisoaction.h
     INSTALL_NAMESPACE "kf5/kfileitemaction")
 
 target_link_libraries(mountisoaction
