@@ -20,6 +20,7 @@
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QRegularExpression>
 
 CheckoutDialog::CheckoutDialog(QWidget* parent):
     QDialog(parent, Qt::Dialog),
@@ -213,7 +214,7 @@ void CheckoutDialog::setOkButtonState()
             m_newBranchName->setToolTip(tt);
             okButton->setToolTip(tt);
         }
-        if (newBranchName.contains(QRegExp("\\s"))) {
+        if (newBranchName.contains(QRegularExpression("\\s"))) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "Branch names may not contain any whitespace.");

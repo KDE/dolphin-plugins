@@ -41,6 +41,7 @@
 
 #include <KLocalizedString>
 #include <KPluginFactory>
+#include <QRegularExpression>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewHgPlugin, "fileviewhgplugin.json")
 
@@ -780,7 +781,7 @@ void FileViewHgPlugin::rollback()
     }
     // get what will be rolled back
     QString lastTransaction = m_hgWrapper->readAllStandardOutput();
-    int cutOfFrom = lastTransaction.indexOf(QRegExp("\\d"));
+    int cutOfFrom = lastTransaction.indexOf(QRegularExpression("\\d"));
     lastTransaction = lastTransaction.mid(cutOfFrom);
 
     // ask

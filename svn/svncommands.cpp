@@ -397,29 +397,29 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
 
         QXmlStreamReader xml(&process);
         int itemsAppended = 0;
-        if (xml.readNextStartElement() && xml.name() == "log") {
+        if (xml.readNextStartElement() && xml.name() == QLatin1String("log")) {
             while (!xml.atEnd() && xml.readNext() != QXmlStreamReader::EndDocument) {
-                if (!xml.isStartElement() || xml.name() != "logentry") {
+                if (!xml.isStartElement() || xml.name() != QLatin1String("logentry")) {
                     continue;
                 }
 
                 logEntry entry;
                 entry.revision = xml.attributes().value("revision").toULong();
 
-                if (xml.readNextStartElement() && xml.name() == "author") {
+                if (xml.readNextStartElement() && xml.name() == QLatin1String("author")) {
                     entry.author = xml.readElementText();
                 }
-                if (xml.readNextStartElement() && xml.name() == "date") {
+                if (xml.readNextStartElement() && xml.name() == QLatin1String("date")) {
                     entry.date = QDateTime::fromString(xml.readElementText(), Qt::ISODateWithMs);
                 }
 
-                if (xml.readNextStartElement() && xml.name() == "paths") {
-                    while (xml.readNextStartElement() && xml.name() == "path") {
+                if (xml.readNextStartElement() && xml.name() == QLatin1String("paths")) {
+                    while (xml.readNextStartElement() && xml.name() == QLatin1String("path")) {
                         affectedPath path;
 
                         path.action = xml.attributes().value("action").toString();
-                        path.propMods = xml.attributes().value("prop-mods").toString() == "true";
-                        path.textMods = xml.attributes().value("text-mods").toString() == "true";
+                        path.propMods = xml.attributes().value("prop-mods").toString() == QLatin1String("true");
+                        path.textMods = xml.attributes().value("text-mods").toString() == QLatin1String("true");
                         path.kind = xml.attributes().value("kind").toString();
 
                         path.path = xml.readElementText();
@@ -428,7 +428,7 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
                     }
                 }
 
-                if (xml.readNextStartElement() && xml.name() == "msg") {
+                if (xml.readNextStartElement() && xml.name() == QLatin1String("msg")) {
                     entry.msg = xml.readElementText();
                 }
 

@@ -10,6 +10,7 @@
 #include <QTextCodec>
 #include <QUrl>
 #include <QDebug>
+#include <QRegularExpression>
 
 //TODO: Replace start() with executeCommand functions wherever possible.
 //FIXME: Add/Remove/Revert argument length limit. Divide the list.
@@ -291,7 +292,7 @@ QStringList HgWrapper::getTags()
     while (m_process.waitForReadyRead()) {
         char buffer[1048];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-            result << QString(buffer).split(QRegExp("\\s+"),
+            result << QString(buffer).split(QRegularExpression("\\s+"),
                                             Qt::SkipEmptyParts).first();
         }
     }
@@ -308,7 +309,7 @@ QStringList HgWrapper::getBranches()
             // 'hg branches' command lists the branches in following format
             // <branchname>      <revision:changeset_hash> [(inactive)]
             // Extract just the branchname
-            result << QString(buffer).remove(QRegExp("[\\s]+[\\d:a-zA-Z\\(\\)]*"));
+            result << QString(buffer).remove(QRegularExpression("[\\s]+[\\d:a-zA-Z\\(\\)]*"));
         }
     }
     return result;
