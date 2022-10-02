@@ -1,0 +1,212 @@
+#
+# Translators:
+# obsoleteman <tulliana@gmail.com>, 2012
+# Volkan Gezer <volkangezer@gmail.com>, 2014
+# Emir SARI <emir_sari@icloud.com>, 2022
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-12 00:49+0000\n"
+"PO-Revision-Date: 2022-02-22 13:05+0100\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.08.2\n"
+
+#: fileviewbazaarplugin.cpp:49
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Update"
+msgstr "Bazaar Güncelle"
+
+#: fileviewbazaarplugin.cpp:55
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Pull"
+msgstr "Bazaar Çek"
+
+#: fileviewbazaarplugin.cpp:61
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Push"
+msgstr "Bazaar İt"
+
+#: fileviewbazaarplugin.cpp:67
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show Local Bazaar Changes"
+msgstr "Yerel Bazaar Değişikliklerini Göster"
+
+#: fileviewbazaarplugin.cpp:73
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Commit..."
+msgstr "Bazaar İşle..."
+
+#: fileviewbazaarplugin.cpp:79
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Add..."
+msgstr "Bazaar Ekle..."
+
+#: fileviewbazaarplugin.cpp:85
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Delete"
+msgstr "Bazaar Sil"
+
+#: fileviewbazaarplugin.cpp:91
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Log"
+msgstr "Bazaar Günlük"
+
+#: fileviewbazaarplugin.cpp:355
+#, kde-format
+msgctxt "@info:status"
+msgid "Updating Bazaar repository..."
+msgstr "Bazaar deposu güncelleniyor..."
+
+#: fileviewbazaarplugin.cpp:356
+#, kde-format
+msgctxt "@info:status"
+msgid "Update of Bazaar repository failed."
+msgstr "Bazaar deposu güncellenemedi."
+
+#: fileviewbazaarplugin.cpp:357
+#, kde-format
+msgctxt "@info:status"
+msgid "Updated Bazaar repository."
+msgstr "Bazaar deposu güncellendi."
+
+#: fileviewbazaarplugin.cpp:365
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulling Bazaar repository..."
+msgstr "Bazaar deposu çekiliyor..."
+
+#: fileviewbazaarplugin.cpp:366
+#, kde-format
+msgctxt "@info:status"
+msgid "Pull of Bazaar repository failed."
+msgstr "Bazaar deposu çekilemedi."
+
+#: fileviewbazaarplugin.cpp:367
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulled Bazaar repository."
+msgstr "Bazaar deposu çekildi."
+
+#: fileviewbazaarplugin.cpp:375
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushing Bazaar repository..."
+msgstr "Bazaar deposu itiliyor..."
+
+#: fileviewbazaarplugin.cpp:376
+#, kde-format
+msgctxt "@info:status"
+msgid "Push of Bazaar repository failed."
+msgstr "Bazaar deposu itilemedi."
+
+#: fileviewbazaarplugin.cpp:377
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushed Bazaar repository."
+msgstr "Bazaar deposu itildi."
+
+#: fileviewbazaarplugin.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewing Changes..."
+msgstr "Değişiklikler gözden geçiriliyor..."
+
+#: fileviewbazaarplugin.cpp:384
+#, kde-format
+msgctxt "@info:status"
+msgid "Review Changes failed."
+msgstr "Değişiklikler gözden geçirilemedi."
+
+#: fileviewbazaarplugin.cpp:385
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewed Changes."
+msgstr "Değişiklikler gözden geçirildi."
+
+#: fileviewbazaarplugin.cpp:391
+#, kde-format
+msgctxt "@info:status"
+msgid "Committing Bazaar changes..."
+msgstr "Bazaar değişiklikleri işleniyor..."
+
+#: fileviewbazaarplugin.cpp:392
+#, kde-format
+msgctxt "@info:status"
+msgid "Commit of Bazaar changes failed."
+msgstr "Bazaar değişiklikleri işlenemedi."
+
+#: fileviewbazaarplugin.cpp:393
+#, kde-format
+msgctxt "@info:status"
+msgid "Committed Bazaar changes."
+msgstr "Bazaar değişiklikleri işlendi."
+
+#: fileviewbazaarplugin.cpp:399
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding files to Bazaar repository..."
+msgstr "Dosyalar Bazaar deposuna ekleniyor..."
+
+#: fileviewbazaarplugin.cpp:400
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding of files to Bazaar repository failed."
+msgstr "Dosyalar Bazaar deposuna eklenemedi."
+
+#: fileviewbazaarplugin.cpp:401
+#, kde-format
+msgctxt "@info:status"
+msgid "Added files to Bazaar repository."
+msgstr "Dosyalar Bazaar deposuna eklendi."
+
+#: fileviewbazaarplugin.cpp:407
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing files from Bazaar repository..."
+msgstr "Dosyalar Bazaar deposundan kaldırılıyor..."
+
+#: fileviewbazaarplugin.cpp:408
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing of files from Bazaar repository failed."
+msgstr "Dosyalar Bazaar deposundan kaldırılamadı."
+
+#: fileviewbazaarplugin.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Removed files from Bazaar repository."
+msgstr "Dosyalar Bazaar deposundan kaldırıldı."
+
+#: fileviewbazaarplugin.cpp:415
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log..."
+msgstr "Bazaar Günlük Kaydı Çalıştırılıyor..."
+
+#: fileviewbazaarplugin.cpp:416
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log failed."
+msgstr "Bazaar Günlük Kaydı Çalıştırılamadı."
+
+#: fileviewbazaarplugin.cpp:417
+#, kde-format
+msgctxt "@info:status"
+msgid "Bazaar Log closed."
+msgstr "Bazaar Günlük Kaydı kapatıldı."

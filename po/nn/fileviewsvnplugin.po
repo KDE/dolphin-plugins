@@ -1,0 +1,538 @@
+# Translation of fileviewsvnplugin to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2018, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-12 00:46+0000\n"
+"PO-Revision-Date: 2020-10-31 11:27+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.2\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: fileviewsvnplugin.cpp:71
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Update"
+msgstr "SVN oppdater"
+
+#: fileviewsvnplugin.cpp:77
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show Local SVN Changes"
+msgstr "Vis lokale SVN-endringar"
+
+#: fileviewsvnplugin.cpp:83
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Commit..."
+msgstr "SVN meld inn …"
+
+#: fileviewsvnplugin.cpp:89
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Add"
+msgstr "SVN legg til …"
+
+#: fileviewsvnplugin.cpp:95
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Delete"
+msgstr "SVN slett …"
+
+#: fileviewsvnplugin.cpp:101
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Revert"
+msgstr "SVN tilbakestill …"
+
+#: fileviewsvnplugin.cpp:107
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show SVN Updates"
+msgstr "Vis SVN-oppdateringar"
+
+#: fileviewsvnplugin.cpp:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "SVN Log..."
+msgstr "SVN-logg …"
+
+#: fileviewsvnplugin.cpp:120
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "SVN Checkout..."
+msgstr "SVN sjekk ut …"
+
+#: fileviewsvnplugin.cpp:125
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "SVN Cleanup..."
+msgstr "SVN rydd opp …"
+
+#: fileviewsvnplugin.cpp:220
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
+msgstr "Feil ved SVN-statusoppdatering. Slår av valet «Vis SVN-oppdateringar»."
+
+#: fileviewsvnplugin.cpp:356
+#, kde-format
+msgctxt "@title:window"
+msgid "SVN Update"
+msgstr "SVN oppdater"
+
+#: fileviewsvnplugin.cpp:360
+#, kde-format
+msgctxt "@info:status"
+msgid "Updating SVN repository..."
+msgstr "Oppdaterer SVN-depot …"
+
+#: fileviewsvnplugin.cpp:361
+#, kde-format
+msgctxt "@info:status"
+msgid "Update of SVN repository failed."
+msgstr "Feil ved oppdatering av SVN-depot."
+
+#: fileviewsvnplugin.cpp:362
+#, kde-format
+msgctxt "@info:status"
+msgid "Updated SVN repository."
+msgstr "Oppdaterte SVN-depotet."
+
+#: fileviewsvnplugin.cpp:376
+#, kde-format
+msgctxt "@info:status"
+msgid "Could not show local SVN changes."
+msgstr "Klarte ikkje visa lokale SVN-endringar."
+
+#: fileviewsvnplugin.cpp:391
+#, kde-format
+msgctxt "@info:status"
+msgid "Could not show local SVN changes: svn diff failed."
+msgstr ""
+"Klarte ikkje visa lokale SVN-endringar: Feil ved køyring av «svn diff»."
+
+#: fileviewsvnplugin.cpp:403 fileviewsvnplugin.cpp:587
+#: fileviewsvnplugin.cpp:616
+#, kde-format
+msgctxt "@info:status"
+msgid "Could not show local SVN changes: could not start kompare."
+msgstr "Klarte ikkje visa lokale SVN-endringar: Klarte ikkje starta Kompare."
+
+#: fileviewsvnplugin.cpp:435
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding files to SVN repository..."
+msgstr "Legg filer til SVN-depot …"
+
+#: fileviewsvnplugin.cpp:436
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding of files to SVN repository failed."
+msgstr "Feil ved forsøk på å leggja filer til i SVN-depot."
+
+#: fileviewsvnplugin.cpp:437
+#, kde-format
+msgctxt "@info:status"
+msgid "Added files to SVN repository."
+msgstr "Lagde filer til SVN-depot."
+
+#: fileviewsvnplugin.cpp:443
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing files from SVN repository..."
+msgstr "Fjernar filer frå SVN-depot …"
+
+#: fileviewsvnplugin.cpp:444
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing of files from SVN repository failed."
+msgstr "Feil ved fjerning av filer frå SVN-depot."
+
+#: fileviewsvnplugin.cpp:445
+#, kde-format
+msgctxt "@info:status"
+msgid "Removed files from SVN repository."
+msgstr "Fjerna filer frå SVN-depot."
+
+#: fileviewsvnplugin.cpp:465 fileviewsvnplugin.cpp:551
+#, kde-format
+msgctxt "@title:window"
+msgid "SVN Revert"
+msgstr "SVN tilbakestill"
+
+#: fileviewsvnplugin.cpp:469
+#, kde-format
+msgctxt "@info:status"
+msgid "Reverting files from SVN repository..."
+msgstr "Tilbakestiller filer frå SVN-depot …"
+
+#: fileviewsvnplugin.cpp:470
+#, kde-format
+msgctxt "@info:status"
+msgid "Reverting of files from SVN repository failed."
+msgstr "Feil ved tilbakestilling av filer frå SVN-depot."
+
+#: fileviewsvnplugin.cpp:471
+#, kde-format
+msgctxt "@info:status"
+msgid "Reverted files from SVN repository."
+msgstr "Tilbakestilte filer frå SVN-depot."
+
+#: fileviewsvnplugin.cpp:555
+#, kde-format
+msgctxt "@info:status"
+msgid "Reverting changes to file..."
+msgstr "Tilbakestiller endringar i fil …"
+
+#: fileviewsvnplugin.cpp:556
+#, kde-format
+msgctxt "@info:status"
+msgid "Revert file failed."
+msgstr "Feil ved tilbakestilling."
+
+#: fileviewsvnplugin.cpp:557
+#, kde-format
+msgctxt "@info:status"
+msgid "File reverted."
+msgstr "Fila vart tilbakestilt."
+
+#: fileviewsvnplugin.cpp:574 fileviewsvnplugin.cpp:597
+#: fileviewsvnplugin.cpp:602
+#, kde-format
+msgctxt "@info:status"
+msgid "Could not show local SVN changes for a file: could not get file."
+msgstr "Klarte ikkje visa lokale SVN-endringar: Klarte ikkje henta fil."
+
+#: fileviewsvnplugin.cpp:643 fileviewsvnplugin.cpp:666
+#, kde-format
+msgctxt "@info:status"
+msgid "Commit of SVN changes failed."
+msgstr "Feil ved SVN-innmelding."
+
+#: fileviewsvnplugin.cpp:661 svncommitdialog.cpp:154
+#, kde-format
+msgctxt "@title:window"
+msgid "SVN Commit"
+msgstr "SVN meld inn"
+
+#: fileviewsvnplugin.cpp:665
+#, kde-format
+msgctxt "@info:status"
+msgid "Committing SVN changes..."
+msgstr "Melder inn SVN-endringar …"
+
+#: fileviewsvnplugin.cpp:667
+#, kde-format
+msgctxt "@info:status"
+msgid "Committed SVN changes."
+msgstr "Melde inn SVN-endringar."
+
+#. i18n: ectx: label, entry (showUpdates), group (General)
+#: fileviewsvnpluginsettings.kcfg:9
+#, kde-format
+msgid "Show updates"
+msgstr "Vis oppdateringar"
+
+#: svncheckoutdialog.cpp:56
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a directory to checkout"
+msgstr "Vel ei mappe å sjekka ut"
+
+#: svncheckoutdialog.cpp:102
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout in process..."
+msgstr "SVN-utsjekk: sjekkar ut …"
+
+#: svncheckoutdialog.cpp:105
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout failed."
+msgstr "SVN-utsjekk: feil ved utsjekking."
+
+#: svncheckoutdialog.cpp:107
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout successful."
+msgstr "SVN-utsjekk: utsjekking fullført."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
+#: svncheckoutdialog.ui:20
+#, kde-format
+msgid "SVN Checkout"
+msgstr "SVN sjekk ut"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: svncheckoutdialog.ui:26
+#, kde-format
+msgid "URL of repository:"
+msgstr "Depotadresse:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: svncheckoutdialog.ui:36
+#, kde-format
+msgid "Checkout directory:"
+msgstr "Utsjekkingsmappe:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
+#: svncheckoutdialog.ui:46
+#, kde-format
+msgid "Omit externals"
+msgstr "Hopp over eksterne element"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbOk)
+#. i18n: ectx: property (text), widget (QPushButton, buttonOk)
+#: svncheckoutdialog.ui:71 svncleanupdialog.ui:80 svnlogdialog.ui:146
+#: svnprogressdialog.ui:47
+#, kde-format
+msgid "OK"
+msgstr "OK"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbCancel)
+#. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
+#: svncheckoutdialog.ui:82 svncleanupdialog.ui:97 svnprogressdialog.ui:33
+#, kde-format
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: svncleanupdialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a directory to clean up"
+msgstr "Vel ei mappe å rydda opp i"
+
+#: svncleanupdialog.cpp:60
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN clean up completed successfully."
+msgstr "SVN-opprydding er no fullført."
+
+#: svncleanupdialog.cpp:62
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN clean up failed for %1"
+msgstr "Feil ved SVN-opprydding i %1"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
+#: svncleanupdialog.ui:20
+#, kde-format
+msgid "SVN Cleanup..."
+msgstr "SVN rydd opp …"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: svncleanupdialog.ui:26
+#, kde-format
+msgid "Clean up directory:"
+msgstr "Rydd opp i mappa:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
+#: svncleanupdialog.ui:43
+#, kde-format
+msgid "Delete unversioned files and directories"
+msgstr "Slett ikkje-versjonerte filer og mapper"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
+#: svncleanupdialog.ui:50
+#, kde-format
+msgid "Delete ignored files and directories"
+msgstr "Slett ignorerte filer og mapper"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
+#: svncleanupdialog.ui:57
+#, kde-format
+msgid "Include externals"
+msgstr "Ta med eksterne element"
+
+#: svncommitdialog.cpp:88
+#, kde-format
+msgctxt "@label"
+msgid "Description:"
+msgstr "Skildring:"
+
+#: svncommitdialog.cpp:103
+#, kde-format
+msgctxt "@action:button"
+msgid "Refresh"
+msgstr "Oppdater"
+
+#: svncommitdialog.cpp:108
+#, kde-format
+msgctxt "@action:button"
+msgid "Commit"
+msgstr "Meld inn"
+
+#: svncommitdialog.cpp:114
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Revert"
+msgstr "Tilbakestill"
+
+#: svncommitdialog.cpp:121
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show changes"
+msgstr "Vis endringar"
+
+#: svncommitdialog.cpp:128
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Add file"
+msgstr "Legg til fil"
+
+#: svncommitdialog.cpp:156
+#, kde-format
+msgctxt "@title:column"
+msgid "Path"
+msgstr "Adresse"
+
+#: svncommitdialog.cpp:157
+#, kde-format
+msgctxt "@title:column"
+msgid "Status"
+msgstr "Status"
+
+#: svncommitdialog.cpp:210
+#, kde-format
+msgctxt "@item:intable"
+msgid "Unversioned"
+msgstr "Uversjonert"
+
+#: svncommitdialog.cpp:213
+#, kde-format
+msgctxt "@item:intable"
+msgid "Modified"
+msgstr "Endra"
+
+#: svncommitdialog.cpp:216
+#, kde-format
+msgctxt "@item:intable"
+msgid "Added"
+msgstr "Lagd til"
+
+#: svncommitdialog.cpp:219
+#, kde-format
+msgctxt "@item:intable"
+msgid "Deleted"
+msgstr "Sletta"
+
+#: svncommitdialog.cpp:222
+#, kde-format
+msgctxt "@item:intable"
+msgid "Conflict"
+msgstr "Konflikt"
+
+#: svncommitdialog.cpp:225
+#, kde-format
+msgctxt "@item:intable"
+msgid "Missing"
+msgstr "Manglar"
+
+#: svncommitdialog.cpp:228
+#, kde-format
+msgctxt "@item:intable"
+msgid "Update required"
+msgstr "Treng oppdatering"
+
+#: svnlogdialog.cpp:94
+#, kde-format
+msgid "Update to revision"
+msgstr "Oppdater til revisjon"
+
+#: svnlogdialog.cpp:98 svnlogdialog.cpp:116
+#, kde-format
+msgid "Revert to revision"
+msgstr "Tilbakestill til revisjon"
+
+#: svnlogdialog.cpp:102
+#, kde-format
+msgid "Show changes"
+msgstr "Vis endringar"
+
+#: svnlogdialog.cpp:109
+#, kde-format
+msgid "Changes against working copy"
+msgstr "Endringar mot arbeidskopi"
+
+#: svnlogdialog.cpp:271
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: update to revision failed."
+msgstr "SVN-logg: Feil ved oppdatering til revisjon."
+
+#: svnlogdialog.cpp:273
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: update to revision %1 successful."
+msgstr "SVN-logg: Vart oppdatert til revisjon %1."
+
+#: svnlogdialog.cpp:283 svnlogdialog.cpp:294
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: revert to revision failed."
+msgstr "SVN-logg: Feil ved tilbakestilling til revisjon."
+
+#: svnlogdialog.cpp:285 svnlogdialog.cpp:296
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: revert to revision %1 successful."
+msgstr "SVN-logg: Vart tilbakestilt til revisjon %1."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
+#: svnlogdialog.ui:20
+#, kde-format
+msgid "SVN Log"
+msgstr "SVN-logg"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:55
+#, kde-format
+msgid "Revision"
+msgstr "Revisjon"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:60
+#, kde-format
+msgid "Author"
+msgstr "Forfattar"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:65
+#, kde-format
+msgid "Date"
+msgstr "Dato"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:70
+#, kde-format
+msgid "Message"
+msgstr "Melding"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbNext100)
+#: svnlogdialog.ui:104
+#, kde-format
+msgid "Next 100"
+msgstr "Neste 100"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbRefresh)
+#: svnlogdialog.ui:114
+#, kde-format
+msgid "Refresh"
+msgstr "Oppdater"
+
+#: svnprogressdialog.cpp:53
+#, kde-format
+msgctxt "@info:status"
+msgid "Error starting: %1"
+msgstr "Feil ved start: %1"

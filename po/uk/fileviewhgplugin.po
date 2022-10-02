@@ -1,0 +1,1218 @@
+# Translation of fileviewhgplugin.po to Ukrainian
+# Copyright (C) 2011-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2011, 2012, 2015, 2017, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: fileviewhgplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-05 00:47+0000\n"
+"PO-Revision-Date: 2020-12-07 08:40+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.11.70\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: backoutdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Backout"
+msgstr "Відновлення <application>Hg</application>"
+
+#: backoutdialog.cpp:33
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Backout"
+msgstr "Відновити"
+
+#: backoutdialog.cpp:60
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Merge with old dirstate parent after backout"
+msgstr "Виконати об’єднання зі старою основною модифікацією після відновлення"
+
+#: backoutdialog.cpp:62 backoutdialog.cpp:64 bundledialog.cpp:57
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Select Changeset"
+msgstr "Вибрати набір змін"
+
+#: backoutdialog.cpp:68
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Revision to Backout: "
+msgstr "Модифікація для відновлення: "
+
+#: backoutdialog.cpp:73
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Parent Revision (optional): "
+msgstr "Основна модифікація (необов’язкова): "
+
+#: backoutdialog.cpp:139 bundledialog.cpp:189
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Select Changeset"
+msgstr "Вибір набору змін"
+
+#: backoutdialog.cpp:140 bundledialog.cpp:190
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Select"
+msgstr "Вибрати"
+
+#: branchdialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Branch"
+msgstr "Гілка <application>Hg</application>"
+
+#: branchdialog.cpp:37
+#, kde-format
+msgid "Create New Branch"
+msgstr "Створити гілку"
+
+#: branchdialog.cpp:38
+#, kde-format
+msgid "Switch Branch"
+msgstr "Перемкнути гілку"
+
+#: branchdialog.cpp:70
+#, kde-format
+msgid "<b>Current Branch: </b>"
+msgstr "<b>Поточна гілка: </b>"
+
+#: branchdialog.cpp:108 branchdialog.cpp:123 tagdialog.cpp:102
+#: tagdialog.cpp:118 tagdialog.cpp:133
+#, kde-format
+msgid "Some error occurred"
+msgstr "Сталася помилка"
+
+#: bundledialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Bundle"
+msgstr "Пов’язування <application>Hg</application>"
+
+#: bundledialog.cpp:32
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Bundle"
+msgstr "Пов’язати"
+
+#: bundledialog.cpp:59
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Base Revision (optional): "
+msgstr "Основна модифікація (необов’язкова):"
+
+#: bundledialog.cpp:61
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Bundle all changesets in repository."
+msgstr "Пов’язати усі набори змін у сховищі."
+
+#: bundledialog.cpp:76 exportdialog.cpp:55 importdialog.cpp:61
+#: pulldialog.cpp:44 pushdialog.cpp:44
+#, kde-format, kde-kuit-format
+msgctxt "@label:group"
+msgid "Options"
+msgstr "Параметри"
+
+#: bundledialog.cpp:78
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Run even when the destination is unrelated (force)"
+msgstr "Запустити, навіть якщо призначення не пов’язано (у примусовому режимі)"
+
+#: bundledialog.cpp:81 pulldialog.cpp:40 pushdialog.cpp:40
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Do not verify server certificate"
+msgstr "Не перевіряти сертифікат сервера"
+
+#: clonedialog.cpp:33
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Clone"
+msgstr "Клонування <application>Hg</application>"
+
+#: clonedialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clone"
+msgstr "Клонувати"
+
+#: clonedialog.cpp:42
+#, kde-format
+msgid "URLs"
+msgstr "Адреси"
+
+#: clonedialog.cpp:44
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Source"
+msgstr "Джерело"
+
+#: clonedialog.cpp:45
+#, kde-kuit-format
+msgctxt "@lobel"
+msgid "Destination"
+msgstr "Призначення"
+
+#: clonedialog.cpp:46 clonedialog.cpp:47
+#, kde-kuit-format
+msgctxt "@button"
+msgid "Browse"
+msgstr "Вибрати"
+
+#: clonedialog.cpp:59
+#, kde-format
+msgctxt "@label"
+msgid "Options"
+msgstr "Параметри"
+
+#: clonedialog.cpp:62
+#, kde-format
+msgid "Do not update the new working directory."
+msgstr "Не оновлювати створений робочий каталог."
+
+#: clonedialog.cpp:63
+#, kde-format
+msgid "Use pull protocol to copy metadata."
+msgstr "Використовувати протокол отримання для копіювання метаданих"
+
+#: clonedialog.cpp:64
+#, kde-format
+msgid "Use uncompressed transfer."
+msgstr "Використовувати передавання без стискання"
+
+#: clonedialog.cpp:65
+#, kde-format
+msgid "Do not verify server certificate (ignoring web.cacerts config)."
+msgstr ""
+"Не перевіряти сертифікат сервера (пропустити налаштування web.cacerts)."
+
+#: clonedialog.cpp:158
+#, kde-format
+msgid "Terminating cloning!"
+msgstr "Перериваємо клонування."
+
+#: clonedialog.cpp:184
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Закрити"
+
+#: clonedialog.cpp:189
+#, kde-kuit-format
+msgctxt "@message:error"
+msgid "Error Cloning Repository!"
+msgstr "Помилка під час клонування сховища."
+
+#: commitdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Commit"
+msgstr "Внесення <application>Hg</application>"
+
+#: commitdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Commit"
+msgstr "Надіслати"
+
+#: commitdialog.cpp:41
+#, kde-format
+msgid ""
+"The KTextEditor component could not be found;\n"
+"please check your KDE Frameworks installation."
+msgstr ""
+"Не вдалося знайти компонент KTextEditor.\n"
+"Будь ласка, перевірте, чи належним чином встановлено KDE Frameworks."
+
+#: commitdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Commit to current branch"
+msgstr "Внести до поточної гілки"
+
+#: commitdialog.cpp:59
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Create new branch"
+msgstr "Створити гілку"
+
+#: commitdialog.cpp:64
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Close current branch"
+msgstr "Закрити поточну гілку"
+
+#: commitdialog.cpp:86
+#, kde-format
+msgid "Copy Message"
+msgstr "Копіювати повідомлення"
+
+#: commitdialog.cpp:87 updatedialog.cpp:34
+#, kde-format
+msgid "Branch"
+msgstr "Гілка"
+
+#: commitdialog.cpp:108
+#, kde-kuit-format
+msgctxt "@title:group"
+msgid "Commit Message"
+msgstr "Повідомлення щодо внеску"
+
+#: commitdialog.cpp:115
+#, kde-kuit-format
+msgctxt "@title:group"
+msgid "Diff/Content"
+msgstr "Відмінності/Вміст"
+
+#: commitdialog.cpp:218
+#, kde-format
+msgid "Could not create branch! Aborting commit!"
+msgstr "Не вдалося створити гілку. Внесення перервано."
+
+#: commitdialog.cpp:228
+#, kde-format
+msgid "Commit unsuccessful!"
+msgstr "Помилка внесення."
+
+#: commitdialog.cpp:232
+#, kde-format
+msgid "No files for commit!"
+msgstr "Немає файлів для внесення."
+
+#: commitdialog.cpp:259
+#, kde-format
+msgid "Branch: Current Branch"
+msgstr "Гілка: поточна гілка"
+
+#: commitdialog.cpp:266
+#, kde-format
+msgid "Branch: "
+msgstr "Гілка: "
+
+#: commitdialog.cpp:279
+#, kde-format
+msgid "Branch: Close Current"
+msgstr "Гілка: закриття поточної"
+
+#: commitdialog.cpp:292
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Commit: New Branch"
+msgstr "Надсилання <application>Hg</application>: нова гілка"
+
+#: commitdialog.cpp:300
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Enter new branch name"
+msgstr "Введіть назву нової гілки"
+
+#: commitdialog.cpp:321
+#, kde-kuit-format
+msgctxt "@label"
+msgid "<b>Branch already exists!</b>"
+msgstr "<b>Гілка вже існує!</b>"
+
+#: commitdialog.cpp:329
+#, kde-kuit-format
+msgctxt "@label"
+msgid "<b>Enter some text!</b>"
+msgstr "<b>Введіть якесь текстове повідомлення.</b>"
+
+#: commitinfowidget.cpp:38
+#, kde-format
+msgid ""
+"A KDE text-editor component could not be found;\n"
+"please check your KDE installation."
+msgstr ""
+"Не вдалося знайти компонент текстового редактора KDE.\n"
+"Будь ласка, перевірте, чи належним чином встановлено KDE."
+
+#: configdialog.cpp:28
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Repository Configuration"
+msgstr "Налаштування сховища <application>Hg</application>"
+
+#: configdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Global Configuration"
+msgstr "Загальне налаштування <application>Hg</application>"
+
+#: configdialog.cpp:44
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "General Settings"
+msgstr "Загальні параметри"
+
+#: configdialog.cpp:48
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Repository Paths"
+msgstr "Шляхи у сховищі"
+
+#: configdialog.cpp:51
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Ignored Files"
+msgstr "Файли, які ігноруються"
+
+#: configdialog.cpp:55
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Plugin Settings"
+msgstr "Параметри додатків"
+
+#: createdialog.cpp:23
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Initialize Repository"
+msgstr "Започаткування сховища <application>Hg</application>"
+
+#: createdialog.cpp:24
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Initialize Repository"
+msgstr "Започаткувати сховище"
+
+#: createdialog.cpp:59
+#, kde-kuit-format
+msgctxt "error message"
+msgid "Error creating repository!"
+msgstr "Помилка під час спроби створення сховища"
+
+#: exportdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Export"
+msgstr "Експортування <application>Hg</application>"
+
+#: exportdialog.cpp:29
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Export"
+msgstr "Експортувати"
+
+#: exportdialog.cpp:56
+#, kde-format
+msgctxt "@label"
+msgid "Treat all files as text"
+msgstr "Вважати всі файли текстовими"
+
+#: exportdialog.cpp:57
+#, kde-format
+msgctxt "@label"
+msgid "Use Git extended diff format"
+msgstr "Використовувати розширений формат відмінностей Git"
+
+#: exportdialog.cpp:58
+#, kde-format
+msgctxt "@label"
+msgid "Omit dates from diff headers"
+msgstr "Пропускати дати з заголовків відмінностей"
+
+#: exportdialog.cpp:127
+#, kde-format
+msgctxt "@message:error"
+msgid "Please select at least one changeset to be exported!"
+msgstr "Будь ласка, виберіть принаймні один набір змін для експортування."
+
+#: fileviewhgplugin.cpp:95
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Add"
+msgstr "Додавання <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:102
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Remove"
+msgstr "Вилучення <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:109
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Rename"
+msgstr "Перейменування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:116
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Commit"
+msgstr "Внесення <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:123
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Tag"
+msgstr "Мітка <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:130
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Branch"
+msgstr "Гілка <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:137
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Clone"
+msgstr "Клонування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:144
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Init"
+msgstr "Започаткування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:151
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Update"
+msgstr "Оновлення <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:158
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Global Config"
+msgstr "Загальне налаштування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:165
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Repository Config"
+msgstr "Налаштування сховища <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:172
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Push"
+msgstr "Надсилання <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:179
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Pull"
+msgstr "Отримання <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:186
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Revert"
+msgstr "Повернення <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:193
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Revert All"
+msgstr "Повернення всього <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:200
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Rollback"
+msgstr "Відновлення <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:207
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Merge"
+msgstr "Об’єднання <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:214
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Bundle"
+msgstr "Пов’язування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:221
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Export"
+msgstr "Експортування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:228
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Import"
+msgstr "Імпортування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:235
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Unbundle"
+msgstr "Відв’язування <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:242
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Serve"
+msgstr "Сервер <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:249
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Backout"
+msgstr "Відновлення <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:256
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Diff"
+msgstr "Відмінності <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:280
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Mercurial</application>"
+msgstr "<application>Mercurial</application>"
+
+#: fileviewhgplugin.cpp:490
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Adding files to <application>Hg</application> repository..."
+msgstr "Додавання файлів до сховища <application>Hg</application>…"
+
+#: fileviewhgplugin.cpp:492
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Adding files to <application>Hg</application> repository failed."
+msgstr ""
+"Спроба додавання файлів до сховища <application>Hg</application> завершилася "
+"невдало."
+
+#: fileviewhgplugin.cpp:494
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Added files to <application>Hg</application> repository."
+msgstr "Файли додано до сховища <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:506
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to remove selected files from the repository?"
+msgstr "Бажаєте вилучити позначені файли зі сховища?"
+
+#: fileviewhgplugin.cpp:513
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Removing files from <application>Hg</application> repository..."
+msgstr "Вилучення файлів зі сховища <application>Hg</application>…"
+
+#: fileviewhgplugin.cpp:515
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Removing files from <application>Hg</application> repository failed."
+msgstr ""
+"Спроба вилучення файлів зі сховища <application>Hg</application> зазнала "
+"невдачі."
+
+#: fileviewhgplugin.cpp:517
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Removed files from <application>Hg</application> repository."
+msgstr "Файли вилучено зі сховища <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:529
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renaming of file in <application>Hg</application> repository failed."
+msgstr ""
+"Спроба перейменування файла у сховищі <application>Hg</application> зазнала "
+"невдачі."
+
+#: fileviewhgplugin.cpp:531
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renamed file in <application>Hg</application> repository successfully."
+msgstr "Файл у сховищі <application>Hg</application> перейменовано."
+
+#: fileviewhgplugin.cpp:533
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renaming file in <application>Hg</application> repository."
+msgstr "Перейменування файла у сховищі <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:544
+#, kde-kuit-format
+msgctxt "@message"
+msgid "No changes for commit!"
+msgstr "Немає змін для внесення."
+
+#: fileviewhgplugin.cpp:549
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Commit to <application>Hg</application> repository failed."
+msgstr ""
+"Спроба внесення змін до сховища <application>Hg</application> зазнала "
+"невдачі."
+
+#: fileviewhgplugin.cpp:551
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Committed to <application>Hg</application> repository."
+msgstr "Внесено до сховища <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:553
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Commit <application>Hg</application> repository."
+msgstr "Внесення змін до сховища <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:564
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Tag operation in <application>Hg</application> repository failed."
+msgstr ""
+"Спроба виконання дії з міткою у сховищі <application>Hg</application> "
+"зазнала невдачі."
+
+#: fileviewhgplugin.cpp:566
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Tagging operation in <application>Hg</application> repository is successful."
+msgstr "Дію з міткою у сховищі <application>Hg</application> успішно виконано."
+
+#: fileviewhgplugin.cpp:568
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Tagging operation in <application>Hg</application> repository."
+msgstr "Виконується дія з міткою у сховищі <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:577
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Update of <application>Hg</application> working directory failed."
+msgstr ""
+"Спроба оновлення робочого каталогу <application>Hg</application> завершилася "
+"невдало."
+
+#: fileviewhgplugin.cpp:579
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Update of <application>Hg</application> working directory is successful."
+msgstr "Робочий каталог <application>Hg</application> успішно оновлено."
+
+#: fileviewhgplugin.cpp:581
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Updating <application>Hg</application> working directory."
+msgstr "Оновлення робочого каталогу <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:590
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Branch operation on <application>Hg</application> repository failed."
+msgstr ""
+"Спроба виконання дії з гілкою у сховищі <application>Hg</application> "
+"зазнала невдачі."
+
+#: fileviewhgplugin.cpp:592
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Branch operation on <application>Hg</application> repository completed "
+"successfully."
+msgstr "Дію з гілкою у сховищі <application>Hg</application> виконано успішно."
+
+#: fileviewhgplugin.cpp:594
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Branch operation on <application>Hg</application> repository."
+msgstr "Виконання дії з гілкою у сховищі <application>Hg</application>."
+
+#: fileviewhgplugin.cpp:691
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to revert changes made to selected files?"
+msgstr "Бажаєте скасувати внесення змін до позначених файлів?"
+
+#: fileviewhgplugin.cpp:698 fileviewhgplugin.cpp:718
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Reverting files in <application>Hg</application> repository..."
+msgstr "Скасування змін до файлів у сховищі <application>Hg</application>…"
+
+#: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:720
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Reverting files in <application>Hg</application> repository failed."
+msgstr ""
+"Спроба скасування змін до файлів у сховищі <application>Hg</application> "
+"зазнала невдачі."
+
+#: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:722
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Reverting files in <application>Hg</application> repository completed "
+"successfully."
+msgstr ""
+"Скасування змін до файлів у сховищі <application>Hg</application> успішно "
+"завершено."
+
+#: fileviewhgplugin.cpp:711
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to revert all changes made to current working directory?"
+msgstr "Бажаєте скасувати всі зміни, внесені до поточного робочого каталогу?"
+
+#: fileviewhgplugin.cpp:731
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Generating diff for <application>Hg</application> repository..."
+msgstr ""
+"Створення файла відмінностей щодо сховища <application>Hg</application>…"
+
+#: fileviewhgplugin.cpp:733
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not get <application>Hg</application> repository diff."
+msgstr ""
+"Не вдалося отримати файл відмінностей щодо сховища <application>Hg</"
+"application>."
+
+#: fileviewhgplugin.cpp:735
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Generated <application>Hg</application> diff successfully."
+msgstr ""
+"Файл відмінностей щодо сховища <application>Hg</application> успішно "
+"створено."
+
+#: fileviewhgplugin.cpp:765
+#, kde-kuit-format
+msgctxt "@message:error"
+msgid "abort: Uncommitted changes in working directory!"
+msgstr "Дію перервано: у робочому каталозі виявлено невнесені зміни!"
+
+#: fileviewhgplugin.cpp:778
+#, kde-kuit-format
+msgctxt "@info:message"
+msgid "No rollback information available!"
+msgstr "Немає доступ до даних для відновлення."
+
+#: fileviewhgplugin.cpp:789
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to rollback last transaction?"
+msgstr "Бажаєте скасувати останню дію?"
+
+#: fileviewhgplugin.cpp:796
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Executing Rollback <application>Hg</application> repository..."
+msgstr "Виконання відновлення сховища <application>Hg</application>…"
+
+#: fileviewhgplugin.cpp:798
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Rollback of <application>Hg</application> repository failed."
+msgstr ""
+"Спроба відновлення стану сховища <application>Hg</application> зазнала "
+"невдачі."
+
+#: fileviewhgplugin.cpp:800
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Rollback of <application>Hg</application> repository completed successfully."
+msgstr ""
+"Повернення стану сховища <application>Hg</application> успішно завершено."
+
+#. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
+#. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)
+#. i18n: ectx: label, entry (cloneDialogHeight), group (CloneDialogSettings)
+#. i18n: ectx: label, entry (pushDialogBigHeight), group (PushDialogSettings)
+#. i18n: ectx: label, entry (pullDialogBigHeight), group (PullDialogSettings)
+#. i18n: ectx: label, entry (mergeDialogHeight), group (MergeDialogSettings)
+#. i18n: ectx: label, entry (bundleDialogHeight), group (BundleDialogSettings)
+#. i18n: ectx: label, entry (exportDialogHeight), group (ExportDialogSettings)
+#. i18n: ectx: label, entry (importDialogHeight), group (ImportDialogSettings)
+#. i18n: ectx: label, entry (serveDialogHeight), group (ServeDialogSettings)
+#. i18n: ectx: label, entry (backoutDialogHeight), group (BackoutDialogSettings)
+#: fileviewhgpluginsettings.kcfg:7 fileviewhgpluginsettings.kcfg:27
+#: fileviewhgpluginsettings.kcfg:39 fileviewhgpluginsettings.kcfg:49
+#: fileviewhgpluginsettings.kcfg:59 fileviewhgpluginsettings.kcfg:69
+#: fileviewhgpluginsettings.kcfg:79 fileviewhgpluginsettings.kcfg:89
+#: fileviewhgpluginsettings.kcfg:99 fileviewhgpluginsettings.kcfg:109
+#: fileviewhgpluginsettings.kcfg:119
+#, kde-format
+msgid "Dialog height"
+msgstr "Висота вікна"
+
+#. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
+#. i18n: ectx: label, entry (configDialogWidth), group (ConfigDialogSettings)
+#. i18n: ectx: label, entry (cloneDialogWidth), group (CloneDialogSettings)
+#. i18n: ectx: label, entry (pushDialogBigWidth), group (PushDialogSettings)
+#. i18n: ectx: label, entry (pullDialogBigWidth), group (PullDialogSettings)
+#. i18n: ectx: label, entry (mergeDialogWidth), group (MergeDialogSettings)
+#. i18n: ectx: label, entry (bundleDialogWidth), group (BundleDialogSettings)
+#. i18n: ectx: label, entry (exportDialogWidth), group (ExportDialogSettings)
+#. i18n: ectx: label, entry (importDialogWidth), group (ImportDialogSettings)
+#. i18n: ectx: label, entry (serveDialogWidth), group (ServeDialogSettings)
+#. i18n: ectx: label, entry (backoutDialogWidth), group (BackoutDialogSettings)
+#: fileviewhgpluginsettings.kcfg:12 fileviewhgpluginsettings.kcfg:32
+#: fileviewhgpluginsettings.kcfg:43 fileviewhgpluginsettings.kcfg:53
+#: fileviewhgpluginsettings.kcfg:63 fileviewhgpluginsettings.kcfg:73
+#: fileviewhgpluginsettings.kcfg:83 fileviewhgpluginsettings.kcfg:93
+#: fileviewhgpluginsettings.kcfg:103 fileviewhgpluginsettings.kcfg:113
+#: fileviewhgpluginsettings.kcfg:123
+#, kde-format
+msgid "Dialog width"
+msgstr "Ширина вікна"
+
+#. i18n: ectx: label, entry (verticalSplitterSizes), group (CommitDialogSettings)
+#: fileviewhgpluginsettings.kcfg:17
+#, kde-format
+msgid "Divides file list and editors with commit details"
+msgstr "Поділях список файлів і поля редагування із подробицями щодо внесків"
+
+#. i18n: ectx: label, entry (horizontalSplitterSizes), group (CommitDialogSettings)
+#: fileviewhgpluginsettings.kcfg:21
+#, kde-format
+msgid "Divides commit editor and diff editor"
+msgstr "Поділяє редактор внесків і редактор різниці"
+
+#: importdialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Import"
+msgstr "Імпортування <application>Hg</application>"
+
+#: importdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Імпортувати"
+
+#: importdialog.cpp:63
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Do not commit, just update the working directory"
+msgstr "Не вносити, просто оновити робочий каталог"
+
+#: importdialog.cpp:65
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Skip test for outstanding uncommitted changes"
+msgstr "Пропустити тестування для значних не внесених змін"
+
+#: importdialog.cpp:67
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Apply patch to the nodes from which it was generated"
+msgstr "Застосувати латку до вузлів, на основі яких її було створено"
+
+#: importdialog.cpp:69
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Apply patch without touching working directory"
+msgstr "Застосувати латку без внесення змін до робочого каталогу"
+
+#: importdialog.cpp:81
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Add Patches"
+msgstr "Додати латки"
+
+#: importdialog.cpp:83
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Remove Patches"
+msgstr "Вилучити латки"
+
+#: mergedialog.cpp:27
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Merge"
+msgstr "Об’єднання <application>Hg</application>"
+
+#: mergedialog.cpp:28
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Merge"
+msgstr "Об’єднати"
+
+#: mergedialog.cpp:108
+#, kde-kuit-format
+msgctxt "@message"
+msgid "No head selected for merge!"
+msgstr "Не вибрано основи для об’єднання."
+
+#: pathselector.cpp:60
+#, kde-kuit-format
+msgctxt "@label:combobox"
+msgid "edit"
+msgstr "редагування"
+
+#: pulldialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Pull Repository"
+msgstr "Отримання сховища <application>Hg</application>"
+
+#: pulldialog.cpp:38
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Update to new branch head if changesets were pulled"
+msgstr "Оновитися до основи нової гілки, якщо було отримано набори"
+
+#: pulldialog.cpp:42
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Force Pull"
+msgstr "Примусове отримання"
+
+#: pulldialog.cpp:54
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Incoming Changes"
+msgstr "Вхідні зміни"
+
+#: pulldialog.cpp:148
+#, kde-kuit-format
+msgctxt "@message:info"
+msgid "No incoming changes!"
+msgstr "Немає вхідних змін."
+
+#: pushdialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Push Repository"
+msgstr "Надсилання до сховища <application>Hg</application>"
+
+#: pushdialog.cpp:38
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Allow pushing a new branch"
+msgstr "Дозволити надсилання нової гілки"
+
+#: pushdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Force Push"
+msgstr "Примусове надсилання"
+
+#: pushdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Outgoing Changes"
+msgstr "Вихідні зміни"
+
+#: pushdialog.cpp:169
+#, kde-kuit-format
+msgctxt "@message:info"
+msgid "No outgoing changes!"
+msgstr "Не виявлено вихідних змін!"
+
+#: renamedialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Rename"
+msgstr "Перейменування <application>Hg</application>"
+
+#: renamedialog.cpp:27
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rename"
+msgstr "Перейменувати"
+
+#: renamedialog.cpp:33
+#, kde-kuit-format
+msgctxt "@label:label to source file"
+msgid "Source "
+msgstr "Початковий "
+
+#: renamedialog.cpp:39
+#, kde-kuit-format
+msgctxt "@label:rename"
+msgid "Rename to "
+msgstr "Перейменувати на "
+
+#: servedialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Serve"
+msgstr "Сервер <application>Hg</application>"
+
+#: servedialog.cpp:63
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Start Server"
+msgstr "Запустити сервер"
+
+#: servedialog.cpp:64
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Stop Server"
+msgstr "Зупинити сервер"
+
+#: servedialog.cpp:65
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Open in browser"
+msgstr "Відкрити у переглядачі"
+
+#: servedialog.cpp:81
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Port"
+msgstr "Порт"
+
+#: servewrapper.cpp:68
+#, kde-format
+msgid "## Starting Server ##"
+msgstr "## Запускається сервер ##"
+
+#: servewrapper.h:151
+#, kde-format
+msgid "## Server Stopped! ##\n"
+msgstr "## Роботу сервера припинено! ##\n"
+
+#: statuslist.cpp:28
+#, kde-format
+msgid "Filename"
+msgstr "Назва файла"
+
+#: statuslist.cpp:37
+#, kde-format
+msgctxt "@title:group"
+msgid "File Status"
+msgstr "Стан файла"
+
+#: syncdialogbase.cpp:82
+#, kde-format
+msgctxt "@label:button"
+msgid "Show Incoming Changes"
+msgstr "Показати вхідні зміни"
+
+#: syncdialogbase.cpp:86
+#, kde-format
+msgctxt "@label:button"
+msgid "Show Outgoing Changes"
+msgstr "Показати вихідні зміни"
+
+#: syncdialogbase.cpp:121
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Pull"
+msgstr "Отримати"
+
+#: syncdialogbase.cpp:163
+#, kde-format
+msgctxt "@message"
+msgid "No changes found!"
+msgstr "Змін не виявлено!"
+
+#: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
+#, kde-format
+msgid "Error!"
+msgstr "Помилка!"
+
+#: syncdialogbase.cpp:330
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Options"
+msgstr "Параметри"
+
+#: tagdialog.cpp:20
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Tag"
+msgstr "Мітка <application>Hg</application>"
+
+#: tagdialog.cpp:30
+#, kde-format
+msgid "Create New Tag"
+msgstr "Створити мітку"
+
+#: tagdialog.cpp:31
+#, kde-format
+msgid "Remove Tag"
+msgstr "Вилучити мітку"
+
+#: tagdialog.cpp:32
+#, kde-format
+msgid "Switch Tag"
+msgstr "Перемкнути мітку"
+
+#: tagdialog.cpp:129
+#, kde-format
+msgid "Created tag successfully!"
+msgstr "Мітку успішно створено."
+
+#: updatedialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Update"
+msgstr "Оновлення <application>Hg</application>"
+
+#: updatedialog.cpp:27
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Update"
+msgstr "Оновити"
+
+#: updatedialog.cpp:30
+#, kde-format
+msgid "New working directory"
+msgstr "Новий робочий каталог"
+
+#: updatedialog.cpp:35
+#, kde-format
+msgid "Tag"
+msgstr "Мітка"
+
+#: updatedialog.cpp:36
+#, kde-format
+msgid "Changeset/Revision"
+msgstr "Набір змін/Модифікація"
+
+#: updatedialog.cpp:41
+#, kde-format
+msgid "Current Parent"
+msgstr "Поточна основна гілка"
+
+#: updatedialog.cpp:47
+#, kde-format
+msgid "Options"
+msgstr "Параметри"
+
+#: updatedialog.cpp:49
+#, kde-format
+msgid "Discard uncommitted changes"
+msgstr "Відкинути незаписані зміни"
+
+#: updatedialog.cpp:126
+#, kde-format
+msgid ""
+"Some error occurred! \n"
+"Maybe there are uncommitted changes."
+msgstr ""
+"Сталася помилка! \n"
+"Можливо, зміни не внесено."
+
+#~ msgctxt "@action:button"
+#~ msgid "Push"
+#~ msgstr "Надіслати"
+
+#~ msgctxt "@info:status"
+#~ msgid "Commit to <application>Hg</application> repository successfull."
+#~ msgstr "Зміни успішно внесено до сховища <application>Hg</application>."

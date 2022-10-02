@@ -1,0 +1,210 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marek Laane <bald@smail.ee>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-12 00:49+0000\n"
+"PO-Revision-Date: 2011-12-22 05:14+0200\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: fileviewbazaarplugin.cpp:49
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Update"
+msgstr "Bazaari uuendus"
+
+#: fileviewbazaarplugin.cpp:55
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Pull"
+msgstr "Bazaari tõmbamine"
+
+#: fileviewbazaarplugin.cpp:61
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Push"
+msgstr "Bazaari üleslükkamine"
+
+#: fileviewbazaarplugin.cpp:67
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show Local Bazaar Changes"
+msgstr "Näita kohalikke Bazaari muudatusi"
+
+#: fileviewbazaarplugin.cpp:73
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Commit..."
+msgstr "Bazaari sissekandmine..."
+
+#: fileviewbazaarplugin.cpp:79
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Add..."
+msgstr "Bazaari lisamine..."
+
+#: fileviewbazaarplugin.cpp:85
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Delete"
+msgstr "Bazaari kustutamine"
+
+#: fileviewbazaarplugin.cpp:91
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Log"
+msgstr "Bazaari logi"
+
+#: fileviewbazaarplugin.cpp:355
+#, kde-format
+msgctxt "@info:status"
+msgid "Updating Bazaar repository..."
+msgstr "Bazaari hoidla uuendamine..."
+
+#: fileviewbazaarplugin.cpp:356
+#, kde-format
+msgctxt "@info:status"
+msgid "Update of Bazaar repository failed."
+msgstr "Bazaari hoidla uuendamine nurjus."
+
+#: fileviewbazaarplugin.cpp:357
+#, kde-format
+msgctxt "@info:status"
+msgid "Updated Bazaar repository."
+msgstr "Bazaari hoidla on uuendatud."
+
+#: fileviewbazaarplugin.cpp:365
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulling Bazaar repository..."
+msgstr "Bazaari hoidla tõmbamine..."
+
+#: fileviewbazaarplugin.cpp:366
+#, kde-format
+msgctxt "@info:status"
+msgid "Pull of Bazaar repository failed."
+msgstr "Bazaari hoidla tõmbamine nurjus."
+
+#: fileviewbazaarplugin.cpp:367
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulled Bazaar repository."
+msgstr "Bazaari hoidla on tõmmatud."
+
+#: fileviewbazaarplugin.cpp:375
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushing Bazaar repository..."
+msgstr "Bazaari hoidla üleslükkamine..."
+
+#: fileviewbazaarplugin.cpp:376
+#, kde-format
+msgctxt "@info:status"
+msgid "Push of Bazaar repository failed."
+msgstr "Bazaari hoidla üleslükkamine nurjus."
+
+#: fileviewbazaarplugin.cpp:377
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushed Bazaar repository."
+msgstr "Bazaari hoidla on üles lükatud."
+
+#: fileviewbazaarplugin.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewing Changes..."
+msgstr "Muudatuste vaatamine..."
+
+#: fileviewbazaarplugin.cpp:384
+#, kde-format
+msgctxt "@info:status"
+msgid "Review Changes failed."
+msgstr "Muudatuste ülevaatamine nurjus."
+
+#: fileviewbazaarplugin.cpp:385
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewed Changes."
+msgstr "Muudatused on üle vaadatud."
+
+#: fileviewbazaarplugin.cpp:391
+#, kde-format
+msgctxt "@info:status"
+msgid "Committing Bazaar changes..."
+msgstr "Bazaari muudatuste sissekandmine..."
+
+#: fileviewbazaarplugin.cpp:392
+#, kde-format
+msgctxt "@info:status"
+msgid "Commit of Bazaar changes failed."
+msgstr "Bazaari muudatuste sissekandmine nurjus."
+
+#: fileviewbazaarplugin.cpp:393
+#, kde-format
+msgctxt "@info:status"
+msgid "Committed Bazaar changes."
+msgstr "Bazaari muudatused kanti sisse."
+
+#: fileviewbazaarplugin.cpp:399
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding files to Bazaar repository..."
+msgstr "Failide lisamine Bazaari hoidlasse..."
+
+#: fileviewbazaarplugin.cpp:400
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding of files to Bazaar repository failed."
+msgstr "Failide lisamine Bazaari hoidlasse nurjus."
+
+#: fileviewbazaarplugin.cpp:401
+#, kde-format
+msgctxt "@info:status"
+msgid "Added files to Bazaar repository."
+msgstr "Failid lisati Bazaari hoidlasse."
+
+#: fileviewbazaarplugin.cpp:407
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing files from Bazaar repository..."
+msgstr "Failide eemaldamine Bazaari hoidlast..."
+
+#: fileviewbazaarplugin.cpp:408
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing of files from Bazaar repository failed."
+msgstr "Failide eemaldamine Bazaari hoidlast nurjus."
+
+#: fileviewbazaarplugin.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Removed files from Bazaar repository."
+msgstr "Failid eemaldati Bazaari hoidlast."
+
+#: fileviewbazaarplugin.cpp:415
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log..."
+msgstr "Bazaari logi käivitamine..."
+
+#: fileviewbazaarplugin.cpp:416
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log failed."
+msgstr "Bazaari logi käivitamine nurjus."
+
+#: fileviewbazaarplugin.cpp:417
+#, kde-format
+msgctxt "@info:status"
+msgid "Bazaar Log closed."
+msgstr "Bazaari logi on suletud."

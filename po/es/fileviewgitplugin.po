@@ -1,0 +1,537 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2011, 2012, 2015, 2016, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-05 00:47+0000\n"
+"PO-Revision-Date: 2018-03-03 21:20+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: checkoutdialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Checkout"
+msgstr "Descarga <application>Git</application>"
+
+#: checkoutdialog.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Checkout"
+msgstr "Descargar"
+
+#: checkoutdialog.cpp:54
+#, kde-format
+msgctxt "@option:radio Git Checkout"
+msgid "Branch:"
+msgstr "Rama:"
+
+#: checkoutdialog.cpp:61
+#, kde-format
+msgctxt "@option:radio Git Checkout"
+msgid "Tag:"
+msgstr "Etiqueta:"
+
+#: checkoutdialog.cpp:71 pushdialog.cpp:80
+#, kde-format
+msgctxt "@title:group"
+msgid "Options"
+msgstr "Opciones"
+
+#: checkoutdialog.cpp:76
+#, kde-format
+msgctxt "@option:check"
+msgid "Create New Branch: "
+msgstr "Crear nueva rama: "
+
+#: checkoutdialog.cpp:77
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new branch based on a selected branch or tag."
+msgstr "Crear una nueva rama basada en una rama o etiqueta seleccionada."
+
+#: checkoutdialog.cpp:92 pushdialog.cpp:83
+#, kde-format
+msgctxt "@option:check"
+msgid "Force"
+msgstr "Forzar"
+
+#: checkoutdialog.cpp:93
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Discard local changes."
+msgstr "Descartar los cambios locales."
+
+#: checkoutdialog.cpp:125
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "There are no tags in this repository."
+msgstr "No existen etiquetas en este repositorio."
+
+#: checkoutdialog.cpp:185
+#, kde-format
+msgctxt "@title:group"
+msgid "Branch Base"
+msgstr "Rama base"
+
+#: checkoutdialog.cpp:186
+#, kde-format
+msgctxt "@title:group"
+msgid "Checkout"
+msgstr "Descargar"
+
+#: checkoutdialog.cpp:206
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a valid name for the new branch first."
+msgstr "Primero debe introducir un nombre válido para la nueva rama."
+
+#: checkoutdialog.cpp:213
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "A branch with the name '%1' already exists."
+msgstr "Ya existe una rama con el nombre «%1»."
+
+#: checkoutdialog.cpp:220
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Branch names may not contain any whitespace."
+msgstr "Los nombres de las ramas no deben contener espacios."
+
+#: checkoutdialog.cpp:227
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must select a valid branch first."
+msgstr "Primero debe seleccionar una rama válida."
+
+#: checkoutdialog.cpp:248
+#, kde-format
+msgctxt ""
+"@item:intext Prepended to the current branch name to get the default name "
+"for a newly created branch"
+msgid "branch"
+msgstr "rama"
+
+#: commitdialog.cpp:26
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Commit"
+msgstr "Envío <application>Git</application>"
+
+#: commitdialog.cpp:37
+#, kde-format
+msgctxt "@action:button"
+msgid "Commit"
+msgstr "Enviar"
+
+#: commitdialog.cpp:46
+#, kde-format
+msgctxt "@title:group"
+msgid "Commit message"
+msgstr "Mensaje de envío"
+
+#: commitdialog.cpp:63
+#, kde-format
+msgctxt "@option:check"
+msgid "Amend last commit"
+msgstr "Corregir el último envío"
+
+#: commitdialog.cpp:69
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "There is nothing to amend."
+msgstr "No hay nada que corregir."
+
+#: commitdialog.cpp:76
+#, kde-format
+msgctxt "@action:button Add Signed-Off line to the message widget"
+msgid "Sign off"
+msgstr "Firmar"
+
+#: commitdialog.cpp:77
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add Signed-off-by line at the end of the commit message."
+msgstr "Añadir una línea de firma al final del mensaje de envío."
+
+#: commitdialog.cpp:134
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a commit message first."
+msgstr "Primero debe introducir un mensaje de envío."
+
+#: fileviewgitplugin.cpp:49
+#, kde-kuit-format
+msgid "<application>Git</application> Revert"
+msgstr "Reversión <application>Git</application>"
+
+#: fileviewgitplugin.cpp:55
+#, kde-kuit-format
+msgid "<application>Git</application> Add"
+msgstr "Adición <application>Git</application>"
+
+#: fileviewgitplugin.cpp:61
+#, kde-kuit-format
+msgid "Show Local <application>Git</application> Changes"
+msgstr "Muestra los cambios <application>Git</application> locales"
+
+#: fileviewgitplugin.cpp:67
+#, kde-kuit-format
+msgid "<application>Git</application> Remove"
+msgstr "Eliminación <application>Git</application>"
+
+#: fileviewgitplugin.cpp:73
+#, kde-kuit-format
+msgid "<application>Git</application> Checkout..."
+msgstr "Descarga <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:79
+#, kde-kuit-format
+msgid "<application>Git</application> Commit..."
+msgstr "Envío <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:85
+#, kde-kuit-format
+msgid "<application>Git</application> Create Tag..."
+msgstr "Creación de etiqueta <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:90
+#, kde-kuit-format
+msgid "<application>Git</application> Push..."
+msgstr "Incorporación <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:95
+#, kde-kuit-format
+msgid "<application>Git</application> Pull..."
+msgstr "Extracción <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:100
+#, kde-kuit-format
+msgid "<application>Git</application> Merge..."
+msgstr "Fusión <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:104
+#, kde-kuit-format
+msgid "<application>Git</application> Log..."
+msgstr "Registro <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:414
+#, kde-kuit-format
+msgid "Adding files to <application>Git</application> repository..."
+msgstr "Añadir archivos al repositorio <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:415
+#, kde-kuit-format
+msgid "Adding files to <application>Git</application> repository failed."
+msgstr ""
+"Fallo al añadir archivos al repositorio <application>Git</application>."
+
+#: fileviewgitplugin.cpp:416
+#, kde-kuit-format
+msgid "Added files to <application>Git</application> repository."
+msgstr "Archivos añadidos al repositorio <application>Git</application>."
+
+#: fileviewgitplugin.cpp:425
+#, kde-kuit-format
+msgid "Removing files from <application>Git</application> repository..."
+msgstr "Eliminando archivos del repositorio <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:426
+#, kde-kuit-format
+msgid "Removing files from <application>Git</application> repository failed."
+msgstr ""
+"Fallo al eliminar archivos del repositorio <application>Git</application>."
+
+#: fileviewgitplugin.cpp:427
+#, kde-kuit-format
+msgid "Removed files from <application>Git</application> repository."
+msgstr "Archivos eliminados del repositorio <application>Git</application>."
+
+#: fileviewgitplugin.cpp:433
+#, kde-kuit-format
+msgid "Reverting files from <application>Git</application> repository..."
+msgstr "Revirtiendo archivos del repositorio <application>Git</application>..."
+
+#: fileviewgitplugin.cpp:434
+#, kde-kuit-format
+msgid "Reverting files from <application>Git</application> repository failed."
+msgstr ""
+"Fallo al revertir archivos del repositorio <application>Git</application>."
+
+#: fileviewgitplugin.cpp:435
+#, kde-kuit-format
+msgid "Reverted files from <application>Git</application> repository."
+msgstr "Archivos revertidos del repositorio <application>Git</application>."
+
+#: fileviewgitplugin.cpp:477
+#, kde-kuit-format
+msgid "<application>Git</application> Log failed."
+msgstr "Ha fallado el registro <application>Git</application>."
+
+#: fileviewgitplugin.cpp:500
+#, kde-kuit-format
+msgid "<application>Git</application> Log"
+msgstr "Registro <application>Git</application>"
+
+#: fileviewgitplugin.cpp:516
+#, kde-format
+msgctxt "Git commit hash"
+msgid "Commit"
+msgstr "Enviar"
+
+#: fileviewgitplugin.cpp:517
+#, kde-format
+msgctxt "Git commit date"
+msgid "Date"
+msgstr "Fecha"
+
+#: fileviewgitplugin.cpp:518
+#, kde-format
+msgctxt "Git commit message"
+msgid "Message"
+msgstr "Mensaje"
+
+#: fileviewgitplugin.cpp:519
+#, kde-format
+msgctxt "Git commit author"
+msgid "Author"
+msgstr "Autor"
+
+#: fileviewgitplugin.cpp:563
+#, kde-kuit-format
+msgid "Switched to branch '%1'"
+msgstr "Se ha cambiado a la rama «%1»"
+
+#: fileviewgitplugin.cpp:569
+#, kde-kuit-format
+msgid "HEAD is now at %1"
+msgstr "HEAD está ahora en %1"
+
+#: fileviewgitplugin.cpp:573
+#, kde-kuit-format
+msgid "Switched to a new branch '%1'"
+msgstr "Se ha cambiado a la nueva rama «%1»"
+
+#: fileviewgitplugin.cpp:584
+#, kde-kuit-format
+msgid ""
+"<application>Git</application> Checkout failed. Maybe your working directory "
+"is dirty."
+msgstr ""
+"Ha fallado la descarga <application>Git</application>. Es posible que su "
+"directorio de trabajo contenga modificaciones."
+
+#: fileviewgitplugin.cpp:648
+#, kde-kuit-format
+msgid "Successfully created tag '%1'"
+msgstr "La etiqueta «%1» se ha creado con éxito"
+
+#: fileviewgitplugin.cpp:653
+#, kde-kuit-format
+msgid ""
+"<application>Git</application> tag creation failed. A tag with the name '%1' "
+"already exists."
+msgstr ""
+"Ha fallado la creación de etiqueta <application>Git</application>. Ya existe "
+"una etiqueta con el nombre «%1»."
+
+#: fileviewgitplugin.cpp:655
+#, kde-kuit-format
+msgid "<application>Git</application> tag creation failed."
+msgstr "Ha fallado la creación de etiqueta <application>Git</application>."
+
+#: fileviewgitplugin.cpp:667
+#, kde-kuit-format
+msgid "Pushing branch %1 to %2:%3 failed."
+msgstr "Ha fallado la incorporación de la rama %1 a %2:%3."
+
+#: fileviewgitplugin.cpp:669
+#, kde-kuit-format
+msgid "Pushed branch %1 to %2:%3."
+msgstr "Se ha incorporado la rama %1 a %2:%3."
+
+#: fileviewgitplugin.cpp:671
+#, kde-kuit-format
+msgid "Pushing branch %1 to %2:%3..."
+msgstr "Incorporando la rama %1 a %2:%3..."
+
+#: fileviewgitplugin.cpp:693
+#, kde-kuit-format
+msgid "Pulling branch %1 from %2 failed."
+msgstr "Ha fallado la extracción de la rama %1 de %2."
+
+#: fileviewgitplugin.cpp:695
+#, kde-kuit-format
+msgid "Pulled branch %1 from %2 successfully."
+msgstr "Se ha extraído con éxito la rama %1 de %2."
+
+#: fileviewgitplugin.cpp:697
+#, kde-kuit-format
+msgid "Pulling branch %1 from %2..."
+msgstr "Extrayendo la rama %1 de %2..."
+
+#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
+#, kde-kuit-format
+msgid "Branch is already up-to-date."
+msgstr "La rama ya está actualizada."
+
+#: fileviewgitplugin.cpp:766
+#, kde-kuit-format
+msgid "Merge conflicts occurred. Fix them and commit the result."
+msgstr ""
+"Han ocurrido conflictos durante la fusión. Soluciónelos y envíe el resultado."
+
+#. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
+#: fileviewgitpluginsettings.kcfg:7
+#, kde-format
+msgid "Dialog height"
+msgstr "Altura del diálogo"
+
+#. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
+#: fileviewgitpluginsettings.kcfg:12
+#, kde-format
+msgid "Dialog width"
+msgstr "Ancho del diálogo"
+
+#: pulldialog.cpp:24
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Pull"
+msgstr "Extracción <application>Git</application>"
+
+#: pulldialog.cpp:35
+#, kde-format
+msgctxt "@action:button"
+msgid "Pull"
+msgstr "Extraer"
+
+#: pulldialog.cpp:44
+#, kde-format
+msgctxt "@title:group The source to pull from"
+msgid "Source"
+msgstr "Origen"
+
+#: pulldialog.cpp:50 pushdialog.cpp:51
+#, kde-format
+msgctxt "@label:listbox a git remote"
+msgid "Remote:"
+msgstr "Remoto:"
+
+#: pulldialog.cpp:55
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Remote branch:"
+msgstr "Rama remota:"
+
+#: pushdialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Push"
+msgstr "Incorporación <application>Git</application>"
+
+#: pushdialog.cpp:37
+#, kde-format
+msgctxt "@action:button"
+msgid "Push"
+msgstr "Incorporar"
+
+#: pushdialog.cpp:47
+#, kde-format
+msgctxt "@title:group The remote host"
+msgid "Destination"
+msgstr "Destino"
+
+#: pushdialog.cpp:61
+#, kde-format
+msgctxt "@title:group"
+msgid "Branches"
+msgstr "Ramas"
+
+#: pushdialog.cpp:65
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Local Branch:"
+msgstr "Rama local:"
+
+#: pushdialog.cpp:72
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Remote Branch:"
+msgstr "Rama remota:"
+
+#: pushdialog.cpp:84
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Proceed even if the remote branch is not an ancestor of the local branch."
+msgstr ""
+"Proceder incluso si la rama remota no es un ascendente de la rama local."
+
+#: tagdialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Create Tag"
+msgstr "Creación de etiqueta <application>Git</application>"
+
+#: tagdialog.cpp:42
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Tag"
+msgstr "Crear etiqueta"
+
+#: tagdialog.cpp:51
+#, kde-format
+msgctxt "@title:group"
+msgid "Tag Information"
+msgstr "Información de la etiqueta"
+
+#: tagdialog.cpp:55
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tag Name:"
+msgstr "Nombre de la etiqueta:"
+
+#: tagdialog.cpp:63
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tag Message:"
+msgstr "Mensaje de la etiqueta:"
+
+#: tagdialog.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "Attach to"
+msgstr "Adjuntar a"
+
+#: tagdialog.cpp:81
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Branch:"
+msgstr "Rama:"
+
+#: tagdialog.cpp:127
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a tag name first."
+msgstr "Primero debe introducir un nombre de etiqueta."
+
+#: tagdialog.cpp:130
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Tag names may not contain any whitespace."
+msgstr "Los nombres de las etiquetas no deben contener espacios."
+
+#: tagdialog.cpp:133
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "A tag named '%1' already exists."
+msgstr "Ya existe una etiqueta con el nombre «%1»."

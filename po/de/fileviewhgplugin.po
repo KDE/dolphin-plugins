@@ -1,0 +1,1227 @@
+# Frederik Schwarzer <schwarzer@kde.org>, 2011, 2012, 2015, 2016.
+# Panagiotis Papadopoulos <pano_90@gmx.net>, 2011.
+# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2011.
+# Burkhard Lück <lueck@hube-lueck.de>, 2012, 2013, 2015, 2017, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: fileviewhgplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-05 00:47+0000\n"
+"PO-Revision-Date: 2021-04-18 12:51+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: backoutdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Backout"
+msgstr "<application>Hg</application> Rückgängig machen"
+
+#: backoutdialog.cpp:33
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Backout"
+msgstr "Rückgängig machen (backout)"
+
+#: backoutdialog.cpp:60
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Merge with old dirstate parent after backout"
+msgstr ""
+"Nach dem Rückgängig machen (backout) mit dem vorherigen Zustand "
+"zusammenführen."
+
+#: backoutdialog.cpp:62 backoutdialog.cpp:64 bundledialog.cpp:57
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Select Changeset"
+msgstr "Änderungssatz auswählen"
+
+#: backoutdialog.cpp:68
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Revision to Backout: "
+msgstr "Rückgängig zu machende Revision (backout):"
+
+#: backoutdialog.cpp:73
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Parent Revision (optional): "
+msgstr "Elternrevision (optional): "
+
+#: backoutdialog.cpp:139 bundledialog.cpp:189
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Select Changeset"
+msgstr "Änderungssatz auswählen"
+
+#: backoutdialog.cpp:140 bundledialog.cpp:190
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Select"
+msgstr "Auswählen"
+
+#: branchdialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Branch"
+msgstr "<application>Hg</application> Zweig"
+
+#: branchdialog.cpp:37
+#, kde-format
+msgid "Create New Branch"
+msgstr "Neuen Zweig anlegen"
+
+#: branchdialog.cpp:38
+#, kde-format
+msgid "Switch Branch"
+msgstr "Zu anderem Zweig wechseln"
+
+#: branchdialog.cpp:70
+#, kde-format
+msgid "<b>Current Branch: </b>"
+msgstr "<b>Aktueller Zweig: </b>"
+
+#: branchdialog.cpp:108 branchdialog.cpp:123 tagdialog.cpp:102
+#: tagdialog.cpp:118 tagdialog.cpp:133
+#, kde-format
+msgid "Some error occurred"
+msgstr "Es ist ein Fehler aufgetreten"
+
+#: bundledialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Bundle"
+msgstr "<application>Hg</application> Bündel"
+
+#: bundledialog.cpp:32
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Bundle"
+msgstr "Bündeln"
+
+#: bundledialog.cpp:59
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Base Revision (optional): "
+msgstr "Basisrevision (optional): "
+
+#: bundledialog.cpp:61
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Bundle all changesets in repository."
+msgstr "Alle Änderungssätze des Projektarchivs bündeln."
+
+#: bundledialog.cpp:76 exportdialog.cpp:55 importdialog.cpp:61
+#: pulldialog.cpp:44 pushdialog.cpp:44
+#, kde-format, kde-kuit-format
+msgctxt "@label:group"
+msgid "Options"
+msgstr "Einstellungen"
+
+#: bundledialog.cpp:78
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Run even when the destination is unrelated (force)"
+msgstr "Auch ausführen, wenn das Ziel keinen Bezug hat (erzwingen)"
+
+#: bundledialog.cpp:81 pulldialog.cpp:40 pushdialog.cpp:40
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Do not verify server certificate"
+msgstr "Das Server-Zertifikat nicht prüfen"
+
+#: clonedialog.cpp:33
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Clone"
+msgstr "<application>Hg</application> Klonen"
+
+#: clonedialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clone"
+msgstr "Klonen"
+
+#: clonedialog.cpp:42
+#, kde-format
+msgid "URLs"
+msgstr "Adressen"
+
+#: clonedialog.cpp:44
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Source"
+msgstr "Quelle"
+
+#: clonedialog.cpp:45
+#, kde-kuit-format
+msgctxt "@lobel"
+msgid "Destination"
+msgstr "Ziel"
+
+#: clonedialog.cpp:46 clonedialog.cpp:47
+#, kde-kuit-format
+msgctxt "@button"
+msgid "Browse"
+msgstr "Durchsuchen"
+
+#: clonedialog.cpp:59
+#, kde-format
+msgctxt "@label"
+msgid "Options"
+msgstr "Einstellungen"
+
+#: clonedialog.cpp:62
+#, kde-format
+msgid "Do not update the new working directory."
+msgstr "Den neuen Arbeitsordner nicht aktualisieren."
+
+#: clonedialog.cpp:63
+#, kde-format
+msgid "Use pull protocol to copy metadata."
+msgstr "Abgleich-Protokoll (pull) zum Kopieren von Metadaten verwenden"
+
+#: clonedialog.cpp:64
+#, kde-format
+msgid "Use uncompressed transfer."
+msgstr "Unkomprimiert übertragen."
+
+#: clonedialog.cpp:65
+#, kde-format
+msgid "Do not verify server certificate (ignoring web.cacerts config)."
+msgstr ""
+"Das Server-Zertifikat nicht prüfen (web.cacerts-Konfiguration wird "
+"ignoriert)."
+
+#: clonedialog.cpp:158
+#, kde-format
+msgid "Terminating cloning!"
+msgstr "Klonen wird abgebrochen."
+
+#: clonedialog.cpp:184
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Schließen"
+
+#: clonedialog.cpp:189
+#, kde-kuit-format
+msgctxt "@message:error"
+msgid "Error Cloning Repository!"
+msgstr "Fehler beim Klonen des Archivs."
+
+#: commitdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Commit"
+msgstr "<application>Hg</application> Einspielen"
+
+#: commitdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Commit"
+msgstr "Einspielen"
+
+#: commitdialog.cpp:41
+#, kde-format
+msgid ""
+"The KTextEditor component could not be found;\n"
+"please check your KDE Frameworks installation."
+msgstr ""
+"Es kann keine KTextEditor-Komponente gefunden werden.\n"
+"Überprüfen Sie Ihre KDE-Frameworks-Installation. "
+
+#: commitdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Commit to current branch"
+msgstr "In aktuellen Zweig einspielen"
+
+#: commitdialog.cpp:59
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Create new branch"
+msgstr "Neuen Zweig anlegen"
+
+#: commitdialog.cpp:64
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Close current branch"
+msgstr "Aktuellen Zweig schließen"
+
+#: commitdialog.cpp:86
+#, kde-format
+msgid "Copy Message"
+msgstr "Nachricht kopieren"
+
+#: commitdialog.cpp:87 updatedialog.cpp:34
+#, kde-format
+msgid "Branch"
+msgstr "Zweig"
+
+#: commitdialog.cpp:108
+#, kde-kuit-format
+msgctxt "@title:group"
+msgid "Commit Message"
+msgstr "Einspielen-Nachricht"
+
+#: commitdialog.cpp:115
+#, kde-kuit-format
+msgctxt "@title:group"
+msgid "Diff/Content"
+msgstr "Diff/Inhalt"
+
+#: commitdialog.cpp:218
+#, kde-format
+msgid "Could not create branch! Aborting commit!"
+msgstr "Der Zweig kann nicht angelegt werden. Das Einspielen wird abgebrochen."
+
+#: commitdialog.cpp:228
+#, kde-format
+msgid "Commit unsuccessful!"
+msgstr "Einspielen ist fehlgeschlagen."
+
+#: commitdialog.cpp:232
+#, kde-format
+msgid "No files for commit!"
+msgstr "Keine Dateien zum Einspielen."
+
+#: commitdialog.cpp:259
+#, kde-format
+msgid "Branch: Current Branch"
+msgstr "Zweig: Aktueller Zweig"
+
+#: commitdialog.cpp:266
+#, kde-format
+msgid "Branch: "
+msgstr "Zweig: "
+
+#: commitdialog.cpp:279
+#, kde-format
+msgid "Branch: Close Current"
+msgstr "Zweig: Aktuellen schließen"
+
+#: commitdialog.cpp:292
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Commit: New Branch"
+msgstr "<application>Hg</application> Einspielen: Neuer Zweig"
+
+#: commitdialog.cpp:300
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Enter new branch name"
+msgstr "Geben Sie einen Namen für den neuen Zweig ein"
+
+#: commitdialog.cpp:321
+#, kde-kuit-format
+msgctxt "@label"
+msgid "<b>Branch already exists!</b>"
+msgstr "<b>Zweig existiert bereits</b>"
+
+#: commitdialog.cpp:329
+#, kde-kuit-format
+msgctxt "@label"
+msgid "<b>Enter some text!</b>"
+msgstr "<b>Geben Sie hier etwas ein.</b>"
+
+#: commitinfowidget.cpp:38
+#, kde-format
+msgid ""
+"A KDE text-editor component could not be found;\n"
+"please check your KDE installation."
+msgstr ""
+"Es kann keine Text-Editor-Komponente von KDE gefunden werden.\n"
+"Überprüfen Sie Ihre KDE-Installation. "
+
+#: configdialog.cpp:28
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Repository Configuration"
+msgstr "<application>Hg</application> Archivkonfiguration"
+
+#: configdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Global Configuration"
+msgstr "<application>Hg</application> Globale Konfiguration"
+
+#: configdialog.cpp:44
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"
+
+#: configdialog.cpp:48
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Repository Paths"
+msgstr "Archiv-Pfade"
+
+#: configdialog.cpp:51
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Ignored Files"
+msgstr "Ignorierte Dateien"
+
+#: configdialog.cpp:55
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Plugin Settings"
+msgstr "Modul-Einstellungen"
+
+#: createdialog.cpp:23
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Initialize Repository"
+msgstr "<application>Hg</application> Archivinitialisierung"
+
+#: createdialog.cpp:24
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Initialize Repository"
+msgstr "Archiv initialisieren"
+
+#: createdialog.cpp:59
+#, kde-kuit-format
+msgctxt "error message"
+msgid "Error creating repository!"
+msgstr "Fehler beim Erstellen des Archivs."
+
+#: exportdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Export"
+msgstr "<application>Hg</application> Export"
+
+#: exportdialog.cpp:29
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Export"
+msgstr "Exportieren"
+
+#: exportdialog.cpp:56
+#, kde-format
+msgctxt "@label"
+msgid "Treat all files as text"
+msgstr "Alle Dateien wie Textdateien behandeln"
+
+#: exportdialog.cpp:57
+#, kde-format
+msgctxt "@label"
+msgid "Use Git extended diff format"
+msgstr "Erweitertes Git-Diff-Format verwenden"
+
+#: exportdialog.cpp:58
+#, kde-format
+msgctxt "@label"
+msgid "Omit dates from diff headers"
+msgstr "Daten aus Diff-Kopfzeilen überspringen"
+
+#: exportdialog.cpp:127
+#, kde-format
+msgctxt "@message:error"
+msgid "Please select at least one changeset to be exported!"
+msgstr "Bitte wählen Sie mindestens einen zu exportierenden Änderungssatz."
+
+#: fileviewhgplugin.cpp:95
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Add"
+msgstr "<application>Hg</application> Hinzufügen"
+
+#: fileviewhgplugin.cpp:102
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Remove"
+msgstr "<application>Hg</application> Entfernen"
+
+#: fileviewhgplugin.cpp:109
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Rename"
+msgstr "<application>Hg</application> Umbenennen"
+
+#: fileviewhgplugin.cpp:116
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Commit"
+msgstr "<application>Hg</application> Einspielen"
+
+#: fileviewhgplugin.cpp:123
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Tag"
+msgstr "<application>Hg</application> Tag erstellen"
+
+#: fileviewhgplugin.cpp:130
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Branch"
+msgstr "<application>Hg</application> Zweig erstellen"
+
+#: fileviewhgplugin.cpp:137
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Clone"
+msgstr "<application>Hg</application> Klonen"
+
+#: fileviewhgplugin.cpp:144
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Init"
+msgstr "<application>Hg</application> Initialisieren"
+
+#: fileviewhgplugin.cpp:151
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Update"
+msgstr "<application>Hg</application> Aktualisieren"
+
+#: fileviewhgplugin.cpp:158
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Global Config"
+msgstr "Globale Einrichtung für <application>Hg</application>"
+
+#: fileviewhgplugin.cpp:165
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Repository Config"
+msgstr "<application>Hg</application> Archivkonfiguration"
+
+#: fileviewhgplugin.cpp:172
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Push"
+msgstr "<application>Hg</application> Übertragen"
+
+#: fileviewhgplugin.cpp:179
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Pull"
+msgstr "<application>Hg</application> Abgleichen"
+
+#: fileviewhgplugin.cpp:186
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Revert"
+msgstr "<application>Hg</application> Rückgängig"
+
+#: fileviewhgplugin.cpp:193
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Revert All"
+msgstr "<application>Hg</application> Alles rückgängig"
+
+#: fileviewhgplugin.cpp:200
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Rollback"
+msgstr "<application>Hg</application> Rückrollen"
+
+#: fileviewhgplugin.cpp:207
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Merge"
+msgstr "<application>Hg</application> Zusammenführen"
+
+#: fileviewhgplugin.cpp:214
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Bundle"
+msgstr "<application>Hg</application> Bündeln"
+
+#: fileviewhgplugin.cpp:221
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Export"
+msgstr "<application>Hg</application> Export"
+
+#: fileviewhgplugin.cpp:228
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Import"
+msgstr "<application>Hg</application> Import"
+
+#: fileviewhgplugin.cpp:235
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Unbundle"
+msgstr "<application>Hg</application> Bündel lösen"
+
+#: fileviewhgplugin.cpp:242
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Serve"
+msgstr "<application>Hg</application> Ausliefern"
+
+#: fileviewhgplugin.cpp:249
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Backout"
+msgstr "<application>Hg</application> Backout"
+
+#: fileviewhgplugin.cpp:256
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Hg</application> Diff"
+msgstr "<application>Hg</application> Diff"
+
+#: fileviewhgplugin.cpp:280
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "<application>Mercurial</application>"
+msgstr "<application>Mercurial</application>"
+
+#: fileviewhgplugin.cpp:490
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Adding files to <application>Hg</application> repository..."
+msgstr ""
+"Dateien werden zum <application>Hg</application>-Archiv hinzugefügt ..."
+
+#: fileviewhgplugin.cpp:492
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Adding files to <application>Hg</application> repository failed."
+msgstr ""
+"Das Hinzufügen von Dateien zum <application>Hg</application>-Archiv ist "
+"fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:494
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Added files to <application>Hg</application> repository."
+msgstr "Dateien wurden zum <application>Hg</application>-Archiv hinzugefügt."
+
+#: fileviewhgplugin.cpp:506
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to remove selected files from the repository?"
+msgstr "Möchten Sie die ausgewählten Dateien aus dem Archiv entfernen?"
+
+#: fileviewhgplugin.cpp:513
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Removing files from <application>Hg</application> repository..."
+msgstr ""
+"Dateien werden aus dem <application>Hg</application>-Archiv entfernt ..."
+
+#: fileviewhgplugin.cpp:515
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Removing files from <application>Hg</application> repository failed."
+msgstr ""
+"Das Entfernen von Dateien aus dem <application>Hg</application>-Archiv ist "
+"fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:517
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Removed files from <application>Hg</application> repository."
+msgstr "Dateien wurden aus dem <application>Hg</application>-Archiv entfernt."
+
+#: fileviewhgplugin.cpp:529
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renaming of file in <application>Hg</application> repository failed."
+msgstr ""
+"Das Umbenennen einer Datei im <application>Hg</application>-Archiv ist "
+"fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:531
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renamed file in <application>Hg</application> repository successfully."
+msgstr "Datei in <application>Hg</application>-Archiv erfolgreich umbenannt."
+
+#: fileviewhgplugin.cpp:533
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renaming file in <application>Hg</application> repository."
+msgstr "Datei in <application>Hg</application>-Archiv wird umbenannt."
+
+#: fileviewhgplugin.cpp:544
+#, kde-kuit-format
+msgctxt "@message"
+msgid "No changes for commit!"
+msgstr "Keine Änderungen zum Einspielen."
+
+#: fileviewhgplugin.cpp:549
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Commit to <application>Hg</application> repository failed."
+msgstr ""
+"Einspielen in das <application>Hg</application>-Archiv ist fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:551
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Committed to <application>Hg</application> repository."
+msgstr "In <application>Hg</application>-Archiv eingespielt."
+
+#: fileviewhgplugin.cpp:553
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Commit <application>Hg</application> repository."
+msgstr "<application>Hg</application>-Archiv einspielen."
+
+#: fileviewhgplugin.cpp:564
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Tag operation in <application>Hg</application> repository failed."
+msgstr ""
+"Die „Tag“-Operation im <application>Hg</application>-Archiv ist "
+"fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:566
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Tagging operation in <application>Hg</application> repository is successful."
+msgstr ""
+"Die „Tag“-Operation im <application>Hg</application>-Archiv wurde "
+"erfolgreich durchgeführt."
+
+#: fileviewhgplugin.cpp:568
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Tagging operation in <application>Hg</application> repository."
+msgstr ""
+"„Tag“-Operation im <application>Hg</application>-Archiv wird durchgeführt."
+
+#: fileviewhgplugin.cpp:577
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Update of <application>Hg</application> working directory failed."
+msgstr ""
+"Aktualisieren des <application>Hg</application>-Arbeitsordners ist "
+"fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:579
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Update of <application>Hg</application> working directory is successful."
+msgstr "<application>Hg</application>-Arbeitsordner erfolgreich aktualisiert."
+
+#: fileviewhgplugin.cpp:581
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Updating <application>Hg</application> working directory."
+msgstr "<application>Hg</application>-Arbeitsordner wird aktualisiert."
+
+#: fileviewhgplugin.cpp:590
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Branch operation on <application>Hg</application> repository failed."
+msgstr ""
+"Die Zweig-Operation im <application>Hg</application>-Archiv ist "
+"fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:592
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Branch operation on <application>Hg</application> repository completed "
+"successfully."
+msgstr ""
+"Die Zweig-Operation im <application>Hg</application>-Archiv wurde "
+"erfolgreich durchgeführt."
+
+#: fileviewhgplugin.cpp:594
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Branch operation on <application>Hg</application> repository."
+msgstr ""
+"Zweig-Operation im <application>Hg</application>-Archiv wird durchgeführt."
+
+#: fileviewhgplugin.cpp:691
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to revert changes made to selected files?"
+msgstr "Möchten Sie die Änderungen an den gewählten Dateien rückgängig machen?"
+
+#: fileviewhgplugin.cpp:698 fileviewhgplugin.cpp:718
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Reverting files in <application>Hg</application> repository..."
+msgstr ""
+"Änderungen an Dateien im <application>Hg</application>-Archiv werden "
+"zurückgenommen ..."
+
+#: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:720
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Reverting files in <application>Hg</application> repository failed."
+msgstr ""
+"Das Zurücknehmen von Änderungen an Dateien im <application>Hg</application>-"
+"Archiv ist fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:722
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Reverting files in <application>Hg</application> repository completed "
+"successfully."
+msgstr ""
+"Das Zurücknehmen von Änderungen an Dateien im <application>Hg</application>-"
+"Archiv wurde erfolgreich durchgeführt."
+
+#: fileviewhgplugin.cpp:711
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to revert all changes made to current working directory?"
+msgstr ""
+"Möchten Sie alle Änderungen an der aktuellen Arbeitskopie rückgängig machen?"
+
+#: fileviewhgplugin.cpp:731
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Generating diff for <application>Hg</application> repository..."
+msgstr "„Diff“ für das <application>Hg</application>-Archiv wird erstellt ..."
+
+#: fileviewhgplugin.cpp:733
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not get <application>Hg</application> repository diff."
+msgstr ""
+"„Diff“ für das <application>Hg</application>-Archiv kann nicht erstellt "
+"werden."
+
+#: fileviewhgplugin.cpp:735
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Generated <application>Hg</application> diff successfully."
+msgstr ""
+"„Diff“ für das <application>Hg</application>-Archiv wurde erfolgreich "
+"erstellt."
+
+#: fileviewhgplugin.cpp:765
+#, kde-kuit-format
+msgctxt "@message:error"
+msgid "abort: Uncommitted changes in working directory!"
+msgstr ""
+"Abgebrochen: im aktuellen Arbeitsordner befinden sich noch nicht "
+"eingespielte Änderungen."
+
+#: fileviewhgplugin.cpp:778
+#, kde-kuit-format
+msgctxt "@info:message"
+msgid "No rollback information available!"
+msgstr "Keine Informationen zum Rückrollen verfügbar."
+
+#: fileviewhgplugin.cpp:789
+#, kde-kuit-format
+msgctxt "@message:yesorno"
+msgid "Would you like to rollback last transaction?"
+msgstr "Möchten Sie die letzte Transaktion zurückrollen?"
+
+#: fileviewhgplugin.cpp:796
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Executing Rollback <application>Hg</application> repository..."
+msgstr ""
+"Rückrollen des <application>Hg</application>-Archivs wird ausgeführt ..."
+
+#: fileviewhgplugin.cpp:798
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Rollback of <application>Hg</application> repository failed."
+msgstr ""
+"Das Rückrollen im <application>Hg</application>-Archiv ist fehlgeschlagen."
+
+#: fileviewhgplugin.cpp:800
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Rollback of <application>Hg</application> repository completed successfully."
+msgstr ""
+"Das Rückrollen im <application>Hg</application>-Archiv wurde erfolgreich "
+"durchgeführt."
+
+#. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
+#. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)
+#. i18n: ectx: label, entry (cloneDialogHeight), group (CloneDialogSettings)
+#. i18n: ectx: label, entry (pushDialogBigHeight), group (PushDialogSettings)
+#. i18n: ectx: label, entry (pullDialogBigHeight), group (PullDialogSettings)
+#. i18n: ectx: label, entry (mergeDialogHeight), group (MergeDialogSettings)
+#. i18n: ectx: label, entry (bundleDialogHeight), group (BundleDialogSettings)
+#. i18n: ectx: label, entry (exportDialogHeight), group (ExportDialogSettings)
+#. i18n: ectx: label, entry (importDialogHeight), group (ImportDialogSettings)
+#. i18n: ectx: label, entry (serveDialogHeight), group (ServeDialogSettings)
+#. i18n: ectx: label, entry (backoutDialogHeight), group (BackoutDialogSettings)
+#: fileviewhgpluginsettings.kcfg:7 fileviewhgpluginsettings.kcfg:27
+#: fileviewhgpluginsettings.kcfg:39 fileviewhgpluginsettings.kcfg:49
+#: fileviewhgpluginsettings.kcfg:59 fileviewhgpluginsettings.kcfg:69
+#: fileviewhgpluginsettings.kcfg:79 fileviewhgpluginsettings.kcfg:89
+#: fileviewhgpluginsettings.kcfg:99 fileviewhgpluginsettings.kcfg:109
+#: fileviewhgpluginsettings.kcfg:119
+#, kde-format
+msgid "Dialog height"
+msgstr "Dialoghöhe"
+
+#. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
+#. i18n: ectx: label, entry (configDialogWidth), group (ConfigDialogSettings)
+#. i18n: ectx: label, entry (cloneDialogWidth), group (CloneDialogSettings)
+#. i18n: ectx: label, entry (pushDialogBigWidth), group (PushDialogSettings)
+#. i18n: ectx: label, entry (pullDialogBigWidth), group (PullDialogSettings)
+#. i18n: ectx: label, entry (mergeDialogWidth), group (MergeDialogSettings)
+#. i18n: ectx: label, entry (bundleDialogWidth), group (BundleDialogSettings)
+#. i18n: ectx: label, entry (exportDialogWidth), group (ExportDialogSettings)
+#. i18n: ectx: label, entry (importDialogWidth), group (ImportDialogSettings)
+#. i18n: ectx: label, entry (serveDialogWidth), group (ServeDialogSettings)
+#. i18n: ectx: label, entry (backoutDialogWidth), group (BackoutDialogSettings)
+#: fileviewhgpluginsettings.kcfg:12 fileviewhgpluginsettings.kcfg:32
+#: fileviewhgpluginsettings.kcfg:43 fileviewhgpluginsettings.kcfg:53
+#: fileviewhgpluginsettings.kcfg:63 fileviewhgpluginsettings.kcfg:73
+#: fileviewhgpluginsettings.kcfg:83 fileviewhgpluginsettings.kcfg:93
+#: fileviewhgpluginsettings.kcfg:103 fileviewhgpluginsettings.kcfg:113
+#: fileviewhgpluginsettings.kcfg:123
+#, kde-format
+msgid "Dialog width"
+msgstr "Dialogbreite"
+
+#. i18n: ectx: label, entry (verticalSplitterSizes), group (CommitDialogSettings)
+#: fileviewhgpluginsettings.kcfg:17
+#, kde-format
+msgid "Divides file list and editors with commit details"
+msgstr "Trennt Dateiliste und Editoren mit Commit-Details"
+
+#. i18n: ectx: label, entry (horizontalSplitterSizes), group (CommitDialogSettings)
+#: fileviewhgpluginsettings.kcfg:21
+#, kde-format
+msgid "Divides commit editor and diff editor"
+msgstr "Trennt Commit-Editor und Diff-Editor"
+
+#: importdialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Import"
+msgstr "<application>Hg</application> Import"
+
+#: importdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Importieren"
+
+#: importdialog.cpp:63
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Do not commit, just update the working directory"
+msgstr "Nicht einspielen, nur Arbeitsordner aktualisieren."
+
+#: importdialog.cpp:65
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Skip test for outstanding uncommitted changes"
+msgstr "Test für ausstehende nicht eingespielte Änderungen überspringen"
+
+#: importdialog.cpp:67
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Apply patch to the nodes from which it was generated"
+msgstr "Patch auf den Knoten anwenden, von dem er generiert wurde"
+
+#: importdialog.cpp:69
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Apply patch without touching working directory"
+msgstr "Patch anwenden ohne den Arbeitsordner zu verändern"
+
+#: importdialog.cpp:81
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Add Patches"
+msgstr "Patches hinzufügen"
+
+#: importdialog.cpp:83
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Remove Patches"
+msgstr "Patches entfernen"
+
+#: mergedialog.cpp:27
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Merge"
+msgstr "<application>Hg</application> Zusammenführen"
+
+#: mergedialog.cpp:28
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Merge"
+msgstr "Zusammenführen"
+
+#: mergedialog.cpp:108
+#, kde-kuit-format
+msgctxt "@message"
+msgid "No head selected for merge!"
+msgstr "Es wurde keine Revision „head“ für das Zusammenführen ausgewählt."
+
+#: pathselector.cpp:60
+#, kde-kuit-format
+msgctxt "@label:combobox"
+msgid "edit"
+msgstr "bearbeiten"
+
+#: pulldialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Pull Repository"
+msgstr "<application>Hg</application> Archiv abgleichen"
+
+#: pulldialog.cpp:38
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Update to new branch head if changesets were pulled"
+msgstr ""
+"Auf „head“ des neuen Zweigs aktualisieren, wenn Änderungssätze abgeglichen "
+"wurden"
+
+#: pulldialog.cpp:42
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Force Pull"
+msgstr "Abgleichen (pull) erzwingen"
+
+#: pulldialog.cpp:54
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Incoming Changes"
+msgstr "Eingehende Änderungen"
+
+#: pulldialog.cpp:148
+#, kde-kuit-format
+msgctxt "@message:info"
+msgid "No incoming changes!"
+msgstr "Keine eingehenden Änderungen."
+
+#: pushdialog.cpp:30
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Push Repository"
+msgstr "<application>Hg</application> Archiv übertragen"
+
+#: pushdialog.cpp:38
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Allow pushing a new branch"
+msgstr "Übertragen eines neuen Zweiges erlauben"
+
+#: pushdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@label:checkbox"
+msgid "Force Push"
+msgstr "Übertragen erzwingen"
+
+#: pushdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@label:group"
+msgid "Outgoing Changes"
+msgstr "Ausgehende Änderungen"
+
+#: pushdialog.cpp:169
+#, kde-kuit-format
+msgctxt "@message:info"
+msgid "No outgoing changes!"
+msgstr "Keine ausgehenden Änderungen"
+
+#: renamedialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Rename"
+msgstr "<application>Hg</application> Umbenennen"
+
+#: renamedialog.cpp:27
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: renamedialog.cpp:33
+#, kde-kuit-format
+msgctxt "@label:label to source file"
+msgid "Source "
+msgstr "Quelle"
+
+#: renamedialog.cpp:39
+#, kde-kuit-format
+msgctxt "@label:rename"
+msgid "Rename to "
+msgstr "Umbenennen in"
+
+#: servedialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Serve"
+msgstr "<application>Hg</application> Ausliefern"
+
+#: servedialog.cpp:63
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Start Server"
+msgstr "Server starten"
+
+#: servedialog.cpp:64
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Stop Server"
+msgstr "Server beenden"
+
+#: servedialog.cpp:65
+#, kde-kuit-format
+msgctxt "@label:button"
+msgid "Open in browser"
+msgstr "Im Webbrowser öffnen"
+
+#: servedialog.cpp:81
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Port"
+msgstr "Port"
+
+#: servewrapper.cpp:68
+#, kde-format
+msgid "## Starting Server ##"
+msgstr "## Server wird gestartet ##"
+
+#: servewrapper.h:151
+#, kde-format
+msgid "## Server Stopped! ##\n"
+msgstr "## Server gestoppt ##\n"
+
+#: statuslist.cpp:28
+#, kde-format
+msgid "Filename"
+msgstr "Dateiname"
+
+#: statuslist.cpp:37
+#, kde-format
+msgctxt "@title:group"
+msgid "File Status"
+msgstr "Dateistatus"
+
+#: syncdialogbase.cpp:82
+#, kde-format
+msgctxt "@label:button"
+msgid "Show Incoming Changes"
+msgstr "Eingehende Änderungen anzeigen"
+
+#: syncdialogbase.cpp:86
+#, kde-format
+msgctxt "@label:button"
+msgid "Show Outgoing Changes"
+msgstr "Ausgehende Änderungen anzeigen"
+
+#: syncdialogbase.cpp:121
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Pull"
+msgstr "Abgleichen"
+
+#: syncdialogbase.cpp:163
+#, kde-format
+msgctxt "@message"
+msgid "No changes found!"
+msgstr "Keine Änderungen vorhanden."
+
+#: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
+#, kde-format
+msgid "Error!"
+msgstr "Fehler."
+
+#: syncdialogbase.cpp:330
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Options"
+msgstr "Einstellungen"
+
+#: tagdialog.cpp:20
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Tag"
+msgstr "<application>Hg</application> Tag"
+
+#: tagdialog.cpp:30
+#, kde-format
+msgid "Create New Tag"
+msgstr "Neues Tag anlegen"
+
+#: tagdialog.cpp:31
+#, kde-format
+msgid "Remove Tag"
+msgstr "Tag entfernen"
+
+#: tagdialog.cpp:32
+#, kde-format
+msgid "Switch Tag"
+msgstr "Tag wechseln"
+
+#: tagdialog.cpp:129
+#, kde-format
+msgid "Created tag successfully!"
+msgstr "Tag erfolgreich angelegt."
+
+#: updatedialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Hg</application> Update"
+msgstr "<application>Hg</application> Aktualisieren"
+
+#: updatedialog.cpp:27
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: updatedialog.cpp:30
+#, kde-format
+msgid "New working directory"
+msgstr "Neuer Arbeitsordner"
+
+#: updatedialog.cpp:35
+#, kde-format
+msgid "Tag"
+msgstr "Tag"
+
+#: updatedialog.cpp:36
+#, kde-format
+msgid "Changeset/Revision"
+msgstr "Änderungssatz/Revision"
+
+#: updatedialog.cpp:41
+#, kde-format
+msgid "Current Parent"
+msgstr "Aktueller Vorgänger"
+
+#: updatedialog.cpp:47
+#, kde-format
+msgid "Options"
+msgstr "Optionen"
+
+#: updatedialog.cpp:49
+#, kde-format
+msgid "Discard uncommitted changes"
+msgstr "Ausstehende nicht eingespielte Änderungen verwerfen"
+
+#: updatedialog.cpp:126
+#, kde-format
+msgid ""
+"Some error occurred! \n"
+"Maybe there are uncommitted changes."
+msgstr ""
+"Es ist ein Fehler aufgetreten.\n"
+"Möglicherweise gibt es nicht eingespielte Änderungen."
+
+#~ msgctxt "@action:button"
+#~ msgid "Push"
+#~ msgstr "Übertragen"

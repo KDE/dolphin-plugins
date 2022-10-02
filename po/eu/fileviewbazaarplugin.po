@@ -1,0 +1,213 @@
+# Translation for fileviewbazaarplugin.po to Euskara/Basque (eu).
+# Copyright (C) 2020, This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-12 00:49+0000\n"
+"PO-Revision-Date: 2020-06-27 09:02+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: fileviewbazaarplugin.cpp:49
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Update"
+msgstr "Bazaar Eguneratzea"
+
+#: fileviewbazaarplugin.cpp:55
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Pull"
+msgstr "Bazar Tira egin (Pull)"
+
+#: fileviewbazaarplugin.cpp:61
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Push"
+msgstr "Bazaar Bultza egin (Push)"
+
+#: fileviewbazaarplugin.cpp:67
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show Local Bazaar Changes"
+msgstr "Erakutsi Bazaar aldaketa lokalak"
+
+#: fileviewbazaarplugin.cpp:73
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Commit..."
+msgstr "Bazaar Baliozkotzea (commit)..."
+
+#: fileviewbazaarplugin.cpp:79
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Add..."
+msgstr "Bazaar Gehitu..."
+
+#: fileviewbazaarplugin.cpp:85
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Delete"
+msgstr "Bazaar Ezabatu"
+
+#: fileviewbazaarplugin.cpp:91
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Log"
+msgstr "Bazaar Egunkaria"
+
+#: fileviewbazaarplugin.cpp:355
+#, kde-format
+msgctxt "@info:status"
+msgid "Updating Bazaar repository..."
+msgstr "Eguneratu Bazaar gordetegia..."
+
+#: fileviewbazaarplugin.cpp:356
+#, kde-format
+msgctxt "@info:status"
+msgid "Update of Bazaar repository failed."
+msgstr "Bazaar gordetegia eguneratzea huts egin du."
+
+#: fileviewbazaarplugin.cpp:357
+#, kde-format
+msgctxt "@info:status"
+msgid "Updated Bazaar repository."
+msgstr "Eguneratu Bazaar gordetegia."
+
+#: fileviewbazaarplugin.cpp:365
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulling Bazaar repository..."
+msgstr "Bazaar gordetegiari tira egitea (pull)..."
+
+#: fileviewbazaarplugin.cpp:366
+#, kde-format
+msgctxt "@info:status"
+msgid "Pull of Bazaar repository failed."
+msgstr "Bazaar gordetegiari tira egitea (pull) huts egin du."
+
+#: fileviewbazaarplugin.cpp:367
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulled Bazaar repository."
+msgstr "Bazaar gordetegiari tira egin zaio."
+
+#: fileviewbazaarplugin.cpp:375
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushing Bazaar repository..."
+msgstr "Bazaar gordetegiari bultza egitea (push)..."
+
+#: fileviewbazaarplugin.cpp:376
+#, kde-format
+msgctxt "@info:status"
+msgid "Push of Bazaar repository failed."
+msgstr "Bazaar gordetegiari bultza egitea huts egin du."
+
+#: fileviewbazaarplugin.cpp:377
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushed Bazaar repository."
+msgstr "Bazaar gordetegiari bultza egin zaio."
+
+#: fileviewbazaarplugin.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewing Changes..."
+msgstr "Aldaketak berrikustea..."
+
+#: fileviewbazaarplugin.cpp:384
+#, kde-format
+msgctxt "@info:status"
+msgid "Review Changes failed."
+msgstr "Aldaketak berrikustea huts egin du."
+
+#: fileviewbazaarplugin.cpp:385
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewed Changes."
+msgstr "Aldaketak berrikusi dira."
+
+#: fileviewbazaarplugin.cpp:391
+#, kde-format
+msgctxt "@info:status"
+msgid "Committing Bazaar changes..."
+msgstr "Bazaar aldaketak baliozkotzea (commit)..."
+
+#: fileviewbazaarplugin.cpp:392
+#, kde-format
+msgctxt "@info:status"
+msgid "Commit of Bazaar changes failed."
+msgstr "Bazaar aldaketak baliozkotzea (commit) huts egin du."
+
+#: fileviewbazaarplugin.cpp:393
+#, kde-format
+msgctxt "@info:status"
+msgid "Committed Bazaar changes."
+msgstr "Bazaar aldaketak baliozkotu dira (commit)."
+
+#: fileviewbazaarplugin.cpp:399
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding files to Bazaar repository..."
+msgstr "Bazaar gordetegira fitxategiak gehitzea..."
+
+#: fileviewbazaarplugin.cpp:400
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding of files to Bazaar repository failed."
+msgstr "Bazaar gordetegira fitxategiak gehitzea huts egin du."
+
+#: fileviewbazaarplugin.cpp:401
+#, kde-format
+msgctxt "@info:status"
+msgid "Added files to Bazaar repository."
+msgstr "Bazaar gordetegira fitxategiak gehitu zaizkio."
+
+#: fileviewbazaarplugin.cpp:407
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing files from Bazaar repository..."
+msgstr "Bazaar gordetegitik fitxategiak kentzea..."
+
+#: fileviewbazaarplugin.cpp:408
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing of files from Bazaar repository failed."
+msgstr "Bazaar gordetegitik fitxategiak kentzea huts egin du."
+
+#: fileviewbazaarplugin.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Removed files from Bazaar repository."
+msgstr "Bazaar gordetegitik fitxategiak kendu dira."
+
+#: fileviewbazaarplugin.cpp:415
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log..."
+msgstr "Bazaar Egunkaria exekutatzea..."
+
+#: fileviewbazaarplugin.cpp:416
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log failed."
+msgstr "Bazaar Egunkaria exekutatzea huts egin du."
+
+#: fileviewbazaarplugin.cpp:417
+#, kde-format
+msgctxt "@info:status"
+msgid "Bazaar Log closed."
+msgstr "Bazaar Egunkaria itxi egin da."

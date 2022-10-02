@@ -1,0 +1,557 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# A S Alam <aalam@users.sf.net>, 2010, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-12 00:46+0000\n"
+"PO-Revision-Date: 2020-12-19 11:14-0800\n"
+"Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: fileviewsvnplugin.cpp:71
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Update"
+msgstr "SVN ਅੱਪਡੇਟ"
+
+#: fileviewsvnplugin.cpp:77
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show Local SVN Changes"
+msgstr "ਲੋਕਲ SVN ਬਦਲਾਅ ਵੇਖੋ"
+
+#: fileviewsvnplugin.cpp:83
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Commit..."
+msgstr "SVN ਕਮਿਟ..."
+
+#: fileviewsvnplugin.cpp:89
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Add"
+msgstr "SVN ਜੋੜੋ"
+
+#: fileviewsvnplugin.cpp:95
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Delete"
+msgstr "SVN ਹਟਾਓ"
+
+#: fileviewsvnplugin.cpp:101
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "SVN Revert"
+msgstr "SVN ਪਰਤਾਓ"
+
+#: fileviewsvnplugin.cpp:107
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show SVN Updates"
+msgstr "SVN ਅੱਪਡੇਟ ਵੇਖੋ"
+
+#: fileviewsvnplugin.cpp:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "SVN Log..."
+msgstr "SVN ਲਾਗ..."
+
+#: fileviewsvnplugin.cpp:120
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "SVN Checkout..."
+msgstr "SVN ਚੈਕਆਉਟ..."
+
+#: fileviewsvnplugin.cpp:125
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "SVN Cleanup..."
+msgstr "SVN ਕਲੀਨ-ਅੱਪ..."
+
+#: fileviewsvnplugin.cpp:220
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
+msgstr ""
+
+#: fileviewsvnplugin.cpp:356
+#, kde-format
+msgctxt "@title:window"
+msgid "SVN Update"
+msgstr "SVN ਅੱਪਡੇਟ"
+
+#: fileviewsvnplugin.cpp:360
+#, kde-format
+msgctxt "@info:status"
+msgid "Updating SVN repository..."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਅੱਪਡੇਟ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
+
+#: fileviewsvnplugin.cpp:361
+#, kde-format
+msgctxt "@info:status"
+msgid "Update of SVN repository failed."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਅੱਪਡੇਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
+
+#: fileviewsvnplugin.cpp:362
+#, kde-format
+msgctxt "@info:status"
+msgid "Updated SVN repository."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਅੱਪਡੇਟ ਹੈ।"
+
+#: fileviewsvnplugin.cpp:376
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu"
+#| msgid "Show Local SVN Changes"
+msgctxt "@info:status"
+msgid "Could not show local SVN changes."
+msgstr "ਲੋਕਲ SVN ਬਦਲਾਅ ਵੇਖੋ"
+
+#: fileviewsvnplugin.cpp:391
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Commit of SVN changes failed."
+msgctxt "@info:status"
+msgid "Could not show local SVN changes: svn diff failed."
+msgstr "SVN ਬਦਲਾਅ ਕਮਿੱਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ।"
+
+#: fileviewsvnplugin.cpp:403 fileviewsvnplugin.cpp:587
+#: fileviewsvnplugin.cpp:616
+#, kde-format
+msgctxt "@info:status"
+msgid "Could not show local SVN changes: could not start kompare."
+msgstr ""
+
+#: fileviewsvnplugin.cpp:435
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding files to SVN repository..."
+msgstr "ਫਾਇਲਾਂ SVN ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ..."
+
+#: fileviewsvnplugin.cpp:436
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding of files to SVN repository failed."
+msgstr "ਫਾਇਲਾਂ SVN ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
+
+#: fileviewsvnplugin.cpp:437
+#, kde-format
+msgctxt "@info:status"
+msgid "Added files to SVN repository."
+msgstr "ਫਾਇਲਾਂ SVN ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ।"
+
+#: fileviewsvnplugin.cpp:443
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing files from SVN repository..."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਤੋਂ ਫਾਇਲਾਂ ਹਟਾਈਆਂ ਜਾ ਰਹੀਆਂ ਹਨ..."
+
+#: fileviewsvnplugin.cpp:444
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing of files from SVN repository failed."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਤੋਂ ਫਾਇਲਾਂ ਹਟਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
+
+#: fileviewsvnplugin.cpp:445
+#, kde-format
+msgctxt "@info:status"
+msgid "Removed files from SVN repository."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਤੋਂ ਫਾਇਲਾਂ ਹਟਾਈਆਂ ਗਈਆਂ।"
+
+#: fileviewsvnplugin.cpp:465 fileviewsvnplugin.cpp:551
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu"
+#| msgid "SVN Delete"
+msgctxt "@title:window"
+msgid "SVN Revert"
+msgstr "SVN ਹਟਾਓ"
+
+#: fileviewsvnplugin.cpp:469
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Removing files from SVN repository..."
+msgctxt "@info:status"
+msgid "Reverting files from SVN repository..."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਤੋਂ ਫਾਇਲਾਂ ਹਟਾਈਆਂ ਜਾ ਰਹੀਆਂ ਹਨ..."
+
+#: fileviewsvnplugin.cpp:470
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Removing of files from SVN repository failed."
+msgctxt "@info:status"
+msgid "Reverting of files from SVN repository failed."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਤੋਂ ਫਾਇਲਾਂ ਹਟਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
+
+#: fileviewsvnplugin.cpp:471
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Removed files from SVN repository."
+msgctxt "@info:status"
+msgid "Reverted files from SVN repository."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਤੋਂ ਫਾਇਲਾਂ ਹਟਾਈਆਂ ਗਈਆਂ।"
+
+#: fileviewsvnplugin.cpp:555
+#, kde-format
+msgctxt "@info:status"
+msgid "Reverting changes to file..."
+msgstr ""
+
+#: fileviewsvnplugin.cpp:556
+#, kde-format
+msgctxt "@info:status"
+msgid "Revert file failed."
+msgstr ""
+
+#: fileviewsvnplugin.cpp:557
+#, kde-format
+msgctxt "@info:status"
+msgid "File reverted."
+msgstr "ਫ਼ਾਈਲ ਵਾਪਸ ਲਈ ਗਈ ਹੈ।"
+
+#: fileviewsvnplugin.cpp:574 fileviewsvnplugin.cpp:597
+#: fileviewsvnplugin.cpp:602
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Commit of SVN changes failed."
+msgctxt "@info:status"
+msgid "Could not show local SVN changes for a file: could not get file."
+msgstr "SVN ਬਦਲਾਅ ਕਮਿੱਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ।"
+
+#: fileviewsvnplugin.cpp:643 fileviewsvnplugin.cpp:666
+#, kde-format
+msgctxt "@info:status"
+msgid "Commit of SVN changes failed."
+msgstr "SVN ਬਦਲਾਅ ਕਮਿੱਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ।"
+
+#: fileviewsvnplugin.cpp:661 svncommitdialog.cpp:154
+#, kde-format
+msgctxt "@title:window"
+msgid "SVN Commit"
+msgstr "SVN ਕਮਿੱਟ"
+
+#: fileviewsvnplugin.cpp:665
+#, kde-format
+msgctxt "@info:status"
+msgid "Committing SVN changes..."
+msgstr "SVN ਬਦਲਾਅ ਕਮਿੱਟ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ..."
+
+#: fileviewsvnplugin.cpp:667
+#, kde-format
+msgctxt "@info:status"
+msgid "Committed SVN changes."
+msgstr "SVN ਬਦਲਾਅ ਕਮਿੱਟ ਕੀਤੇ।"
+
+#. i18n: ectx: label, entry (showUpdates), group (General)
+#: fileviewsvnpluginsettings.kcfg:9
+#, kde-format
+msgid "Show updates"
+msgstr " ਅੱਪਡੇਟ ਵੇਖੋ"
+
+#: svncheckoutdialog.cpp:56
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a directory to checkout"
+msgstr "ਚੈਕ-ਆਉਟ ਕਰਨ ਲਈ ਡਾਇਰੈਕਟਰੀ ਚੁਣੋ"
+
+#: svncheckoutdialog.cpp:102
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout in process..."
+msgstr ""
+
+#: svncheckoutdialog.cpp:105
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout failed."
+msgstr ""
+
+#: svncheckoutdialog.cpp:107
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout successful."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
+#: svncheckoutdialog.ui:20
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu"
+#| msgid "SVN Commit..."
+msgid "SVN Checkout"
+msgstr "SVN ਕਮਿਟ..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: svncheckoutdialog.ui:26
+#, kde-format
+msgid "URL of repository:"
+msgstr "ਰਿਪੋਜ਼ਟਰੀ ਦਾ URL:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: svncheckoutdialog.ui:36
+#, kde-format
+msgid "Checkout directory:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
+#: svncheckoutdialog.ui:46
+#, kde-format
+msgid "Omit externals"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, pbOk)
+#. i18n: ectx: property (text), widget (QPushButton, buttonOk)
+#: svncheckoutdialog.ui:71 svncleanupdialog.ui:80 svnlogdialog.ui:146
+#: svnprogressdialog.ui:47
+#, kde-format
+msgid "OK"
+msgstr "ਠੀਕ ਹੈ"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbCancel)
+#. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
+#: svncheckoutdialog.ui:82 svncleanupdialog.ui:97 svnprogressdialog.ui:33
+#, kde-format
+msgid "Cancel"
+msgstr "ਰੱਦ ਕਰੋ"
+
+#: svncleanupdialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a directory to clean up"
+msgstr ""
+
+#: svncleanupdialog.cpp:60
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN clean up completed successfully."
+msgstr ""
+
+#: svncleanupdialog.cpp:62
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN clean up failed for %1"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
+#: svncleanupdialog.ui:20
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu"
+#| msgid "SVN Commit..."
+msgid "SVN Cleanup..."
+msgstr "SVN ਕਮਿਟ..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: svncleanupdialog.ui:26
+#, kde-format
+msgid "Clean up directory:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
+#: svncleanupdialog.ui:43
+#, kde-format
+msgid "Delete unversioned files and directories"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
+#: svncleanupdialog.ui:50
+#, kde-format
+msgid "Delete ignored files and directories"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
+#: svncleanupdialog.ui:57
+#, kde-format
+msgid "Include externals"
+msgstr ""
+
+#: svncommitdialog.cpp:88
+#, kde-format
+msgctxt "@label"
+msgid "Description:"
+msgstr "ਵੇਰਵਾ:"
+
+#: svncommitdialog.cpp:103
+#, kde-format
+msgctxt "@action:button"
+msgid "Refresh"
+msgstr "ਤਾਜ਼ਾ ਕਰੋ"
+
+#: svncommitdialog.cpp:108
+#, kde-format
+msgctxt "@action:button"
+msgid "Commit"
+msgstr "ਕਮਿਟ"
+
+#: svncommitdialog.cpp:114
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Revert"
+msgstr "ਪਰਤਾਓ"
+
+#: svncommitdialog.cpp:121
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show changes"
+msgstr "ਤਬਦੀਲੀਆਂ ਵੇਖੋ"
+
+#: svncommitdialog.cpp:128
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Add file"
+msgstr "ਫ਼ਾਈਲ ਜੋੜੋ"
+
+#: svncommitdialog.cpp:156
+#, kde-format
+msgctxt "@title:column"
+msgid "Path"
+msgstr "ਪਾਥ"
+
+#: svncommitdialog.cpp:157
+#, kde-format
+msgctxt "@title:column"
+msgid "Status"
+msgstr "ਸਥਿਤੀ"
+
+#: svncommitdialog.cpp:210
+#, kde-format
+msgctxt "@item:intable"
+msgid "Unversioned"
+msgstr "ਬਿਨਾਂ-ਵਰਜ਼ਨ ਦੇ"
+
+#: svncommitdialog.cpp:213
+#, kde-format
+msgctxt "@item:intable"
+msgid "Modified"
+msgstr "ਸੋਧੀਆਂ"
+
+#: svncommitdialog.cpp:216
+#, kde-format
+msgctxt "@item:intable"
+msgid "Added"
+msgstr "ਜੋੜੀਆਂ"
+
+#: svncommitdialog.cpp:219
+#, kde-format
+msgctxt "@item:intable"
+msgid "Deleted"
+msgstr "ਹਟਾਏ"
+
+#: svncommitdialog.cpp:222
+#, kde-format
+msgctxt "@item:intable"
+msgid "Conflict"
+msgstr "ਟਕਰਾ"
+
+#: svncommitdialog.cpp:225
+#, kde-format
+msgctxt "@item:intable"
+msgid "Missing"
+msgstr "ਗੁੰਮ ਹੈ"
+
+#: svncommitdialog.cpp:228
+#, kde-format
+msgctxt "@item:intable"
+msgid "Update required"
+msgstr "ਅੱਪਡੇਟ ਚਾਹੀਦਾ ਹੈ"
+
+#: svnlogdialog.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Updated SVN repository."
+msgid "Update to revision"
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਅੱਪਡੇਟ ਹੈ।"
+
+#: svnlogdialog.cpp:98 svnlogdialog.cpp:116
+#, kde-format
+msgid "Revert to revision"
+msgstr ""
+
+#: svnlogdialog.cpp:102
+#, kde-format
+msgid "Show changes"
+msgstr "ਤਬਦੀਲੀਆਂ ਵੇਖੋ"
+
+#: svnlogdialog.cpp:109
+#, kde-format
+msgid "Changes against working copy"
+msgstr ""
+
+#: svnlogdialog.cpp:271
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Update of SVN repository failed."
+msgctxt "@info:status"
+msgid "SVN log: update to revision failed."
+msgstr "SVN ਰਿਪੋਜ਼ਟਰੀ ਅੱਪਡੇਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
+
+#: svnlogdialog.cpp:273
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: update to revision %1 successful."
+msgstr ""
+
+#: svnlogdialog.cpp:283 svnlogdialog.cpp:294
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: revert to revision failed."
+msgstr ""
+
+#: svnlogdialog.cpp:285 svnlogdialog.cpp:296
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN log: revert to revision %1 successful."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
+#: svnlogdialog.ui:20
+#, kde-format
+msgid "SVN Log"
+msgstr "SVN ਲਾਗ"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:55
+#, kde-format
+msgid "Revision"
+msgstr "ਰੀਵਿਜ਼ਨ"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:60
+#, kde-format
+msgid "Author"
+msgstr "ਲੇਖਕ"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:65
+#, kde-format
+msgid "Date"
+msgstr "ਤਾਰੀਖ"
+
+#. i18n: ectx: property (text), widget (QTableWidget, tLog)
+#: svnlogdialog.ui:70
+#, kde-format
+msgid "Message"
+msgstr "ਸੁਨੇਹਾ"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbNext100)
+#: svnlogdialog.ui:104
+#, kde-format
+msgid "Next 100"
+msgstr "ਅਗਲੇ 100"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbRefresh)
+#: svnlogdialog.ui:114
+#, kde-format
+msgid "Refresh"
+msgstr "ਤਾਜ਼ਾ ਕਰੋ"
+
+#: svnprogressdialog.cpp:53
+#, kde-format
+msgctxt "@info:status"
+msgid "Error starting: %1"
+msgstr ""
