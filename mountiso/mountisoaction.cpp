@@ -27,6 +27,7 @@
 #include <QString>
 #include <QTimer>
 #include <QVariant>
+#include <QWidget>
 
 #include <KLocalizedString>
 #include <KPluginFactory>
