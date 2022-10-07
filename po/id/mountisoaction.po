@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-17 00:46+0000\n"
+"POT-Creation-Date: 2022-10-07 00:49+0000\n"
 "PO-Revision-Date: 2022-05-14 13:13+0700\n"
 "Last-Translator: Aziz Adam Adrian <4.adam.adrian@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.04.1\n"
 
-#: mountisoaction.cpp:218
+#: mountisoaction.cpp:219
 #, kde-format
 msgctxt "@action:inmenu Action to mount a disk image"
 msgid "Mount"
 msgstr "Kaitkan"
 
-#: mountisoaction.cpp:227
+#: mountisoaction.cpp:228
 #, kde-format
 msgctxt "@action:inmenu Action to unmount a disk image"
 msgid "Unmount"

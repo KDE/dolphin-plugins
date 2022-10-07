@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-17 00:46+0000\n"
+"POT-Creation-Date: 2022-10-07 00:49+0000\n"
 "PO-Revision-Date: 2022-01-29 13:55+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.1\n"
 
-#: mountisoaction.cpp:218
+#: mountisoaction.cpp:219
 #, kde-format
 msgctxt "@action:inmenu Action to mount a disk image"
 msgid "Mount"
 msgstr "Подключить образ ISO"
 
-#: mountisoaction.cpp:227
+#: mountisoaction.cpp:228
 #, kde-format
 msgctxt "@action:inmenu Action to unmount a disk image"
 msgid "Unmount"
