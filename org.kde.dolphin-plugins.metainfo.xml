@@ -21,6 +21,7 @@
   <name xml:lang="ia">Plugins de Dophin</name>
   <name xml:lang="id">Plugin Dolphin</name>
   <name xml:lang="it">Estensioni per Dolphin</name>
+  <name xml:lang="ka">Dolphin -ის დამატებები</name>
   <name xml:lang="ko">Dolphin 플러그인</name>
   <name xml:lang="my">လင်းပိုင်ပလပ်ဂင်များ</name>
   <name xml:lang="nl">Plug-ins van Dolphin</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="ia">Integration de Dolphin per systemas de controlo de revision, Dropbox e images de disc.</summary>
   <summary xml:lang="id">Integrasi Dolphin untuk sistem kendali revisi, Dropbox, dan citra disk.</summary>
   <summary xml:lang="it">Integrazione con Dolphin per i sistemi di controllo di revisione, per Dropbox e per le immagini disco.</summary>
+  <summary xml:lang="ka">Dolphin-ის დამატებები რევიზიების კონტროლის სისტემებთან, Dropbox-თნ და დისკის ასლებთან სამუშაოდ.</summary>
   <summary xml:lang="ko">Dolphin용 버전 관리 시스템, Dropbox, 디스크 이미지 통합</summary>
   <summary xml:lang="nl">Integratie van Dolphin voor revisie besturingssystemen, Dropbox en images van schijven.</summary>
   <summary xml:lang="nn">Dolphin-integrering med versjonskontrollsystem, Dropbox og diskbilete.</summary>
