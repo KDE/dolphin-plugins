@@ -257,7 +257,7 @@ msgstr "Mostra les actualitzacions"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "Seleccioneu el directori que s'entregarà"
+msgstr "Seleccioneu el directori que s'ha d'entregar"
 
 #: svncheckoutdialog.cpp:102
 #, kde-format
@@ -320,7 +320,7 @@ msgstr "Cancel·la"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr "Seleccioneu el directori que cal netejar"
+msgstr "Seleccioneu el directori que s'ha de netejar"
 
 #: svncleanupdialog.cpp:60
 #, kde-format
