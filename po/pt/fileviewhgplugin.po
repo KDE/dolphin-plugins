@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2020-12-07 12:44+0000\n"
+"PO-Revision-Date: 2022-10-17 09:55+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -605,11 +605,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Deseja remover os ficheiros seleccionados do repositório?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Remover as Modificações"
+msgstr "Remover os Ficheiros"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -763,7 +761,7 @@ msgstr "Deseja reverter as alterações feitas sobre os ficheiros seleccionados?
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Reverter"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -800,7 +798,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Reverter Tudo"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -845,7 +843,7 @@ msgstr "Deseja anular a última transacção?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Anular"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format

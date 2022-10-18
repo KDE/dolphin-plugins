@@ -1,20 +1,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Eloy Cuadra <ecuadra@eloihr.net>, 2011, 2012, 2015, 2016, 2017, 2020.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2011, 2012, 2015, 2016, 2017, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2020-12-07 14:06+0100\n"
+"PO-Revision-Date: 2022-10-17 17:57+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.11.90\n"
+"X-Generator: Lokalize 22.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: backoutdialog.cpp:31
@@ -603,11 +603,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "¿Desea eliminar los archivos seleccionados del repositorio?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Eliminar parches"
+msgstr "Eliminar archivos"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -757,7 +755,7 @@ msgstr "¿Desea revertir los cambios realizados en los archivos actuales?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Revertir"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -795,7 +793,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Revertir todo"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -840,7 +838,7 @@ msgstr "¿Desea anular la última transacción?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Anular"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format

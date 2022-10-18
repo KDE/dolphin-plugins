@@ -4,21 +4,21 @@
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2011, 2012.
-# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2015, 2017.
+# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2015, 2017, 2022.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2022-04-20 16:13+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2022-10-17 10:29+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 20.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -610,11 +610,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Voleu eliminar els fitxers seleccionats del repositori?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Elimina els pedaços"
+msgstr "Elimina fitxers"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -764,7 +762,7 @@ msgstr "Voleu revertir els canvis fets als fitxers seleccionats?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Reverteix"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -799,7 +797,7 @@ msgstr "Voleu revertir tots els canvis fets al directori de treball actual?"
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Reverteix-ho tot"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -844,7 +842,7 @@ msgstr "Voleu desfer la darrera operació?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Desfés"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
@@ -1240,7 +1238,3 @@ msgid ""
 msgstr ""
 "Hi ha hagut algun error!\n"
 "Potser hi ha canvis sense publicar."
-
-#~ msgctxt "@action:button"
-#~ msgid "Push"
-#~ msgstr "Entrega"
