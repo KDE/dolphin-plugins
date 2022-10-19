@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrej Mernik <andrejm@ubuntu.si>, 2015, 2016.
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2020-12-11 14:45+0100\n"
+"PO-Revision-Date: 2022-10-18 08:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -607,11 +607,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Ali želite odstraniti izbrane datoteke iz skladišča?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Odstrani popravke"
+msgstr "Odstrani datoteke"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -750,7 +748,7 @@ msgstr "Ali želite povrniti spremembe izbranih datotek?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Povrni"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -784,7 +782,7 @@ msgstr "Ali želite povrniti vse spremembe trenutne delovne mape?"
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Povrni vse"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -825,7 +823,7 @@ msgstr "Ali želite razveljaviti zadnjo transakcijo?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Razveljavi"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format

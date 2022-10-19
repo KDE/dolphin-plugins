@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2022-09-24 19:18+0200\n"
+"PO-Revision-Date: 2022-10-18 05:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -70,7 +70,7 @@ msgstr "აირჩიეთ"
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Branch"
-msgstr ""
+msgstr "<application>Hg</application> brenCi"
 
 #: branchdialog.cpp:37
 #, kde-format
@@ -122,7 +122,7 @@ msgstr ""
 #, kde-format, kde-kuit-format
 msgctxt "@label:group"
 msgid "Options"
-msgstr ""
+msgstr "გამართვა"
 
 #: bundledialog.cpp:78
 #, kde-kuit-format
@@ -151,7 +151,7 @@ msgstr "კლონირება"
 #: clonedialog.cpp:42
 #, kde-format
 msgid "URLs"
-msgstr ""
+msgstr "URL-ები"
 
 #: clonedialog.cpp:44
 #, kde-kuit-format
@@ -428,43 +428,43 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
-msgstr ""
+msgstr "<application>Hg</application> დამატება"
 
 #: fileviewhgplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
-msgstr ""
+msgstr "<application>Hg</application> წაშლა"
 
 #: fileviewhgplugin.cpp:109
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
-msgstr ""
+msgstr "<application>Hg</application> გადარქმევა"
 
 #: fileviewhgplugin.cpp:116
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
-msgstr ""
+msgstr "<application>Hg</application> გადაცემა"
 
 #: fileviewhgplugin.cpp:123
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
-msgstr ""
+msgstr "<application>Hg</application> ჭდე"
 
 #: fileviewhgplugin.cpp:130
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
-msgstr ""
+msgstr "<application>Hg</application> ბრენჩი"
 
 #: fileviewhgplugin.cpp:137
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
-msgstr ""
+msgstr "<application>Hg</application> კლონი"
 
 #: fileviewhgplugin.cpp:144
 #, kde-kuit-format
@@ -599,10 +599,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr ""
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgid "Remove Files"
-msgstr "ჭდის წაშლა"
+msgstr "ფაილების წაშლა"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -731,7 +730,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "დაბრუნება"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -803,7 +802,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "უკან დაბრუნება"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
@@ -843,7 +842,7 @@ msgstr ""
 #: fileviewhgpluginsettings.kcfg:119
 #, kde-format
 msgid "Dialog height"
-msgstr ""
+msgstr "ფანჯრის სიმაღლე"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogWidth), group (ConfigDialogSettings)
@@ -864,7 +863,7 @@ msgstr ""
 #: fileviewhgpluginsettings.kcfg:123
 #, kde-format
 msgid "Dialog width"
-msgstr ""
+msgstr "ფანჯრის სიგანე"
 
 #. i18n: ectx: label, entry (verticalSplitterSizes), group (CommitDialogSettings)
 #: fileviewhgpluginsettings.kcfg:17
@@ -1112,24 +1111,24 @@ msgstr ""
 #: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
 #, kde-format
 msgid "Error!"
-msgstr ""
+msgstr "შეცდომა!"
 
 #: syncdialogbase.cpp:330
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr ""
+msgstr "გამართვა"
 
 #: tagdialog.cpp:20
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Tag"
-msgstr ""
+msgstr "<application>Hg</application> ჭდე"
 
 #: tagdialog.cpp:30
 #, kde-format
 msgid "Create New Tag"
-msgstr ""
+msgstr "ახალი ჭდის შექმნა"
 
 #: tagdialog.cpp:31
 #, kde-format
@@ -1150,7 +1149,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Update"
-msgstr ""
+msgstr "<application>Hg</application> განახლება"
 
 #: updatedialog.cpp:27
 #, kde-kuit-format

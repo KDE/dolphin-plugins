@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Joëlle Cornavin <jcorn@free.fr>, 2011, 2012.
 # Simon Depiets <sdepiets@gmail.com>, 2017.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020.
+# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2020-12-29 14:06+0100\n"
+"PO-Revision-Date: 2022-10-18 07:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -619,11 +619,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Voulez-vous supprimer du dépôt les fichiers sélectionnés ?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Supprimer des correctifs"
+msgstr "Supprimer des fichiers"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -773,7 +771,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Annuler"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -812,7 +810,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Tout annuler"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -858,7 +856,7 @@ msgstr "Voulez-vous que la dernière transaction retourne à l'état antérieur�
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Revenir en arrière"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format

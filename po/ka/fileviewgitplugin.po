@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-05 00:47+0000\n"
-"PO-Revision-Date: 2022-10-08 12:49+0200\n"
+"PO-Revision-Date: 2022-10-18 05:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -70,7 +70,7 @@ msgstr "ძალა"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
-msgstr ""
+msgstr "ლოკალური ცვლილებების გაუქმება."
 
 #: checkoutdialog.cpp:125
 #, kde-format
@@ -178,7 +178,7 @@ msgstr ""
 #: fileviewgitplugin.cpp:55
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr ""
+msgstr "<application>Git</application> დამატება"
 
 #: fileviewgitplugin.cpp:61
 #, kde-kuit-format
@@ -188,7 +188,7 @@ msgstr ""
 #: fileviewgitplugin.cpp:67
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr ""
+msgstr "<application>Git</application> წაშლა"
 
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
@@ -387,13 +387,13 @@ msgstr ""
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr ""
+msgstr "ფანჯრის სიმაღლე"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr ""
+msgstr "ფანჯრის სიგანე"
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
@@ -484,25 +484,25 @@ msgstr "ჭდის შექმნა"
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
-msgstr ""
+msgstr "ჭდის ინფორმაცია"
 
 #: tagdialog.cpp:55
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
-msgstr ""
+msgstr "ჭდის სახელი:"
 
 #: tagdialog.cpp:63
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr ""
+msgstr "ჭდის შეტყობინება:"
 
 #: tagdialog.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
-msgstr ""
+msgstr "მიმაგრება"
 
 #: tagdialog.cpp:81
 #, kde-format
@@ -514,7 +514,7 @@ msgstr "ბრენჩი:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
-msgstr ""
+msgstr "ჯერ აუცილებელია შეიყვანოთ ჭდის სახელი."
 
 #: tagdialog.cpp:130
 #, kde-format
@@ -526,4 +526,4 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr ""
+msgstr "ჭდე სახელით \"%1\" უკვე არსებობს."
