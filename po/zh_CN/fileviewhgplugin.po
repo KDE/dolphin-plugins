@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2022-11-06 01:05\n"
+"PO-Revision-Date: 2022-11-19 14:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -604,7 +604,7 @@ msgstr "您想要从仓库中删除选定的文件吗？"
 #: fileviewhgplugin.cpp:512
 #, kde-format
 msgid "Remove Files"
-msgstr ""
+msgstr "移除文件"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -733,7 +733,7 @@ msgstr "您想要还原对所选文件的更改吗？"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "回退"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -764,7 +764,7 @@ msgstr "您想要还原对当前工作目录进行的所有更改吗？"
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "回退全部"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -805,7 +805,7 @@ msgstr "您想要回滚上次操作吗？"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "回滚"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
