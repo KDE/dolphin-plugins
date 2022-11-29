@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2020, 2021.
+# Giovanni Sora <g.sora@tiscali.it>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2021-11-01 22:18+0100\n"
+"PO-Revision-Date: 2022-11-28 15:46+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.08.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -605,11 +605,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Tu volerea remover files selectionate ex le repositorio?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Remove pecias (Patches)"
+msgstr "Remove Files"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -756,7 +754,7 @@ msgstr "Tu volerea revenir modificationes facite a files selectionate?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Reverte"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -791,7 +789,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Reverte Toto"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -833,7 +831,7 @@ msgstr "Tu volerea retornar (rollback) le ultime transaction?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Rollback (Retorna)"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
