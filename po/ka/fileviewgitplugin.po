@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-05 00:47+0000\n"
-"PO-Revision-Date: 2022-10-18 05:57+0200\n"
+"PO-Revision-Date: 2023-01-09 12:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr ""
+msgstr "<application>Git</application> გამოტანა"
 
 #: checkoutdialog.cpp:41
 #, kde-format
@@ -58,7 +58,7 @@ msgstr "ახალი ბრენჩის შექმნა: "
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
-msgstr ""
+msgstr "ახალი ბრენჩის მონიშნულ ბრენჩზე ან ჭდეზე დაყრდნობით შექმნა."
 
 #: checkoutdialog.cpp:92 pushdialog.cpp:83
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "ლოკალური ცვლილებების გაუქ�
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr ""
+msgstr "ამ რეპოზიტორიას ჭდეები არ გააჩნია."
 
 #: checkoutdialog.cpp:185
 #, kde-format
@@ -94,25 +94,25 @@ msgstr "წამოღება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr ""
+msgstr "ახალი ბრენჩისთვის სწორი სახელის მითითება აუცილებელია."
 
 #: checkoutdialog.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr ""
+msgstr "ბრენჩი სახელით '%1' უკვე არსებობს."
 
 #: checkoutdialog.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
-msgstr ""
+msgstr "ბრენჩის სახელები არ შეიძლება, გამოტოვებებს შეიცავდეს."
 
 #: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr ""
+msgstr "ჯერ საჭიროა, სწორი ბრენჩი აირჩიოთ."
 
 #: checkoutdialog.cpp:248
 #, kde-format
@@ -126,7 +126,7 @@ msgstr "ბრენჩი"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr ""
+msgstr "<application>Git</application> კომიტი"
 
 #: commitdialog.cpp:37
 #, kde-format
@@ -144,13 +144,13 @@ msgstr "კომიტის შეტყობინება"
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
-msgstr ""
+msgstr "ბოლო გადაცემის მიწერა"
 
 #: commitdialog.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr ""
+msgstr "მისაწერი არაფერია."
 
 #: commitdialog.cpp:76
 #, kde-format
@@ -162,18 +162,18 @@ msgstr "გასვლა"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr ""
+msgstr "კომიტის შეტყობინების ბოლოში დაამატეთ Signed-off-by ხაზი."
 
 #: commitdialog.cpp:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr ""
+msgstr "ჯერ აუცილებელია, გადაცემის შეტყობინება შეიყვანოთ."
 
 #: fileviewgitplugin.cpp:49
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr ""
+msgstr "<application>Git</application> დაბრუნება"
 
 #: fileviewgitplugin.cpp:55
 #, kde-kuit-format
@@ -183,7 +183,7 @@ msgstr "<application>Git</application> დამატება"
 #: fileviewgitplugin.cpp:61
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr ""
+msgstr "<application>Git</application> -ის ლოკალური ცვლილებების ჩვენება"
 
 #: fileviewgitplugin.cpp:67
 #, kde-kuit-format
@@ -193,92 +193,96 @@ msgstr "<application>Git</application> წაშლა"
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr ""
+msgstr "<application>Git</application> გამოტანა..."
 
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr ""
+msgstr "<application>Git</application> კომიტი..."
 
 #: fileviewgitplugin.cpp:85
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr ""
+msgstr "<application>Git</application> ჭდის შექმნა ..."
 
 #: fileviewgitplugin.cpp:90
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr ""
+msgstr "<application>Git</application> პუში..."
 
 #: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr ""
+msgstr "<application>Git</application> პული..."
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr ""
+msgstr "<application>Git</application> შერწყმა..."
 
 #: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr ""
+msgstr "<application>Git</application> ჟურნალი..."
 
 #: fileviewgitplugin.cpp:414
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr ""
+msgstr "ფაილების დამატება <application>Git</application>-ის რეპოზიტორიაში..."
 
 #: fileviewgitplugin.cpp:415
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application>-ის რეპოზიტორიაში ფაილების დამატების შეცდომა."
 
 #: fileviewgitplugin.cpp:416
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr ""
+"<application>Git</application>-ის რეპოზიტორიაში ფაილები წარმატებით დაემატა."
 
 #: fileviewgitplugin.cpp:425
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr ""
+msgstr "ფაილების წაშლა <application>Git</application>-ის რეპოზიტორიიდან..."
 
 #: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application>-ის რეპოზიტორიიდან ფაილების წაშლის შეცდომა."
 
 #: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application>-ის რეპოზიტორიიდან ფაილები წაიშალა."
 
 #: fileviewgitplugin.cpp:433
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
-msgstr ""
+msgstr "<application>Git</application>-ის რეპოზიტორიაში ფაილების დაბრუნება..."
 
 #: fileviewgitplugin.cpp:434
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application>-ის რეპოზიტორიაში ფაილების დაბრუნების შეცდომა."
 
 #: fileviewgitplugin.cpp:435
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application>-ის რეპოზიტორიაში ფაილები დაბრუნდა."
 
 #: fileviewgitplugin.cpp:477
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr ""
+msgstr "<application>Git</application> ჟურნალის შეცდომა."
 
 #: fileviewgitplugin.cpp:500
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr ""
+msgstr "<application>Git</application> ჟურნალი"
 
 #: fileviewgitplugin.cpp:516
 #, kde-format
@@ -307,17 +311,17 @@ msgstr "ავტორი"
 #: fileviewgitplugin.cpp:563
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr ""
+msgstr "გადავერთე ახალ ბრენჩზე '%1'"
 
 #: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr ""
+msgstr "HEAD ახლა %1-სთანაა"
 
 #: fileviewgitplugin.cpp:573
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr ""
+msgstr "გადავერთე ახალ ბრენჩზე '%1'"
 
 #: fileviewgitplugin.cpp:584
 #, kde-kuit-format
@@ -325,11 +329,13 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
+"<application>Git</application> გამოთხოვის შეცდომა. შეიძლება სამუშაო "
+"საქაღალდე დაბინძურებულია."
 
 #: fileviewgitplugin.cpp:648
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr ""
+msgstr "ჭდე '%1' წარმატებით შეიქმნა"
 
 #: fileviewgitplugin.cpp:653
 #, kde-kuit-format
@@ -337,51 +343,53 @@ msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr ""
+"<application>Git</application>-ის ჭდის შექმნის შეცდომა. ჭდე სახელით '%1' "
+"უკვე არსებობს."
 
 #: fileviewgitplugin.cpp:655
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
-msgstr ""
+msgstr "<application>Git</application>-ის ჭდის შექმნის შეცდომა."
 
 #: fileviewgitplugin.cpp:667
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr ""
+msgstr "ბრენჩის (%1) პუში %2:%3 წარუმატებლად დასრულდა."
 
 #: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr ""
+msgstr "ბრენჩი (%1) წარმატებით დაიპუშა %2:%3-ზე."
 
 #: fileviewgitplugin.cpp:671
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr ""
+msgstr "ბრენჩის (%1) პუში %2:%3-ზე..."
 
 #: fileviewgitplugin.cpp:693
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr ""
+msgstr "ბრენჩის (%1) პული %2-დან წარუმატებლად დასრულდა."
 
 #: fileviewgitplugin.cpp:695
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr ""
+msgstr "ბრენჩის (%1) პული %2-დან წარმატებით დასრულდა."
 
 #: fileviewgitplugin.cpp:697
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr ""
+msgstr "ბრენჩის (%1) პული %2-დან..."
 
 #: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
-msgstr ""
+msgstr "ბრენჩი უკვე განახლებულია."
 
 #: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
-msgstr ""
+msgstr "შერწყმის კონფლიქტები. გაასწორეთ ისინი და დააკომიტეთ შედეგი."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
@@ -399,7 +407,7 @@ msgstr "ფანჯრის სიგანე"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr ""
+msgstr "<application>Git</application> პული"
 
 #: pulldialog.cpp:35
 #, kde-format
@@ -423,13 +431,13 @@ msgstr "დაშორებული:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote branch:"
-msgstr ""
+msgstr "დაშორებული ბრენჩი:"
 
 #: pushdialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr ""
+msgstr "<application>Git</application> პუში"
 
 #: pushdialog.cpp:37
 #, kde-format
@@ -453,26 +461,26 @@ msgstr "ბრენჩი"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr ""
+msgstr "ლოკალური ბრენჩი:"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr ""
+msgstr "დაშორებული ბრენჩი:"
 
 #: pushdialog.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch."
-msgstr ""
+msgstr "გაგრძელება მაშინაც კი, როცა დაშორებული ბრენჩი ლოკალურის წინაპარი არაა."
 
 #: tagdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
-msgstr ""
+msgstr "<application>Git</application> ჭდის შექმნა"
 
 #: tagdialog.cpp:42
 #, kde-format
@@ -520,7 +528,7 @@ msgstr "ჯერ აუცილებელია შეიყვანოთ 
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
-msgstr ""
+msgstr "ჭდის სახელები არ შეიძლება, გამოტოვებებს შეიცავდეს."
 
 #: tagdialog.cpp:133
 #, kde-format
