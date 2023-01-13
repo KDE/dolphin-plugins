@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2022-10-18 05:59+0200\n"
+"PO-Revision-Date: 2023-01-12 08:20+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> Backout"
 
 #: backoutdialog.cpp:33
 #, kde-kuit-format
@@ -40,7 +40,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
-msgstr ""
+msgstr "აირჩიეთ ცვლილებების სეტი"
 
 #: backoutdialog.cpp:68
 #, kde-kuit-format
@@ -52,13 +52,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
-msgstr ""
+msgstr "მშობელი რევიზია (არასავალდებულო): "
 
 #: backoutdialog.cpp:139 bundledialog.cpp:189
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
-msgstr ""
+msgstr "აირჩიეთ ცვლილებების სეტი"
 
 #: backoutdialog.cpp:140 bundledialog.cpp:190
 #, kde-kuit-format
@@ -85,19 +85,19 @@ msgstr "ბრენჩის გადართვა"
 #: branchdialog.cpp:70
 #, kde-format
 msgid "<b>Current Branch: </b>"
-msgstr ""
+msgstr "<b>მიმდინარე ბრენჩი: </b>"
 
 #: branchdialog.cpp:108 branchdialog.cpp:123 tagdialog.cpp:102
 #: tagdialog.cpp:118 tagdialog.cpp:133
 #, kde-format
 msgid "Some error occurred"
-msgstr ""
+msgstr "რაღაც შეცდომა"
 
 #: bundledialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
-msgstr ""
+msgstr "<application>Hg</application> -ის ცვლილებების პაკეტი"
 
 #: bundledialog.cpp:32
 #, kde-kuit-format
@@ -109,7 +109,7 @@ msgstr "ნაკრები"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
-msgstr ""
+msgstr "საბაზისო რევიზია (არასავალდებულო): "
 
 #: bundledialog.cpp:61
 #, kde-kuit-format
@@ -134,13 +134,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
-msgstr ""
+msgstr "სერვერის სერტიფიკატი არ გადამოწმდება"
 
 #: clonedialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Clone"
-msgstr ""
+msgstr "<application>Hg</application> კლონი"
 
 #: clonedialog.cpp:34
 #, kde-kuit-format
@@ -180,7 +180,7 @@ msgstr "გამართვა"
 #: clonedialog.cpp:62
 #, kde-format
 msgid "Do not update the new working directory."
-msgstr ""
+msgstr "ახალი სამუშაო საქაღალდის განახლება შეუძლებელია."
 
 #: clonedialog.cpp:63
 #, kde-format
@@ -190,12 +190,14 @@ msgstr ""
 #: clonedialog.cpp:64
 #, kde-format
 msgid "Use uncompressed transfer."
-msgstr ""
+msgstr "შეუკუმშავი გადაცემის გამოყენება."
 
 #: clonedialog.cpp:65
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
 msgstr ""
+"სერვერის სერტიფიკატის გადამოწმების შეცდომა (web.cacerts კონფიგურაცია "
+"იგნორირებულია)."
 
 #: clonedialog.cpp:158
 #, kde-format
@@ -212,13 +214,13 @@ msgstr "დახურვა"
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
-msgstr ""
+msgstr "რეპოზიტორიის კლონირების შეცდომა!"
 
 #: commitdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit"
-msgstr ""
+msgstr "<application>Hg</application> გადაცემა"
 
 #: commitdialog.cpp:34
 #, kde-kuit-format
@@ -237,7 +239,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Commit to current branch"
-msgstr ""
+msgstr "მიმდინარე ბრენჩში გადაცემა"
 
 #: commitdialog.cpp:59
 #, kde-kuit-format
@@ -249,7 +251,7 @@ msgstr "ახალი ბრენჩის შექმნა"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Close current branch"
-msgstr ""
+msgstr "მიმდინარე ბრენჩის დახურვა"
 
 #: commitdialog.cpp:86
 #, kde-format
@@ -271,7 +273,7 @@ msgstr "კომიტის კომენტარი"
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Diff/Content"
-msgstr ""
+msgstr "სხვაობა/შემცელობა"
 
 #: commitdialog.cpp:218
 #, kde-format
@@ -281,17 +283,17 @@ msgstr ""
 #: commitdialog.cpp:228
 #, kde-format
 msgid "Commit unsuccessful!"
-msgstr ""
+msgstr "გადაცემა წარმატებულია!"
 
 #: commitdialog.cpp:232
 #, kde-format
 msgid "No files for commit!"
-msgstr ""
+msgstr "გადასაცემი ფაილების გარეშე!"
 
 #: commitdialog.cpp:259
 #, kde-format
 msgid "Branch: Current Branch"
-msgstr ""
+msgstr "ბრენჩი: მიმდინარე ბრენჩი"
 
 #: commitdialog.cpp:266
 #, kde-format
@@ -301,31 +303,31 @@ msgstr "ბრენჩი: "
 #: commitdialog.cpp:279
 #, kde-format
 msgid "Branch: Close Current"
-msgstr ""
+msgstr "ბრენჩი: მიმდინარის დახურვა"
 
 #: commitdialog.cpp:292
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
-msgstr ""
+msgstr "<application>Hg</application> გადაცემა: ახალი ბრენჩი"
 
 #: commitdialog.cpp:300
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
-msgstr ""
+msgstr "შეიყვანეთ ახალი ბრენჩის სახელი"
 
 #: commitdialog.cpp:321
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
-msgstr ""
+msgstr "<b>ბრენჩი უკვე არსებობს!</b>"
 
 #: commitdialog.cpp:329
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
-msgstr ""
+msgstr "<b>შეიყვანეთ რამე ტექსტი!</b>"
 
 #: commitinfowidget.cpp:38
 #, kde-format
@@ -344,7 +346,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Global Configuration"
-msgstr ""
+msgstr "<application>Hg</application> -ის გლობალური კონფიგურაცია"
 
 #: configdialog.cpp:44
 #, kde-kuit-format
@@ -356,13 +358,13 @@ msgstr "ზოგადი პარამეტრები"
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
-msgstr ""
+msgstr "რეპოზიტორიის ბილიკები"
 
 #: configdialog.cpp:51
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Ignored Files"
-msgstr ""
+msgstr "იგნორირებული ფაილები"
 
 #: configdialog.cpp:55
 #, kde-kuit-format
@@ -374,25 +376,25 @@ msgstr "მოდულის პარამეტრები"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Initialize Repository"
-msgstr ""
+msgstr "<application>Hg</application> რეპოზიტორიის ინიციალიზაცია"
 
 #: createdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
-msgstr ""
+msgstr "რეპოზიტორიის ინიციალიზაცია"
 
 #: createdialog.cpp:59
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
-msgstr ""
+msgstr "რეპოზიტორიის შექმნის შეცდომა!"
 
 #: exportdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
-msgstr ""
+msgstr "<application>Hg</application> გატანა"
 
 #: exportdialog.cpp:29
 #, kde-kuit-format
@@ -404,13 +406,13 @@ msgstr "გატანა"
 #, kde-format
 msgctxt "@label"
 msgid "Treat all files as text"
-msgstr ""
+msgstr "ყველა ფაილის ტექსტად აღქმა"
 
 #: exportdialog.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid "Use Git extended diff format"
-msgstr ""
+msgstr "Git-ის გაფართოებული diff ფორმატის გამოყენება"
 
 #: exportdialog.cpp:58
 #, kde-format
@@ -470,109 +472,109 @@ msgstr "<application>Hg</application> კლონი"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
-msgstr ""
+msgstr "<application>Hg</application> ინიციალიზაცია"
 
 #: fileviewhgplugin.cpp:151
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
-msgstr ""
+msgstr "<application>Hg</application> განახლება"
 
 #: fileviewhgplugin.cpp:158
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
-msgstr ""
+msgstr "<application>Hg</application> გლობალური კონფიგურაცია"
 
 #: fileviewhgplugin.cpp:165
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
-msgstr ""
+msgstr "<application>Hg</application> რეპოზიტორიის კონფიგურაცია"
 
 #: fileviewhgplugin.cpp:172
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
-msgstr ""
+msgstr "<application>Hg</application> პუში"
 
 #: fileviewhgplugin.cpp:179
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
-msgstr ""
+msgstr "<application>Hg</application> პული"
 
 #: fileviewhgplugin.cpp:186
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
-msgstr ""
+msgstr "<application>Hg</application> დაბრუნება"
 
 #: fileviewhgplugin.cpp:193
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
-msgstr ""
+msgstr "<application>Hg</application> ყველას დაბრუნება"
 
 #: fileviewhgplugin.cpp:200
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
-msgstr ""
+msgstr "<application>Hg</application> სრულად დაბრუნება"
 
 #: fileviewhgplugin.cpp:207
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
-msgstr ""
+msgstr "<application>Hg</application> შერწყმა"
 
 #: fileviewhgplugin.cpp:214
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
-msgstr ""
+msgstr "<application>Hg</application> -ის ცვლილებების პაკეტი"
 
 #: fileviewhgplugin.cpp:221
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
-msgstr ""
+msgstr "<application>Hg</application> გატანა"
 
 #: fileviewhgplugin.cpp:228
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
-msgstr ""
+msgstr "<application>Hg</application> შემოტანა"
 
 #: fileviewhgplugin.cpp:235
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
-msgstr ""
+msgstr "<application>Hg</application> შეკვრის დაშლა"
 
 #: fileviewhgplugin.cpp:242
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> სერვერი"
 
 #: fileviewhgplugin.cpp:249
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> Backout"
 
 #: fileviewhgplugin.cpp:256
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
-msgstr ""
+msgstr "<application>Hg</application> სხვაობა"
 
 #: fileviewhgplugin.cpp:280
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
-msgstr ""
+msgstr "<application>Mercurial</application>"
 
 #: fileviewhgplugin.cpp:490
 #, kde-kuit-format
@@ -881,7 +883,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
-msgstr ""
+msgstr "<application>Hg</application> შემოტანა"
 
 #: importdialog.cpp:31
 #, kde-kuit-format
@@ -917,19 +919,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Add Patches"
-msgstr ""
+msgstr "პაჩების დამატება"
 
 #: importdialog.cpp:83
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Remove Patches"
-msgstr ""
+msgstr "პაჩების წაშლა"
 
 #: mergedialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Merge"
-msgstr ""
+msgstr "<application>Hg</application> შერწყმა"
 
 #: mergedialog.cpp:28
 #, kde-kuit-format
@@ -971,49 +973,49 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Incoming Changes"
-msgstr ""
+msgstr "შემომავალი ცვლილებები"
 
 #: pulldialog.cpp:148
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No incoming changes!"
-msgstr ""
+msgstr "შემომავალი ცვლილებების გარეშე!"
 
 #: pushdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Push Repository"
-msgstr ""
+msgstr "<application>Hg</application> რეპოზიტორიის პუში"
 
 #: pushdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
-msgstr ""
+msgstr "ახალ ბრენჩში დაპუშვა"
 
 #: pushdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Push"
-msgstr ""
+msgstr "ძალით დაპუშვა"
 
 #: pushdialog.cpp:54
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Outgoing Changes"
-msgstr ""
+msgstr "გამავალი ცვლილებები"
 
 #: pushdialog.cpp:169
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
-msgstr ""
+msgstr "გამავალი ცვლილებების გარეშე!"
 
 #: renamedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Rename"
-msgstr ""
+msgstr "<application>Hg</application> გადარქმევა"
 
 #: renamedialog.cpp:27
 #, kde-kuit-format
@@ -1025,7 +1027,7 @@ msgstr "ვიეტნამური"
 #, kde-kuit-format
 msgctxt "@label:label to source file"
 msgid "Source "
-msgstr ""
+msgstr "საწყისი კოდი "
 
 #: renamedialog.cpp:39
 #, kde-kuit-format
@@ -1037,19 +1039,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> სერვერი"
 
 #: servedialog.cpp:63
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
-msgstr ""
+msgstr "სერვერის გაშვება"
 
 #: servedialog.cpp:64
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
-msgstr ""
+msgstr "სერვერის გაჩერება"
 
 #: servedialog.cpp:65
 #, kde-kuit-format
@@ -1066,12 +1068,12 @@ msgstr "პორტი"
 #: servewrapper.cpp:68
 #, kde-format
 msgid "## Starting Server ##"
-msgstr ""
+msgstr "## სერვერის გაშვება ##"
 
 #: servewrapper.h:151
 #, kde-format
 msgid "## Server Stopped! ##\n"
-msgstr ""
+msgstr "## სერვერი გაჩერდა! ##\n"
 
 #: statuslist.cpp:28
 #, kde-format
@@ -1082,19 +1084,19 @@ msgstr "ფაილის სახელი"
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
-msgstr ""
+msgstr "ფაილის სტატუსი"
 
 #: syncdialogbase.cpp:82
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
-msgstr ""
+msgstr "შემომავალი ცვლილებების ჩვენება"
 
 #: syncdialogbase.cpp:86
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
-msgstr ""
+msgstr "გამავალი ცვლილებების ჩვენება"
 
 #: syncdialogbase.cpp:121
 #, kde-kuit-format
@@ -1106,7 +1108,7 @@ msgstr "მიღება"
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
-msgstr ""
+msgstr "ცვლილებები ვერ ვიპოვე!"
 
 #: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
 #, kde-format
@@ -1138,12 +1140,12 @@ msgstr "ჭდის წაშლა"
 #: tagdialog.cpp:32
 #, kde-format
 msgid "Switch Tag"
-msgstr ""
+msgstr "ჭდის გადართვა"
 
 #: tagdialog.cpp:129
 #, kde-format
 msgid "Created tag successfully!"
-msgstr ""
+msgstr "ჭდე წარმატებით შეიქმნა!"
 
 #: updatedialog.cpp:25
 #, kde-kuit-format
@@ -1160,7 +1162,7 @@ msgstr "განახლება"
 #: updatedialog.cpp:30
 #, kde-format
 msgid "New working directory"
-msgstr ""
+msgstr "ახალი სამუშაო საქაღლდე"
 
 #: updatedialog.cpp:35
 #, kde-format
@@ -1170,12 +1172,12 @@ msgstr "იარლიყი"
 #: updatedialog.cpp:36
 #, kde-format
 msgid "Changeset/Revision"
-msgstr ""
+msgstr "ცვლილებების სეტი/რევიზია"
 
 #: updatedialog.cpp:41
 #, kde-format
 msgid "Current Parent"
-msgstr ""
+msgstr "მიმდინარე მშობელი"
 
 #: updatedialog.cpp:47
 #, kde-format
@@ -1185,7 +1187,7 @@ msgstr "გამართვა"
 #: updatedialog.cpp:49
 #, kde-format
 msgid "Discard uncommitted changes"
-msgstr ""
+msgstr "გადაუცემელი ცვლილებების მოცილება"
 
 #: updatedialog.cpp:126
 #, kde-format
