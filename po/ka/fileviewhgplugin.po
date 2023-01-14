@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2023-01-11 16:57+0100\n"
+"PO-Revision-Date: 2023-01-14 11:59+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -28,13 +28,13 @@ msgstr "<application>Hg</application> Backout"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
-msgstr ""
+msgstr "დაბრუნება"
 
 #: backoutdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
-msgstr ""
+msgstr "ძველ მშობელთან შერწყმა დაბრუნების შემდეგ"
 
 #: backoutdialog.cpp:62 backoutdialog.cpp:64 bundledialog.cpp:57
 #, kde-kuit-format
@@ -46,7 +46,7 @@ msgstr "აირჩიეთ ცვლილებების სეტი"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
-msgstr ""
+msgstr "დაბრუნებადი რევიზია: "
 
 #: backoutdialog.cpp:73
 #, kde-kuit-format
@@ -115,7 +115,7 @@ msgstr "საბაზისო რევიზია (არასავალ
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
-msgstr ""
+msgstr "ყველა ცვლილების შეგროვება."
 
 #: bundledialog.cpp:76 exportdialog.cpp:55 importdialog.cpp:61
 #: pulldialog.cpp:44 pushdialog.cpp:44
@@ -128,7 +128,7 @@ msgstr "გამართვა"
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Run even when the destination is unrelated (force)"
-msgstr ""
+msgstr "გაშვება მაშინაც კი, როცა სამიზნე შეუსაბამოა (ძალით)"
 
 #: bundledialog.cpp:81 pulldialog.cpp:40 pushdialog.cpp:40
 #, kde-kuit-format
@@ -185,7 +185,7 @@ msgstr "ახალი სამუშაო საქაღალდის გ
 #: clonedialog.cpp:63
 #, kde-format
 msgid "Use pull protocol to copy metadata."
-msgstr ""
+msgstr "მეტამონაცემების დასაკოპირებლად პროტოკოლი pull გამოიყენეთ."
 
 #: clonedialog.cpp:64
 #, kde-format
@@ -202,7 +202,7 @@ msgstr ""
 #: clonedialog.cpp:158
 #, kde-format
 msgid "Terminating cloning!"
-msgstr ""
+msgstr "კლონირების შეწყვეტა!"
 
 #: clonedialog.cpp:184
 #, kde-kuit-format
@@ -234,6 +234,8 @@ msgid ""
 "The KTextEditor component could not be found;\n"
 "please check your KDE Frameworks installation."
 msgstr ""
+"კომპონენტი KTextEditor ვერ ვიპოვე;\n"
+"შეამოწმეთ KDE-ის ფაილები."
 
 #: commitdialog.cpp:54
 #, kde-kuit-format
@@ -278,7 +280,7 @@ msgstr "სხვაობა/შემცელობა"
 #: commitdialog.cpp:218
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
-msgstr ""
+msgstr "ბრენჩის შექმნის შეცდომა! კომიტი გაუქმდება!"
 
 #: commitdialog.cpp:228
 #, kde-format
@@ -335,12 +337,14 @@ msgid ""
 "A KDE text-editor component could not be found;\n"
 "please check your KDE installation."
 msgstr ""
+"KDE-ის ტექსტური რედაქტორის კომპონენტი აღმჩენილი არაა;\n"
+"შეამოწმეთ KDE-ის ფაილები."
 
 #: configdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Repository Configuration"
-msgstr ""
+msgstr "<application>Hg</application> -ის რეპოზიტორიის მორგება"
 
 #: configdialog.cpp:31
 #, kde-kuit-format
@@ -418,13 +422,13 @@ msgstr "Git-ის გაფართოებული diff ფორმატ�
 #, kde-format
 msgctxt "@label"
 msgid "Omit dates from diff headers"
-msgstr ""
+msgstr "Diff-ის თავსართებში თარიღები დამუშავებული არ იქნება"
 
 #: exportdialog.cpp:127
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
-msgstr ""
+msgstr "გასატანად აუცილებელია, ერთი ცვლილებების სეტი მაინც აირჩიოთ!"
 
 #: fileviewhgplugin.cpp:95
 #, kde-kuit-format
@@ -580,25 +584,27 @@ msgstr "<application>Mercurial</application>"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიაში ფაილების დამატება..."
 
 #: fileviewhgplugin.cpp:492
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილების დამატების შეცდომა."
 
 #: fileviewhgplugin.cpp:494
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილები წარმატებით დაემატა."
 
 #: fileviewhgplugin.cpp:511
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
-msgstr ""
+msgstr "მართლა გნებავთ მონიშნული ფაილების რეპოზიტორიიდან წაშლა?"
 
 #: fileviewhgplugin.cpp:512
 #, kde-format
@@ -609,67 +615,74 @@ msgstr "ფაილების წაშლა"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
-msgstr ""
+msgstr "ფაილების წაშლა <application>Hg</application>-ის რეპოზიტორიიდან..."
 
 #: fileviewhgplugin.cpp:524
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიიდან ფაილების წაშლის შეცდომა."
 
 #: fileviewhgplugin.cpp:526
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიიდან ფაილები წაიშალა."
 
 #: fileviewhgplugin.cpp:538
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილის სახელის გადარქმევის "
+"შეცდომა."
 
 #: fileviewhgplugin.cpp:540
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილის სახელი წარმატებით "
+"შეიცვალა."
 
 #: fileviewhgplugin.cpp:542
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილის სახელის გადარქმევა."
 
 #: fileviewhgplugin.cpp:553
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
-msgstr ""
+msgstr "გადასაცემი ცვლილებების გარეშე!"
 
 #: fileviewhgplugin.cpp:558
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიის კომიტის შეცდომა."
 
 #: fileviewhgplugin.cpp:560
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr ""
+"<application>Hg</application> -ის რეპოზიტორიაში კომიტი წარმატებით დასრულდა."
 
 #: fileviewhgplugin.cpp:562
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიის კომიტი."
 
 #: fileviewhgplugin.cpp:573
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიაში ჭდის ოპერაციის შეცდომა."
 
 #: fileviewhgplugin.cpp:575
 #, kde-kuit-format
@@ -677,18 +690,20 @@ msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ჭდის ოპერაცია წარმატებულია."
 
 #: fileviewhgplugin.cpp:577
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
-msgstr ""
+msgstr "ჭდის ოპერაცია <application>Hg</application>-ის რეპოზიტორიაში."
 
 #: fileviewhgplugin.cpp:586
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr ""
+"<application>Hg</application>-ის სამუშაო საქაღალდის განახლების შეცდომა."
 
 #: fileviewhgplugin.cpp:588
 #, kde-kuit-format
@@ -696,18 +711,20 @@ msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
 msgstr ""
+"<application>Hg</application>-ის სამუშაო საქაღალდის განახლება წარმატებულია."
 
 #: fileviewhgplugin.cpp:590
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
-msgstr ""
+msgstr "<application>Hg</application>-ის სამუშაო საქაღალდის განახლება."
 
 #: fileviewhgplugin.cpp:599
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ბრენჩის ოპერაციის შეცდომა."
 
 #: fileviewhgplugin.cpp:601
 #, kde-kuit-format
@@ -716,18 +733,20 @@ msgid ""
 "Branch operation on <application>Hg</application> repository completed "
 "successfully."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ბრენჩის ოპერაცია "
+"წარმატებულია.."
 
 #: fileviewhgplugin.cpp:603
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
-msgstr ""
+msgstr "ბრენჩის ოპერაცია <application>Hg</application>-ის რეპოზიტორიაში."
 
 #: fileviewhgplugin.cpp:705
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
-msgstr ""
+msgstr "გნებავთ მონიშნულ ფაილებში შეტანილი ცვლილებების დაბრუნება?"
 
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
@@ -738,13 +757,14 @@ msgstr "დაბრუნება"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიაში ფაილების დაბრუნება..."
 
 #: fileviewhgplugin.cpp:718 fileviewhgplugin.cpp:747
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილების დაბრუნების შეცდომა."
 
 #: fileviewhgplugin.cpp:720 fileviewhgplugin.cpp:749
 #, kde-kuit-format
@@ -753,53 +773,58 @@ msgid ""
 "Reverting files in <application>Hg</application> repository completed "
 "successfully."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიაში ფაილები წარმატებით დაბრუნდა."
 
 #: fileviewhgplugin.cpp:734
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr ""
+"გნებავთ მიმდინარე სამუშაო საქაღალდეში შეტანილი ყველა ცვლილების დაბრუნება?"
 
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "ყველას დაბრუნება"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application>-ის რეპოზიტორიის სხვაობის გენერაცია..."
 
 #: fileviewhgplugin.cpp:760
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიის სხვაობის მიღების შეცდომა."
 
 #: fileviewhgplugin.cpp:762
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr ""
+"<application>Hg</application>-ის რეპოზიტორიის სხვაობის გენერაცია "
+"წარმატებულია."
 
 #: fileviewhgplugin.cpp:792
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
-msgstr ""
+msgstr "შეწყვეტა: მიმდინარე საქაღალდეს დაუკომიტებელი ცვლილებები გააჩნია!"
 
 #: fileviewhgplugin.cpp:805
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
-msgstr ""
+msgstr "დაბრუნების ინფორმაცია ხელმისაწვდომი არაა!"
 
 #: fileviewhgplugin.cpp:821
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
-msgstr ""
+msgstr "გნებავთ ბოლო ტრანზაქციის დაბრუნება?"
 
 #: fileviewhgplugin.cpp:822
 #, kde-format
@@ -810,20 +835,20 @@ msgstr "უკან დაბრუნება"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application> -ის რეპოზიტორიის დაბრუნება..."
 
 #: fileviewhgplugin.cpp:834
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> -ის რეპოზიტორიის დაბრუნების შეცდომა."
 
 #: fileviewhgplugin.cpp:836
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Rollback of <application>Hg</application> repository completed successfully."
-msgstr ""
+msgstr "<application>Hg</application> -ის რეპოზიტორია წარმატებით დაბრუნდა."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)
@@ -871,13 +896,13 @@ msgstr "ფანჯრის სიგანე"
 #: fileviewhgpluginsettings.kcfg:17
 #, kde-format
 msgid "Divides file list and editors with commit details"
-msgstr ""
+msgstr "ფაილების სიისა და რედაქტორების კომიტის დეტალებით დაყოფა"
 
 #. i18n: ectx: label, entry (horizontalSplitterSizes), group (CommitDialogSettings)
 #: fileviewhgpluginsettings.kcfg:21
 #, kde-format
 msgid "Divides commit editor and diff editor"
-msgstr ""
+msgstr "კომიტისა და სხვაობის რედაქტორის გაყოფა"
 
 #: importdialog.cpp:30
 #, kde-kuit-format
@@ -895,25 +920,25 @@ msgstr "იმპორტი"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
-msgstr ""
+msgstr "არ დაკომიტება, უბრალოდ სამუშაო საქაღალდის განახლება"
 
 #: importdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
-msgstr ""
+msgstr "გამორჩეული დაუკომიტებელი ცვლილებების ტესტის გამოტოვება"
 
 #: importdialog.cpp:67
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
-msgstr ""
+msgstr "იმ კვანძების დაპაჩვა, საიდანაც ის დაგენერირდა"
 
 #: importdialog.cpp:69
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
-msgstr ""
+msgstr "პაჩის გადატარება სამუშაო საქაღალდის შეხების გარეშე"
 
 #: importdialog.cpp:81
 #, kde-kuit-format
@@ -943,7 +968,7 @@ msgstr "_შერწყმა"
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
-msgstr ""
+msgstr "შესარწყმელი ბრენჩი არჩეული არაა!"
 
 #: pathselector.cpp:60
 #, kde-kuit-format
@@ -955,19 +980,19 @@ msgstr "ჩასწორება"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
-msgstr ""
+msgstr "<application>Hg</application> რეპოზიტორიის პული"
 
 #: pulldialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
-msgstr ""
+msgstr "ახალ ბრენჩზე განახლება, თუ ცვლილებები წაღებულია"
 
 #: pulldialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
-msgstr ""
+msgstr "ძალით გამოთხოვა"
 
 #: pulldialog.cpp:54
 #, kde-kuit-format
@@ -1195,3 +1220,5 @@ msgid ""
 "Some error occurred! \n"
 "Maybe there are uncommitted changes."
 msgstr ""
+"დაფიქსირდა შეცდომები!\n"
+"შეიძლება არსებობს დაუკომიტებელი ცვლილებები."
