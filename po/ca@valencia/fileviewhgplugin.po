@@ -378,7 +378,7 @@ msgstr "Fitxers ignorats"
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Plugin Settings"
-msgstr "Configuració del connector"
+msgstr "Configureu el connector"
 
 #: createdialog.cpp:23
 #, kde-kuit-format
