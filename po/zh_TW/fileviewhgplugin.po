@@ -1,22 +1,23 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+#
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2012.
 # Jeff Huang <s8321414@gmail.com>, 2016.
 # pan93412 <pan93412@gmail.com>, 2018.
-#
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2018-03-24 22:05+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2023-01-21 23:57+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: backoutdialog.cpp:31
@@ -604,11 +605,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "您要從主目錄中移除選取的檔案嗎？"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "移除修補"
+msgstr "移除檔案"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -737,7 +736,7 @@ msgstr "您要回復選取檔案的變更嗎？"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "回復"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -768,7 +767,7 @@ msgstr "您要回復對目前工作目錄所做的所有變更嗎？"
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "回復全部"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -809,7 +808,7 @@ msgstr "您確定要退回上次的提交狀態嗎？"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "退回"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
@@ -1079,7 +1078,7 @@ msgstr "## 伺服器啟動中 ##"
 #: servewrapper.h:151
 #, kde-format
 msgid "## Server Stopped! ##\n"
-msgstr ""
+msgstr "## 伺服器已終止！ ##\n"
 
 #: statuslist.cpp:28
 #, kde-format
