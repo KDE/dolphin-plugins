@@ -25,6 +25,7 @@
         "Name[it]": "Monta ISO e immagini di dischi",
         "Name[ka]": "ISO და დისკის ასლების მიმაგრება",
         "Name[ko]": "ISO 및 디스크 이미지 마운트",
+        "Name[nb]": "Monter ISO-filer og diskbilder",
         "Name[nl]": "Aankoppelen van ISO- en schijfimages",
         "Name[nn]": "Monter ISO-filer og diskbilete",
         "Name[pl]": "Podpinaj i odpinaj obrazy ISO",
@@ -40,7 +41,8 @@
         "Name[uk]": "Монтування образів ISO і дисків",
         "Name[vi]": "Gắn kết ISO và ảnh đĩa",
         "Name[x-test]": "xxMount ISO and disk imagesxx",
-        "Name[zh_CN]": "挂载 ISO 和磁盘映像"
+        "Name[zh_CN]": "挂载 ISO 和磁盘映像",
+        "Name[zh_TW]": "掛載 ISO 與光碟映像檔"
     },
     "MimeType": "application/x-cd-image;application/x-raw-disk-image;"
 }

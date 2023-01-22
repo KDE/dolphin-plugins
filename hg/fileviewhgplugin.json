@@ -23,6 +23,7 @@
         "Name[it]": "Mercurial",
         "Name[ka]": "Mercurial",
         "Name[ko]": "Mercurial",
+        "Name[nb]": "Mercurial",
         "Name[nl]": "Mercurial",
         "Name[nn]": "Mercurial",
         "Name[pl]": "Mercurial",
@@ -37,7 +38,8 @@
         "Name[uk]": "Mercurial",
         "Name[vi]": "Mercurial",
         "Name[x-test]": "xxMercurialxx",
-        "Name[zh_CN]": "Mercurial"
+        "Name[zh_CN]": "Mercurial",
+        "Name[zh_TW]": "Mercurial"
     },
     "MimeType": "text/plain;"
 }

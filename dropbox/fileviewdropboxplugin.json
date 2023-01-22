@@ -23,6 +23,7 @@
         "Name[it]": "Dropbox",
         "Name[ka]": "Dropbox",
         "Name[ko]": "Dropbox",
+        "Name[nb]": "Dropbox",
         "Name[nl]": "Dropbox",
         "Name[nn]": "Dropbox",
         "Name[pl]": "Dropbox",
@@ -37,7 +38,8 @@
         "Name[uk]": "Dropbox",
         "Name[vi]": "Dropbox",
         "Name[x-test]": "xxDropboxxx",
-        "Name[zh_CN]": "Dropbox"
+        "Name[zh_CN]": "Dropbox",
+        "Name[zh_TW]": "Dropbox"
     },
     "MimeType": "text/plain;"
 }

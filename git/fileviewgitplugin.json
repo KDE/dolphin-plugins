@@ -24,6 +24,7 @@
         "Name[ka]": "Git",
         "Name[ko]": "Git",
         "Name[my]": "ဂစ်",
+        "Name[nb]": "Git",
         "Name[nl]": "Git",
         "Name[nn]": "Git",
         "Name[pl]": "Git",
@@ -38,7 +39,8 @@
         "Name[uk]": "Git",
         "Name[vi]": "Git",
         "Name[x-test]": "xxGitxx",
-        "Name[zh_CN]": "Git"
+        "Name[zh_CN]": "Git",
+        "Name[zh_TW]": "Git"
     },
     "MimeType": "text/plain;"
 }
