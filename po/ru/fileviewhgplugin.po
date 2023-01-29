@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2023-01-12 11:30+0300\n"
+"PO-Revision-Date: 2023-01-28 10:50+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -748,7 +748,7 @@ msgstr "Отменить изменения, внесённые в выбран�
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Отмена изменений"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -783,7 +783,7 @@ msgstr "Отменить все изменения, внесённые в тек
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Отменить все изменения"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -827,7 +827,7 @@ msgstr "Откатить последнюю транзакцию?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Откат изменений"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
