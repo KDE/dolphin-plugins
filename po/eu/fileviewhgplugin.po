@@ -1,16 +1,16 @@
 # Translation for fileviewhgplugin.po to Euskara/Basque (eu).
-# Copyright (C) 2022 This file is copyright:
+# Copyright (C) 2022-2023 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2022-09-11 18:18+0200\n"
+"PO-Revision-Date: 2023-02-09 21:39+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,37 +18,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> Atzera egin («Backout»)"
 
 #: backoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
-msgstr ""
+msgstr "Atzera egin («Backout»)"
 
 #: backoutdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
-msgstr ""
+msgstr "Atera egin ondoren, bateratu direktorio-egoera zaharraren gurasoarekin"
 
 #: backoutdialog.cpp:62 backoutdialog.cpp:64 bundledialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
-msgstr ""
+msgstr "Hautatu aldaketa-multzoa («Changeset»)"
 
 #: backoutdialog.cpp:68
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
-msgstr ""
+msgstr "Atzera egin («Backout») beharreko berrikuspena:"
 
 #: backoutdialog.cpp:73
 #, kde-kuit-format
@@ -60,7 +60,7 @@ msgstr "Guraso berrikuspena (hautazkoa): "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
-msgstr ""
+msgstr "Hautatu aldaketa-multzoa («Changeset»)"
 
 #: backoutdialog.cpp:140 bundledialog.cpp:190
 #, kde-kuit-format
@@ -117,7 +117,7 @@ msgstr "Oinarrizko berrikuspena (hautazkoa):"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
-msgstr ""
+msgstr "Bildu gordetegiko aldaketa-multzo guztiak."
 
 #: bundledialog.cpp:76 exportdialog.cpp:55 importdialog.cpp:61
 #: pulldialog.cpp:44 pushdialog.cpp:44
@@ -430,6 +430,8 @@ msgstr "«diff» goiburuetan datak alde batera utzi"
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr ""
+"Mesedez, hautatu gutxienez esportatu beharreko aldaketa-multzo («changeset») "
+"bat!"
 
 #: fileviewhgplugin.cpp:95
 #, kde-kuit-format
@@ -525,7 +527,7 @@ msgstr "<application>Hg</application> Leheneratu dena"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
-msgstr ""
+msgstr "<application>Hg</application> Atzeraka kendu («rollback»)"
 
 #: fileviewhgplugin.cpp:207
 #, kde-kuit-format
@@ -555,19 +557,19 @@ msgstr "<application>Hg</application> Informatu"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
-msgstr ""
+msgstr "<application>Hg</application> Fardeletik atera («unbundle»)"
 
 #: fileviewhgplugin.cpp:242
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> Zerbitzatu"
 
 #: fileviewhgplugin.cpp:249
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> Atzera egin («Backout»)"
 
 #: fileviewhgplugin.cpp:256
 #, kde-kuit-format
@@ -607,11 +609,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Hautatutako fitxategiak gordetegitik kendu nahi zenituzke?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Kendu adabakiak"
+msgstr "Kendu fitxategiak"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -749,7 +749,7 @@ msgstr "Hautatutako fitxategiei eginiko aldaketak lehengoratu nahi zenituzke?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Lehengoratu"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -786,7 +786,7 @@ msgstr ""
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Lehengoratu dena"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -816,30 +816,31 @@ msgstr "galarazi: Baliozkotu gabeko aldaketak laneko direktorioan!"
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
-msgstr ""
+msgstr "Ez dago erabilgarri leheneratze informaziorik!"
 
 #: fileviewhgplugin.cpp:821
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
-msgstr ""
+msgstr "Azken transakzioa lehengoratu nahi zenuke?"
 
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Atzeraka kendu («rollback»)"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr ""
+"<application>Hg</application> gordetegian atzera kentzea exekutatzen..."
 
 #: fileviewhgplugin.cpp:834
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> gordetegian atzera kentzea huts egin du."
 
 #: fileviewhgplugin.cpp:836
 #, kde-kuit-format
@@ -847,6 +848,7 @@ msgctxt "@info:status"
 msgid ""
 "Rollback of <application>Hg</application> repository completed successfully."
 msgstr ""
+"<application>Hg</application> gordetegian atzera kentzea ondo burutu da."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)
@@ -926,19 +928,19 @@ msgstr "Ez baliozkotu, laneko direktorioa eguneratu besterik ez"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
-msgstr ""
+msgstr "Saltatu proba oraindik egiteko baliozkotu gabeko aldaketetarako"
 
 #: importdialog.cpp:67
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
-msgstr ""
+msgstr "Ezarri adabakia sortu zeneko korapiluneei"
 
 #: importdialog.cpp:69
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
-msgstr "Ezarri adabakiak laneko direktorioa ukitu gabe"
+msgstr "Ezarri adabakia laneko direktorioa ukitu gabe"
 
 #: importdialog.cpp:81
 #, kde-kuit-format
@@ -980,19 +982,19 @@ msgstr "editatu"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
-msgstr ""
+msgstr "<application>Hg</application> Ekarri gordetegia"
 
 #: pulldialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
-msgstr ""
+msgstr "Eguneratu adar berriaren burura aldaketa-multzoak ekarri badira"
 
 #: pulldialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
-msgstr ""
+msgstr "Behartu ekartzea"
 
 #: pulldialog.cpp:54
 #, kde-kuit-format
@@ -1064,7 +1066,7 @@ msgstr "Berrizendatu honetara "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> Zerbitzatu"
 
 #: servedialog.cpp:63
 #, kde-kuit-format
@@ -1197,7 +1199,7 @@ msgstr "Etiketa"
 #: updatedialog.cpp:36
 #, kde-format
 msgid "Changeset/Revision"
-msgstr ""
+msgstr "Aldaketa-multzoa/Berrikuspena"
 
 #: updatedialog.cpp:41
 #, kde-format
