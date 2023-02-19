@@ -38,7 +38,8 @@
         "Name[uk]": "Dropbox",
         "Name[vi]": "Dropbox",
         "Name[x-test]": "xxDropboxxx",
-        "Name[zh_CN]": "Dropbox"
+        "Name[zh_CN]": "Dropbox",
+        "Name[zh_TW]": "Dropbox"
     },
     "MimeType": "text/plain;"
 }
