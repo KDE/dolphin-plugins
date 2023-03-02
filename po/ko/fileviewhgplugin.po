@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2014, 2015, 2017, 2021.
+# Shinjo Park <kde@peremen.name>, 2014, 2015, 2017, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2021-05-16 20:58+0200\n"
+"PO-Revision-Date: 2023-03-01 00:59+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -602,11 +602,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "저장소에서 선택한 파일을 삭제하시겠습니까?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "패치 삭제"
+msgstr "파일 삭제"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -735,7 +733,7 @@ msgstr "선택한 파일의 변경 사앙흘 되돌리시겠습니까?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "되돌리기"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -766,7 +764,7 @@ msgstr "현재 작업 디렉터리의 모든 변경 사항을 되돌리시겠습
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "모두 되돌리기"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -807,7 +805,7 @@ msgstr "마지막 트랜잭션을 되돌리시겠습니까?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "롤백"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
