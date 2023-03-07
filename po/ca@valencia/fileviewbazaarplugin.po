@@ -1,24 +1,24 @@
 # Translation of fileviewbazaarplugin.po to Catalan (Valencian)
-# Copyright (C) 2011-2022 This_file_is_part_of_KDE
+# Copyright (C) 2011-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2011.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2023.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-12 00:49+0000\n"
-"PO-Revision-Date: 2022-04-20 16:00+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2023-03-06 15:48+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 20.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -50,7 +50,7 @@ msgstr "Mostra els canvis locals a Bazaar"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
-msgstr "Publica a Bazaar..."
+msgstr "Comet a Bazaar..."
 
 #: fileviewbazaarplugin.cpp:79
 #, kde-format
@@ -146,19 +146,19 @@ msgstr "S'han revisat els canvis."
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
-msgstr "S'estan publicant els canvis a Bazaar..."
+msgstr "S'estan cometent els canvis a Bazaar..."
 
 #: fileviewbazaarplugin.cpp:392
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
-msgstr "No s'han pogut publicar els canvis a Bazaar."
+msgstr "No s'han pogut cometre els canvis a Bazaar."
 
 #: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
-msgstr "S'han publicat els canvis a Bazaar."
+msgstr "S'han comés els canvis a Bazaar."
 
 #: fileviewbazaarplugin.cpp:399
 #, kde-format

@@ -1,17 +1,17 @@
 # Translation of fileviewhgplugin.po to Catalan (Valencian)
-# Copyright (C) 2011-2022 This_file_is_part_of_KDE
+# Copyright (C) 2011-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2011, 2012.
-# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2015, 2017, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2015, 2017, 2022, 2023.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2022-10-17 10:29+0200\n"
+"PO-Revision-Date: 2023-03-06 15:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -224,13 +224,13 @@ msgstr "S'ha produït un error en clonar el repositori!"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit"
-msgstr "Publiqueu a <application>Hg</application>"
+msgstr "Comissió a <application>Hg</application>"
 
 #: commitdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "Publica"
+msgstr "Comet"
 
 #: commitdialog.cpp:41
 #, kde-format
@@ -245,7 +245,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Commit to current branch"
-msgstr "Publica a la branca actual"
+msgstr "Comet a la branca actual"
 
 #: commitdialog.cpp:59
 #, kde-kuit-format
@@ -273,7 +273,7 @@ msgstr "Branca"
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Commit Message"
-msgstr "Missatge de publicació"
+msgstr "Missatge de comissió"
 
 #: commitdialog.cpp:115
 #, kde-kuit-format
@@ -284,17 +284,17 @@ msgstr "Diff/contingut"
 #: commitdialog.cpp:218
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
-msgstr "No s'ha pogut crear la branca! S'està interrompent la publicació!"
+msgstr "No s'ha pogut crear la branca! S'està interrompent la comissió!"
 
 #: commitdialog.cpp:228
 #, kde-format
 msgid "Commit unsuccessful!"
-msgstr "Publicació incorrecta!"
+msgstr "Comissió incorrecta!"
 
 #: commitdialog.cpp:232
 #, kde-format
 msgid "No files for commit!"
-msgstr "No hi ha cap fitxer que s'haja de publicar!"
+msgstr "No hi ha cap fitxer que s'haja de cometre!"
 
 #: commitdialog.cpp:259
 #, kde-format
@@ -315,7 +315,7 @@ msgstr "Branca: tanca l'actual"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
-msgstr "Publiqueu a <application>Hg</application>: branca nova"
+msgstr "Comissió a <application>Hg</application>: branca nova"
 
 #: commitdialog.cpp:300
 #, kde-kuit-format
@@ -456,7 +456,7 @@ msgstr "Canvia el nom a <application>Hg</application>"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
-msgstr "Publica a <application>Hg</application>"
+msgstr "Comet a <application>Hg</application>"
 
 #: fileviewhgplugin.cpp:123
 #, kde-kuit-format
@@ -664,25 +664,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
-msgstr "No hi ha cap canvi que s'haja de publicar!"
+msgstr "No hi ha cap canvi que s'haja de cometre!"
 
 #: fileviewhgplugin.cpp:558
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
-msgstr "No s'ha pogut publicar al repositori <application>Hg</application>."
+msgstr "No s'ha pogut cometre al repositori <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:560
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
-msgstr "S'ha publicat al repositori <application>Hg</application>."
+msgstr "S'ha comés al repositori <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:562
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
-msgstr "Publicació al repositori <application>Hg</application>."
+msgstr "Comissió al repositori <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:573
 #, kde-kuit-format
@@ -825,7 +825,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
-msgstr "cancel·lació: hi ha canvis sense publicar en el directori de treball!"
+msgstr "cancel·lació: hi ha canvis sense cometre en el directori de treball!"
 
 #: fileviewhgplugin.cpp:805
 #, kde-kuit-format
@@ -910,13 +910,13 @@ msgstr "Amplària del diàleg"
 #, kde-format
 msgid "Divides file list and editors with commit details"
 msgstr ""
-"Dividix la llista de fitxers i editors amb els detalls de les publicacions"
+"Dividix la llista de fitxers i editors amb els detalls de les comissions"
 
 #. i18n: ectx: label, entry (horizontalSplitterSizes), group (CommitDialogSettings)
 #: fileviewhgpluginsettings.kcfg:21
 #, kde-format
 msgid "Divides commit editor and diff editor"
-msgstr "Dividix l'editor de publicacions i de «diff»"
+msgstr "Dividix l'editor de comissions i de «diff»"
 
 #: importdialog.cpp:30
 #, kde-kuit-format
@@ -934,13 +934,13 @@ msgstr "Importa"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
-msgstr "No publiques, només actualitza el directori de treball"
+msgstr "No cometes, només actualitza el directori de treball"
 
 #: importdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
-msgstr "Omet la prova de canvis sense publicar els pendents"
+msgstr "Omet la prova de canvis sense cometre els pendents"
 
 #: importdialog.cpp:67
 #, kde-kuit-format
@@ -1228,7 +1228,7 @@ msgstr "Opcions"
 #: updatedialog.cpp:49
 #, kde-format
 msgid "Discard uncommitted changes"
-msgstr "Descarta els canvis no publicats"
+msgstr "Descarta els canvis no comesos"
 
 #: updatedialog.cpp:126
 #, kde-format
@@ -1237,4 +1237,4 @@ msgid ""
 "Maybe there are uncommitted changes."
 msgstr ""
 "Hi ha hagut algun error!\n"
-"Potser hi ha canvis sense publicar."
+"Potser hi ha canvis sense cometre."
