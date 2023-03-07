@@ -1,18 +1,18 @@
 # Translation of fileviewsvnplugin.po to Catalan (Valencian)
-# Copyright (C) 2010-2022 This_file_is_part_of_KDE
+# Copyright (C) 2010-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@gmail.com>, 2010.
 # Manue Tortosa <manutortosa@chakra-project.org>, 2011.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2020, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2020, 2022, 2023.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-12 00:46+0000\n"
-"PO-Revision-Date: 2022-07-08 15:49+0200\n"
+"PO-Revision-Date: 2023-03-06 16:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -39,7 +39,7 @@ msgstr "Mostra els canvis locals de SVN"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "Entrega a SVN..."
+msgstr "Comet a SVN..."
 
 #: fileviewsvnplugin.cpp:89
 #, kde-format
@@ -75,7 +75,7 @@ msgstr "Registre de SVN..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Entrega a SVN..."
+msgstr "Agafa de SVN..."
 
 #: fileviewsvnplugin.cpp:125
 #, kde-format
@@ -227,25 +227,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
-msgstr "No s'ha pogut fer l'entrega dels canvis a SVN."
+msgstr "No s'ha pogut fer la comissió dels canvis a SVN."
 
 #: fileviewsvnplugin.cpp:661 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
-msgstr "Entrega a SVN"
+msgstr "Comissió a SVN"
 
 #: fileviewsvnplugin.cpp:665
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "S'estan entregant els canvis a SVN..."
+msgstr "S'estan cometent els canvis a SVN..."
 
 #: fileviewsvnplugin.cpp:667
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
-msgstr "S'han entregat els canvis a SVN."
+msgstr "S'han comés els canvis a SVN."
 
 #. i18n: ectx: label, entry (showUpdates), group (General)
 #: fileviewsvnpluginsettings.kcfg:9
@@ -257,31 +257,31 @@ msgstr "Mostra les actualitzacions"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "Seleccioneu el directori que s'ha d'entregar"
+msgstr "Seleccioneu el directori que s'ha d'agafar"
 
 #: svncheckoutdialog.cpp:102
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "Entrega a SVN: s'està processant l'entrega..."
+msgstr "Agafa de SVN: s'està processant l'agafada..."
 
 #: svncheckoutdialog.cpp:105
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
-msgstr "Entrega a SVN: l'entrega ha fallat."
+msgstr "Agafa de SVN: l'agafada ha fallat."
 
 #: svncheckoutdialog.cpp:107
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr "Entrega a SVN: l'entrega ha sigut correcta."
+msgstr "Agafa de SVN: l'agafada ha sigut correcta."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "Entrega a SVN"
+msgstr "Agafa de SVN"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
@@ -293,7 +293,7 @@ msgstr "URL del repositori:"
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr "Directori d'entrega:"
+msgstr "Directori d'agafada:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
@@ -380,7 +380,7 @@ msgstr "Actualitza"
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "Entrega"
+msgstr "Comissió"
 
 #: svncommitdialog.cpp:114
 #, kde-format
