@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-12 00:46+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-03-11 04:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/dolphin-plugins/fileviewsvnplugin.pot\n"
-"X-Crowdin-File-ID: 5861\n"
+"X-Crowdin-File: /kf5-stable/messages/dolphin-plugins/fileviewsvnplugin.pot\n"
+"X-Crowdin-File-ID: 4536\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -190,7 +190,7 @@ msgstr "从 SVN 仓库还原文件成功。"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "正在将还原文件的更改…"
+msgstr "正在将还原文件的更改..."
 
 #: fileviewsvnplugin.cpp:556
 #, kde-format
@@ -326,7 +326,7 @@ msgstr "%1 SVN 清理失败"
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN 清理…"
+msgstr "SVN 清理..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
