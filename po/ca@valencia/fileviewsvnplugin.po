@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-12 00:46+0000\n"
-"PO-Revision-Date: 2023-03-06 16:49+0100\n"
+"PO-Revision-Date: 2023-03-09 13:28+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -75,7 +75,7 @@ msgstr "Registre de SVN..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Agafa de SVN..."
+msgstr "Extrau de SVN..."
 
 #: fileviewsvnplugin.cpp:125
 #, kde-format
@@ -257,31 +257,31 @@ msgstr "Mostra les actualitzacions"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "Seleccioneu el directori que s'ha d'agafar"
+msgstr "Seleccioneu el directori que s'ha d'extraure"
 
 #: svncheckoutdialog.cpp:102
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "Agafa de SVN: s'està processant l'agafada..."
+msgstr "Extrau de SVN: s'està processant l'extracció..."
 
 #: svncheckoutdialog.cpp:105
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
-msgstr "Agafa de SVN: l'agafada ha fallat."
+msgstr "Extrau de SVN: l'extracció ha fallat."
 
 #: svncheckoutdialog.cpp:107
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr "Agafa de SVN: l'agafada ha sigut correcta."
+msgstr "Extrau de SVN: l'extracció ha sigut correcta."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "Agafa de SVN"
+msgstr "Extrau de SVN"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
@@ -293,7 +293,7 @@ msgstr "URL del repositori:"
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr "Directori d'agafada:"
+msgstr "Directori d'extracció:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
