@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-05 00:47+0000\n"
-"PO-Revision-Date: 2023-03-06 15:51+0100\n"
+"PO-Revision-Date: 2023-03-09 13:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -26,13 +26,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "Obteniu de <application>Git</application>"
+msgstr "Extraeu des de <application>Git</application>"
 
 #: checkoutdialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "Obtín"
+msgstr "Extrau"
 
 #: checkoutdialog.cpp:54
 #, kde-format
@@ -92,7 +92,7 @@ msgstr "Base de la branca"
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "Obtín"
+msgstr "Extrau"
 
 #: checkoutdialog.cpp:206
 #, kde-format
@@ -197,7 +197,7 @@ msgstr "Elimina a <application>Git</application> («remove»)"
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "Obtín de <application>Git</application> («checkout»)..."
+msgstr "Extrau de <application>Git</application> («checkout»)..."
 
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
@@ -343,8 +343,8 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
-"No s'ha pogut fer l'obtenció de <application>Git</application> («checkout»). "
-"Potser el directori de treball està brut."
+"No s'ha pogut fer l'extracció de <application>Git</application> "
+"(«checkout»). Potser el directori de treball està brut."
 
 #: fileviewgitplugin.cpp:648
 #, kde-kuit-format
