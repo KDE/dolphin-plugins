@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-12 00:46+0000\n"
-"PO-Revision-Date: 2010-06-20 20:01+0200\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-20 22:31+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -47,12 +47,10 @@ msgid "SVN Delete"
 msgstr "SVN Forigado"
 
 #: fileviewsvnplugin.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
-msgstr "SVN Forigado"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:107
 #, kde-format
@@ -61,28 +59,22 @@ msgid "Show SVN Updates"
 msgstr ""
 
 #: fileviewsvnplugin.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "SVN Commit..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Commit..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "SVN Commit..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:220
 #, kde-format
@@ -91,9 +83,7 @@ msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr ""
 
 #: fileviewsvnplugin.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "SVN Update"
@@ -102,13 +92,13 @@ msgstr "SVN Update"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr ""
+msgstr "Ĝisdatigante SVN-deponejon..."
 
 #: fileviewsvnplugin.cpp:361
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
-msgstr ""
+msgstr "Ĝisdatigo de SVN-deponejo malsukcesis."
 
 #: fileviewsvnplugin.cpp:362
 #, kde-format
@@ -172,36 +162,28 @@ msgid "Removed files from SVN repository."
 msgstr ""
 
 #: fileviewsvnplugin.cpp:465 fileviewsvnplugin.cpp:551
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
-msgstr "SVN Forigado"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:469
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Adding files to SVN repository..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Aldonas dosierojn al la SVN deponejo..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:470
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Adding files to SVN repository..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
-msgstr "Aldonas dosierojn al la SVN deponejo..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:471
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Adding files to SVN repository..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr "Aldonas dosierojn al la SVN deponejo..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:555
 #, kde-format
@@ -254,11 +236,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (showUpdates), group (General)
 #: fileviewsvnpluginsettings.kcfg:9
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgid "Show updates"
-msgstr "SVN Update"
+msgstr ""
 
 #: svncheckoutdialog.cpp:56
 #, kde-format
@@ -286,11 +266,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Checkout"
-msgstr "SVN Commit..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
@@ -345,11 +323,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN Commit..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
@@ -394,20 +370,16 @@ msgid "Commit"
 msgstr "Enmeti"
 
 #: svncommitdialog.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
-msgstr "SVN Forigado"
+msgstr ""
 
 #: svncommitdialog.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
-msgstr "SVN Update"
+msgstr ""
 
 #: svncommitdialog.cpp:128
 #, kde-format
@@ -446,12 +418,10 @@ msgid "Added"
 msgstr ""
 
 #: svncommitdialog.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
-msgstr "SVN Forigado"
+msgstr ""
 
 #: svncommitdialog.cpp:222
 #, kde-format
@@ -482,11 +452,9 @@ msgid "Revert to revision"
 msgstr ""
 
 #: svnlogdialog.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgid "Show changes"
-msgstr "SVN Update"
+msgstr ""
 
 #: svnlogdialog.cpp:109
 #, kde-format
@@ -519,11 +487,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Log"
-msgstr "SVN Commit..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
