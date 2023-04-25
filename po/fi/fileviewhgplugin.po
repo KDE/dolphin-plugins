@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# Tommi Nieminen <translator@legisign.org>, 2020, 2021.
+# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2021-01-07 11:57+0200\n"
+"PO-Revision-Date: 2023-04-20 10:31+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,25 +15,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> – peräänny"
 
 #: backoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
-msgstr ""
+msgstr "Peräänny"
 
 #: backoutdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
-msgstr ""
+msgstr "Yhdistä vanhaan yläkansiotilaan perääntymisen jälkeen"
 
 #: backoutdialog.cpp:62 backoutdialog.cpp:64 bundledialog.cpp:57
 #, kde-kuit-format
@@ -603,11 +603,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Haluatko poistaa valitut tiedostot varastosta?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Poista paikkauksia"
+msgstr "Poista tiedostot"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -743,7 +741,7 @@ msgstr "Haluatko palauttaa valittujen tiedostojen muutokset?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Palauta muutokset"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -776,7 +774,7 @@ msgstr "Haluatko palauttaa kaikki nykyiseen työkansioon tehdyt muutokset?"
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Palauta kaikki muutokset"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -817,7 +815,7 @@ msgstr "Haluatko palauttaa viimeisestä toimenpiteestä?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Vieritä takaisin"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
@@ -956,7 +954,7 @@ msgstr "Yhdistä"
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
-msgstr ""
+msgstr "Yhdistämispäätä ei ole valittu!"
 
 #: pathselector.cpp:60
 #, kde-kuit-format
@@ -974,7 +972,7 @@ msgstr "<application>Hg</application> – Nouda varasto"
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
-msgstr ""
+msgstr "Päivitä uuteen haaranpäähän, kun on noudettu muutosjoukkoja"
 
 #: pulldialog.cpp:42
 #, kde-kuit-format
