@@ -6,8 +6,8 @@ target_link_libraries(fileviewdropboxplugin
     Qt::Core
     Qt::Widgets
     Qt::Network
-    KF5::I18n
-    KF5::XmlGui
-    KF5::KIOCore
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::XmlGui
+    KF${QT_MAJOR_VERSION}::KIOCore
     DolphinVcs
 )

@@ -34,10 +34,10 @@ kconfig_add_kcfg_files(fileviewsvnplugin
 target_link_libraries(fileviewsvnplugin
     Qt::Core
     Qt::Widgets
-    KF5::I18n
-    KF5::XmlGui
-    KF5::KIOCore
-    KF5::KIOWidgets
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::XmlGui
+    KF${QT_MAJOR_VERSION}::KIOCore
+    KF${QT_MAJOR_VERSION}::KIOWidgets
     DolphinVcs
 )
 

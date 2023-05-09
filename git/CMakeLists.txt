@@ -24,15 +24,22 @@ kconfig_add_kcfg_files(fileviewgitplugin
     fileviewgitpluginsettings.kcfgc
 )
 
-target_link_libraries(fileviewgitplugin
+target_link_libraries(fileviewgitplugin PRIVATE
     Qt::Core
     Qt::Widgets
-    KF5::I18n
-    KF5::XmlGui
-    KF5::KIOCore
-    KF5::KIOFileWidgets
-    KF5::TextWidgets
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::XmlGui
+    KF${QT_MAJOR_VERSION}::KIOCore
+    KF${QT_MAJOR_VERSION}::KIOFileWidgets
+    KF${QT_MAJOR_VERSION}::TextWidgets
     DolphinVcs
 )
+
+if (QT_MAJOR_VERSION EQUAL "6")
+    target_link_libraries(
+        fileviewgitplugin PRIVATE
+        Qt6::Core5Compat
+    )
+endif()
 
 install(FILES fileviewgitpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

@@ -1,4 +1,4 @@
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     TextEditor
     WidgetsAddons
 )
@@ -76,16 +76,23 @@ kconfig_add_kcfg_files(fileviewhgplugin
     fileviewhgpluginsettings.kcfgc
 )
 
-target_link_libraries(fileviewhgplugin
+target_link_libraries(fileviewhgplugin PRIVATE
     Qt::Core
     Qt::Widgets
-    KF5::KIOCore
-    KF5::I18n
-    KF5::CoreAddons
-    KF5::WidgetsAddons
-    KF5::TextEditor
+    KF${QT_MAJOR_VERSION}::KIOCore
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::WidgetsAddons
+    KF${QT_MAJOR_VERSION}::TextEditor
     DolphinVcs
 )
+
+if (QT_MAJOR_VERSION EQUAL "6")
+    target_link_libraries(
+        fileviewhgplugin PRIVATE
+        Qt6::Core5Compat
+    )
+endif()
 
 install(FILES fileviewhgpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 

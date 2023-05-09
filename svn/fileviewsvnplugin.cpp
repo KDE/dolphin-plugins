@@ -544,7 +544,7 @@ void FileViewSvnPlugin::revertFiles(const QStringList& filesPath)
     }
 
     for (const auto &i : qAsConst(filesPath)) {
-        m_contextItems.append( QUrl::fromLocalFile(i) );
+        m_contextItems.append(KFileItem(QUrl::fromLocalFile(i)));
     }
     m_contextDir.clear();
 
@@ -622,7 +622,7 @@ void FileViewSvnPlugin::diffBetweenRevs(const QString& remoteFilePath, ulong rev
 void FileViewSvnPlugin::addFiles(const QStringList& filesPath)
 {
     for (const auto &i : qAsConst(filesPath)) {
-        m_contextItems.append( QUrl::fromLocalFile(i) );
+        m_contextItems.append(KFileItem(QUrl::fromLocalFile(i)));
     }
     m_contextDir.clear();
 
