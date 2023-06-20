@@ -29,7 +29,7 @@ msgstr "Actualizar (SVN)"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
-msgstr "Mostrar os cambios locais (SVN)"
+msgstr "Amosar os cambios locais (SVN)"
 
 #: fileviewsvnplugin.cpp:83
 #, kde-format
@@ -59,7 +59,7 @@ msgstr "Reverter (SVN)"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
-msgstr "Mostrar actualizacións (SVN)"
+msgstr "Amosar actualizacións (SVN)"
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "Limpeza de SVN…"
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr ""
-"A actualización do estado de SVN fallou. Desactivando a opción «Mostrar "
+"A actualización do estado de SVN fallou. Desactivando a opción «Amosar "
 "actualizacións de SVN»."
 
 #: fileviewsvnplugin.cpp:356
@@ -115,13 +115,13 @@ msgstr "Actualizouse o repositorio SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr "Non se puideron mostrar os cambios locais de SVN."
+msgstr "Non se puideron amosar os cambios locais de SVN."
 
 #: fileviewsvnplugin.cpp:391
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr "Non se puideron mostrar os cambios locais de SVN: «svn diff» fallou."
+msgstr "Non se puideron amosar os cambios locais de SVN: «svn diff» fallou."
 
 #: fileviewsvnplugin.cpp:403 fileviewsvnplugin.cpp:587
 #: fileviewsvnplugin.cpp:616
@@ -129,7 +129,7 @@ msgstr "Non se puideron mostrar os cambios locais de SVN: «svn diff» fallou."
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr ""
-"Non se puideron mostrar os cambios locais de SVN: non se puido iniciar "
+"Non se puideron amosar os cambios locais de SVN: non se puido iniciar "
 "«kompare»."
 
 #: fileviewsvnplugin.cpp:435
@@ -216,7 +216,7 @@ msgstr "Reverteuse o ficheiro."
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr ""
-"Non se puideron mostrar os cambios locais de SVN dun ficheiro: non se puido "
+"Non se puideron amosar os cambios locais de SVN dun ficheiro: non se puido "
 "obter o ficheiro."
 
 #: fileviewsvnplugin.cpp:643 fileviewsvnplugin.cpp:666
@@ -247,7 +247,7 @@ msgstr "Remitíronse os cambios de SVN."
 #: fileviewsvnpluginsettings.kcfg:9
 #, kde-format
 msgid "Show updates"
-msgstr "Mostrar actualizacións"
+msgstr "Amosar actualizacións"
 
 #: svncheckoutdialog.cpp:56
 #, kde-format

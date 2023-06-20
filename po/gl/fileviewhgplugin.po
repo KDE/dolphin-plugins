@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2023-06-07 10:44+0200\n"
+"PO-Revision-Date: 2023-06-19 14:42+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -270,7 +270,7 @@ msgstr "Ramificación"
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Commit Message"
-msgstr "Mensaxe da remisión:"
+msgstr "Mensaxe da remisión"
 
 #: commitdialog.cpp:115
 #, kde-kuit-format
@@ -1124,13 +1124,13 @@ msgstr "Estado do ficheiro"
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
-msgstr "Mostrar os cambios entrantes"
+msgstr "Amosar os cambios entrantes"
 
 #: syncdialogbase.cpp:86
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
-msgstr "Mostrar os cambios saíntes"
+msgstr "Amosar os cambios saíntes"
 
 #: syncdialogbase.cpp:121
 #, kde-kuit-format
@@ -1230,7 +1230,7 @@ msgid ""
 "Maybe there are uncommitted changes."
 msgstr ""
 "Producíronse algúns erros!\n"
-"Poida que haxa cambios sen enviar."
+"Pode que haxa cambios sen enviar."
 
 #~ msgctxt "@action:button"
 #~ msgid "Push"

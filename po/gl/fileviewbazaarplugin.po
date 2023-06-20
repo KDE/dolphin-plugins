@@ -40,7 +40,7 @@ msgstr "Envío de Bazaar"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
-msgstr "Mostrar os cambios locais de Bazaar"
+msgstr "Amosar os cambios locais de Bazaar"
 
 #: fileviewbazaarplugin.cpp:73
 #, kde-format
