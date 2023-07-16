@@ -761,3 +761,5 @@ bool FileViewSvnPlugin::isInUnversionedDir(const KFileItem& item) const
 }
 
 #include "fileviewsvnplugin.moc"
+
+#include "moc_fileviewsvnplugin.cpp"

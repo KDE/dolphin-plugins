@@ -132,3 +132,5 @@ void HgUpdateDialog::done(int r)
     }
 }
 
+
+#include "moc_updatedialog.cpp"

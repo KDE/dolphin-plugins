@@ -144,3 +144,5 @@ void TagDialog::setLineEditErrorModeActive(bool active)
     m_tagNameTextEdit->setPalette(active ? m_errorColors : QPalette());
 }
 
+
+#include "moc_tagdialog.cpp"

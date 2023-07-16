@@ -96,3 +96,5 @@ void HgConfigDialog::saveGeometry()
 }
 
 
+
+#include "moc_configdialog.cpp"

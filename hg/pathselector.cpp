@@ -82,3 +82,5 @@ const QString HgPathSelector::remote() const
 }
 
 
+
+#include "moc_pathselector.cpp"

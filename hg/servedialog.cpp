@@ -159,3 +159,5 @@ void HgServeDialog::saveGeometry()
 
 
 
+
+#include "moc_servedialog.cpp"

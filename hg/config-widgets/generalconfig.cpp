@@ -80,3 +80,5 @@ void HgGeneralConfigWidget::saveConfig()
 }
 
 
+
+#include "moc_generalconfig.cpp"

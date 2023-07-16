@@ -808,3 +808,5 @@ void FileViewGitPlugin::startGitCommandProcess()
 }
 
 #include "fileviewgitplugin.moc"
+
+#include "moc_fileviewgitplugin.cpp"

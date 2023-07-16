@@ -223,3 +223,5 @@ bool FileViewDropboxPlugin::connectWithDropbox(const QPointer<QLocalSocket>& soc
 }
 
 #include "fileviewdropboxplugin.moc"
+
+#include "moc_fileviewdropboxplugin.cpp"

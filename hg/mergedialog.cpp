@@ -138,3 +138,5 @@ void HgMergeDialog::saveGeometry()
 }
 
 
+
+#include "moc_mergedialog.cpp"

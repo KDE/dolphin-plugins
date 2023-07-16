@@ -396,3 +396,5 @@ bool HgWrapper::isWorkingDirectoryClean()
 }
 
 
+
+#include "moc_hgwrapper.cpp"

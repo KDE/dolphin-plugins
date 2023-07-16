@@ -333,3 +333,5 @@ void HgSyncBaseDialog::switchOptionsButton(bool switchOn)
 
 
 
+
+#include "moc_syncdialogbase.cpp"

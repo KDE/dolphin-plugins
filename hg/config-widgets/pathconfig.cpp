@@ -244,3 +244,5 @@ void HgPathConfigWidget::slotSelectionChanged()
 }
 
 
+
+#include "moc_pathconfig.cpp"

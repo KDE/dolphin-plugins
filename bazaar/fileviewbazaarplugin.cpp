@@ -496,3 +496,5 @@ void FileViewBazaarPlugin::startBazaarCommandProcess()
 }
 
 #include "fileviewbazaarplugin.moc"
+
+#include "moc_fileviewbazaarplugin.cpp"

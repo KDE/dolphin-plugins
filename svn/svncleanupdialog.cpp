@@ -65,3 +65,5 @@ void SvnCleanupDialog::on_buttonOk_clicked()
 
     QDialog::accept();
 }
+
+#include "moc_svncleanupdialog.cpp"

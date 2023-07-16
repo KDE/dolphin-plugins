@@ -170,3 +170,5 @@ void HgPushDialog::noChangesMessage()
 }
 
 
+
+#include "moc_pushdialog.cpp"

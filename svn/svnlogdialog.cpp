@@ -296,3 +296,5 @@ void SvnLogDialog::revertFileToRevision()
         Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN log: revert to revision %1 successful.", info.revision));
     }
 }
+
+#include "moc_svnlogdialog.cpp"

@@ -367,3 +367,5 @@ void HgCommitDialog::slotInsertCopyMessage(QAction *action)
 }
 
 
+
+#include "moc_commitdialog.cpp"

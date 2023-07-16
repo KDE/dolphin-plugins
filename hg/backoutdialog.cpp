@@ -204,3 +204,5 @@ void HgBackoutDialog::slotUpdateOkButton(const QString &text)
 }
 
 
+
+#include "moc_backoutdialog.cpp"

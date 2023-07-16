@@ -75,3 +75,5 @@ QString HgRenameDialog::destination() const
 }
 
 
+
+#include "moc_renamedialog.cpp"

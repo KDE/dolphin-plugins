@@ -84,3 +84,5 @@ void HgPluginSettingsWidget::browse_diff()
 }
 
 
+
+#include "moc_pluginsettings.cpp"

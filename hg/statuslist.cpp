@@ -183,3 +183,5 @@ void HgStatusList::headerClickedSlot(int index)
 
 
 
+
+#include "moc_statuslist.cpp"

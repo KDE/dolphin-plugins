@@ -295,3 +295,5 @@ void SvnCommitDialog::contextMenu(const QPoint& pos)
     const QPoint popupPoint = QPoint(pos.x(), pos.y() + m_changes->horizontalHeader()->height());
     menu->exec( m_changes->mapToGlobal(popupPoint) );
 }
+
+#include "moc_svncommitdialog.cpp"

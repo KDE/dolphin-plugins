@@ -237,3 +237,5 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 }
 
 #include "mountisoaction.moc"
+
+#include "moc_mountisoaction.cpp"

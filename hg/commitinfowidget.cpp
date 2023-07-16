@@ -119,3 +119,5 @@ QList<QListWidgetItem*> HgCommitInfoWidget::selectedItems() const
     return m_commitListWidget->selectedItems();
 }
 
+
+#include "moc_commitinfowidget.cpp"

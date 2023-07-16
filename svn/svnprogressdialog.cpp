@@ -118,3 +118,5 @@ void SvnProgressDialog::reject()
         Q_EMIT m_ui.buttonCancel->clicked();
     }
 }
+
+#include "moc_svnprogressdialog.cpp"

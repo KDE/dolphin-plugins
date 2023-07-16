@@ -43,3 +43,5 @@ void DialogBase::keyReleaseEvent(QKeyEvent* event)
 
 
 
+
+#include "moc_dialogbase.cpp"

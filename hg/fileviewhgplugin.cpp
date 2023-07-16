@@ -882,3 +882,5 @@ QString FileViewHgPlugin::visualDiffExecPath()
 }
 
 #include "fileviewhgplugin.moc"
+
+#include "moc_fileviewhgplugin.cpp"

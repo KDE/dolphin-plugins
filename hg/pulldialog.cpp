@@ -149,3 +149,5 @@ void HgPullDialog::noChangesMessage()
 }
 
 
+
+#include "moc_pulldialog.cpp"

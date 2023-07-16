@@ -199,3 +199,5 @@ void HgImportDialog::slotRemovePatches()
 }
 
 
+
+#include "moc_importdialog.cpp"

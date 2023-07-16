@@ -109,3 +109,5 @@ void SvnCheckoutDialog::on_pbOk_clicked()
 
     close();
 }
+
+#include "moc_svncheckoutdialog.cpp"

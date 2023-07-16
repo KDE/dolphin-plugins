@@ -74,3 +74,5 @@ QSize CommitItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QMo
 
 
 
+
+#include "moc_commititemdelegate.cpp"

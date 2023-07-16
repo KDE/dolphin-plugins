@@ -225,3 +225,5 @@ void HgCloneDialog::slotUpdateOkButton()
 }
 
 
+
+#include "moc_clonedialog.cpp"
