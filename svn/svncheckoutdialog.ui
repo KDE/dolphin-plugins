@@ -71,8 +71,7 @@
         <string>OK</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-ok">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="dialog-ok"/>
        </property>
       </widget>
      </item>
@@ -82,8 +81,7 @@
         <string>Cancel</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-cancel">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="dialog-cancel"/>
        </property>
       </widget>
      </item>

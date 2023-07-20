@@ -33,8 +33,7 @@
       <string>Cancel</string>
      </property>
      <property name="icon">
-      <iconset theme="dialog-cancel">
-       <normaloff>.</normaloff>.</iconset>
+      <iconset theme="dialog-cancel"/>
      </property>
     </widget>
    </item>
@@ -47,8 +46,7 @@
       <string>OK</string>
      </property>
      <property name="icon">
-      <iconset theme="dialog-ok">
-       <normaloff>.</normaloff>.</iconset>
+      <iconset theme="dialog-ok"/>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
