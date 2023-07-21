@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-12 00:46+0000\n"
+"POT-Creation-Date: 2023-07-21 00:52+0000\n"
 "PO-Revision-Date: 2020-11-15 09:15+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -295,14 +295,14 @@ msgstr "Pomiń zewnętrzne"
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
 #: svncheckoutdialog.ui:71 svncleanupdialog.ui:80 svnlogdialog.ui:146
-#: svnprogressdialog.ui:47
+#: svnprogressdialog.ui:46
 #, kde-format
 msgid "OK"
 msgstr "OK"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbCancel)
 #. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
-#: svncheckoutdialog.ui:82 svncleanupdialog.ui:97 svnprogressdialog.ui:33
+#: svncheckoutdialog.ui:81 svncleanupdialog.ui:96 svnprogressdialog.ui:33
 #, kde-format
 msgid "Cancel"
 msgstr "Anuluj"

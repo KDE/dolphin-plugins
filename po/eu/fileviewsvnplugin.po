@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-12 00:46+0000\n"
+"POT-Creation-Date: 2023-07-21 00:52+0000\n"
 "PO-Revision-Date: 2020-10-10 18:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -302,14 +302,14 @@ msgstr "Alboratu kanpokoak"
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
 #: svncheckoutdialog.ui:71 svncleanupdialog.ui:80 svnlogdialog.ui:146
-#: svnprogressdialog.ui:47
+#: svnprogressdialog.ui:46
 #, kde-format
 msgid "OK"
 msgstr "Ados"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbCancel)
 #. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
-#: svncheckoutdialog.ui:82 svncleanupdialog.ui:97 svnprogressdialog.ui:33
+#: svncheckoutdialog.ui:81 svncleanupdialog.ui:96 svnprogressdialog.ui:33
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
