@@ -3,20 +3,21 @@
 #
 # Petros Vidalis <pvidalis@gmail.com>, 2012, 2016.
 # Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+# George Stefanakis <george.stefanakis@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 00:52+0000\n"
-"PO-Revision-Date: 2016-11-02 15:48+0200\n"
-"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"PO-Revision-Date: 2023-08-01 00:48+0300\n"
+"Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -61,28 +62,22 @@ msgid "Show SVN Updates"
 msgstr "Εμφάνιση ενημερώσεων SVN"
 
 #: fileviewsvnplugin.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "Υποβολή SVN..."
+msgstr "Αρχείο καταγραφής SVN..."
 
 #: fileviewsvnplugin.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Υποβολή SVN..."
+msgstr "Έλεγχος SVN..."
 
 #: fileviewsvnplugin.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "Υποβολή SVN..."
+msgstr "Καθαρισμός SVN..."
 
 #: fileviewsvnplugin.cpp:220
 #, kde-format
@@ -93,9 +88,7 @@ msgstr ""
 "ενημερώσεων SVN\"."
 
 #: fileviewsvnplugin.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "Ενημέρωση SVN"
@@ -119,20 +112,16 @@ msgid "Updated SVN repository."
 msgstr "Ενημερωμένο αποθετήριο SVN."
 
 #: fileviewsvnplugin.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "Show Local SVN Changes"
+#, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr "Εμφάνιση τοπικών αλλαγών SVN"
+msgstr "Δεν μπορώ να προβάλω τις τοπικές αλλαγές του SVN."
 
 #: fileviewsvnplugin.cpp:391
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Commit of SVN changes failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr "Η υποβολή αλλαγών SVN απέτυχε."
+msgstr "Δεν μπορώ να προβάλω τις τοπικές αλλαγές του SVN: Αποτυχία svn diff."
 
 #: fileviewsvnplugin.cpp:403 fileviewsvnplugin.cpp:587
 #: fileviewsvnplugin.cpp:616
@@ -140,6 +129,8 @@ msgstr "Η υποβολή αλλαγών SVN απέτυχε."
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr ""
+"Δεν μπορώ να προβάλω στις τοπικές αλλαγές του SVN: δεν μπορώ να ξεκινήσω το "
+"Kompare."
 
 #: fileviewsvnplugin.cpp:435
 #, kde-format
@@ -178,9 +169,7 @@ msgid "Removed files from SVN repository."
 msgstr "Αφαιρέθηκαν αρχεία από το αποθετήριο SVN."
 
 #: fileviewsvnplugin.cpp:465 fileviewsvnplugin.cpp:551
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Revert"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "Επαναφορά SVN"
@@ -207,28 +196,28 @@ msgstr "Επαναφέρθηκαν αρχεία από το αποθετήριο
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr ""
+msgstr "Επαναφορά αλλαγών στο αρχείο..."
 
 #: fileviewsvnplugin.cpp:556
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
-msgstr ""
+msgstr "Επαναφορά αρχείου απέτυχε."
 
 #: fileviewsvnplugin.cpp:557
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
-msgstr ""
+msgstr "Το αρχείο επαναφέρθηκε."
 
 #: fileviewsvnplugin.cpp:574 fileviewsvnplugin.cpp:597
 #: fileviewsvnplugin.cpp:602
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Commit of SVN changes failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
-msgstr "Η υποβολή αλλαγών SVN απέτυχε."
+msgstr ""
+"Δεν μπορώ να προβάλω στις τοπικές αλλαγές του SVN για το αρχείο: δεν μπόρεσα "
+"να πάρω το αρχείο."
 
 #: fileviewsvnplugin.cpp:643 fileviewsvnplugin.cpp:666
 #, kde-format
@@ -264,53 +253,49 @@ msgstr "Εμφάνιση ενημερώσεων"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr ""
+msgstr "Επιλογή καταλόγου για έλεγχο"
 
 #: svncheckoutdialog.cpp:102
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr ""
+msgstr "Έλεγχος SVN: έλεγχος σε εξέλιξη..."
 
 #: svncheckoutdialog.cpp:105
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
-msgstr ""
+msgstr "Έλεγχος SVN: Ο έλεγχος απέτυχε."
 
 #: svncheckoutdialog.cpp:107
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr ""
+msgstr "Έλεγχος SVN: Έλεγχος επιτυχής."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Checkout"
-msgstr "Υποβολή SVN..."
+msgstr "Έλεγχος SVN"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Updated SVN repository."
+#, kde-format
 msgid "URL of repository:"
-msgstr "Ενημερωμένο αποθετήριο SVN."
+msgstr "URL του αποθετηρίου:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr ""
+msgstr "Κατάλογος προς έλεγχο:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
 #, kde-format
 msgid "Omit externals"
-msgstr ""
+msgstr "Παράλειψη εξωτερικών"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -318,64 +303,62 @@ msgstr ""
 #: svnprogressdialog.ui:46
 #, kde-format
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbCancel)
 #. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
 #: svncheckoutdialog.ui:81 svncleanupdialog.ui:96 svnprogressdialog.ui:33
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: svncleanupdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr ""
+msgstr "Διαλέξτε ένα κατάλογο προς καθαρισμό"
 
 #: svncleanupdialog.cpp:60
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
-msgstr ""
+msgstr "Ο καθαρισμός του SVN ολοκληρώθηκε επιτυχώς."
 
 #: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
-msgstr ""
+msgstr "Ο καθαρισμός του SVN απέτυχε για %1"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Cleanup..."
-msgstr "Υποβολή SVN..."
+msgstr "Καθαρισμός SVN..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
 #, kde-format
 msgid "Clean up directory:"
-msgstr ""
+msgstr "Καθαρισμός καταλόγου:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
 #: svncleanupdialog.ui:43
 #, kde-format
 msgid "Delete unversioned files and directories"
-msgstr ""
+msgstr "Διαγραφή αρχείων και καταλόγων που δεν έχουν έκδοση"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
 #: svncleanupdialog.ui:50
 #, kde-format
 msgid "Delete ignored files and directories"
-msgstr ""
+msgstr "Διαγραφή αγνοημένων αρχείων και καταλόγων"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
 #: svncleanupdialog.ui:57
 #, kde-format
 msgid "Include externals"
-msgstr ""
+msgstr "Περίληψη εξωτερικών"
 
 #: svncommitdialog.cpp:88
 #, kde-format
@@ -387,7 +370,7 @@ msgstr "Περιγραφή:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Refresh"
-msgstr ""
+msgstr "Ανανέωση"
 
 #: svncommitdialog.cpp:108
 #, kde-format
@@ -396,179 +379,165 @@ msgid "Commit"
 msgstr "Υποβολή"
 
 #: svncommitdialog.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Revert"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
-msgstr "Επαναφορά SVN"
+msgstr "Επαναφορά"
 
 #: svncommitdialog.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "Show Local SVN Changes"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
-msgstr "Εμφάνιση τοπικών αλλαγών SVN"
+msgstr "Εμφάνιση αλλαγών"
 
 #: svncommitdialog.cpp:128
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Add file"
-msgstr ""
+msgstr "Προσθήκη αρχείου"
 
 #: svncommitdialog.cpp:156
 #, kde-format
 msgctxt "@title:column"
 msgid "Path"
-msgstr ""
+msgstr "Διαδρομή"
 
 #: svncommitdialog.cpp:157
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
-msgstr ""
+msgstr "Κατάσταση"
 
 #: svncommitdialog.cpp:210
 #, kde-format
 msgctxt "@item:intable"
 msgid "Unversioned"
-msgstr ""
+msgstr "Χωρίς έκδοση"
 
 #: svncommitdialog.cpp:213
 #, kde-format
 msgctxt "@item:intable"
 msgid "Modified"
-msgstr ""
+msgstr "Τροποποιήθηκε"
 
 #: svncommitdialog.cpp:216
 #, kde-format
 msgctxt "@item:intable"
 msgid "Added"
-msgstr ""
+msgstr "Προστέθηκε"
 
 #: svncommitdialog.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
-msgstr "Διαγραφή SVN"
+msgstr "Διαγράφηκε"
 
 #: svncommitdialog.cpp:222
 #, kde-format
 msgctxt "@item:intable"
 msgid "Conflict"
-msgstr ""
+msgstr "Σύγκρουση"
 
 #: svncommitdialog.cpp:225
 #, kde-format
 msgctxt "@item:intable"
 msgid "Missing"
-msgstr ""
+msgstr "Λείπει"
 
 #: svncommitdialog.cpp:228
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
-msgstr ""
+msgstr "Απαιτείται ενημέρωση"
 
 #: svnlogdialog.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Updated SVN repository."
+#, kde-format
 msgid "Update to revision"
-msgstr "Ενημερωμένο αποθετήριο SVN."
+msgstr "Ενημέρωση στην αναθεώρηση"
 
 #: svnlogdialog.cpp:98 svnlogdialog.cpp:116
 #, kde-format
 msgid "Revert to revision"
-msgstr ""
+msgstr "Επιστροφή στην αναθεώρηση"
 
 #: svnlogdialog.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "Show Local SVN Changes"
+#, kde-format
 msgid "Show changes"
-msgstr "Εμφάνιση τοπικών αλλαγών SVN"
+msgstr "Εμφάνιση αλλαγών"
 
 #: svnlogdialog.cpp:109
 #, kde-format
 msgid "Changes against working copy"
-msgstr ""
+msgstr "Αλλαγές έναντι αντιγράφου εργασίας"
 
 #: svnlogdialog.cpp:271
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Update of SVN repository failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr "Η ενημέρωση του αποθετηρίου SVN απέτυχε."
+msgstr "Αρχείο καταγραφής SVN: Ενημέρωση στην αναθεώρηση απέτυχε."
 
 #: svnlogdialog.cpp:273
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
-msgstr ""
+msgstr "Αρχείο καταγραφής SVN: Ενημέρωση στην αναθεώρηση %1 επιτυχής."
 
 #: svnlogdialog.cpp:283 svnlogdialog.cpp:294
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
-msgstr ""
+msgstr "Αρχείο καταγραφής SVN: επιστροφή στην αναθεώρηση απέτυχε."
 
 #: svnlogdialog.cpp:285 svnlogdialog.cpp:296
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."
-msgstr ""
+msgstr "Αρχείο καταγραφής SVN: επιστροφή στην αναθεώρηση %1 επιτυχής."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Log"
-msgstr "Υποβολή SVN..."
+msgstr "Αρχείο καταγραφής SVN"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
 #, kde-format
 msgid "Revision"
-msgstr ""
+msgstr "Αναθεώρηση"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:60
 #, kde-format
 msgid "Author"
-msgstr ""
+msgstr "Συγγραφέας"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:65
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "Ημερομηνία"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:70
 #, kde-format
 msgid "Message"
-msgstr ""
+msgstr "Μήνυμα"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNext100)
 #: svnlogdialog.ui:104
 #, kde-format
 msgid "Next 100"
-msgstr ""
+msgstr "Επόμενα 100"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbRefresh)
 #: svnlogdialog.ui:114
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "Ανανέωση"
 
 #: svnprogressdialog.cpp:53
 #, kde-format
 msgctxt "@info:status"
 msgid "Error starting: %1"
-msgstr ""
+msgstr "Σφάλμα έναρξης: %1"
