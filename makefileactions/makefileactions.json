@@ -1,0 +1,7 @@
+{
+    "KPlugin": {
+        "Icon": "text-x-makefile",
+        "MimeTypes": [ "text/x-makefile" ],
+        "Name": "Makefile Actions"
+    }
+}

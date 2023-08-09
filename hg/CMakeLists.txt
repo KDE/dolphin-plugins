@@ -91,6 +91,8 @@ if (QT_MAJOR_VERSION EQUAL "6")
     target_link_libraries(
         fileviewhgplugin PRIVATE
         Qt6::Core5Compat
+        KF6::TextWidgets
+        KF6::Service
     )
 endif()
 
