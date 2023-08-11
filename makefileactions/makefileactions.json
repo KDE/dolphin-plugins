@@ -4,6 +4,12 @@
         "MimeTypes": [
             "text/x-makefile"
         ],
-        "Name": "Makefile Actions"
+        "Name": "Makefile Actions",
+        "Name[ca]": "Accions del «makefile»",
+        "Name[nl]": "Acties van Makefile",
+        "Name[sv]": "Makefile-åtgärder",
+        "Name[tr]": "Makefile Eylemleri",
+        "Name[uk]": "Дії Makefile",
+        "Name[x-test]": "xxMakefile Actionsxx"
     }
 }
