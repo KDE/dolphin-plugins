@@ -1,0 +1,104 @@
+# Translation of mafefileactions.po to Catalan
+# Copyright (C) 2023 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-10 00:48+0000\n"
+"PO-Revision-Date: 2023-08-10 20:18+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: makefileactions.cpp:218
+#, kde-format
+msgid "Make '%1'%2."
+msgstr "Make «%1»%2."
+
+#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#, kde-format
+msgid "Makefile Actions"
+msgstr "Accions del «makefile»"
+
+#: makefileactions.cpp:244
+#, kde-format
+msgid "An error occurred while making target '%1'."
+msgstr "Hi ha hagut un error en crear l'objectiu «%1»."
+
+#: makefileactions.cpp:252
+#, kde-format
+msgid "Running process for '%1' successfully stopped."
+msgstr "El procés en execució per a «%1» s'ha aturat correctament."
+
+#: makefileactions.cpp:254
+#, kde-format
+msgid "An error occurred trying to make target '%1'."
+msgstr "S'ha produït un error en intentar fer «make» de l'objectiu «%1»."
+
+#: makefileactions.cpp:286
+#, kde-format
+msgid "&Make…"
+msgstr "&Make…"
+
+#: makefileactions.cpp:291
+#, kde-format
+msgid "Only trusted files can be used by the Makefile Actions plugin."
+msgstr ""
+"Només es poden utilitzar fitxers fiables en el connector d'accions "
+"«makefile»."
+
+#: makefileactions.cpp:294
+#, kde-format
+msgid "Trusted file — uncheck to remove trust"
+msgstr "Fitxer fiable. Desmarqueu-lo per a eliminar-ne la confiança"
+
+#: makefileactions.cpp:294
+#, kde-format
+msgid "Untrusted file — check to trust"
+msgstr "Fitxer no fiable. Marqueu-lo per a fer-lo de confiança"
+
+#: makefileactions.cpp:301
+#, kde-format
+msgid "Dolphin Makefile Plugin"
+msgstr "Connector «makefile» del Dolphin"
+
+#: makefileactions.cpp:302
+#, kde-format
+msgid ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+msgstr ""
+"<b>Esteu segur que podeu confiar en aquest fitxer?</b><br>Els fitxers "
+"fiables poden executar codi arbitrari en la invocació del menú contextual."
+
+#: makefileactions.cpp:316
+#, kde-format
+msgid "Open a terminal window"
+msgstr "Obre una finestra de terminal"
+
+#: makefileactions.cpp:317
+#, kde-format
+msgid ""
+"Open a new terminal window to see the output of making the chosen target."
+msgstr ""
+"Obre una finestra nova de terminal per a veure la sortida de fer el «make» "
+"de l'objectiu triat."
+
+#: makefileactions.cpp:328
+#, kde-format
+msgid "Cancel running process (%1)"
+msgstr "Cancel·la el procés en execució (%1)"
+
+#: makefileactions.cpp:329
+#, kde-format
+msgid "Interrupt the currently running process (%1)."
+msgstr "Interromp el procés actualment en execució (%1)."
