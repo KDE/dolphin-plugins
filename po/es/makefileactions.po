@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: makefileactions\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-10 00:48+0000\n"
-"PO-Revision-Date: 2023-08-14 17:50+0200\n"
+"PO-Revision-Date: 2023-08-15 18:49+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -32,17 +32,17 @@ msgstr "Acciones de Makefile"
 #: makefileactions.cpp:244
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "Ha ocurrido un error al compilar el objetivo «%1»."
 
 #: makefileactions.cpp:252
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr ""
+msgstr "El proceso en ejecución para «%1» se ha detenido correctamente."
 
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "Ha ocurrido un error al tratar de compilar el objetivo «%1»."
 
 #: makefileactions.cpp:286
 #, kde-format
@@ -53,21 +53,22 @@ msgstr "&Make..."
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
+"El complemento de acciones de Makefile solo puede usar archivos de confianza."
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "Archivo de confianza — desmárquelo para eliminar la confianza"
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "Archivo no fiable — márquelo para confiar en él"
 
 #: makefileactions.cpp:301
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr ""
+msgstr "Complemento de Makefile para Dolphin"
 
 #: makefileactions.cpp:302
 #, kde-format
@@ -75,6 +76,8 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>¿Seguro que puede fiarse de este archivo?</b><b>Los archivos de confianza "
+"pueden ejecutar código arbitrario al llamarlos desde el menú de contexto."
 
 #: makefileactions.cpp:316
 #, kde-format
