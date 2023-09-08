@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-10 00:48+0000\n"
-"PO-Revision-Date: 2023-08-17 17:12+0200\n"
+"PO-Revision-Date: 2023-09-06 17:05+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.90\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: makefileactions.cpp:218
 #, kde-format
@@ -27,17 +27,18 @@ msgstr "Actions du fichier « Makefile »"
 #: makefileactions.cpp:244
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "Une erreur est survenue durant la compilation de la cible « %1 »."
 
 #: makefileactions.cpp:252
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr ""
+"Le processus en cours d'exécution pour « %1 » a été arrêté avec succès."
 
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "Une erreur s’est produite en essayant de compiler la cible « %1 »."
 
 #: makefileactions.cpp:286
 #, kde-format
@@ -48,16 +49,18 @@ msgstr "&Make…"
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
+"Seuls les fichiers approuvés peuvent être utilisés par le module externe "
+"« Makefile Actions »."
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "Fichier approuvé — Décochez pour supprimer le niveau de confiance"
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "Fichier non approuvé — Vérifier pour donner confiance"
 
 #: makefileactions.cpp:301
 #, kde-format
@@ -70,6 +73,9 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>Voulez-vous vraiment faire confiance à ce fichier ? </b><br>Les fichiers "
+"approuvés peuvent exécuter du code arbitraire lors l’invocation du menu "
+"contextuel."
 
 #: makefileactions.cpp:316
 #, kde-format
@@ -81,6 +87,8 @@ msgstr "Ouvrir une fenêtre de terminal"
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"Ouvrir une nouvelle fenêtre de terminal pour voir les résultats de la "
+"compilation pour la cible choisie."
 
 #: makefileactions.cpp:328
 #, kde-format
@@ -90,4 +98,4 @@ msgstr "Annuler le processus en cours d'exécution (%1)"
 #: makefileactions.cpp:329
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr ""
+msgstr "Interrompre le processus en cours d'exécution (%1)."
