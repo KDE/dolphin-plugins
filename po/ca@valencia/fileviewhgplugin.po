@@ -552,7 +552,7 @@ msgstr "Exporta des de <application>Hg</application>"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
-msgstr "Importa a <application>Hg</application>"
+msgstr "Importa cap a <application>Hg</application>"
 
 #: fileviewhgplugin.cpp:235
 #, kde-kuit-format
