@@ -239,7 +239,7 @@ msgid ""
 "please check your KDE Frameworks installation."
 msgstr ""
 "No s'ha pogut trobar el component KTextEditor;\n"
-"comproveu la instal·lació de Frameworks de KDE."
+"comproveu la instal·lació dels Frameworks de KDE."
 
 #: commitdialog.cpp:54
 #, kde-kuit-format
