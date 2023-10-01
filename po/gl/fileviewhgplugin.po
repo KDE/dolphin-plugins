@@ -235,7 +235,7 @@ msgid ""
 "The KTextEditor component could not be found;\n"
 "please check your KDE Frameworks installation."
 msgstr ""
-"Non se puido atopar o compoñente KTextEditor.\n"
+"Non foi posíbel atopar o compoñente KTextEditor.\n"
 "Revise a súa instalación de KDE Frameworks."
 
 #: commitdialog.cpp:54
@@ -281,7 +281,7 @@ msgstr "Diferenza/Contido"
 #: commitdialog.cpp:218
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
-msgstr "Non se puido crear unha ramificación! Interrompeuse a remisión!"
+msgstr "Non foi posíbel crear unha ramificación! Interrompeuse a remisión!"
 
 #: commitdialog.cpp:228
 #, kde-format
@@ -338,7 +338,7 @@ msgid ""
 "A KDE text-editor component could not be found;\n"
 "please check your KDE installation."
 msgstr ""
-"Non se puido atopar ningún compoñente de editor de textos de KDE;\n"
+"Non foi posíbel atopar ningún compoñente de editor de textos de KDE;\n"
 "comprobe a instalación de KDE."
 
 #: configdialog.cpp:28
@@ -806,7 +806,7 @@ msgstr "Xerando a diferenza para o repositorio <application>Hg</application>…"
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr ""
-"Non se puideron obter as diferenza do repositorio <application>Hg</"
+"Non foi posíbel obter as diferenza do repositorio <application>Hg</"
 "application>."
 
 #: fileviewhgplugin.cpp:762
