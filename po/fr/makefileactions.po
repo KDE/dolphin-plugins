@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-10 00:48+0000\n"
-"PO-Revision-Date: 2023-09-06 17:05+0200\n"
+"PO-Revision-Date: 2023-10-11 20:24+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: makefileactions.cpp:218
 #, kde-format
@@ -38,7 +38,7 @@ msgstr ""
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr "Une erreur s’est produite en essayant de compiler la cible « %1 »."
+msgstr "Une erreur s'est produite en essayant de compiler la cible « %1 »."
 
 #: makefileactions.cpp:286
 #, kde-format
@@ -74,7 +74,7 @@ msgid ""
 "arbitrary code on context-menu invocation."
 msgstr ""
 "<b>Voulez-vous vraiment faire confiance à ce fichier ? </b><br>Les fichiers "
-"approuvés peuvent exécuter du code arbitraire lors l’invocation du menu "
+"approuvés peuvent exécuter du code arbitraire lors l'invocation du menu "
 "contextuel."
 
 #: makefileactions.cpp:316
