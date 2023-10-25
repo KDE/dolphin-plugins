@@ -922,7 +922,7 @@ msgstr "Dividix l'editor de comissions i de «diff»"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
-msgstr "Importeu a <application>Hg</application>"
+msgstr "Importeu cap a <application>Hg</application>"
 
 #: importdialog.cpp:31
 #, kde-kuit-format
