@@ -9,13 +9,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(dolphin-plugins VERSION ${RELEASE_SERVICE_VERSION})
 
-if (BUILD_WITH_QT6)
-    set(QT_MIN_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-else()
-    set(QT_MIN_VERSION "5.15.2")
-    set(KF_MIN_VERSION "5.91.0")
-endif()
+set(QT_MIN_VERSION "6.5.0")
+set(KF_MIN_VERSION "5.240.0")
 
 # ECM setup
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
@@ -31,17 +26,15 @@ include(ECMDeprecationSettings)
 include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
+    Core5Compat
     Widgets
     Network
     DBus
 )
-if (QT_MAJOR_VERSION EQUAL 6)
-    find_package(Qt6 REQUIRED COMPONENTS Core5Compat)
-endif()
 
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     XmlGui
     I18n
     KIO
@@ -59,8 +52,8 @@ set_package_properties(DolphinVcs PROPERTIES
 )
 
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
-    KF 5.91
+    QT 6.5
+    KF 5.240
 )
 
 ecm_optional_add_subdirectory(svn)

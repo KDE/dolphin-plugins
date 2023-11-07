@@ -40,7 +40,6 @@
 
 #include <KLocalizedString>
 #include <KPluginFactory>
-#include <kwidgetsaddons_version.h>
 #include <QRegularExpression>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewHgPlugin, "fileviewhgplugin.json")
@@ -502,19 +501,11 @@ void FileViewHgPlugin::removeFiles()
 {
     Q_ASSERT(!m_contextItems.isEmpty());
 
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     int answer = KMessageBox::questionTwoActions(nullptr,
-#else
-    int answer = KMessageBox::questionYesNo(nullptr,
-#endif
                                             xi18nc("@message:yesorno",
                     "Would you like to remove selected files "
                     "from the repository?"), i18n("Remove Files"), KStandardGuiItem::remove(), KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
-#else
-    if (answer == KMessageBox::No) {
-#endif
         return;
     }
 
@@ -696,19 +687,11 @@ void FileViewHgPlugin::exportChangesets()
 void FileViewHgPlugin::revert()
 {
     clearMessages();
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     int answer = KMessageBox::questionTwoActions(nullptr,
-#else
-    int answer = KMessageBox::questionYesNo(nullptr,
-#endif
                                             xi18nc("@message:yesorno",
                     "Would you like to revert changes "
                     "made to selected files?"), i18n("Revert"), KGuiItem(i18n("Revert")), KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
-#else
-    if (answer == KMessageBox::No) {
-#endif
         return;
     }
 
@@ -725,19 +708,11 @@ void FileViewHgPlugin::revert()
 
 void FileViewHgPlugin::revertAll()
 {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     int answer = KMessageBox::questionTwoActions(nullptr,
-#else
-    int answer = KMessageBox::questionYesNo(nullptr,
-#endif
                                             xi18nc("@message:yesorno",
                     "Would you like to revert all changes "
                     "made to current working directory?"), i18n("Revert All"), KGuiItem(i18n("Revert")), KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
-#else
-    if (answer == KMessageBox::No) {
-#endif
         return;
     }
 
@@ -812,19 +787,11 @@ void FileViewHgPlugin::rollback()
     lastTransaction = lastTransaction.mid(cutOfFrom);
 
     // ask
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     int answer = KMessageBox::questionTwoActions(nullptr,
-#else
-    int answer = KMessageBox::questionYesNo(nullptr,
-#endif
                                             xi18nc("@message:yesorno",
                     "Would you like to rollback last transaction?")
                         + QLatin1String("\nrevision: ") + lastTransaction, i18n("Rollback"), KGuiItem(i18n("Rollback")), KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
-#else
-    if (answer == KMessageBox::No) {
-#endif
         return;
     }
 
