@@ -170,7 +170,7 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
 
 SvnCommitDialog::~SvnCommitDialog()
 {
-    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"), "SvnCommitDialog");
+    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("SvnCommitDialog"));
     KWindowConfig::saveWindowSize(windowHandle(), dialogConfig, KConfigBase::Persistent);
 }
 
@@ -245,7 +245,7 @@ void SvnCommitDialog::show()
     QWidget::show();
 
     // Restore window size after show() for workaround for QTBUG-40584. See KWindowConfig::restoreWindowSize() docs.
-    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"), "SvnCommitDialog");
+    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("SvnCommitDialog"));
     KWindowConfig::restoreWindowSize(windowHandle(), dialogConfig);
 }
 

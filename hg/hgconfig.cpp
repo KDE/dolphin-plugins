@@ -118,7 +118,7 @@ void HgConfig::deleteRepoRemotePath(const QString &alias)
 {
     Q_ASSERT(m_configType == RepoConfig);
 
-    KConfigGroup group(m_config, QLatin1String("paths"));
+    KConfigGroup group(m_config, QStringLiteral("paths"));
     group.deleteEntry(alias);
 }
 
@@ -132,7 +132,7 @@ QMap<QString, QString> HgConfig::repoRemotePathList() const
 {
     Q_ASSERT(m_configType == RepoConfig);
 
-    KConfigGroup group(m_config, QLatin1String("paths"));
+    KConfigGroup group(m_config, QStringLiteral("paths"));
     return group.entryMap();
 }
 

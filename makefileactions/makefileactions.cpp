@@ -39,7 +39,7 @@ K_PLUGIN_CLASS_WITH_JSON(MakefileActions, "makefileactions.json")
 MakefileActions::MakefileActions(QObject *parent, const QVariantList &)
     : KAbstractFileItemActionPlugin(parent)
 {
-    KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), "MakefileActionsPlugin");
+    KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("MakefileActionsPlugin"));
     m_openTerminal = config.readEntry("open_terminal", false);
     m_isMaking = false;
     m_trustedFiles = config.readEntry("trusted_files", QStringList());
@@ -294,7 +294,7 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
     trust->setText(trustedFile ? i18n("Trusted file — uncheck to remove trust") : i18n("Untrusted file — check to trust"));
     trust->setIcon(trustedFile ? QIcon::fromTheme(QStringLiteral("checkbox")) : QIcon::fromTheme(QStringLiteral("action-unavailable-symbolic")));
     connect(trust, &QAction::toggled, this, [this, trustedFile, mainWindow]() {
-        KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), "MakefileActionsPlugin");
+        KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("MakefileActionsPlugin"));
         if (trustedFile) {
             m_trustedFiles.removeAll(m_file);
         } else if (QMessageBox::question(mainWindow,
@@ -319,7 +319,7 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
     openTerminal->setChecked(m_openTerminal);
     connect(openTerminal, &QAction::toggled, this, [this](bool checked) {
         m_openTerminal = checked;
-        KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), "MakefileActionsPlugin");
+        KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("MakefileActionsPlugin"));
         config.writeEntry("open_terminal", checked);
     });
     menu->addAction(openTerminal);

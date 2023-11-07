@@ -34,7 +34,7 @@ HgPluginSettingsWidget::~HgPluginSettingsWidget()
 
 void HgPluginSettingsWidget::saveConfig()
 {
-    KConfigGroup group(m_config, QLatin1String("diff"));
+    KConfigGroup group(m_config, QStringLiteral("diff"));
     group.writeEntry(QLatin1String("exec"), m_diffProg->text());
     group.config()->sync();
 }
@@ -52,7 +52,7 @@ void HgPluginSettingsWidget::loadConfig()
     m_config = new KConfig(QLatin1String("dolphin-hg"), KConfig::SimpleConfig,
                            QStandardPaths::GenericConfigLocation);
 
-    KConfigGroup group(m_config, QLatin1String("diff"));
+    KConfigGroup group(m_config, QStringLiteral("diff"));
     QString diffExec = group.readEntry(QLatin1String("exec"), QString()).trimmed();
     m_diffProg->setText(diffExec);
 }

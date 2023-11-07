@@ -870,7 +870,7 @@ QString FileViewHgPlugin::visualDiffExecPath()
     KConfig config("dolphin-hg", KConfig::SimpleConfig,
                            QStandardPaths::GenericConfigLocation);
 
-    KConfigGroup group(&config, QLatin1String("diff"));
+    KConfigGroup group(&config, QStringLiteral("diff"));
     QString result = group.readEntry(QLatin1String("exec"), QString()).trimmed();
 
     if (result.length() > 0) {
