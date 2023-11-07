@@ -24,4 +24,4 @@ Dependencies:
     'frameworks/ktextwidgets': '@latest-kf6'
     'frameworks/solid': '@latest-kf6'
     'frameworks/ktexteditor': '@latest-kf6'
-    'system/dolphin': 'kf6'
+    'system/dolphin': '@same'
