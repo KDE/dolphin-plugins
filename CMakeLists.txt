@@ -17,8 +17,6 @@ else()
     set(KF_MIN_VERSION "5.91.0")
 endif()
 
-set(KDE_COMPILERSETTINGS_LEVEL "5.84")
-
 # ECM setup
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
@@ -64,8 +62,6 @@ ecm_set_disabled_deprecation_versions(
     QT 5.15.2
     KF 5.91
 )
-
-add_definitions(-DQT_NO_URL_CAST_FROM_STRING -DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 
 ecm_optional_add_subdirectory(svn)
 ecm_optional_add_subdirectory(git)
