@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2022-10-17 13:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -278,55 +278,55 @@ msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr "Відмінності/Вміст"
 
-#: commitdialog.cpp:218
+#: commitdialog.cpp:217
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr "Не вдалося створити гілку. Внесення перервано."
 
-#: commitdialog.cpp:228
+#: commitdialog.cpp:227
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr "Помилка внесення."
 
-#: commitdialog.cpp:232
+#: commitdialog.cpp:231
 #, kde-format
 msgid "No files for commit!"
 msgstr "Немає файлів для внесення."
 
-#: commitdialog.cpp:259
+#: commitdialog.cpp:258
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr "Гілка: поточна гілка"
 
-#: commitdialog.cpp:266
+#: commitdialog.cpp:265
 #, kde-format
 msgid "Branch: "
 msgstr "Гілка: "
 
-#: commitdialog.cpp:279
+#: commitdialog.cpp:278
 #, kde-format
 msgid "Branch: Close Current"
 msgstr "Гілка: закриття поточної"
 
-#: commitdialog.cpp:292
+#: commitdialog.cpp:291
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr "Надсилання <application>Hg</application>: нова гілка"
 
-#: commitdialog.cpp:300
+#: commitdialog.cpp:299
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "Введіть назву нової гілки"
 
-#: commitdialog.cpp:321
+#: commitdialog.cpp:320
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr "<b>Гілка вже існує!</b>"
 
-#: commitdialog.cpp:329
+#: commitdialog.cpp:328
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
@@ -1036,7 +1036,7 @@ msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "Вихідні зміни"
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:170
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
@@ -1106,12 +1106,12 @@ msgstr "## Запускається сервер ##"
 msgid "## Server Stopped! ##\n"
 msgstr "## Роботу сервера припинено! ##\n"
 
-#: statuslist.cpp:28
+#: statuslist.cpp:30
 #, kde-format
 msgid "Filename"
 msgstr "Назва файла"
 
-#: statuslist.cpp:37
+#: statuslist.cpp:40
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
@@ -1129,24 +1129,30 @@ msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "Показати вихідні зміни"
 
-#: syncdialogbase.cpp:121
-#, kde-kuit-format
+#: syncdialogbase.cpp:120
+#, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "Отримати"
 
-#: syncdialogbase.cpp:163
+#: syncdialogbase.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Push"
+msgstr "Надіслати"
+
+#: syncdialogbase.cpp:162
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "Змін не виявлено!"
 
-#: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
+#: syncdialogbase.cpp:213 syncdialogbase.cpp:288 syncdialogbase.cpp:295
 #, kde-format
 msgid "Error!"
 msgstr "Помилка!"
 
-#: syncdialogbase.cpp:330
+#: syncdialogbase.cpp:329
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
@@ -1228,10 +1234,6 @@ msgid ""
 msgstr ""
 "Сталася помилка! \n"
 "Можливо, зміни не внесено."
-
-#~ msgctxt "@action:button"
-#~ msgid "Push"
-#~ msgstr "Надіслати"
 
 #~ msgctxt "@info:status"
 #~ msgid "Commit to <application>Hg</application> repository successfull."

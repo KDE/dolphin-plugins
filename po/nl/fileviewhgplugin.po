@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2022-10-17 11:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -274,55 +274,55 @@ msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr "Diff/inhoud"
 
-#: commitdialog.cpp:218
+#: commitdialog.cpp:217
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr "Kon branch niet aanmaken! Vastleggen afbreken!"
 
-#: commitdialog.cpp:228
+#: commitdialog.cpp:227
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr "Vastleggen is mislukt!"
 
-#: commitdialog.cpp:232
+#: commitdialog.cpp:231
 #, kde-format
 msgid "No files for commit!"
 msgstr "Er zijn geen vast te leggen bestanden!"
 
-#: commitdialog.cpp:259
+#: commitdialog.cpp:258
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr "Branch: huidige branch"
 
-#: commitdialog.cpp:266
+#: commitdialog.cpp:265
 #, kde-format
 msgid "Branch: "
 msgstr "Branch: "
 
-#: commitdialog.cpp:279
+#: commitdialog.cpp:278
 #, kde-format
 msgid "Branch: Close Current"
 msgstr "Branch: huidige sluiten"
 
-#: commitdialog.cpp:292
+#: commitdialog.cpp:291
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr "<application>Hg</application> vastleggen: nieuwe branch"
 
-#: commitdialog.cpp:300
+#: commitdialog.cpp:299
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "Een nieuwe branchnaam invoeren"
 
-#: commitdialog.cpp:321
+#: commitdialog.cpp:320
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr "<b>Branch bestaat reeds!</b>"
 
-#: commitdialog.cpp:329
+#: commitdialog.cpp:328
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
@@ -1028,7 +1028,7 @@ msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "Uitgaande wijzigingen"
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:170
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
@@ -1098,12 +1098,12 @@ msgstr "## Server starten ##"
 msgid "## Server Stopped! ##\n"
 msgstr "## Server is gestopt! ##\n"
 
-#: statuslist.cpp:28
+#: statuslist.cpp:30
 #, kde-format
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: statuslist.cpp:37
+#: statuslist.cpp:40
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
@@ -1121,24 +1121,30 @@ msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "Uitgaande wijzigingen tonen"
 
-#: syncdialogbase.cpp:121
-#, kde-kuit-format
+#: syncdialogbase.cpp:120
+#, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "Ophalen"
 
-#: syncdialogbase.cpp:163
+#: syncdialogbase.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Push"
+msgstr "Wegbrengen"
+
+#: syncdialogbase.cpp:162
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "Geen wijzigingen gevonden!"
 
-#: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
+#: syncdialogbase.cpp:213 syncdialogbase.cpp:288 syncdialogbase.cpp:295
 #, kde-format
 msgid "Error!"
 msgstr "Fout!"
 
-#: syncdialogbase.cpp:330
+#: syncdialogbase.cpp:329
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
@@ -1220,7 +1226,3 @@ msgid ""
 msgstr ""
 "Er trad een fout op! \n"
 "Misschien zijn er niet vastgelegde wijzigingen."
-
-#~ msgctxt "@action:button"
-#~ msgid "Push"
-#~ msgstr "Wegbrengen"

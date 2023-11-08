@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2020-12-11 14:45+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -66,145 +66,145 @@ msgctxt "@item:inmenu"
 msgid "Bazaar Log"
 msgstr "Bazaar dnevnik"
 
-#: fileviewbazaarplugin.cpp:355
+#: fileviewbazaarplugin.cpp:357
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
 msgstr "Posodabljanje skladišča Bazaar..."
 
-#: fileviewbazaarplugin.cpp:356
+#: fileviewbazaarplugin.cpp:358
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
 msgstr "Posodobitev skladišča Bazaar je spodletela."
 
-#: fileviewbazaarplugin.cpp:357
+#: fileviewbazaarplugin.cpp:359
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
 msgstr "Skladišče Bazaar je bilo posodobljeno."
 
-#: fileviewbazaarplugin.cpp:365
+#: fileviewbazaarplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
 msgstr "Prejemanje skladišča Bazaar ..."
 
-#: fileviewbazaarplugin.cpp:366
+#: fileviewbazaarplugin.cpp:368
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
 msgstr "Prejemanje skladišča Bazaar je spodletelo."
 
-#: fileviewbazaarplugin.cpp:367
+#: fileviewbazaarplugin.cpp:369
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
 msgstr "Skladišče Bazaar je bilo prejeto."
 
-#: fileviewbazaarplugin.cpp:375
+#: fileviewbazaarplugin.cpp:377
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
 msgstr "Objavljanje skladišča Bazaar ..."
 
-#: fileviewbazaarplugin.cpp:376
+#: fileviewbazaarplugin.cpp:378
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
 msgstr "Objavljanje skladišča Bazaar je spodletelo."
 
-#: fileviewbazaarplugin.cpp:377
+#: fileviewbazaarplugin.cpp:379
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
 msgstr "Skladišče Bazaar je bilo objavljeno."
 
-#: fileviewbazaarplugin.cpp:383
+#: fileviewbazaarplugin.cpp:385
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
 msgstr "Pregledovanje sprememb ..."
 
-#: fileviewbazaarplugin.cpp:384
+#: fileviewbazaarplugin.cpp:386
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
 msgstr "Pregledovanje sprememb je spodletelo."
 
-#: fileviewbazaarplugin.cpp:385
+#: fileviewbazaarplugin.cpp:387
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
 msgstr "Pregledane spremembe."
 
-#: fileviewbazaarplugin.cpp:391
+#: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
 msgstr "Uveljavljanje sprememb Bazaar ..."
 
-#: fileviewbazaarplugin.cpp:392
+#: fileviewbazaarplugin.cpp:394
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
 msgstr "Uveljavitev sprememb Bazaar je spodletelo."
 
-#: fileviewbazaarplugin.cpp:393
+#: fileviewbazaarplugin.cpp:395
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
 msgstr "Spremembe Bazaar so bile uveljavljene."
 
-#: fileviewbazaarplugin.cpp:399
+#: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
 msgstr "Dodajanje datotek v skladišče Bazaar ..."
 
-#: fileviewbazaarplugin.cpp:400
+#: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
 msgstr "Dodajanje datotek v skladišče Bazaar je spodletelo."
 
-#: fileviewbazaarplugin.cpp:401
+#: fileviewbazaarplugin.cpp:403
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
 msgstr "Datoteke so bile dodane v skladišče Bazaar."
 
-#: fileviewbazaarplugin.cpp:407
+#: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
 msgstr "Odstranjevanje datotek iz skladišča Bazaar ..."
 
-#: fileviewbazaarplugin.cpp:408
+#: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
 msgstr "Odstranjevanje datotek iz skladišča Bazaar je spodletelo."
 
-#: fileviewbazaarplugin.cpp:409
+#: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
 msgstr "Datoteke so bile odstranjene iz skladišča Bazaar."
 
-#: fileviewbazaarplugin.cpp:415
+#: fileviewbazaarplugin.cpp:417
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
 msgstr "Zaganjanje dnevnika Bazaar ..."
 
-#: fileviewbazaarplugin.cpp:416
+#: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
 msgstr "Zaganjanje dnevnika Bazaar je spodletelo."
 
-#: fileviewbazaarplugin.cpp:417
+#: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."

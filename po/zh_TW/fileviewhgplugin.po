@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2023-01-21 23:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -277,55 +277,55 @@ msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr "差異/內容"
 
-#: commitdialog.cpp:218
+#: commitdialog.cpp:217
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr "無法建立分支。中止提交。"
 
-#: commitdialog.cpp:228
+#: commitdialog.cpp:227
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr "提交不成功。"
 
-#: commitdialog.cpp:232
+#: commitdialog.cpp:231
 #, kde-format
 msgid "No files for commit!"
 msgstr "沒有檔案可提交。"
 
-#: commitdialog.cpp:259
+#: commitdialog.cpp:258
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr "分支：目前的分支"
 
-#: commitdialog.cpp:266
+#: commitdialog.cpp:265
 #, kde-format
 msgid "Branch: "
 msgstr "分支："
 
-#: commitdialog.cpp:279
+#: commitdialog.cpp:278
 #, kde-format
 msgid "Branch: Close Current"
 msgstr "分支：關閉目前的分支"
 
-#: commitdialog.cpp:292
+#: commitdialog.cpp:291
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr "<application>Hg</application> Commit: New Branch"
 
-#: commitdialog.cpp:300
+#: commitdialog.cpp:299
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "輸入新分支的名稱"
 
-#: commitdialog.cpp:321
+#: commitdialog.cpp:320
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr "<b>分支已存在。</b>"
 
-#: commitdialog.cpp:329
+#: commitdialog.cpp:328
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
@@ -1010,7 +1010,7 @@ msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "出去的變更"
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:170
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
@@ -1080,12 +1080,12 @@ msgstr "## 伺服器啟動中 ##"
 msgid "## Server Stopped! ##\n"
 msgstr "## 伺服器已終止！ ##\n"
 
-#: statuslist.cpp:28
+#: statuslist.cpp:30
 #, kde-format
 msgid "Filename"
 msgstr "檔案名稱"
 
-#: statuslist.cpp:37
+#: statuslist.cpp:40
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
@@ -1103,24 +1103,30 @@ msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "顯示出去的變更"
 
-#: syncdialogbase.cpp:121
-#, kde-kuit-format
+#: syncdialogbase.cpp:120
+#, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "Pull（從上游合併）"
 
-#: syncdialogbase.cpp:163
+#: syncdialogbase.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Push"
+msgstr ""
+
+#: syncdialogbase.cpp:162
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "找不到變更。"
 
-#: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
+#: syncdialogbase.cpp:213 syncdialogbase.cpp:288 syncdialogbase.cpp:295
 #, kde-format
 msgid "Error!"
 msgstr "發生錯誤。"
 
-#: syncdialogbase.cpp:330
+#: syncdialogbase.cpp:329
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"

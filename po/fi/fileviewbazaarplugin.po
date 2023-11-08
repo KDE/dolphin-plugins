@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewbazaarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2013-12-22 14:01+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
@@ -64,145 +64,145 @@ msgctxt "@item:inmenu"
 msgid "Bazaar Log"
 msgstr "Bazaar – loki"
 
-#: fileviewbazaarplugin.cpp:355
+#: fileviewbazaarplugin.cpp:357
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
 msgstr "Päivitetään Bazaar-tietovarastoa…"
 
-#: fileviewbazaarplugin.cpp:356
+#: fileviewbazaarplugin.cpp:358
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
 msgstr "Bazaar-tietovaraston päivitys epäonnistui."
 
-#: fileviewbazaarplugin.cpp:357
+#: fileviewbazaarplugin.cpp:359
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
 msgstr "Bazaar-tietovarasto päivitetty."
 
-#: fileviewbazaarplugin.cpp:365
+#: fileviewbazaarplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
 msgstr "Vedetään Bazaar-tietovarastosta…"
 
-#: fileviewbazaarplugin.cpp:366
+#: fileviewbazaarplugin.cpp:368
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
 msgstr "Bazaar-tietovarastosta vetäminen epäonnistui."
 
-#: fileviewbazaarplugin.cpp:367
+#: fileviewbazaarplugin.cpp:369
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
 msgstr "Vedetty Bazaar-tietovarastosta."
 
-#: fileviewbazaarplugin.cpp:375
+#: fileviewbazaarplugin.cpp:377
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
 msgstr "Työnnetään Bazaar-tietovaratoon…"
 
-#: fileviewbazaarplugin.cpp:376
+#: fileviewbazaarplugin.cpp:378
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
 msgstr "Bazaar-tietovarastoon työntäminen epäonnistui."
 
-#: fileviewbazaarplugin.cpp:377
+#: fileviewbazaarplugin.cpp:379
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
 msgstr "Työnnetty Bazaar-tietovarastoon."
 
-#: fileviewbazaarplugin.cpp:383
+#: fileviewbazaarplugin.cpp:385
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
 msgstr "Tarkistetaan muutoksia…"
 
-#: fileviewbazaarplugin.cpp:384
+#: fileviewbazaarplugin.cpp:386
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
 msgstr "Muutoksien tarkistus epäonnistui."
 
-#: fileviewbazaarplugin.cpp:385
+#: fileviewbazaarplugin.cpp:387
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
 msgstr "Muutokset tarkistettu."
 
-#: fileviewbazaarplugin.cpp:391
+#: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
 msgstr "Toteutetaan Bazaar-muutoksia…"
 
-#: fileviewbazaarplugin.cpp:392
+#: fileviewbazaarplugin.cpp:394
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
 msgstr "Bazaar-muutosten toteuttaminen epäonnistui."
 
-#: fileviewbazaarplugin.cpp:393
+#: fileviewbazaarplugin.cpp:395
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
 msgstr "Bazaar-muutokset toteutettu."
 
-#: fileviewbazaarplugin.cpp:399
+#: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
 msgstr "Lisätään tiedostoja Bazaar-tietovarastoon…"
 
-#: fileviewbazaarplugin.cpp:400
+#: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
 msgstr "Tiedostojen lisäys Bazaar-tietovarastoon epäonnistui."
 
-#: fileviewbazaarplugin.cpp:401
+#: fileviewbazaarplugin.cpp:403
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
 msgstr "Tiedostot lisätty Bazaar-tietovarastoon."
 
-#: fileviewbazaarplugin.cpp:407
+#: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
 msgstr "Poistetaan tiedostoja Bazaar-tietovarastosta…"
 
-#: fileviewbazaarplugin.cpp:408
+#: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
 msgstr "Tiedostojen poisto Bazaar-tietovarastosta epäonnistui."
 
-#: fileviewbazaarplugin.cpp:409
+#: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
 msgstr "Tiedostot poistettu Bazaar-tietovarastosta."
 
-#: fileviewbazaarplugin.cpp:415
+#: fileviewbazaarplugin.cpp:417
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
 msgstr "Bazaar-lokin hakeminen meneillään…"
 
-#: fileviewbazaarplugin.cpp:416
+#: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
 msgstr "Bazaar-lokin hakeminen epäonnistui."
 
-#: fileviewbazaarplugin.cpp:417
+#: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."

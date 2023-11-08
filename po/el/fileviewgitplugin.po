@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2018-10-18 14:52+0200\n"
 "Last-Translator: Long Run <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -242,88 +242,88 @@ msgstr ""
 msgid "Added files to <application>Git</application> repository."
 msgstr "Προστέθηκαν αρχεία στο <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:425
+#: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Διαγραφή αρχείων από το <application>Git</application> αποθετήριο..."
 
-#: fileviewgitplugin.cpp:426
+#: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Η διαγραφή αρχείων από το <application>Git</application> αποθετήριο απέτυχε."
 
-#: fileviewgitplugin.cpp:427
+#: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Διαγράφηκαν αρχεία από το <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:433
+#: fileviewgitplugin.cpp:434
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Διαγραφή αρχείων από το <application>Git</application> αποθετήριο..."
 
-#: fileviewgitplugin.cpp:434
+#: fileviewgitplugin.cpp:435
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Η επαναφορά αρχείων από το <application>Git</application> αποθετήριο απέτυχε."
 
-#: fileviewgitplugin.cpp:435
+#: fileviewgitplugin.cpp:436
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Επαναφέρθηκαν αρχεία από το <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:477
+#: fileviewgitplugin.cpp:478
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "Η δημιουργία καταγραφής <application>Git</application> απέτυχε."
 
-#: fileviewgitplugin.cpp:500
+#: fileviewgitplugin.cpp:501
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Καταγραφή"
 
-#: fileviewgitplugin.cpp:516
+#: fileviewgitplugin.cpp:517
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Υποβολή"
 
-#: fileviewgitplugin.cpp:517
+#: fileviewgitplugin.cpp:518
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: fileviewgitplugin.cpp:518
+#: fileviewgitplugin.cpp:519
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Μήνυμα"
 
-#: fileviewgitplugin.cpp:519
+#: fileviewgitplugin.cpp:520
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:564
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Έγινε μεταφορά στον κλάδο '%1'"
 
-#: fileviewgitplugin.cpp:569
+#: fileviewgitplugin.cpp:570
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD είναι τώρα στο %1"
 
-#: fileviewgitplugin.cpp:573
+#: fileviewgitplugin.cpp:574
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Έγινε μεταφορά σε νέο κλάδο '%1'"
 
-#: fileviewgitplugin.cpp:584
+#: fileviewgitplugin.cpp:585
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -332,12 +332,12 @@ msgstr ""
 "Το <application>Git</application> Checkout απέτυχε. Ίσως ο κατάλογος "
 "εργασίας σας δεν είναι καθαρός."
 
-#: fileviewgitplugin.cpp:648
+#: fileviewgitplugin.cpp:649
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Δημιουργήθηκε με επιτυχία το tag '%1'"
 
-#: fileviewgitplugin.cpp:653
+#: fileviewgitplugin.cpp:654
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -346,47 +346,47 @@ msgstr ""
 "Η δημιουργία <application>Git</application> tag απέτυχε. Ένα tag με το όνομα "
 "'%1' ήδη υπάρχει."
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:656
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Η δημιουργία <application>Git</application> tag απέτυχε."
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:668
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Η ώθηση του κλάδου %1 στο %2:%3 απέτυχε."
 
-#: fileviewgitplugin.cpp:669
+#: fileviewgitplugin.cpp:670
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Έγινε ώθηση του κλάδου %1 στο %2:%3."
 
-#: fileviewgitplugin.cpp:671
+#: fileviewgitplugin.cpp:672
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Ώθηση του κλάδου %1 στο %2:%3..."
 
-#: fileviewgitplugin.cpp:693
+#: fileviewgitplugin.cpp:694
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Η έλξη του κλάδου %1 από %2 απέτυχε."
 
-#: fileviewgitplugin.cpp:695
+#: fileviewgitplugin.cpp:696
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Έγινε η έλξη του κλάδου %1 από %2 με επιτυχία."
 
-#: fileviewgitplugin.cpp:697
+#: fileviewgitplugin.cpp:698
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Έλξη του κλάδου %1 από %2..."
 
-#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
+#: fileviewgitplugin.cpp:751 fileviewgitplugin.cpp:763
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Ο κλάδος είναι ήδη ενημερωμένος."
 
-#: fileviewgitplugin.cpp:766
+#: fileviewgitplugin.cpp:767
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

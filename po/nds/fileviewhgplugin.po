@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2011-11-09 19:40+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -273,55 +273,55 @@ msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr ""
 
-#: commitdialog.cpp:218
+#: commitdialog.cpp:217
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr ""
 
-#: commitdialog.cpp:228
+#: commitdialog.cpp:227
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr ""
 
-#: commitdialog.cpp:232
+#: commitdialog.cpp:231
 #, kde-format
 msgid "No files for commit!"
 msgstr ""
 
-#: commitdialog.cpp:259
+#: commitdialog.cpp:258
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr ""
 
-#: commitdialog.cpp:266
+#: commitdialog.cpp:265
 #, kde-format
 msgid "Branch: "
 msgstr "Telg: "
 
-#: commitdialog.cpp:279
+#: commitdialog.cpp:278
 #, kde-format
 msgid "Branch: Close Current"
 msgstr ""
 
-#: commitdialog.cpp:292
+#: commitdialog.cpp:291
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr ""
 
-#: commitdialog.cpp:300
+#: commitdialog.cpp:299
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "Nieg Telgnaam ingeven"
 
-#: commitdialog.cpp:321
+#: commitdialog.cpp:320
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr ""
 
-#: commitdialog.cpp:329
+#: commitdialog.cpp:328
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
@@ -1003,7 +1003,7 @@ msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr ""
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:170
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
@@ -1073,12 +1073,12 @@ msgstr ""
 msgid "## Server Stopped! ##\n"
 msgstr ""
 
-#: statuslist.cpp:28
+#: statuslist.cpp:30
 #, kde-format
 msgid "Filename"
 msgstr "Dateinaam"
 
-#: statuslist.cpp:37
+#: statuslist.cpp:40
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
@@ -1096,24 +1096,30 @@ msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr ""
 
-#: syncdialogbase.cpp:121
-#, kde-kuit-format
+#: syncdialogbase.cpp:120
+#, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "Daalladen"
 
-#: syncdialogbase.cpp:163
+#: syncdialogbase.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Push"
+msgstr "Hoochladen"
+
+#: syncdialogbase.cpp:162
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr ""
 
-#: syncdialogbase.cpp:214 syncdialogbase.cpp:289 syncdialogbase.cpp:296
+#: syncdialogbase.cpp:213 syncdialogbase.cpp:288 syncdialogbase.cpp:295
 #, kde-format
 msgid "Error!"
 msgstr "Fehler!"
 
-#: syncdialogbase.cpp:330
+#: syncdialogbase.cpp:329
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
@@ -1193,7 +1199,3 @@ msgid ""
 "Some error occurred! \n"
 "Maybe there are uncommitted changes."
 msgstr ""
-
-#~ msgctxt "@action:button"
-#~ msgid "Push"
-#~ msgstr "Hoochladen"

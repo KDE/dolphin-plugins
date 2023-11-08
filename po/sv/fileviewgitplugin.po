@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2018-02-10 09:52+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -239,87 +239,87 @@ msgstr "Misslyckades lägga till filer i <application>Git</application>-arkiv."
 msgid "Added files to <application>Git</application> repository."
 msgstr "Filer tillagda i <application>Git</application>-arkiv."
 
-#: fileviewgitplugin.cpp:425
+#: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Tar bort filer från <application>Git</application>-arkiv..."
 
-#: fileviewgitplugin.cpp:426
+#: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "Misslyckades ta bort filer från <application>Git</application>-arkiv."
 
-#: fileviewgitplugin.cpp:427
+#: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Filer borttagna från <application>Git</application>-arkiv."
 
-#: fileviewgitplugin.cpp:433
+#: fileviewgitplugin.cpp:434
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Återställer filer från <application>Git</application>-arkiv..."
 
-#: fileviewgitplugin.cpp:434
+#: fileviewgitplugin.cpp:435
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Misslyckades återställa filer från <application>Git</application>-arkiv."
 
-#: fileviewgitplugin.cpp:435
+#: fileviewgitplugin.cpp:436
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Återställde filer från <application>Git</application>-arkiv."
 
-#: fileviewgitplugin.cpp:477
+#: fileviewgitplugin.cpp:478
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> logg misslyckades."
 
-#: fileviewgitplugin.cpp:500
+#: fileviewgitplugin.cpp:501
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> logg"
 
-#: fileviewgitplugin.cpp:516
+#: fileviewgitplugin.cpp:517
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Arkivera"
 
-#: fileviewgitplugin.cpp:517
+#: fileviewgitplugin.cpp:518
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Datum"
 
-#: fileviewgitplugin.cpp:518
+#: fileviewgitplugin.cpp:519
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Meddelande"
 
-#: fileviewgitplugin.cpp:519
+#: fileviewgitplugin.cpp:520
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Upphovsman"
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:564
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Bytte till grenen '%1'"
 
-#: fileviewgitplugin.cpp:569
+#: fileviewgitplugin.cpp:570
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD är nu på %1"
 
-#: fileviewgitplugin.cpp:573
+#: fileviewgitplugin.cpp:574
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Bytte till en ny gren '%1'"
 
-#: fileviewgitplugin.cpp:584
+#: fileviewgitplugin.cpp:585
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -328,12 +328,12 @@ msgstr ""
 "Utcheckning i <application>Git</application> misslyckades. Kanske är "
 "arbetskatalogen ostädad."
 
-#: fileviewgitplugin.cpp:648
+#: fileviewgitplugin.cpp:649
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Skapade tagg '%1' med lyckat resultat"
 
-#: fileviewgitplugin.cpp:653
+#: fileviewgitplugin.cpp:654
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -342,47 +342,47 @@ msgstr ""
 "Misslyckades skapa tagg i <application>Git</application>. En tagg med namnet "
 "'%1' finns redan."
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:656
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Misslyckades skapa tagg i <application>Git</application>"
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:668
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Misslyckades skicka gren %1 till %2:%3."
 
-#: fileviewgitplugin.cpp:669
+#: fileviewgitplugin.cpp:670
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Skickade gren %1 till %2:%3."
 
-#: fileviewgitplugin.cpp:671
+#: fileviewgitplugin.cpp:672
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Skickar gren %1 till %2:%3..."
 
-#: fileviewgitplugin.cpp:693
+#: fileviewgitplugin.cpp:694
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Misslyckades hämta gren %1 från %2."
 
-#: fileviewgitplugin.cpp:695
+#: fileviewgitplugin.cpp:696
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Hämtade gren %1 från %2 med lyckat resultat."
 
-#: fileviewgitplugin.cpp:697
+#: fileviewgitplugin.cpp:698
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Hämtar gren %1 från %2..."
 
-#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
+#: fileviewgitplugin.cpp:751 fileviewgitplugin.cpp:763
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Grenen är redan aktuell."
 
-#: fileviewgitplugin.cpp:766
+#: fileviewgitplugin.cpp:767
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

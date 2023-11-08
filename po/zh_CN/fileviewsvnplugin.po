@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2023-10-21 13:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -77,159 +77,159 @@ msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "SVN 清理..."
 
-#: fileviewsvnplugin.cpp:220
+#: fileviewsvnplugin.cpp:222
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr "SVN 状态更新失败。已禁用选项“显示 SVN 更新”。"
 
-#: fileviewsvnplugin.cpp:356
+#: fileviewsvnplugin.cpp:358
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "SVN 更新"
 
-#: fileviewsvnplugin.cpp:360
+#: fileviewsvnplugin.cpp:362
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "正在更新 SVN 仓库..."
 
-#: fileviewsvnplugin.cpp:361
+#: fileviewsvnplugin.cpp:363
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "SVN 仓库更新失败。"
 
-#: fileviewsvnplugin.cpp:362
+#: fileviewsvnplugin.cpp:364
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "SVN 仓库已更新。"
 
-#: fileviewsvnplugin.cpp:376
+#: fileviewsvnplugin.cpp:378
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "无法显示本地SVN更改。"
 
-#: fileviewsvnplugin.cpp:391
+#: fileviewsvnplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "无法显示本地SVN更改：运行svn diff失败。"
 
-#: fileviewsvnplugin.cpp:403 fileviewsvnplugin.cpp:587
-#: fileviewsvnplugin.cpp:616
+#: fileviewsvnplugin.cpp:405 fileviewsvnplugin.cpp:589
+#: fileviewsvnplugin.cpp:618
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr "无法显示本地SVN更改：无法启动 kompare。"
 
-#: fileviewsvnplugin.cpp:435
+#: fileviewsvnplugin.cpp:437
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "正在向 SVN 仓库添加文件..."
 
-#: fileviewsvnplugin.cpp:436
+#: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "向 SVN 仓库添加文件失败。"
 
-#: fileviewsvnplugin.cpp:437
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "文件已向 SVN 仓库添加。"
 
-#: fileviewsvnplugin.cpp:443
+#: fileviewsvnplugin.cpp:445
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "正在从 SVN 仓库删除文件..."
 
-#: fileviewsvnplugin.cpp:444
+#: fileviewsvnplugin.cpp:446
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "从 SVN 仓库删除文件失败。"
 
-#: fileviewsvnplugin.cpp:445
+#: fileviewsvnplugin.cpp:447
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "文件已从 SVN 仓库删除。"
 
-#: fileviewsvnplugin.cpp:465 fileviewsvnplugin.cpp:551
+#: fileviewsvnplugin.cpp:467 fileviewsvnplugin.cpp:553
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "SVN 还原"
 
-#: fileviewsvnplugin.cpp:469
+#: fileviewsvnplugin.cpp:471
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "正在从 SVN 仓库还原文件..."
 
-#: fileviewsvnplugin.cpp:470
+#: fileviewsvnplugin.cpp:472
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "从 SVN 仓库还原文件失败。"
 
-#: fileviewsvnplugin.cpp:471
+#: fileviewsvnplugin.cpp:473
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "从 SVN 仓库还原文件成功。"
 
-#: fileviewsvnplugin.cpp:555
+#: fileviewsvnplugin.cpp:557
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "正在将还原文件的更改…"
 
-#: fileviewsvnplugin.cpp:556
+#: fileviewsvnplugin.cpp:558
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "文件还原失败。"
 
-#: fileviewsvnplugin.cpp:557
+#: fileviewsvnplugin.cpp:559
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "文件已被还原。"
 
-#: fileviewsvnplugin.cpp:574 fileviewsvnplugin.cpp:597
-#: fileviewsvnplugin.cpp:602
+#: fileviewsvnplugin.cpp:576 fileviewsvnplugin.cpp:599
+#: fileviewsvnplugin.cpp:604
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr "无法显示文件本地SVN更改：无法获取文件。"
 
-#: fileviewsvnplugin.cpp:643 fileviewsvnplugin.cpp:666
+#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "SVN 更改提交失败。"
 
-#: fileviewsvnplugin.cpp:661 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN 提交"
 
-#: fileviewsvnplugin.cpp:665
+#: fileviewsvnplugin.cpp:667
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "正在提交 SVN 更改..."
 
-#: fileviewsvnplugin.cpp:667
+#: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -241,25 +241,25 @@ msgstr "SVN 更改已提交。"
 msgid "Show updates"
 msgstr "显示更新"
 
-#: svncheckoutdialog.cpp:56
+#: svncheckoutdialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
 msgstr "选择要检出的目录"
 
-#: svncheckoutdialog.cpp:102
+#: svncheckoutdialog.cpp:108
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr "SVN 检出：检出过程中..."
 
-#: svncheckoutdialog.cpp:105
+#: svncheckoutdialog.cpp:111
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
 msgstr "SVN 检出：检出失败。"
 
-#: svncheckoutdialog.cpp:107
+#: svncheckoutdialog.cpp:113
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."

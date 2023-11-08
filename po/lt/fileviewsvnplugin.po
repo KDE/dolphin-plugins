@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"POT-Creation-Date: 2023-11-08 07:56+0000\n"
 "PO-Revision-Date: 2016-11-05 08:12+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -87,7 +87,7 @@ msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "SVN - įkelti..."
 
-#: fileviewsvnplugin.cpp:220
+#: fileviewsvnplugin.cpp:222
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
@@ -95,7 +95,7 @@ msgstr ""
 "Nepavyko atnaujinti SVN būsenos. Parinktis „rodyti SVN atnaujinimus“ "
 "išjungiama."
 
-#: fileviewsvnplugin.cpp:356
+#: fileviewsvnplugin.cpp:358
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu"
 #| msgid "SVN Update"
@@ -103,25 +103,25 @@ msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "SVN - atnaujinti"
 
-#: fileviewsvnplugin.cpp:360
+#: fileviewsvnplugin.cpp:362
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "Atnaujinama SVN saugykla..."
 
-#: fileviewsvnplugin.cpp:361
+#: fileviewsvnplugin.cpp:363
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "SVN saugyklos atnaujinti nepavyko."
 
-#: fileviewsvnplugin.cpp:362
+#: fileviewsvnplugin.cpp:364
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "SVN saugykla atnaujinta."
 
-#: fileviewsvnplugin.cpp:376
+#: fileviewsvnplugin.cpp:378
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu"
 #| msgid "Show Local SVN Changes"
@@ -129,7 +129,7 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "Rodyti vietinius SVN pakeitimus"
 
-#: fileviewsvnplugin.cpp:391
+#: fileviewsvnplugin.cpp:393
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Commit of SVN changes failed."
@@ -137,50 +137,50 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "Nepavyko įkelti pakeitimų į SVN."
 
-#: fileviewsvnplugin.cpp:403 fileviewsvnplugin.cpp:587
-#: fileviewsvnplugin.cpp:616
+#: fileviewsvnplugin.cpp:405 fileviewsvnplugin.cpp:589
+#: fileviewsvnplugin.cpp:618
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:435
+#: fileviewsvnplugin.cpp:437
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "Į SVN saugyklą pridedami failai..."
 
-#: fileviewsvnplugin.cpp:436
+#: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "Nepavyko pridėti failų į SVN saugyklą."
 
-#: fileviewsvnplugin.cpp:437
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "Failai į SVN saugyklą pridėti."
 
-#: fileviewsvnplugin.cpp:443
+#: fileviewsvnplugin.cpp:445
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "Iš SVN saugyklos šalinami failai..."
 
-#: fileviewsvnplugin.cpp:444
+#: fileviewsvnplugin.cpp:446
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "Iš SVN saugyklos failų pašalinti nepavyko."
 
-#: fileviewsvnplugin.cpp:445
+#: fileviewsvnplugin.cpp:447
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "Failai iš SVN saugyklos pašalinti"
 
-#: fileviewsvnplugin.cpp:465 fileviewsvnplugin.cpp:551
+#: fileviewsvnplugin.cpp:467 fileviewsvnplugin.cpp:553
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu"
 #| msgid "SVN Revert"
@@ -188,44 +188,44 @@ msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "SVN - atšaukti"
 
-#: fileviewsvnplugin.cpp:469
+#: fileviewsvnplugin.cpp:471
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "Atšaukiami į SVN saugyklą įkelti failai..."
 
-#: fileviewsvnplugin.cpp:470
+#: fileviewsvnplugin.cpp:472
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "Nepavyko atšaukti į saugyklą įkeltų failų."
 
-#: fileviewsvnplugin.cpp:471
+#: fileviewsvnplugin.cpp:473
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "Failai, įkelti į saugyklą, atšaukti."
 
-#: fileviewsvnplugin.cpp:555
+#: fileviewsvnplugin.cpp:557
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:556
+#: fileviewsvnplugin.cpp:558
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:557
+#: fileviewsvnplugin.cpp:559
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:574 fileviewsvnplugin.cpp:597
-#: fileviewsvnplugin.cpp:602
+#: fileviewsvnplugin.cpp:576 fileviewsvnplugin.cpp:599
+#: fileviewsvnplugin.cpp:604
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Commit of SVN changes failed."
@@ -233,25 +233,25 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr "Nepavyko įkelti pakeitimų į SVN."
 
-#: fileviewsvnplugin.cpp:643 fileviewsvnplugin.cpp:666
+#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Nepavyko įkelti pakeitimų į SVN."
 
-#: fileviewsvnplugin.cpp:661 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN pakeitimų įkėlimas"
 
-#: fileviewsvnplugin.cpp:665
+#: fileviewsvnplugin.cpp:667
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "Įkeliami SVN pakeitimai..."
 
-#: fileviewsvnplugin.cpp:667
+#: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -263,25 +263,25 @@ msgstr "SVN pakeitimai įkelti."
 msgid "Show updates"
 msgstr "Rodyti atnaujinimus"
 
-#: svncheckoutdialog.cpp:56
+#: svncheckoutdialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
 msgstr ""
 
-#: svncheckoutdialog.cpp:102
+#: svncheckoutdialog.cpp:108
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr ""
 
-#: svncheckoutdialog.cpp:105
+#: svncheckoutdialog.cpp:111
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
 msgstr ""
 
-#: svncheckoutdialog.cpp:107
+#: svncheckoutdialog.cpp:113
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
