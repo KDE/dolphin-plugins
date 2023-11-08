@@ -61,7 +61,7 @@ void HgSyncBaseDialog::createOptionGroup()
     setOptions();
     QVBoxLayout *layout = new QVBoxLayout;
 
-    for (QCheckBox *cb : qAsConst(m_options)) {
+    for (QCheckBox *cb : std::as_const(m_options)) {
         layout->addWidget(cb);
     }
 

@@ -161,7 +161,7 @@ TargetTree MakefileActions::targetTree() const
     /* compute prefixes */
     QSet<QString> prefixSet;
     QString prev = targetSortedList.first();
-    for (auto const &target : qAsConst(targetSortedList)) {
+    for (auto const &target : std::as_const(targetSortedList)) {
         int min = std::min(prev.size(), target.size());
         int i = 0;
         for (i = 0; i < min; ++i) {
@@ -176,10 +176,10 @@ TargetTree MakefileActions::targetTree() const
 
     /* produce the submenu tree structure */
     TargetTree targets;
-    for (auto const &prefix : qAsConst(prefixSortedList)) {
+    for (auto const &prefix : std::as_const(prefixSortedList)) {
         targets.insert(prefix, false);
     }
-    for (auto const &target : qAsConst(targetSortedList)) {
+    for (auto const &target : std::as_const(targetSortedList)) {
         targets.insert(target, true);
     }
 
@@ -190,7 +190,7 @@ void MakefileActions::buildMenu(QMenu *menu, const TargetTree &targets, QWidget 
 {
     QList<TargetTree> targetSortedList(targets.children());
     std::sort(targetSortedList.begin(), targetSortedList.end(), TargetTree::cmp);
-    for (const TargetTree &tree : qAsConst(targetSortedList)) {
+    for (const TargetTree &tree : std::as_const(targetSortedList)) {
         QString title = tree.prefix().mid(targets.prefix().size());
         if (!targets.prefix().isEmpty() && title[0] == QDir::separator()) {
             title = title.mid(1);

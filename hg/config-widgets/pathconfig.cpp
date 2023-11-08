@@ -136,7 +136,7 @@ void HgPathConfigWidget::saveConfig()
     }
 
     // first delete the alias in remove list from hgrc 
-    for (const QString &alias : qAsConst(m_removeList)) {
+    for (const QString &alias : std::as_const(m_removeList)) {
         hgc.deleteRepoRemotePath(alias);
     }
 

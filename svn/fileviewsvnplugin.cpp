@@ -413,7 +413,7 @@ void FileViewSvnPlugin::commitDialog()
     if (!m_contextDir.isEmpty()) {
         context << m_contextDir;
     } else {
-        for (const auto &i : qAsConst(m_contextItems)) {
+        for (const auto &i : std::as_const(m_contextItems)) {
             context << i.localPath();
         }
     }
@@ -545,7 +545,7 @@ void FileViewSvnPlugin::revertFiles(const QStringList& filesPath)
         return;
     }
 
-    for (const auto &i : qAsConst(filesPath)) {
+    for (const auto &i : std::as_const(filesPath)) {
         m_contextItems.append(KFileItem(QUrl::fromLocalFile(i)));
     }
     m_contextDir.clear();
@@ -623,7 +623,7 @@ void FileViewSvnPlugin::diffBetweenRevs(const QString& remoteFilePath, ulong rev
 
 void FileViewSvnPlugin::addFiles(const QStringList& filesPath)
 {
-    for (const auto &i : qAsConst(filesPath)) {
+    for (const auto &i : std::as_const(filesPath)) {
         m_contextItems.append(KFileItem(QUrl::fromLocalFile(i)));
     }
     m_contextDir.clear();

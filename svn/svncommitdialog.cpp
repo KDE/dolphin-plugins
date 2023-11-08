@@ -27,7 +27,7 @@ namespace {
 // Helper function: returns true if str starts with any string in a list.
 bool startsWith(const QStringList &list, const QString &str)
 {
-    for (const auto &i : qAsConst(list)) {
+    for (const auto &i : std::as_const(list)) {
         if (str.startsWith(i)) {
             return true;
         }
@@ -42,7 +42,7 @@ QStringList makeContext(const QStringList &list, const QHash<QString, KVersionCo
 {
     QStringList ret;
 
-    for (const auto &i : qAsConst(list)) {
+    for (const auto &i : std::as_const(list)) {
         for ( auto it = hashTable->cbegin(); it != hashTable->cend(); ++it ) {
             if (it.key().startsWith(i)) {
                 ret.append(i);

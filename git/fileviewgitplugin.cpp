@@ -457,7 +457,7 @@ void FileViewGitPlugin::log()
     if (m_contextItems.isEmpty()) {
         items << QStringLiteral(".");
     } else {
-        for (auto &item : qAsConst(m_contextItems)) {
+        for (auto &item : std::as_const(m_contextItems)) {
             items << item.url().fileName();
         }
     }

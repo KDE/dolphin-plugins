@@ -211,7 +211,7 @@ void SvnLogDialog::on_tLog_currentCellChanged(int currentRow, int currentColumn,
     m_ui.teMessage->setPlainText( m_log->at(currentRow).msg );
     m_ui.lPaths->clear();
 
-    for (const auto &i : qAsConst(m_log->at(currentRow).affectedPaths)) {
+    for (const auto &i : std::as_const(m_log->at(currentRow).affectedPaths)) {
         svnLogEntryInfo_t info;
         info.remotePath = rootUrl + i.path;
         info.localPath = m_contextDir + i.path;
