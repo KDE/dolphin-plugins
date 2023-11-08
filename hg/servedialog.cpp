@@ -97,7 +97,7 @@ void HgServeDialog::setupUI()
 void HgServeDialog::loadConfig()
 {
     HgWrapper *hgw = HgWrapper::instance();
-    m_repoPathLabel->setText("<b>" + hgw->getBaseDir() + "</b>");
+    m_repoPathLabel->setText(QLatin1String("<b>") + hgw->getBaseDir() + QLatin1String("</b>"));
 
     slotUpdateButtons();
 }
@@ -132,7 +132,7 @@ void HgServeDialog::slotStop()
 
 void HgServeDialog::slotBrowse()
 {
-    QDesktopServices::openUrl(QUrl(QString("http://localhost:%1").
+    QDesktopServices::openUrl(QUrl(QStringLiteral("http://localhost:%1").
         arg(m_portNumber->value())));
 }
 

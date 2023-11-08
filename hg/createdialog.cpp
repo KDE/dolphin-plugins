@@ -28,7 +28,7 @@ HgCreateDialog::HgCreateDialog(const QString &directory, QWidget *parent):
     // Setup UI //
     //////////////
     
-    m_directory = new QLabel("<b>" + m_workingDirectory + "</b>");
+    m_directory = new QLabel(QLatin1String("<b>") + m_workingDirectory + QLatin1String("</b>"));
     m_repoNameEdit = new QLineEdit;
 
     QHBoxLayout *mainLayout = new QHBoxLayout;

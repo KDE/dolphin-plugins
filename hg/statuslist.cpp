@@ -24,8 +24,11 @@ HgStatusList::HgStatusList(QWidget *parent):
     m_statusTable = new QTableWidget(this);
 
     m_statusTable->setColumnCount(3);
-    QStringList headers;
-    headers << "*" << "S" << i18n("Filename");
+    const QStringList headers{
+        QStringLiteral("*"),
+        QStringLiteral("S"),
+        i18n("Filename"),
+    };
     m_statusTable->setHorizontalHeaderLabels(headers);
     m_statusTable->verticalHeader()->hide();
     m_statusTable->setEditTriggers(QAbstractItemView::NoEditTriggers);

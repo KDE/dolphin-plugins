@@ -92,19 +92,19 @@ void HgCommitInfoWidget::slotUpdateInfo()
     HgWrapper *hgw = HgWrapper::instance();
     QString changeset = selectedChangeset();
     QString output;
-    QStringList args;
-
-    args << QLatin1String("-p");
-    args << QLatin1String("-v");
-    args << QLatin1String("-r");
-    args << changeset;
-    hgw->executeCommand(QLatin1String("log"), args, output);
+    const QStringList args{
+        QStringLiteral("-p"),
+        QStringLiteral("-v"),
+        QStringLiteral("-r"),
+        changeset,
+    };
+    hgw->executeCommand(QStringLiteral("log"), args, output);
 
     m_editorDoc->setReadWrite(true);
     m_editorDoc->setModified(false);
     m_editorDoc->closeUrl(true);
     m_editorDoc->setText(output);
-    m_editorDoc->setHighlightingMode("diff");
+    m_editorDoc->setHighlightingMode(QStringLiteral("diff"));
     m_editorView->setCursorPosition( KTextEditor::Cursor(0, 0) );
     m_editorDoc->setReadWrite(false);
 }

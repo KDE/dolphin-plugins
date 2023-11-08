@@ -45,58 +45,58 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_parentWidget = qobject_cast<QWidget*>(parent);
 
     m_revertAction = new QAction(this);
-    m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertAction->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     m_revertAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Revert"));
     connect(m_revertAction, &QAction::triggered,
             this, &FileViewGitPlugin::revertFiles);
 
     m_addAction = new QAction(this);
-    m_addAction->setIcon(QIcon::fromTheme("list-add"));
+    m_addAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     m_addAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Add"));
     connect(m_addAction, &QAction::triggered,
             this, &FileViewGitPlugin::addFiles);
 
     m_showLocalChangesAction = new QAction(this);
-    m_showLocalChangesAction->setIcon(QIcon::fromTheme("vcs-diff"));
+    m_showLocalChangesAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-diff")));
     m_showLocalChangesAction->setText(xi18nd("@item:inmenu", "Show Local <application>Git</application> Changes"));
     connect(m_showLocalChangesAction, &QAction::triggered,
             this, &FileViewGitPlugin::showLocalChanges);
 
     m_removeAction = new QAction(this);
-    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
+    m_removeAction->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     m_removeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Remove"));
     connect(m_removeAction, &QAction::triggered,
             this, &FileViewGitPlugin::removeFiles);
 
     m_checkoutAction = new QAction(this);
-    m_checkoutAction->setIcon(QIcon::fromTheme("vcs-branch"));
+    m_checkoutAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-branch")));
     m_checkoutAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Checkout..."));
     connect(m_checkoutAction, &QAction::triggered,
             this, &FileViewGitPlugin::checkout);
 
     m_commitAction = new QAction(this);
-    m_commitAction->setIcon(QIcon::fromTheme("vcs-commit"));
+    m_commitAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-commit")));
     m_commitAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Commit..."));
     connect(m_commitAction, &QAction::triggered,
             this, &FileViewGitPlugin::commit);
 
     m_tagAction = new QAction(this);
-//     m_tagAction->setIcon(QIcon::fromTheme("svn-commit"));
+//     m_tagAction->setIcon(QIcon::fromTheme(QStringLiteral("svn-commit")));
     m_tagAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Create Tag..."));
     connect(m_tagAction, &QAction::triggered,
             this, &FileViewGitPlugin::createTag);
     m_pushAction = new QAction(this);
-    m_pushAction->setIcon(QIcon::fromTheme("vcs-push"));
+    m_pushAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-push")));
     m_pushAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Push..."));
     connect(m_pushAction, &QAction::triggered,
             this, &FileViewGitPlugin::push);
     m_pullAction = new QAction(this);
-    m_pullAction->setIcon(QIcon::fromTheme("vcs-pull"));
+    m_pullAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-pull")));
     m_pullAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Pull..."));
     connect(m_pullAction, &QAction::triggered,
             this, &FileViewGitPlugin::pull);
     m_mergeAction = new QAction(this);
-    m_mergeAction->setIcon(QIcon::fromTheme("vcs-merge"));
+    m_mergeAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-merge")));
     m_mergeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Merge..."));
     connect(m_mergeAction, &QAction::triggered, this, &FileViewGitPlugin::merge);
 
@@ -124,7 +124,7 @@ QString FileViewGitPlugin::localRepositoryRoot(const QString& directory) const
 {
     QProcess process;
     process.setWorkingDirectory(directory);
-    process.start("git", {"rev-parse", "--show-toplevel"});
+    process.start(QStringLiteral("git"), {QStringLiteral("rev-parse"), QStringLiteral("--show-toplevel")});
     if (process.waitForReadyRead(100) && process.exitCode() == 0) {
         return QString::fromUtf8(process.readAll().chopped(1));
     }
@@ -158,7 +158,7 @@ int FileViewGitPlugin::readUntilZeroChar(QIODevice* device, char* buffer, const 
 
 bool FileViewGitPlugin::beginRetrieval(const QString& directory)
 {
-    Q_ASSERT(directory.endsWith('/'));
+    Q_ASSERT(directory.endsWith(QLatin1Char('/')));
 
     GitWrapper::instance()->setWorkingDirectory(directory);
     m_currentDir = directory;
@@ -166,19 +166,19 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     // ----- find path below git base dir -----
     QProcess process;
     process.setWorkingDirectory(directory);
-    process.start("git", {"rev-parse", "--show-prefix"});
-    QString dirBelowBaseDir = "";
+    process.start(QStringLiteral("git"), {QStringLiteral("rev-parse"), QStringLiteral("--show-prefix")});
+    QString dirBelowBaseDir;
     while (process.waitForReadyRead()) {
         char buffer[512];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
-            dirBelowBaseDir = QString(buffer).trimmed(); // ends in "/" or is empty
+            dirBelowBaseDir = QString::fromLocal8Bit(buffer).trimmed(); // ends in "/" or is empty
         }
     }
 
     m_versionInfoHash.clear();
 
     // ----- find files with special status -----
-    process.start("git", {"--no-optional-locks", "status", "--porcelain", "-z", "-u", "--ignored"});
+    process.start(QStringLiteral("git"), {QStringLiteral("--no-optional-locks"), QStringLiteral("status"), QStringLiteral("--porcelain"), QStringLiteral("-z"), QStringLiteral("-u"), QStringLiteral("--ignored")});
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
@@ -233,13 +233,13 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
             /// File name relative to the current working directory.
             const QString relativeFileName = fileName.mid(dirBelowBaseDir.length());
             //if file is part of a sub-directory, record the directory
-            if (relativeFileName.contains('/')) {
+            if (relativeFileName.contains(QLatin1Char('/'))) {
                 if (state == IgnoredVersion)
                     continue;
                 if (state == AddedVersion || state == RemovedVersion) {
                     state = LocallyModifiedVersion;
                 }
-                const QString absoluteDirName = directory + relativeFileName.left(relativeFileName.indexOf('/'));
+                const QString absoluteDirName = directory + relativeFileName.left(relativeFileName.indexOf(QLatin1Char('/')));
                 if (m_versionInfoHash.contains(absoluteDirName)) {
                     ItemVersion oldState = m_versionInfoHash.value(absoluteDirName);
                     //only keep the most important state for a directory
@@ -410,7 +410,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuDirectoryActions(const QString& di
 
 void FileViewGitPlugin::addFiles()
 {
-    execGitCommand(QLatin1String("add"), QStringList(),
+    execGitCommand(QStringLiteral("add"), QStringList(),
                    xi18nd("@info:status", "Adding files to <application>Git</application> repository..."),
                    xi18nd("@info:status", "Adding files to <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Added files to <application>Git</application> repository."));
@@ -418,10 +418,11 @@ void FileViewGitPlugin::addFiles()
 
 void FileViewGitPlugin::removeFiles()
 {
-    QStringList arguments;
-    arguments << "-r"; //recurse through directories
-    arguments << "--force"; //also remove files that have not been committed yet
-    execGitCommand(QLatin1String("rm"), arguments,
+    const QStringList arguments{
+        QStringLiteral("-r"), //recurse through directories
+        QStringLiteral("--force"), //also remove files that have not been committed yet
+    };
+    execGitCommand(QStringLiteral("rm"), arguments,
                    xi18nd("@info:status", "Removing files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Removing files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Removed files from <application>Git</application> repository."));
@@ -429,7 +430,7 @@ void FileViewGitPlugin::removeFiles()
 
 void FileViewGitPlugin::revertFiles()
 {
-    execGitCommand(QLatin1String("checkout"), { "--" },
+    execGitCommand(QStringLiteral("checkout"), { QStringLiteral("--") },
                    xi18nd("@info:status", "Reverting files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Reverting files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Reverted files from <application>Git</application> repository."));
@@ -439,7 +440,7 @@ void FileViewGitPlugin::showLocalChanges()
 {
     Q_ASSERT(!m_contextDir.isEmpty());
 
-    runCommand(QLatin1String("git difftool --dir-diff ."));
+    runCommand(QStringLiteral("git difftool --dir-diff ."));
 }
 
 void FileViewGitPlugin::showDiff(const QUrl &link)
@@ -454,7 +455,7 @@ void FileViewGitPlugin::log()
 {
     QStringList items;
     if (m_contextItems.isEmpty()) {
-        items << QLatin1String(".");
+        items << QStringLiteral(".");
     } else {
         for (auto &item : qAsConst(m_contextItems)) {
             items << item.url().fileName();
@@ -464,7 +465,7 @@ void FileViewGitPlugin::log()
     QProcess process;
     process.setWorkingDirectory(m_contextDir);
     process.start(
-        QLatin1String("git"),
+        QStringLiteral("git"),
         QStringList {
             QStringLiteral("log"),
             QStringLiteral("--date=format:%d-%m-%Y"),
@@ -478,7 +479,7 @@ void FileViewGitPlugin::log()
         return;
     }
 
-    const QString gitOutput = process.readAllStandardOutput();
+    const QString gitOutput = QString::fromLocal8Bit(process.readAllStandardOutput());
 
     QPalette palette;
     const QString styleSheet = QStringLiteral(
@@ -537,13 +538,13 @@ void FileViewGitPlugin::checkout()
         QProcess process;
         process.setWorkingDirectory(m_contextDir);
         QStringList arguments;
-        arguments << "checkout";
+        arguments << QStringLiteral("checkout");
         if (dialog.force()) {
-            arguments << "-f";
+            arguments << QStringLiteral("-f");
         }
         const QString newBranchName = dialog.newBranchName();
         if (!newBranchName.isEmpty()) {
-            arguments << "-b";
+            arguments << QStringLiteral("-b");
             arguments << newBranchName;
         }
         const QString checkoutIdentifier = dialog.checkoutIdentifier();
@@ -552,19 +553,19 @@ void FileViewGitPlugin::checkout()
         }
         //to appear in messages
         const QString currentBranchName = newBranchName.isEmpty() ? checkoutIdentifier : newBranchName;
-        process.start(QLatin1String("git"), arguments);
+        process.start(QStringLiteral("git"), arguments);
         process.setReadChannel(QProcess::StandardError); //git writes info messages to stderr as well
         QString completedMessage;
         while (process.waitForReadyRead()) {
             char buffer[512];
             while (process.readLine(buffer, sizeof(buffer)) > 0){
-                const QString currentLine(buffer);
+                const QString currentLine = QString::fromLocal8Bit(buffer);
                 if (currentLine.startsWith(QLatin1String("Switched to branch"))) {
                     completedMessage = xi18nd("@info:status", "Switched to branch '%1'", currentBranchName);
                 }
                 if (currentLine.startsWith(QLatin1String("HEAD is now at"))) {
                     const QString headIdentifier = currentLine.
-                        mid(QString("HEAD is now at ").length()).trimmed();
+                        mid(QLatin1String("HEAD is now at ").size()).trimmed();
                     completedMessage = xi18nd("@info:status Git HEAD pointer, parameter includes "
                     "short SHA-1 & commit message ", "HEAD is now at %1", headIdentifier);
                 }
@@ -597,13 +598,13 @@ void FileViewGitPlugin::commit()
         tmpCommitMessageFile.close();
         QProcess process;
         process.setWorkingDirectory(m_contextDir);
-        QStringList args = {"commit"};
+        QStringList args = {QStringLiteral("commit")};
         if (dialog.amend()) {
-            args << "--amend";
+            args << QStringLiteral("--amend");
         }
-        args << "-F";
+        args << QStringLiteral("-F");
         args << tmpCommitMessageFile.fileName();
-        process.start("git", args);
+        process.start(QStringLiteral("git"), args);
         QString completedMessage;
         while (process.waitForReadyRead()){
             char buffer[512];
@@ -632,14 +633,14 @@ void FileViewGitPlugin::createTag()
         QProcess process;
         process.setWorkingDirectory(m_contextDir);
         process.setReadChannel(QProcess::StandardError);
-        process.start("git", {"tag", "-a", "-F", tempTagMessageFile.fileName(), dialog.tagName(), dialog.baseBranch()});
+        process.start(QStringLiteral("git"), {QStringLiteral("tag"), QStringLiteral("-a"), QStringLiteral("-F"), tempTagMessageFile.fileName(), dialog.tagName(), dialog.baseBranch()});
         QString completedMessage;
         bool gotTagAlreadyExistsMessage = false;
         while (process.waitForReadyRead()) {
             char buffer[512];
             while (process.readLine(buffer, sizeof(buffer)) > 0) {
-                QString line(buffer);
-                if (line.contains("already exists")) {
+                const QString line = QString::fromLocal8Bit(buffer);
+                if (line.contains(QLatin1String("already exists"))) {
                     gotTagAlreadyExistsMessage = true;
                 }
             }
@@ -671,16 +672,16 @@ void FileViewGitPlugin::push()
         Q_EMIT infoMessage(xi18nd("@info:status", "Pushing branch %1 to %2:%3...",
                  dialog.localBranch(), dialog.destination(), dialog.remoteBranch()));
 
-        m_command = "push";
+        m_command = QStringLiteral("push");
         m_pendingOperation = true;
         QStringList args;
-        args << "push";
+        args << QStringLiteral("push");
         if (dialog.force()) {
-            args << "--force";
+            args << QStringLiteral("--force");
         }
         args << dialog.destination();
         args << QStringLiteral("%1:%2").arg(dialog.localBranch(), dialog.remoteBranch());
-        m_process.start("git", args);
+        m_process.start(QStringLiteral("git"), args);
     }
 }
 
@@ -697,9 +698,9 @@ void FileViewGitPlugin::pull()
         Q_EMIT infoMessage(xi18nd("@info:status", "Pulling branch %1 from %2...", dialog.remoteBranch(),
                     dialog.source()));
 
-        m_command = "pull";
+        m_command = QStringLiteral("pull");
         m_pendingOperation = true;
-        m_process.start("git", {"pull", dialog.source(), dialog.remoteBranch()});
+        m_process.start(QStringLiteral("git"), {QStringLiteral("pull"), dialog.source(), dialog.remoteBranch()});
     }
 }
 
@@ -710,11 +711,11 @@ void FileViewGitPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatu
     QString message;
     if (m_command == QLatin1String("push")) { //output parsing for push
         message = parsePushOutput();
-        m_command = "";
+        m_command = QString();
     }
     if (m_command == QLatin1String("pull")) {
         message = parsePullOutput();
-        m_command = "";
+        m_command = QString();
     }
 
     if ((exitStatus != QProcess::NormalExit) || (exitCode != 0)) {
@@ -742,11 +743,11 @@ QString FileViewGitPlugin::parsePushOutput()
     QString message;
     char buffer[256];
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-        const QString line(buffer);
-        if (line.contains("->") || (line.contains("fatal") && message.isNull())) {
+        const QString line = QString::fromLocal8Bit(buffer);
+        if (line.contains(QLatin1String("->")) || (line.contains(QLatin1String("fatal")) && message.isNull())) {
             message = line.trimmed();
         }
-        if (line.contains("Everything up-to-date") && message.isNull()) {
+        if (line.contains(QLatin1String("Everything up-to-date")) && message.isNull()) {
             message = xi18nd("@info:status", "Branch is already up-to-date.");
         }
     }
@@ -757,11 +758,11 @@ QString FileViewGitPlugin::parsePullOutput()
 {
     char buffer[256];
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-        const QString line(buffer);
-        if (line.contains("Already up-to-date")) {
+        const QString line = QString::fromLocal8Bit(buffer);
+        if (line.contains(QLatin1String("Already up-to-date"))) {
             return xi18nd("@info:status", "Branch is already up-to-date.");
         }
-        if (line.contains("CONFLICT")) {
+        if (line.contains(QLatin1String("CONFLICT"))) {
             Q_EMIT itemVersionsChanged();
             return xi18nd("@info:status", "Merge conflicts occurred. Fix them and commit the result.");
         }
@@ -798,11 +799,11 @@ void FileViewGitPlugin::startGitCommandProcess()
     arguments << m_command;
     arguments << m_arguments;
     //force explicitly selected files but no files in selected directories
-    if (m_command == "add" && !item.isDir()){
-        arguments<< QLatin1String("-f");
+    if (m_command == QLatin1String("add") && !item.isDir()){
+        arguments<< QStringLiteral("-f");
     }
     arguments << item.url().fileName();
-    m_process.start(QLatin1String("git"), arguments);
+    m_process.start(QStringLiteral("git"), arguments);
     // the remaining items of m_contextItems will be executed
     // after the process has finished (see slotOperationFinished())
 }

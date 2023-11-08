@@ -69,8 +69,8 @@ PullDialog::PullDialog(QWidget* parent):
 
     for (const QString& branch : branches) {
         if (branch.startsWith(QLatin1String("remotes/"))) {
-            const QString remote = branch.section('/', 1, 1);
-            const QString name = branch.section('/', 2);
+            const QString remote = branch.section(QLatin1Char('/'), 1, 1);
+            const QString name = branch.section(QLatin1Char('/'), 2);
             m_remoteBranches[remote] << name;
         }
     }

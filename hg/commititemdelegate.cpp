@@ -34,12 +34,12 @@ void CommitItemDelegate::paint(QPainter *painter,
 
     QString top;
     if (!revision.isEmpty()) {
-        top = QString("%1:").arg(revision);
+        top = QStringLiteral("%1:").arg(revision);
     }
     top += changeset;
 
     if (!branch.isEmpty()) {
-        top += QString(" (%1)").arg(branch);
+        top += QStringLiteral(" (%1)").arg(branch);
     }
     font.setBold(true);
     painter->setFont(font);

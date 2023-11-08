@@ -96,8 +96,8 @@ void CommitDialog::signOffButtonClicked()
     //append Signed-off line
     QString lastline = m_commitMessageTextEdit->document()->lastBlock().text();
     bool noNewLine = lastline.startsWith(QLatin1String("Signed-off")) || lastline.isEmpty();
-    m_commitMessageTextEdit->append(QString(noNewLine ? "" : "\n") + "Signed-off-by: "
-            + m_userName + " <" + m_userEmail + '>');
+    m_commitMessageTextEdit->append((noNewLine ? QLatin1String() : QLatin1String("\n")) + QLatin1String("Signed-off-by: ")
+            + m_userName + QLatin1String(" <") + m_userEmail + QLatin1Char('>'));
 }
 
 QByteArray CommitDialog::commitMessage() const
@@ -131,7 +131,7 @@ void CommitDialog::setOkButtonState()
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setEnabled(enable);
     okButton->setToolTip(enable ?
-            "" : i18nc("@info:tooltip", "You must enter a commit message first."));
+            QString() : i18nc("@info:tooltip", "You must enter a commit message first."));
 }
 
 

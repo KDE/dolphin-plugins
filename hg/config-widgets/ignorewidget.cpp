@@ -63,11 +63,11 @@ void HgIgnoreWidget::setupUntrackedList()
 {
     HgWrapper *hgw = HgWrapper::instance();
     QStringList args;
-    args << QLatin1String("--unknown");
+    args << QStringLiteral("--unknown");
     QString output;
-    hgw->executeCommand(QLatin1String("status"), args, output);
+    hgw->executeCommand(QStringLiteral("status"), args, output);
     
-    const QStringList result = output.split('\n', Qt::SkipEmptyParts);
+    const QStringList result = output.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
     for (const QString &file : result) {
         m_untrackedList->addItem(file.mid(2));
     }

@@ -39,7 +39,7 @@ K_PLUGIN_CLASS_WITH_JSON(MakefileActions, "makefileactions.json")
 MakefileActions::MakefileActions(QObject *parent, const QVariantList &)
     : KAbstractFileItemActionPlugin(parent)
 {
-    KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("MakefileActionsPlugin"));
+    KConfigGroup config(KSharedConfig::openConfig(QStringLiteral("dolphinrc")), QStringLiteral("MakefileActionsPlugin"));
     m_openTerminal = config.readEntry("open_terminal", false);
     m_isMaking = false;
     m_trustedFiles = config.readEntry("trusted_files", QStringList());
@@ -48,11 +48,11 @@ MakefileActions::MakefileActions(QObject *parent, const QVariantList &)
 bool MakefileActions::isGNUMake()
 {
     QProcess proc;
-    proc.start(MAKE_CMD, { "--version" }, QIODevice::ReadOnly);
+    proc.start(QStringLiteral(MAKE_CMD), { QStringLiteral("--version") }, QIODevice::ReadOnly);
     while (proc.waitForReadyRead()) {
         char buffer[4096];
         while (proc.readLine(buffer, sizeof(buffer)) > 0) {
-            if (QString(buffer).contains("GNU")) {
+            if (QString::fromLocal8Bit(buffer).contains(QLatin1String("GNU"))) {
                 proc.kill();
                 proc.waitForFinished(500);
                 return true; // GNU Make
@@ -68,7 +68,7 @@ QStringList MakefileActions::listTargets_GNU(QProcess &proc, const QString &file
 {
     /* make -pRr : | sed '/Not a target/,+1 d' | grep -v '^\(#\|\s\)\|^$\| :\?= \|%' | cut -d':' -f1 | uniq | sort */
     // make -pRr :
-    proc.start(MAKE_CMD, { "-f", file, "-pRr", ":" }, QIODevice::ReadOnly);
+    proc.start(QStringLiteral(MAKE_CMD), { QStringLiteral("-f"), file, QStringLiteral("-pRr"), QStringLiteral(":") }, QIODevice::ReadOnly);
     // sed '/Not a target/,+1 d' | grep -v '^\(#\|\s\)\|^$\| :\?= \|%' | cut -d':' -f1 | uniq
     QSet<QString> targetSet;
     bool nonTarget = false;
@@ -80,19 +80,19 @@ QStringList MakefileActions::listTargets_GNU(QProcess &proc, const QString &file
                 nonTarget = false;
                 continue;
             }
-            const QString line = QString(buffer);
-            if (line.contains("Not a target")) {
+            const QString line = QString::fromLocal8Bit(buffer);
+            if (line.contains(QLatin1String("Not a target"))) {
                 nonTarget = true;
                 continue;
             }
             // | grep -v '^\(#\|\s\)\|^$\| :\?= \|%'
-            if (line.size() == 0 || line[0] == QChar('#') || line[0] == QChar('\n') || line[0] == QChar('\t') || line.contains(" = ") || line.contains(" := ") || line.contains("%")) {
+            if (line.size() == 0 || line[0] == QLatin1Char('#') || line[0] == QLatin1Char('\n') || line[0] == QLatin1Char('\t') || line.contains(QLatin1String(" = ")) || line.contains(QLatin1String(" := ")) || line.contains(QLatin1Char('%'))) {
                 continue;
             }
             // | cut -d':' -f1
-            const QString target = line.section(':', 0, 0);
+            const QString target = line.section(QLatin1Char(':'), 0, 0);
             // heuristics to remove most special targets like .PHONY, .SILENT, etc.
-            if (target[0] == QChar('.') && target.isUpper()) {
+            if (target[0] == QLatin1Char('.') && target.isUpper()) {
                 continue;
             }
             // | uniq
@@ -112,21 +112,21 @@ QStringList MakefileActions::listTargets_BSD(QProcess &proc, const QString &file
     // 2>&1
     proc.setProcessChannelMode(QProcess::MergedChannels);
     // make -r -d g3 :
-    proc.start(MAKE_CMD, { "-f", file, "-r", "-d", "g3", ":" }, QIODevice::ReadOnly);
+    proc.start(QStringLiteral(MAKE_CMD), { QStringLiteral("-f"), file, QStringLiteral("-r"), QStringLiteral("-d"), QStringLiteral("g3"), QStringLiteral(":") }, QIODevice::ReadOnly);
     // grep ', flags 0, type \(8\|4,\|1\)' | grep -v '%' | cut -d',' -f1 | sed 's/^# //'
     QStringList targetList;
     while (proc.waitForReadyRead()) {
         char buffer[4096];
         while (proc.readLine(buffer, sizeof(buffer)) > 0) {
-            const QString line = QString(buffer).chopped(1);
+            const QString line = QString::fromLocal8Bit(buffer).chopped(1);
             // grep ', flags 0, type \(8\|4,\|1\)' | grep -v '%'
-            if ((!line.contains(", flags 0, type 8") && !line.contains(", flags 0, type 4,") && !line.contains(", flags 0, type 1")) || line.contains("%")) {
+            if ((!line.contains(QLatin1String(", flags 0, type 8")) && !line.contains(QLatin1String(", flags 0, type 4,")) && !line.contains(QLatin1String(", flags 0, type 1"))) || line.contains(QLatin1Char('%'))) {
                 continue;
             }
             // | cut -d',' -f1 | sed 's/^# //'
-            const QString target = line.mid(2).section(',', 0, 0);
+            const QString target = line.mid(2).section(QLatin1Char(','), 0, 0);
             // heuristics to remove most special targets like .PHONY, .SILENT, etc
-            if (target[0] == QChar('.') && target.isUpper()) {
+            if (target[0] == QLatin1Char('.') && target.isUpper()) {
                 continue;
             }
             targetList << target;
@@ -145,7 +145,7 @@ TargetTree MakefileActions::targetTree() const
     proc.setWorkingDirectory(fileInfo.absoluteDir().absolutePath());
     // LANG=C
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-    env.insert("LANG", "C");
+    env.insert(QStringLiteral("LANG"), QStringLiteral("C"));
     proc.setProcessEnvironment(env);
 
     QStringList targetSortedList(isGNUMake() ? listTargets_GNU(proc, fileInfo.fileName()) : listTargets_BSD(proc, fileInfo.fileName()));
@@ -234,8 +234,8 @@ void MakefileActions::makeTarget(const QString &target, QWidget *mainWindow)
         }
         m_proc = new QProcess(mainWindow);
         m_proc->setWorkingDirectory(fileInfo.absoluteDir().absolutePath());
-        m_proc->setProgram(MAKE_CMD);
-        m_proc->setArguments({"-f", fileInfo.fileName(), target});
+        m_proc->setProgram(QStringLiteral(MAKE_CMD));
+        m_proc->setArguments({QStringLiteral("-f"), fileInfo.fileName(), target});
         connect(m_proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this, mainWindow, target](int exitCode, QProcess::ExitStatus exitStatus) {
             if (!m_isMaking) {
                 return;
@@ -262,7 +262,7 @@ void MakefileActions::makeTarget(const QString &target, QWidget *mainWindow)
         m_proc->start();
         mainWindow->setCursor(Qt::BusyCursor);
     } else {
-        KTerminalLauncherJob *job = new KTerminalLauncherJob(MAKE_CMD " -f " + fileInfo.fileName() + " " + target, mainWindow);
+        KTerminalLauncherJob *job = new KTerminalLauncherJob(QLatin1String(MAKE_CMD " -f ") + fileInfo.fileName() + QLatin1Char(' ') + target, mainWindow);
         job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mainWindow));
         job->setWorkingDirectory(fileInfo.absoluteDir().absolutePath());
         job->start();
@@ -294,7 +294,7 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
     trust->setText(trustedFile ? i18n("Trusted file — uncheck to remove trust") : i18n("Untrusted file — check to trust"));
     trust->setIcon(trustedFile ? QIcon::fromTheme(QStringLiteral("checkbox")) : QIcon::fromTheme(QStringLiteral("action-unavailable-symbolic")));
     connect(trust, &QAction::toggled, this, [this, trustedFile, mainWindow]() {
-        KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("MakefileActionsPlugin"));
+        KConfigGroup config(KSharedConfig::openConfig(QStringLiteral("dolphinrc")), QStringLiteral("MakefileActionsPlugin"));
         if (trustedFile) {
             m_trustedFiles.removeAll(m_file);
         } else if (QMessageBox::question(mainWindow,
@@ -319,7 +319,7 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
     openTerminal->setChecked(m_openTerminal);
     connect(openTerminal, &QAction::toggled, this, [this](bool checked) {
         m_openTerminal = checked;
-        KConfigGroup config(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("MakefileActionsPlugin"));
+        KConfigGroup config(KSharedConfig::openConfig(QStringLiteral("dolphinrc")), QStringLiteral("MakefileActionsPlugin"));
         config.writeEntry("open_terminal", checked);
     });
     menu->addAction(openTerminal);

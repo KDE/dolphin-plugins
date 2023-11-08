@@ -18,9 +18,9 @@ namespace {
 // Helper function: returns template file name for QTemporaryFile.
 QString templateFileName(const QString& url, ulong rev)
 {
-    const QString tmpFileName = url.section('/', -1);
+    const QString tmpFileName = url.section(QLatin1Char('/'), -1);
 
-    return QDir::tempPath() + QString("/%1.r%2.XXXXXX").arg(tmpFileName).arg(rev);
+    return QDir::tempPath() + QStringLiteral("/%1.r%2.XXXXXX").arg(tmpFileName).arg(rev);
 }
 
 }
@@ -104,7 +104,7 @@ QString SvnCommands::remoteItemUrl(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return nullptr;
+        return QString();
     }
 
     QTextStream stream(&process);
@@ -133,7 +133,7 @@ QString SvnCommands::remoteRootUrl(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return nullptr;
+        return QString();
     }
 
     QTextStream stream(&process);
@@ -162,7 +162,7 @@ QString SvnCommands::remoteRelativeUrl(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return nullptr;
+        return QString();
     }
 
     QTextStream stream(&process);
@@ -191,7 +191,7 @@ QString SvnCommands::localRoot(const QString& filePath)
     );
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
-        return nullptr;
+        return QString();
     }
 
     QTextStream stream(&process);
@@ -297,8 +297,8 @@ CommandResult SvnCommands::cleanup(const QString& dir, bool removeUnversioned, b
     } else {
         result.success = true;
     }
-    result.stdOut = process.readAllStandardOutput();
-    result.stdErr = process.readAllStandardError();
+    result.stdOut = QString::fromLocal8Bit(process.readAllStandardOutput());
+    result.stdErr = QString::fromLocal8Bit(process.readAllStandardError());
 
     return result;
 }
@@ -404,7 +404,7 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
                 }
 
                 logEntry entry;
-                entry.revision = xml.attributes().value("revision").toULong();
+                entry.revision = xml.attributes().value(QLatin1String("revision")).toULong();
 
                 if (xml.readNextStartElement() && xml.name() == QLatin1String("author")) {
                     entry.author = xml.readElementText();
@@ -417,10 +417,10 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
                     while (xml.readNextStartElement() && xml.name() == QLatin1String("path")) {
                         affectedPath path;
 
-                        path.action = xml.attributes().value("action").toString();
-                        path.propMods = xml.attributes().value("prop-mods").toString() == QLatin1String("true");
-                        path.textMods = xml.attributes().value("text-mods").toString() == QLatin1String("true");
-                        path.kind = xml.attributes().value("kind").toString();
+                        path.action = xml.attributes().value(QLatin1String("action")).toString();
+                        path.propMods = xml.attributes().value(QLatin1String("prop-mods")).toString() == QLatin1String("true");
+                        path.textMods = xml.attributes().value(QLatin1String("text-mods")).toString() == QLatin1String("true");
+                        path.kind = xml.attributes().value(QLatin1String("kind")).toString();
 
                         path.path = xml.readElementText();
 

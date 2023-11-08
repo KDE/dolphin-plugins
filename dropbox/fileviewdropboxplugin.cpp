@@ -52,10 +52,10 @@ FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList
     Q_UNUSED(args);
 
     if (m_itemVersions.isEmpty()) {
-        m_itemVersions.insert("up to date", KVersionControlPlugin::NormalVersion);
-        m_itemVersions.insert("syncing",    KVersionControlPlugin::UpdateRequiredVersion);
-        m_itemVersions.insert("unsyncable", KVersionControlPlugin::ConflictingVersion);
-        m_itemVersions.insert("unwatched",  KVersionControlPlugin::UnversionedVersion);
+        m_itemVersions.insert(QStringLiteral("up to date"), KVersionControlPlugin::NormalVersion);
+        m_itemVersions.insert(QStringLiteral("syncing"),    KVersionControlPlugin::UpdateRequiredVersion);
+        m_itemVersions.insert(QStringLiteral("unsyncable"), KVersionControlPlugin::ConflictingVersion);
+        m_itemVersions.insert(QStringLiteral("unwatched"),  KVersionControlPlugin::UnversionedVersion);
     }
 
     const QString dropboxDir = QDir::home().path() % QDir::separator() % fileName() % QDir::separator();
@@ -64,11 +64,11 @@ FileViewDropboxPlugin::FileViewDropboxPlugin(QObject* parent, const QVariantList
 
     // Find and watch aggregation.dbx file
     QDir dir(dropboxDir);
-    QStringList nameFilter("instance*");
+    QStringList nameFilter(QStringLiteral("instance*"));
     const QStringList instanceDirs = dir.entryList(nameFilter);
-    QString aggregationDB = "";
+    QString aggregationDB;
     for (const QString &instance : instanceDirs) {
-        aggregationDB = dropboxDir + '/' + instance + '/' + "aggregation.dbx";
+        aggregationDB = dropboxDir + QLatin1Char('/') + instance + QLatin1String("/aggregation.dbx");
         if (QFile::exists(aggregationDB)) {
             d->databaseFileWatcher->addPath(aggregationDB);
             break;
@@ -86,7 +86,7 @@ FileViewDropboxPlugin::~FileViewDropboxPlugin()
 
 QString FileViewDropboxPlugin::fileName() const
 {
-    return QLatin1String(".dropbox");
+    return QStringLiteral(".dropbox");
 }
 
 bool FileViewDropboxPlugin::beginRetrieval(const QString& directory)
@@ -104,7 +104,7 @@ bool FileViewDropboxPlugin::beginRetrieval(const QString& directory)
 
 KVersionControlPlugin::ItemVersion FileViewDropboxPlugin::itemVersion(const KFileItem& item) const
 {
-    const QStringList reply = sendCommand("icon_overlay_file_status\npath\t", QStringList() << QDir(item.localPath()).canonicalPath(),
+    const QStringList reply = sendCommand(QStringLiteral("icon_overlay_file_status\npath\t"), QStringList() << QDir(item.localPath()).canonicalPath(),
                                           d->itemStateSocket, WaitForReply, LongTimeout);
     if(reply.count() < 2) {
         // file/dir is not served by dropbox
@@ -136,7 +136,7 @@ QList<QAction*> FileViewDropboxPlugin::versionControlActions(const KFileItemList
         d->contextFilePaths << QDir(item.localPath()).canonicalPath();
     }
 
-    const QStringList reply = sendCommand("icon_overlay_context_options\npaths\t", d->contextFilePaths, d->controlSocket, WaitForReply);
+    const QStringList reply = sendCommand(QStringLiteral("icon_overlay_context_options\npaths\t"), d->contextFilePaths, d->controlSocket, WaitForReply);
     if (reply.count() < 2) {
         // files/dirs are not served by dropbox
         return QList<QAction*>();
@@ -144,13 +144,13 @@ QList<QAction*> FileViewDropboxPlugin::versionControlActions(const KFileItemList
 
     // analyze item options and dynamically form a menu
     for (const QString& replyLine : reply) {
-        const QStringList options = replyLine.split('~');
+        const QStringList options = replyLine.split(QLatin1Char('~'));
 
         if (options.count() > 2) {
             QAction* action = d->contextActions->addAction(options.at(2));
             action->setText(options.at(0));
             action->setToolTip(options.at(1));
-            action->setIcon(QIcon::fromTheme("dropbox"));
+            action->setIcon(QIcon::fromTheme(QStringLiteral("dropbox")));
         }
     }
 
@@ -166,7 +166,7 @@ QList<QAction*> FileViewDropboxPlugin::outOfVersionControlActions(const KFileIte
 
 void FileViewDropboxPlugin::handleContextAction(QAction* action)
 {
-    sendCommand("icon_overlay_context_action\nverb\t" % action->objectName() % "\npaths\t", d->contextFilePaths, d->controlSocket);
+    sendCommand(QLatin1String("icon_overlay_context_action\nverb\t") % action->objectName() % QLatin1String("\npaths\t"), d->contextFilePaths, d->controlSocket);
 }
 
 QStringList FileViewDropboxPlugin::sendCommand(const QString& command,
@@ -179,9 +179,9 @@ QStringList FileViewDropboxPlugin::sendCommand(const QString& command,
         return QStringList();
     }
 
-    static const QString parameterSeperator('\t');
-    static const QString done("\ndone\n");
-    static const QString ok("ok\n");
+    static const QString parameterSeperator = QStringLiteral("\t");
+    static const QString done = QStringLiteral("\ndone\n");
+    static const QString ok = QStringLiteral("ok\n");
 
     const QString request = command % paths.join(parameterSeperator) % done;
 

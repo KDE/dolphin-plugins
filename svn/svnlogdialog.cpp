@@ -92,29 +92,29 @@ SvnLogDialog::SvnLogDialog(const QString& contextDir, QWidget *parent) :
     QObject::connect(m_ui.lPaths, &QWidget::customContextMenuRequested, this, &SvnLogDialog::showContextMenuChangesList);
 
     m_updateToRev = new QAction(i18n("Update to revision"), this);
-    m_updateToRev->setIcon(QIcon::fromTheme("view-refresh"));
+    m_updateToRev->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     QObject::connect(m_updateToRev, &QAction::triggered, this, &SvnLogDialog::updateRepoToRevision);
 
     m_revertToRev = new QAction(i18n("Revert to revision"), this);
-    m_revertToRev->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertToRev->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     QObject::connect(m_revertToRev, &QAction::triggered, this, &SvnLogDialog::revertRepoToRevision);
 
     m_diffFilePrev = new QAction(i18n("Show changes"), this);
-    m_diffFilePrev->setIcon(QIcon::fromTheme("view-split-left-right"));
+    m_diffFilePrev->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
     QObject::connect(m_diffFilePrev, &QAction::triggered, this, [this] () {
         svnLogEntryInfo_t info = m_diffFilePrev->data().value<svnLogEntryInfo_t>();
         Q_EMIT diffBetweenRevs(info.remotePath, info.revision, info.revision - 1);
     } );
 
     m_diffFileCurrent = new QAction(i18n("Changes against working copy"), this);
-    m_diffFileCurrent->setIcon(QIcon::fromTheme("view-split-left-right"));
+    m_diffFileCurrent->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
     QObject::connect(m_diffFileCurrent, &QAction::triggered, this, [this] () {
         svnLogEntryInfo_t info = m_diffFileCurrent->data().value<svnLogEntryInfo_t>();
         Q_EMIT diffAgainstWorkingCopy(info.localPath, info.revision);
     } );
 
     m_fileRevertToRev = new QAction(i18n("Revert to revision"), this);
-    m_fileRevertToRev->setIcon(QIcon::fromTheme("document-revert"));
+    m_fileRevertToRev->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     QObject::connect(m_fileRevertToRev, &QAction::triggered, this, &SvnLogDialog::revertFileToRevision);
 
     QShortcut *refreshShortcut = new QShortcut(QKeySequence::Refresh, this);
@@ -170,7 +170,7 @@ void SvnLogDialog::refreshLog()
     for (int i = 0; i < m_log->size(); ++i) {
         QTableWidgetItem *revision = new QTableWidgetItem(QString::number(m_log->at(i).revision));
         QTableWidgetItem *author = new QTableWidgetItem(m_log->at(i).author);
-        QTableWidgetItem *date = new QTableWidgetItem(m_log->at(i).date.toString("yyyy.MM.dd hh:mm:ss"));
+        QTableWidgetItem *date = new QTableWidgetItem(m_log->at(i).date.toString(QStringLiteral("yyyy.MM.dd hh:mm:ss")));
         QTableWidgetItem *msg = new QTableWidgetItem(m_log->at(i).msg);
 
         revision->setData(Qt::UserRole, QVariant::fromValue(m_log->at(i).revision));

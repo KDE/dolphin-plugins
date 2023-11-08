@@ -117,12 +117,11 @@ void HgSyncBaseDialog::setupUI()
     mainLayout->addWidget(m_optionGroup);
 
     // bottom button box with OK/Cancel and Options buttons
-    okButton()->setText(xi18nc("@action:button",
-                               m_dialogType == PullDialog ? "Pull" : "Push"));
+    okButton()->setText(m_dialogType == PullDialog ? i18nc("@action:button", "Pull") : i18nc("@action:button", "Push"));
     okButton()->setIcon(QIcon::fromTheme(
-                               m_dialogType == PullDialog ? "vcs-pull" : "vcs-push"));
+                               m_dialogType == PullDialog ? QStringLiteral("vcs-pull") : QStringLiteral("vcs-push")));
     m_optionsButton = new QPushButton(buttonBox());
-    m_optionsButton->setIcon(QIcon::fromTheme("help-about"));
+    m_optionsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
     switchOptionsButton(true);
     buttonBox()->addButton(m_optionsButton, QDialogButtonBox::ResetRole);
     layout()->insertLayout(0, mainLayout);
@@ -246,7 +245,7 @@ void HgSyncBaseDialog::done(int r)
         }
 
         QStringList args;
-        QString command = (m_dialogType==PullDialog)?"pull":"push";
+        QString command = (m_dialogType==PullDialog) ? QStringLiteral("pull") : QStringLiteral("push");
         args << command;
         args << m_pathSelector->remote();
         appendOptionArguments(args);
@@ -254,7 +253,7 @@ void HgSyncBaseDialog::done(int r)
         m_terminated = false;
         
         m_main_process.setWorkingDirectory(m_hgw->getBaseDir());
-        m_main_process.start(QLatin1String("hg"), args);
+        m_main_process.start(QStringLiteral("hg"), args);
     }
     else {
         if (m_process.state() == QProcess::Running || 
@@ -315,7 +314,7 @@ void HgSyncBaseDialog::slotUpdateBusy(QProcess::ProcessState state)
 
 void HgSyncBaseDialog::slotOptionsButtonClick()
 {
-  if (m_optionsButton->text().contains(">>")) {
+  if (m_optionsButton->text().contains(QLatin1String(">>"))) {
     switchOptionsButton(false);
     m_optionGroup->setVisible(true);
   }
@@ -328,7 +327,7 @@ void HgSyncBaseDialog::slotOptionsButtonClick()
 void HgSyncBaseDialog::switchOptionsButton(bool switchOn)
 {
   m_optionsButton->setText(xi18nc("@action:button", "Options") +
-                      (switchOn ? " >>" : " <<"));
+                      (switchOn ? QLatin1String(" >>") : QLatin1String(" <<")));
 }
 
 

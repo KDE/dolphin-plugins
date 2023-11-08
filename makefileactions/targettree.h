@@ -64,7 +64,7 @@ public:
     friend QDebug operator<<(QDebug dbg, const TargetTree &t)
     {
         static int indent = 0;
-        dbg << QString(indent, QChar(' ')) << t.m_prefix << (t.m_isTarget ? "@\n" : "\n");
+        dbg << QString(indent, QLatin1Char(' ')) << t.m_prefix << (t.m_isTarget ? "@\n" : "\n");
         indent += 2;
         for (const TargetTree &c : t.m_children) {
             dbg << c;

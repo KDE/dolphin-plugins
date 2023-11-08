@@ -64,7 +64,7 @@ MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
 const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 {
     const QList<Solid::Device> blockDevices =
-        Solid::Device::listFromQuery("[ IS StorageVolume AND IS GenericInterface ]");
+        Solid::Device::listFromQuery(QStringLiteral("[ IS StorageVolume AND IS GenericInterface ]"));
 
     for (const Solid::Device &device : blockDevices) {
         auto genericDevice = device.as<Solid::GenericInterface>();
@@ -79,8 +79,8 @@ const QList<Solid::Device> getStorageAccessFromDevice(const Solid::Device &devic
 {
     auto genericInterface = device.as<Solid::GenericInterface>();
     // Solid always returns UUID lower-case
-    const QString uuid = genericInterface->property(QLatin1String("IdUUID")).value<QString>().toLower();
-    auto query = QString("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid);
+    const QString uuid = genericInterface->property(QStringLiteral("IdUUID")).value<QString>().toLower();
+    auto query = QStringLiteral("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid);
     return Solid::Device::listFromQuery(query);
 }
 
@@ -107,12 +107,12 @@ void mount(const QString &file)
     QMap<QString, QVariant> options;
 
     QDBusInterface manager(
-            "org.freedesktop.UDisks2",
-            "/org/freedesktop/UDisks2/Manager",
-            "org.freedesktop.UDisks2.Manager",
+            QStringLiteral("org.freedesktop.UDisks2"),
+            QStringLiteral("/org/freedesktop/UDisks2/Manager"),
+            QStringLiteral("org.freedesktop.UDisks2.Manager"),
             QDBusConnection::systemBus());
     QDBusReply<QDBusObjectPath> reply =
-        manager.call("LoopSetup", QVariant::fromValue(qtFd), options);
+        manager.call(QStringLiteral("LoopSetup"), QVariant::fromValue(qtFd), options);
 
     if (!reply.isValid()) {
         qWarning() << "Error mounting " << file << ":" << reply.error().name()
@@ -182,11 +182,11 @@ void unmount(const Solid::Device &device)
     QMap<QString, QVariant> options;
 
     QDBusInterface manager(
-            "org.freedesktop.UDisks2",
+            QStringLiteral("org.freedesktop.UDisks2"),
             device.udi(),
-            "org.freedesktop.UDisks2.Loop",
+            QStringLiteral("org.freedesktop.UDisks2.Loop"),
             QDBusConnection::systemBus());
-    manager.call("Delete", options);
+    manager.call(QStringLiteral("Delete"), options);
 }
 
 QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItemInfos,

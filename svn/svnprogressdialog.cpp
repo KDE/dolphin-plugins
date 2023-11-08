@@ -49,15 +49,15 @@ void SvnProgressDialog::connectToProcess(QProcess *process)
     } );
     m_conCompeted = connect(process, &QProcess::finished, this, &SvnProgressDialog::operationCompeleted);
     m_conProcessError = connect(process, &QProcess::errorOccurred, this, [this, process] (QProcess::ProcessError) {
-        const QString commandLine = process->program() + process->arguments().join(' ');
+        const QString commandLine = process->program() + process->arguments().join(QLatin1Char(' '));
         appendErrorText(i18nc("@info:status", "Error starting: %1", commandLine));
         operationCompeleted();
     } );
     m_conStdOut = connect(process, &QProcess::readyReadStandardOutput, this, [this, process] () {
-        appendInfoText( process->readAllStandardOutput() );
+        appendInfoText( QString::fromLocal8Bit(process->readAllStandardOutput()) );
     } );
     m_conStrErr = connect(process, &QProcess::readyReadStandardError, this, [this, process] () {
-        appendErrorText( process->readAllStandardError() );
+        appendErrorText( QString::fromLocal8Bit(process->readAllStandardError()) );
     } );
 }
 
@@ -81,10 +81,10 @@ void SvnProgressDialog::appendInfoText(const QString& text)
 
 void SvnProgressDialog::appendErrorText(const QString& text)
 {
-    static const QString htmlBegin = "<font color=\"Red\">";
-    static const QString htmlEnd = "</font><br>";
+    static const QString htmlBegin = QStringLiteral("<font color=\"Red\">");
+    static const QString htmlEnd = QStringLiteral("</font><br>");
 
-    QString message = QString(text).replace('\n', QLatin1String("<br>"));
+    QString message = QString(text).replace(QLatin1Char('\n'), QLatin1String("<br>"));
     // Remove last <br> as it will be in htmlEnd.
     if (message.endsWith(QLatin1String("<br>"))) {
         message.chop(4);
@@ -100,7 +100,7 @@ void SvnProgressDialog::operationCompeleted()
     if (m_svnTerminated && !m_workingDir.isEmpty()) {
         const CommandResult result = SvnCommands::cleanup(m_workingDir);
         if (!result.success) {
-            qWarning() << QString("'svn cleanup' failed for %1").arg(m_workingDir);
+            qWarning() << QStringLiteral("'svn cleanup' failed for %1").arg(m_workingDir);
             qWarning() << result.stdErr;
         }
         m_svnTerminated = false;

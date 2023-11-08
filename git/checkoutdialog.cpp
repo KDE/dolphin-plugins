@@ -100,7 +100,7 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
 
     m_branchComboBox->addItems(branches);
     if (currentBranchIndex == -1) {
-        m_branchComboBox->insertItem(0, "(no branch)");
+        m_branchComboBox->insertItem(0, QStringLiteral("(no branch)"));
         m_branchComboBox->setCurrentIndex(0);
     } else {
         m_branchComboBox->setCurrentIndex(currentBranchIndex);
@@ -149,8 +149,8 @@ CheckoutDialog::CheckoutDialog(QWidget* parent):
 QString CheckoutDialog::checkoutIdentifier() const
 {
     QString identifier = m_branchComboBox->isEnabled() ? m_branchComboBox->currentText() : m_tagComboBox->currentText();
-    if (identifier.length()==0 || identifier.at(0)=='(') {
-        identifier = "";
+    if (identifier.length()==0 || identifier.at(0)==QLatin1Char('(')) {
+        identifier = QString();
     }
     return identifier;
 }
@@ -214,7 +214,7 @@ void CheckoutDialog::setOkButtonState()
             m_newBranchName->setToolTip(tt);
             okButton->setToolTip(tt);
         }
-        if (newBranchName.contains(QRegularExpression("\\s"))) {
+        if (newBranchName.contains(QRegularExpression(QStringLiteral("\\s")))) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "Branch names may not contain any whitespace.");
@@ -222,7 +222,7 @@ void CheckoutDialog::setOkButtonState()
             okButton->setToolTip(tt);
         }
     } //if we create a new branch and no valid branch is selected we create one based on the currently checked out version
-    else if (m_branchRadioButton->isChecked() && m_branchComboBox->currentText().at(0) == '('){
+    else if (m_branchRadioButton->isChecked() && m_branchComboBox->currentText().at(0) == QLatin1Char('(')){
         enableButton = false;
         okButton->setToolTip(i18nc("@info:tooltip", "You must select a valid branch first."));
     }
@@ -241,11 +241,11 @@ void CheckoutDialog::setOkButtonState()
 void CheckoutDialog::setDefaultNewBranchName(const QString& baseBranchName)
 {
     if (!m_userEditedNewBranchName) {
-        if (baseBranchName.startsWith('(')) {
-            m_newBranchName->setText("");
+        if (baseBranchName.startsWith(QLatin1Char('('))) {
+            m_newBranchName->setText(QString());
         } else {
             m_newBranchName->setText(i18nc("@item:intext Prepended to the current branch name "
-            "to get the default name for a newly created branch", "branch") + '_' + baseBranchName);
+            "to get the default name for a newly created branch", "branch") + QLatin1Char('_') + baseBranchName);
         }
     }
 }

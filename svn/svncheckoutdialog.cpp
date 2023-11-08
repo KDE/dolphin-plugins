@@ -20,7 +20,7 @@ namespace{
 QString rstrip(const QString &str)
 {
     for (int i = str.size() - 1; i >= 0; --i) {
-        if (str.at(i) != '/') {
+        if (str.at(i) != QLatin1Char('/')) {
             return str.left(i + 1);
         }
     }
@@ -32,7 +32,13 @@ QString rstrip(const QString &str)
 // Information about URL prefix at http://svnbook.red-bean.com/en/1.2/svn-book.html#svn.basic.in-action.wc.tbl-1.
 bool isValidSvnRepoUrl(const QString &path)
 {
-    static const QStringList schemes = { "file", "http", "https", "svn", "svn+ssh" };
+    static const QStringList schemes = {
+        QStringLiteral("file"),
+        QStringLiteral("http"),
+        QStringLiteral("https"),
+        QStringLiteral("svn"),
+        QStringLiteral("svn+ssh"),
+    };
 
     const QUrl url = QUrl::fromUserInput(path);
 
@@ -51,7 +57,7 @@ SvnCheckoutDialog::SvnCheckoutDialog(const QString& contextDir, QWidget *parent)
      * Add actions, establish connections.
      */
     connect(m_ui.pbCancel, &QPushButton::clicked, this, &QWidget::close);
-    QAction *pickDirectory = m_ui.leCheckoutDir->addAction(QIcon::fromTheme("folder"), QLineEdit::TrailingPosition);
+    QAction *pickDirectory = m_ui.leCheckoutDir->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
     connect(pickDirectory, &QAction::triggered, this, [this] () {
         const QString dir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose a directory to checkout"),
                                                               QString(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
@@ -81,10 +87,10 @@ void SvnCheckoutDialog::on_leRepository_textChanged(const QString &text)
         // If URL ends with a 'trunk' this is a branch - lets consider upper folder name as an
         // extraction path. So for '.../SomeRepo/trunk/' result would be 'SomeRepo'.
         int astart = -1;
-        if (stripped.endsWith("trunk")) {
+        if (stripped.endsWith(QLatin1String("trunk"))) {
             astart = -2;
         }
-        const QString suffix = QDir::separator() + stripped.section('/', astart, astart);
+        const QString suffix = QDir::separator() + stripped.section(QLatin1Char('/'), astart, astart);
 
         m_ui.leCheckoutDir->setText(m_dir + suffix);
         m_ui.pbOk->setEnabled(true);

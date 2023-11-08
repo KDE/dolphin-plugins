@@ -126,7 +126,7 @@ void TagDialog::setOkButtonState()
       if (tagName.isEmpty()) {
         toolTip = i18nc("@info:tooltip", "You must enter a tag name first.");
       }
-      else if (tagName.contains(QRegularExpression("\\s"))) {
+      else if (tagName.contains(QRegularExpression(QStringLiteral("\\s")))) {
         toolTip = i18nc("@info:tooltip", "Tag names may not contain any whitespace.");
       }
       else if (m_tagNames.contains(tagName)) {

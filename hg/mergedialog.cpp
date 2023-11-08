@@ -54,21 +54,21 @@ void HgMergeDialog::updateInitialDialog()
     HgWrapper *hgWrapper = HgWrapper::instance();
 
     // update label - current branch
-    QString line("<b>parents:</b> ");
-    line += hgWrapper->getParentsOfHead();
+    const QString line = QLatin1String("<b>parents:</b> ") + hgWrapper->getParentsOfHead();
     m_currentChangeset->setText(line);
 
     // update heads list
     QProcess process;
     process.setWorkingDirectory(hgWrapper->getBaseDir());
 
-    QStringList args;
-    args << QLatin1String("heads");
-    args << QLatin1String("--template");
-    args << QLatin1String("{rev}\n{node|short}\n{branch}\n"
-                          "{author}\n{desc|firstline}\n");
+    const QStringList args{
+        QStringLiteral("heads"),
+        QStringLiteral("--template"),
+        QStringLiteral("{rev}\n{node|short}\n{branch}\n"
+                       "{author}\n{desc|firstline}\n"),
+    };
 
-    process.start(QLatin1String("hg"), args);
+    process.start(QStringLiteral("hg"), args);
     m_commitInfoWidget->clear();
 
     const int FINAL = 5;
@@ -110,12 +110,12 @@ void HgMergeDialog::done(int r)
         }
 
         QString changeset = m_commitInfoWidget->selectedChangeset();
-        QStringList args;
+        const QStringList args{
+            QStringLiteral("-r"),
+            changeset,
+        };
 
-        args << QLatin1String("-r");
-        args << changeset;
-
-        if (hgw->executeCommandTillFinished(QLatin1String("merge"), args)) {
+        if (hgw->executeCommandTillFinished(QStringLiteral("merge"), args)) {
             KMessageBox::information(this, hgw->readAllStandardOutput());
             QDialog::done(r);
         }

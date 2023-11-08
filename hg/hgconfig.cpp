@@ -35,12 +35,12 @@ bool HgConfig::getConfigFilePath()
     switch (m_configType) {
     case RepoConfig:
         {
-            m_configFilePath = HgWrapper::instance()->getBaseDir() + "/.hg/hgrc";
+            m_configFilePath = HgWrapper::instance()->getBaseDir() + QLatin1String("/.hg/hgrc");
             break;
         }
     case GlobalConfig:
         {
-            m_configFilePath = QDir::homePath() + "/.hgrc";
+            m_configFilePath = QDir::homePath() + QLatin1String("/.hgrc");
             break;
         }
     case TempConfig:
@@ -78,32 +78,32 @@ void HgConfig::setProperty(const QString &section,
 
 QString HgConfig::username() const
 {
-    return property(QLatin1String("ui"), QLatin1String("username"));
+    return property(QStringLiteral("ui"), QStringLiteral("username"));
 }
 
 void HgConfig::setUsername(const QString &userName)
 {
-    setProperty(QLatin1String("ui"), QLatin1String("username"), userName);
+    setProperty(QStringLiteral("ui"), QStringLiteral("username"), userName);
 }
 
 QString HgConfig::editor() const 
 {
-    return property(QLatin1String("ui"), QLatin1String("editor"));
+    return property(QStringLiteral("ui"), QStringLiteral("editor"));
 }
 
 void HgConfig::setEditor(const QString &pathToEditor)
 {
-    setProperty(QLatin1String("ui"), QLatin1String("editor"), pathToEditor);
+    setProperty(QStringLiteral("ui"), QStringLiteral("editor"), pathToEditor);
 }
 
 QString HgConfig::merge() const 
 {
-    return property(QLatin1String("ui"), QLatin1String("merge"));
+    return property(QStringLiteral("ui"), QStringLiteral("merge"));
 }
 
 void HgConfig::setMerge(const QString &pathToMergeTool)
 {
-    setProperty(QLatin1String("ui"), QLatin1String("merge"), pathToMergeTool);
+    setProperty(QStringLiteral("ui"), QStringLiteral("merge"), pathToMergeTool);
 }
 
 /* Repo specific */
@@ -111,7 +111,7 @@ void HgConfig::setMerge(const QString &pathToMergeTool)
 void HgConfig::setRepoRemotePath(const QString &alias, const QString &url)
 {
     Q_ASSERT(m_configType == RepoConfig);
-    setProperty(QLatin1String("paths"), alias, url);
+    setProperty(QStringLiteral("paths"), alias, url);
 }
 
 void HgConfig::deleteRepoRemotePath(const QString &alias)
@@ -125,7 +125,7 @@ void HgConfig::deleteRepoRemotePath(const QString &alias)
 QString HgConfig::repoRemotePath(const QString &alias) const
 {
     Q_ASSERT(m_configType == RepoConfig);
-    return property(QLatin1String("paths"), alias);
+    return property(QStringLiteral("paths"), alias);
 }
 
 QMap<QString, QString> HgConfig::repoRemotePathList() const

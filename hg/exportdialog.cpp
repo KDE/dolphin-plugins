@@ -130,16 +130,16 @@ void HgExportDialog::done(int r)
 
         QStringList args;
         if (m_optText->checkState() == Qt::Checked) {
-            args << QLatin1String("--text");
+            args << QStringLiteral("--text");
         }
         if (m_optGit->checkState() == Qt::Checked) {
-            args << QLatin1String("--git");
+            args << QStringLiteral("--git");
         }
         if (m_optNoDates->checkState() == Qt::Checked) {
-            args << QLatin1String("--nodates");
+            args << QStringLiteral("--nodates");
         }
 
-        args << QLatin1String("-r");
+        args << QStringLiteral("-r");
         for (QListWidgetItem *item : items) {
             args << item->data(Qt::DisplayRole).toString();
         }
@@ -148,15 +148,15 @@ void HgExportDialog::done(int r)
         if (directory.isEmpty()) {
             return;
         }
-        if (!directory.endsWith('/')) {
-            directory.append('/');
+        if (!directory.endsWith(QLatin1Char('/'))) {
+            directory.append(QLatin1Char('/'));
         }
 
-        args << QLatin1String("--output");
+        args << QStringLiteral("--output");
         args << directory + QLatin1String("%b_%h.patch");
 
         HgWrapper *hgw = HgWrapper::instance();
-        if (hgw->executeCommandTillFinished(QLatin1String("export"), args)) {
+        if (hgw->executeCommandTillFinished(QStringLiteral("export"), args)) {
             QDialog::done(r);
         }
         else {

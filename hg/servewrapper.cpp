@@ -67,7 +67,7 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     Q_EMIT readyReadLine(repoLocation,
             i18n("## Starting Server ##"));
     Q_EMIT readyReadLine(repoLocation,
-            QString("% hg serve --port %1").arg(portNumber));
+            QStringLiteral("% hg serve --port %1").arg(portNumber));
 }
 
 void HgServeWrapper::stopServer(const QString &repoLocation)

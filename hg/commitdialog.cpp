@@ -153,8 +153,7 @@ HgCommitDialog::HgCommitDialog(QWidget *parent):
 QString HgCommitDialog::getParentForLabel()
 {
     HgWrapper *hgWrapper = HgWrapper::instance();
-    QString line("<b>parents:</b> ");
-    line += hgWrapper->getParentsOfHead();
+    const QString line = QLatin1String("<b>parents:</b> ") + hgWrapper->getParentsOfHead();
     return line;
 }
 
@@ -166,8 +165,8 @@ void HgCommitDialog::slotInitDiffOutput()
 
     QString diffOut;
     HgWrapper *hgWrapper = HgWrapper::instance();
-    hgWrapper->executeCommand(QLatin1String("diff"), QStringList(), diffOut);
-    m_fileDiffDoc->setHighlightingMode("diff");
+    hgWrapper->executeCommand(QStringLiteral("diff"), QStringList(), diffOut);
+    m_fileDiffDoc->setHighlightingMode(QStringLiteral("diff"));
     m_fileDiffDoc->setText(diffOut);
     m_fileDiffView->setCursorPosition( KTextEditor::Cursor(0, 0) );
     m_fileDiffDoc->setReadWrite(false);
@@ -186,14 +185,14 @@ void HgCommitDialog::slotItemSelectionChanged(const char status,
         HgWrapper *hgWrapper = HgWrapper::instance();
 
         arguments << fileName;
-        hgWrapper->executeCommand(QLatin1String("diff"), arguments, diffOut);
+        hgWrapper->executeCommand(QStringLiteral("diff"), arguments, diffOut);
         m_fileDiffDoc->setText(diffOut);
-        m_fileDiffDoc->setHighlightingMode("diff");
+        m_fileDiffDoc->setHighlightingMode(QStringLiteral("diff"));
     }
     else {
         QUrl url = QUrl::fromLocalFile(HgWrapper::instance()->getBaseDir());
         url = url.adjusted(QUrl::StripTrailingSlash);
-        url.setPath(url.path() + '/' + fileName);
+        url.setPath(url.path() + QLatin1Char('/') + fileName);
         m_fileDiffDoc->openUrl(url);
     }
 
@@ -251,9 +250,9 @@ void HgCommitDialog::slotBranchActions(QAction *action)
 {
     HgWrapper *hgWrapper = HgWrapper::instance();
     QString currentBranch;
-    hgWrapper->executeCommand(QLatin1String("branch"), QStringList(), currentBranch);
-    currentBranch.replace('\n', QString());
-    currentBranch = " (" + currentBranch + ')';
+    hgWrapper->executeCommand(QStringLiteral("branch"), QStringList(), currentBranch);
+    currentBranch.replace(QLatin1Char('\n'), QString());
+    currentBranch = QLatin1String(" (") + currentBranch + QLatin1Char(')');
     if (action == m_useCurrentBranch) {
         m_branchAction = NoChanges;
         m_branchButton->setText(i18n("Branch: Current Branch") + currentBranch);
@@ -342,18 +341,19 @@ void HgCommitDialog::createCopyMessageMenu()
     connect(actionGroup, &QActionGroup::triggered,
             this, &HgCommitDialog::slotInsertCopyMessage);
 
-    QStringList args;
-    args << QLatin1String("--limit");
-    args << QLatin1String("7");
-    args << QLatin1String("--template");
-    args << QLatin1String("{desc}\n");
+    const QStringList args{
+        QStringLiteral("--limit"),
+        QStringLiteral("7"),
+        QStringLiteral("--template"),
+        QStringLiteral("{desc}\n"),
+    };
 //     args << QLatin1String("{desc|short}\n");
 
     HgWrapper *hgw = HgWrapper::instance();
     QString output;
-    hgw->executeCommand(QLatin1String("log"), args, output);
+    hgw->executeCommand(QStringLiteral("log"), args, output);
 
-    const QStringList messages = output.split('\n', Qt::SkipEmptyParts);
+    const QStringList messages = output.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
     for (const QString &msg : messages) {
         QAction *action = m_copyMessageMenu->addAction(msg.left(40)); // max 40 characters
         action->setData(msg); // entire description into action data

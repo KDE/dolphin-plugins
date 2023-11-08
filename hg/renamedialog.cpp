@@ -25,13 +25,13 @@ HgRenameDialog::HgRenameDialog(const KFileItem &source, QWidget *parent):
                 "<application>Hg</application> Rename"));
 
     okButton()->setText(xi18nc("@action:button", "Rename"));
-    okButton()->setIcon(QIcon::fromTheme("list-rename"));
+    okButton()->setIcon(QIcon::fromTheme(QStringLiteral("list-rename")));
 
     QGridLayout *mainLayout = new QGridLayout(this);
 
     QLabel *sourceLabel = new QLabel(xi18nc("@label:label to source file",
                 "Source "), this);
-    QLabel *sourceFileLabel = new QLabel("<b>" + m_source + "</b>");
+    QLabel *sourceFileLabel = new QLabel(QLatin1String("<b>") + m_source + QLatin1String("</b>"));
     mainLayout->addWidget(sourceLabel, 0, 0);
     mainLayout->addWidget(sourceFileLabel, 0, 1);
 

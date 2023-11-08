@@ -67,37 +67,37 @@ FileViewSvnPlugin::FileViewSvnPlugin(QObject* parent, const QList<QVariant>& arg
     m_parentWidget = qobject_cast<QWidget*>(parent);
 
     m_updateAction = new QAction(this);
-    m_updateAction->setIcon(QIcon::fromTheme("view-refresh"));
+    m_updateAction->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     m_updateAction->setText(i18nc("@item:inmenu", "SVN Update"));
     connect(m_updateAction, &QAction::triggered,
             this, &FileViewSvnPlugin::updateFiles);
 
     m_showLocalChangesAction = new QAction(this);
-    m_showLocalChangesAction->setIcon(QIcon::fromTheme("view-split-left-right"));
+    m_showLocalChangesAction->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
     m_showLocalChangesAction->setText(i18nc("@item:inmenu", "Show Local SVN Changes"));
     connect(m_showLocalChangesAction, &QAction::triggered,
             this, &FileViewSvnPlugin::showLocalChanges);
 
     m_commitAction = new QAction(this);
-    m_commitAction->setIcon(QIcon::fromTheme("vcs-commit"));
+    m_commitAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-commit")));
     m_commitAction->setText(i18nc("@item:inmenu", "SVN Commit..."));
     connect(m_commitAction, &QAction::triggered,
             this, &FileViewSvnPlugin::commitDialog);
 
     m_addAction = new QAction(this);
-    m_addAction->setIcon(QIcon::fromTheme("list-add"));
+    m_addAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     m_addAction->setText(i18nc("@item:inmenu", "SVN Add"));
     connect(m_addAction, &QAction::triggered,
             this, QOverload<>::of(&FileViewSvnPlugin::addFiles));
 
     m_removeAction = new QAction(this);
-    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
+    m_removeAction->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     m_removeAction->setText(i18nc("@item:inmenu", "SVN Delete"));
     connect(m_removeAction, &QAction::triggered,
             this, &FileViewSvnPlugin::removeFiles);
 
     m_revertAction = new QAction(this);
-    m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertAction->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     m_revertAction->setText(i18nc("@item:inmenu", "SVN Revert"));
     connect(m_revertAction, &QAction::triggered,
             this, QOverload<>::of(&FileViewSvnPlugin::revertFiles));
@@ -145,7 +145,9 @@ QString FileViewSvnPlugin::localRepositoryRoot(const QString& directory) const
 {
     QProcess process;
     process.setWorkingDirectory(directory);
-    process.start("svn", {"info", "--show-item", "wc-root"});
+    process.start(QStringLiteral("svn"), {
+        QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("wc-root"),
+    });
     if (process.waitForReadyRead(100) && process.exitCode() == 0) {
         return QString::fromUtf8(process.readAll().chopped(1));
     }
@@ -163,7 +165,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
         it.next();
         // 'svn status' return dirs without trailing slash, so without it we can't remove current
         // directory from hash.
-        if ((it.key() + QLatin1Char('/')).startsWith(directory)) {
+        if (QString(it.key() + QLatin1Char('/')).startsWith(directory)) {
             it.remove();
         }
     }
@@ -181,7 +183,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
         char buffer[1024];
         while (process.readLine(buffer, sizeof(buffer)) > 0)  {
             ItemVersion version = NormalVersion;
-            QString filePath(buffer);
+            QString filePath = QString::fromLocal8Bit(buffer);
 
             switch (buffer[0]) {
             case 'I':
@@ -192,9 +194,9 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             case 'C': version = ConflictingVersion; break;
             case '!': version = MissingVersion; break;
             default:
-                if (filePath.contains('*')) {
+                if (filePath.contains(QLatin1Char('*'))) {
                     version = UpdateRequiredVersion;
-                } else if (filePath.contains("W155010")) {
+                } else if (filePath.contains(QLatin1String("W155010"))) {
                     version = UnversionedVersion;
                 }
                 break;
@@ -205,7 +207,7 @@ bool FileViewSvnPlugin::beginRetrieval(const QString& directory)
             // hash table, it is automatically defined as 'NormalVersion'
             // (see FileViewSvnPlugin::itemVersion()).
             if (version != NormalVersion) {
-                int pos = filePath.indexOf('/');
+                int pos = filePath.indexOf(QLatin1Char('/'));
                 const int length = filePath.length() - pos - 1;
                 filePath = filePath.mid(pos, length);
                 if (!filePath.isEmpty()) {
@@ -369,7 +371,7 @@ void FileViewSvnPlugin::showLocalChanges()
 
     // This temporary file will be deleted on Dolphin close. We make an assumption:
     // when the file gets deleted kompare has already loaded it and no longer needs it.
-    const QString tmpFileNameTemplate = QString("%1/%2.XXXXXX").arg(QDir::tempPath(), QDir(m_contextDir).dirName());
+    const QString tmpFileNameTemplate = QStringLiteral("%1/%2.XXXXXX").arg(QDir::tempPath(), QDir(m_contextDir).dirName());
     QTemporaryFile *file = new QTemporaryFile(tmpFileNameTemplate, this);
 
     if (!file->open()) {
@@ -650,7 +652,7 @@ void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& m
     m_tempFile.close();
 
     QStringList arguments;
-    arguments << context << "-F" << fileName;
+    arguments << context << QStringLiteral("-F") << fileName;
 
     // Lets clear m_contextDir and m_contextItems variables: we will pass everything in arguments.
     // This is needed because startSvnCommandProcess() uses only one QString for svn transaction at

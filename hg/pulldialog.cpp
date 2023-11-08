@@ -72,19 +72,19 @@ void HgPullDialog::createChangesGroup()
 
 void HgPullDialog::getHgChangesArguments(QStringList &args)
 {
-    args << QLatin1String("incoming");
+    args << QStringLiteral("incoming");
     args << m_pathSelector->remote();
-    args << QLatin1String("--config");
-    args << QLatin1String("ui.verbose=False");
-    args << QLatin1String("--template");
-    args << QLatin1String("Commit: {rev}:{node|short}   "
+    args << QStringLiteral("--config");
+    args << QStringLiteral("ui.verbose=False");
+    args << QStringLiteral("--template");
+    args << QStringLiteral("Commit: {rev}:{node|short}   "
                     "{author}  "
                     "{date|isodate}   {desc|firstline}\n");
 }
 
 void HgPullDialog::parseUpdateChanges(const QString &input)
 {
-    QStringList list = input.split("  ", Qt::SkipEmptyParts);
+    QStringList list = input.split(QLatin1String("  "), Qt::SkipEmptyParts);
     QTableWidgetItem *author = new QTableWidgetItem;
     QTableWidgetItem *changeset = new QTableWidgetItem;
     QTableWidgetItem *date = new QTableWidgetItem;
@@ -110,13 +110,13 @@ void HgPullDialog::parseUpdateChanges(const QString &input)
 void HgPullDialog::appendOptionArguments(QStringList &args)
 {
     if (m_optForce->isChecked()) {
-        args << QLatin1String("--force");
+        args << QStringLiteral("--force");
     }
     if (m_optUpdate->isChecked()) {
-        args << QLatin1String("--update");
+        args << QStringLiteral("--update");
     }
     if (m_optInsecure->isChecked()) {
-        args << QLatin1String("--insecure");
+        args << QStringLiteral("--insecure");
     }
 }
 

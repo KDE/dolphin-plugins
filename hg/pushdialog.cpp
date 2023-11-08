@@ -82,34 +82,35 @@ void HgPushDialog::slotOutSelChanged()
         return;
     }
 
-    QString changeset = m_outChangesList->item(m_outChangesList->currentRow(), 0)->text().split(' ', Qt::SkipEmptyParts).takeLast();
+    QString changeset = m_outChangesList->item(m_outChangesList->currentRow(), 0)->text().split(QLatin1Char(' '), Qt::SkipEmptyParts).takeLast();
 
-    QStringList args; 
-    args << QLatin1String("-r");
-    args << changeset;
-    args << QLatin1String("-v");
-    args << QLatin1String("-p");
+    const QStringList args{
+        QStringLiteral("-r"),
+        changeset,
+        QStringLiteral("-v"),
+        QStringLiteral("-p"),
+    };
 
     QString output;
-    m_hgw->executeCommand(QLatin1String("log"), args, output);
+    m_hgw->executeCommand(QStringLiteral("log"), args, output);
     m_changesetInfo->clear();
     m_changesetInfo->setText(output);
 }
 
 void HgPushDialog::getHgChangesArguments(QStringList &args)
 {
-    args << QLatin1String("outgoing");
+    args << QStringLiteral("outgoing");
     args << m_pathSelector->remote();
-    args << QLatin1String("--config");
-    args << QLatin1String("ui.verbose=False");
-    args << QLatin1String("--template");
-    args << QLatin1String("Commit: {rev}:{node|short}   "
+    args << QStringLiteral("--config");
+    args << QStringLiteral("ui.verbose=False");
+    args << QStringLiteral("--template");
+    args << QStringLiteral("Commit: {rev}:{node|short}   "
                     "{date|isodate}   {desc|firstline}\n");
 }
 
 void HgPushDialog::parseUpdateChanges(const QString &input)
 {
-    QStringList list = input.split("  ", Qt::SkipEmptyParts);
+    QStringList list = input.split(QLatin1String("  "), Qt::SkipEmptyParts);
     QTableWidgetItem *changeset = new QTableWidgetItem;
     QTableWidgetItem *date = new QTableWidgetItem;
     QTableWidgetItem *summary = new QTableWidgetItem;
@@ -131,13 +132,13 @@ void HgPushDialog::parseUpdateChanges(const QString &input)
 void HgPushDialog::appendOptionArguments(QStringList &args)
 {
     if (m_optForce->isChecked()) {
-        args << QLatin1String("--force");
+        args << QStringLiteral("--force");
     }
     if (m_optAllowNewBranch->isChecked()) {
-        args << QLatin1String("--new-branch");
+        args << QStringLiteral("--new-branch");
     }
     if (m_optInsecure->isChecked()) {
-        args << QLatin1String("--insecure");
+        args << QStringLiteral("--insecure");
     }
 }
 

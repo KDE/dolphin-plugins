@@ -101,7 +101,7 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
     // The more appropriate role is QDialogButtonBox::ActionRole but we use QDialogButtonBox::ResetRole
     // because of QDialogButtonBox automatic button layout (button is separated from others).
     auto refreshButton = buttonBox->addButton(i18nc("@action:button", "Refresh"), QDialogButtonBox::ResetRole);
-    refreshButton->setIcon(QIcon::fromTheme("view-refresh"));
+    refreshButton->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
 
     auto okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
@@ -112,21 +112,21 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
      * Add actions, establish connections.
      */
     m_actRevertFile = new QAction(i18nc("@item:inmenu", "Revert"), this);
-    m_actRevertFile->setIcon(QIcon::fromTheme("document-revert"));
+    m_actRevertFile->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     connect(m_actRevertFile, &QAction::triggered, this, [this] () {
         const QString filePath = m_actRevertFile->data().value<svnCommitEntryInfo_t>().localPath;
         Q_EMIT revertFiles(QStringList() << filePath);
     } );
 
     m_actDiffFile = new QAction(i18nc("@item:inmenu", "Show changes"), this);
-    m_actDiffFile->setIcon(QIcon::fromTheme("view-split-left-right"));
+    m_actDiffFile->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
     connect(m_actDiffFile, &QAction::triggered, this, [this] () {
         const QString filePath = m_actDiffFile->data().value<svnCommitEntryInfo_t>().localPath;
         Q_EMIT diffFile(filePath);
     } );
 
     m_actAddFile = new QAction(i18nc("@item:inmenu", "Add file"), this);
-    m_actAddFile->setIcon(QIcon::fromTheme("list-add"));
+    m_actAddFile->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     connect(m_actAddFile, &QAction::triggered, this, [this] () {
         const QString filePath = m_actAddFile->data().value<svnCommitEntryInfo_t>().localPath;
         Q_EMIT addFiles(QStringList() << filePath);
@@ -170,7 +170,7 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
 
 SvnCommitDialog::~SvnCommitDialog()
 {
-    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("SvnCommitDialog"));
+    KConfigGroup dialogConfig(KSharedConfig::openConfig(QStringLiteral("dolphinrc")), QStringLiteral("SvnCommitDialog"));
     KWindowConfig::saveWindowSize(windowHandle(), dialogConfig, KConfigBase::Persistent);
 }
 
@@ -231,8 +231,8 @@ void SvnCommitDialog::refreshChangesList()
             // For SVN normaly we shouldn't be here with:
             // NormalVersion, LocallyModifiedUnstagedVersion, IgnoredVersion.
             // 'default' is for any future changes in ItemVersion enum.
-            qWarning() << QString("Unknown SVN status for item %1, ItemVersion = %2").arg(it.key()).arg(it.value());
-            status->setText("");
+            qWarning() << QStringLiteral("Unknown SVN status for item %1, ItemVersion = %2").arg(it.key()).arg(it.value());
+            status->setText(QString());
         }
     }
 
@@ -245,7 +245,7 @@ void SvnCommitDialog::show()
     QWidget::show();
 
     // Restore window size after show() for workaround for QTBUG-40584. See KWindowConfig::restoreWindowSize() docs.
-    KConfigGroup dialogConfig(KSharedConfig::openConfig("dolphinrc"), QStringLiteral("SvnCommitDialog"));
+    KConfigGroup dialogConfig(KSharedConfig::openConfig(QStringLiteral("dolphinrc")), QStringLiteral("SvnCommitDialog"));
     KWindowConfig::restoreWindowSize(windowHandle(), dialogConfig);
 }
 

@@ -105,13 +105,13 @@ void HgUpdateDialog::done(int r)
         QStringList args;
         // Should we discard uncommitted changes
         if (m_discardChanges->checkState() == Qt::Checked) {
-            args << "-C";
+            args << QStringLiteral("-C");
         }
         else {
-            args << "-c";
+            args << QStringLiteral("-c");
         }
         if (m_updateTo == ToRevision) {
-            args << "-r";
+            args << QStringLiteral("-r");
         }
 
         // update to
@@ -119,7 +119,7 @@ void HgUpdateDialog::done(int r)
 
         // execute mercurial command
         HgWrapper *hgw = HgWrapper::instance();
-        if (hgw->executeCommandTillFinished(QLatin1String("update"), args)) {
+        if (hgw->executeCommandTillFinished(QStringLiteral("update"), args)) {
             QDialog::done(r);
         }
         else {

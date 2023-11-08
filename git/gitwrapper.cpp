@@ -34,9 +34,9 @@ void GitWrapper::freeInstance()
 
 QString GitWrapper::userName()
 {
-    QString result("");
+    QString result;
     char buffer[SMALL_BUFFER_SIZE];
-    m_process.start("git", {"config", "--get", "user.name"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("config"), QStringLiteral("--get"), QStringLiteral("user.name")});
     while (m_process.waitForReadyRead()) {
         if (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result = m_localCodec->toUnicode(buffer).trimmed();
@@ -47,9 +47,9 @@ QString GitWrapper::userName()
 
 QString GitWrapper::userEmail()
 {
-    QString result("");
+    QString result;
     char buffer[SMALL_BUFFER_SIZE];
-    m_process.start("git", {"config", "--get", "user.email"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("config"), QStringLiteral("--get"), QStringLiteral("user.email")});
     while (m_process.waitForReadyRead()) {
         if (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             result = m_localCodec->toUnicode(buffer).trimmed();
@@ -65,13 +65,13 @@ QStringList GitWrapper::branches(int* currentBranchIndex)
     if (currentBranchIndex != nullptr) {
         *currentBranchIndex = -1;
     }
-    m_process.start("git", {"branch", "-a"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("branch"), QStringLiteral("-a")});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
             const QString branchName = m_localCodec->toUnicode(buffer).mid(2).trimmed();
             //don't list non-branches and HEAD-branches directly pointing to other branches
-            if (!branchName.contains("->") && !branchName.startsWith('(')) {
+            if (!branchName.contains(QLatin1String("->")) && !branchName.startsWith(QLatin1Char('('))) {
                 result.append(branchName);
                 if (currentBranchIndex !=nullptr && buffer[0]=='*') {
                     *currentBranchIndex = result.size() - 1;
@@ -84,7 +84,7 @@ QStringList GitWrapper::branches(int* currentBranchIndex)
 
 void GitWrapper::tagSet(QSet<QString>& result)
 {
-    m_process.start("git", {"tag"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("tag")});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
@@ -97,7 +97,7 @@ void GitWrapper::tagSet(QSet<QString>& result)
 QStringList GitWrapper::tags()
 {
     QStringList result;
-    m_process.start("git", {"tag"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("tag")});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
@@ -111,13 +111,13 @@ QStringList GitWrapper::tags()
 inline QStringList GitWrapper::remotes(QLatin1String lineEnd)
 {
     QStringList result;
-    m_process.start("git", {"remote", "-v"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("remote"), QStringLiteral("-v")});
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
-            const QString line = QString(buffer).simplified();
+            const QString line = QString::fromLocal8Bit(buffer).simplified();
             if (line.endsWith(lineEnd)) {
-                result.append(line.section(' ', 0, 0));
+                result.append(line.section(QLatin1Char(' '), 0, 0));
             }
         }
     }
@@ -138,12 +138,12 @@ QString GitWrapper::lastCommitMessage()
 {
     QString result;
     char buffer[BUFFER_SIZE];
-    m_process.start("git", {"log", "-1"});
+    m_process.start(QStringLiteral("git"), {QStringLiteral("log"), QStringLiteral("-1")});
     while (m_process.waitForReadyRead()) {
         bool inMessage = false;
         QStringList message;
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-            const QString currentLine(buffer);
+            const QString currentLine = QString::fromLocal8Bit(buffer);
             if (inMessage){
                 message << m_localCodec->toUnicode(buffer).trimmed();
             }
@@ -152,7 +152,7 @@ QString GitWrapper::lastCommitMessage()
                 inMessage = true;
             }
         }
-        result = message.join("\n");
+        result = message.join(QLatin1Char('\n'));
     }
     return result;
 }

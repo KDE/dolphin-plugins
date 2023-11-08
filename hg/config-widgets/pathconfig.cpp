@@ -32,19 +32,19 @@ HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
 void HgPathConfigWidget::setupContextMenu()
 {
     m_addAction = new QAction(this);
-    m_addAction->setIcon(QIcon::fromTheme("add"));
+    m_addAction->setIcon(QIcon::fromTheme(QStringLiteral("add")));
     m_addAction->setText(xi18nc("@action:inmenu",
                                   "Add"));
     connect(m_addAction, SIGNAL(triggered()), this, SLOT(slotAddPath()));
 
     m_modifyAction = new QAction(this);
-    m_modifyAction->setIcon(QIcon::fromTheme("edit"));
+    m_modifyAction->setIcon(QIcon::fromTheme(QStringLiteral("edit")));
     m_modifyAction->setText(xi18nc("@action:inmenu",
                                   "Edit"));
     connect(m_modifyAction, SIGNAL(triggered()), this, SLOT(slotModifyPath()));
 
     m_deleteAction = new QAction(this);
-    m_deleteAction->setIcon(QIcon::fromTheme("remove"));
+    m_deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("remove")));
     m_deleteAction->setText(xi18nc("@action:inmenu",
                                   "Remove"));
     connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(slotDeletePath()));

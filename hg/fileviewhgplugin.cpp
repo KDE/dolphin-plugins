@@ -90,168 +90,168 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_parentWidget = qobject_cast<QWidget*>(parent);
 
     m_addAction = new QAction(this);
-    m_addAction->setIcon(QIcon::fromTheme("list-add"));
+    m_addAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     m_addAction->setText(xi18nc("@action:inmenu",
                                "<application>Hg</application> Add"));
     connect(m_addAction, &QAction::triggered,
             this, &FileViewHgPlugin::addFiles);
 
     m_removeAction = new QAction(this);
-    m_removeAction->setIcon(QIcon::fromTheme("list-remove"));
+    m_removeAction->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     m_removeAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Remove"));
     connect(m_removeAction, &QAction::triggered,
             this, &FileViewHgPlugin::removeFiles);
 
     m_renameAction = new QAction(this);
-    m_renameAction->setIcon(QIcon::fromTheme("list-rename"));
+    m_renameAction->setIcon(QIcon::fromTheme(QStringLiteral("list-rename")));
     m_renameAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Rename"));
     connect(m_renameAction, &QAction::triggered,
             this, &FileViewHgPlugin::renameFile);
 
     m_commitAction = new QAction(this);
-    m_commitAction->setIcon(QIcon::fromTheme("vcs-commit"));
+    m_commitAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-commit")));
     m_commitAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Commit"));
     connect(m_commitAction, &QAction::triggered,
             this, &FileViewHgPlugin::commit);
 
     m_tagAction = new QAction(this);
-    m_tagAction->setIcon(QIcon::fromTheme("svn-tag"));
+    m_tagAction->setIcon(QIcon::fromTheme(QStringLiteral("svn-tag")));
     m_tagAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Tag"));
     connect(m_tagAction, &QAction::triggered,
             this, &FileViewHgPlugin::tag);
 
     m_branchAction = new QAction(this);
-    m_branchAction->setIcon(QIcon::fromTheme("vcs-branch"));
+    m_branchAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-branch")));
     m_branchAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Branch"));
     connect(m_branchAction, &QAction::triggered,
             this, &FileViewHgPlugin::branch);
 
     m_cloneAction = new QAction(this);
-    m_cloneAction->setIcon(QIcon::fromTheme("hg-clone"));
+    m_cloneAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-clone")));
     m_cloneAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Clone"));
     connect(m_cloneAction, &QAction::triggered,
             this, &FileViewHgPlugin::clone);
 
     m_createAction = new QAction(this);
-    m_createAction->setIcon(QIcon::fromTheme("hg-create"));
+    m_createAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-create")));
     m_createAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Init"));
     connect(m_createAction, &QAction::triggered,
             this, &FileViewHgPlugin::create);
 
     m_updateAction = new QAction(this);
-    m_updateAction->setIcon(QIcon::fromTheme("vcs-pull"));
+    m_updateAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-pull")));
     m_updateAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Update"));
     connect(m_updateAction, &QAction::triggered,
             this, &FileViewHgPlugin::update);
 
     m_globalConfigAction = new QAction(this);
-    m_globalConfigAction->setIcon(QIcon::fromTheme("hg-config"));
+    m_globalConfigAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-config")));
     m_globalConfigAction->setText(xi18nc("@action:inmenu",
                           "<application>Hg</application> Global Config"));
     connect(m_globalConfigAction, &QAction::triggered,
             this, &FileViewHgPlugin::global_config);
 
     m_repoConfigAction = new QAction(this);
-    m_repoConfigAction->setIcon(QIcon::fromTheme("hg-config"));
+    m_repoConfigAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-config")));
     m_repoConfigAction->setText(xi18nc("@action:inmenu",
                       "<application>Hg</application> Repository Config"));
     connect(m_repoConfigAction, &QAction::triggered,
             this, &FileViewHgPlugin::repo_config);
 
     m_pushAction = new QAction(this);
-    m_pushAction->setIcon(QIcon::fromTheme("vcs-push"));
+    m_pushAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-push")));
     m_pushAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Push"));
     connect(m_pushAction, &QAction::triggered,
             this, &FileViewHgPlugin::push);
 
     m_pullAction = new QAction(this);
-    m_pullAction->setIcon(QIcon::fromTheme("vcs-pull"));
+    m_pullAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-pull")));
     m_pullAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Pull"));
     connect(m_pullAction, &QAction::triggered,
             this, &FileViewHgPlugin::pull);
 
     m_revertAction = new QAction(this);
-    m_revertAction->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertAction->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     m_revertAction->setText(xi18nc("@action:inmenu",
                                   "<application>Hg</application> Revert"));
     connect(m_revertAction, &QAction::triggered,
             this, &FileViewHgPlugin::revert);
 
     m_revertAllAction = new QAction(this);
-    m_revertAllAction->setIcon(QIcon::fromTheme("document-revert"));
+    m_revertAllAction->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
     m_revertAllAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Revert All"));
     connect(m_revertAllAction, &QAction::triggered,
             this, &FileViewHgPlugin::revertAll);
 
     m_rollbackAction = new QAction(this);
-    m_rollbackAction->setIcon(QIcon::fromTheme("hg-rollback"));
+    m_rollbackAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-rollback")));
     m_rollbackAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Rollback"));
     connect(m_rollbackAction, &QAction::triggered,
             this, &FileViewHgPlugin::rollback);
 
     m_mergeAction = new QAction(this);
-    m_mergeAction->setIcon(QIcon::fromTheme("vcs-merge"));
+    m_mergeAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-merge")));
     m_mergeAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Merge"));
     connect(m_mergeAction, &QAction::triggered,
             this, &FileViewHgPlugin::merge);
 
     m_bundleAction = new QAction(this);
-    m_bundleAction->setIcon(QIcon::fromTheme("hg-bundle"));
+    m_bundleAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-bundle")));
     m_bundleAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Bundle"));
     connect(m_bundleAction, &QAction::triggered,
             this, &FileViewHgPlugin::bundle);
 
     m_exportAction = new QAction(this);
-    m_exportAction->setIcon(QIcon::fromTheme("hg-export"));
+    m_exportAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-export")));
     m_exportAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Export"));
     connect(m_exportAction, &QAction::triggered,
             this, &FileViewHgPlugin::exportChangesets);
 
     m_importAction = new QAction(this);
-    m_importAction->setIcon(QIcon::fromTheme("hg-import"));
+    m_importAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-import")));
     m_importAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Import"));
     connect(m_importAction, &QAction::triggered,
             this, &FileViewHgPlugin::importChangesets);
 
     m_unbundleAction = new QAction(this);
-    m_unbundleAction->setIcon(QIcon::fromTheme("hg-unbundle"));
+    m_unbundleAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-unbundle")));
     m_unbundleAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Unbundle"));
     connect(m_unbundleAction, &QAction::triggered,
             this, &FileViewHgPlugin::unbundle);
 
     m_serveAction = new QAction(this);
-    m_serveAction->setIcon(QIcon::fromTheme("hg-serve"));
+    m_serveAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-serve")));
     m_serveAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Serve"));
     connect(m_serveAction, &QAction::triggered,
             this, &FileViewHgPlugin::serve);
 
     m_backoutAction = new QAction(this);
-    m_backoutAction->setIcon(QIcon::fromTheme("hg-backout"));
+    m_backoutAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-backout")));
     m_backoutAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Backout"));
     connect(m_backoutAction, &QAction::triggered,
             this, &FileViewHgPlugin::backout);
 
     m_diffAction = new QAction(this);
-    m_diffAction->setIcon(QIcon::fromTheme("vcs-diff"));
+    m_diffAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-diff")));
     m_diffAction->setText(xi18nc("@action:inmenu",
                                  "<application>Hg</application> Diff"));
     connect(m_diffAction, &QAction::triggered,
@@ -275,7 +275,7 @@ FileViewHgPlugin::FileViewHgPlugin(QObject *parent, const QList<QVariant> &args)
     m_mainContextMenu->addAction(m_repoConfigAction);
 
     m_menuAction = new QAction(this);
-    m_menuAction->setIcon(QIcon::fromTheme("hg-main"));
+    m_menuAction->setIcon(QIcon::fromTheme(QStringLiteral("hg-main")));
     m_menuAction->setText(xi18nc("@action:inmenu",
                                   "<application>Mercurial</application>"));
     m_menuAction->setMenu(m_mainContextMenu);
@@ -305,14 +305,14 @@ void FileViewHgPlugin::createHgWrapper() const
 
 QString FileViewHgPlugin::fileName() const
 {
-    return QLatin1String(".hg");
+    return QStringLiteral(".hg");
 }
 
 QString FileViewHgPlugin::localRepositoryRoot(const QString& directory) const
 {
     QProcess process;
     process.setWorkingDirectory(directory);
-    process.start("hg", {"root"});
+    process.start(QStringLiteral("hg"), {QStringLiteral("root")});
     if (process.waitForReadyRead(100) && process.exitCode() == 0) {
         return QString::fromUtf8(process.readAll().chopped(1));
     }
@@ -808,7 +808,7 @@ void FileViewHgPlugin::rollback()
     }
     // get what will be rolled back
     QString lastTransaction = m_hgWrapper->readAllStandardOutput();
-    int cutOfFrom = lastTransaction.indexOf(QRegularExpression("\\d"));
+    int cutOfFrom = lastTransaction.indexOf(QRegularExpression(QStringLiteral("\\d")));
     lastTransaction = lastTransaction.mid(cutOfFrom);
 
     // ask
@@ -819,7 +819,7 @@ void FileViewHgPlugin::rollback()
 #endif
                                             xi18nc("@message:yesorno",
                     "Would you like to rollback last transaction?")
-                        + "\nrevision: " + lastTransaction, i18n("Rollback"), KGuiItem(i18n("Rollback")), KStandardGuiItem::cancel());
+                        + QLatin1String("\nrevision: ") + lastTransaction, i18n("Rollback"), KGuiItem(i18n("Rollback")), KStandardGuiItem::cancel());
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
 #else
@@ -867,7 +867,7 @@ void FileViewHgPlugin::clearMessages() const
 
 QString FileViewHgPlugin::visualDiffExecPath()
 {
-    KConfig config("dolphin-hg", KConfig::SimpleConfig,
+    KConfig config(QStringLiteral("dolphin-hg"), KConfig::SimpleConfig,
                            QStandardPaths::GenericConfigLocation);
 
     KConfigGroup group(&config, QStringLiteral("diff"));
@@ -878,7 +878,7 @@ QString FileViewHgPlugin::visualDiffExecPath()
     }
 
     KService::Ptr service = KApplicationTrader::preferredService(QStringLiteral("text/x-diff"));
-    return service ? service->exec().split(' ').takeFirst() : QString();
+    return service ? service->exec().split(QLatin1Char(' ')).takeFirst() : QString();
 }
 
 #include "fileviewhgplugin.moc"

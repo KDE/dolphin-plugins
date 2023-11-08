@@ -21,7 +21,7 @@ SvnCleanupDialog::SvnCleanupDialog(const QString& workingDir, QWidget *parent) :
      * Add actions, establish connections.
      */
     connect(m_ui.buttonCancel, &QPushButton::clicked, this, &QDialog::reject);
-    QAction *pickDirectory = m_ui.lineEditDirectory->addAction(QIcon::fromTheme("folder"), QLineEdit::TrailingPosition);
+    QAction *pickDirectory = m_ui.lineEditDirectory->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
     connect(pickDirectory, &QAction::triggered, this, [this] () {
         const QString dir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose a directory to clean up"),
                                                               m_ui.lineEditDirectory->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
