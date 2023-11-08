@@ -53,7 +53,7 @@ find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
 find_package(DolphinVcs REQUIRED)
 set_package_properties(DolphinVcs PROPERTIES
     DESCRIPTION "the Dolphin version control plugin library"
-    URL "https://kde.org/applications/system/org.kde.dolphin"
+    URL "https://commits.kde.org/dolphin"
     TYPE REQUIRED
     PURPOSE "Provides the version control plugin interface."
 )
