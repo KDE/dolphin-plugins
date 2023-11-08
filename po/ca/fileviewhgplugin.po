@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2023-03-06 15:47+0100\n"
+"PO-Revision-Date: 2023-11-08 09:53+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -189,7 +189,7 @@ msgstr "No actualitzis el directori de treball nou."
 #: clonedialog.cpp:63
 #, kde-format
 msgid "Use pull protocol to copy metadata."
-msgstr "Usa el protocol de recuperació per a copiar les metadades."
+msgstr "Usa el protocol d'extracció per a copiar les metadades."
 
 #: clonedialog.cpp:64
 #, kde-format
@@ -510,7 +510,7 @@ msgstr "Entrega a <application>Hg</application>"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
-msgstr "Recupera de <application>Hg</application>"
+msgstr "Extreu de <application>Hg</application>"
 
 #: fileviewhgplugin.cpp:186
 #, kde-kuit-format
@@ -994,21 +994,20 @@ msgstr "edita"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
-msgstr "Recuperació en el repositori <application>Hg</application>"
+msgstr "Extracció en el repositori <application>Hg</application>"
 
 #: pulldialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
 msgstr ""
-"Actualitza a la branca nova de capçalera si s'han recuperat els jocs de "
-"canvis"
+"Actualitza a la branca nova de capçalera si s'han extret els jocs de canvis"
 
 #: pulldialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
-msgstr "Força la recuperació"
+msgstr "Força l'extracció"
 
 #: pulldialog.cpp:54
 #, kde-kuit-format
@@ -1143,7 +1142,7 @@ msgstr "Mostra els canvis sortints"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Pull"
-msgstr "Recupera"
+msgstr "Extreu («Pull»)"
 
 #: syncdialogbase.cpp:163
 #, kde-format
