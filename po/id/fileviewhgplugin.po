@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 07:56+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2021-05-03 08:04+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -426,259 +426,259 @@ msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "Silakan pilih setidaknya satu perubahan untuk diekspor!"
 
-#: fileviewhgplugin.cpp:95
+#: fileviewhgplugin.cpp:94
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "Tambahkan <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:102
+#: fileviewhgplugin.cpp:101
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "Hapus <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:109
+#: fileviewhgplugin.cpp:108
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "Ubah Nama <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:116
+#: fileviewhgplugin.cpp:115
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "Commit <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:123
+#: fileviewhgplugin.cpp:122
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "Tag <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:130
+#: fileviewhgplugin.cpp:129
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "Cabang <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:137
+#: fileviewhgplugin.cpp:136
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "Clone <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:144
+#: fileviewhgplugin.cpp:143
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "Init <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:151
+#: fileviewhgplugin.cpp:150
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "Perbarui <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:158
+#: fileviewhgplugin.cpp:157
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "Config Global <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:165
+#: fileviewhgplugin.cpp:164
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "Config Repositori <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:172
+#: fileviewhgplugin.cpp:171
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "Dorong <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:179
+#: fileviewhgplugin.cpp:178
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "Tarik <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:186
+#: fileviewhgplugin.cpp:185
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "Kembalikan <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:193
+#: fileviewhgplugin.cpp:192
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "Kembalikan Semua <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:200
+#: fileviewhgplugin.cpp:199
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "Kembalikan Mundur <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:207
+#: fileviewhgplugin.cpp:206
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "Gabungkan <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:214
+#: fileviewhgplugin.cpp:213
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "Bundle <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:221
+#: fileviewhgplugin.cpp:220
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "Ekspor <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:228
+#: fileviewhgplugin.cpp:227
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "Impor <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:235
+#: fileviewhgplugin.cpp:234
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "Tak Bundle <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:242
+#: fileviewhgplugin.cpp:241
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "Sajikan <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:249
+#: fileviewhgplugin.cpp:248
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "Mundurkan <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:256
+#: fileviewhgplugin.cpp:255
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "Diff <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:280
+#: fileviewhgplugin.cpp:279
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:490
+#: fileviewhgplugin.cpp:489
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "Tambahkan file-file ke repositori <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:492
+#: fileviewhgplugin.cpp:491
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr ""
 "Penambahan file-file ke repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:494
+#: fileviewhgplugin.cpp:493
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "File-file ditambahkan ke repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:511
+#: fileviewhgplugin.cpp:506
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "Apakah kamu ingin menghapus file-file terpilih dari repositori?"
 
-#: fileviewhgplugin.cpp:512
+#: fileviewhgplugin.cpp:507
 #, fuzzy, kde-format
 #| msgctxt "@label:button"
 #| msgid "Remove Patches"
 msgid "Remove Files"
 msgstr "Hapus Tambalan"
 
-#: fileviewhgplugin.cpp:522
+#: fileviewhgplugin.cpp:513
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "Menghapus file-file dari repositori <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:524
+#: fileviewhgplugin.cpp:515
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr ""
 "Penghapusan file-file dari repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:526
+#: fileviewhgplugin.cpp:517
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "File-file dihapus dari repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:538
+#: fileviewhgplugin.cpp:529
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr ""
 "Pengubahan nama file dalam repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:540
+#: fileviewhgplugin.cpp:531
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr ""
 "File dalam repositori <application>Hg</application> berhasil diubah namanya."
 
-#: fileviewhgplugin.cpp:542
+#: fileviewhgplugin.cpp:533
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "Mengubah nama file di repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:553
+#: fileviewhgplugin.cpp:544
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "Tidak ada perubahan terhadap commit!"
 
-#: fileviewhgplugin.cpp:558
+#: fileviewhgplugin.cpp:549
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "Commit ke repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:560
+#: fileviewhgplugin.cpp:551
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "Di-commit ke repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:562
+#: fileviewhgplugin.cpp:553
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "Commit repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:573
+#: fileviewhgplugin.cpp:564
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
 msgstr ""
 "Pengoperasian tag dalam repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:575
+#: fileviewhgplugin.cpp:566
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -687,39 +687,39 @@ msgstr ""
 "Operasi penge-tag-an dalam repositori <application>Hg</application> teralh "
 "berhasil."
 
-#: fileviewhgplugin.cpp:577
+#: fileviewhgplugin.cpp:568
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "Operasi menge-tag dalam repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:586
+#: fileviewhgplugin.cpp:577
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr "Pembaruan direktori kerja<application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:588
+#: fileviewhgplugin.cpp:579
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
 msgstr "Pembaruan direktori kerja <application>Hg</application>, berhasil."
 
-#: fileviewhgplugin.cpp:590
+#: fileviewhgplugin.cpp:581
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "Memperbarui direktori kerja <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:599
+#: fileviewhgplugin.cpp:590
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
 msgstr ""
 "Operasi pencabangan pada repositori <application>Hg</application>, gagal"
 
-#: fileviewhgplugin.cpp:601
+#: fileviewhgplugin.cpp:592
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -729,13 +729,13 @@ msgstr ""
 "Operasi pencabangan pada repositori <application>Hg</application> berhasil "
 "rampung."
 
-#: fileviewhgplugin.cpp:603
+#: fileviewhgplugin.cpp:594
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr "Operasi cabang pada repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:705
+#: fileviewhgplugin.cpp:692
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
@@ -743,26 +743,26 @@ msgstr ""
 "Apakah kamu ingin mengembalikan perubahan yang dibuat pada file-file yang "
 "dipilih?"
 
-#: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
+#: fileviewhgplugin.cpp:693 fileviewhgplugin.cpp:714
 #, kde-format
 msgid "Revert"
 msgstr ""
 
-#: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
+#: fileviewhgplugin.cpp:699 fileviewhgplugin.cpp:720
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr ""
 "Mengembalikan file-file dalam repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:718 fileviewhgplugin.cpp:747
+#: fileviewhgplugin.cpp:701 fileviewhgplugin.cpp:722
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr ""
 "Pengembalian file-file dalam repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:720 fileviewhgplugin.cpp:749
+#: fileviewhgplugin.cpp:703 fileviewhgplugin.cpp:724
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -772,7 +772,7 @@ msgstr ""
 "Pengembalian file-file dalam repositori <application>Hg</application>, "
 "berhasil rampung."
 
-#: fileviewhgplugin.cpp:734
+#: fileviewhgplugin.cpp:713
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
@@ -780,65 +780,65 @@ msgstr ""
 "Apakah kamu ingin mengembalikan semua perubahan yang dibuat ke direktori "
 "kerja saat ini?"
 
-#: fileviewhgplugin.cpp:735
+#: fileviewhgplugin.cpp:714
 #, kde-format
 msgid "Revert All"
 msgstr ""
 
-#: fileviewhgplugin.cpp:758
+#: fileviewhgplugin.cpp:733
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
 msgstr "Membuat diff untuk repositori <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:760
+#: fileviewhgplugin.cpp:735
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr "Tidak bisa mendapatkan diff repositori <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:762
+#: fileviewhgplugin.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr "Berhasil membuat diff <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:792
+#: fileviewhgplugin.cpp:767
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
 msgstr "gugur: Perubahan tak di-commit dalam direktori kerja!"
 
-#: fileviewhgplugin.cpp:805
+#: fileviewhgplugin.cpp:780
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "Tidak ada informasi rollback yang tersedia!"
 
-#: fileviewhgplugin.cpp:821
+#: fileviewhgplugin.cpp:792
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "Apakah kamu ingin me-rollback transaksi terakhir?"
 
-#: fileviewhgplugin.cpp:822
+#: fileviewhgplugin.cpp:793
 #, kde-format
 msgid "Rollback"
 msgstr ""
 
-#: fileviewhgplugin.cpp:832
+#: fileviewhgplugin.cpp:799
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr "Mengeksekusi Rollback repositori <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:834
+#: fileviewhgplugin.cpp:801
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr "Pe-rollback-an repositori <application>Hg</application>, gagal."
 
-#: fileviewhgplugin.cpp:836
+#: fileviewhgplugin.cpp:803
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
