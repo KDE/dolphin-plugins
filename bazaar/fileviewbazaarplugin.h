@@ -26,11 +26,11 @@ class FileViewBazaarPlugin : public KVersionControlPlugin
 
 public:
     FileViewBazaarPlugin(QObject* parent, const QList<QVariant>& args);
-    ~FileViewBazaarPlugin() Q_DECL_OVERRIDE;
-    QString fileName() const  Q_DECL_OVERRIDE;
-    bool beginRetrieval(const QString& directory)  Q_DECL_OVERRIDE;
-    void endRetrieval() Q_DECL_OVERRIDE;
-    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const Q_DECL_OVERRIDE;
+    ~FileViewBazaarPlugin() override;
+    QString fileName() const  override;
+    bool beginRetrieval(const QString& directory)  override;
+    void endRetrieval() override;
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
     QList<QAction*> versionControlActions(const KFileItemList& items) const override;
     QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
 
