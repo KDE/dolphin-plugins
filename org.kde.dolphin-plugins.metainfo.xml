@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <extends>org.kde.dolphin.desktop</extends>
   <name>Dolphin Plugins</name>
+  <name xml:lang="ast">Plugins de Dolphin</name>
   <name xml:lang="az">Dolphin əlavələri</name>
   <name xml:lang="bg">Приставки за Dolphin</name>
   <name xml:lang="ca">Connectors del Dolphin</name>
