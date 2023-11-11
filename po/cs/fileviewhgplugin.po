@@ -1110,7 +1110,7 @@ msgstr "Stáhnout"
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr ""
+msgstr "Odeslat"
 
 #: syncdialogbase.cpp:162
 #, kde-format
