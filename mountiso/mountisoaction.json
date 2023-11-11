@@ -2,6 +2,8 @@
     "KPlugin": {
         "Icon": "application-x-cd-image",
         "MimeTypes": [
+            "application/vnd.efi.iso",
+            "application/vnd.efi.img",
             "application/x-cd-image",
             "application/x-raw-disk-image"
         ],
@@ -46,5 +48,5 @@
         "Name[zh_CN]": "挂载 ISO 和磁盘映像",
         "Name[zh_TW]": "掛載 ISO 與光碟映像檔"
     },
-    "MimeType": "application/x-cd-image;application/x-raw-disk-image;"
+    "MimeType": "application/vnd.efi.iso;application/vnd.efi.img;application/x-cd-image;application/x-raw-disk-image;"
 }

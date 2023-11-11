@@ -198,7 +198,9 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 
     const QString mimeType = fileItemInfos.mimeType();
 
-    if (mimeType != QLatin1String("application/x-cd-image")
+    if (mimeType != QLatin1String("application/vnd.efi.iso")
+            && mimeType != QLatin1String("application/vnd.efi.img")
+            && mimeType != QLatin1String("application/x-cd-image")
             && mimeType != QLatin1String("application/x-raw-disk-image")) {
         return {};
     }
