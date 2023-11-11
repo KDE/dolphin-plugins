@@ -45,6 +45,5 @@
         "Name[x-test]": "xxSubversionxx",
         "Name[zh_CN]": "Subversion",
         "Name[zh_TW]": "Subversion"
-    },
-    "MimeType": "text/plain;"
+    }
 }
