@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-11-12 01:39+0000\n"
 "PO-Revision-Date: 2021-06-16 00:08+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.0\n"
 
-#: mountisoaction.cpp:219
+#: mountisoaction.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Action to mount an ISO image"
 #| msgid "Mount ISO"
@@ -27,7 +27,7 @@ msgctxt "@action:inmenu Action to mount a disk image"
 msgid "Mount"
 msgstr "Prijungti ISO"
 
-#: mountisoaction.cpp:228
+#: mountisoaction.cpp:230
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Action to unmount an ISO image"
 #| msgid "Unmount ISO"
