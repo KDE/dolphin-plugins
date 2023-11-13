@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mountisoaction\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:49+0000\n"
+"POT-Creation-Date: 2023-11-13 02:30+0000\n"
 "PO-Revision-Date: 2022-04-08 18:40+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,13 +15,13 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: mountisoaction.cpp:219
+#: mountisoaction.cpp:221
 #, kde-format
 msgctxt "@action:inmenu Action to mount a disk image"
 msgid "Mount"
 msgstr "Pripojiť"
 
-#: mountisoaction.cpp:228
+#: mountisoaction.cpp:230
 #, kde-format
 msgctxt "@action:inmenu Action to unmount a disk image"
 msgid "Unmount"
