@@ -1150,7 +1150,9 @@ msgid "Pull"
 msgstr "Abgleichen"
 
 #: syncdialogbase.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Push"
 msgctxt "@action:button"
 msgid "Push"
 msgstr "Übertragen"
