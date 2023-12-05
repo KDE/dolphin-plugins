@@ -1,20 +1,20 @@
 # translation of fileviewhgplugin.po to Slovak
 # Richard Frič <Richard.Fric@kdemail.net>, 2011.
-# Roman Paholík <wizzardsk@gmail.com>, 2012, 2015, 2017.
+# SPDX-FileCopyrightText: 2012, 2015, 2017, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:49+0000\n"
-"PO-Revision-Date: 2021-01-10 14:15+0100\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-04 17:17+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: backoutdialog.cpp:31
@@ -602,11 +602,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr "Chcete odstrániť vybrané súbory z repozitára?"
 
 #: fileviewhgplugin.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Odstrániť záplaty"
+msgstr "Odstrániť súbory"
 
 #: fileviewhgplugin.cpp:522
 #, kde-kuit-format
@@ -742,7 +740,7 @@ msgstr "Chcete vrátiť zmeny vykonané na vybraných súboroch?"
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "Vrátiť"
 
 #: fileviewhgplugin.cpp:716 fileviewhgplugin.cpp:745
 #, kde-kuit-format
@@ -774,7 +772,7 @@ msgstr "Chcete vrátiť všetky zmeny vykonané na aktuálnom pracovnom adresár
 #: fileviewhgplugin.cpp:735
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "Vrátiť všetko"
 
 #: fileviewhgplugin.cpp:758
 #, kde-kuit-format
@@ -815,7 +813,7 @@ msgstr "Chcete vrátiť poslednú transakciu?"
 #: fileviewhgplugin.cpp:822
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "Vrátenie"
 
 #: fileviewhgplugin.cpp:832
 #, kde-kuit-format
