@@ -1,71 +1,69 @@
+# translation of makefileactions.po to Slovak
+# SPDX-FileCopyrightText: 2023 Roman Paholík <wizzardsk@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: makefileactions\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2023-12-09 09:25\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-12-09 09:21+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/dolphin-plugins/makefileactions.pot\n"
-"X-Crowdin-File-ID: 48356\n"
+"X-Generator: Lokalize 23.08.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
-msgstr "编译“%1”%2。"
+msgstr "Make '%1'%2."
 
 #: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
 #, kde-format
 msgid "Makefile Actions"
-msgstr "Makefile 操作"
+msgstr "Akcie makefile"
 
 #: makefileactions.cpp:244
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr "编译目标“%1”时发生错误。"
+msgstr ""
 
 #: makefileactions.cpp:252
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr "正在为“%1”运行的进程已经成功停止。"
+msgstr ""
 
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr "尝试编译目标“%1”时发生错误。"
+msgstr ""
 
 #: makefileactions.cpp:286
 #, kde-format
 msgid "&Make…"
-msgstr "编译(&M)…"
+msgstr "&Make…"
 
 #: makefileactions.cpp:291
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
-msgstr "只有已可信任的文件可以被 Makefile 操作插件使用。"
+msgstr ""
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr "已信任文件 — 取消勾选以移除信任"
+msgstr ""
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr "不信任文件 — 勾选以添加信任"
+msgstr ""
 
 #: makefileactions.cpp:301
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr "Dolphin Makefile 插件"
+msgstr ""
 
 #: makefileactions.cpp:302
 #, kde-format
@@ -73,26 +71,24 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
-"<b>您确定要信任此文件吗？</b><br>已信任的文件可以在右键菜单激活时执行任意代"
-"码。"
 
 #: makefileactions.cpp:316
 #, kde-format
 msgid "Open a terminal window"
-msgstr "打开终端窗口"
+msgstr ""
 
 #: makefileactions.cpp:317
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
-msgstr "打开一个新的终端窗口以查看编译选定目标的输出信息。"
+msgstr ""
 
 #: makefileactions.cpp:328
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr "取消正在运行的进程 (%1)"
+msgstr ""
 
 #: makefileactions.cpp:329
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr "中断当前正在运行的进程 (%1)。"
+msgstr ""
