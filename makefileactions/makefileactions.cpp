@@ -344,3 +344,5 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
 }
 
 #include "makefileactions.moc"
+
+#include "moc_makefileactions.cpp"
