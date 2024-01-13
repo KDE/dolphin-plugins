@@ -4,31 +4,6 @@
         "MimeTypes": [
             "text/x-makefile"
         ],
-        "Name": "Makefile Actions",
-        "Name[ca@valencia]": "Accions del «makefile»",
-        "Name[ca]": "Accions del «makefile»",
-        "Name[cs]": "Činnosti souboru Makefile",
-        "Name[eo]": "Makefile-Agoj",
-        "Name[es]": "Acciones de Makefile",
-        "Name[eu]": "«Makefile» ekintzak",
-        "Name[fi]": "Makefile-toiminnot",
-        "Name[fr]": "Actions du fichier « Makefile »",
-        "Name[gl]": "Accións de Makefile",
-        "Name[ia]": "Actiones de Makefile",
-        "Name[it]": "Azioni Makefile",
-        "Name[ka]": "Makefile-ის ქმედებები",
-        "Name[ko]": "Makefile 동작",
-        "Name[nl]": "Acties van Makefile",
-        "Name[pl]": "Działania pliku Makefile",
-        "Name[pt_BR]": "Makefile Actions",
-        "Name[sk]": "Akcie makefile",
-        "Name[sl]": "Makefile dejavnosti",
-        "Name[sv]": "Makefile-åtgärder",
-        "Name[ta]": "Makefile செயல்கள்",
-        "Name[tr]": "Makefile Eylemleri",
-        "Name[uk]": "Дії Makefile",
-        "Name[x-test]": "xxMakefile Actionsxx",
-        "Name[zh_CN]": "Makefile 操作",
-        "Name[zh_TW]": "Makefile 動作"
+        "Name": "Makefile Actions"
     }
 }
