@@ -28,8 +28,8 @@ target_link_libraries(fileviewgitplugin PRIVATE
     Qt6::Core
     Qt6::Core5Compat
     Qt6::Widgets
+    KF6::ConfigGui
     KF6::I18n
-    KF6::XmlGui
     KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::TextWidgets
