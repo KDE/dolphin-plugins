@@ -2,20 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Balázs Úr <urbalazs@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2012-07-24 13:38+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"PO-Revision-Date: 2024-01-25 21:49+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -226,16 +227,13 @@ msgid "Commit"
 msgstr "Véglegesítés"
 
 #: commitdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid ""
-#| "A KDE text-editor component could not be found;\n"
-#| "please check your KDE installation."
+#, kde-format
 msgid ""
 "The KTextEditor component could not be found;\n"
 "please check your KDE Frameworks installation."
 msgstr ""
-"Nem található KDE-s szövegszerkesztő komponens;\n"
-"Ellenőrizze, rendben telepítve van-e a KDE."
+"A KTextEditor komponens nem található;\n"
+"ellenőrizze, hogy a KDE Frameworks rendben telepítve van-e."
 
 #: commitdialog.cpp:54
 #, kde-kuit-format
@@ -605,11 +603,9 @@ msgid "Would you like to remove selected files from the repository?"
 msgstr ""
 
 #: fileviewhgplugin.cpp:507
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "Remove Patches"
+#, kde-format
 msgid "Remove Files"
-msgstr "Foltok eltávolítása"
+msgstr "Fájlok eltávolítása"
 
 #: fileviewhgplugin.cpp:513
 #, kde-kuit-format
@@ -952,12 +948,10 @@ msgid "No head selected for merge!"
 msgstr ""
 
 #: pathselector.cpp:60
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label:combobox"
-#| msgid "<edit>"
+#, kde-kuit-format
 msgctxt "@label:combobox"
 msgid "edit"
-msgstr "<szerkesztés>"
+msgstr "szerkesztés"
 
 #: pulldialog.cpp:30
 #, kde-kuit-format
