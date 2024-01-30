@@ -1,0 +1,100 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"PO-Revision-Date: 2024-01-29 13:24+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.01.90\n"
+
+#: makefileactions.cpp:218
+#, kde-format
+msgid "Make '%1'%2."
+msgstr "Make „%1”%2."
+
+#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#, kde-format
+msgid "Makefile Actions"
+msgstr "Makefile műveletek"
+
+#: makefileactions.cpp:244
+#, kde-format
+msgid "An error occurred while making target '%1'."
+msgstr "Hiba történt a(z) „%1” cél készítése során."
+
+#: makefileactions.cpp:252
+#, kde-format
+msgid "Running process for '%1' successfully stopped."
+msgstr "A(z) „%1” futó folyamata sikeresen leállítva."
+
+#: makefileactions.cpp:254
+#, kde-format
+msgid "An error occurred trying to make target '%1'."
+msgstr "Hiba történt a(z) „%1” cél készítésére tett kísérlet során."
+
+#: makefileactions.cpp:286
+#, kde-format
+msgid "&Make…"
+msgstr "&Készítés…"
+
+#: makefileactions.cpp:291
+#, kde-format
+msgid "Only trusted files can be used by the Makefile Actions plugin."
+msgstr "A Makefile műveletek bővítmény csak megbízható fájlokat használhat."
+
+#: makefileactions.cpp:294
+#, kde-format
+msgid "Trusted file — uncheck to remove trust"
+msgstr "Megbízható fájl — törölje a megbízhatóság visszavonásához"
+
+#: makefileactions.cpp:294
+#, kde-format
+msgid "Untrusted file — check to trust"
+msgstr "Nem megbízható fájl — jelölje be, hogy megbízható legyen"
+
+#: makefileactions.cpp:301
+#, kde-format
+msgid "Dolphin Makefile Plugin"
+msgstr "Dolphin Makefile bővítmény"
+
+#: makefileactions.cpp:302
+#, kde-format
+msgid ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+msgstr ""
+"</b>Biztosan megbízik ebben a fájlban?<b></b>A megbízható fájlok önkényes "
+"kódot hajthatnak végre a helyi menüből meghíváskor."
+
+#: makefileactions.cpp:316
+#, kde-format
+msgid "Open a terminal window"
+msgstr "Terminálablak megnyitása"
+
+#: makefileactions.cpp:317
+#, kde-format
+msgid ""
+"Open a new terminal window to see the output of making the chosen target."
+msgstr ""
+"Új terminálablak megnyitása a kiválasztott cél készítése kimenetének "
+"megtekintéséhez."
+
+#: makefileactions.cpp:328
+#, kde-format
+msgid "Cancel running process (%1)"
+msgstr "Futó folyamat megszakítása (%1)"
+
+#: makefileactions.cpp:329
+#, kde-format
+msgid "Interrupt the currently running process (%1)."
+msgstr "A jelenleg futó folyamat megszakítása (%1)."
