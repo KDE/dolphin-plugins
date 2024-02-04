@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <f.de.kruijf@gmail.com>, 2011.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-12 00:49+0000\n"
 "PO-Revision-Date: 2011-09-07 23:52+0200\n"
-"Last-Translator: Freek de Kruijf <f.de.kruijf@gmail.com>\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
