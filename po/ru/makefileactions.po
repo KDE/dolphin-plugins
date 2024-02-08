@@ -1,0 +1,97 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Alexander Yavorsky <kekcuha@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"PO-Revision-Date: 2024-02-07 11:53+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.4\n"
+
+#: makefileactions.cpp:218
+#, kde-format
+msgid "Make '%1'%2."
+msgstr "Собрать «%1»%2"
+
+#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#, kde-format
+msgid "Makefile Actions"
+msgstr "Сборка файлов"
+
+#: makefileactions.cpp:244
+#, kde-format
+msgid "An error occurred while making target '%1'."
+msgstr "Во время сборки цели «%1» произошла ошибка."
+
+#: makefileactions.cpp:252
+#, kde-format
+msgid "Running process for '%1' successfully stopped."
+msgstr "Выполнявшийся процесс для сборки «%1» успешно остановлен."
+
+#: makefileactions.cpp:254
+#, kde-format
+msgid "An error occurred trying to make target '%1'."
+msgstr "При попытке сборки цели «%1» произошла ошибка."
+
+#: makefileactions.cpp:286
+#, kde-format
+msgid "&Make…"
+msgstr "С&обрать…"
+
+#: makefileactions.cpp:291
+#, kde-format
+msgid "Only trusted files can be used by the Makefile Actions plugin."
+msgstr ""
+
+#: makefileactions.cpp:294
+#, kde-format
+msgid "Trusted file — uncheck to remove trust"
+msgstr "Доверенный файл. Снимите отметку, чтобы исключить из доверенных"
+
+#: makefileactions.cpp:294
+#, kde-format
+msgid "Untrusted file — check to trust"
+msgstr "Недоверенный файл. Установите отметку чтобы сделать доверенным"
+
+#: makefileactions.cpp:301
+#, kde-format
+msgid "Dolphin Makefile Plugin"
+msgstr "Модуль сборки для Dolphin"
+
+#: makefileactions.cpp:302
+#, kde-format
+msgid ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+msgstr ""
+
+#: makefileactions.cpp:316
+#, kde-format
+msgid "Open a terminal window"
+msgstr "Открыть окно терминала"
+
+#: makefileactions.cpp:317
+#, kde-format
+msgid ""
+"Open a new terminal window to see the output of making the chosen target."
+msgstr ""
+
+#: makefileactions.cpp:328
+#, kde-format
+msgid "Cancel running process (%1)"
+msgstr "Прервать процесс сборки (%1)"
+
+#: makefileactions.cpp:329
+#, kde-format
+msgid "Interrupt the currently running process (%1)."
+msgstr ""
