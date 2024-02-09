@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2024-02-07 11:53+0300\n"
+"PO-Revision-Date: 2024-02-08 10:31+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -51,7 +51,7 @@ msgstr "С&обрать…"
 #: makefileactions.cpp:291
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
-msgstr ""
+msgstr "Модуль сборки файлов работает только с доверенными файлами."
 
 #: makefileactions.cpp:294
 #, kde-format
@@ -74,6 +74,8 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>Данный файл будет отмечен как доверенный.</b><br> Доверенные файлы могут "
+"исполнять произвольный код при их запуске из контекстного меню."
 
 #: makefileactions.cpp:316
 #, kde-format
@@ -85,6 +87,8 @@ msgstr "Открыть окно терминала"
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"Открыть новое окно терминала, в котором будет показан вывод процесса сборки "
+"выбранной цели."
 
 #: makefileactions.cpp:328
 #, kde-format
@@ -94,4 +98,4 @@ msgstr "Прервать процесс сборки (%1)"
 #: makefileactions.cpp:329
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr ""
+msgstr "Прервать выполняющийся процесс сборки (%1)."
