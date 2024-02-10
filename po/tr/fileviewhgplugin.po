@@ -3,13 +3,13 @@
 #
 # obsoleteman <tulliana@gmail.com>, 2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2023-11-09 11:48+0300\n"
+"PO-Revision-Date: 2024-02-09 17:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -152,7 +152,7 @@ msgstr "Klonla"
 #: clonedialog.cpp:42
 #, kde-format
 msgid "URLs"
-msgstr "URL'ler"
+msgstr "URL’ler"
 
 #: clonedialog.cpp:44
 #, kde-kuit-format
@@ -783,20 +783,20 @@ msgstr "Tümünü Geri Al"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr "<application>Hg</application> deposunun diff'i oluşturuluyor..."
+msgstr "<application>Hg</application> deposunun diff’i oluşturuluyor..."
 
 #: fileviewhgplugin.cpp:735
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
-msgstr "<application>Hg</application> deposunun diff'i alınamadı."
+msgstr "<application>Hg</application> deposunun diff’i alınamadı."
 
 #: fileviewhgplugin.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr ""
-"<application>Hg</application> deposunun diff'i başarılı bir şekilde "
+"<application>Hg</application> deposunun diff’i başarılı bir şekilde "
 "oluşturuldu."
 
 #: fileviewhgplugin.cpp:767
