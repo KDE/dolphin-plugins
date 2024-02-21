@@ -73,8 +73,8 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
-"<b>이 파일을 신뢰하시겠습니까?</b><br>신뢰하는 파일에서는 콘텍스트 메뉴 호출 "
-"시 임의 코드를 실행할 수 있습니다."
+"<b>이 파일을 신뢰하시겠습니까?</b><br>신뢰하는 파일에서는 상황에 맞는 메뉴 호"
+"출 시 임의 코드를 실행할 수 있습니다."
 
 #: makefileactions.cpp:316
 #, kde-format
