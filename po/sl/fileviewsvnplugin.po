@@ -3,19 +3,20 @@
 #
 # Andrej Mernik <andrejm@ubuntu.si>, 2012, 2015, 2016.
 # Matjaž Jeran <matjaz.jeran@amis.net>, 2020.
+# Jure Repinc <jlp@holodeck1.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2020-10-08 07:35+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"PO-Revision-Date: 2024-02-21 11:13+0100\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.2\n"
+"X-Generator: Lokalize 23.11.70\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
@@ -35,7 +36,7 @@ msgstr "Pokaži krajevne spremembe SVN"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "SVN Commit... (uveljavi)"
+msgstr "SVN Commit (izroči) …"
 
 #: fileviewsvnplugin.cpp:89
 #, kde-format
@@ -65,19 +66,19 @@ msgstr "Pokaži posodobitve SVN"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "SVN zabeleži v dnevnik..."
+msgstr "Dnevnik SVN …"
 
 #: fileviewsvnplugin.cpp:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Checkout... (izdaj)"
+msgstr "SVN Checkout (prevzemi) …"
 
 #: fileviewsvnplugin.cpp:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "SVN Cleanup... (očisti)"
+msgstr "SVN Cleanup (počisti) …"
 
 #: fileviewsvnplugin.cpp:222
 #, kde-format
@@ -97,7 +98,7 @@ msgstr "SVN Update (posodobi)"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "Posodabljanje skladišča SVN ..."
+msgstr "Posodabljanje skladišča SVN …"
 
 #: fileviewsvnplugin.cpp:363
 #, kde-format
@@ -115,13 +116,14 @@ msgstr "Skladišče SVN je bilo posodobljeno."
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr "Ni bilo mogoče pokazati krajevne spremembe SVN."
+msgstr "Ni bilo mogoče pokazati krajevnih sprememb SVN."
 
 #: fileviewsvnplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr "Ni bilo mogoče pokazati krajevne spremembe SVN: svn diff ni uspela."
+msgstr ""
+"Ni bilo mogoče pokazati krajevnih sprememb SVN: ukaz »svn diff« ni uspel."
 
 #: fileviewsvnplugin.cpp:405 fileviewsvnplugin.cpp:589
 #: fileviewsvnplugin.cpp:618
@@ -129,14 +131,14 @@ msgstr "Ni bilo mogoče pokazati krajevne spremembe SVN: svn diff ni uspela."
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr ""
-"Ni bilo mogoče pokazati krajevne spremembe SVN: ni bilo mogoče pognati "
+"Ni bilo mogoče pokazati krajevnih sprememb SVN: ni bilo mogoče pognati "
 "programa kompare."
 
 #: fileviewsvnplugin.cpp:437
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "Dodajanje datotek v skladišče SVN..."
+msgstr "Dodajanje datotek v skladišče SVN …"
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
@@ -154,7 +156,7 @@ msgstr "Datoteke so bile dodane v skladišče SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "Odstranjevanje datotek iz skladišča SVN..."
+msgstr "Odstranjevanje datotek iz skladišča SVN …"
 
 #: fileviewsvnplugin.cpp:446
 #, kde-format
@@ -178,7 +180,7 @@ msgstr "SVN Revert (povrni)"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Poteka povrnitev datotek iz skladišča SVN..."
+msgstr "Poteka povrnitev datotek iz skladišča SVN …"
 
 #: fileviewsvnplugin.cpp:472
 #, kde-format
@@ -196,7 +198,7 @@ msgstr "Datoteke so bile povrnjene iz skladišča SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "Vračam spremembe datoteke..."
+msgstr "Vračanje sprememb datoteke …"
 
 #: fileviewsvnplugin.cpp:558
 #, kde-format
@@ -223,25 +225,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
-msgstr "Uveljavitev sprememb SVN je spodletela."
+msgstr "Izročitev sprememb SVN je spodletela."
 
 #: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
-msgstr "SVN Commit (uveljavi)"
+msgstr "SVN Commit (izroči)"
 
 #: fileviewsvnplugin.cpp:667
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "Uveljavljanje sprememb SVN..."
+msgstr "Izročanje sprememb SVN …"
 
 #: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
-msgstr "Spremembe SVN so bile uveljavljene."
+msgstr "Spremembe SVN so bile izročene."
 
 #. i18n: ectx: label, entry (showUpdates), group (General)
 #: fileviewsvnpluginsettings.kcfg:9
@@ -253,31 +255,31 @@ msgstr "Pokaži posodobitve"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "Izberite direktorij za izdajanje"
+msgstr "Izberite mapo za prevzemanje"
 
 #: svncheckoutdialog.cpp:108
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "SVN checkout: izdajanje v teku..."
+msgstr "Prevzemanje SVN: prevzemanje v teku …"
 
 #: svncheckoutdialog.cpp:111
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
-msgstr "SVN checkout: izdajanje ni uspelo."
+msgstr "Prevzemanje SVN: prevzemanje ni uspelo …"
 
 #: svncheckoutdialog.cpp:113
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr "SVN checkout: izdajanje je bilo uspešno."
+msgstr "Prevzemanje SVN: prevzemanje je bilo uspešno …"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "SVN Checkout"
+msgstr "SVN Checkout (prevzemi)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
@@ -289,7 +291,7 @@ msgstr "URL skladišča:"
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr "Direktorij izdaje:"
+msgstr "Mapa prevzema:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
@@ -316,43 +318,43 @@ msgstr "Prikliči"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr "Izberite direktorij za čiščenje"
+msgstr "Izberite mapo za čiščenje"
 
 #: svncleanupdialog.cpp:60
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
-msgstr "Čiščenje SVN se je uspešno končalo."
+msgstr "Čiščenje SVN se je uspešno zaključilo."
 
 #: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
-msgstr "SVN clean up - čiščenje ni uspelo za %1"
+msgstr "Čiščenje SVN ni uspelo za mapo %1"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN Cleanup..."
+msgstr "SVN Cleanup (počisti)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
 #, kde-format
 msgid "Clean up directory:"
-msgstr "Očisti direktorij:"
+msgstr "Počisti mapo:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
 #: svncleanupdialog.ui:43
 #, kde-format
 msgid "Delete unversioned files and directories"
-msgstr "Izbriši datoteke in imenike brez verzij"
+msgstr "Izbriši datoteke in mape brez nadzora različic"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
 #: svncleanupdialog.ui:50
 #, kde-format
 msgid "Delete ignored files and directories"
-msgstr "Izbriši prezrte datoteke in direktorije"
+msgstr "Izbriši prezrte datoteke in mape"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
 #: svncleanupdialog.ui:57
@@ -376,7 +378,7 @@ msgstr "Osveži"
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "Uveljavi"
+msgstr "Izroči"
 
 #: svncommitdialog.cpp:114
 #, kde-format
@@ -406,13 +408,13 @@ msgstr "Pot"
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
-msgstr "Status"
+msgstr "Stanje"
 
 #: svncommitdialog.cpp:210
 #, kde-format
 msgctxt "@item:intable"
 msgid "Unversioned"
-msgstr "Brez verzije"
+msgstr "Brez različice"
 
 #: svncommitdialog.cpp:213
 #, kde-format
@@ -436,29 +438,29 @@ msgstr "Izbrisano"
 #, kde-format
 msgctxt "@item:intable"
 msgid "Conflict"
-msgstr "Konflikt"
+msgstr "Spor"
 
 #: svncommitdialog.cpp:225
 #, kde-format
 msgctxt "@item:intable"
 msgid "Missing"
-msgstr "Manjkajoče"
+msgstr "Manjka"
 
 #: svncommitdialog.cpp:228
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
-msgstr "Zahtevana posodobitev"
+msgstr "Potrebna posodobitev"
 
 #: svnlogdialog.cpp:94
 #, kde-format
 msgid "Update to revision"
-msgstr "Posodobi na verzijo"
+msgstr "Posodobi na različico"
 
 #: svnlogdialog.cpp:98 svnlogdialog.cpp:116
 #, kde-format
 msgid "Revert to revision"
-msgstr "Povrni na verzijo"
+msgstr "Povrni na različico"
 
 #: svnlogdialog.cpp:102
 #, kde-format
@@ -474,37 +476,37 @@ msgstr "Spremembe glede na delovno kopijo"
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr "SVN dnevnik: posodobitev na revizijo ni uspela."
+msgstr "Dnevnik SVN: posodobitev na različico ni uspela."
 
 #: svnlogdialog.cpp:273
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
-msgstr "SVN dnevnik: posodobitev na verzijo %1 je bila uspešna."
+msgstr "Dnevnik SVN: posodobitev na različico %1 je bila uspešna."
 
 #: svnlogdialog.cpp:283 svnlogdialog.cpp:294
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
-msgstr "SVN dnevnik: povrnitev na revizijo ni bila uspešna."
+msgstr "Dnevnik SVN: povrnitev na različico ni bila uspešna."
 
 #: svnlogdialog.cpp:285 svnlogdialog.cpp:296
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."
-msgstr "SVN dnevnik: povrnitev na verzijo %1 uspešna."
+msgstr "Dnevnik SVN: povrnitev na različico %1 uspešna."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
 #, kde-format
 msgid "SVN Log"
-msgstr "SVN Log"
+msgstr "Dnevnik SVN"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
 #, kde-format
 msgid "Revision"
-msgstr "Revizija"
+msgstr "Različica"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:60
