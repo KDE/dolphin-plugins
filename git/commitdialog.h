@@ -11,7 +11,6 @@
 
 class QCheckBox;
 class QDialogButtonBox;
-class QTextCodec;
 class KTextEdit;
 
 class CommitDialog : public QDialog
@@ -44,7 +43,6 @@ private:
      * One message is the amend message, the other one for normal commits.
      */
     QString m_alternativeMessage;
-    QTextCodec* m_localCodec;
     ///Cache for GitWrapper::userName();
     QString m_userName;
     ///Cache for GitWrapper::userEmail();

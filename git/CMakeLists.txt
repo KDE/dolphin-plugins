@@ -26,7 +26,6 @@ kconfig_add_kcfg_files(fileviewgitplugin
 
 target_link_libraries(fileviewgitplugin PRIVATE
     Qt6::Core
-    Qt6::Core5Compat
     Qt6::Widgets
     KF6::ConfigGui
     KF6::I18n

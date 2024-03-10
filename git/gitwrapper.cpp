@@ -6,15 +6,12 @@
 
 #include "gitwrapper.h"
 
-#include <QTextCodec>
-
 GitWrapper* GitWrapper::m_instance = nullptr;
 const int GitWrapper::BUFFER_SIZE = 256;
 const int GitWrapper::SMALL_BUFFER_SIZE = 128;
 
 GitWrapper::GitWrapper()
 {
-    m_localCodec = QTextCodec::codecForLocale();
 }
 
 
@@ -39,7 +36,7 @@ QString GitWrapper::userName()
     m_process.start(QStringLiteral("git"), {QStringLiteral("config"), QStringLiteral("--get"), QStringLiteral("user.name")});
     while (m_process.waitForReadyRead()) {
         if (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-            result = m_localCodec->toUnicode(buffer).trimmed();
+            result = QString::fromLocal8Bit(buffer).trimmed();
         }
     }
     return result;
@@ -52,7 +49,7 @@ QString GitWrapper::userEmail()
     m_process.start(QStringLiteral("git"), {QStringLiteral("config"), QStringLiteral("--get"), QStringLiteral("user.email")});
     while (m_process.waitForReadyRead()) {
         if (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-            result = m_localCodec->toUnicode(buffer).trimmed();
+            result = QString::fromLocal8Bit(buffer).trimmed();
         }
     }
     return result;
@@ -69,7 +66,7 @@ QStringList GitWrapper::branches(int* currentBranchIndex)
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
-            const QString branchName = m_localCodec->toUnicode(buffer).mid(2).trimmed();
+            const QString branchName = QString::fromLocal8Bit(buffer).mid(2).trimmed();
             //don't list non-branches and HEAD-branches directly pointing to other branches
             if (!branchName.contains(QLatin1String("->")) && !branchName.startsWith(QLatin1Char('('))) {
                 result.append(branchName);
@@ -88,7 +85,7 @@ void GitWrapper::tagSet(QSet<QString>& result)
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
-            const QString tagName = m_localCodec->toUnicode(buffer).trimmed();
+            const QString tagName = QString::fromLocal8Bit(buffer).trimmed();
             result.insert(tagName);
         }
     }
@@ -101,7 +98,7 @@ QStringList GitWrapper::tags()
     while (m_process.waitForReadyRead()) {
         char buffer[BUFFER_SIZE];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0){
-            const QString tagName = m_localCodec->toUnicode(buffer).trimmed();
+            const QString tagName = QString::fromLocal8Bit(buffer).trimmed();
             result.append(tagName);
         }
     }
@@ -145,7 +142,7 @@ QString GitWrapper::lastCommitMessage()
         while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
             const QString currentLine = QString::fromLocal8Bit(buffer);
             if (inMessage){
-                message << m_localCodec->toUnicode(buffer).trimmed();
+                message << QString::fromLocal8Bit(buffer).trimmed();
             }
             else if (currentLine.startsWith(QLatin1String("Date:"))) {
                 m_process.readLine();

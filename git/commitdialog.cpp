@@ -16,12 +16,10 @@
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QPushButton>
-#include <QTextCodec>
 #include <QVBoxLayout>
 
 CommitDialog::CommitDialog (QWidget* parent ):
-    QDialog (parent, Qt::Dialog),
-    m_localCodec(QTextCodec::codecForLocale())
+    QDialog (parent, Qt::Dialog)
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Commit"));
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
@@ -102,7 +100,7 @@ void CommitDialog::signOffButtonClicked()
 
 QByteArray CommitDialog::commitMessage() const
 {
-    return m_localCodec->fromUnicode(m_commitMessageTextEdit->toPlainText());
+    return m_commitMessageTextEdit->toPlainText().toLocal8Bit();
 }
 
 bool CommitDialog::amend() const

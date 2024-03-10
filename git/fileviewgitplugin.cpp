@@ -22,7 +22,6 @@
 #include <QProcess>
 #include <QString>
 #include <QStringList>
-#include <QTextCodec>
 #include <QDir>
 #include <QTextBrowser>
 #include <QVBoxLayout>
@@ -182,7 +181,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString& directory)
     while (process.waitForReadyRead()) {
         char buffer[1024];
         while (readUntilZeroChar(&process, buffer, sizeof(buffer)) > 0 ) {
-            QString line = QTextCodec::codecForLocale()->toUnicode(buffer);
+            QString line = QString::fromLocal8Bit(buffer);
             // ----- recognize file status -----
             char X = line[0].toLatin1();  // X and Y from the table in `man git-status`
             char Y = line[1].toLatin1();
@@ -610,7 +609,7 @@ void FileViewGitPlugin::commit()
             char buffer[512];
             while (process.readLine(buffer, sizeof(buffer)) > 0) {
                 if (strlen(buffer) > 0 && buffer[0] == '[') {
-                    completedMessage = QTextCodec::codecForLocale()->toUnicode(buffer).trimmed();
+                    completedMessage = QString::fromLocal8Bit(buffer).trimmed();
                     break;
                 }
             }

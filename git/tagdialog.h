@@ -14,7 +14,6 @@ class KTextEdit;
 class QComboBox;
 class QDialogButtonBox;
 class QLineEdit;
-class QTextCodec;
 class QRadioButton;
 
 class TagDialog : public QDialog
@@ -50,7 +49,6 @@ private:
     QComboBox* m_branchComboBox;
     QDialogButtonBox* m_buttonBox;
     QRadioButton* branchRadioButton;
-    QTextCodec* m_localCodec;
     QPalette m_errorColors;
 };
 

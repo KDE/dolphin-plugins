@@ -11,8 +11,6 @@
 #include <QStringList>
 #include <QSet>
 
-class QTextCodec;
-
 /**
  * @brief A git wrapper class to access git functions conveniently using a Singleton interface.
  */
@@ -26,7 +24,6 @@ class GitWrapper
         ///size of the line buffers when parsing shorter git output
         static const int SMALL_BUFFER_SIZE;
         QProcess m_process;
-        QTextCodec * m_localCodec;
         /**
          * Gets a list of all remote hosts, whose entry ends with \a lineEnd
          * @param lineEnd The end of the lines, which should be returned as entries.

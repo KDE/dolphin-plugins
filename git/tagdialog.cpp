@@ -16,7 +16,6 @@
 #include <QComboBox>
 #include <QGroupBox>
 #include <QPushButton>
-#include <QTextCodec>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
@@ -24,8 +23,7 @@
 #include <QRegularExpression>
 
 TagDialog::TagDialog (QWidget* parent ):
-    QDialog (parent, Qt::Dialog),
-    m_localCodec(QTextCodec::codecForLocale())
+    QDialog (parent, Qt::Dialog)
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Create Tag"));
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
@@ -106,7 +104,7 @@ TagDialog::TagDialog (QWidget* parent ):
 
 QByteArray TagDialog::tagMessage() const
 {
-    return m_localCodec->fromUnicode(m_tagMessageTextEdit->toPlainText());
+    return m_tagMessageTextEdit->toPlainText().toLocal8Bit();
 }
 
 QString TagDialog::tagName() const
