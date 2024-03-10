@@ -15,7 +15,6 @@
 #include <QGridLayout>
 #include <QListWidget>
 #include <QProcess>
-#include <QTextCodec>
 #include <QFile>
 #include <QTextStream>
 #include <QFileDialog>

@@ -10,12 +10,8 @@
 #include <QProcess>
 #include <QString>
 #include <QHash>
-#include <QTextCodec>
 #include <KFileItem>
 #include <Dolphin/KVersionControlPlugin>
-
-class QTextCodec;
-
 
 //TODO: Create signals for infoMessage and errorMessage which will be 
 //      caught by main plugin interface.
@@ -210,11 +206,11 @@ public:
     QStringList getTags();
 
     inline QString readAllStandardOutput() {
-        return QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput());
+        return QString::fromLocal8Bit(m_process.readAllStandardOutput());
     }
     
     inline QString readAllStandardError() {
-        return QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError());
+        return QString::fromLocal8Bit(m_process.readAllStandardError());
     }
     
     /**
@@ -253,7 +249,6 @@ private:
     static HgWrapper *m_instance;
 
     QProcess m_process;
-    QTextCodec *m_localCodec;
 
     QString m_hgBaseDir;
     QString m_currentDir;

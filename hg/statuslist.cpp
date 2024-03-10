@@ -9,7 +9,6 @@
 #include "hgwrapper.h"
 
 #include <QHash>
-#include <QTextCodec>
 #include <QVBoxLayout>
 #include <QHeaderView>
 #include <QTableWidget>

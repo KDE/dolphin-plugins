@@ -16,7 +16,6 @@
 #include <QVBoxLayout>
 #include <QListWidgetItem>
 #include <QLabel>
-#include <QTextCodec>
 #include <QProcess>
 #include <QDebug>
 #include <QLineEdit>
@@ -114,11 +113,11 @@ void HgBackoutDialog::loadCommits()
     int count = 0;
     while (process.readLine(buffer[count], sizeof(buffer[count])) > 0) {
         if (count == FINAL - 1) {
-            QString rev = QTextCodec::codecForLocale()->toUnicode(buffer[0]).trimmed();
-            QString changeset = QTextCodec::codecForLocale()->toUnicode(buffer[1]).trimmed();
-            QString branch = QTextCodec::codecForLocale()->toUnicode(buffer[2]).trimmed();
-            QString author = QTextCodec::codecForLocale()->toUnicode(buffer[3]).trimmed();
-            QString log = QTextCodec::codecForLocale()->toUnicode(buffer[4]).trimmed();
+            QString rev = QString::fromLocal8Bit(buffer[0]).trimmed();
+            QString changeset = QString::fromLocal8Bit(buffer[1]).trimmed();
+            QString branch = QString::fromLocal8Bit(buffer[2]).trimmed();
+            QString author = QString::fromLocal8Bit(buffer[3]).trimmed();
+            QString log = QString::fromLocal8Bit(buffer[4]).trimmed();
 
             QListWidgetItem *item = new QListWidgetItem;
             item->setData(Qt::DisplayRole, changeset);

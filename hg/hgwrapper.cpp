@@ -7,7 +7,6 @@
 #include "hgwrapper.h"
 
 #include <QApplication>
-#include <QTextCodec>
 #include <QUrl>
 #include <QDebug>
 #include <QRegularExpression>
@@ -21,8 +20,6 @@ HgWrapper *HgWrapper::m_instance = nullptr;
 HgWrapper::HgWrapper(QObject *parent) :
     QObject(parent)
 {
-    m_localCodec = QTextCodec::codecForLocale();
-
     // re-emit QProcess signals
     connect(&m_process, &QProcess::errorOccurred,
             this, &HgWrapper::errorOccurred);
@@ -81,7 +78,7 @@ bool HgWrapper::executeCommand(const QString &hgCommand,
 
     executeCommand(hgCommand, arguments, primaryOperation);
     m_process.waitForFinished();
-    output = QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput());
+    output = QString::fromLocal8Bit(m_process.readAllStandardOutput());
 
     return (m_process.exitStatus() == QProcess::NormalExit &&
             m_process.exitCode() == 0);
@@ -341,7 +338,7 @@ void HgWrapper::getItemVersions(QHash<QString, KVersionControlPlugin::ItemVersio
     while (m_process.waitForReadyRead()) {
         char buffer[1024];
         while (m_process.readLine(buffer, sizeof(buffer)) > 0)  {
-            const QString currentLine(QTextCodec::codecForLocale()->toUnicode(buffer).trimmed());
+            const QString currentLine(QString::fromLocal8Bit(buffer).trimmed());
             char currentStatus = buffer[0];
             QString currentFile = currentLine.mid(2);
             KVersionControlPlugin::ItemVersion vs = KVersionControlPlugin::NormalVersion;

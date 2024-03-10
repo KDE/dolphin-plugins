@@ -9,7 +9,6 @@
 
 #include <QHash>
 #include <QProcess>
-#include <QTextCodec>
 #include <QString>
 #include <KLocalizedString>
 
@@ -135,14 +134,14 @@ private Q_SLOTS:
     {
         if (process.canReadLine()) {
             Q_EMIT readyReadLine(process.workingDirectory(),
-                QTextCodec::codecForLocale()->toUnicode(process.readAllStandardOutput()).trimmed());
+                QString::fromLocal8Bit(process.readAllStandardOutput()).trimmed());
         }
     }
 
     void slotAppendRemainingOutput() 
     {
             Q_EMIT readyReadLine(process.workingDirectory(),
-                QTextCodec::codecForLocale()->toUnicode(process.readAllStandardError()).trimmed());
+                QString::fromLocal8Bit(process.readAllStandardError()).trimmed());
     }
 
     void slotFinished() 

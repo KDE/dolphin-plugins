@@ -24,7 +24,6 @@
 #include "servedialog.h"
 #include "backoutdialog.h"
 
-#include <QTextCodec>
 #include <QDir>
 #include <QAction>
 #include <QIcon>

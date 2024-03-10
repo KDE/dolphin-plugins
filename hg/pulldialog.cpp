@@ -11,7 +11,6 @@
 #include "fileviewhgpluginsettings.h"
 
 #include <QStringList>
-#include <QTextCodec>
 #include <QHeaderView>
 #include <QCheckBox>
 #include <QGroupBox>

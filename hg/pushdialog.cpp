@@ -11,7 +11,6 @@
 
 #include <QStringList>
 #include <QString>
-#include <QTextCodec>
 #include <QGridLayout>
 #include <QHeaderView>
 #include <QTableWidget>

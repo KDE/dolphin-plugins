@@ -7,8 +7,6 @@
 #include "servewrapper.h"
 #include "hgwrapper.h"
 
-#include <QTextCodec>
-
 HgServeWrapper *HgServeWrapper::m_instance = nullptr;
 
 HgServeWrapper::HgServeWrapper(QObject *parent) :
@@ -105,7 +103,7 @@ QString HgServeWrapper::errorMessage(const QString &repoLocation)
     if (server == nullptr) {
         return QString();
     }
-    return QTextCodec::codecForLocale()->toUnicode(server->process.readAllStandardError());
+    return QString::fromLocal8Bit(server->process.readAllStandardError());
 }
 
 bool HgServeWrapper::normalExit(const QString &repoLocation)

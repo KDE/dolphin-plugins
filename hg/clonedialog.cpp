@@ -15,7 +15,6 @@
 #include <QStackedLayout>
 #include <QApplication>
 #include <QCheckBox>
-#include <QTextCodec>
 #include <QFileDialog>
 #include <QLineEdit>
 #include <KTextEdit>
@@ -174,7 +173,7 @@ void HgCloneDialog::slotCloningStarted()
 
 void HgCloneDialog::slotUpdateCloneOutput()
 {
-    m_outputEdit->insertPlainText(QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardOutput()));
+    m_outputEdit->insertPlainText(QString::fromLocal8Bit(m_process.readAllStandardOutput()));
 }
 
 void HgCloneDialog::slotCloningFinished(int exitCode, QProcess::ExitStatus exitStatus)

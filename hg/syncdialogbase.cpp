@@ -14,7 +14,6 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QStringList>
-#include <QTextCodec>
 #include <QHeaderView>
 #include <QLabel>
 #include <QCheckBox>
@@ -157,7 +156,7 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
 {
 
     if (exitCode != 0 || status != QProcess::NormalExit) {
-        QString message = QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError());
+        QString message = QString::fromLocal8Bit(m_process.readAllStandardError());
         if (message.isEmpty()) {
             message = i18nc("@message", "No changes found!");
         }
@@ -182,7 +181,7 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     bool hasChanges = false;
 
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
-        QString line(QTextCodec::codecForLocale()->toUnicode(buffer));
+        QString line(QString::fromLocal8Bit(buffer));
         if (unwantedRead ) {
             line.remove(QLatin1String("Commit: "));
             parseUpdateChanges(line.trimmed());

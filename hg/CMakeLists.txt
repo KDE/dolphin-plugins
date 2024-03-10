@@ -79,7 +79,6 @@ kconfig_add_kcfg_files(fileviewhgplugin
 target_link_libraries(fileviewhgplugin PRIVATE
     Qt::Core
     Qt::Widgets
-    Qt6::Core5Compat
     KF6::KIOCore
     KF6::I18n
     KF6::CoreAddons
