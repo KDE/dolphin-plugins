@@ -7,9 +7,9 @@
 #ifndef DIALOGBASE_H
 #define DIALOGBASE_H
 
+#include <QBoxLayout>
 #include <QDialog>
 #include <QDialogButtonBox>
-#include <QBoxLayout>
 #include <QPushButton>
 
 /**
@@ -21,7 +21,6 @@
  */
 class DialogBase : public QDialog
 {
-
     Q_OBJECT
 
 public:
@@ -30,28 +29,39 @@ public:
      * But only OK and Cancel are supported so far
      * and available through @p okButton() and @p cancelButton()
      */
-    explicit DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* parent = nullptr);
+    explicit DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget *parent = nullptr);
 
-    QPushButton* okButton() { return m_okButton; }
-    QPushButton* cancelButton() { return m_cancelButton; }
-    QDialogButtonBox* buttonBox() { return m_buttonBox; }
+    QPushButton *okButton()
+    {
+        return m_okButton;
+    }
+    QPushButton *cancelButton()
+    {
+        return m_cancelButton;
+    }
+    QDialogButtonBox *buttonBox()
+    {
+        return m_buttonBox;
+    }
     /**
      * Layout of a dialog. By default vertical (@p QBoxLayout::TopToBottom)
      * Use  layout()->insertLayout(0, someLaayout) or
      * layout()->insertWidget(0, someWidget)
      * to keep buttonBox at the dialog bottom.
      */
-    QBoxLayout* layout() { return m_layout; }
+    QBoxLayout *layout()
+    {
+        return m_layout;
+    }
 
 protected:
-    void keyReleaseEvent(QKeyEvent* event) override; // to handle CTRL+Enter shortcut to accept dialog
+    void keyReleaseEvent(QKeyEvent *event) override; // to handle CTRL+Enter shortcut to accept dialog
 
 private:
-    QPushButton               *m_okButton;
-    QPushButton               *m_cancelButton;
-    QDialogButtonBox          *m_buttonBox;
-    QBoxLayout                *m_layout;
-
+    QPushButton *m_okButton;
+    QPushButton *m_cancelButton;
+    QDialogButtonBox *m_buttonBox;
+    QBoxLayout *m_layout;
 };
 
 #endif // DIALOGBASE_H

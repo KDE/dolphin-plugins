@@ -46,4 +46,3 @@ private:
 };
 
 #endif /* HGCONFIG_IGNOREWIDGET_H */
-

@@ -7,21 +7,21 @@
 #include "ignorewidget.h"
 #include "../hgwrapper.h"
 
-#include <QListWidget>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QInputDialog>
-#include <QString>
-#include <QFile>
-#include <QList>
-#include <QTextStream>
-#include <QPushButton>
-#include <QUrl>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QFile>
+#include <QHBoxLayout>
+#include <QInputDialog>
+#include <QList>
+#include <QListWidget>
+#include <QPushButton>
+#include <QString>
+#include <QTextStream>
+#include <QUrl>
+#include <QVBoxLayout>
 
-HgIgnoreWidget::HgIgnoreWidget(QWidget *parent) :
-    QWidget(parent)
+HgIgnoreWidget::HgIgnoreWidget(QWidget *parent)
+    : QWidget(parent)
 {
     setupUI();
     loadConfig();
@@ -66,7 +66,7 @@ void HgIgnoreWidget::setupUntrackedList()
     args << QStringLiteral("--unknown");
     QString output;
     hgw->executeCommand(QStringLiteral("status"), args, output);
-    
+
     const QStringList result = output.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
     for (const QString &file : result) {
         m_untrackedList->addItem(file.mid(2));
@@ -79,7 +79,7 @@ void HgIgnoreWidget::loadConfig()
     if (!file.open(QFile::ReadOnly)) {
         return;
     }
-    
+
     QTextStream fileStream(&file);
 
     do {
@@ -99,10 +99,10 @@ void HgIgnoreWidget::saveConfig()
     if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
         return;
     }
-    
+
     QTextStream fileStream(&file);
     int count = m_ignoreTable->count();
-    for (int i=0; i<count; i++) {
+    for (int i = 0; i < count; i++) {
         QListWidgetItem *item = m_ignoreTable->item(i);
         fileStream << item->text() << QLatin1String("\n");
     }
@@ -112,7 +112,7 @@ void HgIgnoreWidget::saveConfig()
 
 void HgIgnoreWidget::slotAddFiles()
 {
-    const QList<QListWidgetItem*> selectedItems = m_untrackedList->selectedItems();
+    const QList<QListWidgetItem *> selectedItems = m_untrackedList->selectedItems();
     for (QListWidgetItem *item : selectedItems) {
         m_ignoreTable->addItem(item->text());
         m_untrackedList->takeItem(m_untrackedList->row(item));
@@ -122,12 +122,7 @@ void HgIgnoreWidget::slotAddFiles()
 void HgIgnoreWidget::slotAddPattern()
 {
     bool ok;
-    QString input = QInputDialog::getText(this, 
-                        xi18nc("@title:dialog", "Add Pattern"),
-                        QString(),
-                        QLineEdit::Normal,
-                        QString(),
-                        &ok);
+    QString input = QInputDialog::getText(this, xi18nc("@title:dialog", "Add Pattern"), QString(), QLineEdit::Normal, QString(), &ok);
     if (ok && !input.isEmpty()) {
         m_ignoreTable->addItem(input);
     }
@@ -135,7 +130,7 @@ void HgIgnoreWidget::slotAddPattern()
 
 void HgIgnoreWidget::slotRemoveEntries()
 {
-    const QList<QListWidgetItem*> selectedItems = m_ignoreTable->selectedItems();
+    const QList<QListWidgetItem *> selectedItems = m_ignoreTable->selectedItems();
     for (QListWidgetItem *item : selectedItems) {
         m_ignoreTable->takeItem(m_ignoreTable->row(item));
     }
@@ -143,24 +138,16 @@ void HgIgnoreWidget::slotRemoveEntries()
 void HgIgnoreWidget::slotEditEntry()
 {
     if (m_ignoreTable->currentItem() == nullptr) {
-        KMessageBox::error(this, xi18nc("@message:error",
-                    "No entry selected for edit!"));
+        KMessageBox::error(this, xi18nc("@message:error", "No entry selected for edit!"));
         return;
     }
 
     bool ok;
-    QString input = QInputDialog::getText(this, 
-                        xi18nc("@title:dialog", "Edit Pattern"),
-                        QString(),
-                        QLineEdit::Normal,
-                        m_ignoreTable->currentItem()->text(),
-                        &ok);
+    QString input =
+        QInputDialog::getText(this, xi18nc("@title:dialog", "Edit Pattern"), QString(), QLineEdit::Normal, m_ignoreTable->currentItem()->text(), &ok);
     if (ok && !input.isEmpty()) {
         m_ignoreTable->currentItem()->setText(input);
     }
 }
-
-
-
 
 #include "moc_ignorewidget.cpp"

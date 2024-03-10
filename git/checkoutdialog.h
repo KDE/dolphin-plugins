@@ -26,7 +26,7 @@ class CheckoutDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit CheckoutDialog(QWidget* parent = nullptr);
+    explicit CheckoutDialog(QWidget *parent = nullptr);
     /**
      * Returns the name of the selected tag or branch to be checkout out
      * @returns The name of the selected tag or branch
@@ -45,10 +45,10 @@ public:
 private Q_SLOTS:
     void branchRadioButtonToggled(bool checked);
     void newBranchCheckBoxStateToggled(int state);
-   /**
-    * Checks whether the values of all relevant widgets are valid.
-    * Enables or disables the OK button and sets tooltips accordingly.
-    */
+    /**
+     * Checks whether the values of all relevant widgets are valid.
+     * Enables or disables the OK button and sets tooltips accordingly.
+     */
     void setOkButtonState();
     void noteUserEditedNewBranchName();
     /**
@@ -56,22 +56,24 @@ private Q_SLOTS:
      * has already edited the content.
      * @param baseBranchName The base name to derive the new name of.
      */
-    void setDefaultNewBranchName(const QString & baseBranchName);
+    void setDefaultNewBranchName(const QString &baseBranchName);
+
 private:
     inline void setLineEditErrorModeActive(bool active);
+
 private:
     ///@brief true if the user has manually edited the branchName, false otherwise
     bool m_userEditedNewBranchName;
     QSet<QString> m_branchNames;
     QPalette m_errorColors;
     QDialogButtonBox *m_buttonBox;
-    QGroupBox * m_branchSelectGroupBox;
-    QRadioButton * m_branchRadioButton;
-    QComboBox * m_branchComboBox;
-    QComboBox * m_tagComboBox;
-    QCheckBox * m_newBranchCheckBox;
-    QLineEdit * m_newBranchName;
-    QCheckBox * m_forceCheckBox;
+    QGroupBox *m_branchSelectGroupBox;
+    QRadioButton *m_branchRadioButton;
+    QComboBox *m_branchComboBox;
+    QComboBox *m_tagComboBox;
+    QCheckBox *m_newBranchCheckBox;
+    QLineEdit *m_newBranchName;
+    QCheckBox *m_forceCheckBox;
 };
 
 #endif // CHECKOUTDIALOG_H

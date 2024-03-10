@@ -6,17 +6,15 @@
 
 #include "commititemdelegate.h"
 
-#include <QPainter>
 #include <QFontMetrics>
+#include <QPainter>
 
-CommitItemDelegate::CommitItemDelegate(QObject *parent) :
-    QItemDelegate(parent)
+CommitItemDelegate::CommitItemDelegate(QObject *parent)
+    : QItemDelegate(parent)
 {
 }
 
-void CommitItemDelegate::paint(QPainter *painter,
-                          const QStyleOptionViewItem &option,
-                          const QModelIndex &index) const
+void CommitItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QString changeset = index.data(Qt::DisplayRole).toString();
     QString revision = index.data(Qt::UserRole + 1).toString();
@@ -55,10 +53,9 @@ void CommitItemDelegate::paint(QPainter *painter,
     font.setPixelSize(fs);
     font.setBold(false);
     painter->setFont(font);
-    rect = rect.adjusted(0, fs+4, 0, fs+4);
+    rect = rect.adjusted(0, fs + 4, 0, fs + 4);
     painter->drawText(rect, Qt::AlignLeft, commitLog, &rect);
 }
-
 
 QSize CommitItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
@@ -71,8 +68,5 @@ QSize CommitItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QMo
 
     return size;
 }
-
-
-
 
 #include "moc_commititemdelegate.cpp"

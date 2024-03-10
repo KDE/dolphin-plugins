@@ -7,11 +7,10 @@
 #ifndef HGTAGDIALOG_H
 #define HGTAGDIALOG_H
 
-#include <QStringList>
 #include "dialogbase.h"
+#include <QStringList>
 
 class KComboBox;
-
 
 /**
  * Dialog to create/delete/list tags and update working directory to revision
@@ -42,4 +41,3 @@ private:
 };
 
 #endif // HGTAGDIALOG_H
-

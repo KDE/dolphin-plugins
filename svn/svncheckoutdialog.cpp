@@ -7,14 +7,15 @@
 #include "svncheckoutdialog.h"
 
 #include <QApplication>
-#include <QFileDialog>
 #include <QClipboard>
-#include <QUrl>
 #include <QDir>
+#include <QFileDialog>
+#include <QUrl>
 
 #include "svncommands.h"
 
-namespace{
+namespace
+{
 
 // Helper function: removes trailing slashes.
 QString rstrip(const QString &str)
@@ -42,14 +43,14 @@ bool isValidSvnRepoUrl(const QString &path)
 
     const QUrl url = QUrl::fromUserInput(path);
 
-    return url.isValid() && schemes.contains( url.scheme() );
+    return url.isValid() && schemes.contains(url.scheme());
 }
 
 }
 
-SvnCheckoutDialog::SvnCheckoutDialog(const QString& contextDir, QWidget *parent) :
-    QDialog(parent),
-    m_dir(contextDir)
+SvnCheckoutDialog::SvnCheckoutDialog(const QString &contextDir, QWidget *parent)
+    : QDialog(parent)
+    , m_dir(contextDir)
 {
     m_ui.setupUi(this);
 
@@ -58,14 +59,16 @@ SvnCheckoutDialog::SvnCheckoutDialog(const QString& contextDir, QWidget *parent)
      */
     connect(m_ui.pbCancel, &QPushButton::clicked, this, &QWidget::close);
     QAction *pickDirectory = m_ui.leCheckoutDir->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
-    connect(pickDirectory, &QAction::triggered, this, [this] () {
-        const QString dir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose a directory to checkout"),
-                                                              QString(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    connect(pickDirectory, &QAction::triggered, this, [this]() {
+        const QString dir = QFileDialog::getExistingDirectory(this,
+                                                              i18nc("@title:window", "Choose a directory to checkout"),
+                                                              QString(),
+                                                              QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
         if (!dir.isEmpty()) {
             m_ui.leCheckoutDir->setText(dir);
         }
-    } );
+    });
 
     /*
      * Additional setup.

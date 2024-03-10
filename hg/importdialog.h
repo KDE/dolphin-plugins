@@ -22,7 +22,7 @@ class HgImportDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgImportDialog(QWidget *parent=nullptr);
+    explicit HgImportDialog(QWidget *parent = nullptr);
 
 public Q_SLOTS:
     void done(int r) override;
@@ -41,7 +41,7 @@ private:
     QPushButton *m_addPatches;
     QPushButton *m_removePatches;
 
-    //options
+    // options
     QGroupBox *m_optionGroup;
     QCheckBox *m_optNoCommit;
     QCheckBox *m_optBypass;
@@ -49,5 +49,4 @@ private:
     QCheckBox *m_optForce;
 };
 
-#endif /* HGIMPORTDIALOG_H */ 
-
+#endif /* HGIMPORTDIALOG_H */

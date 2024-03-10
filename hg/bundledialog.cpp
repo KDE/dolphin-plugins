@@ -6,58 +6,51 @@
 
 #include "bundledialog.h"
 #include "commitinfowidget.h"
-#include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
 #include "hgwrapper.h"
+#include "pathselector.h"
 
-#include <QWidget>
-#include <QGroupBox>
-#include <QCheckBox>
-#include <QGridLayout>
-#include <QVBoxLayout>
-#include <QListWidgetItem>
-#include <QLabel>
-#include <QProcess>
-#include <QFileDialog>
-#include <QLineEdit>
-#include <KMessageBox>
 #include <KLocalizedString>
+#include <KMessageBox>
+#include <QCheckBox>
+#include <QFileDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QLabel>
+#include <QLineEdit>
+#include <QListWidgetItem>
+#include <QProcess>
+#include <QVBoxLayout>
+#include <QWidget>
 
-HgBundleDialog::HgBundleDialog(QWidget *parent) :
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+HgBundleDialog::HgBundleDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Bundle"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Bundle"));
     okButton()->setText(xi18nc("@action:button", "Bundle"));
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->bundleDialogWidth(),
-                               settings->bundleDialogHeight()));
+    this->resize(QSize(settings->bundleDialogWidth(), settings->bundleDialogHeight()));
     //
     setupUI();
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_selectCommitButton, &QAbstractButton::clicked,
-            this, &HgBundleDialog::slotSelectChangeset);
-    connect(m_allChangesets, &QCheckBox::stateChanged,
-            this, &HgBundleDialog::slotAllChangesCheckToggled);
+    connect(m_selectCommitButton, &QAbstractButton::clicked, this, &HgBundleDialog::slotSelectChangeset);
+    connect(m_allChangesets, &QCheckBox::stateChanged, this, &HgBundleDialog::slotAllChangesCheckToggled);
 }
 
 void HgBundleDialog::setupUI()
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
-    // main 
+    // main
     m_pathSelect = new HgPathSelector;
     m_baseRevision = new QLineEdit;
-    m_selectCommitButton = new QPushButton(xi18nc("@label:button",
-                                "Select Changeset"));
-    QLabel *baseRevisionLabel = new QLabel(xi18nc("@label",
-                "Base Revision (optional): "));
-    m_allChangesets = new QCheckBox(xi18nc("@label",
-                            "Bundle all changesets in repository."));
+    m_selectCommitButton = new QPushButton(xi18nc("@label:button", "Select Changeset"));
+    QLabel *baseRevisionLabel = new QLabel(xi18nc("@label", "Base Revision (optional): "));
+    m_allChangesets = new QCheckBox(xi18nc("@label", "Bundle all changesets in repository."));
 
     QGridLayout *bodyLayout = new QGridLayout;
     bodyLayout->addWidget(m_pathSelect, 0, 0, 2, 0);
@@ -74,18 +67,17 @@ void HgBundleDialog::setupUI()
     // options
     m_optionGroup = new QGroupBox(xi18nc("@label:group", "Options"));
     m_optForce = new QCheckBox(xi18nc("@label:checkbox",
-                                     "Run even when the destination is "
-                                     "unrelated (force)"));
-    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox",
-                             "Do not verify server certificate"));
-    
+                                      "Run even when the destination is "
+                                      "unrelated (force)"));
+    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox", "Do not verify server certificate"));
+
     QVBoxLayout *optionLayout = new QVBoxLayout;
     optionLayout->addWidget(m_optForce);
     optionLayout->addWidget(m_optInsecure);
     m_optionGroup->setLayout(optionLayout);
 
     mainLayout->addWidget(m_optionGroup);
-    //end options
+    // end options
 
     layout()->insertLayout(0, mainLayout);
 }
@@ -98,8 +90,7 @@ void HgBundleDialog::done(int r)
             createBundle(result);
             QDialog::done(r);
         }
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
@@ -108,11 +99,10 @@ void HgBundleDialog::createBundle(const QString &fileName)
 {
     HgWrapper *hgw = HgWrapper::instance();
     QStringList args;
-    
+
     if (m_allChangesets->checkState() == Qt::Checked) {
         args << QLatin1String("--all");
-    }
-    else {
+    } else {
         if (m_baseRevision->text().trimmed().length() > 0) {
             args << QLatin1String("--base");
             args << m_baseRevision->text().trimmed();
@@ -125,7 +115,7 @@ void HgBundleDialog::createBundle(const QString &fileName)
     if (m_optInsecure->checkState() == Qt::Checked) {
         args << QLatin1String("--insecure");
     }
-    
+
     args << fileName;
     args << m_pathSelect->remote();
 
@@ -151,8 +141,9 @@ void HgBundleDialog::loadCommits()
     QStringList args;
     args << QLatin1String("log");
     args << QLatin1String("--template");
-    args << QLatin1String("{rev}\n{node|short}\n{branch}\n"
-                          "{author}\n{desc|firstline}\n");
+    args << QLatin1String(
+        "{rev}\n{node|short}\n{branch}\n"
+        "{author}\n{desc|firstline}\n");
 
     process.start(QLatin1String("hg"), args);
     process.waitForFinished();
@@ -177,23 +168,22 @@ void HgBundleDialog::loadCommits()
             item->setData(Qt::UserRole + 4, log);
             m_commitInfo->addItem(item);
         }
-        count = (count + 1)%FINAL;
+        count = (count + 1) % FINAL;
     }
 }
 
 void HgBundleDialog::slotSelectChangeset()
 {
     DialogBase diag(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    diag.setWindowTitle(xi18nc("@title:window",
-                "Select Changeset"));
+    diag.setWindowTitle(xi18nc("@title:window", "Select Changeset"));
     diag.okButton()->setText(xi18nc("@action:button", "Select"));
 
     diag.setMinimumWidth(700);
-    
+
     m_commitInfo = new HgCommitInfoWidget;
     loadCommits();
     diag.layout()->insertWidget(0, m_commitInfo);
-    
+
     if (diag.exec() == QDialog::Accepted) {
         m_baseRevision->setText(m_commitInfo->selectedChangeset());
     }
@@ -204,13 +194,10 @@ void HgBundleDialog::slotAllChangesCheckToggled(int state)
     if (state == Qt::Checked) {
         m_selectCommitButton->setEnabled(false);
         m_baseRevision->setEnabled(false);
-    }
-    else {
+    } else {
         m_selectCommitButton->setEnabled(true);
         m_baseRevision->setEnabled(true);
     }
 }
-
-
 
 #include "moc_bundledialog.cpp"

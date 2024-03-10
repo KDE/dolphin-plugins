@@ -6,16 +6,16 @@
 
 #include "generalconfig.h"
 
+#include <KLocalizedString>
+#include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
-#include <QString>
-#include <QCheckBox>
 #include <QLineEdit>
-#include <KLocalizedString>
+#include <QString>
 
-HgGeneralConfigWidget::HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent):
-    QWidget(parent),
-    m_configType(type)
+HgGeneralConfigWidget::HgGeneralConfigWidget(HgConfig::ConfigType type, QWidget *parent)
+    : QWidget(parent)
+    , m_configType(type)
 {
     setupUI();
     loadConfig();
@@ -27,7 +27,7 @@ void HgGeneralConfigWidget::setupUI()
     m_editorEdit = new QLineEdit;
     m_mergeEdit = new QLineEdit;
     m_verboseCheck = new QCheckBox(xi18nc("@label:checkbox", "Verbose Output"));
-    
+
     QLabel *userLabel = new QLabel(xi18nc("@label", "Username"));
     QLabel *editorLabel = new QLabel(xi18nc("@label", "Default Editor"));
     QLabel *mergeLabel = new QLabel(xi18nc("@label", "Default Merge Tool"));
@@ -56,8 +56,7 @@ void HgGeneralConfigWidget::loadConfig()
     QString verbose = hgc.property(QLatin1String("ui"), QLatin1String("verbose"));
     if (verbose.isEmpty() || verbose == QStringLiteral("False")) {
         m_verboseCheck->setChecked(false);
-    }
-    else if (verbose == QLatin1String("True")) {
+    } else if (verbose == QLatin1String("True")) {
         m_verboseCheck->setChecked(true);
     }
 }
@@ -70,15 +69,10 @@ void HgGeneralConfigWidget::saveConfig()
     hgc.setMerge(m_mergeEdit->text());
 
     if (m_verboseCheck->checkState() == Qt::Checked) {
-        hgc.setProperty(QLatin1String("ui"), QLatin1String("verbose"),
-                QLatin1String("True"));
-    }
-    else {
-        hgc.setProperty(QLatin1String("ui"), QLatin1String("verbose"),
-                QLatin1String("False"));
+        hgc.setProperty(QLatin1String("ui"), QLatin1String("verbose"), QLatin1String("True"));
+    } else {
+        hgc.setProperty(QLatin1String("ui"), QLatin1String("verbose"), QLatin1String("False"));
     }
 }
-
-
 
 #include "moc_generalconfig.cpp"

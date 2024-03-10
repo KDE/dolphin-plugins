@@ -18,7 +18,8 @@ class QTableWidget;
 /**
  * \brief SVN Commit dialog class.
  */
-class SvnCommitDialog : public QDialog {
+class SvnCommitDialog : public QDialog
+{
     Q_OBJECT
 public:
     /**
@@ -31,7 +32,7 @@ public:
      *        like a filter for \p versionInfo to make changes list.
      * \param parent Parent widget.
      */
-    SvnCommitDialog(const QHash<QString, KVersionControlPlugin::ItemVersion> *versionInfo, const QStringList& context, QWidget *parent = nullptr);
+    SvnCommitDialog(const QHash<QString, KVersionControlPlugin::ItemVersion> *versionInfo, const QStringList &context, QWidget *parent = nullptr);
 
     virtual ~SvnCommitDialog() override;
 
@@ -44,18 +45,18 @@ Q_SIGNALS:
      *        example, reverted.
      * \param msg Commit message.
      */
-    void commit(const QStringList& context, const QString& msg);
+    void commit(const QStringList &context, const QString &msg);
 
-    void revertFiles(const QStringList& filesPath);
-    void diffFile(const QString& filePath);
-    void addFiles(const QStringList& filesPath);
+    void revertFiles(const QStringList &filesPath);
+    void diffFile(const QString &filePath);
+    void addFiles(const QStringList &filesPath);
 
 public Q_SLOTS:
     void refreshChangesList();
     void show();
 
 private Q_SLOTS:
-    void contextMenu(const QPoint& pos);
+    void contextMenu(const QPoint &pos);
 
 private:
     const QHash<QString, KVersionControlPlugin::ItemVersion> *m_versionInfoHash;
@@ -67,4 +68,4 @@ private:
     QAction *m_actAddFile;
 };
 
-#endif  // SVNCOMMITDIALOG_H
+#endif // SVNCOMMITDIALOG_H

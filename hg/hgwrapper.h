@@ -7,14 +7,14 @@
 #ifndef HGWRAPPER_H
 #define HGWRAPPER_H
 
+#include <Dolphin/KVersionControlPlugin>
+#include <KFileItem>
+#include <QHash>
 #include <QProcess>
 #include <QString>
-#include <QHash>
-#include <KFileItem>
-#include <Dolphin/KVersionControlPlugin>
 
-//TODO: Create signals for infoMessage and errorMessage which will be 
-//      caught by main plugin interface.
+// TODO: Create signals for infoMessage and errorMessage which will be
+//       caught by main plugin interface.
 
 /**
  * A singleton class providing implementation of many Mercurial commands
@@ -33,25 +33,21 @@ public:
      *
      * @param hgCommand Command to be executed. eg. diff, status
      * @param arguments Arguments for the given command
-     * @param primaryOperation Will emit primaryOperationFinished, 
+     * @param primaryOperation Will emit primaryOperationFinished,
      *               primaryOperationError signals.
      */
-    void executeCommand(const QString &hgCommand,
-                        const QStringList &arguments = QStringList(),
-                        bool primaryOperation=false);
+    void executeCommand(const QString &hgCommand, const QStringList &arguments = QStringList(), bool primaryOperation = false);
     /**
      * Start a mercurial command with given arguments and return until
      * process completes.
      *
      * @param hgCommand Command to be executed. eg. diff, status
      * @param arguments Arguments for the given command
-     * @param primaryOperation Will emit primaryOperationCompleted, 
+     * @param primaryOperation Will emit primaryOperationCompleted,
      *               primaryOperationError signals.
      * @return true if operations completed successfully, otherwise false
      */
-    bool executeCommandTillFinished(const QString &hgCommand,
-                        const QStringList &arguments = QStringList(),
-                        bool primaryOperation=false);
+    bool executeCommandTillFinished(const QString &hgCommand, const QStringList &arguments = QStringList(), bool primaryOperation = false);
     /**
      * Start a mercurial command with given arguments, write standard output
      * to output parameter and return till finished.
@@ -59,14 +55,11 @@ public:
      * @param hgCommand Command to be executed. eg. diff, status
      * @param arguments Arguments for the given command
      * @param output Append standard output of process to this string
-     * @param primaryOperation Will emit primaryOperationCompleted, 
+     * @param primaryOperation Will emit primaryOperationCompleted,
      *               primaryOperationError signals.
      * @return true if operations completed successfully, otherwise false
      */
-    bool executeCommand(const QString &hgCommand,
-                        const QStringList &arguments,
-                        QString &output,
-                        bool primaryOperation=false);
+    bool executeCommand(const QString &hgCommand, const QStringList &arguments, QString &output, bool primaryOperation = false);
 
     /**
      * Get the root directory of Mercurial repository. Using 'hg root'
@@ -93,7 +86,7 @@ public:
     void setBaseAsWorkingDir();
 
     /**
-     * Get FileName-ItemVersion pairs of the repository returned by 
+     * Get FileName-ItemVersion pairs of the repository returned by
      *
      * $hg status --modified --added --removed --deleted --unknown --ignored
      *
@@ -118,16 +111,14 @@ public:
     /**
      * Commits changes made to the working directory.
      * @param message Commit message. Should not be empty.
-     * @param files List of files to be committed. Files changed but not 
-     *              listed here will be ignored during commit. 
-     *              If the list is empty, all modified files will be 
+     * @param files List of files to be committed. Files changed but not
+     *              listed here will be ignored during commit.
+     *              If the list is empty, all modified files will be
      *              committed, the default behavior.
      * @param closeCurrentBranch Closes the current branch after commit.
      * @return true if successful, otherwise false
      */
-    bool commit(const QString &message, 
-                const QStringList &files = QStringList(), 
-                bool closeCurrentBranch = false);
+    bool commit(const QString &message, const QStringList &files = QStringList(), bool closeCurrentBranch = false);
 
     /**
      * Create a new branch
@@ -160,13 +151,13 @@ public:
     bool switchTag(const QString &name);
 
     /**
-     * Reverts all local changes made to working directory. Will update to 
+     * Reverts all local changes made to working directory. Will update to
      * last changeset of current branch, ie state just after last commit.
      */
     bool revertAll();
 
     /**
-     * Reverts local changes made to selected files. All changes made to 
+     * Reverts local changes made to selected files. All changes made to
      * these files after last commit will be lost.
      */
     bool revert(const KFileItemList &fileList);
@@ -178,15 +169,15 @@ public:
      * Use with care. Rollback cant be undone. See Mercurial man page FOR
      * more info.
      *
-     * @param dryRun Do not actually perform action, but just print output 
+     * @param dryRun Do not actually perform action, but just print output
      *              Used to check if Rollback can be done, and if yes then
      *              what will be rolled back.
      * @return true if successful, otherwise false
      */
-    bool rollback(bool dryRun=false);
+    bool rollback(bool dryRun = false);
 
     /**
-     * Checks if the working directory is clean, ie there are no 
+     * Checks if the working directory is clean, ie there are no
      * uncommitted changes present.
      *
      * @return true if clean otherwise false
@@ -194,7 +185,7 @@ public:
     bool isWorkingDirectoryClean();
 
     QString getParentsOfHead();
-    
+
     /**
      * Returns list of all branch names.
      */
@@ -205,21 +196,23 @@ public:
      */
     QStringList getTags();
 
-    inline QString readAllStandardOutput() {
+    inline QString readAllStandardOutput()
+    {
         return QString::fromLocal8Bit(m_process.readAllStandardOutput());
     }
-    
-    inline QString readAllStandardError() {
+
+    inline QString readAllStandardError()
+    {
         return QString::fromLocal8Bit(m_process.readAllStandardError());
     }
-    
+
     /**
      * Check if some Mercurial operation is currently being executed or
      * about to be started.
      */
-    inline bool isBusy() {
-        return (m_process.state() == QProcess::Running ||
-                m_process.state() == QProcess::Starting);
+    inline bool isBusy()
+    {
+        return (m_process.state() == QProcess::Running || m_process.state() == QProcess::Starting);
     }
 
 public Q_SLOTS:
@@ -229,7 +222,7 @@ public Q_SLOTS:
     void terminateCurrentProcess();
 
 Q_SIGNALS:
-    ///equivalent to the signals of QProcess
+    /// equivalent to the signals of QProcess
     void finished(int exitCode, QProcess::ExitStatus exitStatus);
     void errorOccurred(QProcess::ProcessError error);
     void started();
@@ -238,7 +231,7 @@ Q_SIGNALS:
     void primaryOperationError(QProcess::ProcessError error);
 
 private:
-    ///Get and update m_hgBaseDir
+    /// Get and update m_hgBaseDir
     void updateBaseDir();
 
 private Q_SLOTS:
@@ -257,4 +250,3 @@ private:
 };
 
 #endif // HGWRAPPER_H
-

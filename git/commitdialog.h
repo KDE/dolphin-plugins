@@ -18,7 +18,7 @@ class CommitDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit CommitDialog(QWidget* parent = nullptr);
+    explicit CommitDialog(QWidget *parent = nullptr);
     /**
      * Returns the commit message given by the user.
      * @returns The commit message.
@@ -34,18 +34,19 @@ private Q_SLOTS:
     void amendCheckBoxStateChanged();
     void saveDialogSize();
     void setOkButtonState();
+
 private:
-    KTextEdit* m_commitMessageTextEdit;
-    QCheckBox* m_amendCheckBox;
+    KTextEdit *m_commitMessageTextEdit;
+    QCheckBox *m_amendCheckBox;
     QDialogButtonBox *m_buttonBox;
     /**
      * @brief Holds an alternative message, that is not displayed currently.
      * One message is the amend message, the other one for normal commits.
      */
     QString m_alternativeMessage;
-    ///Cache for GitWrapper::userName();
+    /// Cache for GitWrapper::userName();
     QString m_userName;
-    ///Cache for GitWrapper::userEmail();
+    /// Cache for GitWrapper::userEmail();
     QString m_userEmail;
 };
 

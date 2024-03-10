@@ -6,23 +6,24 @@
 
 #include "svncommitdialog.h"
 
-#include <QVBoxLayout>
-#include <QPlainTextEdit>
-#include <QLabel>
-#include <QTableWidget>
-#include <QHeaderView>
-#include <QTemporaryFile>
+#include <QDebug>
 #include <QDialogButtonBox>
+#include <QHeaderView>
+#include <QLabel>
+#include <QMenu>
+#include <QPlainTextEdit>
 #include <QPushButton>
 #include <QShortcut>
-#include <QMenu>
-#include <QDebug>
+#include <QTableWidget>
+#include <QTemporaryFile>
+#include <QVBoxLayout>
 
 #include <KLocalizedString>
-#include <KWindowConfig>
 #include <KSharedConfig>
+#include <KWindowConfig>
 
-namespace {
+namespace
+{
 
 // Helper function: returns true if str starts with any string in a list.
 bool startsWith(const QStringList &list, const QString &str)
@@ -43,7 +44,7 @@ QStringList makeContext(const QStringList &list, const QHash<QString, KVersionCo
     QStringList ret;
 
     for (const auto &i : std::as_const(list)) {
-        for ( auto it = hashTable->cbegin(); it != hashTable->cend(); ++it ) {
+        for (auto it = hashTable->cbegin(); it != hashTable->cend(); ++it) {
             if (it.key().startsWith(i)) {
                 ret.append(i);
                 break;
@@ -54,28 +55,25 @@ QStringList makeContext(const QStringList &list, const QHash<QString, KVersionCo
     return ret;
 }
 
-enum columns_t {
-    columnPath,
-    columnStatus
-};
-
+enum columns_t { columnPath, columnStatus };
 }
 
 struct svnCommitEntryInfo_t {
-    svnCommitEntryInfo_t() :
-        localPath(QString()),
-        fileVersion( KVersionControlPlugin::NormalVersion )
-    {}
+    svnCommitEntryInfo_t()
+        : localPath(QString())
+        , fileVersion(KVersionControlPlugin::NormalVersion)
+    {
+    }
 
-    QString localPath;                              ///< Affected local path.
+    QString localPath; ///< Affected local path.
     KVersionControlPlugin::ItemVersion fileVersion; ///< File status in terms of KVersionControlPlugin
 };
 Q_DECLARE_METATYPE(svnCommitEntryInfo_t);
 
-SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::ItemVersion> *versionInfo, const QStringList& context, QWidget *parent) :
-    QDialog(parent),
-    m_versionInfoHash(versionInfo),
-    m_context(context)
+SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::ItemVersion> *versionInfo, const QStringList &context, QWidget *parent)
+    : QDialog(parent)
+    , m_versionInfoHash(versionInfo)
+    , m_context(context)
 {
     Q_ASSERT(versionInfo);
     Q_ASSERT(!context.empty());
@@ -83,13 +81,13 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
     /*
      * Setup UI.
      */
-    QVBoxLayout* boxLayout = new QVBoxLayout(this);
+    QVBoxLayout *boxLayout = new QVBoxLayout(this);
 
     boxLayout->addWidget(new QLabel(i18nc("@label", "Description:"), this));
     m_editor = new QPlainTextEdit(this);
     boxLayout->addWidget(m_editor, 1);
 
-    QFrame* line = new QFrame(this);
+    QFrame *line = new QFrame(this);
     line->setFrameShape(QFrame::HLine);
     line->setFrameShadow(QFrame::Sunken);
     boxLayout->addWidget(line);
@@ -113,32 +111,32 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
      */
     m_actRevertFile = new QAction(i18nc("@item:inmenu", "Revert"), this);
     m_actRevertFile->setIcon(QIcon::fromTheme(QStringLiteral("document-revert")));
-    connect(m_actRevertFile, &QAction::triggered, this, [this] () {
+    connect(m_actRevertFile, &QAction::triggered, this, [this]() {
         const QString filePath = m_actRevertFile->data().value<svnCommitEntryInfo_t>().localPath;
         Q_EMIT revertFiles(QStringList() << filePath);
-    } );
+    });
 
     m_actDiffFile = new QAction(i18nc("@item:inmenu", "Show changes"), this);
     m_actDiffFile->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
-    connect(m_actDiffFile, &QAction::triggered, this, [this] () {
+    connect(m_actDiffFile, &QAction::triggered, this, [this]() {
         const QString filePath = m_actDiffFile->data().value<svnCommitEntryInfo_t>().localPath;
         Q_EMIT diffFile(filePath);
-    } );
+    });
 
     m_actAddFile = new QAction(i18nc("@item:inmenu", "Add file"), this);
     m_actAddFile->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
-    connect(m_actAddFile, &QAction::triggered, this, [this] () {
+    connect(m_actAddFile, &QAction::triggered, this, [this]() {
         const QString filePath = m_actAddFile->data().value<svnCommitEntryInfo_t>().localPath;
         Q_EMIT addFiles(QStringList() << filePath);
-    } );
+    });
 
-    connect(buttonBox, &QDialogButtonBox::accepted, this, [this] () {
+    connect(buttonBox, &QDialogButtonBox::accepted, this, [this]() {
         // Form a new context list from an existing one and a possibly modified m_versionInfoHash (some
         // files from original context might no longer be in m_versionInfoHash).
         QStringList context = makeContext(m_context, m_versionInfoHash);
         Q_EMIT commit(context, m_editor->toPlainText());
         QDialog::accept();
-    } );
+    });
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     connect(refreshButton, &QPushButton::clicked, this, &SvnCommitDialog::refreshChangesList);
 
@@ -153,8 +151,7 @@ SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::Ite
      */
     setWindowTitle(i18nc("@title:window", "SVN Commit"));
 
-    const QStringList tableHeader = { i18nc("@title:column", "Path"),
-                                      i18nc("@title:column", "Status") };
+    const QStringList tableHeader = {i18nc("@title:column", "Path"), i18nc("@title:column", "Status")};
     m_changes->setColumnCount(tableHeader.size());
     m_changes->setHorizontalHeaderLabels(tableHeader);
     m_changes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -181,14 +178,14 @@ void SvnCommitDialog::refreshChangesList()
     m_changes->setRowCount(0);
 
     auto it = m_versionInfoHash->cbegin();
-    for ( int row = 0 ; it != m_versionInfoHash->cend(); ++it ) {
+    for (int row = 0; it != m_versionInfoHash->cend(); ++it) {
         // If current item is not in a context list we skip it. Each file must be in a context dir
         // or be in a context itself.
         if (!startsWith(m_context, it.key())) {
             continue;
         }
 
-        QTableWidgetItem *path = new QTableWidgetItem( it.key() );
+        QTableWidgetItem *path = new QTableWidgetItem(it.key());
         QTableWidgetItem *status = new QTableWidgetItem;
 
         path->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
@@ -205,27 +202,27 @@ void SvnCommitDialog::refreshChangesList()
         path->setData(Qt::UserRole, QVariant::fromValue(info));
         status->setData(Qt::UserRole, QVariant::fromValue(info));
 
-        switch(it.value()) {
+        switch (it.value()) {
         case KVersionControlPlugin::UnversionedVersion:
-            status->setText( i18nc("@item:intable", "Unversioned") );
+            status->setText(i18nc("@item:intable", "Unversioned"));
             break;
         case KVersionControlPlugin::LocallyModifiedVersion:
-            status->setText( i18nc("@item:intable", "Modified") );
+            status->setText(i18nc("@item:intable", "Modified"));
             break;
         case KVersionControlPlugin::AddedVersion:
-            status->setText( i18nc("@item:intable", "Added") );
+            status->setText(i18nc("@item:intable", "Added"));
             break;
         case KVersionControlPlugin::RemovedVersion:
-            status->setText( i18nc("@item:intable", "Deleted") );
+            status->setText(i18nc("@item:intable", "Deleted"));
             break;
         case KVersionControlPlugin::ConflictingVersion:
-            status->setText( i18nc("@item:intable", "Conflict") );
+            status->setText(i18nc("@item:intable", "Conflict"));
             break;
         case KVersionControlPlugin::MissingVersion:
-            status->setText( i18nc("@item:intable", "Missing") );
+            status->setText(i18nc("@item:intable", "Missing"));
             break;
         case KVersionControlPlugin::UpdateRequiredVersion:
-            status->setText( i18nc("@item:intable", "Update required") );
+            status->setText(i18nc("@item:intable", "Update required"));
             break;
         default:
             // For SVN normaly we shouldn't be here with:
@@ -249,24 +246,24 @@ void SvnCommitDialog::show()
     KWindowConfig::restoreWindowSize(windowHandle(), dialogConfig);
 }
 
-void SvnCommitDialog::contextMenu(const QPoint& pos)
+void SvnCommitDialog::contextMenu(const QPoint &pos)
 {
-    QTableWidgetItem *item = m_changes->item( m_changes->currentRow(), 0 );
+    QTableWidgetItem *item = m_changes->item(m_changes->currentRow(), 0);
     if (item == nullptr) {
         return;
     }
 
     const QVariant data = item->data(Qt::UserRole);
-    m_actRevertFile->setData( data );
-    m_actDiffFile->setData( data );
-    m_actAddFile->setData( data );
+    m_actRevertFile->setData(data);
+    m_actDiffFile->setData(data);
+    m_actAddFile->setData(data);
 
     m_actRevertFile->setEnabled(false);
     m_actDiffFile->setEnabled(false);
     m_actAddFile->setEnabled(false);
 
     const svnCommitEntryInfo_t info = data.value<svnCommitEntryInfo_t>();
-    switch(info.fileVersion) {
+    switch (info.fileVersion) {
     case KVersionControlPlugin::UnversionedVersion:
         m_actAddFile->setEnabled(true);
         break;
@@ -293,7 +290,7 @@ void SvnCommitDialog::contextMenu(const QPoint& pos)
 
     // Adjust popup menu position for QTableWidget header height.
     const QPoint popupPoint = QPoint(pos.x(), pos.y() + m_changes->horizontalHeader()->height());
-    menu->exec( m_changes->mapToGlobal(popupPoint) );
+    menu->exec(m_changes->mapToGlobal(popupPoint));
 }
 
 #include "moc_svncommitdialog.cpp"

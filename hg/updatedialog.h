@@ -7,8 +7,8 @@
 #ifndef HGUPDATEDIALOG_H
 #define HGUPDATEDIALOG_H
 
-#include <QString>
 #include "dialogbase.h"
+#include <QString>
 
 class KComboBox;
 class QLabel;
@@ -32,7 +32,7 @@ private:
     void done(int r) override;
 
 private:
-    enum {ToBranch, ToTag, ToRevision} m_updateTo;
+    enum { ToBranch, ToTag, ToRevision } m_updateTo;
     KComboBox *m_selectType;
     KComboBox *m_selectFinal;
     QLabel *m_currentInfo;
@@ -41,4 +41,3 @@ private:
 };
 
 #endif // HGUPDATEDIALOG_H
-

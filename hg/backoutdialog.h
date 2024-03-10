@@ -37,14 +37,14 @@ private:
     void setupUI();
 
     /**
-     * Find appropriate changesets in repository and show them in 
+     * Find appropriate changesets in repository and show them in
      * Commit Selector (CommitInfoWidget)
      */
     void loadCommits();
 
-    /** 
+    /**
      * Opens a dialog showing all changesets in a list and their respective
-     * information when highlighted. 
+     * information when highlighted.
      */
     QString selectChangeset();
 
@@ -62,4 +62,3 @@ private:
 };
 
 #endif /* HG_BACKOUT_DIALOG */
-

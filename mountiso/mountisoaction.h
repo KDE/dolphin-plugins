@@ -27,7 +27,6 @@ class KFileItemListProperties;
  */
 class MountIsoAction : public KAbstractFileItemActionPlugin
 {
-
     Q_OBJECT
 
 public:
@@ -45,8 +44,7 @@ public:
      * If the iso file is already mounted, we show a unmount entry and create a
      * callback to unmount the iso file using udisksctl.
      */
-    QList<QAction *> actions(const KFileItemListProperties &fileItemInfos,
-                             QWidget *parentWidget) override;
+    QList<QAction *> actions(const KFileItemListProperties &fileItemInfos, QWidget *parentWidget) override;
 };
 
 #endif

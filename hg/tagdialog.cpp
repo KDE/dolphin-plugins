@@ -7,19 +7,18 @@
 #include "tagdialog.h"
 #include "hgwrapper.h"
 
-#include <QLineEdit>
 #include <KComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QLineEdit>
 
-HgTagDialog::HgTagDialog(QWidget *parent):
-    DialogBase(QDialogButtonBox::NoButton, parent)
+HgTagDialog::HgTagDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::NoButton, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Tag"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Tag"));
 
-    // UI 
+    // UI
     QVBoxLayout *vbox = new QVBoxLayout;
 
     m_tagComboBox = new KComboBox;
@@ -44,18 +43,13 @@ HgTagDialog::HgTagDialog(QWidget *parent):
     layout()->insertLayout(0, vbox);
 
     slotUpdateDialog(m_tagComboBox->currentText());
-    
+
     // connections
-    connect(m_createTag, &QAbstractButton::clicked,
-            this, &HgTagDialog::slotCreateTag);
-    connect(m_removeTag, &QAbstractButton::clicked,
-            this, &HgTagDialog::slotRemoveTag);
-    connect(m_updateTag, &QAbstractButton::clicked,
-            this, &HgTagDialog::slotSwitch);
-    connect(m_tagComboBox, &QComboBox::editTextChanged,
-            this, &HgTagDialog::slotUpdateDialog);
-    connect(m_tagComboBox->lineEdit(), &QLineEdit::textChanged,
-            this, &HgTagDialog::slotUpdateDialog);
+    connect(m_createTag, &QAbstractButton::clicked, this, &HgTagDialog::slotCreateTag);
+    connect(m_removeTag, &QAbstractButton::clicked, this, &HgTagDialog::slotRemoveTag);
+    connect(m_updateTag, &QAbstractButton::clicked, this, &HgTagDialog::slotSwitch);
+    connect(m_tagComboBox, &QComboBox::editTextChanged, this, &HgTagDialog::slotUpdateDialog);
+    connect(m_tagComboBox->lineEdit(), &QLineEdit::textChanged, this, &HgTagDialog::slotUpdateDialog);
 }
 
 void HgTagDialog::updateInitialDialog()
@@ -64,7 +58,6 @@ void HgTagDialog::updateInitialDialog()
     // update combo box
     m_tagList = hgWrapper->getTags();
     m_tagComboBox->addItems(m_tagList);
-
 }
 
 void HgTagDialog::slotUpdateDialog(const QString &text)
@@ -74,13 +67,11 @@ void HgTagDialog::slotUpdateDialog(const QString &text)
         m_createTag->setEnabled(false);
         m_updateTag->setEnabled(false);
         m_removeTag->setEnabled(false);
-    }
-    else if (m_tagList.contains(text)) {
+    } else if (m_tagList.contains(text)) {
         m_createTag->setEnabled(false);
         m_updateTag->setEnabled(true);
         m_removeTag->setEnabled(true);
-    }
-    else {
+    } else {
         m_createTag->setEnabled(true);
         m_updateTag->setEnabled(false);
         m_removeTag->setEnabled(false);
@@ -95,10 +86,9 @@ void HgTagDialog::slotSwitch()
     args << QLatin1String("-c");
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("update"), args, out)) {
-        //KMessageBox::information(this, i18n("Updated working directory!"));
+        // KMessageBox::information(this, i18n("Updated working directory!"));
         done(QDialog::Accepted);
-    }
-    else {
+    } else {
         KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
@@ -111,10 +101,9 @@ void HgTagDialog::slotRemoveTag()
     args << QLatin1String("--remove");
     args << m_tagComboBox->currentText();
     if (hgWrapper->executeCommand(QLatin1String("tag"), args, out)) {
-        //KMessageBox::information(this, xi18nc("Removed tag successfully!"));
+        // KMessageBox::information(this, xi18nc("Removed tag successfully!"));
         done(QDialog::Accepted);
-    }
-    else {
+    } else {
         KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
@@ -128,12 +117,9 @@ void HgTagDialog::slotCreateTag()
     if (hgWrapper->executeCommand(QLatin1String("tag"), args, out)) {
         KMessageBox::information(this, i18n("Created tag successfully!"));
         done(QDialog::Accepted);
-    }
-    else {
+    } else {
         KMessageBox::error(this, i18n("Some error occurred"));
     }
 }
-
-
 
 #include "moc_tagdialog.cpp"

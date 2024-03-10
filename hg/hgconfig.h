@@ -7,9 +7,9 @@
 #ifndef HGCONFIG_H
 #define HGCONFIG_H
 
-#include <QString>
-#include <QProcess>
 #include <QMap>
+#include <QProcess>
+#include <QString>
 
 class KConfig;
 
@@ -18,11 +18,11 @@ class KConfig;
  * Also provides interface to read/write other settings as well, for which
  * a direct function is not provided.
  */
-class HgConfig 
+class HgConfig
 {
 public:
     /**
-     * Type of hgrc file. 
+     * Type of hgrc file.
      *
      * RepoConfig: hgrc of the local/current repository.
      * GlobalConfig: Global hgrc file. Under *nix, ~/.hgrc file
@@ -30,15 +30,13 @@ public:
      *             for just one time. Usually after taking input from user to
      *             override default settings.
      */
-    enum ConfigType {
-        RepoConfig, GlobalConfig, TempConfig
-    };
+    enum ConfigType { RepoConfig, GlobalConfig, TempConfig };
 
     explicit HgConfig(ConfigType configFile);
     ~HgConfig();
-    
+
     // Related to config file
-    
+
     /**
      * Return the path of hgrc file currently loaded
      */
@@ -76,7 +74,7 @@ public:
      *                      required
      * @return Value of property in the section given.
      */
-    QString property(const QString &section, const QString &propertyName)const;
+    QString property(const QString &section, const QString &propertyName) const;
 
     /**
      * Set the value of a property in a given section.
@@ -84,16 +82,15 @@ public:
      * @param section The settings group in hgrc file.
      * @param propertyName Name of the property in section whose value is
      *                     to be modified.
-     * @param propertyValue Value to be set of given property. Deletes the 
+     * @param propertyValue Value to be set of given property. Deletes the
      *                      entry if empty.
      */
-    void setProperty(const QString &section, const QString &propertyName,
-            const QString &propertyValue);
+    void setProperty(const QString &section, const QString &propertyName, const QString &propertyValue);
 
     // user interface section
     QString username() const;
     void setUsername(const QString &userName);
-    
+
     QString editor() const;
     void setEditor(const QString &pathToEditor);
 
@@ -112,8 +109,6 @@ private:
     ConfigType m_configType;
     QString m_configFilePath;
     KConfig *m_config;
-
 };
 
-#endif //HGCONFIG_H
-
+#endif // HGCONFIG_H

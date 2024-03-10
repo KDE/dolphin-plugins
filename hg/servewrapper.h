@@ -7,18 +7,18 @@
 #ifndef HG_SERVE_WRAPPER_H
 #define HG_SERVE_WRAPPER_H
 
+#include <KLocalizedString>
 #include <QHash>
 #include <QProcess>
 #include <QString>
-#include <KLocalizedString>
 
 class ServerProcessType;
 
 /**
- * Wrapper to manage web server instances of mercurial repository. More than one 
- * server can be handled. 
+ * Wrapper to manage web server instances of mercurial repository. More than one
+ * server can be handled.
  *
- * This wrapper should be singleton hence only one instance should be created 
+ * This wrapper should be singleton hence only one instance should be created
  * and used. Hence, never create an object statically or use 'new' operator.
  * Use instance() method to get(create) an instance.
  */
@@ -26,15 +26,15 @@ class HgServeWrapper : public QObject
 {
     Q_OBJECT
 
-public: 
-    explicit HgServeWrapper(QObject *parent=nullptr);
+public:
+    explicit HgServeWrapper(QObject *parent = nullptr);
     ~HgServeWrapper() override;
 
     /**
-     * Returns pointer to singleton instance of the wrapper. An instance is 
-     * created if none exists. 
+     * Returns pointer to singleton instance of the wrapper. An instance is
+     * created if none exists.
      *
-     * @return Pointer to the instance 
+     * @return Pointer to the instance
      */
     static HgServeWrapper *instance();
 
@@ -94,63 +94,55 @@ Q_SIGNALS:
     void readyReadLine(const QString &repoLocation, const QString &line);
 
 private:
-
 private Q_SLOTS:
     void slotFinished(int exitCode, QProcess::ExitStatus status);
 
 private:
-    QHash<QString, ServerProcessType*> m_serverList;
+    QHash<QString, ServerProcessType *> m_serverList;
     static HgServeWrapper *m_instance;
 };
 
-//FIXME: Had to change struct to class and make it unnested. 
-// Hide member variables.
+// FIXME: Had to change struct to class and make it unnested.
+//  Hide member variables.
 
 /**
- * Represents a Mercurial Server instance. 
+ * Represents a Mercurial Server instance.
  */
-class ServerProcessType : public QObject {
+class ServerProcessType : public QObject
+{
     Q_OBJECT
 
 public:
     QProcess process;
     int port;
 
-    ServerProcessType() 
+    ServerProcessType()
     {
-        connect(&process, &QProcess::readyReadStandardOutput,
-                this, &ServerProcessType::slotAppendOutput);
-        connect(&process, &QProcess::readyReadStandardError,
-                this, &ServerProcessType::slotAppendRemainingOutput);
-        connect(&process, &QProcess::finished,
-                this, &ServerProcessType::slotFinished);
+        connect(&process, &QProcess::readyReadStandardOutput, this, &ServerProcessType::slotAppendOutput);
+        connect(&process, &QProcess::readyReadStandardError, this, &ServerProcessType::slotAppendRemainingOutput);
+        connect(&process, &QProcess::finished, this, &ServerProcessType::slotFinished);
     }
 
-Q_SIGNALS:    
+Q_SIGNALS:
     void readyReadLine(const QString &repoLocation, const QString &line);
 
 private Q_SLOTS:
-    void slotAppendOutput() 
+    void slotAppendOutput()
     {
         if (process.canReadLine()) {
-            Q_EMIT readyReadLine(process.workingDirectory(),
-                QString::fromLocal8Bit(process.readAllStandardOutput()).trimmed());
+            Q_EMIT readyReadLine(process.workingDirectory(), QString::fromLocal8Bit(process.readAllStandardOutput()).trimmed());
         }
     }
 
-    void slotAppendRemainingOutput() 
+    void slotAppendRemainingOutput()
     {
-            Q_EMIT readyReadLine(process.workingDirectory(),
-                QString::fromLocal8Bit(process.readAllStandardError()).trimmed());
+        Q_EMIT readyReadLine(process.workingDirectory(), QString::fromLocal8Bit(process.readAllStandardError()).trimmed());
     }
 
-    void slotFinished() 
+    void slotFinished()
     {
-        Q_EMIT readyReadLine(process.workingDirectory(),
-                               i18n("## Server Stopped! ##\n"));
+        Q_EMIT readyReadLine(process.workingDirectory(), i18n("## Server Stopped! ##\n"));
     }
 };
 
 #endif /* HG_SERVE_WRAPPER_H */
-
-

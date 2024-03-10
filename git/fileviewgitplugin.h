@@ -9,14 +9,14 @@
 #define FILEVIEWGITPLUGIN_H
 
 #include <Dolphin/KVersionControlPlugin>
+#include <KDialogJobUiDelegate>
 #include <KIO/CommandLauncherJob>
 #include <KJobUiDelegate>
-#include <KDialogJobUiDelegate>
 
 #include <KFileItem>
 
-#include <QList>
 #include <QHash>
+#include <QList>
 #include <QProcess>
 #include <QString>
 
@@ -28,15 +28,15 @@ class FileViewGitPlugin : public KVersionControlPlugin
     Q_OBJECT
 
 public:
-    FileViewGitPlugin(QObject* parent, const QList<QVariant>& args);
+    FileViewGitPlugin(QObject *parent, const QList<QVariant> &args);
     ~FileViewGitPlugin() override;
     QString fileName() const override;
-    QString localRepositoryRoot(const QString& directory) const override;
-    bool beginRetrieval(const QString& directory) override;
+    QString localRepositoryRoot(const QString &directory) const override;
+    bool beginRetrieval(const QString &directory) override;
     void endRetrieval() override;
-    ItemVersion itemVersion(const KFileItem& item) const override;
-    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
-    QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
+    ItemVersion itemVersion(const KFileItem &item) const override;
+    QList<QAction *> versionControlActions(const KFileItemList &items) const override;
+    QList<QAction *> outOfVersionControlActions(const KFileItemList &items) const override;
 
 private Q_SLOTS:
     void addFiles();
@@ -56,14 +56,15 @@ private Q_SLOTS:
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
+
 private:
-    QList<QAction*> contextMenuFilesActions(const KFileItemList& items) const;
-    QList<QAction*> contextMenuDirectoryActions(const QString& directory) const;
+    QList<QAction *> contextMenuFilesActions(const KFileItemList &items) const;
+    QList<QAction *> contextMenuDirectoryActions(const QString &directory) const;
     /**
      * Reads into buffer from device until we reach the next \0 or maxChars have been read.
      * @returns The number of characters read.
      */
-    int readUntilZeroChar(QIODevice* device, char* buffer, const int maxChars);
+    int readUntilZeroChar(QIODevice *device, char *buffer, const int maxChars);
     /**
      * Parses the output of the git push command and returns an appropriate message,
      * that should be displayed to the user.
@@ -86,12 +87,13 @@ private:
      *                    Message that should be shown if the execution of the command
      *                    has been completed successfully.
      */
-    void execGitCommand(const QString& gitCommand,
-                        const QStringList& arguments,
-                        const QString& infoMsg,
-                        const QString& errorMsg,
-                        const QString& operationCompletedMsg);
+    void execGitCommand(const QString &gitCommand,
+                        const QStringList &arguments,
+                        const QString &infoMsg,
+                        const QString &errorMsg,
+                        const QString &operationCompletedMsg);
     void startGitCommandProcess();
+
 private:
     bool m_pendingOperation;
     /**
@@ -121,9 +123,9 @@ private:
     QString m_operationCompletedMsg;
     QString m_errorMsg;
 
-    QWidget* m_parentWidget;
+    QWidget *m_parentWidget;
 
-    //Current targets. m_contextItems is used if and only if m_contextDir is empty.
+    // Current targets. m_contextItems is used if and only if m_contextDir is empty.
     mutable QString m_contextDir;
     mutable KFileItemList m_contextItems;
 
@@ -137,4 +139,3 @@ private:
     }
 };
 #endif // FILEVIEWGITPLUGIN_H
-

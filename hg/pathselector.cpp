@@ -7,23 +7,21 @@
 #include "pathselector.h"
 #include "hgconfig.h"
 
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QLineEdit>
 #include <KComboBox>
 #include <KLocalizedString>
+#include <QHBoxLayout>
+#include <QLineEdit>
+#include <QVBoxLayout>
 
-HgPathSelector::HgPathSelector(QWidget *parent) :
-    QWidget(parent)
+HgPathSelector::HgPathSelector(QWidget *parent)
+    : QWidget(parent)
 {
     setupUI();
     reload();
 
     // connections
-    connect(m_selectPathAlias, SIGNAL(currentIndexChanged(int)), 
-            this, SLOT(slotChangeEditUrl(int)));
-    connect(m_selectPathAlias, SIGNAL(highlighted(int)), 
-            this, SLOT(slotChangeEditUrl(int)));
+    connect(m_selectPathAlias, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeEditUrl(int)));
+    connect(m_selectPathAlias, SIGNAL(highlighted(int)), this, SLOT(slotChangeEditUrl(int)));
 }
 
 void HgPathSelector::setupUI()
@@ -51,8 +49,7 @@ void HgPathSelector::reload()
         it.next();
         if (it.key() == QLatin1String("default")) {
             m_selectPathAlias->insertItem(0, it.key());
-        }
-        else {
+        } else {
             m_selectPathAlias->addItem(it.key());
         }
     }
@@ -61,15 +58,13 @@ void HgPathSelector::reload()
     slotChangeEditUrl(0);
 }
 
-
 void HgPathSelector::slotChangeEditUrl(int index)
 {
-    if (index == m_selectPathAlias->count() - 1) { ///enter URL manually
+    if (index == m_selectPathAlias->count() - 1) { /// enter URL manually
         m_urlEdit->setReadOnly(false);
         m_urlEdit->clear();
         m_urlEdit->setFocus();
-    }
-    else {
+    } else {
         QString url = m_pathList[m_selectPathAlias->itemText(index)];
         m_urlEdit->setText(url);
         m_urlEdit->setReadOnly(true);
@@ -78,9 +73,7 @@ void HgPathSelector::slotChangeEditUrl(int index)
 
 const QString HgPathSelector::remote() const
 {
-    return (m_selectPathAlias->currentIndex() == m_selectPathAlias->count()-1)?m_urlEdit->text():m_selectPathAlias->currentText();
+    return (m_selectPathAlias->currentIndex() == m_selectPathAlias->count() - 1) ? m_urlEdit->text() : m_selectPathAlias->currentText();
 }
-
-
 
 #include "moc_pathselector.cpp"

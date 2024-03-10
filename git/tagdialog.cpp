@@ -14,19 +14,19 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#include <QDialogButtonBox>
 #include <QGroupBox>
-#include <QPushButton>
-#include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QDialogButtonBox>
+#include <QPushButton>
 #include <QRegularExpression>
+#include <QVBoxLayout>
 
-TagDialog::TagDialog (QWidget* parent ):
-    QDialog (parent, Qt::Dialog)
+TagDialog::TagDialog(QWidget *parent)
+    : QDialog(parent, Qt::Dialog)
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Create Tag"));
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     this->setLayout(mainLayout);
@@ -39,18 +39,18 @@ TagDialog::TagDialog (QWidget* parent ):
     m_buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
     okButton->setText(i18nc("@action:button", "Create Tag"));
 
-    QWidget* boxWidget = new QWidget(this);
-    QVBoxLayout* boxLayout = new QVBoxLayout(boxWidget);
+    QWidget *boxWidget = new QWidget(this);
+    QVBoxLayout *boxLayout = new QVBoxLayout(boxWidget);
     mainLayout->addWidget(boxWidget);
 
-    QGroupBox* tagInformationGroupBox = new QGroupBox(boxWidget);
+    QGroupBox *tagInformationGroupBox = new QGroupBox(boxWidget);
     mainLayout->addWidget(tagInformationGroupBox);
     boxLayout->addWidget(tagInformationGroupBox);
     tagInformationGroupBox->setTitle(i18nc("@title:group", "Tag Information"));
-    QVBoxLayout * tagInformationLayout = new QVBoxLayout(tagInformationGroupBox);
+    QVBoxLayout *tagInformationLayout = new QVBoxLayout(tagInformationGroupBox);
     tagInformationGroupBox->setLayout(tagInformationLayout);
 
-    QLabel* nameLabel = new QLabel(i18nc("@label:textbox", "Tag Name:"), tagInformationGroupBox);
+    QLabel *nameLabel = new QLabel(i18nc("@label:textbox", "Tag Name:"), tagInformationGroupBox);
     tagInformationLayout->addWidget(nameLabel);
 
     m_tagNameTextEdit = new QLineEdit(tagInformationGroupBox);
@@ -58,7 +58,7 @@ TagDialog::TagDialog (QWidget* parent ):
     setOkButtonState();
     connect(m_tagNameTextEdit, &QLineEdit::textChanged, this, &TagDialog::setOkButtonState);
 
-    QLabel* messageLabel = new QLabel(i18nc("@label:textbox", "Tag Message:"), tagInformationGroupBox);
+    QLabel *messageLabel = new QLabel(i18nc("@label:textbox", "Tag Message:"), tagInformationGroupBox);
     tagInformationLayout->addWidget(messageLabel);
 
     m_tagMessageTextEdit = new KTextEdit(tagInformationGroupBox);
@@ -66,32 +66,32 @@ TagDialog::TagDialog (QWidget* parent ):
     m_tagMessageTextEdit->setLineWrapColumnOrWidth(72);
     tagInformationLayout->addWidget(m_tagMessageTextEdit);
 
-    QGroupBox* attachToGroupBox = new QGroupBox(boxWidget);
+    QGroupBox *attachToGroupBox = new QGroupBox(boxWidget);
     mainLayout->addWidget(attachToGroupBox);
     boxLayout->addWidget(attachToGroupBox);
     attachToGroupBox->setTitle(i18nc("@title:group", "Attach to"));
 
     mainLayout->addWidget(m_buttonBox);
 
-    QHBoxLayout* attachToLayout = new QHBoxLayout();
+    QHBoxLayout *attachToLayout = new QHBoxLayout();
     attachToGroupBox->setLayout(attachToLayout);
 
-    QLabel* branchLabel = new QLabel(i18nc("@label:listbox", "Branch:"), attachToGroupBox);
+    QLabel *branchLabel = new QLabel(i18nc("@label:listbox", "Branch:"), attachToGroupBox);
     attachToLayout->addWidget(branchLabel);
 
     m_branchComboBox = new QComboBox(attachToGroupBox);
     attachToLayout->addWidget(m_branchComboBox);
     attachToLayout->addStretch();
 
-    this->resize(QSize(300,200));
+    this->resize(QSize(300, 200));
 
-    //initialize alternate color scheme for errors
+    // initialize alternate color scheme for errors
     m_errorColors = m_tagNameTextEdit->palette();
     m_errorColors.setColor(QPalette::Normal, QPalette::Base, Qt::red);
     m_errorColors.setColor(QPalette::Inactive, QPalette::Base, Qt::red);
 
-    //get branch & tag names
-    GitWrapper * gitWrapper = GitWrapper::instance();
+    // get branch & tag names
+    GitWrapper *gitWrapper = GitWrapper::instance();
 
     int currentIndex;
     const QStringList branches = gitWrapper->branches(&currentIndex);
@@ -100,7 +100,6 @@ TagDialog::TagDialog (QWidget* parent ):
 
     gitWrapper->tagSet(m_tagNames);
 }
-
 
 QByteArray TagDialog::tagMessage() const
 {
@@ -114,33 +113,30 @@ QString TagDialog::tagName() const
 
 QString TagDialog::baseBranch() const
 {
-    return  m_branchComboBox->currentText();
+    return m_branchComboBox->currentText();
 }
 
 void TagDialog::setOkButtonState()
 {
-      const QString tagName = m_tagNameTextEdit->text().trimmed();
-      QString toolTip;
-      if (tagName.isEmpty()) {
+    const QString tagName = m_tagNameTextEdit->text().trimmed();
+    QString toolTip;
+    if (tagName.isEmpty()) {
         toolTip = i18nc("@info:tooltip", "You must enter a tag name first.");
-      }
-      else if (tagName.contains(QRegularExpression(QStringLiteral("\\s")))) {
+    } else if (tagName.contains(QRegularExpression(QStringLiteral("\\s")))) {
         toolTip = i18nc("@info:tooltip", "Tag names may not contain any whitespace.");
-      }
-      else if (m_tagNames.contains(tagName)) {
+    } else if (m_tagNames.contains(tagName)) {
         toolTip = i18nc("@info:tooltip", "A tag named '%1' already exists.", tagName);
-      }
-      QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
-      okButton->setEnabled(toolTip.isEmpty());
-      setLineEditErrorModeActive(!toolTip.isEmpty());
-      m_tagNameTextEdit->setToolTip(toolTip);
-      okButton->setToolTip(toolTip);
+    }
+    QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(toolTip.isEmpty());
+    setLineEditErrorModeActive(!toolTip.isEmpty());
+    m_tagNameTextEdit->setToolTip(toolTip);
+    okButton->setToolTip(toolTip);
 }
 
 void TagDialog::setLineEditErrorModeActive(bool active)
 {
     m_tagNameTextEdit->setPalette(active ? m_errorColors : QPalette());
 }
-
 
 #include "moc_tagdialog.cpp"

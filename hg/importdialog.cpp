@@ -5,28 +5,27 @@
 */
 
 #include "importdialog.h"
-#include "fileviewhgpluginsettings.h"
 #include "commititemdelegate.h"
+#include "fileviewhgpluginsettings.h"
 #include "hgwrapper.h"
 
-#include <QCheckBox>
-#include <QGroupBox>
-#include <QVBoxLayout>
-#include <QGridLayout>
-#include <QListWidget>
-#include <QProcess>
-#include <QFile>
-#include <QTextStream>
-#include <QFileDialog>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QCheckBox>
+#include <QFile>
+#include <QFileDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QListWidget>
+#include <QProcess>
+#include <QTextStream>
+#include <QVBoxLayout>
 
-HgImportDialog::HgImportDialog(QWidget *parent) :
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+HgImportDialog::HgImportDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Import"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Import"));
     okButton()->setText(xi18nc("@action:button", "Import"));
 
     //
@@ -34,15 +33,12 @@ HgImportDialog::HgImportDialog(QWidget *parent) :
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->importDialogWidth(),
-                               settings->importDialogHeight()));
+    this->resize(QSize(settings->importDialogWidth(), settings->importDialogHeight()));
 
     //
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_addPatches, &QAbstractButton::clicked,
-            this, &HgImportDialog::slotAddPatches);
-    connect(m_removePatches, &QAbstractButton::clicked,
-            this, &HgImportDialog::slotRemovePatches);
+    connect(m_addPatches, &QAbstractButton::clicked, this, &HgImportDialog::slotAddPatches);
+    connect(m_removePatches, &QAbstractButton::clicked, this, &HgImportDialog::slotRemovePatches);
 }
 
 void HgImportDialog::setupUI()
@@ -58,14 +54,10 @@ void HgImportDialog::setupUI()
 
     // options
     m_optionGroup = new QGroupBox(xi18nc("@label:group", "Options"));
-    m_optNoCommit = new QCheckBox(xi18nc("@label",
-                      "Do not commit, just update the working directory"));
-    m_optForce = new QCheckBox(xi18nc("@label",
-                      "Skip test for outstanding uncommitted changes"));
-    m_optExact = new QCheckBox(xi18nc("@label",
-                   "Apply patch to the nodes from which it was generated"));
-    m_optBypass = new QCheckBox(xi18nc("@label",
-                      "Apply patch without touching working directory"));
+    m_optNoCommit = new QCheckBox(xi18nc("@label", "Do not commit, just update the working directory"));
+    m_optForce = new QCheckBox(xi18nc("@label", "Skip test for outstanding uncommitted changes"));
+    m_optExact = new QCheckBox(xi18nc("@label", "Apply patch to the nodes from which it was generated"));
+    m_optBypass = new QCheckBox(xi18nc("@label", "Apply patch without touching working directory"));
 
     QVBoxLayout *optionLayout = new QVBoxLayout;
     optionLayout->addWidget(m_optNoCommit);
@@ -76,15 +68,13 @@ void HgImportDialog::setupUI()
 
     // top buttons
     QHBoxLayout *topButtons = new QHBoxLayout;
-    m_addPatches = new QPushButton(xi18nc("@label:button",
-                        "Add Patches"));
-    m_removePatches = new QPushButton(xi18nc("@label:button",
-                        "Remove Patches"));
+    m_addPatches = new QPushButton(xi18nc("@label:button", "Add Patches"));
+    m_removePatches = new QPushButton(xi18nc("@label:button", "Remove Patches"));
     topButtons->addWidget(m_addPatches);
     topButtons->addWidget(m_removePatches);
     topButtons->addStretch();
 
-    //setup main dialog widget
+    // setup main dialog widget
     QVBoxLayout *lay = new QVBoxLayout;
     lay->addLayout(topButtons);
     lay->addWidget(mainGroup);
@@ -120,7 +110,7 @@ void HgImportDialog::done(int r)
         }
 
         int countRows = m_patchList->count();
-        for (int i=0; i<countRows; i++) {
+        for (int i = 0; i < countRows; i++) {
             QListWidgetItem *item = m_patchList->item(i);
             args << item->data(Qt::UserRole + 5).toString();
         }
@@ -128,12 +118,10 @@ void HgImportDialog::done(int r)
         HgWrapper *hgw = HgWrapper::instance();
         if (hgw->executeCommandTillFinished(QLatin1String("import"), args)) {
             QDialog::done(r);
-        }
-        else {
+        } else {
             KMessageBox::error(this, hgw->readAllStandardError());
         }
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
@@ -155,22 +143,17 @@ void HgImportDialog::getPatchInfo(const QString &fileName)
         QString line = fileStream.readLine();
         if (line.startsWith(QLatin1String("diff"))) {
             break;
-        }
-        else if (line.startsWith(QLatin1String("# User"))) {
-            item->setData(Qt::UserRole + 3, 
-                    line.remove(QLatin1String("# User")).trimmed());
-        }
-        else if (line.startsWith(QLatin1String("# Node ID"))) {
+        } else if (line.startsWith(QLatin1String("# User"))) {
+            item->setData(Qt::UserRole + 3, line.remove(QLatin1String("# User")).trimmed());
+        } else if (line.startsWith(QLatin1String("# Node ID"))) {
             QString node = line.remove(QLatin1String("# Node ID")).trimmed();
             if (!m_patchList->findItems(node, Qt::MatchExactly).empty()) {
                 return;
             }
             item->setData(Qt::DisplayRole, node);
-        }
-        else if (line.startsWith(QLatin1String("# Parent"))) {
+        } else if (line.startsWith(QLatin1String("# Parent"))) {
             gotInfo = true;
-        }
-        else if (gotInfo) {
+        } else if (gotInfo) {
             item->setData(Qt::UserRole + 4, line.trimmed());
             break;
         }
@@ -192,11 +175,9 @@ void HgImportDialog::slotAddPatches()
 void HgImportDialog::slotRemovePatches()
 {
     int count = m_patchList->count();
-    for (int i=0; i<count; i++) {
+    for (int i = 0; i < count; i++) {
         m_patchList->takeItem(i);
     }
 }
-
-
 
 #include "moc_importdialog.cpp"

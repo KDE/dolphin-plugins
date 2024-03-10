@@ -6,14 +6,14 @@
 
 #include "svncleanupdialog.h"
 
+#include <QDebug>
 #include <QFileDialog>
 #include <QFileInfo>
-#include <QDebug>
 
 #include "svncommands.h"
 
-SvnCleanupDialog::SvnCleanupDialog(const QString& workingDir, QWidget *parent) :
-    QDialog(parent)
+SvnCleanupDialog::SvnCleanupDialog(const QString &workingDir, QWidget *parent)
+    : QDialog(parent)
 {
     m_ui.setupUi(this);
 
@@ -22,14 +22,16 @@ SvnCleanupDialog::SvnCleanupDialog(const QString& workingDir, QWidget *parent) :
      */
     connect(m_ui.buttonCancel, &QPushButton::clicked, this, &QDialog::reject);
     QAction *pickDirectory = m_ui.lineEditDirectory->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
-    connect(pickDirectory, &QAction::triggered, this, [this] () {
-        const QString dir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose a directory to clean up"),
-                                                              m_ui.lineEditDirectory->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    connect(pickDirectory, &QAction::triggered, this, [this]() {
+        const QString dir = QFileDialog::getExistingDirectory(this,
+                                                              i18nc("@title:window", "Choose a directory to clean up"),
+                                                              m_ui.lineEditDirectory->text(),
+                                                              QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
         if (!dir.isEmpty()) {
             m_ui.lineEditDirectory->setText(dir);
         }
-    } );
+    });
 
     /*
      * Additional setup.

@@ -6,15 +6,15 @@
 
 #include "svnprogressdialog.h"
 
-#include <QProcess>
 #include <QDebug>
+#include <QProcess>
 
 #include "svncommands.h"
 
-SvnProgressDialog::SvnProgressDialog(const QString& title, const QString& workingDir, QWidget *parent) :
-    QDialog(parent),
-    m_svnTerminated(false),
-    m_workingDir(workingDir)
+SvnProgressDialog::SvnProgressDialog(const QString &title, const QString &workingDir, QWidget *parent)
+    : QDialog(parent)
+    , m_svnTerminated(false)
+    , m_workingDir(workingDir)
 {
     m_ui.setupUi(this);
 
@@ -43,22 +43,22 @@ void SvnProgressDialog::connectToProcess(QProcess *process)
 
     m_svnTerminated = false;
 
-    m_conCancel = connect(m_ui.buttonCancel, &QPushButton::clicked, this, [this, process] () {
+    m_conCancel = connect(m_ui.buttonCancel, &QPushButton::clicked, this, [this, process]() {
         process->terminate();
         m_svnTerminated = true;
-    } );
+    });
     m_conCompeted = connect(process, &QProcess::finished, this, &SvnProgressDialog::operationCompeleted);
-    m_conProcessError = connect(process, &QProcess::errorOccurred, this, [this, process] (QProcess::ProcessError) {
+    m_conProcessError = connect(process, &QProcess::errorOccurred, this, [this, process](QProcess::ProcessError) {
         const QString commandLine = process->program() + process->arguments().join(QLatin1Char(' '));
         appendErrorText(i18nc("@info:status", "Error starting: %1", commandLine));
         operationCompeleted();
-    } );
-    m_conStdOut = connect(process, &QProcess::readyReadStandardOutput, this, [this, process] () {
-        appendInfoText( QString::fromLocal8Bit(process->readAllStandardOutput()) );
-    } );
-    m_conStrErr = connect(process, &QProcess::readyReadStandardError, this, [this, process] () {
-        appendErrorText( QString::fromLocal8Bit(process->readAllStandardError()) );
-    } );
+    });
+    m_conStdOut = connect(process, &QProcess::readyReadStandardOutput, this, [this, process]() {
+        appendInfoText(QString::fromLocal8Bit(process->readAllStandardOutput()));
+    });
+    m_conStrErr = connect(process, &QProcess::readyReadStandardError, this, [this, process]() {
+        appendErrorText(QString::fromLocal8Bit(process->readAllStandardError()));
+    });
 }
 
 void SvnProgressDialog::disconnectFromProcess()
@@ -70,7 +70,7 @@ void SvnProgressDialog::disconnectFromProcess()
     QObject::disconnect(m_conStrErr);
 }
 
-void SvnProgressDialog::appendInfoText(const QString& text)
+void SvnProgressDialog::appendInfoText(const QString &text)
 {
     const QTextCursor pos = m_ui.texteditMessage->textCursor();
 
@@ -79,7 +79,7 @@ void SvnProgressDialog::appendInfoText(const QString& text)
     m_ui.texteditMessage->setTextCursor(pos);
 }
 
-void SvnProgressDialog::appendErrorText(const QString& text)
+void SvnProgressDialog::appendErrorText(const QString &text)
 {
     static const QString htmlBegin = QStringLiteral("<font color=\"Red\">");
     static const QString htmlEnd = QStringLiteral("</font><br>");

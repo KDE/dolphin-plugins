@@ -31,9 +31,9 @@ private Q_SLOTS:
     void slotTextChanged(const QString &text);
 
 private:
-    QString           m_source;
-    QString           m_source_dir;
-    QLineEdit        *m_destinationFile;
+    QString m_source;
+    QString m_source_dir;
+    QLineEdit *m_destinationFile;
 };
 
 #endif // HGRENAMEDIALOG_H

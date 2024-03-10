@@ -7,8 +7,8 @@
 #ifndef HGGENERAL_CONFIG_WIDGET_H
 #define HGGENERAL_CONFIG_WIDGET_H
 
-#include <QWidget>
 #include "hgconfig.h"
+#include <QWidget>
 
 class QLineEdit;
 class QCheckBox;
@@ -44,4 +44,3 @@ private:
 };
 
 #endif // HGGENERAL_CONFIG_WIDGET_H
-

@@ -9,25 +9,24 @@
 #include "fileviewhgpluginsettings.h"
 #include "hgwrapper.h"
 
-#include <QWidget>
-#include <QGroupBox>
-#include <QCheckBox>
-#include <QGridLayout>
-#include <QVBoxLayout>
-#include <QListWidgetItem>
-#include <QLabel>
-#include <QProcess>
-#include <QDebug>
-#include <QLineEdit>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QCheckBox>
+#include <QDebug>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QLabel>
+#include <QLineEdit>
+#include <QListWidgetItem>
+#include <QProcess>
+#include <QVBoxLayout>
+#include <QWidget>
 
-HgBackoutDialog::HgBackoutDialog(QWidget *parent) :
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+HgBackoutDialog::HgBackoutDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Backout"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Backout"));
 
     okButton()->setText(xi18nc("@action:button", "Backout"));
     okButton()->setDisabled(true);
@@ -37,17 +36,13 @@ HgBackoutDialog::HgBackoutDialog(QWidget *parent) :
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->backoutDialogWidth(),
-                               settings->backoutDialogHeight()));
+    this->resize(QSize(settings->backoutDialogWidth(), settings->backoutDialogHeight()));
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
-    connect(m_selectBaseCommitButton, &QAbstractButton::clicked,
-            this, &HgBackoutDialog::slotSelectBaseChangeset);
-    connect(m_selectParentCommitButton, &QAbstractButton::clicked,
-            this, &HgBackoutDialog::slotSelectParentChangeset);
-    connect(m_baseRevision, &QLineEdit::textChanged,
-            this, &HgBackoutDialog::slotUpdateOkButton);
+    connect(m_selectBaseCommitButton, &QAbstractButton::clicked, this, &HgBackoutDialog::slotSelectBaseChangeset);
+    connect(m_selectParentCommitButton, &QAbstractButton::clicked, this, &HgBackoutDialog::slotSelectParentChangeset);
+    connect(m_baseRevision, &QLineEdit::textChanged, this, &HgBackoutDialog::slotUpdateOkButton);
 }
 
 void HgBackoutDialog::setupUI()
@@ -55,21 +50,16 @@ void HgBackoutDialog::setupUI()
     m_mainGroup = new QGroupBox;
     m_baseRevision = new QLineEdit;
     m_parentRevision = new QLineEdit;
-    m_optMerge = new QCheckBox(xi18nc("@label:checkbox",
-                        "Merge with old dirstate parent after backout"));
-    m_selectParentCommitButton = new QPushButton(xi18nc("@label:button",
-                                                "Select Changeset"));
-    m_selectBaseCommitButton = new QPushButton(xi18nc("@label:button",
-                                            "Select Changeset"));
+    m_optMerge = new QCheckBox(xi18nc("@label:checkbox", "Merge with old dirstate parent after backout"));
+    m_selectParentCommitButton = new QPushButton(xi18nc("@label:button", "Select Changeset"));
+    m_selectBaseCommitButton = new QPushButton(xi18nc("@label:button", "Select Changeset"));
     QGridLayout *mainGroupLayout = new QGridLayout;
 
-    mainGroupLayout->addWidget(new QLabel(xi18nc("@label",
-                                    "Revision to Backout: ")), 0, 0);
+    mainGroupLayout->addWidget(new QLabel(xi18nc("@label", "Revision to Backout: ")), 0, 0);
     mainGroupLayout->addWidget(m_baseRevision, 0, 1);
     mainGroupLayout->addWidget(m_selectBaseCommitButton, 0, 2);
 
-    mainGroupLayout->addWidget(new QLabel(xi18nc("@label",
-                                    "Parent Revision (optional): ")), 1, 0);
+    mainGroupLayout->addWidget(new QLabel(xi18nc("@label", "Parent Revision (optional): ")), 1, 0);
     mainGroupLayout->addWidget(m_parentRevision, 1, 1);
     mainGroupLayout->addWidget(m_selectParentCommitButton, 1, 2);
 
@@ -101,8 +91,9 @@ void HgBackoutDialog::loadCommits()
     QStringList args;
     args << QLatin1String("log");
     args << QLatin1String("--template");
-    args << QLatin1String("{rev}\n{node|short}\n{branch}\n"
-                          "{author}\n{desc|firstline}\n");
+    args << QLatin1String(
+        "{rev}\n{node|short}\n{branch}\n"
+        "{author}\n{desc|firstline}\n");
 
     process.start(QLatin1String("hg"), args);
     process.waitForFinished();
@@ -127,23 +118,22 @@ void HgBackoutDialog::loadCommits()
             item->setData(Qt::UserRole + 4, log);
             m_commitInfo->addItem(item);
         }
-        count = (count + 1)%FINAL;
+        count = (count + 1) % FINAL;
     }
 }
 
 QString HgBackoutDialog::selectChangeset()
 {
     DialogBase diag(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    diag.setWindowTitle(xi18nc("@title:window",
-                "Select Changeset"));
+    diag.setWindowTitle(xi18nc("@title:window", "Select Changeset"));
     diag.okButton()->setText(xi18nc("@action:button", "Select"));
 
     diag.setMinimumWidth(700);
-    
+
     m_commitInfo = new HgCommitInfoWidget;
     loadCommits();
     diag.layout()->insertWidget(0, m_commitInfo);
-    
+
     if (diag.exec() == QDialog::Accepted) {
         return m_commitInfo->selectedChangeset();
     }
@@ -186,12 +176,10 @@ void HgBackoutDialog::done(int r)
         if (hgw->executeCommandTillFinished(QLatin1String("backout"), args)) {
             KMessageBox::information(this, hgw->readAllStandardOutput());
             QDialog::done(r);
-        }
-        else {
+        } else {
             KMessageBox::error(this, hgw->readAllStandardError());
         }
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
@@ -201,7 +189,5 @@ void HgBackoutDialog::slotUpdateOkButton(const QString &text)
     qDebug() << "text" << text;
     okButton()->setEnabled(!text.isEmpty());
 }
-
-
 
 #include "moc_backoutdialog.cpp"

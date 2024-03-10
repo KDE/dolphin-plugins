@@ -9,11 +9,11 @@
 
 #include "hgwrapper.h"
 
-#include <KFileItem>
 #include <Dolphin/KVersionControlPlugin>
+#include <KFileItem>
 #include <QHash>
-#include <QString>
 #include <QProcess>
+#include <QString>
 
 class QAction;
 class QMenu;
@@ -26,20 +26,19 @@ public:
     FileViewHgPlugin(QObject *parent, const QList<QVariant> &args);
     ~FileViewHgPlugin() override;
     QString fileName() const override;
-    QString localRepositoryRoot(const QString& directory) const override;
-    bool beginRetrieval(const QString& directory) override;
+    QString localRepositoryRoot(const QString &directory) const override;
+    bool beginRetrieval(const QString &directory) override;
     void endRetrieval() override;
-    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
-    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
-    virtual QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem &item) const override;
+    QList<QAction *> versionControlActions(const KFileItemList &items) const override;
+    virtual QList<QAction *> outOfVersionControlActions(const KFileItemList &items) const override;
 
-
-private: 
+private:
     /**
      * Check if HgWrapper is created and connect some signals/slots. Created
      * to ensure that HgWrapper singleton is instantiated not during
-     * plugin construction hence not in other thread which ends up giving 
-     * a lot of warnings. 
+     * plugin construction hence not in other thread which ends up giving
+     * a lot of warnings.
      */
     void createHgWrapper() const;
 
@@ -49,14 +48,14 @@ private:
     void clearMessages() const;
 
     /**
-     * Read executable file path to open diff patches with from 
+     * Read executable file path to open diff patches with from
      * $HOME/.dolphin-hg file in INI format
      */
     QString visualDiffExecPath();
 
-    QList<QAction*> itemContextMenu(const KFileItemList &items) const;
-    QList<QAction*> directoryContextMenu(const QString &directory) const;
-    QList<QAction*> universalContextMenuActions(const QString &directory) const;
+    QList<QAction *> itemContextMenu(const KFileItemList &items) const;
+    QList<QAction *> directoryContextMenu(const QString &directory) const;
+    QList<QAction *> universalContextMenuActions(const QString &directory) const;
 
 private Q_SLOTS:
     void addFiles();
@@ -119,7 +118,7 @@ private:
     QAction *m_serveAction;
     QAction *m_backoutAction;
 
-    QWidget* m_parentWidget;
+    QWidget *m_parentWidget;
 
     mutable KFileItemList m_contextItems;
     mutable QString m_universalCurrentDirectory;
@@ -133,4 +132,3 @@ private:
 };
 
 #endif // FILEVIEWHGPLUGIN_H
-

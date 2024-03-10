@@ -5,24 +5,23 @@
 */
 
 #include "servedialog.h"
-#include "servewrapper.h"
 #include "fileviewhgpluginsettings.h"
 #include "hgwrapper.h"
+#include "servewrapper.h"
 
-#include <QSpinBox>
-#include <QTextEdit>
-#include <QLabel>
-#include <QDesktopServices>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QDesktopServices>
+#include <QLabel>
+#include <QSpinBox>
+#include <QTextEdit>
 
-HgServeDialog::HgServeDialog(QWidget *parent) :
-    DialogBase(QDialogButtonBox::NoButton)
+HgServeDialog::HgServeDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::NoButton)
 {
     Q_UNUSED(parent)
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Serve"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Serve"));
 
     //
     m_serverWrapper = HgServeWrapper::instance();
@@ -33,24 +32,18 @@ HgServeDialog::HgServeDialog(QWidget *parent) :
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->serveDialogWidth(),
-                               settings->serveDialogHeight()));
+    this->resize(QSize(settings->serveDialogWidth(), settings->serveDialogHeight()));
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
     connect(m_startButton, &QAbstractButton::clicked, this, &HgServeDialog::slotStart);
     connect(m_stopButton, &QAbstractButton::clicked, this, &HgServeDialog::slotStop);
     connect(m_browseButton, &QAbstractButton::clicked, this, &HgServeDialog::slotBrowse);
-    connect(m_serverWrapper, &HgServeWrapper::finished,
-            this, &HgServeDialog::slotUpdateButtons);
-    connect(m_serverWrapper, &HgServeWrapper::started,
-            this, &HgServeDialog::slotUpdateButtons);
-    connect(m_serverWrapper, &HgServeWrapper::error,
-            this, &HgServeDialog::slotUpdateButtons);
-    connect(m_serverWrapper, &HgServeWrapper::error,
-            this, &HgServeDialog::slotServerError);
-    connect(m_serverWrapper, &HgServeWrapper::readyReadLine,
-            this, &HgServeDialog::appendServerOutput);
+    connect(m_serverWrapper, &HgServeWrapper::finished, this, &HgServeDialog::slotUpdateButtons);
+    connect(m_serverWrapper, &HgServeWrapper::started, this, &HgServeDialog::slotUpdateButtons);
+    connect(m_serverWrapper, &HgServeWrapper::error, this, &HgServeDialog::slotUpdateButtons);
+    connect(m_serverWrapper, &HgServeWrapper::error, this, &HgServeDialog::slotServerError);
+    connect(m_serverWrapper, &HgServeWrapper::readyReadLine, this, &HgServeDialog::appendServerOutput);
 }
 
 void HgServeDialog::setupUI()
@@ -108,8 +101,7 @@ void HgServeDialog::slotUpdateButtons()
         m_startButton->setEnabled(false);
         m_stopButton->setEnabled(true);
         m_portNumber->setEnabled(false);
-    }
-    else {
+    } else {
         m_startButton->setEnabled(true);
         m_stopButton->setEnabled(false);
         m_portNumber->setEnabled(true);
@@ -119,8 +111,7 @@ void HgServeDialog::slotUpdateButtons()
 
 void HgServeDialog::slotStart()
 {
-    m_serverWrapper->startServer(HgWrapper::instance()->getBaseDir(),
-                                 m_portNumber->value());
+    m_serverWrapper->startServer(HgWrapper::instance()->getBaseDir(), m_portNumber->value());
     m_browseButton->setDisabled(false);
 }
 
@@ -132,17 +123,15 @@ void HgServeDialog::slotStop()
 
 void HgServeDialog::slotBrowse()
 {
-    QDesktopServices::openUrl(QUrl(QStringLiteral("http://localhost:%1").
-        arg(m_portNumber->value())));
+    QDesktopServices::openUrl(QUrl(QStringLiteral("http://localhost:%1").arg(m_portNumber->value())));
 }
-
 
 void HgServeDialog::slotServerError()
 {
     m_serverWrapper->cleanUnused();
 }
 
-void HgServeDialog::appendServerOutput(const QString &repoLocation, const QString &line) 
+void HgServeDialog::appendServerOutput(const QString &repoLocation, const QString &line)
 {
     if (HgWrapper::instance()->getBaseDir() == repoLocation) {
         m_logEdit->append(line);
@@ -156,8 +145,5 @@ void HgServeDialog::saveGeometry()
     settings->setServeDialogWidth(this->width());
     settings->save();
 }
-
-
-
 
 #include "moc_servedialog.cpp"

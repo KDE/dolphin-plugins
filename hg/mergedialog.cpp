@@ -5,28 +5,27 @@
 */
 
 #include "mergedialog.h"
-#include "hgwrapper.h"
-#include "commititemdelegate.h"
 #include "commitinfowidget.h"
+#include "commititemdelegate.h"
 #include "fileviewhgpluginsettings.h"
+#include "hgwrapper.h"
 
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QTextEdit>
-#include <QListWidgetItem>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QListWidgetItem>
+#include <QTextEdit>
+#include <QVBoxLayout>
 
-HgMergeDialog::HgMergeDialog(QWidget *parent):
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+HgMergeDialog::HgMergeDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Merge"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Merge"));
     okButton()->setText(xi18nc("@label:button", "Merge"));
 
-    // UI 
+    // UI
 
     m_currentChangeset = new QLabel;
     m_commitInfoWidget = new HgCommitInfoWidget;
@@ -41,8 +40,7 @@ HgMergeDialog::HgMergeDialog(QWidget *parent):
 
     // load saved geometry
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->mergeDialogWidth(),
-                               settings->mergeDialogHeight()));
+    this->resize(QSize(settings->mergeDialogWidth(), settings->mergeDialogHeight()));
 
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
@@ -89,9 +87,8 @@ void HgMergeDialog::updateInitialDialog()
                 item->setData(Qt::UserRole + 3, author);
                 item->setData(Qt::UserRole + 4, log);
                 m_commitInfoWidget->addItem(item);
-
             }
-            count = (count + 1)%FINAL;
+            count = (count + 1) % FINAL;
         }
     }
 }
@@ -103,8 +100,7 @@ void HgMergeDialog::done(int r)
 
         QListWidgetItem *currentItem = m_commitInfoWidget->currentItem();
         if (currentItem == nullptr) {
-            KMessageBox::error(this,
-                    xi18nc("@message", "No head selected for merge!"));
+            KMessageBox::error(this, xi18nc("@message", "No head selected for merge!"));
             return;
         }
 
@@ -117,13 +113,11 @@ void HgMergeDialog::done(int r)
         if (hgw->executeCommandTillFinished(QStringLiteral("merge"), args)) {
             KMessageBox::information(this, hgw->readAllStandardOutput());
             QDialog::done(r);
-        }
-        else {
+        } else {
             KMessageBox::error(this, hgw->readAllStandardError());
             return;
         }
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
@@ -135,7 +129,5 @@ void HgMergeDialog::saveGeometry()
     settings->setMergeDialogWidth(this->width());
     settings->save();
 }
-
-
 
 #include "moc_mergedialog.cpp"

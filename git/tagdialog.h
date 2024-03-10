@@ -21,7 +21,7 @@ class TagDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit TagDialog(QWidget* parent = nullptr);
+    explicit TagDialog(QWidget *parent = nullptr);
     /**
      * Returns the tag message given by the user.
      * @returns The tag message.
@@ -40,15 +40,17 @@ public:
     QString baseBranch() const;
 private Q_SLOTS:
     void setOkButtonState();
+
 private:
     inline void setLineEditErrorModeActive(bool active);
+
 private:
     QSet<QString> m_tagNames;
-    KTextEdit* m_tagMessageTextEdit;
-    QLineEdit* m_tagNameTextEdit;
-    QComboBox* m_branchComboBox;
-    QDialogButtonBox* m_buttonBox;
-    QRadioButton* branchRadioButton;
+    KTextEdit *m_tagMessageTextEdit;
+    QLineEdit *m_tagNameTextEdit;
+    QComboBox *m_branchComboBox;
+    QDialogButtonBox *m_buttonBox;
+    QRadioButton *branchRadioButton;
     QPalette m_errorColors;
 };
 

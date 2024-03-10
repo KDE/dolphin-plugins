@@ -12,18 +12,18 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#include <QDialogButtonBox>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
 #include <QPushButton>
+#include <QVBoxLayout>
 
-PushDialog::PushDialog (QWidget* parent ):
-    QDialog (parent, Qt::Dialog)
+PushDialog::PushDialog(QWidget *parent)
+    : QDialog(parent, Qt::Dialog)
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Push"));
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     this->setLayout(mainLayout);
@@ -36,49 +36,49 @@ PushDialog::PushDialog (QWidget* parent ):
     m_buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
     okButton->setText(i18nc("@action:button", "Push"));
 
-    QWidget * boxWidget = new QWidget(this);
-    QVBoxLayout * boxLayout = new QVBoxLayout(boxWidget);
+    QWidget *boxWidget = new QWidget(this);
+    QVBoxLayout *boxLayout = new QVBoxLayout(boxWidget);
     mainLayout->addWidget(boxWidget);
 
-    //Destination
-    QGroupBox * destinationGroupBox = new QGroupBox(boxWidget);
+    // Destination
+    QGroupBox *destinationGroupBox = new QGroupBox(boxWidget);
     mainLayout->addWidget(destinationGroupBox);
     boxLayout->addWidget(destinationGroupBox);
     destinationGroupBox->setTitle(i18nc("@title:group The remote host", "Destination"));
-    QHBoxLayout * destinationHBox = new QHBoxLayout(destinationGroupBox);
+    QHBoxLayout *destinationHBox = new QHBoxLayout(destinationGroupBox);
     destinationGroupBox->setLayout(destinationHBox);
 
-    QLabel * remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), destinationGroupBox);
+    QLabel *remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), destinationGroupBox);
     destinationHBox->addWidget(remoteLabel);
     m_remoteComboBox = new QComboBox(destinationGroupBox);
     destinationHBox->addWidget(m_remoteComboBox);
     destinationHBox->addStretch();
 
-    //Branches
-    QGroupBox* branchesGroupBox = new QGroupBox(boxWidget);
+    // Branches
+    QGroupBox *branchesGroupBox = new QGroupBox(boxWidget);
     mainLayout->addWidget(branchesGroupBox);
     boxLayout->addWidget(branchesGroupBox);
     branchesGroupBox->setTitle(i18nc("@title:group", "Branches"));
-    QHBoxLayout * branchesHBox = new QHBoxLayout(branchesGroupBox);
+    QHBoxLayout *branchesHBox = new QHBoxLayout(branchesGroupBox);
     branchesGroupBox->setLayout(branchesHBox);
 
-    QLabel * localBranchLabel = new QLabel(i18nc("@label:listbox", "Local Branch:"), branchesGroupBox);
+    QLabel *localBranchLabel = new QLabel(i18nc("@label:listbox", "Local Branch:"), branchesGroupBox);
     branchesHBox->addWidget(localBranchLabel);
     m_localBranchComboBox = new QComboBox(branchesGroupBox);
     branchesHBox->addWidget(m_localBranchComboBox);
 
     branchesHBox->addStretch();
 
-    QLabel * remoteBranchLabel = new QLabel(i18nc("@label:listbox", "Remote Branch:"), branchesGroupBox);
+    QLabel *remoteBranchLabel = new QLabel(i18nc("@label:listbox", "Remote Branch:"), branchesGroupBox);
     branchesHBox->addWidget(remoteBranchLabel);
     m_remoteBranchComboBox = new QComboBox(branchesGroupBox);
     branchesHBox->addWidget(m_remoteBranchComboBox);
 
-    QGroupBox* optionsGroupBox = new QGroupBox(boxWidget);
+    QGroupBox *optionsGroupBox = new QGroupBox(boxWidget);
     mainLayout->addWidget(optionsGroupBox);
     boxLayout->addWidget(optionsGroupBox);
     optionsGroupBox->setTitle(i18nc("@title:group", "Options"));
-    QHBoxLayout * optionsHBox = new QHBoxLayout(optionsGroupBox);
+    QHBoxLayout *optionsHBox = new QHBoxLayout(optionsGroupBox);
     optionsGroupBox->setLayout(optionsHBox);
     m_forceCheckBox = new QCheckBox(i18nc("@option:check", "Force"), optionsGroupBox);
     m_forceCheckBox->setToolTip(i18nc("@info:tooltip", "Proceed even if the remote branch is not an ancestor of the local branch."));
@@ -86,18 +86,18 @@ PushDialog::PushDialog (QWidget* parent ):
 
     mainLayout->addWidget(m_buttonBox);
 
-    //populate UI
-    GitWrapper * gitWrapper = GitWrapper::instance();
+    // populate UI
+    GitWrapper *gitWrapper = GitWrapper::instance();
 
-    //get destinations
+    // get destinations
     QStringList remotes = gitWrapper->pushRemotes();
     m_remoteComboBox->addItems(remotes);
 
-    //get branch names
+    // get branch names
     int currentBranchIndex;
     const QStringList branches = gitWrapper->branches(&currentBranchIndex);
 
-    for (const QString& branch : branches) {
+    for (const QString &branch : branches) {
         if (branch.startsWith(QLatin1String("remotes/"))) {
             const QString remote = branch.section(QLatin1Char('/'), 1, 1);
             const QString name = branch.section(QLatin1Char('/'), 2);
@@ -110,7 +110,7 @@ PushDialog::PushDialog (QWidget* parent ):
         m_localBranchComboBox->setCurrentText(branches.at(currentBranchIndex));
     }
     remoteSelectionChanged(m_remoteComboBox->currentText());
-
+    
     //Signals
     connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)),
             this, SLOT(remoteSelectionChanged(QString)));
@@ -138,16 +138,16 @@ bool PushDialog::force() const
     return m_forceCheckBox->isChecked();
 }
 
-void PushDialog::remoteSelectionChanged(const QString& newRemote)
+void PushDialog::remoteSelectionChanged(const QString &newRemote)
 {
     m_remoteBranchComboBox->clear();
     m_remoteBranchComboBox->addItems(m_remoteBranches.value(newRemote));
     localBranchSelectionChanged(m_localBranchComboBox->currentText());
 }
 
-void PushDialog::localBranchSelectionChanged(const QString& newLocalBranch)
+void PushDialog::localBranchSelectionChanged(const QString &newLocalBranch)
 {
-    //select matching remote branch if possible
+    // select matching remote branch if possible
     const int index = m_remoteBranchComboBox->findText(newLocalBranch);
     if (index != -1) {
         m_remoteBranchComboBox->setCurrentIndex(index);
@@ -155,6 +155,5 @@ void PushDialog::localBranchSelectionChanged(const QString& newLocalBranch)
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setEnabled(m_remoteBranchComboBox->count() > 0);
 }
-
 
 #include "moc_pushdialog.cpp"

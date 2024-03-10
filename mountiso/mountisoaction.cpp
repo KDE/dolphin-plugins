@@ -6,12 +6,12 @@
 
 #include "mountisoaction.h"
 
+#include <errno.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <errno.h>
+#include <unistd.h>
 
 #include <QAction>
 #include <QDBusConnection>
@@ -63,8 +63,7 @@ MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
  */
 const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 {
-    const QList<Solid::Device> blockDevices =
-        Solid::Device::listFromQuery(QStringLiteral("[ IS StorageVolume AND IS GenericInterface ]"));
+    const QList<Solid::Device> blockDevices = Solid::Device::listFromQuery(QStringLiteral("[ IS StorageVolume AND IS GenericInterface ]"));
 
     for (const Solid::Device &device : blockDevices) {
         auto genericDevice = device.as<Solid::GenericInterface>();
@@ -106,17 +105,14 @@ void mount(const QString &file)
     }
     QMap<QString, QVariant> options;
 
-    QDBusInterface manager(
-            QStringLiteral("org.freedesktop.UDisks2"),
-            QStringLiteral("/org/freedesktop/UDisks2/Manager"),
-            QStringLiteral("org.freedesktop.UDisks2.Manager"),
-            QDBusConnection::systemBus());
-    QDBusReply<QDBusObjectPath> reply =
-        manager.call(QStringLiteral("LoopSetup"), QVariant::fromValue(qtFd), options);
+    QDBusInterface manager(QStringLiteral("org.freedesktop.UDisks2"),
+                           QStringLiteral("/org/freedesktop/UDisks2/Manager"),
+                           QStringLiteral("org.freedesktop.UDisks2.Manager"),
+                           QDBusConnection::systemBus());
+    QDBusReply<QDBusObjectPath> reply = manager.call(QStringLiteral("LoopSetup"), QVariant::fromValue(qtFd), options);
 
     if (!reply.isValid()) {
-        qWarning() << "Error mounting " << file << ":" << reply.error().name()
-                   << reply.error().message();
+        qWarning() << "Error mounting " << file << ":" << reply.error().name() << reply.error().message();
         return;
     }
 
@@ -153,8 +149,7 @@ void mount(const QString &file)
     auto storageVolume = device.as<Solid::StorageVolume>();
     const QString uuid = storageVolume->uuid();
 
-    const QList<Solid::Device> devices = Solid::Device::listFromQuery(
-        QStringLiteral("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid));
+    const QList<Solid::Device> devices = Solid::Device::listFromQuery(QStringLiteral("[ StorageVolume.uuid == '%1' AND IS StorageAccess ]").arg(uuid));
     for (auto dev : devices) {
         auto storageAccess = dev.as<Solid::StorageAccess>();
         storageAccess->setup();
@@ -181,16 +176,14 @@ void unmount(const Solid::Device &device)
     // Empty argument required for Loop Delete method to work
     QMap<QString, QVariant> options;
 
-    QDBusInterface manager(
-            QStringLiteral("org.freedesktop.UDisks2"),
-            device.udi(),
-            QStringLiteral("org.freedesktop.UDisks2.Loop"),
-            QDBusConnection::systemBus());
+    QDBusInterface manager(QStringLiteral("org.freedesktop.UDisks2"),
+                           device.udi(),
+                           QStringLiteral("org.freedesktop.UDisks2.Loop"),
+                           QDBusConnection::systemBus());
     manager.call(QStringLiteral("Delete"), options);
 }
 
-QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItemInfos,
-                                         QWidget *parentWidget)
+QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItemInfos, QWidget *parentWidget)
 {
     if (fileItemInfos.urlList().size() != 1 || !fileItemInfos.isLocal()) {
         return {};
@@ -198,10 +191,8 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 
     const QString mimeType = fileItemInfos.mimeType();
 
-    if (mimeType != QLatin1String("application/vnd.efi.iso")
-            && mimeType != QLatin1String("application/vnd.efi.img")
-            && mimeType != QLatin1String("application/x-cd-image")
-            && mimeType != QLatin1String("application/x-raw-disk-image")) {
+    if (mimeType != QLatin1String("application/vnd.efi.iso") && mimeType != QLatin1String("application/vnd.efi.img")
+        && mimeType != QLatin1String("application/x-cd-image") && mimeType != QLatin1String("application/x-raw-disk-image")) {
         return {};
     }
 
@@ -222,8 +213,10 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 
         QAction *action = new QAction(icon, title, parentWidget);
 
-        connect(action, &QAction::triggered, this, [file]() { mount(file); });
-        return { action };
+        connect(action, &QAction::triggered, this, [file]() {
+            mount(file);
+        });
+        return {action};
     } else {
         // fileItem is mounted on device
         const QIcon icon = QIcon::fromTheme(QStringLiteral("media-eject"));
@@ -231,8 +224,10 @@ QList<QAction *> MountIsoAction::actions(const KFileItemListProperties &fileItem
 
         QAction *action = new QAction(icon, title, parentWidget);
 
-        connect(action, &QAction::triggered, this, [device]() { unmount(device); });
-        return { action };
+        connect(action, &QAction::triggered, this, [device]() {
+            unmount(device);
+        });
+        return {action};
     }
 
     return {};

@@ -13,7 +13,7 @@ class HgCommitInfoWidget;
 class QCheckBox;
 class QGroupBox;
 
-//TODO: Some helper for writing patterns
+// TODO: Some helper for writing patterns
 //
 /**
  * Dialog to implement mercurial export feature. Dialogs presents list of
@@ -25,7 +25,7 @@ class HgExportDialog : public DialogBase
     Q_OBJECT
 
 public:
-    explicit HgExportDialog(QWidget *parent=nullptr);
+    explicit HgExportDialog(QWidget *parent = nullptr);
 
 public Q_SLOTS:
     void done(int r) override;
@@ -40,13 +40,11 @@ private:
 private:
     HgCommitInfoWidget *m_commitInfoWidget;
 
-    //options
+    // options
     QGroupBox *m_optionGroup;
     QCheckBox *m_optText;
     QCheckBox *m_optGit;
     QCheckBox *m_optNoDates;
-
 };
 
-#endif /* HGEXPORTDIALOG_H */ 
-
+#endif /* HGEXPORTDIALOG_H */

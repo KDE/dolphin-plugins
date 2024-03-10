@@ -17,16 +17,17 @@ class PullDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit PullDialog(QWidget* parent = nullptr);
+    explicit PullDialog(QWidget *parent = nullptr);
     QString source() const;
     QString remoteBranch() const;
+
 private:
     QDialogButtonBox *m_buttonBox;
-    QComboBox * m_remoteComboBox;
-    QComboBox * m_remoteBranchComboBox;
+    QComboBox *m_remoteComboBox;
+    QComboBox *m_remoteBranchComboBox;
     QHash<QString, QStringList> m_remoteBranches;
 private Q_SLOTS:
-    void remoteSelectionChanged(const QString& newRemote);
+    void remoteSelectionChanged(const QString &newRemote);
 };
 
 #endif // PULLDIALOG_H

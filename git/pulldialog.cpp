@@ -15,14 +15,14 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QVBoxLayout>
 #include <QPushButton>
+#include <QVBoxLayout>
 
-PullDialog::PullDialog(QWidget* parent):
-    QDialog(parent, Qt::Dialog)
+PullDialog::PullDialog(QWidget *parent)
+    : QDialog(parent, Qt::Dialog)
 {
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Pull"));
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     this->setLayout(mainLayout);
@@ -34,40 +34,40 @@ PullDialog::PullDialog(QWidget* parent):
     this->connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     okButton->setText(i18nc("@action:button", "Pull"));
 
-    QWidget * boxWidget = new QWidget(this);
-    QVBoxLayout * boxLayout = new QVBoxLayout(boxWidget);
+    QWidget *boxWidget = new QWidget(this);
+    QVBoxLayout *boxLayout = new QVBoxLayout(boxWidget);
     mainLayout->addWidget(boxWidget);
 
-    QGroupBox * sourceGroupBox = new QGroupBox(boxWidget);
+    QGroupBox *sourceGroupBox = new QGroupBox(boxWidget);
     mainLayout->addWidget(sourceGroupBox);
     boxLayout->addWidget(sourceGroupBox);
     sourceGroupBox->setTitle(i18nc("@title:group The source to pull from", "Source"));
-    QHBoxLayout * sourceHBox = new QHBoxLayout(sourceGroupBox);
+    QHBoxLayout *sourceHBox = new QHBoxLayout(sourceGroupBox);
     sourceGroupBox->setLayout(sourceHBox);
 
     mainLayout->addWidget(m_buttonBox);
 
-    QLabel * remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), sourceGroupBox);
+    QLabel *remoteLabel = new QLabel(i18nc("@label:listbox a git remote", "Remote:"), sourceGroupBox);
     sourceHBox->addWidget(remoteLabel);
     m_remoteComboBox = new QComboBox(sourceGroupBox);
     sourceHBox->addWidget(m_remoteComboBox);
 
-    QLabel * remoteBranchLabel = new QLabel(i18nc("@label:listbox", "Remote branch:"), sourceGroupBox);
+    QLabel *remoteBranchLabel = new QLabel(i18nc("@label:listbox", "Remote branch:"), sourceGroupBox);
     sourceHBox->addWidget(remoteBranchLabel);
     m_remoteBranchComboBox = new QComboBox(sourceGroupBox);
     sourceHBox->addWidget(m_remoteBranchComboBox);
 
-    //populate UI
-    GitWrapper * gitWrapper = GitWrapper::instance();
+    // populate UI
+    GitWrapper *gitWrapper = GitWrapper::instance();
 
-    //get sources
+    // get sources
     m_remoteComboBox->addItems(gitWrapper->pullRemotes());
 
-    //get branch names
+    // get branch names
     int currentBranchIndex;
     const QStringList branches = gitWrapper->branches(&currentBranchIndex);
 
-    for (const QString& branch : branches) {
+    for (const QString &branch : branches) {
         if (branch.startsWith(QLatin1String("remotes/"))) {
             const QString remote = branch.section(QLatin1Char('/'), 1, 1);
             const QString name = branch.section(QLatin1Char('/'), 2);
@@ -81,7 +81,7 @@ PullDialog::PullDialog(QWidget* parent):
             m_remoteBranchComboBox->setCurrentIndex(index);
         }
     }
-
+    
     //Signals
     connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)),
             this, SLOT(remoteSelectionChanged(QString)));
@@ -97,13 +97,12 @@ QString PullDialog::remoteBranch() const
     return m_remoteBranchComboBox->currentText();
 }
 
-void PullDialog::remoteSelectionChanged(const QString& newRemote)
+void PullDialog::remoteSelectionChanged(const QString &newRemote)
 {
     m_remoteBranchComboBox->clear();
     m_remoteBranchComboBox->addItems(m_remoteBranches.value(newRemote));
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setEnabled(m_remoteBranchComboBox->count() > 0);
 }
-
 
 #include "moc_pulldialog.cpp"

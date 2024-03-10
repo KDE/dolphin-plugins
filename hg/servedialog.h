@@ -43,15 +43,14 @@ private Q_SLOTS:
     void appendServerOutput(const QString &repoLocation, const QString &line);
 
 private:
-    QSpinBox          *m_portNumber;
-    QPushButton       *m_startButton;
-    QPushButton       *m_stopButton;
-    QPushButton       *m_browseButton;
-    QTextEdit         *m_logEdit;
-    QLabel            *m_repoPathLabel;
+    QSpinBox *m_portNumber;
+    QPushButton *m_startButton;
+    QPushButton *m_stopButton;
+    QPushButton *m_browseButton;
+    QTextEdit *m_logEdit;
+    QLabel *m_repoPathLabel;
 
-    HgServeWrapper    *m_serverWrapper;
+    HgServeWrapper *m_serverWrapper;
 };
 
 #endif /* HG_SERVE_DIALOG */
-

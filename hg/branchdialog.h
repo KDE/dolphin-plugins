@@ -7,14 +7,14 @@
 #ifndef HGBRANCHDIALOG_H
 #define HGBRANCHDIALOG_H
 
-#include <QString>
 #include "dialogbase.h"
+#include <QString>
 
 class KComboBox;
 class QLabel;
 
 /**
- * Implements dialog to list & create branches and update/switch working 
+ * Implements dialog to list & create branches and update/switch working
  * directory to different branch.
  */
 class HgBranchDialog : public DialogBase
@@ -33,13 +33,12 @@ private:
     void updateInitialDialog();
 
 private:
-    KComboBox           *m_branchComboBox;
-    QPushButton         *m_createBranch;
-    QPushButton         *m_updateBranch;
-    QLabel              *m_currentBranchLabel;
+    KComboBox *m_branchComboBox;
+    QPushButton *m_createBranch;
+    QPushButton *m_updateBranch;
+    QLabel *m_currentBranchLabel;
 
-    QStringList          m_branchList;
+    QStringList m_branchList;
 };
 
 #endif // HGBRANCHDIALOG_H
-

@@ -5,42 +5,35 @@
 */
 
 #include "pulldialog.h"
-#include "hgwrapper.h"
-#include "hgconfig.h"
-#include "pathselector.h"
 #include "fileviewhgpluginsettings.h"
+#include "hgconfig.h"
+#include "hgwrapper.h"
+#include "pathselector.h"
 
-#include <QStringList>
-#include <QHeaderView>
-#include <QCheckBox>
-#include <QGroupBox>
-#include <QTableWidget>
-#include <QString>
-#include <KTextEdit>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KTextEdit>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QHeaderView>
+#include <QString>
+#include <QStringList>
+#include <QTableWidget>
 
-
-HgPullDialog::HgPullDialog(QWidget *parent):
-    HgSyncBaseDialog(HgSyncBaseDialog::PullDialog, parent)
+HgPullDialog::HgPullDialog(QWidget *parent)
+    : HgSyncBaseDialog(HgSyncBaseDialog::PullDialog, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Pull Repository"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Pull Repository"));
     setup();
-
 }
 
 void HgPullDialog::setOptions()
 {
-    m_optUpdate = new QCheckBox(xi18nc("@label:checkbox",
-                "Update to new branch head if changesets were pulled"));
-    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox",
-                "Do not verify server certificate"));
-    m_optForce = new QCheckBox(xi18nc("@label:checkbox",
-                "Force Pull"));
-    m_optionGroup = new QGroupBox(xi18nc("@label:group",
-                "Options"));
+    m_optUpdate = new QCheckBox(xi18nc("@label:checkbox", "Update to new branch head if changesets were pulled"));
+    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox", "Do not verify server certificate"));
+    m_optForce = new QCheckBox(xi18nc("@label:checkbox", "Force Pull"));
+    m_optionGroup = new QGroupBox(xi18nc("@label:group", "Options"));
 
     m_options << m_optForce;
     m_options << m_optUpdate;
@@ -49,8 +42,7 @@ void HgPullDialog::setOptions()
 
 void HgPullDialog::createChangesGroup()
 {
-    m_changesGroup = new QGroupBox(xi18nc("@label:group",
-                "Incoming Changes"));    
+    m_changesGroup = new QGroupBox(xi18nc("@label:group", "Incoming Changes"));
     QHBoxLayout *hbox = new QHBoxLayout;
     m_changesList = new QTableWidget;
 
@@ -65,8 +57,7 @@ void HgPullDialog::createChangesGroup()
     m_changesGroup->setLayout(hbox);
     m_changesGroup->setVisible(false);
 
-    connect(this, &HgSyncBaseDialog::changeListAvailable,
-            this, &HgPullDialog::slotUpdateChangesGeometry);
+    connect(this, &HgSyncBaseDialog::changeListAvailable, this, &HgPullDialog::slotUpdateChangesGeometry);
 }
 
 void HgPullDialog::getHgChangesArguments(QStringList &args)
@@ -76,9 +67,10 @@ void HgPullDialog::getHgChangesArguments(QStringList &args)
     args << QStringLiteral("--config");
     args << QStringLiteral("ui.verbose=False");
     args << QStringLiteral("--template");
-    args << QStringLiteral("Commit: {rev}:{node|short}   "
-                    "{author}  "
-                    "{date|isodate}   {desc|firstline}\n");
+    args << QStringLiteral(
+        "Commit: {rev}:{node|short}   "
+        "{author}  "
+        "{date|isodate}   {desc|firstline}\n");
 }
 
 void HgPullDialog::parseUpdateChanges(const QString &input)
@@ -143,10 +135,7 @@ void HgPullDialog::writeBigSize()
 
 void HgPullDialog::noChangesMessage()
 {
-    KMessageBox::information(this, xi18nc("@message:info",
-                "No incoming changes!"));
+    KMessageBox::information(this, xi18nc("@message:info", "No incoming changes!"));
 }
-
-
 
 #include "moc_pulldialog.cpp"
