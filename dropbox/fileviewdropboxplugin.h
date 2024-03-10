@@ -16,9 +16,9 @@
 
 class QLocalSocket;
 
-//The dropbox protocol info can be found in the dropboxd-protocol file
-//it can be found here https://build.opensuse.org/package/view_file/home:faco84/dolphin-box-plugin/dropboxd-protocol
-//Thanks Steffen Schuldenzucker!
+// The dropbox protocol info can be found in the dropboxd-protocol file
+// it can be found here https://build.opensuse.org/package/view_file/home:faco84/dolphin-box-plugin/dropboxd-protocol
+// Thanks Steffen Schuldenzucker!
 
 /**
  * @brief Dropbox implementation for the KVersionControlPlugin interface.
@@ -28,49 +28,46 @@ class FileViewDropboxPlugin : public KVersionControlPlugin
     Q_OBJECT
 
 private:
-    enum SendCommandMode
-    {
+    enum SendCommandMode {
         WaitForReply,
-        SendCommandOnly
+        SendCommandOnly,
     };
 
-    enum SendCommandTimeout
-    {
+    enum SendCommandTimeout {
         ShortTimeout,
-        LongTimeout
+        LongTimeout,
     };
 
 public:
-    FileViewDropboxPlugin(QObject* parent, const QVariantList& args);
+    FileViewDropboxPlugin(QObject *parent, const QVariantList &args);
     ~FileViewDropboxPlugin() override;
 
     QString fileName() const override;
 
-    bool beginRetrieval(const QString& directory) override;
-    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
+    bool beginRetrieval(const QString &directory) override;
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem &item) const override;
     void endRetrieval() override;
 
-    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
-    QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
+    QList<QAction *> versionControlActions(const KFileItemList &items) const override;
+    QList<QAction *> outOfVersionControlActions(const KFileItemList &items) const override;
 
 private Q_SLOTS:
-    void handleContextAction(QAction* action);
+    void handleContextAction(QAction *action);
 
 private:
-    QStringList sendCommand(const QString& command,
-                            const QStringList& paths,
-                            const QPointer<QLocalSocket>& socket,
+    QStringList sendCommand(const QString &command,
+                            const QStringList &paths,
+                            const QPointer<QLocalSocket> &socket,
                             SendCommandMode mode = SendCommandOnly,
                             SendCommandTimeout timeout = ShortTimeout) const;
 
-    bool connectWithDropbox(const QPointer<QLocalSocket>& socket, SendCommandTimeout timeout) const;
+    bool connectWithDropbox(const QPointer<QLocalSocket> &socket, SendCommandTimeout timeout) const;
 
 private:
     class Private;
-    Private* const d;
+    Private *const d;
 
     static QMap<QString, KVersionControlPlugin::ItemVersion> m_itemVersions;
 };
 
 #endif // FILEVIEWDROPBOXPLUGIN_H
-

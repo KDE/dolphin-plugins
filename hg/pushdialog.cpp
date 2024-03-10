@@ -5,43 +5,36 @@
 */
 
 #include "pushdialog.h"
+#include "fileviewhgpluginsettings.h"
 #include "hgconfig.h"
 #include "pathselector.h"
-#include "fileviewhgpluginsettings.h"
 
-#include <QStringList>
-#include <QString>
-#include <QTextCodec>
-#include <QGridLayout>
-#include <QHeaderView>
-#include <QTableWidget>
-#include <QCheckBox>
-#include <QGroupBox>
-#include <KTextEdit>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KTextEdit>
+#include <QCheckBox>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHeaderView>
+#include <QString>
+#include <QStringList>
+#include <QTableWidget>
+#include <QTextCodec>
 
-
-HgPushDialog::HgPushDialog(QWidget *parent):
-    HgSyncBaseDialog(HgSyncBaseDialog::PushDialog, parent)
+HgPushDialog::HgPushDialog(QWidget *parent)
+    : HgSyncBaseDialog(HgSyncBaseDialog::PushDialog, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Push Repository"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Push Repository"));
     setup();
-
 }
 
 void HgPushDialog::setOptions()
 {
-    m_optAllowNewBranch = new QCheckBox(xi18nc("@label:checkbox",
-                "Allow pushing a new branch"));
-    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox",
-                "Do not verify server certificate"));
-    m_optForce = new QCheckBox(xi18nc("@label:checkbox",
-                "Force Push"));
-    m_optionGroup = new QGroupBox(xi18nc("@label:group",
-                "Options"));
+    m_optAllowNewBranch = new QCheckBox(xi18nc("@label:checkbox", "Allow pushing a new branch"));
+    m_optInsecure = new QCheckBox(xi18nc("@label:checkbox", "Do not verify server certificate"));
+    m_optForce = new QCheckBox(xi18nc("@label:checkbox", "Force Push"));
+    m_optionGroup = new QGroupBox(xi18nc("@label:group", "Options"));
 
     m_options << m_optForce;
     m_options << m_optAllowNewBranch;
@@ -50,8 +43,7 @@ void HgPushDialog::setOptions()
 
 void HgPushDialog::createChangesGroup()
 {
-    m_changesGroup = new QGroupBox(xi18nc("@label:group",
-                "Outgoing Changes"));    
+    m_changesGroup = new QGroupBox(xi18nc("@label:group", "Outgoing Changes"));
     QHBoxLayout *hbox = new QHBoxLayout;
     m_outChangesList = new QTableWidget;
     m_changesetInfo = new KTextEdit;
@@ -70,10 +62,8 @@ void HgPushDialog::createChangesGroup()
     m_changesGroup->setLayout(hbox);
     m_changesGroup->setVisible(false);
 
-    connect(m_outChangesList, &QTableWidget::itemSelectionChanged,
-            this, &HgPushDialog::slotOutSelChanged);
-    connect(this, &HgSyncBaseDialog::changeListAvailable,
-            this, &HgPushDialog::slotUpdateChangesGeometry);
+    connect(m_outChangesList, &QTableWidget::itemSelectionChanged, this, &HgPushDialog::slotOutSelChanged);
+    connect(this, &HgSyncBaseDialog::changeListAvailable, this, &HgPushDialog::slotUpdateChangesGeometry);
 }
 
 void HgPushDialog::slotOutSelChanged()
@@ -104,8 +94,9 @@ void HgPushDialog::getHgChangesArguments(QStringList &args)
     args << QStringLiteral("--config");
     args << QStringLiteral("ui.verbose=False");
     args << QStringLiteral("--template");
-    args << QStringLiteral("Commit: {rev}:{node|short}   "
-                    "{date|isodate}   {desc|firstline}\n");
+    args << QStringLiteral(
+        "Commit: {rev}:{node|short}   "
+        "{date|isodate}   {desc|firstline}\n");
 }
 
 void HgPushDialog::parseUpdateChanges(const QString &input)
@@ -166,10 +157,7 @@ void HgPushDialog::writeBigSize()
 
 void HgPushDialog::noChangesMessage()
 {
-    KMessageBox::information(this, xi18nc("@message:info",
-                "No outgoing changes!"));
+    KMessageBox::information(this, xi18nc("@message:info", "No outgoing changes!"));
 }
-
-
 
 #include "moc_pushdialog.cpp"

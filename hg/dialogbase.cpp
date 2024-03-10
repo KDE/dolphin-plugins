@@ -8,10 +8,10 @@
 #include <QBoxLayout>
 #include <QKeyEvent>
 
-DialogBase::DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* parent):
-    QDialog(parent),
-    m_okButton(nullptr),
-    m_cancelButton(nullptr)
+DialogBase::DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget *parent)
+    : QDialog(parent)
+    , m_okButton(nullptr)
+    , m_cancelButton(nullptr)
 {
     m_buttonBox = new QDialogButtonBox(this);
     if (buttons & QDialogButtonBox::Ok) {
@@ -31,17 +31,13 @@ DialogBase::DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget* paren
     connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
-void DialogBase::keyReleaseEvent(QKeyEvent* event)
+void DialogBase::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Return && event->modifiers() == Qt::ControlModifier) {
         done(Accepted);
-    }
-    else {
+    } else {
         QWidget::keyReleaseEvent(event);
     }
 }
-
-
-
 
 #include "moc_dialogbase.cpp"

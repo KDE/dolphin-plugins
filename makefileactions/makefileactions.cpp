@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#include <unistd.h>
 #include <csignal>
+#include <unistd.h>
 
 #include <QAction>
 #include <QApplication>
@@ -27,8 +27,8 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KSharedConfig>
-#include <KTerminalLauncherJob>
 #include <KStringHandler>
+#include <KTerminalLauncherJob>
 
 #include "makefileactions.h"
 
@@ -48,7 +48,7 @@ MakefileActions::MakefileActions(QObject *parent, const QVariantList &)
 bool MakefileActions::isGNUMake()
 {
     QProcess proc;
-    proc.start(QStringLiteral(MAKE_CMD), { QStringLiteral("--version") }, QIODevice::ReadOnly);
+    proc.start(QStringLiteral(MAKE_CMD), {QStringLiteral("--version")}, QIODevice::ReadOnly);
     while (proc.waitForReadyRead()) {
         char buffer[4096];
         while (proc.readLine(buffer, sizeof(buffer)) > 0) {
@@ -68,7 +68,7 @@ QStringList MakefileActions::listTargets_GNU(QProcess &proc, const QString &file
 {
     /* make -pRr : | sed '/Not a target/,+1 d' | grep -v '^\(#\|\s\)\|^$\| :\?= \|%' | cut -d':' -f1 | uniq | sort */
     // make -pRr :
-    proc.start(QStringLiteral(MAKE_CMD), { QStringLiteral("-f"), file, QStringLiteral("-pRr"), QStringLiteral(":") }, QIODevice::ReadOnly);
+    proc.start(QStringLiteral(MAKE_CMD), {QStringLiteral("-f"), file, QStringLiteral("-pRr"), QStringLiteral(":")}, QIODevice::ReadOnly);
     // sed '/Not a target/,+1 d' | grep -v '^\(#\|\s\)\|^$\| :\?= \|%' | cut -d':' -f1 | uniq
     QSet<QString> targetSet;
     bool nonTarget = false;
@@ -86,7 +86,8 @@ QStringList MakefileActions::listTargets_GNU(QProcess &proc, const QString &file
                 continue;
             }
             // | grep -v '^\(#\|\s\)\|^$\| :\?= \|%'
-            if (line.size() == 0 || line[0] == QLatin1Char('#') || line[0] == QLatin1Char('\n') || line[0] == QLatin1Char('\t') || line.contains(QLatin1String(" = ")) || line.contains(QLatin1String(" := ")) || line.contains(QLatin1Char('%'))) {
+            if (line.size() == 0 || line[0] == QLatin1Char('#') || line[0] == QLatin1Char('\n') || line[0] == QLatin1Char('\t')
+                || line.contains(QLatin1String(" = ")) || line.contains(QLatin1String(" := ")) || line.contains(QLatin1Char('%'))) {
                 continue;
             }
             // | cut -d':' -f1
@@ -112,7 +113,9 @@ QStringList MakefileActions::listTargets_BSD(QProcess &proc, const QString &file
     // 2>&1
     proc.setProcessChannelMode(QProcess::MergedChannels);
     // make -r -d g3 :
-    proc.start(QStringLiteral(MAKE_CMD), { QStringLiteral("-f"), file, QStringLiteral("-r"), QStringLiteral("-d"), QStringLiteral("g3"), QStringLiteral(":") }, QIODevice::ReadOnly);
+    proc.start(QStringLiteral(MAKE_CMD),
+               {QStringLiteral("-f"), file, QStringLiteral("-r"), QStringLiteral("-d"), QStringLiteral("g3"), QStringLiteral(":")},
+               QIODevice::ReadOnly);
     // grep ', flags 0, type \(8\|4,\|1\)' | grep -v '%' | cut -d',' -f1 | sed 's/^# //'
     QStringList targetList;
     while (proc.waitForReadyRead()) {
@@ -120,7 +123,9 @@ QStringList MakefileActions::listTargets_BSD(QProcess &proc, const QString &file
         while (proc.readLine(buffer, sizeof(buffer)) > 0) {
             const QString line = QString::fromLocal8Bit(buffer).chopped(1);
             // grep ', flags 0, type \(8\|4,\|1\)' | grep -v '%'
-            if ((!line.contains(QLatin1String(", flags 0, type 8")) && !line.contains(QLatin1String(", flags 0, type 4,")) && !line.contains(QLatin1String(", flags 0, type 1"))) || line.contains(QLatin1Char('%'))) {
+            if ((!line.contains(QLatin1String(", flags 0, type 8")) && !line.contains(QLatin1String(", flags 0, type 4,"))
+                 && !line.contains(QLatin1String(", flags 0, type 1")))
+                || line.contains(QLatin1Char('%'))) {
                 continue;
             }
             // | cut -d',' -f1 | sed 's/^# //'
@@ -165,8 +170,10 @@ TargetTree MakefileActions::targetTree() const
         int min = std::min(prev.size(), target.size());
         int i = 0;
         for (i = 0; i < min; ++i) {
-            if (prev[i] == target[i]) continue;
-            else break;
+            if (prev[i] == target[i])
+                continue;
+            else
+                break;
         }
         prefixSet.insert(prev.left(prev.lastIndexOf(QDir::separator(), i)));
         prev = target;
@@ -236,17 +243,20 @@ void MakefileActions::makeTarget(const QString &target, QWidget *mainWindow)
         m_proc->setWorkingDirectory(fileInfo.absoluteDir().absolutePath());
         m_proc->setProgram(QStringLiteral(MAKE_CMD));
         m_proc->setArguments({QStringLiteral("-f"), fileInfo.fileName(), target});
-        connect(m_proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this, mainWindow, target](int exitCode, QProcess::ExitStatus exitStatus) {
-            if (!m_isMaking) {
-                return;
-            }
-            if (exitStatus != QProcess::NormalExit || exitCode != 0) {
-                QMessageBox::warning(mainWindow, i18n("Makefile Actions"), i18n("An error occurred while making target '%1'.", target));
-            }
-            mainWindow->setCursor(Qt::ArrowCursor);
-            m_isMaking = false;
-            m_runningTarget.clear();
-        });
+        connect(m_proc,
+                QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                this,
+                [this, mainWindow, target](int exitCode, QProcess::ExitStatus exitStatus) {
+                    if (!m_isMaking) {
+                        return;
+                    }
+                    if (exitStatus != QProcess::NormalExit || exitCode != 0) {
+                        QMessageBox::warning(mainWindow, i18n("Makefile Actions"), i18n("An error occurred while making target '%1'.", target));
+                    }
+                    mainWindow->setCursor(Qt::ArrowCursor);
+                    m_isMaking = false;
+                    m_runningTarget.clear();
+                });
         connect(m_proc, &QProcess::errorOccurred, this, [this, mainWindow, target](QProcess::ProcessError) {
             if (!m_isMaking) { // process has been canceled by the user
                 QMessageBox::information(mainWindow, i18n("Makefile Actions"), i18n("Running process for '%1' successfully stopped.", target));
@@ -310,7 +320,7 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
 
     // if the file is not trusted, we don't go further
     if (!trustedFile) {
-        return { menu->menuAction() };
+        return {menu->menuAction()};
     }
 
     QAction *openTerminal = new QAction(QIcon::fromTheme(QStringLiteral("utilities-terminal")), i18n("Open a terminal window"), menu);
@@ -325,10 +335,11 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
     menu->addAction(openTerminal);
 
     if (m_isMaking) {
-        QAction *cancel = new QAction(QIcon::fromTheme(QStringLiteral("process-stop")), i18n("Cancel running process (%1)", KStringHandler::rsqueeze(m_runningTarget)), menu);
+        QAction *cancel =
+            new QAction(QIcon::fromTheme(QStringLiteral("process-stop")), i18n("Cancel running process (%1)", KStringHandler::rsqueeze(m_runningTarget)), menu);
         cancel->setToolTip(i18n("Interrupt the currently running process (%1).", m_runningTarget));
         cancel->setEnabled(true);
-        connect(cancel, &QAction::triggered, this, [this](){
+        connect(cancel, &QAction::triggered, this, [this]() {
             m_isMaking = false;
             m_runningTarget.clear();
             m_proc->kill(); // send ^C to the running process
@@ -340,7 +351,7 @@ QList<QAction *> MakefileActions::actions(const KFileItemListProperties &fileIte
 
     buildMenu(menu, targetTree(), mainWindow);
 
-    return { menu->menuAction() };
+    return {menu->menuAction()};
 }
 
 #include "makefileactions.moc"

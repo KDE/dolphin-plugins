@@ -18,7 +18,7 @@ class QGroupBox;
 /**
  * Dialog to implement Push operation
  */
-class HgPushDialog : public HgSyncBaseDialog 
+class HgPushDialog : public HgSyncBaseDialog
 {
     Q_OBJECT
 
@@ -52,4 +52,3 @@ private:
 };
 
 #endif // HGPUSHDIALOG_H
-

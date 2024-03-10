@@ -7,8 +7,8 @@
 #ifndef HGMERGEDIALOG_H
 #define HGMERGEDIALOG_H
 
-#include <QString>
 #include "dialogbase.h"
+#include <QString>
 
 class QLabel;
 class HgCommitInfoWidget;
@@ -36,4 +36,3 @@ private:
 };
 
 #endif // HGMERGEDIALOG_H
-

@@ -7,14 +7,14 @@
 #include "hgconfig.h"
 #include "hgwrapper.h"
 
-#include <QDir>
-#include <QDebug>
 #include <KConfig>
 #include <KConfigGroup>
+#include <QDebug>
+#include <QDir>
 
-HgConfig::HgConfig(ConfigType configType) :
-    m_configType(configType),
-    m_config(nullptr)
+HgConfig::HgConfig(ConfigType configType)
+    : m_configType(configType)
+    , m_config(nullptr)
 {
     getConfigFilePath();
     loadConfig();
@@ -33,16 +33,14 @@ QString HgConfig::configFilePath() const
 bool HgConfig::getConfigFilePath()
 {
     switch (m_configType) {
-    case RepoConfig:
-        {
-            m_configFilePath = HgWrapper::instance()->getBaseDir() + QLatin1String("/.hg/hgrc");
-            break;
-        }
-    case GlobalConfig:
-        {
-            m_configFilePath = QDir::homePath() + QLatin1String("/.hgrc");
-            break;
-        }
+    case RepoConfig: {
+        m_configFilePath = HgWrapper::instance()->getBaseDir() + QLatin1String("/.hg/hgrc");
+        break;
+    }
+    case GlobalConfig: {
+        m_configFilePath = QDir::homePath() + QLatin1String("/.hgrc");
+        break;
+    }
     case TempConfig:
         break;
     }
@@ -55,16 +53,13 @@ bool HgConfig::loadConfig()
     return true;
 }
 
-QString HgConfig::property(const QString &section,
-                           const QString &propertyName) const
+QString HgConfig::property(const QString &section, const QString &propertyName) const
 {
     KConfigGroup group(m_config, section);
     return group.readEntry(propertyName, QString()).trimmed();
 }
 
-void HgConfig::setProperty(const QString &section, 
-                              const QString &propertyName,
-                              const QString &propertyValue)
+void HgConfig::setProperty(const QString &section, const QString &propertyName, const QString &propertyValue)
 {
     KConfigGroup uiGroup(m_config, section);
     if (propertyValue.isEmpty()) {
@@ -86,7 +81,7 @@ void HgConfig::setUsername(const QString &userName)
     setProperty(QStringLiteral("ui"), QStringLiteral("username"), userName);
 }
 
-QString HgConfig::editor() const 
+QString HgConfig::editor() const
 {
     return property(QStringLiteral("ui"), QStringLiteral("editor"));
 }
@@ -96,7 +91,7 @@ void HgConfig::setEditor(const QString &pathToEditor)
     setProperty(QStringLiteral("ui"), QStringLiteral("editor"), pathToEditor);
 }
 
-QString HgConfig::merge() const 
+QString HgConfig::merge() const
 {
     return property(QStringLiteral("ui"), QStringLiteral("merge"));
 }
@@ -137,4 +132,3 @@ QMap<QString, QString> HgConfig::repoRemotePathList() const
 }
 
 //
-

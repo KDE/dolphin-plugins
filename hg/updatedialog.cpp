@@ -7,26 +7,24 @@
 #include "updatedialog.h"
 #include "hgwrapper.h"
 
-#include <QLabel>
-#include <QGroupBox>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QCheckBox>
 #include <KComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QVBoxLayout>
 
-
-HgUpdateDialog::HgUpdateDialog(QWidget *parent):
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+HgUpdateDialog::HgUpdateDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setWindowTitle(xi18nc("@title:window",
-                "<application>Hg</application> Update"));
+    this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Update"));
 
     this->okButton()->setText(xi18nc("@action:button", "Update"));
 
-    // UI 
+    // UI
     QGroupBox *selectGroup = new QGroupBox(i18n("New working directory"));
     QVBoxLayout *selectLayout = new QVBoxLayout;
     m_selectType = new KComboBox;
@@ -60,8 +58,7 @@ HgUpdateDialog::HgUpdateDialog(QWidget *parent):
     layout()->insertLayout(0, mainLayout);
 
     // connections
-    connect(m_selectType, SIGNAL(currentIndexChanged(int)), this,
-            SLOT(slotUpdateDialog(int)));
+    connect(m_selectType, SIGNAL(currentIndexChanged(int)), this, SLOT(slotUpdateDialog(int)));
 }
 
 void HgUpdateDialog::slotUpdateDialog(int index)
@@ -72,13 +69,11 @@ void HgUpdateDialog::slotUpdateDialog(int index)
         m_updateTo = ToBranch;
         m_selectFinal->setEditable(false);
         m_selectFinal->addItems(hgWrapper->getBranches());
-    }
-    else if (index == 1) {
+    } else if (index == 1) {
         m_updateTo = ToTag;
         m_selectFinal->setEditable(false);
         m_selectFinal->addItems(hgWrapper->getTags());
-    }
-    else if (index == 2) {
+    } else if (index == 2) {
         m_updateTo = ToRevision;
         m_selectFinal->setEditable(true);
     }
@@ -106,8 +101,7 @@ void HgUpdateDialog::done(int r)
         // Should we discard uncommitted changes
         if (m_discardChanges->checkState() == Qt::Checked) {
             args << QStringLiteral("-C");
-        }
-        else {
+        } else {
             args << QStringLiteral("-c");
         }
         if (m_updateTo == ToRevision) {
@@ -121,16 +115,14 @@ void HgUpdateDialog::done(int r)
         HgWrapper *hgw = HgWrapper::instance();
         if (hgw->executeCommandTillFinished(QStringLiteral("update"), args)) {
             QDialog::done(r);
+        } else {
+            KMessageBox::error(this,
+                               i18n("Some error occurred! "
+                                    "\nMaybe there are uncommitted changes."));
         }
-        else {
-            KMessageBox::error(this, i18n("Some error occurred! "
-                        "\nMaybe there are uncommitted changes."));
-        }
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
-
 
 #include "moc_updatedialog.cpp"

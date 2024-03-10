@@ -11,17 +11,17 @@
 
 HgServeWrapper *HgServeWrapper::m_instance = nullptr;
 
-HgServeWrapper::HgServeWrapper(QObject *parent) :
-    QObject(parent)
+HgServeWrapper::HgServeWrapper(QObject *parent)
+    : QObject(parent)
 {
 }
 
 HgServeWrapper::~HgServeWrapper()
 {
-    QMutableHashIterator<QString, ServerProcessType*> it(m_serverList);
+    QMutableHashIterator<QString, ServerProcessType *> it(m_serverList);
     while (it.hasNext()) {
         it.next();
-        ///terminate server if not terminated already
+        /// terminate server if not terminated already
         if (it.value()->process.state() != QProcess::NotRunning) {
             it.value()->process.terminate();
         }
@@ -50,12 +50,9 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     server->port = portNumber;
     server->process.setWorkingDirectory(HgWrapper::instance()->getBaseDir());
 
-    connect(&server->process, &QProcess::started,
-            this, &HgServeWrapper::started);
-    connect(&server->process, &QProcess::finished,
-            this, &HgServeWrapper::slotFinished);
-    connect(server, &ServerProcessType::readyReadLine,
-            this, &HgServeWrapper::readyReadLine);
+    connect(&server->process, &QProcess::started, this, &HgServeWrapper::started);
+    connect(&server->process, &QProcess::finished, this, &HgServeWrapper::slotFinished);
+    connect(server, &ServerProcessType::readyReadLine, this, &HgServeWrapper::readyReadLine);
 
     QStringList args;
     args << QLatin1String("-oL");
@@ -64,10 +61,8 @@ void HgServeWrapper::startServer(const QString &repoLocation, int portNumber)
     args << QLatin1String("--port");
     args << QString::number(portNumber);
     server->process.start(QLatin1String("stdbuf"), args);
-    Q_EMIT readyReadLine(repoLocation,
-            i18n("## Starting Server ##"));
-    Q_EMIT readyReadLine(repoLocation,
-            QStringLiteral("% hg serve --port %1").arg(portNumber));
+    Q_EMIT readyReadLine(repoLocation, i18n("## Starting Server ##"));
+    Q_EMIT readyReadLine(repoLocation, QStringLiteral("% hg serve --port %1").arg(portNumber));
 }
 
 void HgServeWrapper::stopServer(const QString &repoLocation)
@@ -85,16 +80,14 @@ bool HgServeWrapper::running(const QString &repoLocation)
     if (server == nullptr) {
         return false;
     }
-    return ( server->process.state() == QProcess::Running || 
-             server->process.state() == QProcess::Starting);
+    return (server->process.state() == QProcess::Running || server->process.state() == QProcess::Starting);
 }
 
 void HgServeWrapper::slotFinished(int exitCode, QProcess::ExitStatus status)
 {
     if (exitCode == 0 && status == QProcess::NormalExit) {
         Q_EMIT finished();
-    }
-    else {
+    } else {
         Q_EMIT error();
     }
 }
@@ -115,13 +108,12 @@ bool HgServeWrapper::normalExit(const QString &repoLocation)
         return true;
     }
 
-    return (server->process.exitStatus() == QProcess::NormalExit &&
-            server->process.exitCode() == 0);
+    return (server->process.exitStatus() == QProcess::NormalExit && server->process.exitCode() == 0);
 }
 
 void HgServeWrapper::cleanUnused()
 {
-    QMutableHashIterator<QString, ServerProcessType*> it(m_serverList);
+    QMutableHashIterator<QString, ServerProcessType *> it(m_serverList);
     while (it.hasNext()) {
         it.next();
         if (it.value()->process.state() == QProcess::NotRunning) {
@@ -130,7 +122,5 @@ void HgServeWrapper::cleanUnused()
         }
     }
 }
-
-
 
 #include "moc_servewrapper.cpp"

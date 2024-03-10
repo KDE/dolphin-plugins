@@ -7,9 +7,9 @@
 #ifndef HGPATH_CONFIG_H
 #define HGPATH_CONFIG_H
 
-#include <QWidget>
 #include <QMap>
 #include <QString>
+#include <QWidget>
 
 class QTableWidget;
 class QTableWidgetItem;
@@ -34,7 +34,7 @@ public Q_SLOTS:
 
 private:
     void setupUI();
-    
+
     /**
      * Prepare context menu and its actions for table widget showing path.
      */
@@ -42,10 +42,10 @@ private:
 
 private Q_SLOTS:
     /**
-     * Show context menu and changed enabled status of actions according 
+     * Show context menu and changed enabled status of actions according
      * to the position where menu is requested.
      */
-    void slotContextMenuRequested(const QPoint &pos); 
+    void slotContextMenuRequested(const QPoint &pos);
     void slotCellChanged(int row, int col);
     void slotSelectionChanged();
 
@@ -74,4 +74,3 @@ private:
 };
 
 #endif // HGPATH_CONFIG_H
-

@@ -6,17 +6,18 @@
 
 #include "svncommands.h"
 
-#include <QProcess>
-#include <QTextStream>
-#include <QTemporaryFile>
-#include <QUrl>
 #include <QDir>
+#include <QProcess>
+#include <QTemporaryFile>
+#include <QTextStream>
+#include <QUrl>
 #include <QXmlStreamReader>
 
-namespace {
+namespace
+{
 
 // Helper function: returns template file name for QTemporaryFile.
-QString templateFileName(const QString& url, ulong rev)
+QString templateFileName(const QString &url, ulong rev)
 {
     const QString tmpFileName = url.section(QLatin1Char('/'), -1);
 
@@ -25,19 +26,11 @@ QString templateFileName(const QString& url, ulong rev)
 
 }
 
-ulong SvnCommands::localRevision(const QString& filePath)
+ulong SvnCommands::localRevision(const QString &filePath)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("info"),
-            QStringLiteral("--show-item"),
-            QStringLiteral("last-changed-revision"),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("last-changed-revision"), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return 0;
@@ -54,7 +47,7 @@ ulong SvnCommands::localRevision(const QString& filePath)
     }
 }
 
-ulong SvnCommands::remoteRevision(const QString& filePath)
+ulong SvnCommands::remoteRevision(const QString &filePath)
 {
     const QString url = SvnCommands::remoteItemUrl(filePath);
 
@@ -64,15 +57,7 @@ ulong SvnCommands::remoteRevision(const QString& filePath)
 
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("info"),
-            QStringLiteral("--show-item"),
-            QStringLiteral("last-changed-revision"),
-            url
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("last-changed-revision"), url});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return 0;
@@ -89,19 +74,11 @@ ulong SvnCommands::remoteRevision(const QString& filePath)
     }
 }
 
-QString SvnCommands::remoteItemUrl(const QString& filePath)
+QString SvnCommands::remoteItemUrl(const QString &filePath)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("info"),
-            QStringLiteral("--show-item"),
-            QStringLiteral("url"),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("url"), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return QString();
@@ -118,19 +95,11 @@ QString SvnCommands::remoteItemUrl(const QString& filePath)
     }
 }
 
-QString SvnCommands::remoteRootUrl(const QString& filePath)
+QString SvnCommands::remoteRootUrl(const QString &filePath)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("info"),
-            QStringLiteral("--show-item"),
-            QStringLiteral("repos-root-url"),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("repos-root-url"), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return QString();
@@ -147,19 +116,11 @@ QString SvnCommands::remoteRootUrl(const QString& filePath)
     }
 }
 
-QString SvnCommands::remoteRelativeUrl(const QString& filePath)
+QString SvnCommands::remoteRelativeUrl(const QString &filePath)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("info"),
-            QStringLiteral("--show-item"),
-            QStringLiteral("relative-url"),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("relative-url"), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return QString();
@@ -176,19 +137,11 @@ QString SvnCommands::remoteRelativeUrl(const QString& filePath)
     }
 }
 
-QString SvnCommands::localRoot(const QString& filePath)
+QString SvnCommands::localRoot(const QString &filePath)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("info"),
-            QStringLiteral("--show-item"),
-            QStringLiteral("wc-root"),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("info"), QStringLiteral("--show-item"), QStringLiteral("wc-root"), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return QString();
@@ -205,18 +158,11 @@ QString SvnCommands::localRoot(const QString& filePath)
     }
 }
 
-bool SvnCommands::updateToRevision(const QString& filePath, ulong revision)
+bool SvnCommands::updateToRevision(const QString &filePath, ulong revision)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("update"),
-            QStringLiteral("-r%1").arg(revision),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("update"), QStringLiteral("-r%1").arg(revision), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return false;
@@ -225,17 +171,11 @@ bool SvnCommands::updateToRevision(const QString& filePath, ulong revision)
     return true;
 }
 
-bool SvnCommands::revertLocalChanges(const QString& filePath)
+bool SvnCommands::revertLocalChanges(const QString &filePath)
 {
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("revert"),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("revert"), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return false;
@@ -244,7 +184,7 @@ bool SvnCommands::revertLocalChanges(const QString& filePath)
     }
 }
 
-bool SvnCommands::revertToRevision(const QString& filePath, ulong revision)
+bool SvnCommands::revertToRevision(const QString &filePath, ulong revision)
 {
     // TODO: No conflict resolve while merging.
 
@@ -255,14 +195,7 @@ bool SvnCommands::revertToRevision(const QString& filePath, ulong revision)
 
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("merge"),
-            QStringLiteral("-r%1:%2").arg(currentRevision).arg(revision),
-            filePath
-        }
-    );
+    process.start(QLatin1String("svn"), QStringList{QStringLiteral("merge"), QStringLiteral("-r%1:%2").arg(currentRevision).arg(revision), filePath});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return false;
@@ -271,7 +204,7 @@ bool SvnCommands::revertToRevision(const QString& filePath, ulong revision)
     return true;
 }
 
-CommandResult SvnCommands::cleanup(const QString& dir, bool removeUnversioned, bool removeIgnored, bool includeExternals)
+CommandResult SvnCommands::cleanup(const QString &dir, bool removeUnversioned, bool removeIgnored, bool includeExternals)
 {
     QStringList arguments;
     arguments << QStringLiteral("cleanup") << dir;
@@ -286,10 +219,7 @@ CommandResult SvnCommands::cleanup(const QString& dir, bool removeUnversioned, b
     }
 
     QProcess process;
-    process.start(
-        QLatin1String("svn"),
-        arguments
-    );
+    process.start(QLatin1String("svn"), arguments);
 
     CommandResult result;
     if (!process.waitForFinished() || process.exitCode() != 0) {
@@ -303,7 +233,7 @@ CommandResult SvnCommands::cleanup(const QString& dir, bool removeUnversioned, b
     return result;
 }
 
-bool SvnCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
+bool SvnCommands::exportFile(const QUrl &path, ulong rev, QFileDevice *file)
 {
     if (file == nullptr || !path.isValid()) {
         return false;
@@ -325,16 +255,8 @@ bool SvnCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
 
     QProcess process;
 
-    process.start(
-        QLatin1String("svn"),
-        QStringList {
-            QStringLiteral("export"),
-            QStringLiteral("--force"),
-            QStringLiteral("-r%1").arg(rev),
-            remoteUrl,
-            file->fileName()
-        }
-    );
+    process.start(QLatin1String("svn"),
+                  QStringList{QStringLiteral("export"), QStringLiteral("--force"), QStringLiteral("-r%1").arg(rev), remoteUrl, file->fileName()});
 
     if (!process.waitForFinished() || process.exitCode() != 0) {
         return false;
@@ -343,47 +265,43 @@ bool SvnCommands::exportFile(const QUrl& path, ulong rev, QFileDevice *file)
     }
 }
 
-bool SvnCommands::exportFile(const QUrl& path, ulong rev, QTemporaryFile *file)
+bool SvnCommands::exportFile(const QUrl &path, ulong rev, QTemporaryFile *file)
 {
     if (file == nullptr || !path.isValid()) {
         return false;
     }
 
-    file->setFileTemplate( templateFileName(path.fileName(), rev) );
+    file->setFileTemplate(templateFileName(path.fileName(), rev));
 
-    return exportFile(path, rev, dynamic_cast<QFileDevice*>(file));
+    return exportFile(path, rev, dynamic_cast<QFileDevice *>(file));
 }
 
-QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath, uint maxEntries, ulong fromRevision)
+QSharedPointer<QVector<logEntry>> SvnCommands::getLog(const QString &filePath, uint maxEntries, ulong fromRevision)
 {
     ulong rev = fromRevision;
     if (rev == 0) {
         rev = SvnCommands::remoteRevision(filePath);
         if (rev == 0) {
-            return QSharedPointer< QVector<logEntry> >{};
+            return QSharedPointer<QVector<logEntry>>{};
         }
     }
 
-    auto log = QSharedPointer< QVector<logEntry> >::create();
+    auto log = QSharedPointer<QVector<logEntry>>::create();
     while (true) {
         // We do 'xml' output as it is the most full output and already in a ready-to-parse format.
         // Max xml svn log is 255 entries. We should do a while here if there is not enough log
         // entries parsed already.
         QProcess process;
-        process.start(
-            QLatin1String("svn"),
-            QStringList {
-                QStringLiteral("log"),
-                QStringLiteral("-r%1:0").arg(rev),
-                QStringLiteral("-l %1").arg(maxEntries),
-                QStringLiteral("--verbose"),
-                QStringLiteral("--xml"),
-                filePath
-            }
-        );
+        process.start(QLatin1String("svn"),
+                      QStringList{QStringLiteral("log"),
+                                  QStringLiteral("-r%1:0").arg(rev),
+                                  QStringLiteral("-l %1").arg(maxEntries),
+                                  QStringLiteral("--verbose"),
+                                  QStringLiteral("--xml"),
+                                  filePath});
 
         if (!process.waitForFinished() || process.exitCode() != 0) {
-            process.setReadChannel( QProcess::StandardError );
+            process.setReadChannel(QProcess::StandardError);
 
             // If stderr contains 'E195012' that means repo doesn't exist in the revision range.
             // It's not an error: let's return everything we've got already.
@@ -391,7 +309,7 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
             if (QTextStream(&process).readAll().indexOf(errorCode) != -1) {
                 return log;
             } else {
-                return QSharedPointer< QVector<logEntry> >{};
+                return QSharedPointer<QVector<logEntry>>{};
             }
         }
 
@@ -438,7 +356,7 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
         }
         if (xml.hasError()) {
             // SVN log output parsing failed.
-            return QSharedPointer< QVector<logEntry> >{};
+            return QSharedPointer<QVector<logEntry>>{};
         }
 
         if (static_cast<uint>(log->size()) >= maxEntries || itemsAppended == 0) {
@@ -451,7 +369,7 @@ QSharedPointer< QVector<logEntry> > SvnCommands::getLog(const QString& filePath,
     return log;
 }
 
-bool SvnCommands::checkoutRepository(const QString& url, bool ignoreExternals, const QString& whereto)
+bool SvnCommands::checkoutRepository(const QString &url, bool ignoreExternals, const QString &whereto)
 {
     QStringList params;
     params.append(QStringLiteral("checkout"));

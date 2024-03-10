@@ -7,16 +7,16 @@
 #ifndef HG_PLUGIN_SETTINGS_WIDGET_H
 #define HG_PLUGIN_SETTINGS_WIDGET_H
 
-#include <QWidget>
 #include "hgconfig.h"
+#include <QWidget>
 
 class QLineEdit;
 class KConfig;
 class QPushButton;
 
 /**
- * Plugin Specific settings. Not those supposed to be saved in 
- * .hgrc file, but in $HOME/.dolphin-hg 
+ * Plugin Specific settings. Not those supposed to be saved in
+ * .hgrc file, but in $HOME/.dolphin-hg
  */
 class HgPluginSettingsWidget : public QWidget
 {
@@ -43,4 +43,3 @@ private:
 };
 
 #endif // HG_PLUGIN_SETTINGS_WIDGET_H
-

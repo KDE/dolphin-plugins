@@ -25,8 +25,8 @@ public:
     explicit HgStatusList(QWidget *parent = nullptr);
 
     /**
-     * Appends the list of selected files whose changes should be 
-     * committed. If all files are selected, nothing is appended and true 
+     * Appends the list of selected files whose changes should be
+     * committed. If all files are selected, nothing is appended and true
      * is returned. If no files are selected, false is returned.
      *
      * @param files Append all the selected files to this. If all files are
@@ -45,11 +45,10 @@ Q_SIGNALS:
     void itemSelectionChanged(const char status, const QString &fileName);
 
 private:
-    QString         m_hgBaseDir;
-    QTableWidget   *m_statusTable;
-    bool            m_allWhereChecked; // state of all check boxes
-    bool            m_sortIndex; // true - ascending, false - descending
+    QString m_hgBaseDir;
+    QTableWidget *m_statusTable;
+    bool m_allWhereChecked; // state of all check boxes
+    bool m_sortIndex; // true - ascending, false - descending
 };
 
 #endif // STATUSLIST_H
-

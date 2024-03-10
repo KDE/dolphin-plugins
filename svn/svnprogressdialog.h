@@ -23,7 +23,8 @@ class QProcess;
  * \note This class can call 'svn cleanup' on a Subversion process dir in case of terminating it if
  *       a working directory were passed to the constructor.
  */
-class SvnProgressDialog : public QDialog {
+class SvnProgressDialog : public QDialog
+{
     Q_OBJECT
 public:
     /**
@@ -31,7 +32,7 @@ public:
      * \param[in] workingDir Directory to call 'svn cleanup' on. Empty for no cleanup.
      * \param[in,out] parent Parent widget.
      */
-    SvnProgressDialog(const QString& title, const QString& workingDir = QString(), QWidget *parent = nullptr);
+    SvnProgressDialog(const QString &title, const QString &workingDir = QString(), QWidget *parent = nullptr);
     virtual ~SvnProgressDialog() override;
 
     /**
@@ -46,8 +47,8 @@ public:
     void disconnectFromProcess();
 
 public Q_SLOTS:
-    void appendInfoText(const QString& text);
-    void appendErrorText(const QString& text);
+    void appendInfoText(const QString &text);
+    void appendErrorText(const QString &text);
     void operationCompeleted();
 
     virtual void reject() override;
@@ -65,4 +66,4 @@ private:
     const QString m_workingDir;
 };
 
-#endif  // SVNPROGRESSDIALOG_H
+#endif // SVNPROGRESSDIALOG_H

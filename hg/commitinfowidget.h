@@ -7,13 +7,14 @@
 #ifndef HGCOMMITINFOWIDGET_H
 #define HGCOMMITINFOWIDGET_H
 
-#include <QWidget>
 #include <QAbstractItemView>
 #include <QList>
+#include <QWidget>
 
-namespace KTextEditor {
-    class View;
-    class Document;
+namespace KTextEditor
+{
+class View;
+class Document;
 };
 
 class QListWidget;
@@ -28,7 +29,7 @@ class HgCommitInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HgCommitInfoWidget(QWidget *parent=nullptr);
+    explicit HgCommitInfoWidget(QWidget *parent = nullptr);
 
     /**
      * Adds a new entry in the ListWidget with the chageset parameters
@@ -40,15 +41,11 @@ public:
      * @param log Commit Message of that changeset
      *
      */
-    void addItem(const QString &revision, 
-                 const QString &changeset,
-                 const QString &branch,
-                 const QString &author,
-                 const QString &log);
+    void addItem(const QString &revision, const QString &changeset, const QString &branch, const QString &author, const QString &log);
 
     /**
      * Adds a new QListWidgetItem into list. Expects the changeset information
-     * in stored in different roles of data. 
+     * in stored in different roles of data.
      *
      * DisplayRole    => Changeset Identification Hash
      * UserRole + 1   => Revision Number
@@ -63,7 +60,7 @@ public:
     /**
      * Returns changeset identification hash of selected changeset in ListWidget.
      *
-     * @return String containing the changeset identification hash of selected 
+     * @return String containing the changeset identification hash of selected
      *      chageset
      *
      */
@@ -72,13 +69,13 @@ public:
     /**
      * @return Returns a list of selected changesets
      */
-    QList<QListWidgetItem*> selectedItems() const;
+    QList<QListWidgetItem *> selectedItems() const;
 
     /**
      * @return Returns pointer to QListWidgetItem of selected changeset.
      */
-    QListWidgetItem* currentItem() const;
-    
+    QListWidgetItem *currentItem() const;
+
     /**
      * Calls QListWidget::setSelectionMode(QAbstractItemView::SelectionMode)
      * on the m_commitListWidget
@@ -106,4 +103,3 @@ private:
 };
 
 #endif /* HGCOMMITINFOWIDGET_H */
-

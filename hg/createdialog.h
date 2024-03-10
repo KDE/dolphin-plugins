@@ -7,8 +7,8 @@
 #ifndef HGCREATEDIALOG_H
 #define HGCREATEDIALOG_H
 
-#include <QString>
 #include "dialogbase.h"
+#include <QString>
 
 class QLineEdit;
 class QLabel;
@@ -31,8 +31,6 @@ private:
     QString m_workingDirectory;
     QLineEdit *m_repoNameEdit;
     QLabel *m_directory;
-
 };
 
 #endif // HGCREATEDIALOG_H
-

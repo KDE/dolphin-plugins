@@ -9,11 +9,11 @@
 
 #include "hgwrapper.h"
 
-#include <QString>
+#include "dialogbase.h"
+#include <QMap>
 #include <QProcess>
 #include <QSize>
-#include <QMap>
-#include "dialogbase.h"
+#include <QString>
 
 class QLabel;
 class QCheckBox;
@@ -23,8 +23,8 @@ class QTextEdit;
 class QComboBox;
 class HgPathSelector;
 
-//TODO: Save/Load dialog geometry
-//TODO: HTTPS login
+// TODO: Save/Load dialog geometry
+// TODO: HTTPS login
 //
 
 /**
@@ -36,7 +36,7 @@ class HgSyncBaseDialog : public DialogBase
     Q_OBJECT
 
 public:
-    enum DialogType {PushDialog, PullDialog};
+    enum DialogType { PushDialog, PullDialog };
 
     explicit HgSyncBaseDialog(DialogType dialogType, QWidget *parent = nullptr);
 
@@ -73,29 +73,27 @@ protected Q_SLOTS:
     virtual void readBigSize() = 0;
 
 protected:
-    HgPathSelector          *m_pathSelector;
-    QProgressBar            *m_statusProg;
-    bool                     m_haveChanges;
-    bool                     m_terminated;
-    HgWrapper               *m_hgw;
-    DialogType               m_dialogType;
+    HgPathSelector *m_pathSelector;
+    QProgressBar *m_statusProg;
+    bool m_haveChanges;
+    bool m_terminated;
+    HgWrapper *m_hgw;
+    DialogType m_dialogType;
 
     // Options
-    QList<QCheckBox*>        m_options;
-    QGroupBox               *m_optionGroup;
+    QList<QCheckBox *> m_options;
+    QGroupBox *m_optionGroup;
 
     // geometry
-    QSize                    m_smallSize;
-    QSize                    m_bigSize;
+    QSize m_smallSize;
+    QSize m_bigSize;
 
     // changes
-    QPushButton             *m_changesButton;
-    QPushButton             *m_optionsButton;
-    QGroupBox               *m_changesGroup;
-    QProcess                 m_process;
-    QProcess                 m_main_process; //should I use another process?
-
+    QPushButton *m_changesButton;
+    QPushButton *m_optionsButton;
+    QGroupBox *m_changesGroup;
+    QProcess m_process;
+    QProcess m_main_process; // should I use another process?
 };
 
 #endif // HGSYNCDIALOGBASE_H
-

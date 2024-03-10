@@ -6,25 +6,24 @@
 
 #include "pluginsettings.h"
 #include "hgconfig.h"
-#include <QDir>
-#include <QLabel>
-#include <QGridLayout>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QFileDialog>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
+#include <QDir>
+#include <QFileDialog>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
-HgPluginSettingsWidget::HgPluginSettingsWidget(QWidget *parent) :
-    QWidget(parent),
-    m_config(nullptr)
+HgPluginSettingsWidget::HgPluginSettingsWidget(QWidget *parent)
+    : QWidget(parent)
+    , m_config(nullptr)
 {
     setupUI();
     loadConfig();
 
-    connect(m_diffBrowseButton, SIGNAL(clicked()), 
-            this, SLOT(browse_diff()));
+    connect(m_diffBrowseButton, SIGNAL(clicked()), this, SLOT(browse_diff()));
 }
 
 HgPluginSettingsWidget::~HgPluginSettingsWidget()
@@ -44,13 +43,10 @@ void HgPluginSettingsWidget::loadConfig()
     QString oldPath = QDir::homePath() + QLatin1String("/.dolphin-hg");
     if (QFile::exists(oldPath)) {
         // Copy old config file into user .config directory
-        QFile::copy(oldPath,
-            QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-            + QLatin1String("/dolphin-hg"));
+        QFile::copy(oldPath, QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1String("/dolphin-hg"));
         QFile::remove(oldPath);
     }
-    m_config = new KConfig(QLatin1String("dolphin-hg"), KConfig::SimpleConfig,
-                           QStandardPaths::GenericConfigLocation);
+    m_config = new KConfig(QLatin1String("dolphin-hg"), KConfig::SimpleConfig, QStandardPaths::GenericConfigLocation);
 
     KConfigGroup group(m_config, QStringLiteral("diff"));
     QString diffExec = group.readEntry(QLatin1String("exec"), QString()).trimmed();
@@ -61,8 +57,7 @@ void HgPluginSettingsWidget::setupUI()
 {
     m_diffProg = new QLineEdit;
     m_diffBrowseButton = new QPushButton(xi18nc("@label", "Browse"));
-    QLabel *diffProgLabel = new QLabel(xi18nc("@label",
-                                "Visual Diff Executable"));
+    QLabel *diffProgLabel = new QLabel(xi18nc("@label", "Visual Diff Executable"));
 
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(diffProgLabel, 0, 0);
@@ -82,7 +77,5 @@ void HgPluginSettingsWidget::browse_diff()
 
     m_diffProg->setText(path);
 }
-
-
 
 #include "moc_pluginsettings.cpp"

@@ -25,16 +25,14 @@ class FileViewBazaarPlugin : public KVersionControlPlugin
     Q_OBJECT
 
 public:
-    FileViewBazaarPlugin(QObject* parent, const QList<QVariant>& args);
+    FileViewBazaarPlugin(QObject *parent, const QList<QVariant> &args);
     ~FileViewBazaarPlugin() override;
-    QString fileName() const  override;
-    bool beginRetrieval(const QString& directory)  override;
+    QString fileName() const override;
+    bool beginRetrieval(const QString &directory) override;
     void endRetrieval() override;
-    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem& item) const override;
-    QList<QAction*> versionControlActions(const KFileItemList& items) const override;
-    QList<QAction*> outOfVersionControlActions(const KFileItemList& items) const override;
-
-
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem &item) const override;
+    QList<QAction *> versionControlActions(const KFileItemList &items) const override;
+    QList<QAction *> outOfVersionControlActions(const KFileItemList &items) const override;
 
 private Q_SLOTS:
     void updateFiles();
@@ -60,28 +58,28 @@ private:
      *                    Message that should be shown if the execution of the command
      *                    has been completed successfully.
      */
-    void execBazaarCommand(const QString& bzrCommand,
-                        const QStringList& arguments,
-                        const QString& infoMsg,
-                        const QString& errorMsg,
-                        const QString& operationCompletedMsg);
+    void execBazaarCommand(const QString &bzrCommand,
+                           const QStringList &arguments,
+                           const QString &infoMsg,
+                           const QString &errorMsg,
+                           const QString &operationCompletedMsg);
 
     void startBazaarCommandProcess();
 
-    QList<QAction*> contextMenuFilesActions(const KFileItemList& items) const;
-    QList<QAction*> contextMenuDirectoryActions(const QString& directory) const;
+    QList<QAction *> contextMenuFilesActions(const KFileItemList &items) const;
+    QList<QAction *> contextMenuDirectoryActions(const QString &directory) const;
 
     bool m_pendingOperation;
     QHash<QString, ItemVersion> m_versionInfoHash;
 
-    QAction* m_updateAction;
-    QAction* m_pullAction;
-    QAction* m_pushAction;
-    QAction* m_showLocalChangesAction;
-    QAction* m_commitAction;
-    QAction* m_addAction;
-    QAction* m_removeAction;
-    QAction* m_logAction;
+    QAction *m_updateAction;
+    QAction *m_pullAction;
+    QAction *m_pushAction;
+    QAction *m_showLocalChangesAction;
+    QAction *m_commitAction;
+    QAction *m_addAction;
+    QAction *m_removeAction;
+    QAction *m_logAction;
 
     QString m_command;
     QStringList m_arguments;
@@ -95,4 +93,3 @@ private:
     QTemporaryFile m_tempFile;
 };
 #endif // FILEVIEWBAZAARPLUGIN_H
-

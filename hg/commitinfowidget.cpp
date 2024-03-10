@@ -8,23 +8,22 @@
 #include "commititemdelegate.h"
 #include "hgwrapper.h"
 
-#include <QString>
-#include <QHBoxLayout>
-#include <QListWidget>
-#include <KTextEditor/Document>
-#include <KTextEditor/View>
-#include <KTextEditor/Editor>
-#include <KTextEditor/Cursor>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KTextEditor/Cursor>
+#include <KTextEditor/Document>
+#include <KTextEditor/Editor>
+#include <KTextEditor/View>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QString>
 
-HgCommitInfoWidget::HgCommitInfoWidget(QWidget *parent) :
-    QWidget(parent)
+HgCommitInfoWidget::HgCommitInfoWidget(QWidget *parent)
+    : QWidget(parent)
 {
     setupUI();
 
-    connect(m_commitListWidget, &QListWidget::itemSelectionChanged,
-            this, &HgCommitInfoWidget::slotUpdateInfo);
+    connect(m_commitListWidget, &QListWidget::itemSelectionChanged, this, &HgCommitInfoWidget::slotUpdateInfo);
 }
 
 void HgCommitInfoWidget::setupUI()
@@ -34,13 +33,13 @@ void HgCommitInfoWidget::setupUI()
 
     KTextEditor::Editor *editor = KTextEditor::Editor::instance();
     if (!editor) {
-        KMessageBox::error(this, 
-                i18n("A KDE text-editor component could not be found;"
-                     "\nplease check your KDE installation."));
+        KMessageBox::error(this,
+                           i18n("A KDE text-editor component could not be found;"
+                                "\nplease check your KDE installation."));
         return;
     }
     m_editorDoc = editor->createDocument(nullptr);
-    m_editorView = qobject_cast<KTextEditor::View*>(m_editorDoc->createView(this));
+    m_editorView = qobject_cast<KTextEditor::View *>(m_editorDoc->createView(this));
     m_editorView->setStatusBarEnabled(false);
     m_editorDoc->setReadWrite(false);
 
@@ -51,13 +50,8 @@ void HgCommitInfoWidget::setupUI()
     setLayout(layout);
 }
 
-void HgCommitInfoWidget::addItem(const QString &revision, 
-                                 const QString &changeset,
-                                 const QString &branch,
-                                 const QString &author,
-                                 const QString &log)
+void HgCommitInfoWidget::addItem(const QString &revision, const QString &changeset, const QString &branch, const QString &author, const QString &log)
 {
-
     QListWidgetItem *item = new QListWidgetItem;
     item->setData(Qt::DisplayRole, changeset);
     item->setData(Qt::UserRole + 1, revision);
@@ -72,7 +66,7 @@ void HgCommitInfoWidget::addItem(QListWidgetItem *item)
     m_commitListWidget->addItem(item);
 }
 
-QListWidgetItem* HgCommitInfoWidget::currentItem() const
+QListWidgetItem *HgCommitInfoWidget::currentItem() const
 {
     return m_commitListWidget->currentItem();
 }
@@ -105,7 +99,7 @@ void HgCommitInfoWidget::slotUpdateInfo()
     m_editorDoc->closeUrl(true);
     m_editorDoc->setText(output);
     m_editorDoc->setHighlightingMode(QStringLiteral("diff"));
-    m_editorView->setCursorPosition( KTextEditor::Cursor(0, 0) );
+    m_editorView->setCursorPosition(KTextEditor::Cursor(0, 0));
     m_editorDoc->setReadWrite(false);
 }
 
@@ -114,10 +108,9 @@ void HgCommitInfoWidget::setSelectionMode(QAbstractItemView::SelectionMode mode)
     m_commitListWidget->setSelectionMode(mode);
 }
 
-QList<QListWidgetItem*> HgCommitInfoWidget::selectedItems() const
+QList<QListWidgetItem *> HgCommitInfoWidget::selectedItems() const
 {
     return m_commitListWidget->selectedItems();
 }
-
 
 #include "moc_commitinfowidget.cpp"

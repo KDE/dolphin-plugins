@@ -14,10 +14,11 @@
 
 #include "ui_svnlogdialog.h"
 
-class SvnLogDialog : public QDialog {
+class SvnLogDialog : public QDialog
+{
     Q_OBJECT
 public:
-    SvnLogDialog(const QString& contextDir, QWidget *parent = nullptr);
+    SvnLogDialog(const QString &contextDir, QWidget *parent = nullptr);
     virtual ~SvnLogDialog() override;
 
 public Q_SLOTS:
@@ -26,10 +27,10 @@ public Q_SLOTS:
     void on_tLog_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn);
 
 Q_SIGNALS:
-    void errorMessage(const QString& msg);
-    void operationCompletedMessage(const QString& msg);
-    void diffAgainstWorkingCopy(const QString& localFilePath, ulong rev);
-    void diffBetweenRevs(const QString& remoteFilePath, ulong rev1, ulong rev2);
+    void errorMessage(const QString &msg);
+    void operationCompletedMessage(const QString &msg);
+    void diffAgainstWorkingCopy(const QString &localFilePath, ulong rev);
+    void diffBetweenRevs(const QString &remoteFilePath, ulong rev1, ulong rev2);
 
 private Q_SLOTS:
     void showContextMenuLog(const QPoint &pos);
@@ -40,7 +41,7 @@ private Q_SLOTS:
 
 private:
     Ui::SvnLogDialog m_ui;
-    QSharedPointer< QVector<logEntry> > m_log;
+    QSharedPointer<QVector<logEntry>> m_log;
     const QString m_contextDir;
     uint m_logLength;
     QAction *m_updateToRev;
@@ -50,4 +51,4 @@ private:
     QAction *m_fileRevertToRev;
 };
 
-#endif  // SVNLOGDIALOG_H
+#endif // SVNLOGDIALOG_H

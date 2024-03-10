@@ -5,27 +5,26 @@
 */
 
 #include "exportdialog.h"
-#include "fileviewhgpluginsettings.h"
 #include "commitinfowidget.h"
+#include "fileviewhgpluginsettings.h"
 #include "hgwrapper.h"
 
+#include <KLocalizedString>
+#include <KMessageBox>
 #include <QCheckBox>
-#include <QGroupBox>
-#include <QVBoxLayout>
+#include <QFileDialog>
 #include <QGridLayout>
+#include <QGroupBox>
 #include <QListWidget>
 #include <QProcess>
 #include <QTextCodec>
-#include <QFileDialog>
-#include <KLocalizedString>
-#include <KMessageBox>
+#include <QVBoxLayout>
 
-HgExportDialog::HgExportDialog(QWidget *parent) :
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+HgExportDialog::HgExportDialog(QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
 {
     // dialog properties
-    this->setWindowTitle(i18nc("@title:window",
-                "<application>Hg</application> Export"));
+    this->setWindowTitle(i18nc("@title:window", "<application>Hg</application> Export"));
     okButton()->setText(xi18nc("@action:button", "Export"));
 
     //
@@ -34,8 +33,7 @@ HgExportDialog::HgExportDialog(QWidget *parent) :
 
     // Load saved settings
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->exportDialogWidth(),
-                               settings->exportDialogHeight()));
+    this->resize(QSize(settings->exportDialogWidth(), settings->exportDialogHeight()));
 
     //
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
@@ -62,7 +60,7 @@ void HgExportDialog::setupUI()
     optionLayout->addWidget(m_optNoDates);
     m_optionGroup->setLayout(optionLayout);
 
-    //setup main dialog widget
+    // setup main dialog widget
     QVBoxLayout *lay = new QVBoxLayout;
     lay->addWidget(mainGroup);
     lay->addWidget(m_optionGroup);
@@ -80,8 +78,9 @@ void HgExportDialog::loadCommits()
     QStringList args;
     args << QLatin1String("log");
     args << QLatin1String("--template");
-    args << QLatin1String("{rev}\n{node|short}\n{branch}\n"
-                          "{author}\n{desc|firstline}\n");
+    args << QLatin1String(
+        "{rev}\n{node|short}\n{branch}\n"
+        "{author}\n{desc|firstline}\n");
 
     process.start(QLatin1String("hg"), args);
     process.waitForFinished();
@@ -106,7 +105,7 @@ void HgExportDialog::loadCommits()
             item->setData(Qt::UserRole + 4, log);
             m_commitInfoWidget->addItem(item);
         }
-        count = (count + 1)%FINAL;
+        count = (count + 1) % FINAL;
     }
 }
 
@@ -121,10 +120,9 @@ void HgExportDialog::saveGeometry()
 void HgExportDialog::done(int r)
 {
     if (r == QDialog::Accepted) {
-        const QList<QListWidgetItem*> items = m_commitInfoWidget->selectedItems();
+        const QList<QListWidgetItem *> items = m_commitInfoWidget->selectedItems();
         if (items.empty()) {
-            KMessageBox::error(this, i18nc("@message:error",
-                     "Please select at least one changeset to be exported!"));
+            KMessageBox::error(this, i18nc("@message:error", "Please select at least one changeset to be exported!"));
             return;
         }
 
@@ -158,16 +156,12 @@ void HgExportDialog::done(int r)
         HgWrapper *hgw = HgWrapper::instance();
         if (hgw->executeCommandTillFinished(QStringLiteral("export"), args)) {
             QDialog::done(r);
-        }
-        else {
+        } else {
             KMessageBox::error(this, hgw->readAllStandardError());
         }
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
-
-
 
 #include "moc_exportdialog.cpp"

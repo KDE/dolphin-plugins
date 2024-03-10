@@ -22,80 +22,70 @@
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewBazaarPlugin, "fileviewbazaarplugin.json")
 
-FileViewBazaarPlugin::FileViewBazaarPlugin(QObject* parent, const QList<QVariant>& args) :
-    KVersionControlPlugin(parent),
-    m_pendingOperation(false),
-    m_versionInfoHash(),
-    m_updateAction(nullptr),
-    m_pullAction(nullptr),
-    m_pushAction(nullptr),
-    m_showLocalChangesAction(nullptr),
-    m_commitAction(nullptr),
-    m_addAction(nullptr),
-    m_removeAction(nullptr),
-    m_logAction(nullptr),
-    m_command(),
-    m_arguments(),
-    m_errorMsg(),
-    m_operationCompletedMsg(),
-    m_contextDir(),
-    m_contextItems(),
-    m_process(),
-    m_tempFile()
+FileViewBazaarPlugin::FileViewBazaarPlugin(QObject *parent, const QList<QVariant> &args)
+    : KVersionControlPlugin(parent)
+    , m_pendingOperation(false)
+    , m_versionInfoHash()
+    , m_updateAction(nullptr)
+    , m_pullAction(nullptr)
+    , m_pushAction(nullptr)
+    , m_showLocalChangesAction(nullptr)
+    , m_commitAction(nullptr)
+    , m_addAction(nullptr)
+    , m_removeAction(nullptr)
+    , m_logAction(nullptr)
+    , m_command()
+    , m_arguments()
+    , m_errorMsg()
+    , m_operationCompletedMsg()
+    , m_contextDir()
+    , m_contextItems()
+    , m_process()
+    , m_tempFile()
 {
     Q_UNUSED(args);
 
     m_updateAction = new QAction(this);
     m_updateAction->setText(i18nc("@item:inmenu", "Bazaar Update"));
-    connect(m_updateAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::updateFiles);
+    connect(m_updateAction, &QAction::triggered, this, &FileViewBazaarPlugin::updateFiles);
 
     m_pullAction = new QAction(this);
     m_pullAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-pull")));
     m_pullAction->setText(i18nc("@item:inmenu", "Bazaar Pull"));
-    connect(m_pullAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::pullFiles);
+    connect(m_pullAction, &QAction::triggered, this, &FileViewBazaarPlugin::pullFiles);
 
     m_pushAction = new QAction(this);
     m_pushAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-push")));
     m_pushAction->setText(i18nc("@item:inmenu", "Bazaar Push"));
-    connect(m_pushAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::pushFiles);
+    connect(m_pushAction, &QAction::triggered, this, &FileViewBazaarPlugin::pushFiles);
 
     m_showLocalChangesAction = new QAction(this);
     m_showLocalChangesAction->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
     m_showLocalChangesAction->setText(i18nc("@item:inmenu", "Show Local Bazaar Changes"));
-    connect(m_showLocalChangesAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::showLocalChanges);
+    connect(m_showLocalChangesAction, &QAction::triggered, this, &FileViewBazaarPlugin::showLocalChanges);
 
     m_commitAction = new QAction(this);
     m_commitAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-commit")));
     m_commitAction->setText(i18nc("@item:inmenu", "Bazaar Commit..."));
-    connect(m_commitAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::commitFiles);
+    connect(m_commitAction, &QAction::triggered, this, &FileViewBazaarPlugin::commitFiles);
 
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     m_addAction->setText(i18nc("@item:inmenu", "Bazaar Add..."));
-    connect(m_addAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::addFiles);
+    connect(m_addAction, &QAction::triggered, this, &FileViewBazaarPlugin::addFiles);
 
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     m_removeAction->setText(i18nc("@item:inmenu", "Bazaar Delete"));
-    connect(m_removeAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::removeFiles);
+    connect(m_removeAction, &QAction::triggered, this, &FileViewBazaarPlugin::removeFiles);
 
     m_logAction = new QAction(this);
     m_logAction->setIcon(QIcon::fromTheme(QStringLiteral("format-list-ordered")));
     m_logAction->setText(i18nc("@item:inmenu", "Bazaar Log"));
-    connect(m_logAction, &QAction::triggered,
-            this, &FileViewBazaarPlugin::log);
+    connect(m_logAction, &QAction::triggered, this, &FileViewBazaarPlugin::log);
 
-    connect(&m_process, &QProcess::finished,
-            this, &FileViewBazaarPlugin::slotOperationCompleted);
-    connect(&m_process, &QProcess::errorOccurred,
-            this, &FileViewBazaarPlugin::slotOperationError);
+    connect(&m_process, &QProcess::finished, this, &FileViewBazaarPlugin::slotOperationCompleted);
+    connect(&m_process, &QProcess::errorOccurred, this, &FileViewBazaarPlugin::slotOperationError);
 }
 
 FileViewBazaarPlugin::~FileViewBazaarPlugin()
@@ -107,7 +97,7 @@ QString FileViewBazaarPlugin::fileName() const
     return QStringLiteral(".bzr");
 }
 
-bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
+bool FileViewBazaarPlugin::beginRetrieval(const QString &directory)
 {
     Q_ASSERT(directory.endsWith(QLatin1Char('/')));
 
@@ -117,13 +107,13 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
     process1.start(QStringLiteral("bzr"), {QStringLiteral("root")});
     while (process1.waitForReadyRead()) {
         char buffer[512];
-        while (process1.readLine(buffer, sizeof(buffer)) > 0)  {
+        while (process1.readLine(buffer, sizeof(buffer)) > 0) {
             baseDir = QString::fromLocal8Bit(buffer).trimmed();
         }
     }
     // if bzr is not installed
     if (baseDir.isEmpty()) {
-            return false;
+        return false;
     }
 
     // Clear all entries for this directory including the entries
@@ -141,7 +131,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
     process2.start(QStringLiteral("bzr"), {QStringLiteral("ignored")});
     while (process2.waitForReadyRead()) {
         char buffer[512];
-        while (process2.readLine(buffer, sizeof(buffer)) > 0)  {
+        while (process2.readLine(buffer, sizeof(buffer)) > 0) {
             QString line = QString::fromLocal8Bit(buffer).trimmed();
             QStringList list = line.split(QLatin1Char(' '));
             QString file = baseDir + QLatin1Char('/') + list[0];
@@ -159,17 +149,29 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
     process.start(QStringLiteral("bzr"), arguments);
     while (process.waitForReadyRead()) {
         char buffer[1024];
-        while (process.readLine(buffer, sizeof(buffer)) > 0)  {
+        while (process.readLine(buffer, sizeof(buffer)) > 0) {
             ItemVersion state = NormalVersion;
             QString filePath = QString::fromUtf8(buffer);
 
             // This could probably do with being more consistent
             switch (buffer[0]) {
-            case '?': state = UnversionedVersion; break;
-            case ' ': if (buffer[1] == 'M') {state = LocallyModifiedVersion;} break;
-            case '+': state = AddedVersion; break;
-            case '-': state = RemovedVersion; break;
-            case 'C': state = ConflictingVersion; break;
+            case '?':
+                state = UnversionedVersion;
+                break;
+            case ' ':
+                if (buffer[1] == 'M') {
+                    state = LocallyModifiedVersion;
+                }
+                break;
+            case '+':
+                state = AddedVersion;
+                break;
+            case '-':
+                state = RemovedVersion;
+                break;
+            case 'C':
+                state = ConflictingVersion;
+                break;
             default:
                 if (filePath.contains(QLatin1Char('*'))) {
                     state = UpdateRequiredVersion;
@@ -184,13 +186,13 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
             if (state != NormalVersion) {
                 int pos = 4;
                 const int length = filePath.length() - pos - 1;
-                //conflicts annoyingly have a human readable text before the filename
-                //TODO cover other conflict types
+                // conflicts annoyingly have a human readable text before the filename
+                // TODO cover other conflict types
                 if (filePath.startsWith(QLatin1String("C   Text conflict"))) {
                     filePath = filePath.mid(17, length);
                 }
                 filePath = baseDir + QLatin1Char('/') + filePath.mid(pos, length);
-                //remove type symbols from directories, links and executables
+                // remove type symbols from directories, links and executables
                 if (filePath.endsWith(QLatin1Char('/')) || filePath.endsWith(QLatin1Char('@')) || filePath.endsWith(QLatin1Char('*'))) {
                     filePath = filePath.left(filePath.length() - 1);
                 }
@@ -201,7 +203,7 @@ bool FileViewBazaarPlugin::beginRetrieval(const QString& directory)
         }
     }
     if ((process.exitCode() != 0 || process.exitStatus() != QProcess::NormalExit)) {
-            return false;
+        return false;
     }
 
     return true;
@@ -211,7 +213,7 @@ void FileViewBazaarPlugin::endRetrieval()
 {
 }
 
-KVersionControlPlugin::ItemVersion FileViewBazaarPlugin::itemVersion(const KFileItem& item) const
+KVersionControlPlugin::ItemVersion FileViewBazaarPlugin::itemVersion(const KFileItem &item) const
 {
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
@@ -242,7 +244,7 @@ KVersionControlPlugin::ItemVersion FileViewBazaarPlugin::itemVersion(const KFile
     return NormalVersion;
 }
 
-QList<QAction*> FileViewBazaarPlugin::versionControlActions(const KFileItemList &items) const
+QList<QAction *> FileViewBazaarPlugin::versionControlActions(const KFileItemList &items) const
 {
     if (items.count() == 1 && items.first().isDir()) {
         QString directory = items.first().localPath();
@@ -260,17 +262,17 @@ QList<QAction*> FileViewBazaarPlugin::versionControlActions(const KFileItemList 
     }
 }
 
-QList<QAction*> FileViewBazaarPlugin::outOfVersionControlActions(const KFileItemList& items) const
+QList<QAction *> FileViewBazaarPlugin::outOfVersionControlActions(const KFileItemList &items) const
 {
     Q_UNUSED(items)
 
     return {};
 }
 
-QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemList& items) const
+QList<QAction *> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemList &items) const
 {
     Q_ASSERT(!items.isEmpty());
-    for (const KFileItem& item : items) {
+    for (const KFileItem &item : items) {
         m_contextItems.append(item);
     }
     m_contextDir.clear();
@@ -282,19 +284,19 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemLis
         const int itemsCount = items.count();
         int versionedCount = 0;
         int editingCount = 0;
-        for (const KFileItem& item : items) {
+        for (const KFileItem &item : items) {
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion) {
                 ++versionedCount;
             }
 
             switch (state) {
-                case LocallyModifiedVersion:
-                case ConflictingVersion:
-                    ++editingCount;
-                    break;
-                default:
-                    break;
+            case LocallyModifiedVersion:
+            case ConflictingVersion:
+                ++editingCount;
+                break;
+            default:
+                break;
             }
         }
         m_commitAction->setEnabled(editingCount > 0);
@@ -311,7 +313,7 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemLis
     m_showLocalChangesAction->setEnabled(noPendingOperation);
     m_logAction->setEnabled(noPendingOperation);
 
-    QList<QAction*> actions;
+    QList<QAction *> actions;
     actions.append(m_updateAction);
     actions.append(m_pullAction);
     actions.append(m_pushAction);
@@ -323,7 +325,7 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuFilesActions(const KFileItemLis
     return actions;
 }
 
-QList<QAction*> FileViewBazaarPlugin::contextMenuDirectoryActions(const QString& directory) const
+QList<QAction *> FileViewBazaarPlugin::contextMenuDirectoryActions(const QString &directory) const
 {
     m_contextDir = directory;
     m_contextItems.clear();
@@ -340,7 +342,7 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuDirectoryActions(const QString&
     m_showLocalChangesAction->setEnabled(enabled);
     m_logAction->setEnabled(enabled);
 
-    QList<QAction*> actions;
+    QList<QAction *> actions;
     actions.append(m_updateAction);
     actions.append(m_pullAction);
     actions.append(m_pushAction);
@@ -353,70 +355,78 @@ QList<QAction*> FileViewBazaarPlugin::contextMenuDirectoryActions(const QString&
 
 void FileViewBazaarPlugin::updateFiles()
 {
-    execBazaarCommand(QStringLiteral("qupdate"), QStringList(),
-                   i18nc("@info:status", "Updating Bazaar repository..."),
-                   i18nc("@info:status", "Update of Bazaar repository failed."),
-                   i18nc("@info:status", "Updated Bazaar repository."));
+    execBazaarCommand(QStringLiteral("qupdate"),
+                      QStringList(),
+                      i18nc("@info:status", "Updating Bazaar repository..."),
+                      i18nc("@info:status", "Update of Bazaar repository failed."),
+                      i18nc("@info:status", "Updated Bazaar repository."));
 }
 
 void FileViewBazaarPlugin::pullFiles()
 {
     QStringList arguments = QStringList();
     arguments << QStringLiteral("-d");
-    execBazaarCommand(QStringLiteral("qpull"), arguments,
-                   i18nc("@info:status", "Pulling Bazaar repository..."),
-                   i18nc("@info:status", "Pull of Bazaar repository failed."),
-                   i18nc("@info:status", "Pulled Bazaar repository."));
+    execBazaarCommand(QStringLiteral("qpull"),
+                      arguments,
+                      i18nc("@info:status", "Pulling Bazaar repository..."),
+                      i18nc("@info:status", "Pull of Bazaar repository failed."),
+                      i18nc("@info:status", "Pulled Bazaar repository."));
 }
 
 void FileViewBazaarPlugin::pushFiles()
 {
     QStringList arguments = QStringList();
     arguments << QStringLiteral("-d");
-    execBazaarCommand(QStringLiteral("qpush"), arguments,
-                   i18nc("@info:status", "Pushing Bazaar repository..."),
-                   i18nc("@info:status", "Push of Bazaar repository failed."),
-                   i18nc("@info:status", "Pushed Bazaar repository."));
+    execBazaarCommand(QStringLiteral("qpush"),
+                      arguments,
+                      i18nc("@info:status", "Pushing Bazaar repository..."),
+                      i18nc("@info:status", "Push of Bazaar repository failed."),
+                      i18nc("@info:status", "Pushed Bazaar repository."));
 }
 
 void FileViewBazaarPlugin::showLocalChanges()
 {
-    execBazaarCommand(QStringLiteral("qdiff"), QStringList(),
-                   i18nc("@info:status", "Reviewing Changes..."),
-                   i18nc("@info:status", "Review Changes failed."),
-                   i18nc("@info:status", "Reviewed Changes."));
+    execBazaarCommand(QStringLiteral("qdiff"),
+                      QStringList(),
+                      i18nc("@info:status", "Reviewing Changes..."),
+                      i18nc("@info:status", "Review Changes failed."),
+                      i18nc("@info:status", "Reviewed Changes."));
 }
 
 void FileViewBazaarPlugin::commitFiles()
 {
-    execBazaarCommand(QStringLiteral("qcommit"), QStringList(),
-                   i18nc("@info:status", "Committing Bazaar changes..."),
-                   i18nc("@info:status", "Commit of Bazaar changes failed."),
-                   i18nc("@info:status", "Committed Bazaar changes."));
+    execBazaarCommand(QStringLiteral("qcommit"),
+                      QStringList(),
+                      i18nc("@info:status", "Committing Bazaar changes..."),
+                      i18nc("@info:status", "Commit of Bazaar changes failed."),
+                      i18nc("@info:status", "Committed Bazaar changes."));
 }
 
 void FileViewBazaarPlugin::addFiles()
 {
-    execBazaarCommand(QStringLiteral("qadd"), QStringList(),
-                   i18nc("@info:status", "Adding files to Bazaar repository..."),
-                   i18nc("@info:status", "Adding of files to Bazaar repository failed."),
-                   i18nc("@info:status", "Added files to Bazaar repository."));
+    execBazaarCommand(QStringLiteral("qadd"),
+                      QStringList(),
+                      i18nc("@info:status", "Adding files to Bazaar repository..."),
+                      i18nc("@info:status", "Adding of files to Bazaar repository failed."),
+                      i18nc("@info:status", "Added files to Bazaar repository."));
 }
 
 void FileViewBazaarPlugin::removeFiles()
 {
-    execBazaarCommand(QStringLiteral("remove"), QStringList(),
-                   i18nc("@info:status", "Removing files from Bazaar repository..."),
-                   i18nc("@info:status", "Removing of files from Bazaar repository failed."),
-                   i18nc("@info:status", "Removed files from Bazaar repository."));
+    execBazaarCommand(QStringLiteral("remove"),
+                      QStringList(),
+                      i18nc("@info:status", "Removing files from Bazaar repository..."),
+                      i18nc("@info:status", "Removing of files from Bazaar repository failed."),
+                      i18nc("@info:status", "Removed files from Bazaar repository."));
 }
 
 void FileViewBazaarPlugin::log()
 {
-    execBazaarCommand(QStringLiteral("qlog"), QStringList(),
-                   i18nc("@info:status", "Running Bazaar Log..."),
-                   i18nc("@info:status", "Running Bazaar Log failed."),
-                   i18nc("@info:status", "Bazaar Log closed."));
+    execBazaarCommand(QStringLiteral("qlog"),
+                      QStringList(),
+                      i18nc("@info:status", "Running Bazaar Log..."),
+                      i18nc("@info:status", "Running Bazaar Log failed."),
+                      i18nc("@info:status", "Bazaar Log closed."));
 }
 
 void FileViewBazaarPlugin::slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus)
@@ -442,11 +452,11 @@ void FileViewBazaarPlugin::slotOperationError()
     Q_EMIT errorMessage(m_errorMsg);
 }
 
-void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
-                                       const QStringList& arguments,
-                                       const QString& infoMsg,
-                                       const QString& errorMsg,
-                                       const QString& operationCompletedMsg)
+void FileViewBazaarPlugin::execBazaarCommand(const QString &command,
+                                             const QStringList &arguments,
+                                             const QString &infoMsg,
+                                             const QString &errorMsg,
+                                             const QString &operationCompletedMsg)
 {
     Q_EMIT infoMessage(infoMsg);
 
@@ -455,7 +465,7 @@ void FileViewBazaarPlugin::execBazaarCommand(const QString& command,
     bool foundQbzr = false;
     while (process.waitForReadyRead()) {
         char buffer[512];
-        while (process.readLine(buffer, sizeof(buffer)) > 0)  {
+        while (process.readLine(buffer, sizeof(buffer)) > 0) {
             QString output = QString::fromLocal8Bit(buffer).trimmed();
             if (output.startsWith(QLatin1String("qbzr"))) {
                 foundQbzr = true;

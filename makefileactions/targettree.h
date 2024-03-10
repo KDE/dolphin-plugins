@@ -10,9 +10,11 @@
 #include <QList>
 #include <QString>
 
-class TargetTree {
+class TargetTree
+{
 public:
-    TargetTree() : m_isTarget(false){};
+    TargetTree()
+        : m_isTarget(false){};
 
     TargetTree(const QString &prefix, bool isTarget)
         : m_prefix(prefix)
@@ -55,10 +57,9 @@ public:
         return true;
     };
 
-    static bool cmp(const TargetTree &a, const TargetTree &b) {
-        return (a.m_children.isEmpty() && !b.m_children.isEmpty())
-            || (a.m_children.isEmpty() && (a.m_prefix < b.m_prefix))
-            || (a.m_prefix < b.m_prefix);
+    static bool cmp(const TargetTree &a, const TargetTree &b)
+    {
+        return (a.m_children.isEmpty() && !b.m_children.isEmpty()) || (a.m_children.isEmpty() && (a.m_prefix < b.m_prefix)) || (a.m_prefix < b.m_prefix);
     };
 
     friend QDebug operator<<(QDebug dbg, const TargetTree &t)

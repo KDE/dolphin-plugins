@@ -7,8 +7,8 @@
 #ifndef SVNCOMMANDS_H
 #define SVNCOMMANDS_H
 
-#include <QString>
 #include <QDateTime>
+#include <QString>
 #include <QtGlobal>
 
 #include <Dolphin/KVersionControlPlugin>
@@ -20,32 +20,32 @@ class QFileDevice;
  * SVN commands execution results.
  */
 struct CommandResult {
-    bool success;       ///< True if return code is '0' (normal execution).
-    QString stdOut;     ///< Process stdout.
-    QString stdErr;     ///< Process stderr.
+    bool success; ///< True if return code is '0' (normal execution).
+    QString stdOut; ///< Process stdout.
+    QString stdErr; ///< Process stderr.
 };
 
 /**
  * Path information for log entry.
  */
 struct affectedPath {
-    QString action;     ///< Action type: "D" for delete, "M" for modified, etc.
-    bool propMods;      ///< Property changes by commit.
-    bool textMods;      ///< File changes by commit.
-    QString kind;       ///< Path type: "file", "dir", etc.
+    QString action; ///< Action type: "D" for delete, "M" for modified, etc.
+    bool propMods; ///< Property changes by commit.
+    bool textMods; ///< File changes by commit.
+    QString kind; ///< Path type: "file", "dir", etc.
 
-    QString path;       ///< Path itself.
+    QString path; ///< Path itself.
 };
 
 /**
  * A single log entry.
  */
 struct logEntry {
-    ulong revision;                         ///< Revision number.
-    QString author;                         ///< Commit author.
-    QDateTime date;                         ///< Commit time and date.
-    QVector<affectedPath> affectedPaths;    ///< Affected paths (files or dirs).
-    QString msg;                            ///< Commit message.
+    ulong revision; ///< Revision number.
+    QString author; ///< Commit author.
+    QDateTime date; ///< Commit time and date.
+    QVector<affectedPath> affectedPaths; ///< Affected paths (files or dirs).
+    QString msg; ///< Commit message.
 };
 
 /**
@@ -53,7 +53,8 @@ struct logEntry {
  *
  * \note All functions are synchronous i.e. blocking. Each of them waits for svn process to finish.
  */
-class SvnCommands {
+class SvnCommands
+{
 public:
     /**
      * Returns file \p filePath local revision. Local revision means last known file revision, not
@@ -64,7 +65,7 @@ public:
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      * \sa remoteRevision()
      */
-    static ulong localRevision(const QString& filePath);
+    static ulong localRevision(const QString &filePath);
 
     /**
      * Returns file \p filePath remote revision. Remote revision means last known SVN repository file
@@ -75,7 +76,7 @@ public:
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      * \sa localRevision()
      */
-    static ulong remoteRevision(const QString& filePath);
+    static ulong remoteRevision(const QString &filePath);
 
     /**
      * For file \p filePath return its full remote repository URL path.
@@ -84,7 +85,7 @@ public:
      *
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      */
-    static QString remoteItemUrl(const QString& filePath);
+    static QString remoteItemUrl(const QString &filePath);
 
     /**
      * From a file \p filePath returns full remote repository URL in which this file located. For
@@ -94,7 +95,7 @@ public:
      *
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      */
-    static QString remoteRootUrl(const QString& filePath);
+    static QString remoteRootUrl(const QString &filePath);
 
     /**
      * From a file \p filePath returns relative repository URL in which this file located. So,
@@ -104,7 +105,7 @@ public:
      *
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      */
-    static QString remoteRelativeUrl(const QString& filePath);
+    static QString remoteRelativeUrl(const QString &filePath);
 
     /**
      * From file \p filePath returns full working copy root path this file contains.
@@ -113,7 +114,7 @@ public:
      *
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      */
-    static QString localRoot(const QString& filePath);
+    static QString localRoot(const QString &filePath);
 
     /**
      * Updates selected \p filePath to revision \p revision. \p filePath could be a single file or a
@@ -123,7 +124,7 @@ public:
      *
      * \note This function can be really time consuming.
      */
-    static bool updateToRevision(const QString& filePath, ulong revision);
+    static bool updateToRevision(const QString &filePath, ulong revision);
 
     /**
      * Discards all local changes in a \p filePath. \p filePath could be a single file or a directory.
@@ -133,7 +134,7 @@ public:
      *
      * \note This function uses only local SVN data without connection to a remote so it's fast.
      */
-    static bool revertLocalChanges(const QString& filePath);
+    static bool revertLocalChanges(const QString &filePath);
 
     /**
      * Reverts selected \p filePath to revision \p revision. \p filePath could be a single file or a
@@ -141,7 +142,7 @@ public:
      *
      * \return True on success, false either.
      */
-    static bool revertToRevision(const QString& filePath, ulong revision);
+    static bool revertToRevision(const QString &filePath, ulong revision);
 
     /**
      * Runs 'svn cleanup' on a \p dir to remove write locks, resume unfinished operations, etc. Its
@@ -150,7 +151,7 @@ public:
      *
      * \return Filled up \p commandResult structure.
      */
-    static CommandResult cleanup(const QString& dir, bool removeUnversioned = false, bool removeIgnored = false, bool includeExternals = false);
+    static CommandResult cleanup(const QString &dir, bool removeUnversioned = false, bool removeIgnored = false, bool includeExternals = false);
 
     /**
      * Export URL \p path at revision \p rev to a file \p file. URL could be a remote URL to a file
@@ -161,8 +162,8 @@ public:
      *
      * \note \p file should already be created with \p new.
      */
-    static bool exportFile(const QUrl& path, ulong rev, QFileDevice *file);
-    static bool exportFile(const QUrl& path, ulong rev, QTemporaryFile *file);
+    static bool exportFile(const QUrl &path, ulong rev, QFileDevice *file);
+    static bool exportFile(const QUrl &path, ulong rev, QTemporaryFile *file);
 
     /**
      * Get SVN log for a following \p filePath (could be a directory or separate file, relative or
@@ -173,7 +174,7 @@ public:
      *
      * \note This function is really time consuming.
      */
-    static QSharedPointer< QVector<logEntry> > getLog(const QString& filePath, uint maxEntries = 255, ulong fromRevision = 0);
+    static QSharedPointer<QVector<logEntry>> getLog(const QString &filePath, uint maxEntries = 255, ulong fromRevision = 0);
 
     /**
      * Check out a working copy of repository \p URL (local URL starts with a 'file://') to a local
@@ -183,7 +184,7 @@ public:
      *
      * \note This function can be really time consuming.
      */
-    static bool checkoutRepository(const QString& url, bool ignoreExternals, const QString& whereto);
+    static bool checkoutRepository(const QString &url, bool ignoreExternals, const QString &whereto);
 };
 
-#endif  // SVNCOMMANDS_H
+#endif // SVNCOMMANDS_H

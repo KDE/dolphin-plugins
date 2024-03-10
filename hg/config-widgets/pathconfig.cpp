@@ -7,23 +7,23 @@
 #include "pathconfig.h"
 #include "hgconfig.h"
 
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QTableWidget>
-#include <QHeaderView>
-#include <QEvent>
-#include <QPushButton>
-#include <QAction>
-#include <QMenu>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QAction>
 #include <QDebug>
+#include <QEvent>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QMenu>
+#include <QPushButton>
+#include <QTableWidget>
+#include <QVBoxLayout>
 
-HgPathConfigWidget::HgPathConfigWidget(QWidget *parent):
-    QWidget(parent),
-    m_loadingCell(false),
-    m_allValidData(true),
-    m_newAdd(false)
+HgPathConfigWidget::HgPathConfigWidget(QWidget *parent)
+    : QWidget(parent)
+    , m_loadingCell(false)
+    , m_allValidData(true)
+    , m_newAdd(false)
 {
     setupUI();
     loadConfig();
@@ -33,39 +33,33 @@ void HgPathConfigWidget::setupContextMenu()
 {
     m_addAction = new QAction(this);
     m_addAction->setIcon(QIcon::fromTheme(QStringLiteral("add")));
-    m_addAction->setText(xi18nc("@action:inmenu",
-                                  "Add"));
+    m_addAction->setText(xi18nc("@action:inmenu", "Add"));
     connect(m_addAction, SIGNAL(triggered()), this, SLOT(slotAddPath()));
 
     m_modifyAction = new QAction(this);
     m_modifyAction->setIcon(QIcon::fromTheme(QStringLiteral("edit")));
-    m_modifyAction->setText(xi18nc("@action:inmenu",
-                                  "Edit"));
+    m_modifyAction->setText(xi18nc("@action:inmenu", "Edit"));
     connect(m_modifyAction, SIGNAL(triggered()), this, SLOT(slotModifyPath()));
 
     m_deleteAction = new QAction(this);
     m_deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("remove")));
-    m_deleteAction->setText(xi18nc("@action:inmenu",
-                                  "Remove"));
+    m_deleteAction->setText(xi18nc("@action:inmenu", "Remove"));
     connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(slotDeletePath()));
-    
+
     m_contextMenu = new QMenu(this);
     m_contextMenu->addAction(m_addAction);
     m_contextMenu->addAction(m_modifyAction);
     m_contextMenu->addAction(m_deleteAction);
 
-    connect(m_pathsListWidget, &QTableWidget::cellChanged,
-            this, &HgPathConfigWidget::slotCellChanged);
-    connect(m_pathsListWidget, SIGNAL(itemSelectionChanged()),
-            this, SLOT(slotSelectionChanged()));
-    connect(m_pathsListWidget, &QTableWidget::customContextMenuRequested,
-            this, &HgPathConfigWidget::slotContextMenuRequested);
+    connect(m_pathsListWidget, &QTableWidget::cellChanged, this, &HgPathConfigWidget::slotCellChanged);
+    connect(m_pathsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(slotSelectionChanged()));
+    connect(m_pathsListWidget, &QTableWidget::customContextMenuRequested, this, &HgPathConfigWidget::slotContextMenuRequested);
 }
 
 void HgPathConfigWidget::setupUI()
 {
     // add, remove, modify buttons goes here
-    QHBoxLayout *actionsLayout = new QHBoxLayout; 
+    QHBoxLayout *actionsLayout = new QHBoxLayout;
     m_addPathButton = new QPushButton(xi18nc("@label:button", "Add"));
     m_modifyPathButton = new QPushButton(xi18nc("@label:button", "Edit"));
     m_deletePathButton = new QPushButton(xi18nc("@label:button", "Remove"));
@@ -91,7 +85,7 @@ void HgPathConfigWidget::setupUI()
     m_pathsListWidget->horizontalHeader()->setStretchLastSection(true);
     m_pathsListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 
-    // setup main layout 
+    // setup main layout
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addLayout(actionsLayout);
     mainLayout->addWidget(m_pathsListWidget);
@@ -111,7 +105,7 @@ void HgPathConfigWidget::loadConfig()
     int count = 0;
     while (it.hasNext()) {
         it.next();
-        
+
         QTableWidgetItem *alias = new QTableWidgetItem;
         QTableWidgetItem *path = new QTableWidgetItem;
 
@@ -135,7 +129,7 @@ void HgPathConfigWidget::saveConfig()
         return;
     }
 
-    // first delete the alias in remove list from hgrc 
+    // first delete the alias in remove list from hgrc
     for (const QString &alias : std::as_const(m_removeList)) {
         hgc.deleteRepoRemotePath(alias);
     }
@@ -168,7 +162,7 @@ void HgPathConfigWidget::slotAddPath()
     QTableWidgetItem *alias = new QTableWidgetItem;
     QTableWidgetItem *path = new QTableWidgetItem;
 
-    int count = m_pathsListWidget->rowCount(); 
+    int count = m_pathsListWidget->rowCount();
     m_loadingCell = true;
     m_pathsListWidget->insertRow(count);
     m_pathsListWidget->setItem(count, 0, alias);
@@ -193,10 +187,9 @@ void HgPathConfigWidget::slotModifyPath()
     m_pathsListWidget->editItem(m_pathsListWidget->currentItem());
 }
 
-void HgPathConfigWidget::slotCellChanged(int row, int col) 
+void HgPathConfigWidget::slotCellChanged(int row, int col)
 {
-    if (m_loadingCell || 
-            m_oldSelValue == m_pathsListWidget->currentItem()->text()) {
+    if (m_loadingCell || m_oldSelValue == m_pathsListWidget->currentItem()->text()) {
         return;
     }
 
@@ -207,22 +200,19 @@ void HgPathConfigWidget::slotCellChanged(int row, int col)
         url->setBackground(Qt::red);
         m_allValidData = false;
         return;
-    }  
-    else if (m_remotePathMap.contains(alias->text()) && m_newAdd) {
+    } else if (m_remotePathMap.contains(alias->text()) && m_newAdd) {
         m_oldSelValue = m_pathsListWidget->currentItem()->text();
         alias->setBackground(Qt::red);
         url->setBackground(Qt::red);
         m_allValidData = false;
         return;
-    }
-    else if (m_remotePathMap.contains(alias->text()) && col == 0) {
+    } else if (m_remotePathMap.contains(alias->text()) && col == 0) {
         m_oldSelValue = m_pathsListWidget->currentItem()->text();
         alias->setBackground(Qt::red);
         url->setBackground(Qt::red);
         m_allValidData = false;
         return;
-    }
-    else {
+    } else {
         qDebug() << "bingo";
         if (!m_newAdd && col == 0) {
             m_remotePathMap.remove(m_oldSelValue);
@@ -242,7 +232,5 @@ void HgPathConfigWidget::slotSelectionChanged()
 {
     m_oldSelValue = m_pathsListWidget->currentItem()->text();
 }
-
-
 
 #include "moc_pathconfig.cpp"

@@ -5,30 +5,28 @@
 */
 
 #include "configdialog.h"
-#include "hgwrapper.h"
 #include "fileviewhgpluginsettings.h"
+#include "hgwrapper.h"
 
 #include "config-widgets/generalconfig.h"
-#include "config-widgets/pathconfig.h"
 #include "config-widgets/ignorewidget.h"
+#include "config-widgets/pathconfig.h"
 #include "config-widgets/pluginsettings.h"
 
-#include <QWidget>
-#include <QDialogButtonBox>
 #include <KLocalizedString>
 #include <QDebug>
+#include <QDialogButtonBox>
+#include <QWidget>
 
-HgConfigDialog::HgConfigDialog(HgConfig::ConfigType type, QWidget *parent):
-    KPageDialog(parent),
-    m_configType(type)
+HgConfigDialog::HgConfigDialog(HgConfig::ConfigType type, QWidget *parent)
+    : KPageDialog(parent)
+    , m_configType(type)
 {
     // dialog properties
     if (m_configType == HgConfig::RepoConfig) {
-        this->setWindowTitle(xi18nc("@title:window",
-                    "<application>Hg</application> Repository Configuration"));
-    } else  {
-        this->setWindowTitle(xi18nc("@title:window",
-                    "<application>Hg</application> Global Configuration"));
+        this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Repository Configuration"));
+    } else {
+        this->setWindowTitle(xi18nc("@title:window", "<application>Hg</application> Global Configuration"));
     }
     this->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel);
 
@@ -49,8 +47,7 @@ void HgConfigDialog::setupUI()
 
         m_ignoreWidget = new HgIgnoreWidget;
         addPage(m_ignoreWidget, xi18nc("@label:group", "Ignored Files"));
-    }
-    else if (m_configType == HgConfig::GlobalConfig) {
+    } else if (m_configType == HgConfig::GlobalConfig) {
         m_pluginSetting = new HgPluginSettingsWidget;
         addPage(m_pluginSetting, xi18nc("@label:group", "Plugin Settings"));
     }
@@ -63,8 +60,7 @@ void HgConfigDialog::saveSettings()
     if (m_configType == HgConfig::RepoConfig) {
         m_pathConfig->saveConfig();
         m_ignoreWidget->saveConfig();
-    }
-    else if (m_configType == HgConfig::GlobalConfig) {
+    } else if (m_configType == HgConfig::GlobalConfig) {
         m_pluginSetting->saveConfig();
     }
 }
@@ -74,8 +70,7 @@ void HgConfigDialog::done(int r)
     if (r == QDialog::Accepted) {
         saveSettings();
         QDialog::done(r);
-    }
-    else {
+    } else {
         QDialog::done(r);
     }
 }
@@ -83,8 +78,7 @@ void HgConfigDialog::done(int r)
 void HgConfigDialog::loadGeometry()
 {
     FileViewHgPluginSettings *settings = FileViewHgPluginSettings::self();
-    this->resize(QSize(settings->configDialogWidth(),
-                               settings->configDialogHeight()));
+    this->resize(QSize(settings->configDialogWidth(), settings->configDialogHeight()));
 }
 
 void HgConfigDialog::saveGeometry()
@@ -94,7 +88,5 @@ void HgConfigDialog::saveGeometry()
     settings->setConfigDialogWidth(this->width());
     settings->save();
 }
-
-
 
 #include "moc_configdialog.cpp"

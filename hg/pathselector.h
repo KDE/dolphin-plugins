@@ -7,8 +7,8 @@
 #ifndef HGPATHSELECTOR_H
 #define HGPATHSELECTOR_H
 
-#include <QWidget>
 #include <QMap>
+#include <QWidget>
 
 class KComboBox;
 class QLineEdit;
@@ -23,7 +23,7 @@ class HgPathSelector : public QWidget
     Q_OBJECT
 
 public:
-    explicit HgPathSelector(QWidget *parent=nullptr);
+    explicit HgPathSelector(QWidget *parent = nullptr);
 
     /**
      * @return Return QString containing the selected/entered alias/URL
@@ -46,4 +46,3 @@ private:
 };
 
 #endif /* HGPATHSELECTOR_H */
-

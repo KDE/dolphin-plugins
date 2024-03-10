@@ -5,30 +5,30 @@
 */
 
 #include "syncdialogbase.h"
+#include "fileviewhgpluginsettings.h"
 #include "hgconfig.h"
 #include "pathselector.h"
-#include "fileviewhgpluginsettings.h"
 
-#include <QApplication>
-#include <QGridLayout>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QStringList>
-#include <QTextCodec>
-#include <QHeaderView>
-#include <QLabel>
-#include <QCheckBox>
-#include <QGroupBox>
-#include <QProgressBar>
-#include <KTextEdit>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KTextEdit>
+#include <QApplication>
+#include <QCheckBox>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QLabel>
+#include <QProgressBar>
+#include <QStringList>
+#include <QTextCodec>
+#include <QVBoxLayout>
 
-HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent):
-    DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent),
-    m_haveChanges(false),
-    m_terminated(false),
-    m_dialogType(dialogType)
+HgSyncBaseDialog::HgSyncBaseDialog(DialogType dialogType, QWidget *parent)
+    : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
+    , m_haveChanges(false)
+    , m_terminated(false)
+    , m_dialogType(dialogType)
 {
     m_hgw = HgWrapper::instance();
 }
@@ -38,21 +38,14 @@ void HgSyncBaseDialog::setup()
     createChangesGroup();
     readBigSize();
     setupUI();
-    
-    connect(m_changesButton, &QAbstractButton::clicked,
-            this, &HgSyncBaseDialog::slotGetChanges);
-    connect(&m_process, &QProcess::stateChanged,
-            this, &HgSyncBaseDialog::slotUpdateBusy);
-    connect(&m_main_process, &QProcess::stateChanged,
-            this, &HgSyncBaseDialog::slotUpdateBusy);
-    connect(&m_main_process, &QProcess::finished,
-            this, &HgSyncBaseDialog::slotOperationComplete);
-    connect(&m_main_process, &QProcess::errorOccurred,
-            this, &HgSyncBaseDialog::slotOperationError);
-    connect(&m_process, &QProcess::errorOccurred,
-            this, &HgSyncBaseDialog::slotOperationError);
-    connect(&m_process, &QProcess::finished,
-            this, &HgSyncBaseDialog::slotChangesProcessComplete);
+
+    connect(m_changesButton, &QAbstractButton::clicked, this, &HgSyncBaseDialog::slotGetChanges);
+    connect(&m_process, &QProcess::stateChanged, this, &HgSyncBaseDialog::slotUpdateBusy);
+    connect(&m_main_process, &QProcess::stateChanged, this, &HgSyncBaseDialog::slotUpdateBusy);
+    connect(&m_main_process, &QProcess::finished, this, &HgSyncBaseDialog::slotOperationComplete);
+    connect(&m_main_process, &QProcess::errorOccurred, this, &HgSyncBaseDialog::slotOperationError);
+    connect(&m_process, &QProcess::errorOccurred, this, &HgSyncBaseDialog::slotOperationError);
+    connect(&m_process, &QProcess::finished, this, &HgSyncBaseDialog::slotChangesProcessComplete);
     connect(this, &QDialog::finished, this, &HgSyncBaseDialog::slotWriteBigSize);
 }
 
@@ -76,17 +69,13 @@ void HgSyncBaseDialog::setupUI()
     m_pathSelector = new HgPathSelector;
 
     // changes button
-    //FIXME not very good idea. Bad HACK
+    // FIXME not very good idea. Bad HACK
     if (m_dialogType == PullDialog) {
-        m_changesButton = new QPushButton(i18nc("@label:button",
-                "Show Incoming Changes"));
+        m_changesButton = new QPushButton(i18nc("@label:button", "Show Incoming Changes"));
+    } else {
+        m_changesButton = new QPushButton(i18nc("@label:button", "Show Outgoing Changes"));
     }
-    else {
-        m_changesButton = new QPushButton(i18nc("@label:button",
-                "Show Outgoing Changes"));
-    }
-    m_changesButton->setSizePolicy(QSizePolicy::Fixed,
-            QSizePolicy::Fixed);
+    m_changesButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_changesButton->setCheckable(true);
 
     // dialog's main widget
@@ -105,7 +94,7 @@ void HgSyncBaseDialog::setupUI()
     bottomLayout->addWidget(m_changesButton, Qt::AlignLeft);
     bottomLayout->addStretch();
     bottomLayout->addWidget(m_statusProg);
-    
+
     //
     lay->addLayout(bottomLayout);
     widget->setLayout(lay);
@@ -118,8 +107,7 @@ void HgSyncBaseDialog::setupUI()
 
     // bottom button box with OK/Cancel and Options buttons
     okButton()->setText(m_dialogType == PullDialog ? i18nc("@action:button", "Pull") : i18nc("@action:button", "Push"));
-    okButton()->setIcon(QIcon::fromTheme(
-                               m_dialogType == PullDialog ? QStringLiteral("vcs-pull") : QStringLiteral("vcs-push")));
+    okButton()->setIcon(QIcon::fromTheme(m_dialogType == PullDialog ? QStringLiteral("vcs-pull") : QStringLiteral("vcs-push")));
     m_optionsButton = new QPushButton(buttonBox());
     m_optionsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
     switchOptionsButton(true);
@@ -136,8 +124,7 @@ void HgSyncBaseDialog::slotGetChanges()
         m_changesButton->setChecked(m_changesGroup->isVisible());
         if (m_changesGroup->isVisible()) {
             loadBigSize();
-        }
-        else {
+        } else {
             loadSmallSize();
         }
         return;
@@ -152,10 +139,8 @@ void HgSyncBaseDialog::slotGetChanges()
     m_process.start(QLatin1String("hg"), args);
 }
 
-
 void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitStatus status)
 {
-
     if (exitCode != 0 || status != QProcess::NormalExit) {
         QString message = QTextCodec::codecForLocale()->toUnicode(m_process.readAllStandardError());
         if (message.isEmpty()) {
@@ -176,19 +161,19 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     bool unwantedRead = false;
 
     /**
-     * hasChanges boolean checks whether there are any changes to be sent 
+     * hasChanges boolean checks whether there are any changes to be sent
      * or received and invoke noChangesMessage() if its false
      */
     bool hasChanges = false;
 
     while (m_process.readLine(buffer, sizeof(buffer)) > 0) {
         QString line(QTextCodec::codecForLocale()->toUnicode(buffer));
-        if (unwantedRead ) {
+        if (unwantedRead) {
             line.remove(QLatin1String("Commit: "));
             parseUpdateChanges(line.trimmed());
-            hasChanges = true;;
-        }
-        else if (line.startsWith(QLatin1String("Commit: "))) {
+            hasChanges = true;
+            ;
+        } else if (line.startsWith(QLatin1String("Commit: "))) {
             unwantedRead = true;
             line.remove(QLatin1String("Commit: "));
             parseUpdateChanges(line.trimmed());
@@ -203,7 +188,7 @@ void HgSyncBaseDialog::slotChangesProcessComplete(int exitCode, QProcess::ExitSt
     m_changesGroup->setVisible(true);
     m_changesButton->setChecked(true);
     loadBigSize();
-    m_haveChanges = true; 
+    m_haveChanges = true;
     Q_EMIT changeListAvailable();
 }
 
@@ -238,41 +223,33 @@ void HgSyncBaseDialog::slotWriteBigSize()
 void HgSyncBaseDialog::done(int r)
 {
     if (r == QDialog::Accepted) {
-        if (m_main_process.state() == QProcess::Running ||
-                m_main_process.state() == QProcess::Starting) {
+        if (m_main_process.state() == QProcess::Running || m_main_process.state() == QProcess::Starting) {
             qDebug() << "HgWrapper already busy";
             return;
         }
 
         QStringList args;
-        QString command = (m_dialogType==PullDialog) ? QStringLiteral("pull") : QStringLiteral("push");
+        QString command = (m_dialogType == PullDialog) ? QStringLiteral("pull") : QStringLiteral("push");
         args << command;
         args << m_pathSelector->remote();
         appendOptionArguments(args);
 
         m_terminated = false;
-        
+
         m_main_process.setWorkingDirectory(m_hgw->getBaseDir());
         m_main_process.start(QStringLiteral("hg"), args);
-    }
-    else {
-        if (m_process.state() == QProcess::Running || 
-            m_process.state() == QProcess::Starting ||
-            m_main_process.state() == QProcess::Running ||
-            m_main_process.state() == QProcess::Starting) 
-        {
-            if (m_process.state() == QProcess::Running ||
-                    m_process.state() == QProcess::Starting) {
+    } else {
+        if (m_process.state() == QProcess::Running || m_process.state() == QProcess::Starting || m_main_process.state() == QProcess::Running
+            || m_main_process.state() == QProcess::Starting) {
+            if (m_process.state() == QProcess::Running || m_process.state() == QProcess::Starting) {
                 m_process.terminate();
             }
-            if (m_main_process.state() == QProcess::Running ||
-                     m_main_process.state() == QProcess::Starting) {
+            if (m_main_process.state() == QProcess::Running || m_main_process.state() == QProcess::Starting) {
                 qDebug() << "terminating pull/push process";
                 m_terminated = true;
                 m_main_process.terminate();
             }
-        }
-        else {
+        } else {
             QDialog::done(r);
         }
     }
@@ -282,8 +259,7 @@ void HgSyncBaseDialog::slotOperationComplete(int exitCode, QProcess::ExitStatus 
 {
     if (exitCode == 0 && status == QProcess::NormalExit) {
         QDialog::done(QDialog::Accepted);
-    }
-    else {
+    } else {
         if (!m_terminated) {
             KMessageBox::error(this, i18n("Error!"));
         }
@@ -302,8 +278,7 @@ void HgSyncBaseDialog::slotUpdateBusy(QProcess::ProcessState state)
         m_changesButton->setEnabled(false);
         m_changesButton->setChecked(true);
         okButton()->setDisabled(true);
-    }
-    else {
+    } else {
         m_statusProg->setRange(0, 100);
         m_changesButton->setEnabled(true);
         okButton()->setDisabled(false);
@@ -314,23 +289,18 @@ void HgSyncBaseDialog::slotUpdateBusy(QProcess::ProcessState state)
 
 void HgSyncBaseDialog::slotOptionsButtonClick()
 {
-  if (m_optionsButton->text().contains(QLatin1String(">>"))) {
-    switchOptionsButton(false);
-    m_optionGroup->setVisible(true);
-  }
-  else {
-    switchOptionsButton(true);
-    m_optionGroup->setVisible(false);
-  }
+    if (m_optionsButton->text().contains(QLatin1String(">>"))) {
+        switchOptionsButton(false);
+        m_optionGroup->setVisible(true);
+    } else {
+        switchOptionsButton(true);
+        m_optionGroup->setVisible(false);
+    }
 }
 
 void HgSyncBaseDialog::switchOptionsButton(bool switchOn)
 {
-  m_optionsButton->setText(xi18nc("@action:button", "Options") +
-                      (switchOn ? QLatin1String(" >>") : QLatin1String(" <<")));
+    m_optionsButton->setText(xi18nc("@action:button", "Options") + (switchOn ? QLatin1String(" >>") : QLatin1String(" <<")));
 }
-
-
-
 
 #include "moc_syncdialogbase.cpp"
