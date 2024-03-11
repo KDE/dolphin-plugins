@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-03-11 00:39+0000\n"
 "PO-Revision-Date: 2018-02-10 08:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -124,211 +124,211 @@ msgctxt ""
 msgid "branch"
 msgstr "гілка"
 
-#: commitdialog.cpp:26
+#: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
 msgstr "Надсилання <application>Git</application>"
 
-#: commitdialog.cpp:37
+#: commitdialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "Надіслати"
 
-#: commitdialog.cpp:46
+#: commitdialog.cpp:44
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
 msgstr "Повідомлення для внеску"
 
-#: commitdialog.cpp:63
+#: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
 msgstr "Змінити останній внесок"
 
-#: commitdialog.cpp:69
+#: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
 msgstr "Нічого змінювати."
 
-#: commitdialog.cpp:76
+#: commitdialog.cpp:74
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
 msgstr "Зареєструвати"
 
-#: commitdialog.cpp:77
+#: commitdialog.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
 msgstr ""
 "Додати рядок підпису (Signed-off-by) наприкінці повідомлення про внесок."
 
-#: commitdialog.cpp:134
+#: commitdialog.cpp:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
 msgstr "Вам слід спочатку ввести повідомлення про внесок"
 
-#: fileviewgitplugin.cpp:49
+#: fileviewgitplugin.cpp:48
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
 msgstr "Скасовування <application>Git</application>"
 
-#: fileviewgitplugin.cpp:55
+#: fileviewgitplugin.cpp:54
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
 msgstr "Додавання до <application>Git</application>"
 
-#: fileviewgitplugin.cpp:61
+#: fileviewgitplugin.cpp:60
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
 msgstr "Показати локальні зміни <application>Git</application>"
 
-#: fileviewgitplugin.cpp:67
+#: fileviewgitplugin.cpp:66
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "Вилучення з <application>Git</application>"
 
-#: fileviewgitplugin.cpp:73
+#: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "Отримання з <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:79
+#: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "Надсилання до <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:85
+#: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "Створення версії у <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:90
+#: fileviewgitplugin.cpp:89
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "Вивантаження до <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:95
+#: fileviewgitplugin.cpp:94
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "Отримати з <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:100
+#: fileviewgitplugin.cpp:99
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "Об'єднання гілок <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:104
+#: fileviewgitplugin.cpp:103
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "Журнал <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:414
+#: fileviewgitplugin.cpp:413
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Додавання файлів до сховища <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:415
+#: fileviewgitplugin.cpp:414
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Спроба додавання файлів до сховища <application>Git</application> зазнала "
 "невдачі."
 
-#: fileviewgitplugin.cpp:416
+#: fileviewgitplugin.cpp:415
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Файли додано до сховища <application>Git</application>."
 
-#: fileviewgitplugin.cpp:426
+#: fileviewgitplugin.cpp:425
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Вилучення файлів зі сховища <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:427
+#: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Спроба вилучення файлів зі сховища <application>Git</application> зазнала "
 "невдачі."
 
-#: fileviewgitplugin.cpp:428
+#: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Файли вилучено зі сховища <application>Git</application>."
 
-#: fileviewgitplugin.cpp:434
+#: fileviewgitplugin.cpp:433
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Скасовування змін у файлах зі сховища <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:435
+#: fileviewgitplugin.cpp:434
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Спроба скасовування змін у файлах зі сховища <application>Git</application> "
 "зазнала невдачі."
 
-#: fileviewgitplugin.cpp:436
+#: fileviewgitplugin.cpp:435
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Зміни у файлах сховища <application>Git</application> скасовано."
 
-#: fileviewgitplugin.cpp:478
+#: fileviewgitplugin.cpp:477
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "Не вдалося побудувати журнал <application>Git</application>."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:500
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "Журнал <application>Git</application>"
 
-#: fileviewgitplugin.cpp:517
+#: fileviewgitplugin.cpp:516
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Надіслати"
 
-#: fileviewgitplugin.cpp:518
+#: fileviewgitplugin.cpp:517
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Дата"
 
-#: fileviewgitplugin.cpp:519
+#: fileviewgitplugin.cpp:518
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Повідомлення"
 
-#: fileviewgitplugin.cpp:520
+#: fileviewgitplugin.cpp:519
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Автор"
 
-#: fileviewgitplugin.cpp:564
+#: fileviewgitplugin.cpp:563
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Здійснено перехід до гілки «'%1»"
 
-#: fileviewgitplugin.cpp:570
+#: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD тепер розташовано у %1"
 
-#: fileviewgitplugin.cpp:574
+#: fileviewgitplugin.cpp:573
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Здійснено перехід на нову гілку «%1»"
 
-#: fileviewgitplugin.cpp:585
+#: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -337,12 +337,12 @@ msgstr ""
 "Спроба виконання отримання з <application>Git</application> зазнала невдачі. "
 "Ймовірно, ваш робочий каталог не синхронізовано зі сховищем."
 
-#: fileviewgitplugin.cpp:649
+#: fileviewgitplugin.cpp:648
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Успішно створено версію «%1»"
 
-#: fileviewgitplugin.cpp:654
+#: fileviewgitplugin.cpp:653
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -351,47 +351,47 @@ msgstr ""
 "Спроба створення версії у <application>Git</application> зазнала невдачі. "
 "Версія з назвою «%1» вже існує."
 
-#: fileviewgitplugin.cpp:656
+#: fileviewgitplugin.cpp:655
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Невдала спроба створення версії у <application>Git</application>."
 
-#: fileviewgitplugin.cpp:668
+#: fileviewgitplugin.cpp:667
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Спроба вивантаження гілки %1 до %2:%3 зазнала невдачі."
 
-#: fileviewgitplugin.cpp:670
+#: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Вивантажено гілку %1 до %2:%3."
 
-#: fileviewgitplugin.cpp:672
+#: fileviewgitplugin.cpp:671
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Вивантаження гілки %1 до %2:%3…"
 
-#: fileviewgitplugin.cpp:694
+#: fileviewgitplugin.cpp:693
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Спроба отримання гілки %1 з %2 зазнала невдачі."
 
-#: fileviewgitplugin.cpp:696
+#: fileviewgitplugin.cpp:695
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Гілку %1 з %2 успішно отримано."
 
-#: fileviewgitplugin.cpp:698
+#: fileviewgitplugin.cpp:697
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Отримання гілки %1 з %2…"
 
-#: fileviewgitplugin.cpp:751 fileviewgitplugin.cpp:763
+#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Гілку вже синхронізовано."
 
-#: fileviewgitplugin.cpp:767
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
@@ -484,61 +484,61 @@ msgid ""
 msgstr ""
 "Виконати дію, навіть якщо віддалена гілка не є наступницею локальної гілки."
 
-#: tagdialog.cpp:30
+#: tagdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
 msgstr "Створення версії у <application>Git</application>"
 
-#: tagdialog.cpp:42
+#: tagdialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Tag"
 msgstr "Створити версію"
 
-#: tagdialog.cpp:51
+#: tagdialog.cpp:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
 msgstr "Дані щодо версії"
 
-#: tagdialog.cpp:55
+#: tagdialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
 msgstr "Назва версії:"
 
-#: tagdialog.cpp:63
+#: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
 msgstr "Повідомлення про версію:"
 
-#: tagdialog.cpp:74
+#: tagdialog.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
 msgstr "Долучити"
 
-#: tagdialog.cpp:81
+#: tagdialog.cpp:79
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Гілка:"
 
-#: tagdialog.cpp:127
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "Вам слід спочатку ввести назву версії."
 
-#: tagdialog.cpp:130
+#: tagdialog.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Назви версій не повинні містити пробілів."
 
-#: tagdialog.cpp:133
+#: tagdialog.cpp:131
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."

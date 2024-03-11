@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-03-11 00:39+0000\n"
 "PO-Revision-Date: 2018-02-18 17:19+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -122,204 +122,204 @@ msgctxt ""
 msgid "branch"
 msgstr "branch"
 
-#: commitdialog.cpp:26
+#: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
 msgstr "<application>Git</application> Commit"
 
-#: commitdialog.cpp:37
+#: commitdialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "Commit"
 
-#: commitdialog.cpp:46
+#: commitdialog.cpp:44
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
 msgstr "Commit message"
 
-#: commitdialog.cpp:63
+#: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
 msgstr "Amend last commit"
 
-#: commitdialog.cpp:69
+#: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
 msgstr "There is nothing to amend."
 
-#: commitdialog.cpp:76
+#: commitdialog.cpp:74
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
 msgstr "Sign off"
 
-#: commitdialog.cpp:77
+#: commitdialog.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
 msgstr "Add Signed-off-by line at the end of the commit message."
 
-#: commitdialog.cpp:134
+#: commitdialog.cpp:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
 msgstr "You must enter a commit message first."
 
-#: fileviewgitplugin.cpp:49
+#: fileviewgitplugin.cpp:48
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> Revert"
 
-#: fileviewgitplugin.cpp:55
+#: fileviewgitplugin.cpp:54
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> Add"
 
-#: fileviewgitplugin.cpp:61
+#: fileviewgitplugin.cpp:60
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
 msgstr "Show Local <application>Git</application> Changes"
 
-#: fileviewgitplugin.cpp:67
+#: fileviewgitplugin.cpp:66
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> Remove"
 
-#: fileviewgitplugin.cpp:73
+#: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> Checkout..."
 
-#: fileviewgitplugin.cpp:79
+#: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> Commit..."
 
-#: fileviewgitplugin.cpp:85
+#: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> Create Tag..."
 
-#: fileviewgitplugin.cpp:90
+#: fileviewgitplugin.cpp:89
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> Push..."
 
-#: fileviewgitplugin.cpp:95
+#: fileviewgitplugin.cpp:94
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> Pull..."
 
-#: fileviewgitplugin.cpp:100
+#: fileviewgitplugin.cpp:99
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Merge..."
 
-#: fileviewgitplugin.cpp:104
+#: fileviewgitplugin.cpp:103
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> Log..."
 
-#: fileviewgitplugin.cpp:414
+#: fileviewgitplugin.cpp:413
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Adding files to <application>Git</application> repository..."
 
-#: fileviewgitplugin.cpp:415
+#: fileviewgitplugin.cpp:414
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "Adding files to <application>Git</application> repository failed."
 
-#: fileviewgitplugin.cpp:416
+#: fileviewgitplugin.cpp:415
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Added files to <application>Git</application> repository."
 
-#: fileviewgitplugin.cpp:426
+#: fileviewgitplugin.cpp:425
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Removing files from <application>Git</application> repository..."
 
-#: fileviewgitplugin.cpp:427
+#: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "Removing files from <application>Git</application> repository failed."
 
-#: fileviewgitplugin.cpp:428
+#: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Removed files from <application>Git</application> repository."
 
-#: fileviewgitplugin.cpp:434
+#: fileviewgitplugin.cpp:433
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Reverting files from <application>Git</application> repository..."
 
-#: fileviewgitplugin.cpp:435
+#: fileviewgitplugin.cpp:434
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "Reverting files from <application>Git</application> repository failed."
 
-#: fileviewgitplugin.cpp:436
+#: fileviewgitplugin.cpp:435
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Reverted files from <application>Git</application> repository."
 
-#: fileviewgitplugin.cpp:478
+#: fileviewgitplugin.cpp:477
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> Log failed."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:500
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Log"
 
-#: fileviewgitplugin.cpp:517
+#: fileviewgitplugin.cpp:516
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Commit"
 
-#: fileviewgitplugin.cpp:518
+#: fileviewgitplugin.cpp:517
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Date"
 
-#: fileviewgitplugin.cpp:519
+#: fileviewgitplugin.cpp:518
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Message"
 
-#: fileviewgitplugin.cpp:520
+#: fileviewgitplugin.cpp:519
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Author"
 
-#: fileviewgitplugin.cpp:564
+#: fileviewgitplugin.cpp:563
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Switched to branch '%1'"
 
-#: fileviewgitplugin.cpp:570
+#: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD is now at %1"
 
-#: fileviewgitplugin.cpp:574
+#: fileviewgitplugin.cpp:573
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Switched to a new branch '%1'"
 
-#: fileviewgitplugin.cpp:585
+#: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -328,12 +328,12 @@ msgstr ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 
-#: fileviewgitplugin.cpp:649
+#: fileviewgitplugin.cpp:648
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Successfully created tag '%1'"
 
-#: fileviewgitplugin.cpp:654
+#: fileviewgitplugin.cpp:653
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -342,47 +342,47 @@ msgstr ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 
-#: fileviewgitplugin.cpp:656
+#: fileviewgitplugin.cpp:655
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> tag creation failed."
 
-#: fileviewgitplugin.cpp:668
+#: fileviewgitplugin.cpp:667
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Pushing branch %1 to %2:%3 failed."
 
-#: fileviewgitplugin.cpp:670
+#: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Pushed branch %1 to %2:%3."
 
-#: fileviewgitplugin.cpp:672
+#: fileviewgitplugin.cpp:671
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Pushing branch %1 to %2:%3..."
 
-#: fileviewgitplugin.cpp:694
+#: fileviewgitplugin.cpp:693
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Pulling branch %1 from %2 failed."
 
-#: fileviewgitplugin.cpp:696
+#: fileviewgitplugin.cpp:695
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Pulled branch %1 from %2 successfully."
 
-#: fileviewgitplugin.cpp:698
+#: fileviewgitplugin.cpp:697
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Pulling branch %1 from %2..."
 
-#: fileviewgitplugin.cpp:751 fileviewgitplugin.cpp:763
+#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Branch is already up-to-date."
 
-#: fileviewgitplugin.cpp:767
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Merge conflicts occurred. Fix them and commit the result."
@@ -473,61 +473,61 @@ msgid ""
 msgstr ""
 "Proceed even if the remote branch is not an ancestor of the local branch."
 
-#: tagdialog.cpp:30
+#: tagdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
 msgstr "<application>Git</application> Create Tag"
 
-#: tagdialog.cpp:42
+#: tagdialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Tag"
 msgstr "Create Tag"
 
-#: tagdialog.cpp:51
+#: tagdialog.cpp:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
 msgstr "Tag Information"
 
-#: tagdialog.cpp:55
+#: tagdialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
 msgstr "Tag Name:"
 
-#: tagdialog.cpp:63
+#: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
 msgstr "Tag Message:"
 
-#: tagdialog.cpp:74
+#: tagdialog.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
 msgstr "Attach to"
 
-#: tagdialog.cpp:81
+#: tagdialog.cpp:79
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Branch:"
 
-#: tagdialog.cpp:127
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "You must enter a tag name first."
 
-#: tagdialog.cpp:130
+#: tagdialog.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Tag names may not contain any whitespace."
 
-#: tagdialog.cpp:133
+#: tagdialog.cpp:131
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
