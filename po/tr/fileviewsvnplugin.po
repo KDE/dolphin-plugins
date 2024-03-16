@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2024-03-15 16:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -35,7 +35,7 @@ msgstr "Yerel SVN Değişikliklerini Göster"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "SVN İşle..."
+msgstr "SVN İşle…"
 
 #: fileviewsvnplugin.cpp:89
 #, kde-format
@@ -65,19 +65,19 @@ msgstr "SVN Güncellemelerini Göster"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "SVN Günlükle..."
+msgstr "SVN Günlük…"
 
 #: fileviewsvnplugin.cpp:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Çıkış Yap..."
+msgstr "SVN Çıkış Yap…"
 
 #: fileviewsvnplugin.cpp:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "SVN Temizle..."
+msgstr "SVN Temizle…"
 
 #: fileviewsvnplugin.cpp:222
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "SVN Güncelle"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "SVN deposu güncelleniyor..."
+msgstr "SVN deposu güncelleniyor…"
 
 #: fileviewsvnplugin.cpp:363
 #, kde-format
@@ -134,7 +134,7 @@ msgstr "Yerel SVN değişiklikleri gösterilemedi: kompare çalıştırılamadı
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "Dosyalar SVN deposuna ekleniyor..."
+msgstr "Dosyalar SVN deposuna ekleniyor…"
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
@@ -152,7 +152,7 @@ msgstr "Dosyalar SVN deposuna eklendi."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "Dosyalar SVN deposundan siliniyor..."
+msgstr "Dosyalar SVN deposundan siliniyor…"
 
 #: fileviewsvnplugin.cpp:446
 #, kde-format
@@ -176,7 +176,7 @@ msgstr "SVN Geri Al"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Dosyalar SVN deposundan geriye alınıyor..."
+msgstr "Dosyalar SVN deposundan geriye alınıyor…"
 
 #: fileviewsvnplugin.cpp:472
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "Dosyalar SVN deposundan geriye alındı."
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "Değişiklikler dosyaya geri alınıyor..."
+msgstr "Değişiklikler dosyaya geri alınıyor…"
 
 #: fileviewsvnplugin.cpp:558
 #, kde-format
@@ -232,7 +232,7 @@ msgstr "SVN İşle"
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "SVN değişiklikleri işleniyor..."
+msgstr "SVN değişiklikleri işleniyor…"
 
 #: fileviewsvnplugin.cpp:669
 #, kde-format
@@ -256,7 +256,7 @@ msgstr "Çıkış yapılacak bir dizin seçin"
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "SVN checkout: Çıkış sürüyor..."
+msgstr "SVN checkout: Çıkış sürüyor…"
 
 #: svncheckoutdialog.cpp:111
 #, kde-format
@@ -331,7 +331,7 @@ msgstr "%1 için SVN temizle başarısız oldu"
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN Temizle..."
+msgstr "SVN Temizle…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
