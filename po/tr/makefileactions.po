@@ -1,7 +1,7 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
-msgstr "Yap: '%1'%2."
+msgstr "Yap: “%1”%2."
 
 #: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
 #, kde-format
@@ -30,17 +30,17 @@ msgstr "Makefile Eylemleri"
 #: makefileactions.cpp:244
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr "'%1' hedefi yapılırken bir hata oluştu."
+msgstr "“%1” hedefi yapılırken bir hata oluştu."
 
 #: makefileactions.cpp:252
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr "'%1' için olan süreç başarıyla durduruldu."
+msgstr "“%1” için olan süreç başarıyla durduruldu."
 
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr "'%1' hedefi yapılmaya çalışılırken bir hata oluştu."
+msgstr "“%1” hedefi yapılmaya çalışılırken bir hata oluştu."
 
 #: makefileactions.cpp:286
 #, kde-format
@@ -81,7 +81,7 @@ msgstr ""
 #: makefileactions.cpp:316
 #, kde-format
 msgid "Open a terminal window"
-msgstr "Bir uçbirim penceresi aç"
+msgstr "Bir Uçbirim Penceresi Aç"
 
 #: makefileactions.cpp:317
 #, kde-format
@@ -92,7 +92,7 @@ msgstr "Seçili hedefin yapım çıktısını görmek için bir uçbirim pencere
 #: makefileactions.cpp:328
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr "Çalışan süreci iptal et (%1)"
+msgstr "Çalışan Süreci İptal Et (%1)"
 
 #: makefileactions.cpp:329
 #, kde-format

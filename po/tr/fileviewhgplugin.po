@@ -3,7 +3,7 @@
 #
 # obsoleteman <tulliana@gmail.com>, 2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
@@ -152,7 +152,7 @@ msgstr "Klonla"
 #: clonedialog.cpp:42
 #, kde-format
 msgid "URLs"
-msgstr "URL'ler"
+msgstr "URL’ler"
 
 #: clonedialog.cpp:44
 #, kde-kuit-format
@@ -181,17 +181,17 @@ msgstr "Seçenekler"
 #: clonedialog.cpp:62
 #, kde-format
 msgid "Do not update the new working directory."
-msgstr "Yeni çalışma dizinini güncelleme."
+msgstr "Yeni çalışma dizinini güncellemeyin."
 
 #: clonedialog.cpp:63
 #, kde-format
 msgid "Use pull protocol to copy metadata."
-msgstr "Üstveriyi kopyalamak için çekme protokolünü kullan."
+msgstr "Üstveriyi kopyalamak için çekme protokolünü kullanın."
 
 #: clonedialog.cpp:64
 #, kde-format
 msgid "Use uncompressed transfer."
-msgstr "Sıkıştırılmamış aktarım kullan."
+msgstr "Sıkıştırılmamış aktarım kullanın."
 
 #: clonedialog.cpp:65
 #, kde-format
@@ -234,7 +234,7 @@ msgid ""
 "please check your KDE Frameworks installation."
 msgstr ""
 "KTextEditor bileşeni bulunamadı;\n"
-"Lütfen KDE ana-çatı kurulumunuzu denetleyin."
+"Lütfen KDE Frameworks kurulumunuzu denetleyin."
 
 #: commitdialog.cpp:54
 #, kde-kuit-format
@@ -322,7 +322,7 @@ msgstr "Yeni dal adını girin"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
-msgstr "<b>Bu dal zaten var!</b>"
+msgstr "<b>Bu dal halihazırda var!</b>"
 
 #: commitdialog.cpp:328
 #, kde-kuit-format
@@ -583,7 +583,7 @@ msgstr "<application>Mercurial</application>"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
-msgstr "Dosyalar <application>Hg</application> deposuna ekleniyor..."
+msgstr "Dosyalar <application>Hg</application> deposuna ekleniyor…"
 
 #: fileviewhgplugin.cpp:491
 #, kde-kuit-format
@@ -612,7 +612,7 @@ msgstr "Dosyaları Kaldır"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
-msgstr "Dosyalar <application>Hg</application> deposundan siliniyor..."
+msgstr "Dosyalar <application>Hg</application> deposundan siliniyor…"
 
 #: fileviewhgplugin.cpp:515
 #, kde-kuit-format
@@ -749,7 +749,7 @@ msgstr "Geri Al"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
-msgstr "<application>Hg</application> deposundaki dosyalar geri alınıyor..."
+msgstr "<application>Hg</application> deposundaki dosyalar geri alınıyor…"
 
 #: fileviewhgplugin.cpp:701 fileviewhgplugin.cpp:722
 #, kde-kuit-format
@@ -783,20 +783,20 @@ msgstr "Tümünü Geri Al"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr "<application>Hg</application> deposunun diff'i oluşturuluyor..."
+msgstr "<application>Hg</application> deposunun diff’i oluşturuluyor…"
 
 #: fileviewhgplugin.cpp:735
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
-msgstr "<application>Hg</application> deposunun diff'i alınamadı."
+msgstr "<application>Hg</application> deposunun diff’i alınamadı."
 
 #: fileviewhgplugin.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr ""
-"<application>Hg</application> deposunun diff'i başarılı bir şekilde "
+"<application>Hg</application> deposunun diff’i başarılı bir şekilde "
 "oluşturuldu."
 
 #: fileviewhgplugin.cpp:767
@@ -826,8 +826,7 @@ msgstr "Geri Sar"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
-msgstr ""
-"<application>Hg</application> deposuna geri sarma işlemi uygulanıyor..."
+msgstr "<application>Hg</application> deposuna geri sarma işlemi uygulanıyor…"
 
 #: fileviewhgplugin.cpp:801
 #, kde-kuit-format
