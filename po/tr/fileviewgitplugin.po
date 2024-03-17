@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2023-05-15 21:50+0300\n"
+"PO-Revision-Date: 2024-03-17 02:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
@@ -249,12 +249,12 @@ msgstr "Dosyalar <application>Git</application> deposundan kaldırılıyor…"
 #: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
-msgstr "Dosyalar <application>Git</application> deposundan silinemedi."
+msgstr "Dosyalar <application>Git</application> deposundan kaldırılamadı."
 
 #: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr "Dosyalar <application>Git</application> deposundan silindi."
+msgstr "Dosyalar <application>Git</application> deposundan kaldırıldı."
 
 #: fileviewgitplugin.cpp:434
 #, kde-kuit-format
