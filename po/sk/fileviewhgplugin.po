@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-03-22 00:39+0000\n"
 "PO-Revision-Date: 2023-12-05 17:26+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -17,49 +17,49 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: backoutdialog.cpp:31
+#: backoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> Backout"
 
-#: backoutdialog.cpp:33
+#: backoutdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
 msgstr "Backout"
 
-#: backoutdialog.cpp:60
+#: backoutdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
 msgstr "Zlúčiť so starým nadradeným stavom adresára po backoute"
 
-#: backoutdialog.cpp:62 backoutdialog.cpp:64 bundledialog.cpp:57
+#: backoutdialog.cpp:61 backoutdialog.cpp:63 bundledialog.cpp:56
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
 msgstr "Vybrať sadu zmien"
 
-#: backoutdialog.cpp:68
+#: backoutdialog.cpp:67
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
 msgstr "Revízia na Backout: "
 
-#: backoutdialog.cpp:73
+#: backoutdialog.cpp:72
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
 msgstr "Nadradená revízia (voliteľné):"
 
-#: backoutdialog.cpp:139 bundledialog.cpp:189
+#: backoutdialog.cpp:138 bundledialog.cpp:188
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
 msgstr "Vybrať sadu zmien"
 
-#: backoutdialog.cpp:140 bundledialog.cpp:190
+#: backoutdialog.cpp:139 bundledialog.cpp:189
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Select"
@@ -92,122 +92,122 @@ msgstr "<b>Aktuálna vetva: </b>"
 msgid "Some error occurred"
 msgstr "Nastala nejaká chyba"
 
-#: bundledialog.cpp:31
+#: bundledialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> Balík"
 
-#: bundledialog.cpp:32
+#: bundledialog.cpp:31
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Bundle"
 msgstr "Balík"
 
-#: bundledialog.cpp:59
+#: bundledialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
 msgstr "Základná revízia (voliteľné)"
 
-#: bundledialog.cpp:61
+#: bundledialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
 msgstr "Zbaliť všetky sady zmien v repozitári."
 
-#: bundledialog.cpp:76 exportdialog.cpp:55 importdialog.cpp:61
-#: pulldialog.cpp:44 pushdialog.cpp:44
+#: bundledialog.cpp:75 exportdialog.cpp:54 importdialog.cpp:60
+#: pulldialog.cpp:43 pushdialog.cpp:43
 #, kde-format, kde-kuit-format
 msgctxt "@label:group"
 msgid "Options"
 msgstr "Možnosti"
 
-#: bundledialog.cpp:78
+#: bundledialog.cpp:77
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Run even when the destination is unrelated (force)"
 msgstr "Spustiť aj keď cieľ nie je súvisiaci (vynútiť)"
 
-#: bundledialog.cpp:81 pulldialog.cpp:40 pushdialog.cpp:40
+#: bundledialog.cpp:80 pulldialog.cpp:39 pushdialog.cpp:39
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
 msgstr "Neoverovať certifikát servera"
 
-#: clonedialog.cpp:33
+#: clonedialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> Klon"
 
-#: clonedialog.cpp:34
+#: clonedialog.cpp:33
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Klonovať"
 
-#: clonedialog.cpp:42
+#: clonedialog.cpp:41
 #, kde-format
 msgid "URLs"
 msgstr "URL"
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Source"
 msgstr "Zdroj"
 
-#: clonedialog.cpp:45
+#: clonedialog.cpp:44
 #, kde-kuit-format
 msgctxt "@lobel"
 msgid "Destination"
 msgstr "Cieľ"
 
-#: clonedialog.cpp:46 clonedialog.cpp:47
+#: clonedialog.cpp:45 clonedialog.cpp:46
 #, kde-kuit-format
 msgctxt "@button"
 msgid "Browse"
 msgstr "Prehliadanie"
 
-#: clonedialog.cpp:59
+#: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label"
 msgid "Options"
 msgstr "Možnosti"
 
-#: clonedialog.cpp:62
+#: clonedialog.cpp:61
 #, kde-format
 msgid "Do not update the new working directory."
 msgstr "Neaktualizovať nový pracovný adresár."
 
-#: clonedialog.cpp:63
+#: clonedialog.cpp:62
 #, kde-format
 msgid "Use pull protocol to copy metadata."
 msgstr "Použiť protokol pull na kopírovanie metadát."
 
-#: clonedialog.cpp:64
+#: clonedialog.cpp:63
 #, kde-format
 msgid "Use uncompressed transfer."
 msgstr "Použiť nekomprimovaný prenos."
 
-#: clonedialog.cpp:65
+#: clonedialog.cpp:64
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
 msgstr "Neoverovať certifikát servera (ignoruje web.cacerts config)."
 
-#: clonedialog.cpp:158
+#: clonedialog.cpp:157
 #, kde-format
 msgid "Terminating cloning!"
 msgstr "Zastavujem klonovanie!"
 
-#: clonedialog.cpp:184
+#: clonedialog.cpp:183
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Zavrieť"
 
-#: clonedialog.cpp:189
+#: clonedialog.cpp:188
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
@@ -391,291 +391,291 @@ msgctxt "error message"
 msgid "Error creating repository!"
 msgstr "Chyba pri vytváraní repozitára!"
 
-#: exportdialog.cpp:28
+#: exportdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> Export"
 
-#: exportdialog.cpp:29
+#: exportdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportovať"
 
-#: exportdialog.cpp:56
+#: exportdialog.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Treat all files as text"
 msgstr "Všetky súbory považovať za text"
 
-#: exportdialog.cpp:57
+#: exportdialog.cpp:56
 #, kde-format
 msgctxt "@label"
 msgid "Use Git extended diff format"
 msgstr "Použiť rozšírený diff formát Git"
 
-#: exportdialog.cpp:58
+#: exportdialog.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid "Omit dates from diff headers"
 msgstr "Vynechať dátmy z diff hlavičiek"
 
-#: exportdialog.cpp:127
+#: exportdialog.cpp:126
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "Prosím vyberte aspoň jednu sadu zmien na export!"
 
-#: fileviewhgplugin.cpp:94
+#: fileviewhgplugin.cpp:93
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "<application>Hg</application> Pridať"
 
-#: fileviewhgplugin.cpp:101
+#: fileviewhgplugin.cpp:100
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "<application>Hg</application> Odstrániť"
 
-#: fileviewhgplugin.cpp:108
+#: fileviewhgplugin.cpp:107
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> Premenovať"
 
-#: fileviewhgplugin.cpp:115
+#: fileviewhgplugin.cpp:114
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> Odoslať"
 
-#: fileviewhgplugin.cpp:122
+#: fileviewhgplugin.cpp:121
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> Značka"
 
-#: fileviewhgplugin.cpp:129
+#: fileviewhgplugin.cpp:128
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> Vetva"
 
-#: fileviewhgplugin.cpp:136
+#: fileviewhgplugin.cpp:135
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> Klon"
 
-#: fileviewhgplugin.cpp:143
+#: fileviewhgplugin.cpp:142
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "<application>Hg</application> Init"
 
-#: fileviewhgplugin.cpp:150
+#: fileviewhgplugin.cpp:149
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> Aktualizácia"
 
-#: fileviewhgplugin.cpp:157
+#: fileviewhgplugin.cpp:156
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "<application>Hg</application> Globálne nastavenie"
 
-#: fileviewhgplugin.cpp:164
+#: fileviewhgplugin.cpp:163
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "<application>Hg</application> Nastavenie repozitára"
 
-#: fileviewhgplugin.cpp:171
+#: fileviewhgplugin.cpp:170
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "<application>Hg</application> Tlačiť"
 
-#: fileviewhgplugin.cpp:178
+#: fileviewhgplugin.cpp:177
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "<application>Hg</application> Ťahať"
 
-#: fileviewhgplugin.cpp:185
+#: fileviewhgplugin.cpp:184
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "<application>Hg</application> Vrátiť"
 
-#: fileviewhgplugin.cpp:192
+#: fileviewhgplugin.cpp:191
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "<application>Hg</application> Vrátiť všetko"
 
-#: fileviewhgplugin.cpp:199
+#: fileviewhgplugin.cpp:198
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "<application>Hg</application> Vrátiť"
 
-#: fileviewhgplugin.cpp:206
+#: fileviewhgplugin.cpp:205
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> Zlúčenie"
 
-#: fileviewhgplugin.cpp:213
+#: fileviewhgplugin.cpp:212
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> Balík"
 
-#: fileviewhgplugin.cpp:220
+#: fileviewhgplugin.cpp:219
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> Export"
 
-#: fileviewhgplugin.cpp:227
+#: fileviewhgplugin.cpp:226
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> Import"
 
-#: fileviewhgplugin.cpp:234
+#: fileviewhgplugin.cpp:233
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "<application>Hg</application> Rozčleniť"
 
-#: fileviewhgplugin.cpp:241
+#: fileviewhgplugin.cpp:240
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> Obslúžiť"
 
-#: fileviewhgplugin.cpp:248
+#: fileviewhgplugin.cpp:247
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> Backout"
 
-#: fileviewhgplugin.cpp:255
+#: fileviewhgplugin.cpp:254
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "<application>Hg</application> Diff"
 
-#: fileviewhgplugin.cpp:279
+#: fileviewhgplugin.cpp:278
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:489
+#: fileviewhgplugin.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "Pridávam súbory do <application>Hg</application> repozitára..."
 
-#: fileviewhgplugin.cpp:491
+#: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr "Pridanie súborov do <application>Hg</application> repozitára zlyhalo."
 
-#: fileviewhgplugin.cpp:493
+#: fileviewhgplugin.cpp:492
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "Pridané súbory do <application>Hg</application> repozitára."
 
-#: fileviewhgplugin.cpp:506
+#: fileviewhgplugin.cpp:505
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "Chcete odstrániť vybrané súbory z repozitára?"
 
-#: fileviewhgplugin.cpp:507
+#: fileviewhgplugin.cpp:506
 #, kde-format
 msgid "Remove Files"
 msgstr "Odstrániť súbory"
 
-#: fileviewhgplugin.cpp:513
+#: fileviewhgplugin.cpp:512
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "Odstraňujem súbory z <application>Hg</application> repozitára..."
 
-#: fileviewhgplugin.cpp:515
+#: fileviewhgplugin.cpp:514
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr ""
 "Odstránenie súborov z <application>Hg</application> repozitára zlyhalo."
 
-#: fileviewhgplugin.cpp:517
+#: fileviewhgplugin.cpp:516
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "Odstrénené súbory z <application>Hg</application> repozitára."
 
-#: fileviewhgplugin.cpp:529
+#: fileviewhgplugin.cpp:528
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr ""
 "Premenovanie súboru v <application>Hg</application> repozitári zlyhalo."
 
-#: fileviewhgplugin.cpp:531
+#: fileviewhgplugin.cpp:530
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr ""
 "Premenovanie súboru v <application>Hg</application> repozitári úspešné."
 
-#: fileviewhgplugin.cpp:533
+#: fileviewhgplugin.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "Premenúvam súbor v <application>Hg</application> repozitári."
 
-#: fileviewhgplugin.cpp:544
+#: fileviewhgplugin.cpp:543
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "Žiadne súbory na odoslanie!"
 
-#: fileviewhgplugin.cpp:549
+#: fileviewhgplugin.cpp:548
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "Odoslanie do <application>Hg</application> repozitára zlyhalo."
 
-#: fileviewhgplugin.cpp:551
+#: fileviewhgplugin.cpp:550
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "Pridané do <application>Hg</application> repozitára."
 
-#: fileviewhgplugin.cpp:553
+#: fileviewhgplugin.cpp:552
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "Odoslať <application>Hg</application> repozitár."
 
-#: fileviewhgplugin.cpp:564
+#: fileviewhgplugin.cpp:563
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
 msgstr "Operácia tagovania v <application>Hg</application> repozitári zlyhala."
 
-#: fileviewhgplugin.cpp:566
+#: fileviewhgplugin.cpp:565
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -683,20 +683,20 @@ msgid ""
 msgstr ""
 "Operácia tagovania v <application>Hg</application> repozitári je úspešná."
 
-#: fileviewhgplugin.cpp:568
+#: fileviewhgplugin.cpp:567
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "Operácia tagovania v <application>Hg</application> repozitári."
 
-#: fileviewhgplugin.cpp:577
+#: fileviewhgplugin.cpp:576
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr ""
 "Aktualizácia <application>Hg</application> pracovného adresára zlyhala."
 
-#: fileviewhgplugin.cpp:579
+#: fileviewhgplugin.cpp:578
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -704,19 +704,19 @@ msgid ""
 msgstr ""
 "Aktualizácia <application>Hg</application> pracovného adresára je úspešná."
 
-#: fileviewhgplugin.cpp:581
+#: fileviewhgplugin.cpp:580
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "Aktualizujem <application>Hg</application> pracovný adresár."
 
-#: fileviewhgplugin.cpp:590
+#: fileviewhgplugin.cpp:589
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
 msgstr "Operácia vetvy v <application>Hg</application> repozitári zlyhala."
 
-#: fileviewhgplugin.cpp:592
+#: fileviewhgplugin.cpp:591
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -725,36 +725,36 @@ msgid ""
 msgstr ""
 "Operácia vetvy na <application>Hg</application> repozitári ukončená úspešne."
 
-#: fileviewhgplugin.cpp:594
+#: fileviewhgplugin.cpp:593
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr "Operácia vetvy v <application>Hg</application> repozitári."
 
-#: fileviewhgplugin.cpp:692
+#: fileviewhgplugin.cpp:691
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
 msgstr "Chcete vrátiť zmeny vykonané na vybraných súboroch?"
 
-#: fileviewhgplugin.cpp:693 fileviewhgplugin.cpp:714
+#: fileviewhgplugin.cpp:692 fileviewhgplugin.cpp:713
 #, kde-format
 msgid "Revert"
 msgstr "Vrátiť"
 
-#: fileviewhgplugin.cpp:699 fileviewhgplugin.cpp:720
+#: fileviewhgplugin.cpp:698 fileviewhgplugin.cpp:719
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr "Vraciam súbory v <application>Hg</application> repozitári..."
 
-#: fileviewhgplugin.cpp:701 fileviewhgplugin.cpp:722
+#: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:721
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr "Vrátanie súborov v <application>Hg</application> repozitári zlyhalo."
 
-#: fileviewhgplugin.cpp:703 fileviewhgplugin.cpp:724
+#: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:723
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -763,71 +763,71 @@ msgid ""
 msgstr ""
 "Vrátanie súborov v <application>Hg</application> repozitári vykonané úspešne."
 
-#: fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:712
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr "Chcete vrátiť všetky zmeny vykonané na aktuálnom pracovnom adresári?"
 
-#: fileviewhgplugin.cpp:714
+#: fileviewhgplugin.cpp:713
 #, kde-format
 msgid "Revert All"
 msgstr "Vrátiť všetko"
 
-#: fileviewhgplugin.cpp:733
+#: fileviewhgplugin.cpp:732
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
 msgstr "Generujem diff pre <application>Hg</application> repozitár..."
 
-#: fileviewhgplugin.cpp:735
+#: fileviewhgplugin.cpp:734
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr "Nemôžem získať diff <application>Hg</application> repozitára."
 
-#: fileviewhgplugin.cpp:737
+#: fileviewhgplugin.cpp:736
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr "<application>Hg</application> diff vygenerovaný úspešne."
 
-#: fileviewhgplugin.cpp:767
+#: fileviewhgplugin.cpp:766
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
 msgstr "prerušenie: Neodoslané zmeny v pracovnom adresári!"
 
-#: fileviewhgplugin.cpp:780
+#: fileviewhgplugin.cpp:779
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "Nie sú k dispozícii informácie o vrátení!"
 
-#: fileviewhgplugin.cpp:792
+#: fileviewhgplugin.cpp:791
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "Chcete vrátiť poslednú transakciu?"
 
-#: fileviewhgplugin.cpp:793
+#: fileviewhgplugin.cpp:792
 #, kde-format
 msgid "Rollback"
 msgstr "Vrátenie"
 
-#: fileviewhgplugin.cpp:799
+#: fileviewhgplugin.cpp:798
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr "Vykonávam Rollback <application>Hg</application> repozitára..."
 
-#: fileviewhgplugin.cpp:801
+#: fileviewhgplugin.cpp:800
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr "Vrátenie <application>Hg</application> repozitára zlyhalo."
 
-#: fileviewhgplugin.cpp:803
+#: fileviewhgplugin.cpp:802
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -888,67 +888,67 @@ msgstr "Delí zoznam súborov a editory s podrobnosťami commitov"
 msgid "Divides commit editor and diff editor"
 msgstr "Delí editor commitov a editor diff"
 
-#: importdialog.cpp:30
+#: importdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> Import"
 
-#: importdialog.cpp:31
+#: importdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importovať"
 
-#: importdialog.cpp:63
+#: importdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
 msgstr "Neposielať, len aktualizovať pracovný adresár"
 
-#: importdialog.cpp:65
+#: importdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
 msgstr "Preskočiť test na výrazné nepotvrdené zmeny"
 
-#: importdialog.cpp:67
+#: importdialog.cpp:66
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
 msgstr "Použiť záplatu na uzly, z ktorých bola generovaná"
 
-#: importdialog.cpp:69
+#: importdialog.cpp:68
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
 msgstr "Použiť záplatu bez kontaktu s pracovným adresárom"
 
-#: importdialog.cpp:81
+#: importdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Add Patches"
 msgstr "Pridať záplaty"
 
-#: importdialog.cpp:83
+#: importdialog.cpp:82
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Remove Patches"
 msgstr "Odstrániť záplaty"
 
-#: mergedialog.cpp:27
+#: mergedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> Zlúčenie"
 
-#: mergedialog.cpp:28
+#: mergedialog.cpp:27
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Merge"
 msgstr "Spojiť"
 
-#: mergedialog.cpp:108
+#: mergedialog.cpp:107
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
@@ -960,61 +960,61 @@ msgctxt "@label:combobox"
 msgid "edit"
 msgstr "upraviť"
 
-#: pulldialog.cpp:30
+#: pulldialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
 msgstr "<application>Hg</application> Ťahať repozitár"
 
-#: pulldialog.cpp:38
+#: pulldialog.cpp:37
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
 msgstr "Aktualizovať na novú vetvu aj keď boli sady zmien tlačené"
 
-#: pulldialog.cpp:42
+#: pulldialog.cpp:41
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
 msgstr "Vynútiť ťahanie"
 
-#: pulldialog.cpp:54
+#: pulldialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Incoming Changes"
 msgstr "Nové zmeny"
 
-#: pulldialog.cpp:148
+#: pulldialog.cpp:147
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No incoming changes!"
 msgstr "Žiadne nové zmeny!"
 
-#: pushdialog.cpp:30
+#: pushdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Push Repository"
 msgstr "<application>Hg</application> Tlačiť repozitár"
 
-#: pushdialog.cpp:38
+#: pushdialog.cpp:37
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
 msgstr "Povoliť tlačenie novej vetvy"
 
-#: pushdialog.cpp:42
+#: pushdialog.cpp:41
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Push"
 msgstr "Vynútiť tlačenie"
 
-#: pushdialog.cpp:54
+#: pushdialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "Odchádzajúce zmeny"
 
-#: pushdialog.cpp:170
+#: pushdialog.cpp:169
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
@@ -1074,63 +1074,63 @@ msgctxt "@label"
 msgid "Port"
 msgstr "Port"
 
-#: servewrapper.cpp:68
+#: servewrapper.cpp:66
 #, kde-format
 msgid "## Starting Server ##"
 msgstr "## Spúšťam server ##"
 
-#: servewrapper.h:151
+#: servewrapper.h:150
 #, kde-format
 msgid "## Server Stopped! ##\n"
 msgstr "## Server sa zastavil! ##\n"
 
-#: statuslist.cpp:30
+#: statuslist.cpp:29
 #, kde-format
 msgid "Filename"
 msgstr "Názov súboru"
 
-#: statuslist.cpp:40
+#: statuslist.cpp:39
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
 msgstr "Stav súboru"
 
-#: syncdialogbase.cpp:82
+#: syncdialogbase.cpp:81
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
 msgstr "Zobraziť nové zmeny"
 
-#: syncdialogbase.cpp:86
+#: syncdialogbase.cpp:85
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "Zobraziť odchádzajúce zmeny"
 
-#: syncdialogbase.cpp:120
+#: syncdialogbase.cpp:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "Ťahať"
 
-#: syncdialogbase.cpp:120
+#: syncdialogbase.cpp:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
 msgstr "Tlačiť"
 
-#: syncdialogbase.cpp:162
+#: syncdialogbase.cpp:161
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "Nenájdené žiadne zmeny!"
 
-#: syncdialogbase.cpp:213 syncdialogbase.cpp:288 syncdialogbase.cpp:295
+#: syncdialogbase.cpp:212 syncdialogbase.cpp:287 syncdialogbase.cpp:294
 #, kde-format
 msgid "Error!"
 msgstr "Chyba!"
 
-#: syncdialogbase.cpp:329
+#: syncdialogbase.cpp:328
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
