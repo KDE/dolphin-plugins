@@ -480,7 +480,7 @@ void FileViewGitPlugin::log()
         QStringLiteral("git"),
         QStringList {
             QStringLiteral("log"),
-            QStringLiteral("--date=format:%d-%m-%Y"),
+            QStringLiteral("--date=format:%x"),
             QStringLiteral("-n 100"),
             QStringLiteral("--pretty=format:<tr> <td><a href=\"rev:%h\">%h</a></td> <td>%ad</td> <td>%s</td> <td>%an</td> </tr>")
         } + items
