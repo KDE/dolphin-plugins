@@ -1,293 +1,293 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:29+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/dolphin-plugins/fileviewsvnplugin.pot\n"
-"X-Crowdin-File-ID: 48332\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
-msgstr "SVN 更新"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:77
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
-msgstr "显示本地 SVN 更改"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:83
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "SVN 提交..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:89
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
-msgstr "SVN 添加"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
-msgstr "SVN 删除"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:101
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
-msgstr "SVN 还原"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:107
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
-msgstr "显示 SVN 更新"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "SVN日志..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN 检出..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "SVN 清理..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:222
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
-msgstr "SVN 状态更新失败。已禁用选项“显示 SVN 更新”。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:358
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
-msgstr "SVN 更新"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:362
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "正在更新 SVN 仓库..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:363
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
-msgstr "SVN 仓库更新失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:364
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
-msgstr "SVN 仓库已更新。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:378
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr "无法显示本地SVN更改。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr "无法显示本地SVN更改：运行svn diff失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:405 fileviewsvnplugin.cpp:589
 #: fileviewsvnplugin.cpp:618
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
-msgstr "无法显示本地SVN更改：无法启动 kompare。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:437
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "正在向 SVN 仓库添加文件..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
-msgstr "向 SVN 仓库添加文件失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
-msgstr "文件已向 SVN 仓库添加。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:445
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "正在从 SVN 仓库删除文件..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:446
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
-msgstr "从 SVN 仓库删除文件失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:447
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
-msgstr "文件已从 SVN 仓库删除。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:467 fileviewsvnplugin.cpp:553
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
-msgstr "SVN 还原"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:471
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "正在从 SVN 仓库还原文件..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:472
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
-msgstr "从 SVN 仓库还原文件失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:473
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr "从 SVN 仓库还原文件成功。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:557
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "正在将还原文件的更改…"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:558
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
-msgstr "文件还原失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:559
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
-msgstr "文件已被还原。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:576 fileviewsvnplugin.cpp:599
 #: fileviewsvnplugin.cpp:604
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
-msgstr "无法显示文件本地SVN更改：无法获取文件。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
-msgstr "SVN 更改提交失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
-msgstr "SVN 提交"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:667
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "正在提交 SVN 更改..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
-msgstr "SVN 更改已提交。"
+msgstr ""
 
 #. i18n: ectx: label, entry (showUpdates), group (General)
 #: fileviewsvnpluginsettings.kcfg:9
 #, kde-format
 msgid "Show updates"
-msgstr "显示更新"
+msgstr ""
 
 #: svncheckoutdialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "选择要检出的目录"
+msgstr ""
 
 #: svncheckoutdialog.cpp:108
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "SVN 检出：检出过程中..."
+msgstr ""
 
 #: svncheckoutdialog.cpp:111
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
-msgstr "SVN 检出：检出失败。"
+msgstr ""
 
 #: svncheckoutdialog.cpp:113
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr "SVN 检出：检出成功。"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "SVN 检出"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
 #, kde-format
 msgid "URL of repository:"
-msgstr "仓库 URL："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr "检出目录："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
 #, kde-format
 msgid "Omit externals"
-msgstr "忽略外部对象"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -295,241 +295,241 @@ msgstr "忽略外部对象"
 #: svnprogressdialog.ui:46
 #, kde-format
 msgid "OK"
-msgstr "确定"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbCancel)
 #. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
 #: svncheckoutdialog.ui:81 svncleanupdialog.ui:96 svnprogressdialog.ui:33
 #, kde-format
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: svncleanupdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr "选择要清理的目录"
+msgstr ""
 
 #: svncleanupdialog.cpp:60
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
-msgstr "SVN 清理成功。"
+msgstr ""
 
 #: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
-msgstr "%1 SVN 清理失败"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN 清理…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
 #, kde-format
 msgid "Clean up directory:"
-msgstr "清理目录："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
 #: svncleanupdialog.ui:43
 #, kde-format
 msgid "Delete unversioned files and directories"
-msgstr "删除未加入版本控制的文件和目录"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
 #: svncleanupdialog.ui:50
 #, kde-format
 msgid "Delete ignored files and directories"
-msgstr "删除忽略的文件和目录"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
 #: svncleanupdialog.ui:57
 #, kde-format
 msgid "Include externals"
-msgstr "包括外部对象"
+msgstr ""
 
 #: svncommitdialog.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "描述："
+msgstr ""
 
 #: svncommitdialog.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Refresh"
-msgstr "刷新"
+msgstr ""
 
 #: svncommitdialog.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "提交"
+msgstr ""
 
 #: svncommitdialog.cpp:114
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
-msgstr "还原"
+msgstr ""
 
 #: svncommitdialog.cpp:121
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
-msgstr "显示变更"
+msgstr ""
 
 #: svncommitdialog.cpp:128
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Add file"
-msgstr "添加文件"
+msgstr ""
 
 #: svncommitdialog.cpp:156
 #, kde-format
 msgctxt "@title:column"
 msgid "Path"
-msgstr "路径"
+msgstr ""
 
 #: svncommitdialog.cpp:157
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
-msgstr "状态"
+msgstr ""
 
 #: svncommitdialog.cpp:210
 #, kde-format
 msgctxt "@item:intable"
 msgid "Unversioned"
-msgstr "未加入版本控制"
+msgstr ""
 
 #: svncommitdialog.cpp:213
 #, kde-format
 msgctxt "@item:intable"
 msgid "Modified"
-msgstr "修改日期"
+msgstr ""
 
 #: svncommitdialog.cpp:216
 #, kde-format
 msgctxt "@item:intable"
 msgid "Added"
-msgstr "已添加"
+msgstr ""
 
 #: svncommitdialog.cpp:219
 #, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
-msgstr "已删除"
+msgstr ""
 
 #: svncommitdialog.cpp:222
 #, kde-format
 msgctxt "@item:intable"
 msgid "Conflict"
-msgstr "冲突"
+msgstr ""
 
 #: svncommitdialog.cpp:225
 #, kde-format
 msgctxt "@item:intable"
 msgid "Missing"
-msgstr "缺失"
+msgstr ""
 
 #: svncommitdialog.cpp:228
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
-msgstr "需要更新"
+msgstr ""
 
 #: svnlogdialog.cpp:94
 #, kde-format
 msgid "Update to revision"
-msgstr "更新到修订版本"
+msgstr ""
 
 #: svnlogdialog.cpp:98 svnlogdialog.cpp:116
 #, kde-format
 msgid "Revert to revision"
-msgstr "还原到修订版本"
+msgstr ""
 
 #: svnlogdialog.cpp:102
 #, kde-format
 msgid "Show changes"
-msgstr "显示变更"
+msgstr ""
 
 #: svnlogdialog.cpp:109
 #, kde-format
 msgid "Changes against working copy"
-msgstr "对工作副本的更改"
+msgstr ""
 
 #: svnlogdialog.cpp:271
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr "SVN 日志：更新到修订版本失败。"
+msgstr ""
 
 #: svnlogdialog.cpp:273
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
-msgstr "SVN 日志：更新到修订版本 %1 成功。"
+msgstr ""
 
 #: svnlogdialog.cpp:283 svnlogdialog.cpp:294
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
-msgstr "SVN 日志：还原到修订版本失败。"
+msgstr ""
 
 #: svnlogdialog.cpp:285 svnlogdialog.cpp:296
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."
-msgstr "SVN 日志：还原到修订版 %1 成功。"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
 #, kde-format
 msgid "SVN Log"
-msgstr "SVN 日志"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
 #, kde-format
 msgid "Revision"
-msgstr "修订版本"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:60
 #, kde-format
 msgid "Author"
-msgstr "作者"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:65
 #, kde-format
 msgid "Date"
-msgstr "日期"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:70
 #, kde-format
 msgid "Message"
-msgstr "消息"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNext100)
 #: svnlogdialog.ui:104
 #, kde-format
 msgid "Next 100"
-msgstr "下 100 条"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbRefresh)
 #: svnlogdialog.ui:114
 #, kde-format
 msgid "Refresh"
-msgstr "刷新"
+msgstr ""
 
 #: svnprogressdialog.cpp:53
 #, kde-format
 msgctxt "@info:status"
 msgid "Error starting: %1"
-msgstr "启动出错： %1"
+msgstr ""

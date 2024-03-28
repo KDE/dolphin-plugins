@@ -1,211 +1,210 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:29+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/dolphin-plugins/fileviewbazaarplugin."
-"pot\n"
-"X-Crowdin-File-ID: 48320\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: fileviewbazaarplugin.cpp:49
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Update"
-msgstr "Bazaar 更新"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:55
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Pull"
-msgstr "Bazaar 拉取"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:61
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Push"
-msgstr "Bazaar 推送"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:67
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
-msgstr "显示本地 Bazaar 更改"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:73
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
-msgstr "Bazaar 提交..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:79
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
-msgstr "Bazaar 添加..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Delete"
-msgstr "Bazaar 删除"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:91
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Log"
-msgstr "Bazaar 日志"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:357
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
-msgstr "正在更新 Bazaar 仓库..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:358
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
-msgstr "Bazaar 仓库更新失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:359
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
-msgstr "Bazaar 仓库已更新。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
-msgstr "拉取 Bazaar 源..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:368
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
-msgstr "拉取 Bazaar 源失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:369
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
-msgstr "拉取 Bazaar 源。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:377
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
-msgstr "正在推送 Bazaar 源..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:378
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
-msgstr "推送 Bazaar 源失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:379
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
-msgstr "已经推送到 Bazaar 源。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:385
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
-msgstr "复核更改..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:386
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
-msgstr "复核更改失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:387
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
-msgstr "复核更改。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
-msgstr "正在提交 Bazaar 更改..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:394
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
-msgstr "Bazaar 更改提交失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:395
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
-msgstr "Bazaar 更改已提交。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
-msgstr "向 Bazaar 仓库添加文件..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
-msgstr "向 Bazaar 仓库添加文件失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:403
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
-msgstr "文件已添加到 Bazaar 仓库。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
-msgstr "从 Bazaar 仓库删除文件..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
-msgstr "从 Bazaar 仓库删除文件失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
-msgstr "文件已从 Bazaar 仓库删除。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:417
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
-msgstr "正在运行 Bazaar 日志..."
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
-msgstr "运行 Bazaar 日志失败。"
+msgstr ""
 
 #: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."
-msgstr "Bazaar 日志关闭。"
+msgstr ""

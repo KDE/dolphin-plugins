@@ -1,117 +1,117 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:39+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:29+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/dolphin-plugins/fileviewgitplugin.pot\n"
-"X-Crowdin-File-ID: 48328\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> 检出"
+msgstr ""
 
 #: checkoutdialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "检出"
+msgstr ""
 
 #: checkoutdialog.cpp:54
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
-msgstr "分支："
+msgstr ""
 
 #: checkoutdialog.cpp:61
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
-msgstr "标记："
+msgstr ""
 
 #: checkoutdialog.cpp:71 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
-msgstr "选项"
+msgstr ""
 
 #: checkoutdialog.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
-msgstr "创建新分支："
+msgstr ""
 
 #: checkoutdialog.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
-msgstr "基于选中的分支或标记创建新的分支。"
+msgstr ""
 
 #: checkoutdialog.cpp:92 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
-msgstr "强制"
+msgstr ""
 
 #: checkoutdialog.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
-msgstr "丢弃本地更改。"
+msgstr ""
 
 #: checkoutdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr "这个仓库没有标记。"
+msgstr ""
 
 #: checkoutdialog.cpp:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
-msgstr "分支基础"
+msgstr ""
 
 #: checkoutdialog.cpp:186
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "检出"
+msgstr ""
 
 #: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr "您必须先输入一个有效的新分支名称。"
+msgstr ""
 
 #: checkoutdialog.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr "已存在名为‘%1’的分支。"
+msgstr ""
 
 #: checkoutdialog.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
-msgstr "分支名称不能包含空白。"
+msgstr ""
 
 #: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr "您必须先选择一个有效的分支。"
+msgstr ""
 
 #: checkoutdialog.cpp:248
 #, kde-format
@@ -119,410 +119,410 @@ msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
 "for a newly created branch"
 msgid "branch"
-msgstr "分支"
+msgstr ""
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr "<application>Git</application> 提交"
+msgstr ""
 
 #: commitdialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "提交"
+msgstr ""
 
 #: commitdialog.cpp:44
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
-msgstr "提交消息"
+msgstr ""
 
 #: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
-msgstr "修改最后的提交"
+msgstr ""
 
 #: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr "没有可以修改的提交。"
+msgstr ""
 
 #: commitdialog.cpp:74
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
-msgstr "签名"
+msgstr ""
 
 #: commitdialog.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr "在提交信息结尾附加 Signed-off-by 行。"
+msgstr ""
 
 #: commitdialog.cpp:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr "您必须先输入提交信息。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:48
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr "<application>Git</application> 还原"
+msgstr ""
 
 #: fileviewgitplugin.cpp:54
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr "<application>Git</application> 添加"
+msgstr ""
 
 #: fileviewgitplugin.cpp:60
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr "显示本地 <application>Git</application> 更改"
+msgstr ""
 
 #: fileviewgitplugin.cpp:66
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr "<application>Git</application> 删除"
+msgstr ""
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> 检出..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "<application>Git</application> 提交..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "<application>Git</application> 创建标记..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:89
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "<application>Git</application> 推送..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:94
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "<application>Git</application> 拉取..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:99
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "<application>Git</application> 合并..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:103
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr "<application>Git</application> 日志..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:413
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr "正在向 <application>Git</application> 仓库添加文件..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:414
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
-msgstr "向 <application>Git</application> 仓库添加文件失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:415
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr "向 <application>Git</application> 仓库添加文件成功。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:425
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr "正在从 <application>Git</application> 仓库删除文件..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
-msgstr "从 <application>Git</application> 仓库删除文件失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr "从 <application>Git</application> 仓库删除文件成功。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:433
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
-msgstr "正在从 <application>Git</application> 仓库还原文件..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:434
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
-msgstr "从 <application>Git</application> 仓库删除文件失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:435
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr "从 <application>Git</application> 仓库还原文件成功。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:477
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr "<application>Git</application> 获取日志失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:500
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr "<application>Git</application> 日志"
+msgstr ""
 
 #: fileviewgitplugin.cpp:516
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
-msgstr "提交"
+msgstr ""
 
 #: fileviewgitplugin.cpp:517
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
-msgstr "日期"
+msgstr ""
 
 #: fileviewgitplugin.cpp:518
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
-msgstr "消息"
+msgstr ""
 
 #: fileviewgitplugin.cpp:519
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
-msgstr "作者"
+msgstr ""
 
 #: fileviewgitplugin.cpp:563
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr "切换到分支“%1”"
+msgstr ""
 
 #: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr "HEAD 现在位于 %1"
+msgstr ""
 
 #: fileviewgitplugin.cpp:573
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr "切换到了新分支“%1”"
+msgstr ""
 
 #: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
-msgstr "<application>Git</application> 检出失败。您的工作目录可能已污染。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:648
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr "创建标记“%1”成功"
+msgstr ""
 
 #: fileviewgitplugin.cpp:653
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
-msgstr "<application>Git</application> 标记创建失败。已存在名为“%1”的标记。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:655
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
-msgstr "<application>Git</application> 标记创建失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:667
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr "推送分支 %1 到 %2:%3 失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr "分支 %1 已推送到 %2:%3。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:671
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr "正在推送分支 %1 到 %2:%3..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:693
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr "从 %2 拉取分支 %1 失败。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:695
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr "从 %2 拉取分支 %1 成功。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:697
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr "正在从 %2 拉取分支 %1..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
-msgstr "分支已是最新。"
+msgstr ""
 
 #: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
-msgstr "发生合并冲突。解决这些问题，并提交结果。"
+msgstr ""
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr "对话框高度"
+msgstr ""
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr "对话框宽度"
+msgstr ""
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr "<application>Git</application> 拉取"
+msgstr ""
 
 #: pulldialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
-msgstr "拉取"
+msgstr ""
 
 #: pulldialog.cpp:44
 #, kde-format
 msgctxt "@title:group The source to pull from"
 msgid "Source"
-msgstr "来源"
+msgstr ""
 
 #: pulldialog.cpp:50 pushdialog.cpp:51
 #, kde-format
 msgctxt "@label:listbox a git remote"
 msgid "Remote:"
-msgstr "远程："
+msgstr ""
 
 #: pulldialog.cpp:55
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote branch:"
-msgstr "远程分支："
+msgstr ""
 
 #: pushdialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr "<application>Git</application> 推送"
+msgstr ""
 
 #: pushdialog.cpp:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr "推送"
+msgstr ""
 
 #: pushdialog.cpp:47
 #, kde-format
 msgctxt "@title:group The remote host"
 msgid "Destination"
-msgstr "目标"
+msgstr ""
 
 #: pushdialog.cpp:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Branches"
-msgstr "分支"
+msgstr ""
 
 #: pushdialog.cpp:65
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr "本地分支："
+msgstr ""
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr "远程分支："
+msgstr ""
 
 #: pushdialog.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch."
-msgstr "即使远程分支并非本地分支的原始分支也依然继续执行。"
+msgstr ""
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
-msgstr "<application>Git</application> 创建标记"
+msgstr ""
 
 #: tagdialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Tag"
-msgstr "创建标记"
+msgstr ""
 
 #: tagdialog.cpp:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
-msgstr "标记信息"
+msgstr ""
 
 #: tagdialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
-msgstr "标记名称："
+msgstr ""
 
 #: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr "标记消息："
+msgstr ""
 
 #: tagdialog.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
-msgstr "附加到"
+msgstr ""
 
 #: tagdialog.cpp:79
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Branch:"
-msgstr "分支："
+msgstr ""
 
 #: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
-msgstr "您必须先输入标记名称。"
+msgstr ""
 
 #: tagdialog.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
-msgstr "标记名称不能包含空白。"
+msgstr ""
 
 #: tagdialog.cpp:131
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr "已存在名为“%1”的标记。"
+msgstr ""
