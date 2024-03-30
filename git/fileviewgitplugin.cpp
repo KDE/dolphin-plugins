@@ -61,6 +61,12 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     connect(m_showLocalChangesAction, &QAction::triggered,
             this, &FileViewGitPlugin::showLocalChanges);
 
+    m_restoreStagedAction = new QAction(this);
+    m_restoreStagedAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-undo-symbolic")));
+    m_restoreStagedAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Restore staged"));
+    connect(m_restoreStagedAction, &QAction::triggered,
+            this, &FileViewGitPlugin::restoreStaged);
+
     m_removeAction = new QAction(this);
     m_removeAction->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     m_removeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Remove"));
@@ -316,6 +322,7 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
         int versionedCount = 0;
         int addableCount = 0;
         int revertCount = 0;
+        int restoreStageCount = 0;
         for (const KFileItem& item : items){
             const ItemVersion state = itemVersion(item);
             if (state != UnversionedVersion && state != RemovedVersion &&
@@ -330,25 +337,31 @@ QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& 
                 state == ConflictingVersion) {
                 ++revertCount;
             }
+            if (state == LocallyModifiedVersion) {
+                ++restoreStageCount;
+            }
         }
 
         m_logAction->setEnabled(versionedCount == items.count());
         m_addAction->setEnabled(addableCount == items.count());
         m_revertAction->setEnabled(revertCount == items.count());
         m_removeAction->setEnabled(versionedCount == items.count());
+        m_restoreStagedAction->setEnabled(restoreStageCount == items.count());
     }
     else{
         m_logAction->setEnabled(false);
         m_addAction->setEnabled(false);
         m_revertAction->setEnabled(false);
         m_removeAction->setEnabled(false);
+        m_restoreStagedAction->setEnabled(false);
     }
 
     QList<QAction*> actions;
     actions.append(m_logAction);
     actions.append(m_addAction);
-    actions.append(m_removeAction);
+    actions.append(m_restoreStagedAction);
     actions.append(m_revertAction);
+    actions.append(m_removeAction);
     return actions;
 }
 
@@ -528,6 +541,17 @@ void FileViewGitPlugin::merge()
     Q_ASSERT(!m_contextDir.isEmpty());
 
     runCommand(QStringLiteral("git mergetool"));
+}
+
+void FileViewGitPlugin::restoreStaged()
+{
+    const QStringList arguments{
+        QStringLiteral("--staged"), // staged, from index
+    };
+    execGitCommand(QStringLiteral("restore"), arguments,
+                   xi18nd("@info:status", "Restoring staged files from <application>Git</application> repository..."),
+                   xi18nd("@info:status", "Restoring staged files from <application>Git</application> repository failed."),
+                   xi18nd("@info:status", "Restoring staged files from <application>Git</application> repository."));
 }
 
 void FileViewGitPlugin::checkout()

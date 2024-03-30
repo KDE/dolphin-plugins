@@ -51,6 +51,7 @@ private Q_SLOTS:
     void log();
     void showDiff(const QUrl &link);
     void merge();
+    void restoreStaged();
 
     void slotOperationCompleted(int exitCode, QProcess::ExitStatus exitStatus);
     void slotOperationError();
@@ -109,6 +110,7 @@ private:
     QAction* m_pullAction;
     QAction* m_logAction;
     QAction* m_mergeAction;
+    QAction* m_restoreStagedAction;
 
     QString m_currentDir;
     QProcess m_process;
