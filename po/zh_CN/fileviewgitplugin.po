@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:39+0000\n"
-"PO-Revision-Date: 2024-03-28 19:17\n"
+"POT-Creation-Date: 2024-03-31 00:39+0000\n"
+"PO-Revision-Date: 2024-03-30 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -185,199 +185,227 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "显示本地 <application>Git</application> 更改"
 
 #: fileviewgitplugin.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "<application>Git</application> Create Tag"
+msgid "<application>Git</application> Restore staged"
+msgstr "<application>Git</application> 创建标记"
+
+#: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> 删除"
 
-#: fileviewgitplugin.cpp:72
+#: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> 检出..."
 
-#: fileviewgitplugin.cpp:78
+#: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> 提交..."
 
-#: fileviewgitplugin.cpp:84
+#: fileviewgitplugin.cpp:90
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> 创建标记..."
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> 推送..."
 
-#: fileviewgitplugin.cpp:94
+#: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> 拉取..."
 
-#: fileviewgitplugin.cpp:99
+#: fileviewgitplugin.cpp:105
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> 合并..."
 
-#: fileviewgitplugin.cpp:103
+#: fileviewgitplugin.cpp:109
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> 日志..."
 
-#: fileviewgitplugin.cpp:413
+#: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "正在向 <application>Git</application> 仓库添加文件..."
 
-#: fileviewgitplugin.cpp:414
+#: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "向 <application>Git</application> 仓库添加文件失败。"
 
-#: fileviewgitplugin.cpp:415
+#: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "向 <application>Git</application> 仓库添加文件成功。"
 
-#: fileviewgitplugin.cpp:425
+#: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "正在从 <application>Git</application> 仓库删除文件..."
 
-#: fileviewgitplugin.cpp:426
+#: fileviewgitplugin.cpp:439
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "从 <application>Git</application> 仓库删除文件失败。"
 
-#: fileviewgitplugin.cpp:427
+#: fileviewgitplugin.cpp:440
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "从 <application>Git</application> 仓库删除文件成功。"
 
-#: fileviewgitplugin.cpp:433
+#: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "正在从 <application>Git</application> 仓库还原文件..."
 
-#: fileviewgitplugin.cpp:434
+#: fileviewgitplugin.cpp:447
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "从 <application>Git</application> 仓库删除文件失败。"
 
-#: fileviewgitplugin.cpp:435
+#: fileviewgitplugin.cpp:448
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "从 <application>Git</application> 仓库还原文件成功。"
 
-#: fileviewgitplugin.cpp:477
+#: fileviewgitplugin.cpp:490
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> 获取日志失败。"
 
-#: fileviewgitplugin.cpp:500
+#: fileviewgitplugin.cpp:513
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> 日志"
 
-#: fileviewgitplugin.cpp:516
+#: fileviewgitplugin.cpp:529
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "提交"
 
-#: fileviewgitplugin.cpp:517
+#: fileviewgitplugin.cpp:530
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "日期"
 
-#: fileviewgitplugin.cpp:518
+#: fileviewgitplugin.cpp:531
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "消息"
 
-#: fileviewgitplugin.cpp:519
+#: fileviewgitplugin.cpp:532
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "作者"
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:552
+#, fuzzy, kde-kuit-format
+#| msgid "Removing files from <application>Git</application> repository..."
+msgid ""
+"Restoring staged files from <application>Git</application> repository..."
+msgstr "正在从 <application>Git</application> 仓库删除文件..."
+
+#: fileviewgitplugin.cpp:553
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "Removing files from <application>Git</application> repository failed."
+msgid ""
+"Restoring staged files from <application>Git</application> repository failed."
+msgstr "从 <application>Git</application> 仓库删除文件失败。"
+
+#: fileviewgitplugin.cpp:554
+#, fuzzy, kde-kuit-format
+#| msgid "Reverted files from <application>Git</application> repository."
+msgid "Restoring staged files from <application>Git</application> repository."
+msgstr "从 <application>Git</application> 仓库还原文件成功。"
+
+#: fileviewgitplugin.cpp:587
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "切换到分支“%1”"
 
-#: fileviewgitplugin.cpp:569
+#: fileviewgitplugin.cpp:593
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD 现在位于 %1"
 
-#: fileviewgitplugin.cpp:573
+#: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "切换到了新分支“%1”"
 
-#: fileviewgitplugin.cpp:584
+#: fileviewgitplugin.cpp:608
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr "<application>Git</application> 检出失败。您的工作目录可能已污染。"
 
-#: fileviewgitplugin.cpp:648
+#: fileviewgitplugin.cpp:672
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "创建标记“%1”成功"
 
-#: fileviewgitplugin.cpp:653
+#: fileviewgitplugin.cpp:677
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr "<application>Git</application> 标记创建失败。已存在名为“%1”的标记。"
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:679
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> 标记创建失败。"
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:691
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "推送分支 %1 到 %2:%3 失败。"
 
-#: fileviewgitplugin.cpp:669
+#: fileviewgitplugin.cpp:693
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "分支 %1 已推送到 %2:%3。"
 
-#: fileviewgitplugin.cpp:671
+#: fileviewgitplugin.cpp:695
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "正在推送分支 %1 到 %2:%3..."
 
-#: fileviewgitplugin.cpp:693
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "从 %2 拉取分支 %1 失败。"
 
-#: fileviewgitplugin.cpp:695
+#: fileviewgitplugin.cpp:719
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "从 %2 拉取分支 %1 成功。"
 
-#: fileviewgitplugin.cpp:697
+#: fileviewgitplugin.cpp:721
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "正在从 %2 拉取分支 %1..."
 
-#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
+#: fileviewgitplugin.cpp:774 fileviewgitplugin.cpp:786
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "分支已是最新。"
 
-#: fileviewgitplugin.cpp:766
+#: fileviewgitplugin.cpp:790
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "发生合并冲突。解决这些问题，并提交结果。"

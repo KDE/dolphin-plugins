@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:39+0000\n"
+"POT-Creation-Date: 2024-03-31 00:39+0000\n"
 "PO-Revision-Date: 2020-04-05 12:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -185,140 +185,168 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "로컬 <application>Git</application> 변경 사항 표시"
 
 #: fileviewgitplugin.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "<application>Git</application> Create Tag"
+msgid "<application>Git</application> Restore staged"
+msgstr "<application>Git</application> 태그 만들기"
+
+#: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> 삭제"
 
-#: fileviewgitplugin.cpp:72
+#: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> 체크아웃..."
 
-#: fileviewgitplugin.cpp:78
+#: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> 커밋..."
 
-#: fileviewgitplugin.cpp:84
+#: fileviewgitplugin.cpp:90
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> 태그 만들기..."
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> 푸시..."
 
-#: fileviewgitplugin.cpp:94
+#: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> 풀..."
 
-#: fileviewgitplugin.cpp:99
+#: fileviewgitplugin.cpp:105
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> 합치기..."
 
-#: fileviewgitplugin.cpp:103
+#: fileviewgitplugin.cpp:109
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> 로그..."
 
-#: fileviewgitplugin.cpp:413
+#: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "<application>Git</application> 저장소에 파일 추가 중..."
 
-#: fileviewgitplugin.cpp:414
+#: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "<application>Git</application> 저장소에 파일을 추가할 수 없습니다."
 
-#: fileviewgitplugin.cpp:415
+#: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "<application>Git</application> 저장소에 파일 추가됨."
 
-#: fileviewgitplugin.cpp:425
+#: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "<application>Git</application> 저장소에서 파일 삭제하는 중..."
 
-#: fileviewgitplugin.cpp:426
+#: fileviewgitplugin.cpp:439
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> 저장소에서 파일을 삭제할 수 없습니다."
 
-#: fileviewgitplugin.cpp:427
+#: fileviewgitplugin.cpp:440
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "<application>Git</application> 저장소에서 파일을 삭제함."
 
-#: fileviewgitplugin.cpp:433
+#: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "<application>Git</application> 저장소의 파일로 되돌리는 중..."
 
-#: fileviewgitplugin.cpp:434
+#: fileviewgitplugin.cpp:447
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> 저장소의 파일로 되돌릴 수 없습니다."
 
-#: fileviewgitplugin.cpp:435
+#: fileviewgitplugin.cpp:448
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "<application>Git</application> 저장소의 파일로 되돌렸습니다."
 
-#: fileviewgitplugin.cpp:477
+#: fileviewgitplugin.cpp:490
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> 로그 실패."
 
-#: fileviewgitplugin.cpp:500
+#: fileviewgitplugin.cpp:513
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> 로그"
 
-#: fileviewgitplugin.cpp:516
+#: fileviewgitplugin.cpp:529
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "커밋"
 
-#: fileviewgitplugin.cpp:517
+#: fileviewgitplugin.cpp:530
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "날짜"
 
-#: fileviewgitplugin.cpp:518
+#: fileviewgitplugin.cpp:531
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "메시지"
 
-#: fileviewgitplugin.cpp:519
+#: fileviewgitplugin.cpp:532
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "작성자"
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:552
+#, fuzzy, kde-kuit-format
+#| msgid "Removing files from <application>Git</application> repository..."
+msgid ""
+"Restoring staged files from <application>Git</application> repository..."
+msgstr "<application>Git</application> 저장소에서 파일 삭제하는 중..."
+
+#: fileviewgitplugin.cpp:553
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "Removing files from <application>Git</application> repository failed."
+msgid ""
+"Restoring staged files from <application>Git</application> repository failed."
+msgstr "<application>Git</application> 저장소에서 파일을 삭제할 수 없습니다."
+
+#: fileviewgitplugin.cpp:554
+#, fuzzy, kde-kuit-format
+#| msgid "Reverted files from <application>Git</application> repository."
+msgid "Restoring staged files from <application>Git</application> repository."
+msgstr "<application>Git</application> 저장소의 파일로 되돌렸습니다."
+
+#: fileviewgitplugin.cpp:587
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "브랜치 '%1'(으)로 전환함"
 
-#: fileviewgitplugin.cpp:569
+#: fileviewgitplugin.cpp:593
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD는 이제 %1을(를) 가리킴"
 
-#: fileviewgitplugin.cpp:573
+#: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "새 브랜치 '%1'(으)로 전환함"
 
-#: fileviewgitplugin.cpp:584
+#: fileviewgitplugin.cpp:608
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -327,12 +355,12 @@ msgstr ""
 "<application>Git</application> 체크아웃이 실패했습니다. 작업 디렉터리가 비어 "
 "있지 않을 수도 있습니다."
 
-#: fileviewgitplugin.cpp:648
+#: fileviewgitplugin.cpp:672
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "태그 '%1'을(를) 생성함"
 
-#: fileviewgitplugin.cpp:653
+#: fileviewgitplugin.cpp:677
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -341,47 +369,47 @@ msgstr ""
 "<application>Git</application> 태그를 만들 수 없습니다. 이름이 '%1'인 태그가 "
 "이미 존재합니다."
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:679
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> 태그 생성 실패."
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:691
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "브랜치 %1을(를) %2:%3(으)로 푸시할 수 없습니다."
 
-#: fileviewgitplugin.cpp:669
+#: fileviewgitplugin.cpp:693
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "브랜치 %1을(를) %2:%3(으)로 푸시했습니다."
 
-#: fileviewgitplugin.cpp:671
+#: fileviewgitplugin.cpp:695
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "브랜치 %1을(를) %2:%3(으)로 푸시하는 중..."
 
-#: fileviewgitplugin.cpp:693
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%2에서 브랜치 %1을(를) 풀할 수 없습니다."
 
-#: fileviewgitplugin.cpp:695
+#: fileviewgitplugin.cpp:719
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%2에서 브랜치 %1을(를) 풀했습니다."
 
-#: fileviewgitplugin.cpp:697
+#: fileviewgitplugin.cpp:721
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "%2에서 브랜치 %1을(를) 풀하는 중..."
 
-#: fileviewgitplugin.cpp:750 fileviewgitplugin.cpp:762
+#: fileviewgitplugin.cpp:774 fileviewgitplugin.cpp:786
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "브랜치가 최신 상태입니다."
 
-#: fileviewgitplugin.cpp:766
+#: fileviewgitplugin.cpp:790
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "결합 충돌이 발생했습니다. 수정한 후 결과를 커밋하십시오."
