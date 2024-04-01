@@ -1,27 +1,27 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Eloy Cuadra <ecuadra@eloihr.net>, 2011, 2012, 2015, 2016, 2018.
+# SPDX-FileCopyrightText: 2011, 2012, 2015, 2016, 2018, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2018-03-03 21:20+0100\n"
+"PO-Revision-Date: 2024-04-01 01:03+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "Descarga <application>Git</application>"
+msgstr "<application>Git</application> Descargar"
 
 #: checkoutdialog.cpp:41
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "rama"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr "Envío <application>Git</application>"
+msgstr "<application>Git</application> Enviar"
 
 #: commitdialog.cpp:37
 #, kde-format
@@ -172,12 +172,12 @@ msgstr "Primero debe introducir un mensaje de envío."
 #: fileviewgitplugin.cpp:49
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr "Reversión <application>Git</application>"
+msgstr "<application>Git</application> Revertir"
 
 #: fileviewgitplugin.cpp:55
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr "Adición <application>Git</application>"
+msgstr "<application>Git</application> Añadir"
 
 #: fileviewgitplugin.cpp:61
 #, kde-kuit-format
@@ -187,42 +187,42 @@ msgstr "Muestra los cambios <application>Git</application> locales"
 #: fileviewgitplugin.cpp:67
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr "Eliminación <application>Git</application>"
+msgstr "<application>Git</application> Eliminar"
 
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "Descarga <application>Git</application>..."
+msgstr "<application>Git</application> Descargar..."
 
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "Envío <application>Git</application>..."
+msgstr "<application>Git</application> Enviar..."
 
 #: fileviewgitplugin.cpp:85
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "Creación de etiqueta <application>Git</application>..."
+msgstr "<application>Git</application> Crear etiqueta..."
 
 #: fileviewgitplugin.cpp:90
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "Incorporación <application>Git</application>..."
+msgstr "<application>Git</application> Incorporar..."
 
 #: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "Extracción <application>Git</application>..."
+msgstr "<application>Git</application> Extraer..."
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "Fusión <application>Git</application>..."
+msgstr "<application>Git</application> Fusionar..."
 
 #: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr "Registro <application>Git</application>..."
+msgstr "<application>Git</application> Registro..."
 
 #: fileviewgitplugin.cpp:414
 #, kde-kuit-format
