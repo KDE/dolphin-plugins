@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 00:39+0000\n"
-"PO-Revision-Date: 2023-01-09 12:37+0100\n"
+"PO-Revision-Date: 2024-03-31 03:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
@@ -186,11 +186,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "<application>Git</application> -ის ლოკალური ცვლილებების ჩვენება"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> ჭდის შექმნა"
+msgstr "<application>Git</application> აღდგენა რიგშია"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -316,26 +314,26 @@ msgid "Author"
 msgstr "ავტორი"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr "ფაილების წაშლა <application>Git</application>-ის რეპოზიტორიიდან..."
+msgstr ""
+"რიგში მყოფი ფაილების წაშლა <application>Git</application>-ის "
+"რეპოზიტორიიდან..."
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"<application>Git</application>-ის რეპოზიტორიიდან ფაილების წაშლის შეცდომა."
+"<application>Git</application>-ის რეპოზიტორიაში რიგში მყოფი ფაილების აღდგენა "
+"ჩავარდა."
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr "<application>Git</application>-ის რეპოზიტორიაში ფაილები დაბრუნდა."
+msgstr ""
+"<application>Git</application>-ის რეპოზიტორიაში რიგში მყოფი ფაილების აღდგენა."
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format

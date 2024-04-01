@@ -1,20 +1,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2012, 2015, 2016, 2018.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2015, 2016, 2018, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 00:39+0000\n"
-"PO-Revision-Date: 2018-02-10 13:44+0100\n"
+"PO-Revision-Date: 2024-03-31 16:57+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: checkoutdialog.cpp:30
@@ -187,11 +187,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Lokale <application>Git</application> wijzigingen tonen"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> Create Tag (tag aanmaken)"
+msgstr "<application>Git</application> staged herstellen"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -325,29 +323,27 @@ msgid "Author"
 msgstr "Auteur"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
-"Bestanden verwijderen uit de <application>Git</application>-opslagruimte..."
+"Staged bestanden herstellen uit de <application>Git</application>-"
+"opslagruimte..."
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"Bestanden verwijderen uit <application>Git</application>-opslagruimte is "
-"mislukt."
+"Staged bestanden herstellen uit <application>Git</application>-opslagruimte "
+"is mislukt."
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
-"Bestanden teruggehaald uit de <application>Git</application>-opslagruimte."
+"Staged bestanden herstellen uit de <application>Git</application>-"
+"opslagruimte."
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format

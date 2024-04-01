@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 00:39+0000\n"
-"PO-Revision-Date: 2024-03-17 02:40+0300\n"
+"PO-Revision-Date: 2024-03-31 06:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
@@ -187,11 +187,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Yerel Değişiklikleri <application>Git</application> Göster"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> Etiket Oluştur"
+msgstr "<application>Git</application> Hazırlığı Geri Yükle"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -314,26 +312,27 @@ msgid "Author"
 msgstr "Yazar"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr "Dosyalar <application>Git</application> deposundan kaldırılıyor…"
+msgstr ""
+"Hazırlanmış dosyalar <application>Git</application> deposundan geri "
+"yükleniyor…"
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
-msgstr "Dosyalar <application>Git</application> deposundan kaldırılamadı."
+msgstr ""
+"Hazırlanmış dosyalar <application>Git</application> deposundan geri "
+"yüklenemedi."
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
-"Dosyalar <application>Git</application> deposundan eski hallerine döndürüldü."
+"Hazırlanmış dosyalar <application>Git</application> deposundan geri "
+"yükleniyor."
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format
