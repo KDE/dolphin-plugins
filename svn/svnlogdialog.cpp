@@ -49,6 +49,13 @@ bool resetAndRevertFileToRevision(const QString &filePath, ulong revision)
     return true;
 }
 
+enum columns_t {
+    columnRevision,
+    columnAuthor,
+    columnDate,
+    columnMessage
+};
+
 }
 
 struct svnLogEntryInfo_t {
@@ -63,13 +70,6 @@ struct svnLogEntryInfo_t {
     ulong revision;             ///< Revision number.
 };
 Q_DECLARE_METATYPE(svnLogEntryInfo_t);
-
-enum columns_t {
-    columnRevision,
-    columnAuthor,
-    columnDate,
-    columnMessage
-};
 
 SvnLogDialog::SvnLogDialog(const QString& contextDir, QWidget *parent) :
     QDialog(parent),

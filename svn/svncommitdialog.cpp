@@ -54,6 +54,11 @@ QStringList makeContext(const QStringList &list, const QHash<QString, KVersionCo
     return ret;
 }
 
+enum columns_t {
+    columnPath,
+    columnStatus
+};
+
 }
 
 struct svnCommitEntryInfo_t {
@@ -66,11 +71,6 @@ struct svnCommitEntryInfo_t {
     KVersionControlPlugin::ItemVersion fileVersion; ///< File status in terms of KVersionControlPlugin
 };
 Q_DECLARE_METATYPE(svnCommitEntryInfo_t);
-
-enum columns_t {
-    columnPath,
-    columnStatus
-};
 
 SvnCommitDialog::SvnCommitDialog(const QHash<QString, KVersionControlPlugin::ItemVersion> *versionInfo, const QStringList& context, QWidget *parent) :
     QDialog(parent),
