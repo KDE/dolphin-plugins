@@ -645,6 +645,8 @@ void FileViewSvnPlugin::commitFiles(const QStringList& context, const QString& m
         Q_EMIT errorMessage(i18nc("@info:status", "Commit of SVN changes failed."));
         return;
     }
+    // Make sure the file is empty in case of reuse.
+    m_tempFile.resize(0);
 
     QTextStream out(&m_tempFile);
     const QString fileName = m_tempFile.fileName();
