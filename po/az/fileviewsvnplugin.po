@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-03 00:40+0000\n"
 "PO-Revision-Date: 2022-02-17 10:59+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -216,25 +216,25 @@ msgid "Could not show local SVN changes for a file: could not get file."
 msgstr ""
 "Yerli SVN dəyişikliklərini göstərmək mümkün olmadı: fayl əldə edilmədi."
 
-#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
+#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:670
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "SVN dəyişikliklərinin göndərilməsi alınmadı."
 
-#: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:665 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN-ə göndərmək"
 
-#: fileviewsvnplugin.cpp:667
+#: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN dəyişikliklərinin göndərilməsi..."
 
-#: fileviewsvnplugin.cpp:669
+#: fileviewsvnplugin.cpp:671
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."

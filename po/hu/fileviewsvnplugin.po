@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-03 00:40+0000\n"
 "PO-Revision-Date: 2024-01-29 12:57+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-i18n-doc@kde.org>\n"
@@ -220,25 +220,25 @@ msgstr ""
 "Nem sikerült megjeleníteni a fájl helyi SVN változásait: a fájl nem kérhető "
 "le."
 
-#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
+#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:670
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Az SVN változások véglegesítése sikertelen."
 
-#: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:665 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN véglegesítés"
 
-#: fileviewsvnplugin.cpp:667
+#: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN változások véglegesítése…"
 
-#: fileviewsvnplugin.cpp:669
+#: fileviewsvnplugin.cpp:671
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."

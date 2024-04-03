@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 00:39+0000\n"
-"PO-Revision-Date: 2024-03-30 19:37\n"
+"PO-Revision-Date: 2024-04-01 14:44\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -185,11 +185,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "显示本地 <application>Git</application> 更改"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> 创建标记"
+msgstr "<application>Git</application> 还原暂存区文件"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -311,25 +309,21 @@ msgid "Author"
 msgstr "作者"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr "正在从 <application>Git</application> 仓库删除文件..."
+msgstr "正在从 <application>Git</application> 仓库还原暂存区文件..."
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
-msgstr "从 <application>Git</application> 仓库删除文件失败。"
+msgstr "从 <application>Git</application> 仓库还原暂存区文件失败。"
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr "从 <application>Git</application> 仓库还原文件成功。"
+msgstr "正在从 <application>Git</application> 仓库还原暂存区文件."
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format

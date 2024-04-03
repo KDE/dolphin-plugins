@@ -186,11 +186,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Zobrazit místní změny <application>Git</application>"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> Vytvořit značku"
+msgstr ""
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -313,26 +311,21 @@ msgid "Author"
 msgstr "Autor"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr "Odstraňuji soubory z repozitáře <application>Git</application>..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"Odstraňování souborů z repozitáře <application>Git</application> selhalo."
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr "Soubory byly vráceny z repozitáře <application>Git</application>."
+msgstr ""
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format

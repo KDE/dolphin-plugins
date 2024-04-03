@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-03 00:40+0000\n"
 "PO-Revision-Date: 2011-01-12 10:06+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -238,25 +238,25 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr "Inspelen vun SVN-Ännern is fehlslaan."
 
-#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
+#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:670
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Inspelen vun SVN-Ännern is fehlslaan."
 
-#: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:665 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "Na SVN-Archiev inspelen"
 
-#: fileviewsvnplugin.cpp:667
+#: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN-Ännern warrt inspeelt..."
 
-#: fileviewsvnplugin.cpp:669
+#: fileviewsvnplugin.cpp:671
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."

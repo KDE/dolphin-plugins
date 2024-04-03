@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-03 00:40+0000\n"
 "PO-Revision-Date: 2024-03-30 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -211,25 +211,25 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr "无法显示文件本地SVN更改：无法获取文件。"
 
-#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:668
+#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:670
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "SVN 更改提交失败。"
 
-#: fileviewsvnplugin.cpp:663 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:665 svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN 提交"
 
-#: fileviewsvnplugin.cpp:667
+#: fileviewsvnplugin.cpp:669
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "正在提交 SVN 更改..."
 
-#: fileviewsvnplugin.cpp:669
+#: fileviewsvnplugin.cpp:671
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
