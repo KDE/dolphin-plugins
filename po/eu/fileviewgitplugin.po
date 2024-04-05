@@ -1,24 +1,24 @@
 # Translation for fileviewgitplugin.po to Euskara/Basque (eu).
-# Copyright (C) 2018, Free Software Foundation.
+# Copyright (C) 2018-2024 This file is copyright.
 # This file is distributed under the same license as the dolphin-plugins package.
-# KDE euskaratzeko proiektuaren arduraduna <xalba@euskalnet.net>.
+# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2018.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2018, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 00:39+0000\n"
-"PO-Revision-Date: 2018-07-23 23:40+0100\n"
-"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"PO-Revision-Date: 2024-04-04 21:43+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
@@ -189,11 +189,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Erakutsi bertako <application>Git</application> aldaketak"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> sortu etiketa"
+msgstr "<application>Git</application> etapakoa lehengoratu"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -322,28 +320,27 @@ msgid "Author"
 msgstr "Egilea"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr "<application>Git</application> gordetegitik fitxategiak kentzen..."
+msgstr ""
+"Etapako fitxategiak <application>Git</application> gordetegitik "
+"lehengoratzen..."
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"<application>Git</application> gordetegitik fitxategiak kentzea huts egin du."
+"Etapako fitxategiak <application>Git</application> gordetegitik "
+"lehengoratzea huts egin du."
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
-"<application>Git</application> gordetegitik fitxategiak lehengoratzea huts "
-"egin du."
+"Etapako fitxategiak <application>Git</application> gordetegitik "
+"lehengoratzea."
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format
