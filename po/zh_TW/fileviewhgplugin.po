@@ -4,20 +4,20 @@
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2012.
 # Jeff Huang <s8321414@gmail.com>, 2016.
 # pan93412 <pan93412@gmail.com>, 2018.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:39+0000\n"
-"PO-Revision-Date: 2023-11-11 00:24+0900\n"
+"PO-Revision-Date: 2024-04-17 08:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: backoutdialog.cpp:30
@@ -117,7 +117,7 @@ msgstr "基底版本（選擇性）："
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
-msgstr "對所有主目錄中的變更集建立群組。"
+msgstr "對所有版本庫中的變更集建立群組。"
 
 #: bundledialog.cpp:75 exportdialog.cpp:54 importdialog.cpp:60
 #: pulldialog.cpp:43 pushdialog.cpp:43
@@ -214,7 +214,7 @@ msgstr "關閉"
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
-msgstr "複製主目錄時發生錯誤。"
+msgstr "複製版本庫時發生錯誤。"
 
 #: commitdialog.cpp:32
 #, kde-kuit-format
@@ -362,7 +362,7 @@ msgstr "一般設定"
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
-msgstr "主目錄路徑"
+msgstr "版本庫路徑"
 
 #: configdialog.cpp:51
 #, kde-kuit-format
@@ -386,13 +386,13 @@ msgstr "<application>Hg</application> Initialize Repository"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
-msgstr "初始化主目錄"
+msgstr "初始化版本庫"
 
 #: createdialog.cpp:59
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
-msgstr "建立主目錄時發生錯誤。"
+msgstr "建立版本庫時發生錯誤。"
 
 #: exportdialog.cpp:27
 #, kde-format
@@ -584,25 +584,25 @@ msgstr "<application>Mercurial</application>"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
-msgstr "新增檔案到 <application>Hg</application> 主目錄..."
+msgstr "新增檔案到 <application>Hg</application> 版本庫..."
 
 #: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
-msgstr "將檔案新增到 <application>Hg</application> 主目錄失敗。"
+msgstr "將檔案新增到 <application>Hg</application> 版本庫失敗。"
 
 #: fileviewhgplugin.cpp:492
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
-msgstr "已將檔案新增到 <application>Hg</application> 主目錄。"
+msgstr "已將檔案新增到 <application>Hg</application> 版本庫。"
 
 #: fileviewhgplugin.cpp:505
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
-msgstr "您要從主目錄中移除選取的檔案嗎？"
+msgstr "您要從版本庫中移除選取的檔案嗎？"
 
 #: fileviewhgplugin.cpp:506
 #, kde-format
@@ -613,37 +613,37 @@ msgstr "移除檔案"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
-msgstr "將檔案從 <application>Hg</application> 主目錄移除..."
+msgstr "將檔案從 <application>Hg</application> 版本庫移除..."
 
 #: fileviewhgplugin.cpp:514
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
-msgstr "從 <application>Hg</application> 主目錄移除檔案失敗。"
+msgstr "從 <application>Hg</application> 版本庫移除檔案失敗。"
 
 #: fileviewhgplugin.cpp:516
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
-msgstr "已從 <application>Hg</application> 主目錄移除檔案。"
+msgstr "已從 <application>Hg</application> 版本庫移除檔案。"
 
 #: fileviewhgplugin.cpp:528
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
-msgstr "將 <application>Hg</application> 主目錄中的檔案重新命名失敗。"
+msgstr "將 <application>Hg</application> 版本庫中的檔案重新命名失敗。"
 
 #: fileviewhgplugin.cpp:530
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
-msgstr "將 <application>Hg</application> 主目錄中的檔案重新命名成功。"
+msgstr "將 <application>Hg</application> 版本庫中的檔案重新命名成功。"
 
 #: fileviewhgplugin.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
-msgstr "正在將 <application>Hg</application> 主目錄中的檔案重新命名。"
+msgstr "正在將 <application>Hg</application> 版本庫中的檔案重新命名。"
 
 #: fileviewhgplugin.cpp:543
 #, kde-kuit-format
@@ -655,38 +655,38 @@ msgstr "沒有變更可提交。"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
-msgstr "提交到 <application>Hg</application> 主目錄失敗。"
+msgstr "提交到 <application>Hg</application> 版本庫失敗。"
 
 #: fileviewhgplugin.cpp:550
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
-msgstr "已提交到 <application>Hg</application> 主目錄。"
+msgstr "已提交到 <application>Hg</application> 版本庫。"
 
 #: fileviewhgplugin.cpp:552
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
-msgstr "提交到 <application>Hg</application> 主目錄。"
+msgstr "提交到 <application>Hg</application> 版本庫。"
 
 #: fileviewhgplugin.cpp:563
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
-msgstr "將 <application>Hg</application> 主目錄做標籤的操作失敗。"
+msgstr "將 <application>Hg</application> 版本庫做標籤的操作失敗。"
 
 #: fileviewhgplugin.cpp:565
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
-msgstr "將 <application>Hg</application> 主目錄做標籤的操作成功。"
+msgstr "將 <application>Hg</application> 版本庫做標籤的操作成功。"
 
 #: fileviewhgplugin.cpp:567
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
-msgstr "正在將 <application>Hg</application> 主目錄做標籤。"
+msgstr "正在將 <application>Hg</application> 版本庫做標籤。"
 
 #: fileviewhgplugin.cpp:576
 #, kde-kuit-format
@@ -711,7 +711,7 @@ msgstr "正在更新 <application>Hg</application> 的工作目錄。"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
-msgstr "將 <application>Hg</application> 主目錄做分支的操作失敗。"
+msgstr "將 <application>Hg</application> 版本庫做分支的操作失敗。"
 
 #: fileviewhgplugin.cpp:591
 #, kde-kuit-format
@@ -719,13 +719,13 @@ msgctxt "@info:status"
 msgid ""
 "Branch operation on <application>Hg</application> repository completed "
 "successfully."
-msgstr "將 <application>Hg</application> 主目錄做分支的操作成功。"
+msgstr "將 <application>Hg</application> 版本庫做分支的操作成功。"
 
 #: fileviewhgplugin.cpp:593
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
-msgstr "將 <application>Hg</application> 主目錄做分支。"
+msgstr "將 <application>Hg</application> 版本庫做分支。"
 
 #: fileviewhgplugin.cpp:691
 #, kde-kuit-format
@@ -742,13 +742,13 @@ msgstr "回復"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
-msgstr "正在回復 <application>Hg</application> 主目錄裡的檔案..."
+msgstr "正在回復 <application>Hg</application> 版本庫裡的檔案..."
 
 #: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:721
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
-msgstr "回復 <application>Hg</application> 主目錄裡的檔案失敗。"
+msgstr "回復 <application>Hg</application> 版本庫裡的檔案失敗。"
 
 #: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:723
 #, kde-kuit-format
@@ -756,7 +756,7 @@ msgctxt "@info:status"
 msgid ""
 "Reverting files in <application>Hg</application> repository completed "
 "successfully."
-msgstr "回復 <application>Hg</application> 主目錄裡的檔案成功。"
+msgstr "回復 <application>Hg</application> 版本庫裡的檔案成功。"
 
 #: fileviewhgplugin.cpp:712
 #, kde-kuit-format
@@ -773,13 +773,13 @@ msgstr "回復全部"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr "正在產生 <application>Hg</application> 主目錄裡的差異檔..."
+msgstr "正在產生 <application>Hg</application> 版本庫裡的差異檔..."
 
 #: fileviewhgplugin.cpp:734
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
-msgstr "無法取得 <application>Hg</application> 主目錄的差異。"
+msgstr "無法取得 <application>Hg</application> 版本庫的差異。"
 
 #: fileviewhgplugin.cpp:736
 #, kde-kuit-format
@@ -815,20 +815,20 @@ msgstr "退回"
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr ""
-"正在執行退回（Rollback） <application>Hg</application> 主目錄狀態的動作..."
+"正在執行退回（Rollback） <application>Hg</application> 版本庫狀態的動作..."
 
 #: fileviewhgplugin.cpp:800
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
-msgstr "退回（Rollback） <application>Hg</application> 主目錄狀態失敗。"
+msgstr "退回（Rollback） <application>Hg</application> 版本庫狀態失敗。"
 
 #: fileviewhgplugin.cpp:802
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Rollback of <application>Hg</application> repository completed successfully."
-msgstr "退回（Rollback） <application>Hg</application> 主目錄狀態成功。"
+msgstr "退回（Rollback） <application>Hg</application> 版本庫狀態成功。"
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)

@@ -5,20 +5,20 @@
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2020.
 # Yi-Jyun Pan <pan93412@gmail.com>, 2020.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:40+0000\n"
-"PO-Revision-Date: 2023-01-21 23:56+0900\n"
+"PO-Revision-Date: 2024-04-17 08:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: fileviewsvnplugin.cpp:71
@@ -97,19 +97,19 @@ msgstr "SVN 更新"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "更新 SVN 主目錄..."
+msgstr "更新 SVN 版本庫..."
 
 #: fileviewsvnplugin.cpp:363
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
-msgstr "更新 SVN 主目錄失敗"
+msgstr "更新 SVN 版本庫失敗"
 
 #: fileviewsvnplugin.cpp:364
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
-msgstr "已更新 SVN 主目錄。"
+msgstr "已更新 SVN 版本庫。"
 
 #: fileviewsvnplugin.cpp:378
 #, kde-format
@@ -134,37 +134,37 @@ msgstr "無法顯示本機 SVN 變更：無法啟動 Kompare。"
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "新增檔案到 SVN 主目錄..."
+msgstr "新增檔案到 SVN 版本庫..."
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
-msgstr "新增檔案到 SVN 主目錄失敗。"
+msgstr "新增檔案到 SVN 版本庫失敗。"
 
 #: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
-msgstr "已新增檔案到 SVN 主目錄。"
+msgstr "已新增檔案到 SVN 版本庫。"
 
 #: fileviewsvnplugin.cpp:445
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "從 SVN 主目錄移除檔案..."
+msgstr "從 SVN 版本庫移除檔案..."
 
 #: fileviewsvnplugin.cpp:446
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
-msgstr "從 SVN 主目錄移除檔案失敗。"
+msgstr "從 SVN 版本庫移除檔案失敗。"
 
 #: fileviewsvnplugin.cpp:447
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
-msgstr "已從 SVN 主目錄移除檔案。"
+msgstr "已從 SVN 版本庫移除檔案。"
 
 #: fileviewsvnplugin.cpp:467 fileviewsvnplugin.cpp:553
 #, kde-format
@@ -176,19 +176,19 @@ msgstr "SVN 回復"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "從 SVN 主目錄回復檔案..."
+msgstr "從 SVN 版本庫回復檔案..."
 
 #: fileviewsvnplugin.cpp:472
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
-msgstr "從 SVN 主目錄回復檔案失敗。"
+msgstr "從 SVN 版本庫回復檔案失敗。"
 
 #: fileviewsvnplugin.cpp:473
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr "已從 SVN 主目錄回復檔案。"
+msgstr "已從 SVN 版本庫回復檔案。"
 
 #: fileviewsvnplugin.cpp:557
 #, kde-format
@@ -279,7 +279,7 @@ msgstr "SVN 簽出"
 #: svncheckoutdialog.ui:26
 #, kde-format
 msgid "URL of repository:"
-msgstr "主目錄網址："
+msgstr "版本庫網址："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36

@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011.
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2011-09-16 10:50+0800\n"
-"Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
-"Language-Team: Chinese Traditional <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2024-04-17 08:11+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: fileviewbazaarplugin.cpp:49
@@ -69,55 +70,55 @@ msgstr "Bazaar 紀錄"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
-msgstr "更新 Bazaar 主目錄中..."
+msgstr "更新 Bazaar 版本庫中..."
 
 #: fileviewbazaarplugin.cpp:358
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
-msgstr "更新 Bazaar 主目錄失敗。"
+msgstr "更新 Bazaar 版本庫失敗。"
 
 #: fileviewbazaarplugin.cpp:359
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
-msgstr "已更新 Bazaar 主目錄。"
+msgstr "已更新 Bazaar 版本庫。"
 
 #: fileviewbazaarplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
-msgstr "下載合併 Bazaar 主目錄中..."
+msgstr "下載合併 Bazaar 版本庫中..."
 
 #: fileviewbazaarplugin.cpp:368
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
-msgstr "下載合併 Bazaar 主目錄失敗。"
+msgstr "下載合併 Bazaar 版本庫失敗。"
 
 #: fileviewbazaarplugin.cpp:369
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
-msgstr "已下載合併 Bazaar 主目錄。"
+msgstr "已下載合併 Bazaar 版本庫。"
 
 #: fileviewbazaarplugin.cpp:377
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
-msgstr "上傳合併 Bazaar 主目錄中..."
+msgstr "上傳合併 Bazaar 版本庫中..."
 
 #: fileviewbazaarplugin.cpp:378
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
-msgstr "上傳合併 Bazaar 主目錄失敗。"
+msgstr "上傳合併 Bazaar 版本庫失敗。"
 
 #: fileviewbazaarplugin.cpp:379
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
-msgstr "已上傳合併 Bazaar 主目錄。"
+msgstr "已上傳合併 Bazaar 版本庫。"
 
 #: fileviewbazaarplugin.cpp:385
 #, kde-format
@@ -159,37 +160,37 @@ msgstr "已提交 Bazaar 變更。"
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
-msgstr "新增檔案到 Bazaar 主目錄中..."
+msgstr "新增檔案到 Bazaar 版本庫中..."
 
 #: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
-msgstr "新增檔案到 Bazaar 主目錄失敗。"
+msgstr "新增檔案到 Bazaar 版本庫失敗。"
 
 #: fileviewbazaarplugin.cpp:403
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
-msgstr "已新增檔案到 Bazaar 主目錄中。"
+msgstr "已新增檔案到 Bazaar 版本庫中。"
 
 #: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
-msgstr "正在從 Bazaar 主目錄移除檔案..."
+msgstr "正在從 Bazaar 版本庫移除檔案..."
 
 #: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
-msgstr "從 Bazaar 主目錄移除檔案失敗。"
+msgstr "從 Bazaar 版本庫移除檔案失敗。"
 
 #: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
-msgstr "已從 Bazaar 主目錄移除檔案。"
+msgstr "已從 Bazaar 版本庫移除檔案。"
 
 #: fileviewbazaarplugin.cpp:417
 #, kde-format

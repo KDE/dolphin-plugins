@@ -4,19 +4,20 @@
 # Jeff Huang <s8321414@gmail.com>, 2016.
 # pan93412 <pan93412@gmail.com>, 2018.
 #
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 00:39+0000\n"
-"PO-Revision-Date: 2018-03-24 22:10+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2024-04-17 08:09+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: checkoutdialog.cpp:30
@@ -77,7 +78,7 @@ msgstr "放棄本地端的修改。"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr "在此主目錄中沒有標籤。"
+msgstr "在此版本庫中沒有標籤。"
 
 #: checkoutdialog.cpp:185
 #, kde-format
@@ -187,11 +188,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "顯示本機 <application>Git</application> 變動"
 
 #: fileviewgitplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> 建立標籤"
+msgstr "<application>Git</application> 復原已暫存的"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
@@ -236,47 +235,47 @@ msgstr "<application>Git</application> 紀錄..."
 #: fileviewgitplugin.cpp:426
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr "將檔案新增到 <application>Git</application> 主目錄..."
+msgstr "將檔案新增到 <application>Git</application> 版本庫..."
 
 #: fileviewgitplugin.cpp:427
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
-msgstr "將檔案新增到 <application>Git</application> 主目錄失敗。"
+msgstr "將檔案新增到 <application>Git</application> 版本庫失敗。"
 
 #: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr "已將檔案新增到 <application>Git</application> 主目錄。"
+msgstr "已將檔案新增到 <application>Git</application> 版本庫。"
 
 #: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr "將檔案從 <application>Git</application> 主目錄移除..."
+msgstr "將檔案從 <application>Git</application> 版本庫移除..."
 
 #: fileviewgitplugin.cpp:439
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
-msgstr "將檔案從 <application>Git</application> 主目錄移除失敗。"
+msgstr "將檔案從 <application>Git</application> 版本庫移除失敗。"
 
 #: fileviewgitplugin.cpp:440
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr "已將檔案從 <application>Git</application> 主目錄移除。"
+msgstr "已將檔案從 <application>Git</application> 版本庫移除。"
 
 #: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
-msgstr "將檔案從 <application>Git</application> 主目錄回復..."
+msgstr "將檔案從 <application>Git</application> 版本庫回復..."
 
 #: fileviewgitplugin.cpp:447
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
-msgstr "將檔案從 <application>Git</application> 主目錄回復失敗。"
+msgstr "將檔案從 <application>Git</application> 版本庫回復失敗。"
 
 #: fileviewgitplugin.cpp:448
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr "已將檔案從 <application>Git</application> 主目錄回復。"
+msgstr "已將檔案從 <application>Git</application> 版本庫回復。"
 
 #: fileviewgitplugin.cpp:490
 #, kde-kuit-format
@@ -313,25 +312,21 @@ msgid "Author"
 msgstr "提交者"
 
 #: fileviewgitplugin.cpp:552
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr "將檔案從 <application>Git</application> 主目錄移除..."
+msgstr "從 <application>Git</application> 版本庫復原已暫存的檔案中..."
 
 #: fileviewgitplugin.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
-msgstr "將檔案從 <application>Git</application> 主目錄移除失敗。"
+msgstr "從 <application>Git</application> 版本庫復原已暫存的檔案失敗。"
 
 #: fileviewgitplugin.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr "已將檔案從 <application>Git</application> 主目錄回復。"
+msgstr "從 <application>Git</application> 版本庫復原已暫存的檔案中。"
 
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format
