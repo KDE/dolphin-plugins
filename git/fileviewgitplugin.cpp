@@ -8,6 +8,7 @@
 
 #include "fileviewgitplugin.h"
 #include "checkoutdialog.h"
+#include "clonedialog.h"
 #include "commitdialog.h"
 #include "tagdialog.h"
 #include "pushdialog.h"
@@ -25,6 +26,9 @@
 #include <QDir>
 #include <QTextBrowser>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
+#include <QPlainTextEdit>
+#include <QPushButton>
 
 K_PLUGIN_CLASS_WITH_JSON(FileViewGitPlugin, "fileviewgitplugin.json")
 
@@ -37,7 +41,8 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_commitAction(nullptr),
     m_tagAction(nullptr),
     m_pushAction(nullptr),
-    m_pullAction(nullptr)
+    m_pullAction(nullptr),
+    m_cloneAction(nullptr)
 {
     Q_UNUSED(args);
 
@@ -104,6 +109,10 @@ FileViewGitPlugin::FileViewGitPlugin(QObject* parent, const QList<QVariant>& arg
     m_mergeAction->setIcon(QIcon::fromTheme(QStringLiteral("vcs-merge")));
     m_mergeAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Merge..."));
     connect(m_mergeAction, &QAction::triggered, this, &FileViewGitPlugin::merge);
+
+    m_cloneAction = new QAction(this);
+    m_cloneAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Clone..."));
+    connect(m_cloneAction, &QAction::triggered, this, &FileViewGitPlugin::clone);
 
     m_logAction = new QAction(this);
     m_logAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Log..."));
@@ -302,9 +311,14 @@ QList<QAction*> FileViewGitPlugin::versionControlActions(const KFileItemList& it
 
 QList<QAction*> FileViewGitPlugin::outOfVersionControlActions(const KFileItemList& items) const
 {
-    Q_UNUSED(items)
+    // Only for a single directory.
+    if (items.count() != 1 || !items.first().isDir()) {
+        return {};
+    }
 
-    return {};
+    m_contextDir = items.first().localPath();
+
+    return QList<QAction*>{} << m_cloneAction;
 }
 
 QList<QAction*> FileViewGitPlugin::contextMenuFilesActions(const KFileItemList& items) const
@@ -552,6 +566,89 @@ void FileViewGitPlugin::restoreStaged()
                    xi18nd("@info:status", "Restoring staged files from <application>Git</application> repository..."),
                    xi18nd("@info:status", "Restoring staged files from <application>Git</application> repository failed."),
                    xi18nd("@info:status", "Restoring staged files from <application>Git</application> repository."));
+}
+
+void FileViewGitPlugin::clone()
+{
+    CloneDialog dialog(m_contextDir, m_parentWidget);
+    if (dialog.exec() == QDialog::Accepted) {
+        QStringList arguments = { dialog.url(), dialog.directory(), QStringLiteral("clone"), QStringLiteral("--progress") };
+        if (dialog.recursive()) {
+            arguments << QStringLiteral("--recurse-submodules");
+        }
+        if (dialog.bare()) {
+            arguments << QStringLiteral("--bare");
+        }
+        if (dialog.noCheckout()) {
+            arguments << QStringLiteral("--no-checkout");
+        }
+        const auto depth = dialog.depth();
+        if (depth > 0) {
+            arguments << QStringLiteral("--depth") << QString::number(depth);
+        }
+        const QString branch = dialog.branch();
+        if (!branch.isEmpty()) {
+            arguments << QStringLiteral("--branch") << branch;
+        }
+
+        QProcess *process = new QProcess(m_parentWidget);
+        QDialog *progressDialog = new QDialog(m_parentWidget);
+        QVBoxLayout *layout = new QVBoxLayout;
+        QPlainTextEdit *text = new QPlainTextEdit;
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        layout->addWidget(text);
+        layout->addWidget(buttonBox);
+        progressDialog->setLayout(layout);
+        connect(buttonBox, &QDialogButtonBox::rejected, process, &QProcess::terminate);
+        connect(buttonBox, &QDialogButtonBox::accepted, progressDialog, &QDialog::accept);
+        connect(process, &QProcess::errorOccurred, this, [this, process] (QProcess::ProcessError) {
+            const QString commandLine = process->program() + process->arguments().join(QLatin1Char(' '));
+            Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> error starting: %1", commandLine));
+        } );
+        connect(process, &QProcess::finished, process, [this, process, buttonBox] (int exitCode, QProcess::ExitStatus) {
+            if (exitCode != EXIT_SUCCESS) {
+                Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> clone failed: %1", process->errorString()));
+            } else {
+                Q_EMIT operationCompletedMessage(xi18nd("@info:status", "<application>Git</application> clone complete."));
+            }
+
+            buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+            buttonBox->button(QDialogButtonBox::Cancel)->setEnabled(false);
+        } );
+        // git clone outputs only to stderr but we connect stdout anyway.
+        connect(process, &QProcess::readyReadStandardOutput, text, [text, process] () {
+            auto input = process->readAllStandardOutput();
+            auto list = QString::fromLocal8Bit(input).split(QLatin1Char('\r'), Qt::SkipEmptyParts);
+            text->moveCursor(QTextCursor::End);
+            for (auto &i : std::as_const(list)) {
+                text->moveCursor(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
+                text->textCursor().removeSelectedText();
+                text->insertPlainText(i);
+            }
+        } );
+        connect(process, &QProcess::readyReadStandardError, text, [text, process] () {
+            auto input = process->readAllStandardError();
+            auto list = QString::fromLocal8Bit(input).split(QLatin1Char('\r'), Qt::SkipEmptyParts);
+            text->moveCursor(QTextCursor::End);
+            for (auto &i : std::as_const(list)) {
+                text->moveCursor(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
+                text->textCursor().removeSelectedText();
+                text->insertPlainText(i);
+            }
+        } );
+        buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        progressDialog->setWindowTitle(dialog.windowTitle());
+        progressDialog->setAttribute(Qt::WA_DeleteOnClose);
+        progressDialog->resize(progressDialog->sizeHint() + QSize{200, 0});
+        progressDialog->show();
+
+        process->setWorkingDirectory(m_contextDir);
+        process->start(
+            QStringLiteral("git"),
+            arguments
+        );
+        Q_EMIT infoMessage(xi18nd("@info:status", "<application>Git</application> clone repository..."));
+    }
 }
 
 void FileViewGitPlugin::checkout()

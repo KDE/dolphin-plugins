@@ -5,6 +5,7 @@ kcoreaddons_add_plugin(fileviewgitplugin INSTALL_NAMESPACE "dolphin/vcs")
 target_sources(fileviewgitplugin PRIVATE
     fileviewgitplugin.cpp
     checkoutdialog.cpp
+    clonedialog.cpp
     commitdialog.cpp
     tagdialog.cpp
     pushdialog.cpp
@@ -13,6 +14,7 @@ target_sources(fileviewgitplugin PRIVATE
 
     fileviewgitplugin.h
     checkoutdialog.h
+    clonedialog.h
     commitdialog.h
     tagdialog.h
     pushdialog.h
