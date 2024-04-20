@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-03-31 06:28+0300\n"
+"PO-Revision-Date: 2024-04-19 13:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -127,12 +127,10 @@ msgstr "dal"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "Derinlik:"
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Dal:"
@@ -141,52 +139,49 @@ msgstr "Dal:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "Özyineli"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Çıkış Yap"
+msgstr "Çıkış yok"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "Çıplak depoya klonla"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Dizin:"
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Klonla"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Klonlama Dizini Seç"
 
 #: clonedialog.cpp:130
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Günlük"
+msgstr "<application>Git</application> Klonla"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -292,10 +287,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Birleştir…"
 
 #: fileviewgitplugin.cpp:114
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Günlük…"
+msgstr "<application>Git</application> Klonla…"
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -406,29 +400,24 @@ msgstr ""
 "yükleniyor."
 
 #: fileviewgitplugin.cpp:606
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> Hazırlığı Geri Yükle"
+msgstr "<application>Git</application> başlatılırken hata: %1"
 
 #: fileviewgitplugin.cpp:610
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> Günlük başarısız oldu."
+msgstr "<application>Git</application> clone başarısız oldu: %1"
 
 #: fileviewgitplugin.cpp:612
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> Çıkış Yap"
+msgstr "<application>Git</application> clone tamamlandı."
 
 #: fileviewgitplugin.cpp:650
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> Birleştir…"
+msgstr "<application>Git</application> Deposu Klonla…"
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-04-05 17:33+0200\n"
+"PO-Revision-Date: 2024-04-19 11:11+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -125,12 +125,10 @@ msgstr "Branca"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "Profunditate:"
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Branca:"
@@ -139,52 +137,49 @@ msgstr "Branca:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "Recursive"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Checkout (Extraher)"
+msgstr "Nulle Checkout (Extraher)"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "Clona in Repo Nude"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Directorio:"
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Clona"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Selige un directorio de clonar"
 
 #: clonedialog.cpp:130
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "Registro (Log) de <application>Git</application>"
+msgstr "<application>Git</application> Clonar"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -291,10 +286,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "Fusionar de <application>Git</application> ..."
 
 #: fileviewgitplugin.cpp:114
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "Registro (Log) de <application>Git</application>..."
+msgstr "<application>Git</application> Clonar..."
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -406,30 +400,24 @@ msgstr ""
 "<application>Git</application>."
 
 #: fileviewgitplugin.cpp:606
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr ""
-"Restabili le ponite in scena (staged) de <application>Git</application> "
+msgstr "<application>Git</application> error startante: %1"
 
 #: fileviewgitplugin.cpp:610
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "Registro (Log) de <application>Git</application> falleva."
+msgstr "<application>Git</application> clonar falleva: %1"
 
 #: fileviewgitplugin.cpp:612
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "Checkout de <application>Git</application>"
+msgstr "<application>Git</application> clona complete."
 
 #: fileviewgitplugin.cpp:650
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "Fusionar de <application>Git</application> ..."
+msgstr "<application>Git</application> repositorio de clonar ..."
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format

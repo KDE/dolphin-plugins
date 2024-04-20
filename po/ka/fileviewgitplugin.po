@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-03-31 03:14+0200\n"
+"PO-Revision-Date: 2024-04-19 13:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -126,12 +126,10 @@ msgstr "ბრენჩი"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "სიღრმე:"
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "ბრენჩი:"
@@ -140,52 +138,49 @@ msgstr "ბრენჩი:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "რეკურსიული"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "წამოღება"
+msgstr "წამოღების გარეშე"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "დაკლონვა შიშველ რეპოში"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "საქაღალდე:"
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "კლონი"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "აირჩიეთ კლონის საქაღალდე"
 
 #: clonedialog.cpp:130
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> ჟურნალი"
+msgstr "<application>Git</application> კლონი"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -291,10 +286,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> შერწყმა..."
 
 #: fileviewgitplugin.cpp:114
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> ჟურნალი..."
+msgstr "<application>Git</application> კლონი..."
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -407,29 +401,24 @@ msgstr ""
 "<application>Git</application>-ის რეპოზიტორიაში რიგში მყოფი ფაილების აღდგენა."
 
 #: fileviewgitplugin.cpp:606
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> აღდგენა რიგშია"
+msgstr "<application>Git</application> შეცდომა იწყება:%1"
 
 #: fileviewgitplugin.cpp:610
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> ჟურნალის შეცდომა."
+msgstr "<application>Git</application> კლონი ჩავარდა: %1"
 
 #: fileviewgitplugin.cpp:612
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> გამოტანა"
+msgstr "<application>Git</application> დაკლონვა დასრულდა"
 
 #: fileviewgitplugin.cpp:650
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> შერწყმა..."
+msgstr "<application>Git</application> რეპოზიტორიის დაკლონვა..."
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format

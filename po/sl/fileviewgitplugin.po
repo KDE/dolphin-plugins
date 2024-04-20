@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-03-31 06:47+0200\n"
+"PO-Revision-Date: 2024-04-19 06:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -105,7 +105,7 @@ msgstr "Vnesti morate veljavno ime za novo vejo."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr "Veja z imenom »%1« že obstaja."
+msgstr "Veja z imenom ''%1' že obstaja."
 
 #: checkoutdialog.cpp:220
 #, kde-format
@@ -131,12 +131,10 @@ msgstr "veja"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "Globina:"
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Veja:"
@@ -145,52 +143,49 @@ msgstr "Veja:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "Rekurzivno"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Prevzemi"
+msgstr "Ni prevzema"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "Kloniraj v goli repozitorij"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Imenik:"
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Kloniraj"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Izberi imenik klonov"
 
 #: clonedialog.cpp:130
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Zabeleži"
+msgstr "<application>Git</application> Kloniraj"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -296,10 +291,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Zlij..."
 
 #: fileviewgitplugin.cpp:114
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Zabeleži..."
+msgstr "<application>Git</application> Kloniraj..."
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -414,34 +408,29 @@ msgstr ""
 "Obnavljanje \"staged\" datotek iz skladišča <application>Git</application>."
 
 #: fileviewgitplugin.cpp:606
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> Obnovi \"staged\""
+msgstr "<application>Git</application> napaka z začetkom: %1"
 
 #: fileviewgitplugin.cpp:610
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> Dnevnik je spodletel."
+msgstr "<application>Git</application> kloniranje je spodletelo: %1"
 
 #: fileviewgitplugin.cpp:612
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> prevzem"
+msgstr "<application>Git</application> kloniranje dokončano."
 
 #: fileviewgitplugin.cpp:650
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> Zlij..."
+msgstr "<application>Git</application> repozitorij klona..."
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr "Preklopljeno na vejo »%1«"
+msgstr "Preklopljeno na vejo '%1'"
 
 #: fileviewgitplugin.cpp:690
 #, kde-kuit-format
@@ -451,7 +440,7 @@ msgstr "HEAD je zdaj na %1"
 #: fileviewgitplugin.cpp:694
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr "Preklopljeno na novo vejo »%1«"
+msgstr "Preklopljeno na novo vejo '%1'"
 
 #: fileviewgitplugin.cpp:705
 #, kde-kuit-format
@@ -465,7 +454,7 @@ msgstr ""
 #: fileviewgitplugin.cpp:769
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr "Oznaka »%1« je bila uspešno ustvarjena"
+msgstr "Oznaka '%1' je bila uspešno ustvarjena"
 
 #: fileviewgitplugin.cpp:774
 #, kde-kuit-format
@@ -664,4 +653,4 @@ msgstr "Imena oznake naj ne bi vsebovala presledkov."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr "Oznaka z imenom »%1« že obstaja."
+msgstr "Oznaka z imenom '%1' že obstaja."
