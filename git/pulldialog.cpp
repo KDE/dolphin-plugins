@@ -83,7 +83,7 @@ PullDialog::PullDialog(QWidget* parent):
     }
 
     //Signals
-    connect(m_remoteComboBox, SIGNAL(currentIndexChanged(QString)),
+    connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)),
             this, SLOT(remoteSelectionChanged(QString)));
 }
 
