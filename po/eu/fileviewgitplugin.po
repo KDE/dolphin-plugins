@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-04-04 21:43+0200\n"
+"PO-Revision-Date: 2024-04-20 10:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> atera"
+msgstr "<application>Git</application> Checkout (adarra aldatzea)"
 
 #: checkoutdialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "Atera"
+msgstr "«Checkout»"
 
 #: checkoutdialog.cpp:54
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "Behartu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
-msgstr "Baztertu bertako aldaketak."
+msgstr "Baztertu aldaketa lokalak."
 
 #: checkoutdialog.cpp:125
 #, kde-format
@@ -91,19 +91,19 @@ msgstr "Oinarri-adarra"
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "Atera"
+msgstr "«Checkout»"
 
 #: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr "Adar berriarentzako baliozko izen bat sartu behar duzu aurrena."
+msgstr "Adar berriarako izen baliodun bat sartu behar duzu aurrena."
 
 #: checkoutdialog.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr "'%1' izeneko adar bat dago lehendik ere."
+msgstr "Lehendik ere '%1' izeneko adar bat dago."
 
 #: checkoutdialog.cpp:220
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "Adar-izenek ezin dute zuriunerik eduki."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr "Balio duen adar bat hautatu behar duzu aurrena."
+msgstr "Adar baliodun bat hautatu behar duzu aurrena."
 
 #: checkoutdialog.cpp:248
 #, kde-format
@@ -129,12 +129,10 @@ msgstr "adarra"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "Sakonera:"
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Adarra:"
@@ -143,52 +141,49 @@ msgstr "Adarra:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "Errekurtsiboa"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Atera"
+msgstr "Ez «Checkout»"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "Klonatu biltegi biluzian"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Direktorioa:"
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "klonatu"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Hautatu klonatzeko direktorio bat"
 
 #: clonedialog.cpp:130
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> egunkaria"
+msgstr "<application>Git</application> Klonatu"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -251,7 +246,7 @@ msgstr "<application>Git</application> gehitu"
 #: fileviewgitplugin.cpp:65
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr "Erakutsi bertako <application>Git</application> aldaketak"
+msgstr "Erakutsi <application>Git</application> Aldaketa lokalak"
 
 #: fileviewgitplugin.cpp:71
 #, kde-kuit-format
@@ -266,7 +261,7 @@ msgstr "<application>Git</application> kendu"
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> atera..."
+msgstr "<application>Git</application> Checkout (adarra aldatzea)..."
 
 #: fileviewgitplugin.cpp:89
 #, kde-kuit-format
@@ -294,10 +289,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> bateratu..."
 
 #: fileviewgitplugin.cpp:114
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> egunkaria..."
+msgstr "<application>Git</application> Klonatu..."
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -414,29 +408,24 @@ msgstr ""
 "lehengoratzea."
 
 #: fileviewgitplugin.cpp:606
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> etapakoa lehengoratu"
+msgstr "<application>Git</application> errorea abiatzean: %1"
 
 #: fileviewgitplugin.cpp:610
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> egunkariak huts egin du."
+msgstr "<application>Git</application> klonatu huts egin du: %1"
 
 #: fileviewgitplugin.cpp:612
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> atera"
+msgstr "<application>Git</application> klonatu osatu da"
 
 #: fileviewgitplugin.cpp:650
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> bateratu..."
+msgstr "<application>Git</application> klonatu gordetegia..."
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format
@@ -459,8 +448,8 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
-"<application>Git</application> ateratzea huts egin du. Agian zure laneko "
-"direktorioa zikin dago."
+"<application>Git</application> Checkout (adarra aldatzea) huts egin du. "
+"Agian zure laneko direktorioa zikin dago."
 
 #: fileviewgitplugin.cpp:769
 #, kde-kuit-format
@@ -591,7 +580,7 @@ msgstr "Adarrak"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr "Bertako adarra:"
+msgstr "Adar lokala:"
 
 #: pushdialog.cpp:72
 #, kde-format
@@ -604,7 +593,7 @@ msgstr "Urrunekoa:"
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch."
-msgstr "Jarraitu urruneko adarra bertako adarraren arbaso izan gabe ere."
+msgstr "Jarraitu, urruneko adarra adar lokalaren arbasoa izango ez balitz ere."
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
