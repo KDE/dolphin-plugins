@@ -81,10 +81,9 @@ PullDialog::PullDialog(QWidget *parent)
             m_remoteBranchComboBox->setCurrentIndex(index);
         }
     }
-    
-    //Signals
-    connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)),
-            this, SLOT(remoteSelectionChanged(QString)));
+
+    // Signals
+    connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(remoteSelectionChanged(QString)));
 }
 
 QString PullDialog::source() const

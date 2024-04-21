@@ -102,19 +102,19 @@ private:
      * whose only special contained file type is IgnoredVersion).
      */
     QHash<QString, ItemVersion> m_versionInfoHash;
-    QAction* m_addAction;
-    QAction* m_revertAction;
-    QAction* m_showLocalChangesAction;
-    QAction* m_removeAction;
-    QAction* m_checkoutAction;
-    QAction* m_commitAction;
-    QAction* m_tagAction;
-    QAction* m_pushAction;
-    QAction* m_pullAction;
-    QAction* m_logAction;
-    QAction* m_mergeAction;
-    QAction* m_restoreStagedAction;
-    QAction* m_cloneAction;
+    QAction *m_addAction;
+    QAction *m_revertAction;
+    QAction *m_showLocalChangesAction;
+    QAction *m_removeAction;
+    QAction *m_checkoutAction;
+    QAction *m_commitAction;
+    QAction *m_tagAction;
+    QAction *m_pushAction;
+    QAction *m_pullAction;
+    QAction *m_logAction;
+    QAction *m_mergeAction;
+    QAction *m_restoreStagedAction;
+    QAction *m_cloneAction;
 
     QString m_currentDir;
     QProcess m_process;

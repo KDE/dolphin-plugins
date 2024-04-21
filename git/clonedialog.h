@@ -16,7 +16,8 @@ class QDialogButtonBox;
 /**
  * @brief The dialog for clone repository in Git.
  */
-class CloneDialog : public QDialog {
+class CloneDialog : public QDialog
+{
     Q_OBJECT
 public:
     explicit CloneDialog(const QString &contextDir, QWidget *parent = nullptr);

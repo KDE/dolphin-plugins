@@ -9,24 +9,24 @@
 #include <KLocalizedString>
 
 #include <QApplication>
+#include <QCheckBox>
 #include <QClipboard>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include <QDialogButtonBox>
+#include <QFileDialog>
+#include <QFontMetrics>
 #include <QGridLayout>
+#include <QHBoxLayout>
+#include <QIntValidator>
 #include <QLabel>
 #include <QLineEdit>
-#include <QDialogButtonBox>
-#include <QCheckBox>
 #include <QPushButton>
-#include <QIntValidator>
-#include <QFontMetrics>
 #include <QString>
-#include <QFileDialog>
+#include <QVBoxLayout>
 
 #include <limits>
 
-CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent) :
-    QDialog(parent, Qt::Dialog)
+CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
+    : QDialog(parent, Qt::Dialog)
 {
     static const auto minWidth = fontMetrics().horizontalAdvance(QStringLiteral("123456789_text"));
 
@@ -85,27 +85,29 @@ CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent) :
      */
     connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-    connect(m_depthCheck, &QCheckBox::clicked, this, [this] (bool enabled) {
+    connect(m_depthCheck, &QCheckBox::clicked, this, [this](bool enabled) {
         m_depth->setEnabled(enabled);
         if (enabled) {
             m_depth->setFocus();
         }
-    } );
-    connect(m_branchCheck, &QCheckBox::clicked, this, [this] (bool enabled) {
+    });
+    connect(m_branchCheck, &QCheckBox::clicked, this, [this](bool enabled) {
         m_branch->setEnabled(enabled);
         if (enabled) {
             m_branch->setFocus();
         }
-    } );
+    });
     QAction *pickDirectory = m_dir->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
-    connect(pickDirectory, &QAction::triggered, this, [this] () {
-        const QString dir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose a clone directory"),
-                                                              QString(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    connect(pickDirectory, &QAction::triggered, this, [this]() {
+        const QString dir = QFileDialog::getExistingDirectory(this,
+                                                              i18nc("@title:window", "Choose a clone directory"),
+                                                              QString(),
+                                                              QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
         if (!dir.isEmpty()) {
             m_dir->setText(dir);
         }
-    } );
+    });
 
     /*
      * Additional setup.

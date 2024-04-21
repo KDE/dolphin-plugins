@@ -110,12 +110,10 @@ PushDialog::PushDialog(QWidget *parent)
         m_localBranchComboBox->setCurrentText(branches.at(currentBranchIndex));
     }
     remoteSelectionChanged(m_remoteComboBox->currentText());
-    
-    //Signals
-    connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)),
-            this, SLOT(remoteSelectionChanged(QString)));
-    connect(m_localBranchComboBox, SIGNAL(currentTextChanged(QString)),
-            this, SLOT(localBranchSelectionChanged(QString)));
+
+    // Signals
+    connect(m_remoteComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(remoteSelectionChanged(QString)));
+    connect(m_localBranchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(localBranchSelectionChanged(QString)));
 }
 
 QString PushDialog::destination() const
