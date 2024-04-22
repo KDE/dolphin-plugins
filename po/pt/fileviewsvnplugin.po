@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:40+0000\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
 "PO-Revision-Date: 2020-10-05 09:28+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -19,61 +19,61 @@ msgctxt "@item:inmenu"
 msgid "SVN Update"
 msgstr "Actualização do SVN"
 
-#: fileviewsvnplugin.cpp:77
+#: fileviewsvnplugin.cpp:76
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
 msgstr "Mostrar as Alterações Locais do SVN"
 
-#: fileviewsvnplugin.cpp:83
+#: fileviewsvnplugin.cpp:81
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
 msgstr "Enviar para o SVN..."
 
-#: fileviewsvnplugin.cpp:89
+#: fileviewsvnplugin.cpp:86
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
 msgstr "Adicionar ao SVN"
 
-#: fileviewsvnplugin.cpp:95
+#: fileviewsvnplugin.cpp:91
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
 msgstr "Remover do SVN"
 
-#: fileviewsvnplugin.cpp:101
+#: fileviewsvnplugin.cpp:96
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
 msgstr "Reversão do SVN"
 
-#: fileviewsvnplugin.cpp:107
+#: fileviewsvnplugin.cpp:101
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
 msgstr "Mostrar as Actualizações do SVN"
 
-#: fileviewsvnplugin.cpp:115
+#: fileviewsvnplugin.cpp:107
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
 msgstr "Registo do SVN..."
 
-#: fileviewsvnplugin.cpp:120
+#: fileviewsvnplugin.cpp:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
 msgstr "Obter do SVN..."
 
-#: fileviewsvnplugin.cpp:125
+#: fileviewsvnplugin.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "Limpeza de Lixo do SVN..."
 
-#: fileviewsvnplugin.cpp:222
+#: fileviewsvnplugin.cpp:225
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
@@ -81,45 +81,45 @@ msgstr ""
 "A actualização do estado do SVN foi mal-sucedida. A desactivar a opção "
 "\"Mostrar as Actualizações do SVN\"."
 
-#: fileviewsvnplugin.cpp:358
+#: fileviewsvnplugin.cpp:361
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "Actualização do SVN"
 
-#: fileviewsvnplugin.cpp:362
+#: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "A actualizar o repositório de SVN..."
 
-#: fileviewsvnplugin.cpp:363
+#: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "A actualização do repositório de SVN foi mal-sucedida."
 
-#: fileviewsvnplugin.cpp:364
+#: fileviewsvnplugin.cpp:368
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "O repositório de SVN foi actualizado."
 
-#: fileviewsvnplugin.cpp:378
+#: fileviewsvnplugin.cpp:382
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "Não foi possível mostrar as modificações locais do SVN."
 
-#: fileviewsvnplugin.cpp:393
+#: fileviewsvnplugin.cpp:390
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr ""
 "Não foi possível mostrar as modificações locais do SVN: falhou o 'svn diff'."
 
-#: fileviewsvnplugin.cpp:405 fileviewsvnplugin.cpp:589
-#: fileviewsvnplugin.cpp:618
+#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:579
+#: fileviewsvnplugin.cpp:602
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -127,86 +127,86 @@ msgstr ""
 "Não foi possível mostrar as modificações locais do SVN: não foi possível "
 "iniciar o Kompare."
 
-#: fileviewsvnplugin.cpp:437
+#: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "A adicionar os ficheiros ao repositório de SVN..."
 
-#: fileviewsvnplugin.cpp:438
+#: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "A adição dos ficheiros ao repositório de SVN foi mal-sucedida."
 
-#: fileviewsvnplugin.cpp:439
+#: fileviewsvnplugin.cpp:432
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "Os ficheiros foram adicionados ao repositório de SVN."
 
-#: fileviewsvnplugin.cpp:445
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "A remover os ficheiros do repositório de SVN..."
 
-#: fileviewsvnplugin.cpp:446
+#: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "A remoção dos ficheiros do repositório de SVN foi mal-sucedida."
 
-#: fileviewsvnplugin.cpp:447
+#: fileviewsvnplugin.cpp:441
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "Os ficheiros foram removidos do repositório de SVN."
 
-#: fileviewsvnplugin.cpp:467 fileviewsvnplugin.cpp:553
+#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:548
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "Reversão do SVN"
 
-#: fileviewsvnplugin.cpp:471
+#: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "A reverter os ficheiros do repositório de SVN..."
 
-#: fileviewsvnplugin.cpp:472
+#: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "A reversão dos ficheiros do repositório de SVN foi mal-sucedida."
 
-#: fileviewsvnplugin.cpp:473
+#: fileviewsvnplugin.cpp:468
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "Os ficheiros foram revertidos do repositório de SVN."
 
-#: fileviewsvnplugin.cpp:557
+#: fileviewsvnplugin.cpp:553
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "A reverter as modificações no ficheiro..."
 
-#: fileviewsvnplugin.cpp:558
+#: fileviewsvnplugin.cpp:554
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "Não foi possível reverter o ficheiro."
 
-#: fileviewsvnplugin.cpp:559
+#: fileviewsvnplugin.cpp:555
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "O ficheiro foi revertido."
 
-#: fileviewsvnplugin.cpp:576 fileviewsvnplugin.cpp:599
-#: fileviewsvnplugin.cpp:604
+#: fileviewsvnplugin.cpp:572 fileviewsvnplugin.cpp:589
+#: fileviewsvnplugin.cpp:594
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
@@ -214,25 +214,25 @@ msgstr ""
 "Não foi possível mostrar as modificações locais do SVN do ficheiro: não foi "
 "possível aceder ao mesmo."
 
-#: fileviewsvnplugin.cpp:645 fileviewsvnplugin.cpp:670
+#: fileviewsvnplugin.cpp:629 fileviewsvnplugin.cpp:655
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "O envio das alterações para o SVN foi mal-sucedido."
 
-#: fileviewsvnplugin.cpp:665 svncommitdialog.cpp:154
+#: fileviewsvnplugin.cpp:649 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "Envio para o SVN"
 
-#: fileviewsvnplugin.cpp:669
+#: fileviewsvnplugin.cpp:654
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "A enviar as alterações para o SVN..."
 
-#: fileviewsvnplugin.cpp:671
+#: fileviewsvnplugin.cpp:656
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -244,25 +244,25 @@ msgstr "As alterações foram enviadas para o SVN."
 msgid "Show updates"
 msgstr "Mostrar as actualizações"
 
-#: svncheckoutdialog.cpp:62
+#: svncheckoutdialog.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
 msgstr "Escolha uma pasta a obter"
 
-#: svncheckoutdialog.cpp:108
+#: svncheckoutdialog.cpp:111
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr "Obtenção do SVN: transferência em curso..."
 
-#: svncheckoutdialog.cpp:111
+#: svncheckoutdialog.cpp:114
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed."
 msgstr "Obtenção do SVN: não foi possível a transferência."
 
-#: svncheckoutdialog.cpp:113
+#: svncheckoutdialog.cpp:116
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
@@ -307,19 +307,19 @@ msgstr "OK"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: svncleanupdialog.cpp:26
+#: svncleanupdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
 msgstr "Escolha uma pasta a limpar"
 
-#: svncleanupdialog.cpp:60
+#: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
 msgstr "A limpeza de lixo do SVN terminou com sucesso."
 
-#: svncleanupdialog.cpp:62
+#: svncleanupdialog.cpp:64
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
@@ -355,135 +355,135 @@ msgstr "Apagar os ficheiros e pastas ignorados"
 msgid "Include externals"
 msgstr "Incluir os externos"
 
-#: svncommitdialog.cpp:88
+#: svncommitdialog.cpp:86
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "Descrição:"
 
-#: svncommitdialog.cpp:103
+#: svncommitdialog.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: svncommitdialog.cpp:108
+#: svncommitdialog.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "Enviar"
 
-#: svncommitdialog.cpp:114
+#: svncommitdialog.cpp:112
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
 msgstr "Reverter"
 
-#: svncommitdialog.cpp:121
+#: svncommitdialog.cpp:119
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
 msgstr "Mostrar as alterações"
 
-#: svncommitdialog.cpp:128
+#: svncommitdialog.cpp:126
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Add file"
 msgstr "Adicionar o ficheiro"
 
-#: svncommitdialog.cpp:156
+#: svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Path"
 msgstr "Localização"
 
-#: svncommitdialog.cpp:157
+#: svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
 msgstr "Estado"
 
-#: svncommitdialog.cpp:210
+#: svncommitdialog.cpp:207
 #, kde-format
 msgctxt "@item:intable"
 msgid "Unversioned"
 msgstr "Sem versão"
 
-#: svncommitdialog.cpp:213
+#: svncommitdialog.cpp:210
 #, kde-format
 msgctxt "@item:intable"
 msgid "Modified"
 msgstr "Modificado"
 
-#: svncommitdialog.cpp:216
+#: svncommitdialog.cpp:213
 #, kde-format
 msgctxt "@item:intable"
 msgid "Added"
 msgstr "Adicionado"
 
-#: svncommitdialog.cpp:219
+#: svncommitdialog.cpp:216
 #, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
 msgstr "Removido"
 
-#: svncommitdialog.cpp:222
+#: svncommitdialog.cpp:219
 #, kde-format
 msgctxt "@item:intable"
 msgid "Conflict"
 msgstr "Conflito"
 
-#: svncommitdialog.cpp:225
+#: svncommitdialog.cpp:222
 #, kde-format
 msgctxt "@item:intable"
 msgid "Missing"
 msgstr "Em falta"
 
-#: svncommitdialog.cpp:228
+#: svncommitdialog.cpp:225
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
 msgstr "Actualização necessária"
 
-#: svnlogdialog.cpp:94
+#: svnlogdialog.cpp:90
 #, kde-format
 msgid "Update to revision"
 msgstr "Actualizar para a versão"
 
-#: svnlogdialog.cpp:98 svnlogdialog.cpp:116
+#: svnlogdialog.cpp:94 svnlogdialog.cpp:112
 #, kde-format
 msgid "Revert to revision"
 msgstr "Reverter à versão"
 
-#: svnlogdialog.cpp:102
+#: svnlogdialog.cpp:98
 #, kde-format
 msgid "Show changes"
 msgstr "Mostrar as alterações"
 
-#: svnlogdialog.cpp:109
+#: svnlogdialog.cpp:105
 #, kde-format
 msgid "Changes against working copy"
 msgstr "Modificações face à cópia local"
 
-#: svnlogdialog.cpp:271
+#: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
 msgstr "Registo do SVN: a actualização para a versão foi mal-sucedida."
 
-#: svnlogdialog.cpp:273
+#: svnlogdialog.cpp:269
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
 msgstr "Registo do SVN: a actualização para a versão %1 terminou com sucesso."
 
-#: svnlogdialog.cpp:283 svnlogdialog.cpp:294
+#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
 msgstr "Registo do SVN: não foi possível reverter para a versão."
 
-#: svnlogdialog.cpp:285 svnlogdialog.cpp:296
+#: svnlogdialog.cpp:281 svnlogdialog.cpp:292
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."

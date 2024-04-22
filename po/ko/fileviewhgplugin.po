@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
 "PO-Revision-Date: 2024-02-09 20:11+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,215 +17,215 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: backoutdialog.cpp:30
+#: backoutdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> 백아웃"
 
-#: backoutdialog.cpp:32
+#: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
 msgstr "백아웃"
 
-#: backoutdialog.cpp:59
+#: backoutdialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
 msgstr "백아웃 이후 기존 디렉터리 상태 부모와 합치기"
 
-#: backoutdialog.cpp:61 backoutdialog.cpp:63 bundledialog.cpp:56
+#: backoutdialog.cpp:54 backoutdialog.cpp:55 bundledialog.cpp:51
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
 msgstr "변경 사항 집합 선택"
 
-#: backoutdialog.cpp:67
+#: backoutdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
 msgstr "백아웃 대상 리비전: "
 
-#: backoutdialog.cpp:72
+#: backoutdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
 msgstr "부모 리비전(선택 사항): "
 
-#: backoutdialog.cpp:138 bundledialog.cpp:188
+#: backoutdialog.cpp:128 bundledialog.cpp:178
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
 msgstr "변경 사항 집합 선택"
 
-#: backoutdialog.cpp:139 bundledialog.cpp:189
+#: backoutdialog.cpp:129 bundledialog.cpp:179
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Select"
 msgstr "선택"
 
-#: branchdialog.cpp:24
+#: branchdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> 브랜치"
 
-#: branchdialog.cpp:37
+#: branchdialog.cpp:36
 #, kde-format
 msgid "Create New Branch"
 msgstr "새 브랜치 만들기"
 
-#: branchdialog.cpp:38
+#: branchdialog.cpp:37
 #, kde-format
 msgid "Switch Branch"
 msgstr "브랜치 전환"
 
-#: branchdialog.cpp:70
+#: branchdialog.cpp:65
 #, kde-format
 msgid "<b>Current Branch: </b>"
 msgstr "<b>현재 브랜치: </b>"
 
-#: branchdialog.cpp:108 branchdialog.cpp:123 tagdialog.cpp:102
-#: tagdialog.cpp:118 tagdialog.cpp:133
+#: branchdialog.cpp:99 branchdialog.cpp:113 tagdialog.cpp:92 tagdialog.cpp:107
+#: tagdialog.cpp:121
 #, kde-format
 msgid "Some error occurred"
 msgstr "일부 오류가 발생함"
 
-#: bundledialog.cpp:30
+#: bundledialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> 번들"
 
-#: bundledialog.cpp:31
+#: bundledialog.cpp:30
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Bundle"
 msgstr "번들"
 
-#: bundledialog.cpp:58
+#: bundledialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
 msgstr "기반 리비전(선택 사항): "
 
-#: bundledialog.cpp:60
+#: bundledialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
 msgstr "저장소의 모든 변경 사항 집합을 묶습니다."
 
-#: bundledialog.cpp:75 exportdialog.cpp:54 importdialog.cpp:60
-#: pulldialog.cpp:43 pushdialog.cpp:43
+#: bundledialog.cpp:68 exportdialog.cpp:52 importdialog.cpp:56
+#: pulldialog.cpp:36 pushdialog.cpp:36
 #, kde-format, kde-kuit-format
 msgctxt "@label:group"
 msgid "Options"
 msgstr "옵션"
 
-#: bundledialog.cpp:77
+#: bundledialog.cpp:70
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Run even when the destination is unrelated (force)"
 msgstr "대상이 관계되지 않은 경우에도 강제로 실행"
 
-#: bundledialog.cpp:80 pulldialog.cpp:39 pushdialog.cpp:39
+#: bundledialog.cpp:72 pulldialog.cpp:34 pushdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
 msgstr "서버 인증서를 확인하지 않음"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> 복제"
 
-#: clonedialog.cpp:33
+#: clonedialog.cpp:32
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "복제"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:39
 #, kde-format
 msgid "URLs"
 msgstr "URL"
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Source"
 msgstr "원본"
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:42
 #, kde-kuit-format
 msgctxt "@lobel"
 msgid "Destination"
 msgstr "대상"
 
-#: clonedialog.cpp:45 clonedialog.cpp:46
+#: clonedialog.cpp:43 clonedialog.cpp:44
 #, kde-kuit-format
 msgctxt "@button"
 msgid "Browse"
 msgstr "찾아보기"
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label"
 msgid "Options"
 msgstr "옵션"
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:59
 #, kde-format
 msgid "Do not update the new working directory."
 msgstr "새 작업 디렉터리를 갱신하지 않습니다."
 
-#: clonedialog.cpp:62
+#: clonedialog.cpp:60
 #, kde-format
 msgid "Use pull protocol to copy metadata."
 msgstr "메타 데이터를 복사할 때 pull 프로토콜을 사용합니다."
 
-#: clonedialog.cpp:63
+#: clonedialog.cpp:61
 #, kde-format
 msgid "Use uncompressed transfer."
 msgstr "전송 시 압축하지 않습니다."
 
-#: clonedialog.cpp:64
+#: clonedialog.cpp:62
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
 msgstr "서버 인증서를 검사하지 않습니다(web.cacerts 설정 무시)."
 
-#: clonedialog.cpp:157
+#: clonedialog.cpp:147
 #, kde-format
 msgid "Terminating cloning!"
 msgstr "복제 중단 중!"
 
-#: clonedialog.cpp:183
+#: clonedialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "닫기"
 
-#: clonedialog.cpp:188
+#: clonedialog.cpp:175
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
 msgstr "저장소 복제 오류!"
 
-#: commitdialog.cpp:32
+#: commitdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> 커밋"
 
-#: commitdialog.cpp:34
+#: commitdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "커밋"
 
-#: commitdialog.cpp:41
+#: commitdialog.cpp:40
 #, kde-format
 msgid ""
 "The KTextEditor component could not be found;\n"
@@ -234,101 +234,101 @@ msgstr ""
 "KTextEditor 구성 요소를 찾을 수 없습니다.\n"
 "KDE 프레임워크 설치 상태를 확인하십시오."
 
-#: commitdialog.cpp:54
+#: commitdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Commit to current branch"
 msgstr "현재 브랜치에 커밋"
 
-#: commitdialog.cpp:59
+#: commitdialog.cpp:56
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Create new branch"
 msgstr "새 브랜치 만들기"
 
-#: commitdialog.cpp:64
+#: commitdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Close current branch"
 msgstr "현재 브랜치 닫기"
 
-#: commitdialog.cpp:86
+#: commitdialog.cpp:80
 #, kde-format
 msgid "Copy Message"
 msgstr "메시지 복사"
 
-#: commitdialog.cpp:87 updatedialog.cpp:34
+#: commitdialog.cpp:81 updatedialog.cpp:32
 #, kde-format
 msgid "Branch"
 msgstr "브랜치"
 
-#: commitdialog.cpp:108
+#: commitdialog.cpp:101
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Commit Message"
 msgstr "커밋 메시지"
 
-#: commitdialog.cpp:115
+#: commitdialog.cpp:108
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr "Diff/내용"
 
-#: commitdialog.cpp:217
+#: commitdialog.cpp:204
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr "브랜치를 만들 수 없음! 커밋 중단됨!"
 
-#: commitdialog.cpp:227
+#: commitdialog.cpp:212
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr "커밋 실패!"
 
-#: commitdialog.cpp:231
+#: commitdialog.cpp:215
 #, kde-format
 msgid "No files for commit!"
 msgstr "커밋할 파일 없음!"
 
-#: commitdialog.cpp:258
+#: commitdialog.cpp:241
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr "브랜치: 현재 브랜치"
 
-#: commitdialog.cpp:265
+#: commitdialog.cpp:247
 #, kde-format
 msgid "Branch: "
 msgstr "브랜치: "
 
-#: commitdialog.cpp:278
+#: commitdialog.cpp:257
 #, kde-format
 msgid "Branch: Close Current"
 msgstr "브랜치: 현재 브랜치 닫기"
 
-#: commitdialog.cpp:291
+#: commitdialog.cpp:269
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr "<application>Hg</application> 커밋: 새 브랜치"
 
-#: commitdialog.cpp:299
+#: commitdialog.cpp:277
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "새 브랜치 이름 입력"
 
-#: commitdialog.cpp:320
+#: commitdialog.cpp:297
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr "<b>브랜치가 이미 존재함!</b>"
 
-#: commitdialog.cpp:328
+#: commitdialog.cpp:303
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
 msgstr "<b>텍스트를 입력하십시오!</b>"
 
-#: commitinfowidget.cpp:38
+#: commitinfowidget.cpp:37
 #, kde-format
 msgid ""
 "A KDE text-editor component could not be found;\n"
@@ -337,380 +337,380 @@ msgstr ""
 "KDE 텍스트 편집기를 찾을 수 없습니다.\n"
 "설치 상태를 확인하십시오."
 
-#: configdialog.cpp:28
+#: configdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Repository Configuration"
 msgstr "<application>Hg</application> 저장소 설정"
 
-#: configdialog.cpp:31
+#: configdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Global Configuration"
 msgstr "<application>Hg</application> 전역 설정"
 
-#: configdialog.cpp:44
+#: configdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "General Settings"
 msgstr "일반 설정"
 
-#: configdialog.cpp:48
+#: configdialog.cpp:46
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
 msgstr "저장소 경로"
 
-#: configdialog.cpp:51
+#: configdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Ignored Files"
 msgstr "무시할 파일"
 
-#: configdialog.cpp:55
+#: configdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Plugin Settings"
 msgstr "플러그인 설정"
 
-#: createdialog.cpp:23
+#: createdialog.cpp:22
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Initialize Repository"
 msgstr "<application>Hg</application> 저장소 초기화"
 
-#: createdialog.cpp:24
+#: createdialog.cpp:23
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
 msgstr "저장소 초기화"
 
-#: createdialog.cpp:59
+#: createdialog.cpp:56
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
 msgstr "저장소 생성 오류!"
 
-#: exportdialog.cpp:27
+#: exportdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> 내보내기"
 
-#: exportdialog.cpp:28
+#: exportdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "내보내기"
 
-#: exportdialog.cpp:55
+#: exportdialog.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid "Treat all files as text"
 msgstr "모든 파일을 텍스트로 취급"
 
-#: exportdialog.cpp:56
+#: exportdialog.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Use Git extended diff format"
 msgstr "Git 확장 diff 형식 사용"
 
-#: exportdialog.cpp:57
+#: exportdialog.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Omit dates from diff headers"
 msgstr "diff 헤더에서 날짜 생략"
 
-#: exportdialog.cpp:126
+#: exportdialog.cpp:124
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "최소한 하나의 변경 사항 집합을 선택하십시오!"
 
-#: fileviewhgplugin.cpp:93
+#: fileviewhgplugin.cpp:92
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "<application>Hg</application> 추가"
 
-#: fileviewhgplugin.cpp:100
+#: fileviewhgplugin.cpp:97
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "<application>Hg</application> 삭제"
 
-#: fileviewhgplugin.cpp:107
+#: fileviewhgplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> 이름 바꾸기"
 
-#: fileviewhgplugin.cpp:114
+#: fileviewhgplugin.cpp:107
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> 커밋"
 
-#: fileviewhgplugin.cpp:121
+#: fileviewhgplugin.cpp:112
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> 태그"
 
-#: fileviewhgplugin.cpp:128
+#: fileviewhgplugin.cpp:117
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> 브랜치"
 
-#: fileviewhgplugin.cpp:135
+#: fileviewhgplugin.cpp:122
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> 복제"
 
-#: fileviewhgplugin.cpp:142
+#: fileviewhgplugin.cpp:127
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "<application>Hg</application> 초기화"
 
-#: fileviewhgplugin.cpp:149
+#: fileviewhgplugin.cpp:132
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> 업데이트"
 
-#: fileviewhgplugin.cpp:156
+#: fileviewhgplugin.cpp:137
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "<application>Hg</application> 전역 설정"
 
-#: fileviewhgplugin.cpp:163
+#: fileviewhgplugin.cpp:142
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "<application>Hg</application> 저장소 설정"
 
-#: fileviewhgplugin.cpp:170
+#: fileviewhgplugin.cpp:147
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "<application>Hg</application> 푸시"
 
-#: fileviewhgplugin.cpp:177
+#: fileviewhgplugin.cpp:152
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "<application>Hg</application> 풀"
 
-#: fileviewhgplugin.cpp:184
+#: fileviewhgplugin.cpp:157
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "<application>Hg</application> 되돌리기"
 
-#: fileviewhgplugin.cpp:191
+#: fileviewhgplugin.cpp:162
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "<application>Hg</application> 모두 되돌리기"
 
-#: fileviewhgplugin.cpp:198
+#: fileviewhgplugin.cpp:167
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "<application>Hg</application> 롤백"
 
-#: fileviewhgplugin.cpp:205
+#: fileviewhgplugin.cpp:172
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> 합치기"
 
-#: fileviewhgplugin.cpp:212
+#: fileviewhgplugin.cpp:177
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> 번들"
 
-#: fileviewhgplugin.cpp:219
+#: fileviewhgplugin.cpp:182
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> 내보내기"
 
-#: fileviewhgplugin.cpp:226
+#: fileviewhgplugin.cpp:187
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> 가져오기"
 
-#: fileviewhgplugin.cpp:233
+#: fileviewhgplugin.cpp:192
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "<application>Hg</application> 번들 풀기"
 
-#: fileviewhgplugin.cpp:240
+#: fileviewhgplugin.cpp:197
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> 저장소 공개"
 
-#: fileviewhgplugin.cpp:247
+#: fileviewhgplugin.cpp:202
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> 백아웃"
 
-#: fileviewhgplugin.cpp:254
+#: fileviewhgplugin.cpp:207
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "<application>Hg</application> 차이 보기"
 
-#: fileviewhgplugin.cpp:278
+#: fileviewhgplugin.cpp:229
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:488
+#: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "<application>Hg</application> 저장소에 파일 추가 중..."
 
-#: fileviewhgplugin.cpp:490
+#: fileviewhgplugin.cpp:427
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소에 파일을 추가할 수 없습니다."
 
-#: fileviewhgplugin.cpp:492
+#: fileviewhgplugin.cpp:428
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소에 파일을 추가했습니다."
 
-#: fileviewhgplugin.cpp:505
+#: fileviewhgplugin.cpp:441
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "저장소에서 선택한 파일을 삭제하시겠습니까?"
 
-#: fileviewhgplugin.cpp:506
+#: fileviewhgplugin.cpp:443
 #, kde-format
 msgid "Remove Files"
 msgstr "파일 삭제"
 
-#: fileviewhgplugin.cpp:512
+#: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "<application>Hg</application> 저장소에서 파일 삭제 중..."
 
-#: fileviewhgplugin.cpp:514
+#: fileviewhgplugin.cpp:451
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소에서 파일을 삭제할 수 없습니다."
 
-#: fileviewhgplugin.cpp:516
+#: fileviewhgplugin.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소에서 파일을 삭제했습니다."
 
-#: fileviewhgplugin.cpp:528
+#: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소의 파일 이름을 바꿀 수 없습니다."
 
-#: fileviewhgplugin.cpp:530
+#: fileviewhgplugin.cpp:463
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr "<application>Hg</application> 저장소의 파일 이름을 바꿨습니다."
 
-#: fileviewhgplugin.cpp:532
+#: fileviewhgplugin.cpp:464
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소의 파일 이름을 바꿉니다."
 
-#: fileviewhgplugin.cpp:543
+#: fileviewhgplugin.cpp:474
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "커밋할 변경 사항 없음!"
 
-#: fileviewhgplugin.cpp:548
+#: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소에 커밋할 수 없습니다."
 
-#: fileviewhgplugin.cpp:550
+#: fileviewhgplugin.cpp:479
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소에 커밋했습니다."
 
-#: fileviewhgplugin.cpp:552
+#: fileviewhgplugin.cpp:480
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소에 커밋합니다."
 
-#: fileviewhgplugin.cpp:563
+#: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소에 태그 작업이 실패했습니다."
 
-#: fileviewhgplugin.cpp:565
+#: fileviewhgplugin.cpp:491
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
 msgstr "<application>Hg</application> 저장소에 태그 작업이 성공했습니다."
 
-#: fileviewhgplugin.cpp:567
+#: fileviewhgplugin.cpp:492
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소에 태그 작업을 진행합니다."
 
-#: fileviewhgplugin.cpp:576
+#: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr "<application>Hg</application> 작업 디렉터리를 업데이트할 수 없습니다."
 
-#: fileviewhgplugin.cpp:578
+#: fileviewhgplugin.cpp:501
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
 msgstr "<application>Hg</application> 작업 디렉터리를 업데이트했습니다."
 
-#: fileviewhgplugin.cpp:580
+#: fileviewhgplugin.cpp:502
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "<application>Hg</application> 작업 디렉터리를 업데이트합니다."
 
-#: fileviewhgplugin.cpp:589
+#: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소에 브랜치 작업이 실패했습니다."
 
-#: fileviewhgplugin.cpp:591
+#: fileviewhgplugin.cpp:511
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -718,36 +718,36 @@ msgid ""
 "successfully."
 msgstr "<application>Hg</application> 저장소에 브랜치 작업이 완료되었습니다."
 
-#: fileviewhgplugin.cpp:593
+#: fileviewhgplugin.cpp:512
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr "<application>Hg</application> 저장소에 브랜치 작업을 진행합니다."
 
-#: fileviewhgplugin.cpp:691
+#: fileviewhgplugin.cpp:609
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
 msgstr "선택한 파일의 변경 사앙흘 되돌리시겠습니까?"
 
-#: fileviewhgplugin.cpp:692 fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:611 fileviewhgplugin.cpp:612 fileviewhgplugin.cpp:633
 #, kde-format
 msgid "Revert"
 msgstr "되돌리기"
 
-#: fileviewhgplugin.cpp:698 fileviewhgplugin.cpp:719
+#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr "<application>Hg</application> 저장소의 파일 되돌리는 중..."
 
-#: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:721
+#: fileviewhgplugin.cpp:619 fileviewhgplugin.cpp:640
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소의 파일을 되돌릴 수 없습니다."
 
-#: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:723
+#: fileviewhgplugin.cpp:620 fileviewhgplugin.cpp:641
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -755,71 +755,71 @@ msgid ""
 "successfully."
 msgstr "<application>Hg</application> 저장소의 파일을 되돌렸습니다."
 
-#: fileviewhgplugin.cpp:712
+#: fileviewhgplugin.cpp:630
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr "현재 작업 디렉터리의 모든 변경 사항을 되돌리시겠습니까?"
 
-#: fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:632
 #, kde-format
 msgid "Revert All"
 msgstr "모두 되돌리기"
 
-#: fileviewhgplugin.cpp:732
+#: fileviewhgplugin.cpp:649
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
 msgstr "<application>Hg</application> 저장소의 diff 생성 중..."
 
-#: fileviewhgplugin.cpp:734
+#: fileviewhgplugin.cpp:650
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr "<application>Hg</application> 저장소의 diff를 가져올 수 없습니다."
 
-#: fileviewhgplugin.cpp:736
+#: fileviewhgplugin.cpp:651
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr "<application>Hg</application> 저장소의 diff를 생성했습니다."
 
-#: fileviewhgplugin.cpp:766
+#: fileviewhgplugin.cpp:680
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
 msgstr "중단됨: 작업 디렉터리에 커밋하지 않은 변경 사항 있음!"
 
-#: fileviewhgplugin.cpp:779
+#: fileviewhgplugin.cpp:695
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "롤백 정보 없음!"
 
-#: fileviewhgplugin.cpp:791
+#: fileviewhgplugin.cpp:706
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "마지막 트랜잭션을 되돌리시겠습니까?"
 
-#: fileviewhgplugin.cpp:792
+#: fileviewhgplugin.cpp:708 fileviewhgplugin.cpp:709
 #, kde-format
 msgid "Rollback"
 msgstr "롤백"
 
-#: fileviewhgplugin.cpp:798
+#: fileviewhgplugin.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr "<application>Hg</application> 저장소에 롤백 작업 실행 중..."
 
-#: fileviewhgplugin.cpp:800
+#: fileviewhgplugin.cpp:716
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 저장소에 롤백 작업이 실패했습니다."
 
-#: fileviewhgplugin.cpp:802
+#: fileviewhgplugin.cpp:717
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -880,198 +880,198 @@ msgstr "파일 목록과 커밋 변경 사항 편집기 나누기"
 msgid "Divides commit editor and diff editor"
 msgstr "커밋 편집기와 차이점 편집기 나누기"
 
-#: importdialog.cpp:29
+#: importdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> 가져오기"
 
-#: importdialog.cpp:30
+#: importdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "가져오기"
 
-#: importdialog.cpp:62
+#: importdialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
 msgstr "커밋하지 않고 작업 디렉터리 갱신"
 
-#: importdialog.cpp:64
+#: importdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
 msgstr "커밋되지 않은 변경 사항 검사 건너뛰기"
 
-#: importdialog.cpp:66
+#: importdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
 msgstr "패치가 생성된 노드에 적용"
 
-#: importdialog.cpp:68
+#: importdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
 msgstr "작업 디렉터리를 변경하지 않고 패치 적용"
 
-#: importdialog.cpp:80
+#: importdialog.cpp:71
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Add Patches"
 msgstr "패치 추가"
 
-#: importdialog.cpp:82
+#: importdialog.cpp:72
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Remove Patches"
 msgstr "패치 삭제"
 
-#: mergedialog.cpp:26
+#: mergedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> 합치기"
 
-#: mergedialog.cpp:27
+#: mergedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Merge"
 msgstr "합치기"
 
-#: mergedialog.cpp:107
+#: mergedialog.cpp:103
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
 msgstr "합칠 HEAD를 선택하지 않았습니다!"
 
-#: pathselector.cpp:60
+#: pathselector.cpp:57
 #, kde-kuit-format
 msgctxt "@label:combobox"
 msgid "edit"
 msgstr "편집"
 
-#: pulldialog.cpp:29
+#: pulldialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
 msgstr "<application>Hg</application> 저장소 풀"
 
-#: pulldialog.cpp:37
+#: pulldialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
 msgstr "새 변경 사항 집합을 풀했을 때 새 브랜치로 업데이트"
 
-#: pulldialog.cpp:41
+#: pulldialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
 msgstr "강제 풀"
 
-#: pulldialog.cpp:53
+#: pulldialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Incoming Changes"
 msgstr "가져온 변경 사항"
 
-#: pulldialog.cpp:147
+#: pulldialog.cpp:138
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No incoming changes!"
 msgstr "가져온 변경 사항 없음!"
 
-#: pushdialog.cpp:29
+#: pushdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Push Repository"
 msgstr "<application>Hg</application> 저장소 푸시"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
 msgstr "새 브랜치로 푸시 허용"
 
-#: pushdialog.cpp:41
+#: pushdialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Push"
 msgstr "강제 푸시"
 
-#: pushdialog.cpp:53
+#: pushdialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "내보낼 변경 사항"
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:159
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
 msgstr "내보낼 변경 사항 없음!"
 
-#: renamedialog.cpp:25
+#: renamedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> 이름 바꾸기"
 
-#: renamedialog.cpp:27
+#: renamedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: renamedialog.cpp:33
+#: renamedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@label:label to source file"
 msgid "Source "
 msgstr "원본 "
 
-#: renamedialog.cpp:39
+#: renamedialog.cpp:36
 #, kde-kuit-format
 msgctxt "@label:rename"
 msgid "Rename to "
 msgstr "바꿀 이름 "
 
-#: servedialog.cpp:25
+#: servedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> 저장소 공개"
 
-#: servedialog.cpp:63
+#: servedialog.cpp:56
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
 msgstr "서버 시작"
 
-#: servedialog.cpp:64
+#: servedialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
 msgstr "서버 종료"
 
-#: servedialog.cpp:65
+#: servedialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Open in browser"
 msgstr "브라우저로 열기"
 
-#: servedialog.cpp:81
+#: servedialog.cpp:74
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Port"
 msgstr "포트"
 
-#: servewrapper.cpp:66
+#: servewrapper.cpp:62
 #, kde-format
 msgid "## Starting Server ##"
 msgstr "## 서버 시작 중 ##"
 
-#: servewrapper.h:150
+#: servewrapper.h:144
 #, kde-format
 msgid "## Server Stopped! ##\n"
 msgstr "## 서버가 중단됨! ##\n"
@@ -1087,116 +1087,116 @@ msgctxt "@title:group"
 msgid "File Status"
 msgstr "파일 상태"
 
-#: syncdialogbase.cpp:81
+#: syncdialogbase.cpp:73
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
 msgstr "가져오는 변경 사항 보기"
 
-#: syncdialogbase.cpp:85
+#: syncdialogbase.cpp:75
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "내보내는 변경 사항 보기"
 
-#: syncdialogbase.cpp:119
+#: syncdialogbase.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "풀"
 
-#: syncdialogbase.cpp:119
+#: syncdialogbase.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
 msgstr "푸시"
 
-#: syncdialogbase.cpp:161
+#: syncdialogbase.cpp:146
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "변경 사항 없음!"
 
-#: syncdialogbase.cpp:212 syncdialogbase.cpp:287 syncdialogbase.cpp:294
+#: syncdialogbase.cpp:197 syncdialogbase.cpp:263 syncdialogbase.cpp:270
 #, kde-format
 msgid "Error!"
 msgstr "오류!"
 
-#: syncdialogbase.cpp:328
+#: syncdialogbase.cpp:302
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
 msgstr "옵션"
 
-#: tagdialog.cpp:20
+#: tagdialog.cpp:19
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> 태그"
 
-#: tagdialog.cpp:30
+#: tagdialog.cpp:29
 #, kde-format
 msgid "Create New Tag"
 msgstr "새 태그 만들기"
 
-#: tagdialog.cpp:31
+#: tagdialog.cpp:30
 #, kde-format
 msgid "Remove Tag"
 msgstr "태그 삭제"
 
-#: tagdialog.cpp:32
+#: tagdialog.cpp:31
 #, kde-format
 msgid "Switch Tag"
 msgstr "태그 전환"
 
-#: tagdialog.cpp:129
+#: tagdialog.cpp:118
 #, kde-format
 msgid "Created tag successfully!"
 msgstr "태그를 성공적으로 생성함!"
 
-#: updatedialog.cpp:25
+#: updatedialog.cpp:23
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> 업데이트"
 
-#: updatedialog.cpp:27
+#: updatedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Update"
 msgstr "업데이트"
 
-#: updatedialog.cpp:30
+#: updatedialog.cpp:28
 #, kde-format
 msgid "New working directory"
 msgstr "새 작업 디렉터리"
 
-#: updatedialog.cpp:35
+#: updatedialog.cpp:33
 #, kde-format
 msgid "Tag"
 msgstr "태그"
 
-#: updatedialog.cpp:36
+#: updatedialog.cpp:34
 #, kde-format
 msgid "Changeset/Revision"
 msgstr "변경 사항 집합/리비전"
 
-#: updatedialog.cpp:41
+#: updatedialog.cpp:39
 #, kde-format
 msgid "Current Parent"
 msgstr "현재 부모"
 
-#: updatedialog.cpp:47
+#: updatedialog.cpp:45
 #, kde-format
 msgid "Options"
 msgstr "옵션"
 
-#: updatedialog.cpp:49
+#: updatedialog.cpp:47
 #, kde-format
 msgid "Discard uncommitted changes"
 msgstr "커밋되지 않은 변경 사항 지우기"
 
-#: updatedialog.cpp:126
+#: updatedialog.cpp:120
 #, kde-format
 msgid ""
 "Some error occurred! \n"

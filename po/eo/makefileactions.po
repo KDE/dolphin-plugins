@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
 "PO-Revision-Date: 2023-11-10 19:09+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,58 +18,58 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: makefileactions.cpp:218
+#: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
 msgstr "Make '%1'%2."
 
-#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
 msgid "Makefile Actions"
 msgstr "Makefile-Agoj"
 
-#: makefileactions.cpp:244
+#: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr "Okazis eraro prilaborante la celon '%1'."
 
-#: makefileactions.cpp:252
+#: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr "Rulanta procezo por '%1' sukcese ĉesis."
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr "Okazis eraro provante fari celon '%1'."
 
-#: makefileactions.cpp:286
+#: makefileactions.cpp:296
 #, kde-format
 msgid "&Make…"
 msgstr "&Make…"
 
-#: makefileactions.cpp:291
+#: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
 "Nur fidindaj dosieroj povas esti uzataj de la kromaĵo Makefile Actions."
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr "Fidinda dosiero - malmarku por forigi fidon"
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr "Nefidinda dosiero - kontrolu por fidi"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr "Dolphin Makefile-Kromaĵo"
 
-#: makefileactions.cpp:302
+#: makefileactions.cpp:312
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
@@ -78,24 +78,24 @@ msgstr ""
 "<b>Ĉu vi certas, ke vi povas fidi ĉi tiun dosieron?</b><br>Fiditaj dosieroj "
 "povas ruli arbitran kodon ĉe kunteksta menua alvoko."
 
-#: makefileactions.cpp:316
+#: makefileactions.cpp:326
 #, kde-format
 msgid "Open a terminal window"
 msgstr "Malfermi terminalan fenestron"
 
-#: makefileactions.cpp:317
+#: makefileactions.cpp:327
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
 "Malfermi novan terminalfenestron por vidi la eliron fari la elektitan celon."
 
-#: makefileactions.cpp:328
+#: makefileactions.cpp:339
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr "Nuligi kurantan procezon (%1)"
 
-#: makefileactions.cpp:329
+#: makefileactions.cpp:340
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr "Interrompi la aktuale rulantan procezon (%1)."

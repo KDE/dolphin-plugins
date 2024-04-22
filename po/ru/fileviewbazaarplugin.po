@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
 "PO-Revision-Date: 2013-06-13 09:32+0400\n"
 "Last-Translator: Alexander Lakhin <exclusion@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -27,187 +27,187 @@ msgctxt "@item:inmenu"
 msgid "Bazaar Update"
 msgstr "Bazaar: обновить"
 
-#: fileviewbazaarplugin.cpp:55
+#: fileviewbazaarplugin.cpp:54
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Pull"
 msgstr "Bazaar: вытянуть"
 
-#: fileviewbazaarplugin.cpp:61
+#: fileviewbazaarplugin.cpp:59
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Push"
 msgstr "Bazaar: вытолкнуть"
 
-#: fileviewbazaarplugin.cpp:67
+#: fileviewbazaarplugin.cpp:64
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
 msgstr "Показать локальные изменения Bazaar"
 
-#: fileviewbazaarplugin.cpp:73
+#: fileviewbazaarplugin.cpp:69
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
 msgstr "Bazaar: зафиксировать..."
 
-#: fileviewbazaarplugin.cpp:79
+#: fileviewbazaarplugin.cpp:74
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
 msgstr "Bazaar: добавить..."
 
-#: fileviewbazaarplugin.cpp:85
+#: fileviewbazaarplugin.cpp:79
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Delete"
 msgstr "Bazaar: удалить"
 
-#: fileviewbazaarplugin.cpp:91
+#: fileviewbazaarplugin.cpp:84
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Log"
 msgstr "Журнал Bazaar"
 
-#: fileviewbazaarplugin.cpp:357
+#: fileviewbazaarplugin.cpp:360
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
 msgstr "Обновление хранилища Bazaar..."
 
-#: fileviewbazaarplugin.cpp:358
+#: fileviewbazaarplugin.cpp:361
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
 msgstr "Обновить хранилище Bazaar не удалось."
 
-#: fileviewbazaarplugin.cpp:359
+#: fileviewbazaarplugin.cpp:362
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
 msgstr "Хранилище Bazaar обновлено."
 
-#: fileviewbazaarplugin.cpp:367
+#: fileviewbazaarplugin.cpp:371
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
 msgstr "Вытягивание изменений Bazaar..."
 
-#: fileviewbazaarplugin.cpp:368
+#: fileviewbazaarplugin.cpp:372
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
 msgstr "Вытянуть изменения Bazaar не удалось."
 
-#: fileviewbazaarplugin.cpp:369
+#: fileviewbazaarplugin.cpp:373
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
 msgstr "Изменения Bazaar вытянуты."
 
-#: fileviewbazaarplugin.cpp:377
+#: fileviewbazaarplugin.cpp:382
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
 msgstr "Выталкивание изменений Bazaar..."
 
-#: fileviewbazaarplugin.cpp:378
+#: fileviewbazaarplugin.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
 msgstr "Вытолкнуть изменения Bazaar не удалось."
 
-#: fileviewbazaarplugin.cpp:379
+#: fileviewbazaarplugin.cpp:384
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
 msgstr "Изменения Bazaar вытолкнуты."
 
-#: fileviewbazaarplugin.cpp:385
+#: fileviewbazaarplugin.cpp:391
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
 msgstr "Пересмотр изменений..."
 
-#: fileviewbazaarplugin.cpp:386
+#: fileviewbazaarplugin.cpp:392
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
 msgstr "Пересмотреть изменения не удалось."
 
-#: fileviewbazaarplugin.cpp:387
+#: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
 msgstr "Изменения пересмотрены."
 
-#: fileviewbazaarplugin.cpp:393
+#: fileviewbazaarplugin.cpp:400
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
 msgstr "Фиксация изменений Bazaar..."
 
-#: fileviewbazaarplugin.cpp:394
+#: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
 msgstr "Зафиксировать изменения Bazaar не удалось."
 
-#: fileviewbazaarplugin.cpp:395
+#: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
 msgstr "Изменения Bazaar зафиксированы."
 
-#: fileviewbazaarplugin.cpp:401
+#: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
 msgstr "Добавление файлов в хранилище Bazaar..."
 
-#: fileviewbazaarplugin.cpp:402
+#: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
 msgstr "Добавить файлы в хранилище Bazaar не удалось."
 
-#: fileviewbazaarplugin.cpp:403
+#: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
 msgstr "Файлы добавлены в хранилище Bazaar."
 
-#: fileviewbazaarplugin.cpp:409
+#: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
 msgstr "Удаление файлов из хранилища Bazaar..."
 
-#: fileviewbazaarplugin.cpp:410
+#: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
 msgstr "Удалить файлы из хранилища Bazaar не получилось."
 
-#: fileviewbazaarplugin.cpp:411
+#: fileviewbazaarplugin.cpp:420
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
 msgstr "Файлы удалены из хранилища Bazaar."
 
-#: fileviewbazaarplugin.cpp:417
+#: fileviewbazaarplugin.cpp:427
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
 msgstr "Считывание журнала изменений Bazaar..."
 
-#: fileviewbazaarplugin.cpp:418
+#: fileviewbazaarplugin.cpp:428
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
 msgstr "Считать журнал изменений Bazaar не удалось."
 
-#: fileviewbazaarplugin.cpp:419
+#: fileviewbazaarplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."

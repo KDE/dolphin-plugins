@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewbazaarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
 "PO-Revision-Date: 2011-09-03 11:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -19,187 +19,187 @@ msgctxt "@item:inmenu"
 msgid "Bazaar Update"
 msgstr "Actualização do Bazaar"
 
-#: fileviewbazaarplugin.cpp:55
+#: fileviewbazaarplugin.cpp:54
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Pull"
 msgstr "Extracção Remota do Bazaar"
 
-#: fileviewbazaarplugin.cpp:61
+#: fileviewbazaarplugin.cpp:59
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Push"
 msgstr "Envio Remoto do Bazaar"
 
-#: fileviewbazaarplugin.cpp:67
+#: fileviewbazaarplugin.cpp:64
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
 msgstr "Mostrar as Alterações Locais do Bazaar"
 
-#: fileviewbazaarplugin.cpp:73
+#: fileviewbazaarplugin.cpp:69
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
 msgstr "Envio do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:79
+#: fileviewbazaarplugin.cpp:74
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
 msgstr "Adição do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:85
+#: fileviewbazaarplugin.cpp:79
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Delete"
 msgstr "Remoção do Bazaar"
 
-#: fileviewbazaarplugin.cpp:91
+#: fileviewbazaarplugin.cpp:84
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Log"
 msgstr "Registo do Bazaar"
 
-#: fileviewbazaarplugin.cpp:357
+#: fileviewbazaarplugin.cpp:360
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
 msgstr "A actualizar o repositório do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:358
+#: fileviewbazaarplugin.cpp:361
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
 msgstr "A actualização do repositório do Bazaar foi mal-sucedida."
 
-#: fileviewbazaarplugin.cpp:359
+#: fileviewbazaarplugin.cpp:362
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
 msgstr "O repositório do Bazaar foi actualizado."
 
-#: fileviewbazaarplugin.cpp:367
+#: fileviewbazaarplugin.cpp:371
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
 msgstr "A extrair do repositório remoto do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:368
+#: fileviewbazaarplugin.cpp:372
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
 msgstr "A extracção do repositório remoto do Bazaar foi mal-sucedida."
 
-#: fileviewbazaarplugin.cpp:369
+#: fileviewbazaarplugin.cpp:373
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
 msgstr "Foi feita a extracção do repositório remoto do Bazaar com sucesso."
 
-#: fileviewbazaarplugin.cpp:377
+#: fileviewbazaarplugin.cpp:382
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
 msgstr "A enviar para o repositório remoto do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:378
+#: fileviewbazaarplugin.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
 msgstr "O envio para o repositório remoto do Bazaar foi mal-sucedido."
 
-#: fileviewbazaarplugin.cpp:379
+#: fileviewbazaarplugin.cpp:384
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
 msgstr "Foi feito o envio para o repositório remoto do Bazaar com sucesso."
 
-#: fileviewbazaarplugin.cpp:385
+#: fileviewbazaarplugin.cpp:391
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
 msgstr "A Rever as Alterações..."
 
-#: fileviewbazaarplugin.cpp:386
+#: fileviewbazaarplugin.cpp:392
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
 msgstr "A revisão das alterações foi mal-sucedida."
 
-#: fileviewbazaarplugin.cpp:387
+#: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
 msgstr "As alterações foram revistas."
 
-#: fileviewbazaarplugin.cpp:393
+#: fileviewbazaarplugin.cpp:400
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
 msgstr "A enviar as alterações para o Bazaar..."
 
-#: fileviewbazaarplugin.cpp:394
+#: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
 msgstr "O envio das alterações do Bazaar foi mal-sucedido."
 
-#: fileviewbazaarplugin.cpp:395
+#: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
 msgstr "O envio das alterações foi mal-sucedido."
 
-#: fileviewbazaarplugin.cpp:401
+#: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
 msgstr "A adicionar os ficheiros ao repositório do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:402
+#: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
 msgstr "A adição dos ficheiros ao repositório do Bazaar foi mal-sucedida."
 
-#: fileviewbazaarplugin.cpp:403
+#: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
 msgstr "Os ficheiros foram adicionados ao repositório do Bazaar."
 
-#: fileviewbazaarplugin.cpp:409
+#: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
 msgstr "A remover os ficheiros do repositório do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:410
+#: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
 msgstr "A remoção dos ficheiros do repositório do Bazaar foi mal-sucedida."
 
-#: fileviewbazaarplugin.cpp:411
+#: fileviewbazaarplugin.cpp:420
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
 msgstr "Os ficheiros foram removidos do repositório do Bazaar."
 
-#: fileviewbazaarplugin.cpp:417
+#: fileviewbazaarplugin.cpp:427
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
 msgstr "A executar o registo do Bazaar..."
 
-#: fileviewbazaarplugin.cpp:418
+#: fileviewbazaarplugin.cpp:428
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
 msgstr "A execução do registo do Bazaar foi mal-sucedida."
 
-#: fileviewbazaarplugin.cpp:419
+#: fileviewbazaarplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."

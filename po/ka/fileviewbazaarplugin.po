@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
 "PO-Revision-Date: 2023-01-11 16:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -24,187 +24,187 @@ msgctxt "@item:inmenu"
 msgid "Bazaar Update"
 msgstr "Bazaar Update"
 
-#: fileviewbazaarplugin.cpp:55
+#: fileviewbazaarplugin.cpp:54
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Pull"
 msgstr "Bazaar Pull"
 
-#: fileviewbazaarplugin.cpp:61
+#: fileviewbazaarplugin.cpp:59
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Push"
 msgstr "Bazaar Push"
 
-#: fileviewbazaarplugin.cpp:67
+#: fileviewbazaarplugin.cpp:64
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
 msgstr "Bazaar-ის ლოკალური ცვლილებების ჩვენება"
 
-#: fileviewbazaarplugin.cpp:73
+#: fileviewbazaarplugin.cpp:69
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
 msgstr "Bazaar Commit..."
 
-#: fileviewbazaarplugin.cpp:79
+#: fileviewbazaarplugin.cpp:74
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
 msgstr "Bazaar Add..."
 
-#: fileviewbazaarplugin.cpp:85
+#: fileviewbazaarplugin.cpp:79
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Delete"
 msgstr "Bazaar Delete"
 
-#: fileviewbazaarplugin.cpp:91
+#: fileviewbazaarplugin.cpp:84
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Log"
 msgstr "Bazaar Log"
 
-#: fileviewbazaarplugin.cpp:357
+#: fileviewbazaarplugin.cpp:360
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
 msgstr "Bazaar-ის რეპოზიტორიის განახლება..."
 
-#: fileviewbazaarplugin.cpp:358
+#: fileviewbazaarplugin.cpp:361
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
 msgstr "Bazaar-ის რეპოზიტორიის განახლების შეცდომა."
 
-#: fileviewbazaarplugin.cpp:359
+#: fileviewbazaarplugin.cpp:362
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
 msgstr "Bazaar-ის რეპოზიტორია განახლდა."
 
-#: fileviewbazaarplugin.cpp:367
+#: fileviewbazaarplugin.cpp:371
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
 msgstr "Bazaar-ის რეპოზიტორიის გამოთხოვა..."
 
-#: fileviewbazaarplugin.cpp:368
+#: fileviewbazaarplugin.cpp:372
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
 msgstr "Bazaar-ის რეპოზიტორიის გამოთხოვის შეცდომა."
 
-#: fileviewbazaarplugin.cpp:369
+#: fileviewbazaarplugin.cpp:373
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
 msgstr "Bazaar-ის რეპოზიტორია გამოთხოვილია."
 
-#: fileviewbazaarplugin.cpp:377
+#: fileviewbazaarplugin.cpp:382
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
 msgstr "Bazaar-ის რეპოზიტორიის პუში..."
 
-#: fileviewbazaarplugin.cpp:378
+#: fileviewbazaarplugin.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
 msgstr "Bazaar-ის რეპოზიტორიის პუშის შეცდომა."
 
-#: fileviewbazaarplugin.cpp:379
+#: fileviewbazaarplugin.cpp:384
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
 msgstr "Bazaar-ის რეპოზიტორია დაპუშულია."
 
-#: fileviewbazaarplugin.cpp:385
+#: fileviewbazaarplugin.cpp:391
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
 msgstr "ცვლილებების მიმოხილვა..."
 
-#: fileviewbazaarplugin.cpp:386
+#: fileviewbazaarplugin.cpp:392
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
 msgstr "ცვლილებების მიმოხილვის შეცდომა."
 
-#: fileviewbazaarplugin.cpp:387
+#: fileviewbazaarplugin.cpp:393
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
 msgstr "ცვლილებები მიმოხილულია."
 
-#: fileviewbazaarplugin.cpp:393
+#: fileviewbazaarplugin.cpp:400
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
 msgstr "Bazaar-ის ცვლილებების კომიტი..."
 
-#: fileviewbazaarplugin.cpp:394
+#: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
 msgstr "Bazaar-ის ცვლილებების კომიტის შეცდომა."
 
-#: fileviewbazaarplugin.cpp:395
+#: fileviewbazaarplugin.cpp:402
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
 msgstr "Bazaar-ის ცვლილებების კომიტი..."
 
-#: fileviewbazaarplugin.cpp:401
+#: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
 msgstr "Bazaar-ის რეპოზიტორიაში ფაილების დამატება..."
 
-#: fileviewbazaarplugin.cpp:402
+#: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
 msgstr "Bazaar-ის რეპოზიტორიაში ფაილების დამატების შეცდომა."
 
-#: fileviewbazaarplugin.cpp:403
+#: fileviewbazaarplugin.cpp:411
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
 msgstr "Bazaar-ის რეპოზიტორიაში ფაილები დამატებულია."
 
-#: fileviewbazaarplugin.cpp:409
+#: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
 msgstr "Bazaar-ის რეპოზიტორიიდან ფაილების წაშლა..."
 
-#: fileviewbazaarplugin.cpp:410
+#: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
 msgstr "Bazaar-ის რეპოზიტორიიდან ფაილების წაშლის შეცდომა."
 
-#: fileviewbazaarplugin.cpp:411
+#: fileviewbazaarplugin.cpp:420
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
 msgstr "Bazaar-ის რეპოზიტორიიდან ფაილები წაიშალა."
 
-#: fileviewbazaarplugin.cpp:417
+#: fileviewbazaarplugin.cpp:427
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
 msgstr "Bazaar-ის ჟურნალის გაშვება..."
 
-#: fileviewbazaarplugin.cpp:418
+#: fileviewbazaarplugin.cpp:428
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
 msgstr "Bazaar-ის ჟურნალის გაშვების შეცდომა."
 
-#: fileviewbazaarplugin.cpp:419
+#: fileviewbazaarplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."
