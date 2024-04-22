@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-04-20 19:41\n"
+"PO-Revision-Date: 2024-04-21 04:47\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -125,7 +125,7 @@ msgstr "分支"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "深度："
 
 #: clonedialog.cpp:45
 #, kde-format
@@ -137,49 +137,49 @@ msgstr "分支："
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "递归"
 
 #: clonedialog.cpp:52
 #, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr ""
+msgstr "无检出"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "克隆到空仓库"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL："
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "目录："
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "克隆"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "选择克隆目录"
 
 #: clonedialog.cpp:130
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr ""
+msgstr "<application>Git</application> 克隆"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -287,7 +287,7 @@ msgstr "<application>Git</application> 合并..."
 #: fileviewgitplugin.cpp:114
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr ""
+msgstr "<application>Git</application> 克隆..."
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -393,22 +393,22 @@ msgstr "正在从 <application>Git</application> 仓库还原暂存区文件."
 #: fileviewgitplugin.cpp:606
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr ""
+msgstr "<application>Git</application> 启动时出错：%1"
 
 #: fileviewgitplugin.cpp:610
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr ""
+msgstr "<application>Git</application> 克隆失败：%1"
 
 #: fileviewgitplugin.cpp:612
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr ""
+msgstr "<application>Git</application> 克隆完成。"
 
 #: fileviewgitplugin.cpp:650
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr ""
+msgstr "<application>Git</application> 克隆仓库..."
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format
