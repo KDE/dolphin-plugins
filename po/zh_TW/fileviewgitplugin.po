@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:40+0000\n"
-"PO-Revision-Date: 2024-04-17 08:09+0900\n"
+"PO-Revision-Date: 2024-04-22 18:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -24,13 +24,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> 取出"
+msgstr "<application>Git</application> 簽出"
 
 #: checkoutdialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "取出"
+msgstr "簽出"
 
 #: checkoutdialog.cpp:54
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "分支基底"
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "取出"
+msgstr "簽出"
 
 #: checkoutdialog.cpp:206
 #, kde-format
@@ -128,12 +128,10 @@ msgstr "分支"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "深度："
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "分支："
@@ -142,52 +140,49 @@ msgstr "分支："
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "遞迴"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "取出"
+msgstr "沒有簽出"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "複製到純版本庫"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "網址："
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "目錄："
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "複製"
 
 #: clonedialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "選擇要複製到的目錄"
 
 #: clonedialog.cpp:130
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> 記錄"
+msgstr "<application>Git</application> 複製"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -265,7 +260,7 @@ msgstr "<application>Git</application> 移除"
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> 取出..."
+msgstr "<application>Git</application> 簽出..."
 
 #: fileviewgitplugin.cpp:89
 #, kde-kuit-format
@@ -293,10 +288,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> 合併…"
 
 #: fileviewgitplugin.cpp:114
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> 紀錄..."
+msgstr "<application>Git</application> 複製..."
 
 #: fileviewgitplugin.cpp:118
 #, kde-kuit-format
@@ -400,29 +394,24 @@ msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "從 <application>Git</application> 版本庫復原已暫存的檔案中。"
 
 #: fileviewgitplugin.cpp:606
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> 復原已暫存的"
+msgstr "<application>Git</application> 啟動錯誤：%1"
 
 #: fileviewgitplugin.cpp:610
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> 紀錄失敗。"
+msgstr "<application>Git</application> 複製失敗：%1"
 
 #: fileviewgitplugin.cpp:612
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> 取出"
+msgstr "<application>Git</application> 複製完成。"
 
 #: fileviewgitplugin.cpp:650
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> 合併…"
+msgstr "<application>Git</application> 複製版本庫..."
 
 #: fileviewgitplugin.cpp:684
 #, kde-kuit-format
@@ -444,7 +433,7 @@ msgstr "切換到新分支 %1"
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
-msgstr "<application>Git</application> 取出失敗。也許您的工作目錄裡發生衝突。"
+msgstr "<application>Git</application> 簽出失敗。也許您的工作目錄裡有異動。"
 
 #: fileviewgitplugin.cpp:769
 #, kde-kuit-format
