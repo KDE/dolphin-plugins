@@ -302,8 +302,8 @@ QList<QAction *> FileViewGitPlugin::versionControlActions(const KFileItemList &i
 
 QList<QAction *> FileViewGitPlugin::outOfVersionControlActions(const KFileItemList &items) const
 {
-    // Only for a single directory.
-    if (items.count() != 1 || !items.first().isDir()) {
+    // Only for a single local writable directory.
+    if (items.count() != 1 || !items.first().isDir() || !items.first().isWritable() || !items.first().isLocalFile()) {
         return {};
     }
 
@@ -557,7 +557,12 @@ void FileViewGitPlugin::clone()
 {
     CloneDialog dialog(m_contextDir, m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
-        QStringList arguments = {dialog.url(), dialog.directory(), QStringLiteral("clone"), QStringLiteral("--progress")};
+        QStringList arguments = {
+            QStringLiteral("clone"),
+            QStringLiteral("--progress"),
+            dialog.url(),
+            dialog.directory(),
+        };
         if (dialog.recursive()) {
             arguments << QStringLiteral("--recurse-submodules");
         }
@@ -630,6 +635,12 @@ void FileViewGitPlugin::clone()
         process->setWorkingDirectory(m_contextDir);
         process->start(QStringLiteral("git"), arguments);
         Q_EMIT infoMessage(xi18nd("@info:status", "<application>Git</application> clone repository..."));
+
+        connect(process, &QProcess::finished, this, [progressDialog](int /* exitCode */, QProcess::ExitStatus exitStatus){
+            if (exitStatus == QProcess::ExitStatus::NormalExit) {
+                progressDialog->close();
+            }
+        });
     }
 }
 

@@ -30,7 +30,14 @@ public:
     bool noCheckout() const;
     bool bare() const;
 
+private Q_SLOTS:
+    void urlChanged();
+    void destinationDirChanged();
+    void loadFromClipboard();
+
 private:
+    QString extractRepositoryName(const QString &input);
+
     QLineEdit *m_branch;
     QCheckBox *m_branchCheck;
     QLineEdit *m_depth;
@@ -41,6 +48,8 @@ private:
     QCheckBox *m_recursive;
     QCheckBox *m_noCheckout;
     QCheckBox *m_bare;
+    QPushButton *m_okButton;
+    QString m_contextDir;
 };
 
 #endif // CLONEDIALOG_H
