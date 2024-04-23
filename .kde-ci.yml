@@ -15,3 +15,6 @@ Dependencies:
     'frameworks/ktexteditor': '@latest-kf6'
     'frameworks/kservice': '@latest-kf6'
     'system/dolphin': '@same'
+
+Options:
+  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
