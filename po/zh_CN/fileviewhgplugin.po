@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
-"PO-Revision-Date: 2024-04-21 04:47\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
+"PO-Revision-Date: 2024-04-23 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,218 +14,218 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/dolphin-plugins/fileviewhgplugin.pot\n"
-"X-Crowdin-File-ID: 48342\n"
+"X-Crowdin-File: /kf6-stable/messages/dolphin-plugins/fileviewhgplugin.pot\n"
+"X-Crowdin-File-ID: 52820\n"
 
-#: backoutdialog.cpp:30
+#: backoutdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> 回退"
 
-#: backoutdialog.cpp:32
+#: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
 msgstr "回退"
 
-#: backoutdialog.cpp:59
+#: backoutdialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
 msgstr "在回退后与旧的父修订目录状态合并"
 
-#: backoutdialog.cpp:61 backoutdialog.cpp:63 bundledialog.cpp:56
+#: backoutdialog.cpp:54 backoutdialog.cpp:55 bundledialog.cpp:51
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
 msgstr "选择更改集"
 
-#: backoutdialog.cpp:67
+#: backoutdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
 msgstr "回退的修订："
 
-#: backoutdialog.cpp:72
+#: backoutdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
 msgstr "父修订 (可选)："
 
-#: backoutdialog.cpp:138 bundledialog.cpp:188
+#: backoutdialog.cpp:128 bundledialog.cpp:178
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
 msgstr "选择更改集"
 
-#: backoutdialog.cpp:139 bundledialog.cpp:189
+#: backoutdialog.cpp:129 bundledialog.cpp:179
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Select"
 msgstr "选择"
 
-#: branchdialog.cpp:24
+#: branchdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> 分支"
 
-#: branchdialog.cpp:37
+#: branchdialog.cpp:36
 #, kde-format
 msgid "Create New Branch"
 msgstr "创建新分支"
 
-#: branchdialog.cpp:38
+#: branchdialog.cpp:37
 #, kde-format
 msgid "Switch Branch"
 msgstr "切换分支"
 
-#: branchdialog.cpp:70
+#: branchdialog.cpp:65
 #, kde-format
 msgid "<b>Current Branch: </b>"
 msgstr "<b>当前分支：</b>"
 
-#: branchdialog.cpp:108 branchdialog.cpp:123 tagdialog.cpp:102
-#: tagdialog.cpp:118 tagdialog.cpp:133
+#: branchdialog.cpp:99 branchdialog.cpp:113 tagdialog.cpp:92 tagdialog.cpp:107
+#: tagdialog.cpp:121
 #, kde-format
 msgid "Some error occurred"
 msgstr "发生某些错误"
 
-#: bundledialog.cpp:30
+#: bundledialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> 打包"
 
-#: bundledialog.cpp:31
+#: bundledialog.cpp:30
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Bundle"
 msgstr "打包"
 
-#: bundledialog.cpp:58
+#: bundledialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
 msgstr "基础修订 (可选)："
 
-#: bundledialog.cpp:60
+#: bundledialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
 msgstr "打包仓库中的所有变更集。"
 
-#: bundledialog.cpp:75 exportdialog.cpp:54 importdialog.cpp:60
-#: pulldialog.cpp:43 pushdialog.cpp:43
+#: bundledialog.cpp:68 exportdialog.cpp:52 importdialog.cpp:56
+#: pulldialog.cpp:36 pushdialog.cpp:36
 #, kde-format, kde-kuit-format
 msgctxt "@label:group"
 msgid "Options"
 msgstr "选项"
 
-#: bundledialog.cpp:77
+#: bundledialog.cpp:70
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Run even when the destination is unrelated (force)"
 msgstr "即使目标位置无关也依然运行 (强制)"
 
-#: bundledialog.cpp:80 pulldialog.cpp:39 pushdialog.cpp:39
+#: bundledialog.cpp:72 pulldialog.cpp:34 pushdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
 msgstr "不验证服务器证书"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> 克隆"
 
-#: clonedialog.cpp:33
+#: clonedialog.cpp:32
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "克隆"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:39
 #, kde-format
 msgid "URLs"
 msgstr "URL"
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Source"
 msgstr "来源"
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:42
 #, kde-kuit-format
 msgctxt "@lobel"
 msgid "Destination"
 msgstr "目标"
 
-#: clonedialog.cpp:45 clonedialog.cpp:46
+#: clonedialog.cpp:43 clonedialog.cpp:44
 #, kde-kuit-format
 msgctxt "@button"
 msgid "Browse"
 msgstr "浏览"
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label"
 msgid "Options"
 msgstr "选项"
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:59
 #, kde-format
 msgid "Do not update the new working directory."
 msgstr "不更新新的工作目录。"
 
-#: clonedialog.cpp:62
+#: clonedialog.cpp:60
 #, kde-format
 msgid "Use pull protocol to copy metadata."
 msgstr "使用拉取 (pull) 协议来复制元数据。"
 
-#: clonedialog.cpp:63
+#: clonedialog.cpp:61
 #, kde-format
 msgid "Use uncompressed transfer."
 msgstr "使用不压缩传输。"
 
-#: clonedialog.cpp:64
+#: clonedialog.cpp:62
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
 msgstr "不验证服务器证书(忽略 web.cacerts 配置)。"
 
-#: clonedialog.cpp:157
+#: clonedialog.cpp:147
 #, kde-format
 msgid "Terminating cloning!"
 msgstr "正在终止克隆！"
 
-#: clonedialog.cpp:183
+#: clonedialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "关闭"
 
-#: clonedialog.cpp:188
+#: clonedialog.cpp:175
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
 msgstr "克隆仓库出错！"
 
-#: commitdialog.cpp:32
+#: commitdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> 提交"
 
-#: commitdialog.cpp:34
+#: commitdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "提交"
 
-#: commitdialog.cpp:41
+#: commitdialog.cpp:40
 #, kde-format
 msgid ""
 "The KTextEditor component could not be found;\n"
@@ -234,101 +234,101 @@ msgstr ""
 "无法找到 KTextEditor 组件；\n"
 "请检查您的 KDE 程序框架的安装状态。"
 
-#: commitdialog.cpp:54
+#: commitdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Commit to current branch"
 msgstr "提交到当前分支"
 
-#: commitdialog.cpp:59
+#: commitdialog.cpp:56
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Create new branch"
 msgstr "创建新分支"
 
-#: commitdialog.cpp:64
+#: commitdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Close current branch"
 msgstr "关闭当前分支"
 
-#: commitdialog.cpp:86
+#: commitdialog.cpp:80
 #, kde-format
 msgid "Copy Message"
 msgstr "复制信息"
 
-#: commitdialog.cpp:87 updatedialog.cpp:34
+#: commitdialog.cpp:81 updatedialog.cpp:32
 #, kde-format
 msgid "Branch"
 msgstr "分支"
 
-#: commitdialog.cpp:108
+#: commitdialog.cpp:101
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Commit Message"
 msgstr "提交消息"
 
-#: commitdialog.cpp:115
+#: commitdialog.cpp:108
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr "差异/内容"
 
-#: commitdialog.cpp:217
+#: commitdialog.cpp:204
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr "无法创建分支！中止提交！"
 
-#: commitdialog.cpp:227
+#: commitdialog.cpp:212
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr "提交失败！"
 
-#: commitdialog.cpp:231
+#: commitdialog.cpp:215
 #, kde-format
 msgid "No files for commit!"
 msgstr "没有要提交的文件！"
 
-#: commitdialog.cpp:258
+#: commitdialog.cpp:241
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr "分支：当前分支"
 
-#: commitdialog.cpp:265
+#: commitdialog.cpp:247
 #, kde-format
 msgid "Branch: "
 msgstr "分支："
 
-#: commitdialog.cpp:278
+#: commitdialog.cpp:257
 #, kde-format
 msgid "Branch: Close Current"
 msgstr "分支：关闭当前"
 
-#: commitdialog.cpp:291
+#: commitdialog.cpp:269
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr "<application>Hg</application> 提交：新分支"
 
-#: commitdialog.cpp:299
+#: commitdialog.cpp:277
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "输入新分支名称"
 
-#: commitdialog.cpp:320
+#: commitdialog.cpp:297
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr "<b>分支已经存在！</b>"
 
-#: commitdialog.cpp:328
+#: commitdialog.cpp:303
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
 msgstr "<b>输入一些文本！</b>"
 
-#: commitinfowidget.cpp:38
+#: commitinfowidget.cpp:37
 #, kde-format
 msgid ""
 "A KDE text-editor component could not be found;\n"
@@ -337,380 +337,380 @@ msgstr ""
 "找不到 KDE 文本编辑器组件；\n"
 "请检查您的 KDE 安装。"
 
-#: configdialog.cpp:28
+#: configdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Repository Configuration"
 msgstr "<application>Hg</application> 仓库配置"
 
-#: configdialog.cpp:31
+#: configdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Global Configuration"
 msgstr "<application>Hg</application> 全局配置"
 
-#: configdialog.cpp:44
+#: configdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "General Settings"
 msgstr "常规设置"
 
-#: configdialog.cpp:48
+#: configdialog.cpp:46
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
 msgstr "仓库路径"
 
-#: configdialog.cpp:51
+#: configdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Ignored Files"
 msgstr "忽略文件"
 
-#: configdialog.cpp:55
+#: configdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Plugin Settings"
 msgstr "插件设置"
 
-#: createdialog.cpp:23
+#: createdialog.cpp:22
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Initialize Repository"
 msgstr "<application>Hg</application> 初始化仓库"
 
-#: createdialog.cpp:24
+#: createdialog.cpp:23
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
 msgstr "初始化源"
 
-#: createdialog.cpp:59
+#: createdialog.cpp:56
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
 msgstr "创建仓库出错！"
 
-#: exportdialog.cpp:27
+#: exportdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> 导出"
 
-#: exportdialog.cpp:28
+#: exportdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "导出"
 
-#: exportdialog.cpp:55
+#: exportdialog.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid "Treat all files as text"
 msgstr "将所有文件当作文本"
 
-#: exportdialog.cpp:56
+#: exportdialog.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Use Git extended diff format"
 msgstr "使用 Git 扩展的差异文件格式"
 
-#: exportdialog.cpp:57
+#: exportdialog.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Omit dates from diff headers"
 msgstr "忽略差异文件头部的日期"
 
-#: exportdialog.cpp:126
+#: exportdialog.cpp:124
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "请至少选择一个要导出的更改集！"
 
-#: fileviewhgplugin.cpp:93
+#: fileviewhgplugin.cpp:92
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "<application>Hg</application> 添加"
 
-#: fileviewhgplugin.cpp:100
+#: fileviewhgplugin.cpp:97
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "<application>Hg</application> 删除"
 
-#: fileviewhgplugin.cpp:107
+#: fileviewhgplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> 重命名"
 
-#: fileviewhgplugin.cpp:114
+#: fileviewhgplugin.cpp:107
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> 提交"
 
-#: fileviewhgplugin.cpp:121
+#: fileviewhgplugin.cpp:112
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> 标记"
 
-#: fileviewhgplugin.cpp:128
+#: fileviewhgplugin.cpp:117
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> 分支"
 
-#: fileviewhgplugin.cpp:135
+#: fileviewhgplugin.cpp:122
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> 克隆"
 
-#: fileviewhgplugin.cpp:142
+#: fileviewhgplugin.cpp:127
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "<application>Hg</application> 初始化"
 
-#: fileviewhgplugin.cpp:149
+#: fileviewhgplugin.cpp:132
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> 更新"
 
-#: fileviewhgplugin.cpp:156
+#: fileviewhgplugin.cpp:137
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "<application>Hg</application> 全局配置"
 
-#: fileviewhgplugin.cpp:163
+#: fileviewhgplugin.cpp:142
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "<application>Hg</application> 仓库配置"
 
-#: fileviewhgplugin.cpp:170
+#: fileviewhgplugin.cpp:147
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "<application>Hg</application> 推送"
 
-#: fileviewhgplugin.cpp:177
+#: fileviewhgplugin.cpp:152
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "<application>Hg</application> 拉取"
 
-#: fileviewhgplugin.cpp:184
+#: fileviewhgplugin.cpp:157
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "<application>Hg</application> 还原"
 
-#: fileviewhgplugin.cpp:191
+#: fileviewhgplugin.cpp:162
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "<application>Hg</application> 全部还原"
 
-#: fileviewhgplugin.cpp:198
+#: fileviewhgplugin.cpp:167
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "<application>Hg</application> 回滚"
 
-#: fileviewhgplugin.cpp:205
+#: fileviewhgplugin.cpp:172
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> 合并"
 
-#: fileviewhgplugin.cpp:212
+#: fileviewhgplugin.cpp:177
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> 打包"
 
-#: fileviewhgplugin.cpp:219
+#: fileviewhgplugin.cpp:182
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> 导出"
 
-#: fileviewhgplugin.cpp:226
+#: fileviewhgplugin.cpp:187
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> 导入"
 
-#: fileviewhgplugin.cpp:233
+#: fileviewhgplugin.cpp:192
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "<application>Hg</application> 解包"
 
-#: fileviewhgplugin.cpp:240
+#: fileviewhgplugin.cpp:197
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> 服务"
 
-#: fileviewhgplugin.cpp:247
+#: fileviewhgplugin.cpp:202
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> 回退"
 
-#: fileviewhgplugin.cpp:254
+#: fileviewhgplugin.cpp:207
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "<application>Hg</application> 差异"
 
-#: fileviewhgplugin.cpp:278
+#: fileviewhgplugin.cpp:229
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:488
+#: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "正在向 <application>Hg</application> 仓库添加文件..."
 
-#: fileviewhgplugin.cpp:490
+#: fileviewhgplugin.cpp:427
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr "向 <application>Hg</application> 仓库添加文件失败。"
 
-#: fileviewhgplugin.cpp:492
+#: fileviewhgplugin.cpp:428
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "向 <application>Hg</application> 仓库添加文件成功。"
 
-#: fileviewhgplugin.cpp:505
+#: fileviewhgplugin.cpp:441
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "您想要从仓库中删除选定的文件吗？"
 
-#: fileviewhgplugin.cpp:506
+#: fileviewhgplugin.cpp:443
 #, kde-format
 msgid "Remove Files"
 msgstr "移除文件"
 
-#: fileviewhgplugin.cpp:512
+#: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "正在从 <application>Hg</application> 仓库删除文件..."
 
-#: fileviewhgplugin.cpp:514
+#: fileviewhgplugin.cpp:451
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr "从 <application>Hg</application> 仓库删除文件失败。"
 
-#: fileviewhgplugin.cpp:516
+#: fileviewhgplugin.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "从 <application>Hg</application> 仓库删除文件成功。"
 
-#: fileviewhgplugin.cpp:528
+#: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr "在 <application>Hg</application> 仓库中重命名文件失败。"
 
-#: fileviewhgplugin.cpp:530
+#: fileviewhgplugin.cpp:463
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr "在 <application>Hg</application> 仓库中重命名文件成功。"
 
-#: fileviewhgplugin.cpp:532
+#: fileviewhgplugin.cpp:464
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "正在对 <application>Hg</application> 仓库中的文件进行重命名。"
 
-#: fileviewhgplugin.cpp:543
+#: fileviewhgplugin.cpp:474
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "没有要提交的更改集！"
 
-#: fileviewhgplugin.cpp:548
+#: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 仓库提交失败。"
 
-#: fileviewhgplugin.cpp:550
+#: fileviewhgplugin.cpp:479
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "已提交到 <application>Hg</application> 仓库。"
 
-#: fileviewhgplugin.cpp:552
+#: fileviewhgplugin.cpp:480
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "提交到 <application>Hg</application> 仓库。"
 
-#: fileviewhgplugin.cpp:563
+#: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 仓库标签作业失败。"
 
-#: fileviewhgplugin.cpp:565
+#: fileviewhgplugin.cpp:491
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
 msgstr "<application>Hg</application> 仓库标签作业成功。"
 
-#: fileviewhgplugin.cpp:567
+#: fileviewhgplugin.cpp:492
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "正在对 <application>Hg</application> 仓库进行标签作业。"
 
-#: fileviewhgplugin.cpp:576
+#: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr "更新 <application>Hg</application> 工作目录失败。"
 
-#: fileviewhgplugin.cpp:578
+#: fileviewhgplugin.cpp:501
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
 msgstr "已成功更新 <application>Hg</application> 工作目录。"
 
-#: fileviewhgplugin.cpp:580
+#: fileviewhgplugin.cpp:502
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "正在更新 <application>Hg</application> 工作目录。"
 
-#: fileviewhgplugin.cpp:589
+#: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 仓库分支操作失败。"
 
-#: fileviewhgplugin.cpp:591
+#: fileviewhgplugin.cpp:511
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -718,36 +718,36 @@ msgid ""
 "successfully."
 msgstr "<application>Hg</application> 仓库分支操作已成功完成。"
 
-#: fileviewhgplugin.cpp:593
+#: fileviewhgplugin.cpp:512
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr "<application>Hg</application> 仓库的分支操作。"
 
-#: fileviewhgplugin.cpp:691
+#: fileviewhgplugin.cpp:609
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
 msgstr "您想要还原对所选文件的更改吗？"
 
-#: fileviewhgplugin.cpp:692 fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:611 fileviewhgplugin.cpp:612 fileviewhgplugin.cpp:633
 #, kde-format
 msgid "Revert"
 msgstr "回退"
 
-#: fileviewhgplugin.cpp:698 fileviewhgplugin.cpp:719
+#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr "正在对 <application>Hg</application> 仓库的文件进行还原..."
 
-#: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:721
+#: fileviewhgplugin.cpp:619 fileviewhgplugin.cpp:640
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 仓库还原文件失败。"
 
-#: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:723
+#: fileviewhgplugin.cpp:620 fileviewhgplugin.cpp:641
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -755,71 +755,71 @@ msgid ""
 "successfully."
 msgstr "<application>Hg</application> 仓库还原文件已成功完成。"
 
-#: fileviewhgplugin.cpp:712
+#: fileviewhgplugin.cpp:630
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr "您想要还原对当前工作目录进行的所有更改吗？"
 
-#: fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:632
 #, kde-format
 msgid "Revert All"
 msgstr "回退全部"
 
-#: fileviewhgplugin.cpp:732
+#: fileviewhgplugin.cpp:649
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
 msgstr "正在为 <application>Hg</application> 仓库生成差异信息..."
 
-#: fileviewhgplugin.cpp:734
+#: fileviewhgplugin.cpp:650
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr "无法获取 <application>Hg</application> 仓库的差异信息。"
 
-#: fileviewhgplugin.cpp:736
+#: fileviewhgplugin.cpp:651
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr "成功生成 <application>Hg</application> 仓库的差异信息。"
 
-#: fileviewhgplugin.cpp:766
+#: fileviewhgplugin.cpp:680
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
 msgstr "中止：工作目录中有未提交的更改！"
 
-#: fileviewhgplugin.cpp:779
+#: fileviewhgplugin.cpp:695
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "没有可用的回滚信息！"
 
-#: fileviewhgplugin.cpp:791
+#: fileviewhgplugin.cpp:706
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "您想要回滚上次操作吗？"
 
-#: fileviewhgplugin.cpp:792
+#: fileviewhgplugin.cpp:708 fileviewhgplugin.cpp:709
 #, kde-format
 msgid "Rollback"
 msgstr "回滚"
 
-#: fileviewhgplugin.cpp:798
+#: fileviewhgplugin.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr "正在对 <application>Hg</application> 仓库进行回滚..."
 
-#: fileviewhgplugin.cpp:800
+#: fileviewhgplugin.cpp:716
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr "<application>Hg</application> 仓库回滚失败。"
 
-#: fileviewhgplugin.cpp:802
+#: fileviewhgplugin.cpp:717
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -880,198 +880,198 @@ msgstr "拆分显示文件列表和带有提交详情编辑器的视图"
 msgid "Divides commit editor and diff editor"
 msgstr "拆分显示提交编辑器和差异编辑器"
 
-#: importdialog.cpp:29
+#: importdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> 导入"
 
-#: importdialog.cpp:30
+#: importdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "导入"
 
-#: importdialog.cpp:62
+#: importdialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
 msgstr "不进行提交，只更新工作目录"
 
-#: importdialog.cpp:64
+#: importdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
 msgstr "跳过尚未处理的未提交更改的测试"
 
-#: importdialog.cpp:66
+#: importdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
 msgstr "将补丁应用到它生成的节点"
 
-#: importdialog.cpp:68
+#: importdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
 msgstr "应用补丁且不更改工作目录"
 
-#: importdialog.cpp:80
+#: importdialog.cpp:71
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Add Patches"
 msgstr "添加补丁"
 
-#: importdialog.cpp:82
+#: importdialog.cpp:72
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Remove Patches"
 msgstr "删除补丁"
 
-#: mergedialog.cpp:26
+#: mergedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> 合并"
 
-#: mergedialog.cpp:27
+#: mergedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Merge"
 msgstr "合并"
 
-#: mergedialog.cpp:107
+#: mergedialog.cpp:103
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
 msgstr "未选择要合并的头！"
 
-#: pathselector.cpp:60
+#: pathselector.cpp:57
 #, kde-kuit-format
 msgctxt "@label:combobox"
 msgid "edit"
 msgstr "编辑"
 
-#: pulldialog.cpp:29
+#: pulldialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
 msgstr "<application>Hg</application> 拉取仓库"
 
-#: pulldialog.cpp:37
+#: pulldialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
 msgstr "如果已拉入变更集，则更新到新的分支头"
 
-#: pulldialog.cpp:41
+#: pulldialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
 msgstr "强制拉取"
 
-#: pulldialog.cpp:53
+#: pulldialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Incoming Changes"
 msgstr "传入更改"
 
-#: pulldialog.cpp:147
+#: pulldialog.cpp:138
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No incoming changes!"
 msgstr "没有传入的更改！"
 
-#: pushdialog.cpp:29
+#: pushdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Push Repository"
 msgstr "<application>Hg</application> 推送仓库"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
 msgstr "允许推送新分支"
 
-#: pushdialog.cpp:41
+#: pushdialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Push"
 msgstr "强制推送"
 
-#: pushdialog.cpp:53
+#: pushdialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "传出更改"
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:159
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
 msgstr "无传出更改！"
 
-#: renamedialog.cpp:25
+#: renamedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> 重命名"
 
-#: renamedialog.cpp:27
+#: renamedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "重命名"
 
-#: renamedialog.cpp:33
+#: renamedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@label:label to source file"
 msgid "Source "
 msgstr "来源"
 
-#: renamedialog.cpp:39
+#: renamedialog.cpp:36
 #, kde-kuit-format
 msgctxt "@label:rename"
 msgid "Rename to "
 msgstr "重命名为"
 
-#: servedialog.cpp:25
+#: servedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> 服务"
 
-#: servedialog.cpp:63
+#: servedialog.cpp:56
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
 msgstr "启动服务器"
 
-#: servedialog.cpp:64
+#: servedialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
 msgstr "停止服务器"
 
-#: servedialog.cpp:65
+#: servedialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Open in browser"
 msgstr "在浏览器中打开"
 
-#: servedialog.cpp:81
+#: servedialog.cpp:74
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Port"
 msgstr "端口"
 
-#: servewrapper.cpp:66
+#: servewrapper.cpp:62
 #, kde-format
 msgid "## Starting Server ##"
 msgstr "## 正在启动服务器 ##"
 
-#: servewrapper.h:150
+#: servewrapper.h:144
 #, kde-format
 msgid "## Server Stopped! ##\n"
 msgstr "## 服务器已停止！ ##\n"
@@ -1087,116 +1087,116 @@ msgctxt "@title:group"
 msgid "File Status"
 msgstr "文件状态"
 
-#: syncdialogbase.cpp:81
+#: syncdialogbase.cpp:73
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
 msgstr "显示传入的更改"
 
-#: syncdialogbase.cpp:85
+#: syncdialogbase.cpp:75
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "显示出口改动"
 
-#: syncdialogbase.cpp:119
+#: syncdialogbase.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "拉取"
 
-#: syncdialogbase.cpp:119
+#: syncdialogbase.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
 msgstr "推送"
 
-#: syncdialogbase.cpp:161
+#: syncdialogbase.cpp:146
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "未找到修改！"
 
-#: syncdialogbase.cpp:212 syncdialogbase.cpp:287 syncdialogbase.cpp:294
+#: syncdialogbase.cpp:197 syncdialogbase.cpp:263 syncdialogbase.cpp:270
 #, kde-format
 msgid "Error!"
 msgstr "错误！"
 
-#: syncdialogbase.cpp:328
+#: syncdialogbase.cpp:302
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
 msgstr "选项"
 
-#: tagdialog.cpp:20
+#: tagdialog.cpp:19
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> 标记"
 
-#: tagdialog.cpp:30
+#: tagdialog.cpp:29
 #, kde-format
 msgid "Create New Tag"
 msgstr "创建新标记"
 
-#: tagdialog.cpp:31
+#: tagdialog.cpp:30
 #, kde-format
 msgid "Remove Tag"
 msgstr "删除标记"
 
-#: tagdialog.cpp:32
+#: tagdialog.cpp:31
 #, kde-format
 msgid "Switch Tag"
 msgstr "切换标记"
 
-#: tagdialog.cpp:129
+#: tagdialog.cpp:118
 #, kde-format
 msgid "Created tag successfully!"
 msgstr "创建标签成功！"
 
-#: updatedialog.cpp:25
+#: updatedialog.cpp:23
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> 更新"
 
-#: updatedialog.cpp:27
+#: updatedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Update"
 msgstr "更新"
 
-#: updatedialog.cpp:30
+#: updatedialog.cpp:28
 #, kde-format
 msgid "New working directory"
 msgstr "新工作目录"
 
-#: updatedialog.cpp:35
+#: updatedialog.cpp:33
 #, kde-format
 msgid "Tag"
 msgstr "标签"
 
-#: updatedialog.cpp:36
+#: updatedialog.cpp:34
 #, kde-format
 msgid "Changeset/Revision"
 msgstr "修改集/修订"
 
-#: updatedialog.cpp:41
+#: updatedialog.cpp:39
 #, kde-format
 msgid "Current Parent"
 msgstr "当前上级"
 
-#: updatedialog.cpp:47
+#: updatedialog.cpp:45
 #, kde-format
 msgid "Options"
 msgstr "选项"
 
-#: updatedialog.cpp:49
+#: updatedialog.cpp:47
 #, kde-format
 msgid "Discard uncommitted changes"
 msgstr "舍弃未提交的更改"
 
-#: updatedialog.cpp:126
+#: updatedialog.cpp:120
 #, kde-format
 msgid ""
 "Some error occurred! \n"

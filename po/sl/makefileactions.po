@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2023-08-13 10:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,59 +18,59 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
-#: makefileactions.cpp:218
+#: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
 msgstr "Make '%1'%2."
 
-#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
 msgid "Makefile Actions"
 msgstr "Dejavnosti makefile"
 
-#: makefileactions.cpp:244
+#: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr "Med ustvarjanjem cilja '%1' je prišlo do napake."
 
-#: makefileactions.cpp:252
+#: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr "Proces v teku za '%1' uspešno zaustavljen."
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr "Pri poskusu ustvarjanja cilja '%1'je prišlo do napake."
 
-#: makefileactions.cpp:286
+#: makefileactions.cpp:296
 #, kde-format
 msgid "&Make…"
 msgstr "&Make…"
 
-#: makefileactions.cpp:291
+#: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
 "Vtičnik Makefile Actions dovoli uporabo samo zaupanja vrednim datotekam."
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr ""
 "Zaupanja vredna datoteka — počistite polje, če želite odstraniti zaupanje"
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr "Zaupanja nevredna datoteka — označite za zaupanje"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr "Vtičnik Dolphin Makefile"
 
-#: makefileactions.cpp:302
+#: makefileactions.cpp:312
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
@@ -79,23 +79,23 @@ msgstr ""
 "<b>Ali ste prepričani, da lahko tej datoteki zaupate?</b><br>Zaupanja vredne "
 "datoteke lahko izvajajo poljubno kodo pri uporabi iz kontekstnega menija."
 
-#: makefileactions.cpp:316
+#: makefileactions.cpp:326
 #, kde-format
 msgid "Open a terminal window"
 msgstr "Odpri okno terminala"
 
-#: makefileactions.cpp:317
+#: makefileactions.cpp:327
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr "Odpre novo okno terminala, da vidite izhod izdelave izbranega cilja."
 
-#: makefileactions.cpp:328
+#: makefileactions.cpp:339
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr "Prekliči proces v teku (%1)"
 
-#: makefileactions.cpp:329
+#: makefileactions.cpp:340
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr "Prekini trenutno izvajani proces (%1)."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 00:40+0000\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2018-10-18 14:52+0200\n"
 "Last-Translator: Long Run <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -79,43 +79,43 @@ msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "Δεν υπάρχουν tags σε αυτό το αποθετήριο."
 
-#: checkoutdialog.cpp:185
+#: checkoutdialog.cpp:176
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Βάση κλάδου"
 
-#: checkoutdialog.cpp:186
+#: checkoutdialog.cpp:176
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Checkout"
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Πρέπει να δώσετε ένα έγκυρο όνομα για το νέο κλάδο πρώτα."
 
-#: checkoutdialog.cpp:213
+#: checkoutdialog.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Ένας κλάδος με όνομα '%1' ήδη υπάρχει."
 
-#: checkoutdialog.cpp:220
+#: checkoutdialog.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Τα ονόματα κλάδων δεν μπορεί να περιέχουν κενά."
 
-#: checkoutdialog.cpp:227
+#: checkoutdialog.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Πρέπει να επιλέξετε έναν έγκυρο κλάδο πρώτα."
 
-#: checkoutdialog.cpp:248
+#: checkoutdialog.cpp:239
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -175,13 +175,13 @@ msgctxt "@action:button"
 msgid "Clone"
 msgstr ""
 
-#: clonedialog.cpp:102
+#: clonedialog.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr ""
 
-#: clonedialog.cpp:130
+#: clonedialog.cpp:132
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log"
 msgctxt "@title:window"
@@ -218,19 +218,19 @@ msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
 msgstr "Δεν υπάρχει κάτι για να τροποποιηθεί."
 
-#: commitdialog.cpp:74
+#: commitdialog.cpp:72
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
 msgstr "Υπογραφή"
 
-#: commitdialog.cpp:75
+#: commitdialog.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
 msgstr "Προσθήκη γραμμής υπογραφής στο τέλος του μηνύματος του commit."
 
-#: commitdialog.cpp:132
+#: commitdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
@@ -241,159 +241,159 @@ msgstr "Πρέπει να εισαγάγετε ένα commit μήνυμα πρώ
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> Επαναφορά"
 
-#: fileviewgitplugin.cpp:59
+#: fileviewgitplugin.cpp:58
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> Προσθήκη"
 
-#: fileviewgitplugin.cpp:65
+#: fileviewgitplugin.cpp:63
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
 msgstr "Εμφάνιση τοπικών <application>Git</application> Αλλαγών"
 
-#: fileviewgitplugin.cpp:71
+#: fileviewgitplugin.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> Create Tag"
 
-#: fileviewgitplugin.cpp:77
+#: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> Αφαίρεση"
 
-#: fileviewgitplugin.cpp:83
+#: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> Checkout..."
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> Commit..."
 
-#: fileviewgitplugin.cpp:95
+#: fileviewgitplugin.cpp:88
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> Δημιουργία Tag..."
 
-#: fileviewgitplugin.cpp:100
+#: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> Push..."
 
-#: fileviewgitplugin.cpp:105
+#: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> Pull..."
 
-#: fileviewgitplugin.cpp:110
+#: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Συγχώνευση..."
 
-#: fileviewgitplugin.cpp:114
+#: fileviewgitplugin.cpp:104
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log..."
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> Καταγραφή..."
 
-#: fileviewgitplugin.cpp:118
+#: fileviewgitplugin.cpp:108
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> Καταγραφή..."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Προσθήκη αρχείων στο <application>Git</application> αποθετήριο..."
 
-#: fileviewgitplugin.cpp:441
+#: fileviewgitplugin.cpp:429
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Η προσθήκη αρχείων στο <application>Git</application> αποθετήριο απέτυχε."
 
-#: fileviewgitplugin.cpp:442
+#: fileviewgitplugin.cpp:430
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Προστέθηκαν αρχεία στο <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:441
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Διαγραφή αρχείων από το <application>Git</application> αποθετήριο..."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:442
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Η διαγραφή αρχείων από το <application>Git</application> αποθετήριο απέτυχε."
 
-#: fileviewgitplugin.cpp:454
+#: fileviewgitplugin.cpp:443
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Διαγράφηκαν αρχεία από το <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:450
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Διαγραφή αρχείων από το <application>Git</application> αποθετήριο..."
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Η επαναφορά αρχείων από το <application>Git</application> αποθετήριο απέτυχε."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Επαναφέρθηκαν αρχεία από το <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:504
+#: fileviewgitplugin.cpp:491
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "Η δημιουργία καταγραφής <application>Git</application> απέτυχε."
 
-#: fileviewgitplugin.cpp:527
+#: fileviewgitplugin.cpp:512
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Καταγραφή"
 
-#: fileviewgitplugin.cpp:543
+#: fileviewgitplugin.cpp:527
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Υποβολή"
 
-#: fileviewgitplugin.cpp:544
+#: fileviewgitplugin.cpp:528
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: fileviewgitplugin.cpp:545
+#: fileviewgitplugin.cpp:529
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Μήνυμα"
 
-#: fileviewgitplugin.cpp:546
+#: fileviewgitplugin.cpp:530
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: fileviewgitplugin.cpp:566
+#: fileviewgitplugin.cpp:551
 #, fuzzy, kde-kuit-format
 #| msgid "Removing files from <application>Git</application> repository..."
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "Διαγραφή αρχείων από το <application>Git</application> αποθετήριο..."
 
-#: fileviewgitplugin.cpp:567
+#: fileviewgitplugin.cpp:552
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "Removing files from <application>Git</application> repository failed."
@@ -402,54 +402,54 @@ msgid ""
 msgstr ""
 "Η διαγραφή αρχείων από το <application>Git</application> αποθετήριο απέτυχε."
 
-#: fileviewgitplugin.cpp:568
+#: fileviewgitplugin.cpp:553
 #, fuzzy, kde-kuit-format
 #| msgid "Reverted files from <application>Git</application> repository."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Επαναφέρθηκαν αρχεία από το <application>Git</application> αποθετήριο."
 
-#: fileviewgitplugin.cpp:606
+#: fileviewgitplugin.cpp:591
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> Create Tag"
 
-#: fileviewgitplugin.cpp:610
+#: fileviewgitplugin.cpp:595
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Η δημιουργία καταγραφής <application>Git</application> απέτυχε."
 
-#: fileviewgitplugin.cpp:612
+#: fileviewgitplugin.cpp:597
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> Checkout"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:632
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Merge..."
 msgid "<application>Git</application> clone repository..."
 msgstr "<application>Git</application> Συγχώνευση..."
 
-#: fileviewgitplugin.cpp:684
+#: fileviewgitplugin.cpp:666
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Έγινε μεταφορά στον κλάδο '%1'"
 
-#: fileviewgitplugin.cpp:690
+#: fileviewgitplugin.cpp:673
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD είναι τώρα στο %1"
 
-#: fileviewgitplugin.cpp:694
+#: fileviewgitplugin.cpp:678
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Έγινε μεταφορά σε νέο κλάδο '%1'"
 
-#: fileviewgitplugin.cpp:705
+#: fileviewgitplugin.cpp:689
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -458,12 +458,12 @@ msgstr ""
 "Το <application>Git</application> Checkout απέτυχε. Ίσως ο κατάλογος "
 "εργασίας σας δεν είναι καθαρός."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Δημιουργήθηκε με επιτυχία το tag '%1'"
 
-#: fileviewgitplugin.cpp:774
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -472,47 +472,47 @@ msgstr ""
 "Η δημιουργία <application>Git</application> tag απέτυχε. Ένα tag με το όνομα "
 "'%1' ήδη υπάρχει."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:763
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Η δημιουργία <application>Git</application> tag απέτυχε."
 
-#: fileviewgitplugin.cpp:788
+#: fileviewgitplugin.cpp:774
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Η ώθηση του κλάδου %1 στο %2:%3 απέτυχε."
 
-#: fileviewgitplugin.cpp:790
+#: fileviewgitplugin.cpp:775
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Έγινε ώθηση του κλάδου %1 στο %2:%3."
 
-#: fileviewgitplugin.cpp:792
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Ώθηση του κλάδου %1 στο %2:%3..."
 
-#: fileviewgitplugin.cpp:814
+#: fileviewgitplugin.cpp:797
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Η έλξη του κλάδου %1 από %2 απέτυχε."
 
-#: fileviewgitplugin.cpp:816
+#: fileviewgitplugin.cpp:798
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Έγινε η έλξη του κλάδου %1 από %2 με επιτυχία."
 
-#: fileviewgitplugin.cpp:818
+#: fileviewgitplugin.cpp:799
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Έλξη του κλάδου %1 από %2..."
 
-#: fileviewgitplugin.cpp:871 fileviewgitplugin.cpp:883
+#: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Ο κλάδος είναι ήδη ενημερωμένος."
 
-#: fileviewgitplugin.cpp:887
+#: fileviewgitplugin.cpp:867
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
@@ -648,19 +648,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Κλάδος:"
 
-#: tagdialog.cpp:125
+#: tagdialog.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "Πρέπει να εισαγάγετε ένα όνομα tag πρώτα."
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Τα ονόματα tag δεν πρέπει να περιέχουν κενά."
 
-#: tagdialog.cpp:131
+#: tagdialog.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."

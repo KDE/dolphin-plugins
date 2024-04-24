@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makefileactions\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2023-08-15 18:49+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,58 +19,58 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: makefileactions.cpp:218
+#: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
 msgstr "Make '%1'%2."
 
-#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
 msgid "Makefile Actions"
 msgstr "Acciones de Makefile"
 
-#: makefileactions.cpp:244
+#: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr "Ha ocurrido un error al compilar el objetivo «%1»."
 
-#: makefileactions.cpp:252
+#: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr "El proceso en ejecución para «%1» se ha detenido correctamente."
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr "Ha ocurrido un error al tratar de compilar el objetivo «%1»."
 
-#: makefileactions.cpp:286
+#: makefileactions.cpp:296
 #, kde-format
 msgid "&Make…"
 msgstr "&Make..."
 
-#: makefileactions.cpp:291
+#: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
 "El complemento de acciones de Makefile solo puede usar archivos de confianza."
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr "Archivo de confianza — desmárquelo para eliminar la confianza"
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr "Archivo no fiable — márquelo para confiar en él"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr "Complemento de Makefile para Dolphin"
 
-#: makefileactions.cpp:302
+#: makefileactions.cpp:312
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
@@ -79,12 +79,12 @@ msgstr ""
 "<b>¿Seguro que puede fiarse de este archivo?</b><b>Los archivos de confianza "
 "pueden ejecutar código arbitrario al llamarlos desde el menú de contexto."
 
-#: makefileactions.cpp:316
+#: makefileactions.cpp:326
 #, kde-format
 msgid "Open a terminal window"
 msgstr "Abrir una ventana de terminal"
 
-#: makefileactions.cpp:317
+#: makefileactions.cpp:327
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
@@ -92,12 +92,12 @@ msgstr ""
 "Abrir una nueva ventana de terminal para ver la salida de la compilación del "
 "objetivo elegido."
 
-#: makefileactions.cpp:328
+#: makefileactions.cpp:339
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr "Cancelar el proceso en curso (%1)"
 
-#: makefileactions.cpp:329
+#: makefileactions.cpp:340
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr "Interrumpir el proceso en curso actual (%1)."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2024-04-07 16:23+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,80 +17,80 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.1\n"
 
-#: makefileactions.cpp:218
+#: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
 msgstr ""
 
-#: makefileactions.cpp:244 makefileactions.cpp:252 makefileactions.cpp:254
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
 msgid "Makefile Actions"
 msgstr ""
 
-#: makefileactions.cpp:244
+#: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr ""
 
-#: makefileactions.cpp:252
+#: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr ""
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr ""
 
-#: makefileactions.cpp:286
+#: makefileactions.cpp:296
 #, kde-format
 msgid "&Make…"
 msgstr ""
 
-#: makefileactions.cpp:291
+#: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr "நம்பகமான கோப்பு — நம்பகமற்றதாக‍க் குறிக்க தேர்வை நீக்கவும்"
 
-#: makefileactions.cpp:294
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr "நம்பகமற்ற கோப்பு — நம்பகமானதாக குறிக்க தேர்ந்தெடுக்கவும்"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr ""
 
-#: makefileactions.cpp:302
+#: makefileactions.cpp:312
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
 
-#: makefileactions.cpp:316
+#: makefileactions.cpp:326
 #, kde-format
 msgid "Open a terminal window"
 msgstr "முனையச் சாளரத்தைத் திற"
 
-#: makefileactions.cpp:317
+#: makefileactions.cpp:327
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
 
-#: makefileactions.cpp:328
+#: makefileactions.cpp:339
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr "ஓடிக்கொண்டிருக்கும் பணியை ரத்து செய் (%1)"
 
-#: makefileactions.cpp:329
+#: makefileactions.cpp:340
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr "தற்போது ஓடிக்கொண்டிருக்கும் பணியை ரத்து செய் (%1)."

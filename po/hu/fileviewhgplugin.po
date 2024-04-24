@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2024-01-29 12:43+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,217 +18,217 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.01.90\n"
 
-#: backoutdialog.cpp:30
+#: backoutdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> visszavonás"
 
-#: backoutdialog.cpp:32
+#: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
 msgstr "Visszavonás"
 
-#: backoutdialog.cpp:59
+#: backoutdialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
 msgstr "Egyesítés a régi könyvtárállapot szülőjével visszavonás után"
 
-#: backoutdialog.cpp:61 backoutdialog.cpp:63 bundledialog.cpp:56
+#: backoutdialog.cpp:54 backoutdialog.cpp:55 bundledialog.cpp:51
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
 msgstr "Változáskészlet kiválasztása"
 
-#: backoutdialog.cpp:67
+#: backoutdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
 msgstr "Visszavonás verziója:"
 
-#: backoutdialog.cpp:72
+#: backoutdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
 msgstr "Szülőverzió (opcionális):"
 
-#: backoutdialog.cpp:138 bundledialog.cpp:188
+#: backoutdialog.cpp:128 bundledialog.cpp:178
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
 msgstr "Változáskészlet kiválasztása"
 
-#: backoutdialog.cpp:139 bundledialog.cpp:189
+#: backoutdialog.cpp:129 bundledialog.cpp:179
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Select"
 msgstr "Kiválasztás"
 
-#: branchdialog.cpp:24
+#: branchdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> ág"
 
-#: branchdialog.cpp:37
+#: branchdialog.cpp:36
 #, kde-format
 msgid "Create New Branch"
 msgstr "Új ág létrehozása"
 
-#: branchdialog.cpp:38
+#: branchdialog.cpp:37
 #, kde-format
 msgid "Switch Branch"
 msgstr "Ágváltás"
 
-#: branchdialog.cpp:70
+#: branchdialog.cpp:65
 #, kde-format
 msgid "<b>Current Branch: </b>"
 msgstr "<b>Jelenlegi ág: </b>"
 
-#: branchdialog.cpp:108 branchdialog.cpp:123 tagdialog.cpp:102
-#: tagdialog.cpp:118 tagdialog.cpp:133
+#: branchdialog.cpp:99 branchdialog.cpp:113 tagdialog.cpp:92 tagdialog.cpp:107
+#: tagdialog.cpp:121
 #, kde-format
 msgid "Some error occurred"
 msgstr "Hiba történt"
 
-#: bundledialog.cpp:30
+#: bundledialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> csomagolás"
 
-#: bundledialog.cpp:31
+#: bundledialog.cpp:30
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Bundle"
 msgstr "Csomagolás"
 
-#: bundledialog.cpp:58
+#: bundledialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
 msgstr "Alapverzió (opcionális):"
 
-#: bundledialog.cpp:60
+#: bundledialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
 msgstr "A tároló összes változáskészletének csomagolása."
 
-#: bundledialog.cpp:75 exportdialog.cpp:54 importdialog.cpp:60
-#: pulldialog.cpp:43 pushdialog.cpp:43
+#: bundledialog.cpp:68 exportdialog.cpp:52 importdialog.cpp:56
+#: pulldialog.cpp:36 pushdialog.cpp:36
 #, kde-format, kde-kuit-format
 msgctxt "@label:group"
 msgid "Options"
 msgstr "Beállítások"
 
-#: bundledialog.cpp:77
+#: bundledialog.cpp:70
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Run even when the destination is unrelated (force)"
 msgstr "Futtatás akkor is, ha a cél nem kapcsolódik (kényszerítés)"
 
-#: bundledialog.cpp:80 pulldialog.cpp:39 pushdialog.cpp:39
+#: bundledialog.cpp:72 pulldialog.cpp:34 pushdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
 msgstr "Ne ellenőrizze a kiszolgáló tanúsítványát"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> klónozás"
 
-#: clonedialog.cpp:33
+#: clonedialog.cpp:32
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Klónozás"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:39
 #, kde-format
 msgid "URLs"
 msgstr "URL-ek"
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Source"
 msgstr "Forrás"
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:42
 #, kde-kuit-format
 msgctxt "@lobel"
 msgid "Destination"
 msgstr "Cél"
 
-#: clonedialog.cpp:45 clonedialog.cpp:46
+#: clonedialog.cpp:43 clonedialog.cpp:44
 #, kde-kuit-format
 msgctxt "@button"
 msgid "Browse"
 msgstr "Tallózás"
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label"
 msgid "Options"
 msgstr "Beállítások"
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:59
 #, kde-format
 msgid "Do not update the new working directory."
 msgstr "Ne frissítse az új munkakönyvtárat."
 
-#: clonedialog.cpp:62
+#: clonedialog.cpp:60
 #, kde-format
 msgid "Use pull protocol to copy metadata."
 msgstr "Lekérés protokoll használata a metaadatok másolásához."
 
-#: clonedialog.cpp:63
+#: clonedialog.cpp:61
 #, kde-format
 msgid "Use uncompressed transfer."
 msgstr "Tömörítetlen átvitel használata."
 
-#: clonedialog.cpp:64
+#: clonedialog.cpp:62
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
 msgstr ""
 "Ne ellenőrizze a kiszolgáló tanúsítványát (a web.cacerts beállítás figyelmen "
 "kívül hagyása)."
 
-#: clonedialog.cpp:157
+#: clonedialog.cpp:147
 #, kde-format
 msgid "Terminating cloning!"
 msgstr "Klónozás megszakítása."
 
-#: clonedialog.cpp:183
+#: clonedialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Bezárás"
 
-#: clonedialog.cpp:188
+#: clonedialog.cpp:175
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
 msgstr "Hiba a tároló klónozásakor."
 
-#: commitdialog.cpp:32
+#: commitdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> véglegesítés"
 
-#: commitdialog.cpp:34
+#: commitdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "Véglegesítés"
 
-#: commitdialog.cpp:41
+#: commitdialog.cpp:40
 #, kde-format
 msgid ""
 "The KTextEditor component could not be found;\n"
@@ -237,101 +237,101 @@ msgstr ""
 "A KTextEditor komponens nem található;\n"
 "ellenőrizze, hogy a KDE Frameworks rendben telepítve van-e."
 
-#: commitdialog.cpp:54
+#: commitdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Commit to current branch"
 msgstr "Véglegesítés a jelenlegi ágba"
 
-#: commitdialog.cpp:59
+#: commitdialog.cpp:56
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Create new branch"
 msgstr "Új ág létrehozása"
 
-#: commitdialog.cpp:64
+#: commitdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Close current branch"
 msgstr "Jelenlegi ág lezárása"
 
-#: commitdialog.cpp:86
+#: commitdialog.cpp:80
 #, kde-format
 msgid "Copy Message"
 msgstr "Üzenet másolása"
 
-#: commitdialog.cpp:87 updatedialog.cpp:34
+#: commitdialog.cpp:81 updatedialog.cpp:32
 #, kde-format
 msgid "Branch"
 msgstr "Ág"
 
-#: commitdialog.cpp:108
+#: commitdialog.cpp:101
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Commit Message"
 msgstr "Véglegesítés üzenet"
 
-#: commitdialog.cpp:115
+#: commitdialog.cpp:108
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Diff/Content"
 msgstr "Összehasonlítás/Tartalom"
 
-#: commitdialog.cpp:217
+#: commitdialog.cpp:204
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
 msgstr "Nem sikerült létrehozni ágat. Véglegesítés megszakítása."
 
-#: commitdialog.cpp:227
+#: commitdialog.cpp:212
 #, kde-format
 msgid "Commit unsuccessful!"
 msgstr "Sikertelen véglegesítés."
 
-#: commitdialog.cpp:231
+#: commitdialog.cpp:215
 #, kde-format
 msgid "No files for commit!"
 msgstr "Nincsenek véglegesítendő fájlok."
 
-#: commitdialog.cpp:258
+#: commitdialog.cpp:241
 #, kde-format
 msgid "Branch: Current Branch"
 msgstr "Ág: jelenlegi ág"
 
-#: commitdialog.cpp:265
+#: commitdialog.cpp:247
 #, kde-format
 msgid "Branch: "
 msgstr "Ág: "
 
-#: commitdialog.cpp:278
+#: commitdialog.cpp:257
 #, kde-format
 msgid "Branch: Close Current"
 msgstr "Ág: jelenlegi lezárása"
 
-#: commitdialog.cpp:291
+#: commitdialog.cpp:269
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
 msgstr "<application>Hg</application> véglegesítés: új ág"
 
-#: commitdialog.cpp:299
+#: commitdialog.cpp:277
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
 msgstr "Adja meg az új ág nevét"
 
-#: commitdialog.cpp:320
+#: commitdialog.cpp:297
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
 msgstr "<b>Az ág már létezik.</b>"
 
-#: commitdialog.cpp:328
+#: commitdialog.cpp:303
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
 msgstr "<b>Írjon be szöveget!</b>"
 
-#: commitinfowidget.cpp:38
+#: commitinfowidget.cpp:37
 #, kde-format
 msgid ""
 "A KDE text-editor component could not be found;\n"
@@ -340,283 +340,283 @@ msgstr ""
 "Nem található KDE-s szövegszerkesztő komponens;\n"
 "Ellenőrizze, rendben telepítve van-e a KDE."
 
-#: configdialog.cpp:28
+#: configdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Repository Configuration"
 msgstr "<application>Hg</application> tárolóbeállítások"
 
-#: configdialog.cpp:31
+#: configdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Global Configuration"
 msgstr "<application>Hg</application> globális beállítások"
 
-#: configdialog.cpp:44
+#: configdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "General Settings"
 msgstr "Általános beállítások"
 
-#: configdialog.cpp:48
+#: configdialog.cpp:46
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
 msgstr "Tárolók elérési útjai"
 
-#: configdialog.cpp:51
+#: configdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Ignored Files"
 msgstr "Mellőzött fájlok"
 
-#: configdialog.cpp:55
+#: configdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Plugin Settings"
 msgstr "Bővítménybeállítások"
 
-#: createdialog.cpp:23
+#: createdialog.cpp:22
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Initialize Repository"
 msgstr "<application>Hg</application> tároló előkészítése"
 
-#: createdialog.cpp:24
+#: createdialog.cpp:23
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
 msgstr "Tároló előkészítése"
 
-#: createdialog.cpp:59
+#: createdialog.cpp:56
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
 msgstr "Hiba a tároló létrehozásakor."
 
-#: exportdialog.cpp:27
+#: exportdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> exportálás"
 
-#: exportdialog.cpp:28
+#: exportdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportálás"
 
-#: exportdialog.cpp:55
+#: exportdialog.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid "Treat all files as text"
 msgstr "Összes fájl kezelése szövegesként"
 
-#: exportdialog.cpp:56
+#: exportdialog.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Use Git extended diff format"
 msgstr "A Git kiterjesztett összehasonlítási formátumának használata"
 
-#: exportdialog.cpp:57
+#: exportdialog.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Omit dates from diff headers"
 msgstr "Dátumok elhagyása az összehasonlítások fejléceiből"
 
-#: exportdialog.cpp:126
+#: exportdialog.cpp:124
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "Kérjük, válasszon ki legalább egy exportálandó változáskészletet!"
 
-#: fileviewhgplugin.cpp:93
+#: fileviewhgplugin.cpp:92
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "<application>Hg</application> hozzáadás"
 
-#: fileviewhgplugin.cpp:100
+#: fileviewhgplugin.cpp:97
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "<application>Hg</application> eltávolítás"
 
-#: fileviewhgplugin.cpp:107
+#: fileviewhgplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> átnevezés"
 
-#: fileviewhgplugin.cpp:114
+#: fileviewhgplugin.cpp:107
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> véglegesítés"
 
-#: fileviewhgplugin.cpp:121
+#: fileviewhgplugin.cpp:112
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> címkézés"
 
-#: fileviewhgplugin.cpp:128
+#: fileviewhgplugin.cpp:117
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> ág"
 
-#: fileviewhgplugin.cpp:135
+#: fileviewhgplugin.cpp:122
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> klónozás"
 
-#: fileviewhgplugin.cpp:142
+#: fileviewhgplugin.cpp:127
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "<application>Hg</application> előkészítés"
 
-#: fileviewhgplugin.cpp:149
+#: fileviewhgplugin.cpp:132
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> frissítés"
 
-#: fileviewhgplugin.cpp:156
+#: fileviewhgplugin.cpp:137
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "<application>Hg</application> globális beállítás"
 
-#: fileviewhgplugin.cpp:163
+#: fileviewhgplugin.cpp:142
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "<application>Hg</application> tárolóbeállítás"
 
-#: fileviewhgplugin.cpp:170
+#: fileviewhgplugin.cpp:147
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "<application>Hg</application> felküldés"
 
-#: fileviewhgplugin.cpp:177
+#: fileviewhgplugin.cpp:152
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "<application>Hg</application> lekérés"
 
-#: fileviewhgplugin.cpp:184
+#: fileviewhgplugin.cpp:157
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "<application>Hg</application> visszaállítás"
 
-#: fileviewhgplugin.cpp:191
+#: fileviewhgplugin.cpp:162
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "<application>Hg</application> összes visszaállítása"
 
-#: fileviewhgplugin.cpp:198
+#: fileviewhgplugin.cpp:167
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "<application>Hg</application> visszagörgetés"
 
-#: fileviewhgplugin.cpp:205
+#: fileviewhgplugin.cpp:172
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> egyesítés"
 
-#: fileviewhgplugin.cpp:212
+#: fileviewhgplugin.cpp:177
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> csomagolás"
 
-#: fileviewhgplugin.cpp:219
+#: fileviewhgplugin.cpp:182
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> exportálás"
 
-#: fileviewhgplugin.cpp:226
+#: fileviewhgplugin.cpp:187
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> importálás"
 
-#: fileviewhgplugin.cpp:233
+#: fileviewhgplugin.cpp:192
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "<application>Hg</application> csomagkibontás"
 
-#: fileviewhgplugin.cpp:240
+#: fileviewhgplugin.cpp:197
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> kiszolgálás"
 
-#: fileviewhgplugin.cpp:247
+#: fileviewhgplugin.cpp:202
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> visszavonás"
 
-#: fileviewhgplugin.cpp:254
+#: fileviewhgplugin.cpp:207
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "<application>Hg</application> összehasonlítás"
 
-#: fileviewhgplugin.cpp:278
+#: fileviewhgplugin.cpp:229
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:488
+#: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "Fájlok hozzáadása a <application>Hg</application> tárolóhoz…"
 
-#: fileviewhgplugin.cpp:490
+#: fileviewhgplugin.cpp:427
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr ""
 "Nem sikerült hozzáadni a fájlokat a <application>Hg</application> tárolóhoz."
 
-#: fileviewhgplugin.cpp:492
+#: fileviewhgplugin.cpp:428
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "Fájlok hozzáadva a <application>Hg</application> tárolóhoz."
 
-#: fileviewhgplugin.cpp:505
+#: fileviewhgplugin.cpp:441
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "Szeretné eltávolítani a kiválasztott fájlokat a tárolóból?"
 
-#: fileviewhgplugin.cpp:506
+#: fileviewhgplugin.cpp:443
 #, kde-format
 msgid "Remove Files"
 msgstr "Fájlok eltávolítása"
 
-#: fileviewhgplugin.cpp:512
+#: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "Fájlok eltávolítása a <application>Hg</application> tárolóból…"
 
-#: fileviewhgplugin.cpp:514
+#: fileviewhgplugin.cpp:451
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
@@ -624,101 +624,101 @@ msgstr ""
 "Nem sikerült eltávolítani a fájlokat a <application>Hg</application> "
 "tárolóból."
 
-#: fileviewhgplugin.cpp:516
+#: fileviewhgplugin.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "Fájlok eltávolítva a <application>Hg</application> tárolóból."
 
-#: fileviewhgplugin.cpp:528
+#: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr ""
 "Nem sikerült átnevezni a fájlt a <application>Hg</application> tárolóban."
 
-#: fileviewhgplugin.cpp:530
+#: fileviewhgplugin.cpp:463
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr "Fájl sikeresen átnevezve a <application>Hg</application> tárolóban."
 
-#: fileviewhgplugin.cpp:532
+#: fileviewhgplugin.cpp:464
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "Fájl átnevezése a <application>Hg</application> tárolóban."
 
-#: fileviewhgplugin.cpp:543
+#: fileviewhgplugin.cpp:474
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "Nincsenek véglegesítendő változások."
 
-#: fileviewhgplugin.cpp:548
+#: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "Nem sikerült véglegesíteni a <application>Hg</application> tárolóba."
 
-#: fileviewhgplugin.cpp:550
+#: fileviewhgplugin.cpp:479
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "Véglegesítve a <application>Hg</application> tárolóba."
 
-#: fileviewhgplugin.cpp:552
+#: fileviewhgplugin.cpp:480
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "<application>Hg</application> tároló véglegesítése."
 
-#: fileviewhgplugin.cpp:563
+#: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
 msgstr ""
 "A címkézés művelet a <application>Hg</application> tárolóban sikertelen."
 
-#: fileviewhgplugin.cpp:565
+#: fileviewhgplugin.cpp:491
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
 msgstr "A címkézés művelet a <application>Hg</application> tárolóban sikeres."
 
-#: fileviewhgplugin.cpp:567
+#: fileviewhgplugin.cpp:492
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "Címkézés művelet a <application>Hg</application> tárolóban."
 
-#: fileviewhgplugin.cpp:576
+#: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr "A <application>Hg</application> munkakönyvtár frissítése sikertelen."
 
-#: fileviewhgplugin.cpp:578
+#: fileviewhgplugin.cpp:501
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
 msgstr "A <application>Hg</application> munkakönyvtár frissítése sikeres."
 
-#: fileviewhgplugin.cpp:580
+#: fileviewhgplugin.cpp:502
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "A <application>Hg</application> munkakönyvtár frissítése."
 
-#: fileviewhgplugin.cpp:589
+#: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
 msgstr "Sikertelen ágművelet a <application>Hg</application> tárolón."
 
-#: fileviewhgplugin.cpp:591
+#: fileviewhgplugin.cpp:511
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -726,30 +726,30 @@ msgid ""
 "successfully."
 msgstr "Ágművelet a <application>Hg</application> tárolón sikeresen befejezve."
 
-#: fileviewhgplugin.cpp:593
+#: fileviewhgplugin.cpp:512
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr "Ágművelet a <application>Hg</application> tárolón."
 
-#: fileviewhgplugin.cpp:691
+#: fileviewhgplugin.cpp:609
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
 msgstr "Szeretné visszaállítani a kiválasztott fájlok változásait?"
 
-#: fileviewhgplugin.cpp:692 fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:611 fileviewhgplugin.cpp:612 fileviewhgplugin.cpp:633
 #, kde-format
 msgid "Revert"
 msgstr "Visszaállítás"
 
-#: fileviewhgplugin.cpp:698 fileviewhgplugin.cpp:719
+#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr "Fájlok visszaállítása a <application>Hg</application> tárolóban…"
 
-#: fileviewhgplugin.cpp:700 fileviewhgplugin.cpp:721
+#: fileviewhgplugin.cpp:619 fileviewhgplugin.cpp:640
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
@@ -757,7 +757,7 @@ msgstr ""
 "Nem sikerült visszaállítani a fájlokat a <application>Hg</application> "
 "tárolóban."
 
-#: fileviewhgplugin.cpp:702 fileviewhgplugin.cpp:723
+#: fileviewhgplugin.cpp:620 fileviewhgplugin.cpp:641
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -766,24 +766,24 @@ msgid ""
 msgstr ""
 "Fájlok sikeresen visszaállítva a <application>Hg</application> tárolóban."
 
-#: fileviewhgplugin.cpp:712
+#: fileviewhgplugin.cpp:630
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr "Szeretné visszaállítani a jelenlegi munkakönyvtár összes változását?"
 
-#: fileviewhgplugin.cpp:713
+#: fileviewhgplugin.cpp:632
 #, kde-format
 msgid "Revert All"
 msgstr "Összes visszaállítása"
 
-#: fileviewhgplugin.cpp:732
+#: fileviewhgplugin.cpp:649
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
 msgstr "Összehasonlítás előállítása a <application>Hg</application> tárolóhoz…"
 
-#: fileviewhgplugin.cpp:734
+#: fileviewhgplugin.cpp:650
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
@@ -791,49 +791,49 @@ msgstr ""
 "Nem sikerült lekérni a <application>Hg</application> tároló "
 "összehasonlítását."
 
-#: fileviewhgplugin.cpp:736
+#: fileviewhgplugin.cpp:651
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr ""
 "A <application>Hg</application> tároló összehasonlítása sikeresen előállítva."
 
-#: fileviewhgplugin.cpp:766
+#: fileviewhgplugin.cpp:680
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
 msgstr "megszakítás: nem véglegesített változások a munkakönyvtárban!"
 
-#: fileviewhgplugin.cpp:779
+#: fileviewhgplugin.cpp:695
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "Nem érhetők el visszagörgetési információk."
 
-#: fileviewhgplugin.cpp:791
+#: fileviewhgplugin.cpp:706
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "Szeretné visszagörgetni a legutolsó tranzakciót?"
 
-#: fileviewhgplugin.cpp:792
+#: fileviewhgplugin.cpp:708 fileviewhgplugin.cpp:709
 #, kde-format
 msgid "Rollback"
 msgstr "Visszagörgetés"
 
-#: fileviewhgplugin.cpp:798
+#: fileviewhgplugin.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr "<application>Hg</application> tároló visszagörgetése…"
 
-#: fileviewhgplugin.cpp:800
+#: fileviewhgplugin.cpp:716
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr "Nem sikerült visszagörgetni a <application>Hg</application> tárolót."
 
-#: fileviewhgplugin.cpp:802
+#: fileviewhgplugin.cpp:717
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -896,198 +896,198 @@ msgstr ""
 msgid "Divides commit editor and diff editor"
 msgstr "Véglegesítés- és összehasonlítás-szerlesztő felosztása"
 
-#: importdialog.cpp:29
+#: importdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> importálás"
 
-#: importdialog.cpp:30
+#: importdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importálás"
 
-#: importdialog.cpp:62
+#: importdialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
 msgstr "Ne véglegesítsen, csak frissítse a munkakönyvtárat"
 
-#: importdialog.cpp:64
+#: importdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
 msgstr "Kihagyott nem véglegesített változtatások ellenőrzésének átugrása"
 
-#: importdialog.cpp:66
+#: importdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
 msgstr "Javítások alkalmazása azokra a csomópontokra, amikből előállítódtak"
 
-#: importdialog.cpp:68
+#: importdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
 msgstr "Javítások alkalmazása a munkakönyvtár módosítása nélkül"
 
-#: importdialog.cpp:80
+#: importdialog.cpp:71
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Add Patches"
 msgstr "Foltok hozzáadása"
 
-#: importdialog.cpp:82
+#: importdialog.cpp:72
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Remove Patches"
 msgstr "Foltok eltávolítása"
 
-#: mergedialog.cpp:26
+#: mergedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> egyesítés"
 
-#: mergedialog.cpp:27
+#: mergedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Merge"
 msgstr "Egyesítés"
 
-#: mergedialog.cpp:107
+#: mergedialog.cpp:103
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
 msgstr "Nincs kiválasztva fej az egyesítéshez."
 
-#: pathselector.cpp:60
+#: pathselector.cpp:57
 #, kde-kuit-format
 msgctxt "@label:combobox"
 msgid "edit"
 msgstr "szerkesztés"
 
-#: pulldialog.cpp:29
+#: pulldialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
 msgstr "<application>Hg</application> tároló lekérése"
 
-#: pulldialog.cpp:37
+#: pulldialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
 msgstr "Frissítés az új ágra, ha változáskészletek érkeztek"
 
-#: pulldialog.cpp:41
+#: pulldialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
 msgstr "Kényszerített lekérés"
 
-#: pulldialog.cpp:53
+#: pulldialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Incoming Changes"
 msgstr "Bejövő változások"
 
-#: pulldialog.cpp:147
+#: pulldialog.cpp:138
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No incoming changes!"
 msgstr "Nincsenek bejövő változások!"
 
-#: pushdialog.cpp:29
+#: pushdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Push Repository"
 msgstr "<application>Hg</application> felküldés tárolóba"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
 msgstr "Új ág felküldésének engedélyezése"
 
-#: pushdialog.cpp:41
+#: pushdialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Push"
 msgstr "Kényszerített felküldés"
 
-#: pushdialog.cpp:53
+#: pushdialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Outgoing Changes"
 msgstr "Kimenő változások"
 
-#: pushdialog.cpp:169
+#: pushdialog.cpp:159
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
 msgstr "Nincsenek kimenő változások!"
 
-#: renamedialog.cpp:25
+#: renamedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> átnevezés"
 
-#: renamedialog.cpp:27
+#: renamedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Átnevezés"
 
-#: renamedialog.cpp:33
+#: renamedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@label:label to source file"
 msgid "Source "
 msgstr "Forrás "
 
-#: renamedialog.cpp:39
+#: renamedialog.cpp:36
 #, kde-kuit-format
 msgctxt "@label:rename"
 msgid "Rename to "
 msgstr "Átnevezése erre "
 
-#: servedialog.cpp:25
+#: servedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> kiszolgálás"
 
-#: servedialog.cpp:63
+#: servedialog.cpp:56
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
 msgstr "Kiszolgáló indítása"
 
-#: servedialog.cpp:64
+#: servedialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
 msgstr "Kiszolgáló leállítása"
 
-#: servedialog.cpp:65
+#: servedialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Open in browser"
 msgstr "Megnyitás böngészőben"
 
-#: servedialog.cpp:81
+#: servedialog.cpp:74
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Port"
 msgstr "Port"
 
-#: servewrapper.cpp:66
+#: servewrapper.cpp:62
 #, kde-format
 msgid "## Starting Server ##"
 msgstr "## Kiszolgáló indítása ##"
 
-#: servewrapper.h:150
+#: servewrapper.h:144
 #, kde-format
 msgid "## Server Stopped! ##\n"
 msgstr "## Kiszolgáló leállítva. ##\n"
@@ -1103,116 +1103,116 @@ msgctxt "@title:group"
 msgid "File Status"
 msgstr "Fájlállapot"
 
-#: syncdialogbase.cpp:81
+#: syncdialogbase.cpp:73
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
 msgstr "Bejövő változások megjelenítése"
 
-#: syncdialogbase.cpp:85
+#: syncdialogbase.cpp:75
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
 msgstr "Kimenő változások megjelenítése"
 
-#: syncdialogbase.cpp:119
+#: syncdialogbase.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
 msgstr "Lekérés"
 
-#: syncdialogbase.cpp:119
+#: syncdialogbase.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
 msgstr "Felküldés"
 
-#: syncdialogbase.cpp:161
+#: syncdialogbase.cpp:146
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
 msgstr "Nem találhatók változások!"
 
-#: syncdialogbase.cpp:212 syncdialogbase.cpp:287 syncdialogbase.cpp:294
+#: syncdialogbase.cpp:197 syncdialogbase.cpp:263 syncdialogbase.cpp:270
 #, kde-format
 msgid "Error!"
 msgstr "Hiba!"
 
-#: syncdialogbase.cpp:328
+#: syncdialogbase.cpp:302
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Options"
 msgstr "Beállítások"
 
-#: tagdialog.cpp:20
+#: tagdialog.cpp:19
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application> címkézés"
 
-#: tagdialog.cpp:30
+#: tagdialog.cpp:29
 #, kde-format
 msgid "Create New Tag"
 msgstr "Új címke létrehozása"
 
-#: tagdialog.cpp:31
+#: tagdialog.cpp:30
 #, kde-format
 msgid "Remove Tag"
 msgstr "Címke eltávolítása"
 
-#: tagdialog.cpp:32
+#: tagdialog.cpp:31
 #, kde-format
 msgid "Switch Tag"
 msgstr "Címke váltása"
 
-#: tagdialog.cpp:129
+#: tagdialog.cpp:118
 #, kde-format
 msgid "Created tag successfully!"
 msgstr "Címke sikeresen létrehozva."
 
-#: updatedialog.cpp:25
+#: updatedialog.cpp:23
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> frissítés"
 
-#: updatedialog.cpp:27
+#: updatedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Update"
 msgstr "Frissítés"
 
-#: updatedialog.cpp:30
+#: updatedialog.cpp:28
 #, kde-format
 msgid "New working directory"
 msgstr "Új munkakönyvtár"
 
-#: updatedialog.cpp:35
+#: updatedialog.cpp:33
 #, kde-format
 msgid "Tag"
 msgstr "Címke"
 
-#: updatedialog.cpp:36
+#: updatedialog.cpp:34
 #, kde-format
 msgid "Changeset/Revision"
 msgstr "Változáskészlet/Verzió"
 
-#: updatedialog.cpp:41
+#: updatedialog.cpp:39
 #, kde-format
 msgid "Current Parent"
 msgstr "Jelenlegi szülő"
 
-#: updatedialog.cpp:47
+#: updatedialog.cpp:45
 #, kde-format
 msgid "Options"
 msgstr "Beállítások"
 
-#: updatedialog.cpp:49
+#: updatedialog.cpp:47
 #, kde-format
 msgid "Discard uncommitted changes"
 msgstr "Nem véglegesített változtatások eldobása"
 
-#: updatedialog.cpp:126
+#: updatedialog.cpp:120
 #, kde-format
 msgid ""
 "Some error occurred! \n"

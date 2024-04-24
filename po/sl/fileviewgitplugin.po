@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 00:40+0000\n"
+"POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2024-04-19 06:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -83,43 +83,43 @@ msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "V skladišču ni oznak."
 
-#: checkoutdialog.cpp:185
+#: checkoutdialog.cpp:176
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Zbirka vej"
 
-#: checkoutdialog.cpp:186
+#: checkoutdialog.cpp:176
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Prevzemi"
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Vnesti morate veljavno ime za novo vejo."
 
-#: checkoutdialog.cpp:213
+#: checkoutdialog.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Veja z imenom ''%1' že obstaja."
 
-#: checkoutdialog.cpp:220
+#: checkoutdialog.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Imena vej ne smejo vsebovati presledkov."
 
-#: checkoutdialog.cpp:227
+#: checkoutdialog.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Najprej morate izbrati veljavno vejo."
 
-#: checkoutdialog.cpp:248
+#: checkoutdialog.cpp:239
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -175,13 +175,13 @@ msgctxt "@action:button"
 msgid "Clone"
 msgstr "Kloniraj"
 
-#: clonedialog.cpp:102
+#: clonedialog.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Izberi imenik klonov"
 
-#: clonedialog.cpp:130
+#: clonedialog.cpp:132
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -217,19 +217,19 @@ msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
 msgstr "Ničesar ni za spremeniti."
 
-#: commitdialog.cpp:74
+#: commitdialog.cpp:72
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
 msgstr "Izjava o primernosti"
 
-#: commitdialog.cpp:75
+#: commitdialog.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
 msgstr "Doda vrstico izjava o primernosti na konec sporočila o uveljavitvi."
 
-#: commitdialog.cpp:132
+#: commitdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
@@ -240,160 +240,160 @@ msgstr "Vnesti morate sporočilo o spremembi."
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> povrni"
 
-#: fileviewgitplugin.cpp:59
+#: fileviewgitplugin.cpp:58
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> dodaj"
 
-#: fileviewgitplugin.cpp:65
+#: fileviewgitplugin.cpp:63
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
 msgstr "Prikaži krajevne spremembe skladišča <application>Git</application>"
 
-#: fileviewgitplugin.cpp:71
+#: fileviewgitplugin.cpp:68
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> Obnovi \"staged\""
 
-#: fileviewgitplugin.cpp:77
+#: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> Odstrani"
 
-#: fileviewgitplugin.cpp:83
+#: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> Prevzem..."
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> Uveljavi ..."
 
-#: fileviewgitplugin.cpp:95
+#: fileviewgitplugin.cpp:88
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> Ustvari oznako..."
 
-#: fileviewgitplugin.cpp:100
+#: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> Objavi ..."
 
-#: fileviewgitplugin.cpp:105
+#: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> Prejmi ..."
 
-#: fileviewgitplugin.cpp:110
+#: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Zlij..."
 
-#: fileviewgitplugin.cpp:114
+#: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> Kloniraj..."
 
-#: fileviewgitplugin.cpp:118
+#: fileviewgitplugin.cpp:108
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> Zabeleži..."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Dodajanje datotek v skladišče <application>Git</application> ..."
 
-#: fileviewgitplugin.cpp:441
+#: fileviewgitplugin.cpp:429
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Dodajanje datotek v skladišče <application>Git</application> je spodletelo."
 
-#: fileviewgitplugin.cpp:442
+#: fileviewgitplugin.cpp:430
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Datoteke so bile dodane v skladišče <application>Git</application>."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:441
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Odstranjevanje datotek iz skladišča <application>Git</application> ..."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:442
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Odstranjevanje datotek iz skladišča <application>Git</application> je "
 "spodletelo."
 
-#: fileviewgitplugin.cpp:454
+#: fileviewgitplugin.cpp:443
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr ""
 "Datoteke so bile odstranjene iz skladišča <application>Git</application>."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:450
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
 "Poteka povrnitev datotek iz skladišča <application>Git</application> ..."
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Povrnitev datotek iz skladišča <application>Git</application> je spodletela."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr ""
 "Datoteke so bile povrnjene iz skladišča <application>Git</application>."
 
-#: fileviewgitplugin.cpp:504
+#: fileviewgitplugin.cpp:491
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> Dnevnik je spodletel."
 
-#: fileviewgitplugin.cpp:527
+#: fileviewgitplugin.cpp:512
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Zabeleži"
 
-#: fileviewgitplugin.cpp:543
+#: fileviewgitplugin.cpp:527
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Uveljavi"
 
-#: fileviewgitplugin.cpp:544
+#: fileviewgitplugin.cpp:528
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Datum"
 
-#: fileviewgitplugin.cpp:545
+#: fileviewgitplugin.cpp:529
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Sporočilo"
 
-#: fileviewgitplugin.cpp:546
+#: fileviewgitplugin.cpp:530
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Avtor"
 
-#: fileviewgitplugin.cpp:566
+#: fileviewgitplugin.cpp:551
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
 "Obnavljanje \"staged\" datotek iz skladišča <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:567
+#: fileviewgitplugin.cpp:552
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
@@ -401,48 +401,48 @@ msgstr ""
 "Obnavljanje \"staged\" datotek iz skladišča <application>Git</application> "
 "je spodletelo."
 
-#: fileviewgitplugin.cpp:568
+#: fileviewgitplugin.cpp:553
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "Obnavljanje \"staged\" datotek iz skladišča <application>Git</application>."
 
-#: fileviewgitplugin.cpp:606
+#: fileviewgitplugin.cpp:591
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> napaka z začetkom: %1"
 
-#: fileviewgitplugin.cpp:610
+#: fileviewgitplugin.cpp:595
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> kloniranje je spodletelo: %1"
 
-#: fileviewgitplugin.cpp:612
+#: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> kloniranje dokončano."
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:632
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
 msgstr "<application>Git</application> repozitorij klona..."
 
-#: fileviewgitplugin.cpp:684
+#: fileviewgitplugin.cpp:666
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Preklopljeno na vejo '%1'"
 
-#: fileviewgitplugin.cpp:690
+#: fileviewgitplugin.cpp:673
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD je zdaj na %1"
 
-#: fileviewgitplugin.cpp:694
+#: fileviewgitplugin.cpp:678
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Preklopljeno na novo vejo '%1'"
 
-#: fileviewgitplugin.cpp:705
+#: fileviewgitplugin.cpp:689
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -451,12 +451,12 @@ msgstr ""
 "<application>Git</application> pregled je spodletel. Mogoče vaša delovna "
 "mapa ni čista."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Oznaka '%1' je bila uspešno ustvarjena"
 
-#: fileviewgitplugin.cpp:774
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -465,47 +465,47 @@ msgstr ""
 "Ustvarjanje oznake <application>Git</application> je spodletelo. Oznaka z "
 "imenom »%1« že obstaja."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:763
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Ustvarjanje oznake <application>Git</application> je spodletelo."
 
-#: fileviewgitplugin.cpp:788
+#: fileviewgitplugin.cpp:774
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Objavljanje veje %1 na %2:%3 je spodletelo."
 
-#: fileviewgitplugin.cpp:790
+#: fileviewgitplugin.cpp:775
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Veja %1 je bila objavljena na %2:%3."
 
-#: fileviewgitplugin.cpp:792
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Objavljanje veje %1 na %2:%3 ..."
 
-#: fileviewgitplugin.cpp:814
+#: fileviewgitplugin.cpp:797
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Prejemanje veje %1 od %2 je spodletelo."
 
-#: fileviewgitplugin.cpp:816
+#: fileviewgitplugin.cpp:798
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Veja %1 je bila uspešno prejeta z %2."
 
-#: fileviewgitplugin.cpp:818
+#: fileviewgitplugin.cpp:799
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Prejemanje veje %1 od %2 ..."
 
-#: fileviewgitplugin.cpp:871 fileviewgitplugin.cpp:883
+#: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Veja je že posodobljena."
 
-#: fileviewgitplugin.cpp:887
+#: fileviewgitplugin.cpp:867
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Prišlo je do napak med združitvijo. Popravite in uveljavite rezultat."
@@ -637,19 +637,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Veja:"
 
-#: tagdialog.cpp:125
+#: tagdialog.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "Najprej morate vnesti ime oznake."
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Imena oznake naj ne bi vsebovala presledkov."
 
-#: tagdialog.cpp:131
+#: tagdialog.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
