@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
-"PO-Revision-Date: 2024-04-22 15:58\n"
+"POT-Creation-Date: 2024-04-24 00:40+0000\n"
+"PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -121,61 +121,61 @@ msgctxt ""
 msgid "branch"
 msgstr "分支"
 
-#: clonedialog.cpp:38
+#: clonedialog.cpp:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
 msgstr "深度："
 
-#: clonedialog.cpp:45
+#: clonedialog.cpp:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "分支："
 
-#: clonedialog.cpp:51
+#: clonedialog.cpp:54
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
 msgstr "递归"
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
 msgstr "无检出"
 
-#: clonedialog.cpp:53
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
 msgstr "克隆到空仓库"
 
-#: clonedialog.cpp:56
+#: clonedialog.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
-msgid "URL:"
-msgstr "URL："
+msgid "Url:"
+msgstr ""
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "目录："
 
-#: clonedialog.cpp:75
+#: clonedialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "克隆"
 
-#: clonedialog.cpp:103
+#: clonedialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "选择克隆目录"
 
-#: clonedialog.cpp:132
+#: clonedialog.cpp:124
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -390,101 +390,101 @@ msgstr "从 <application>Git</application> 仓库还原暂存区文件失败。"
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "正在从 <application>Git</application> 仓库还原暂存区文件."
 
-#: fileviewgitplugin.cpp:591
+#: fileviewgitplugin.cpp:596
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> 启动时出错：%1"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:600
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> 克隆失败：%1"
 
-#: fileviewgitplugin.cpp:597
+#: fileviewgitplugin.cpp:602
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> 克隆完成。"
 
-#: fileviewgitplugin.cpp:632
+#: fileviewgitplugin.cpp:637
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
 msgstr "<application>Git</application> 克隆仓库..."
 
-#: fileviewgitplugin.cpp:666
+#: fileviewgitplugin.cpp:677
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "切换到分支“%1”"
 
-#: fileviewgitplugin.cpp:673
+#: fileviewgitplugin.cpp:684
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD 现在位于 %1"
 
-#: fileviewgitplugin.cpp:678
+#: fileviewgitplugin.cpp:689
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "切换到了新分支“%1”"
 
-#: fileviewgitplugin.cpp:689
+#: fileviewgitplugin.cpp:700
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr "<application>Git</application> 检出失败。您的工作目录可能已污染。"
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "创建标记“%1”成功"
 
-#: fileviewgitplugin.cpp:760
+#: fileviewgitplugin.cpp:771
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr "<application>Git</application> 标记创建失败。已存在名为“%1”的标记。"
 
-#: fileviewgitplugin.cpp:763
+#: fileviewgitplugin.cpp:774
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> 标记创建失败。"
 
-#: fileviewgitplugin.cpp:774
+#: fileviewgitplugin.cpp:785
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "推送分支 %1 到 %2:%3 失败。"
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:786
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "分支 %1 已推送到 %2:%3。"
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:787
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "正在推送分支 %1 到 %2:%3..."
 
-#: fileviewgitplugin.cpp:797
+#: fileviewgitplugin.cpp:808
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "从 %2 拉取分支 %1 失败。"
 
-#: fileviewgitplugin.cpp:798
+#: fileviewgitplugin.cpp:809
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "从 %2 拉取分支 %1 成功。"
 
-#: fileviewgitplugin.cpp:799
+#: fileviewgitplugin.cpp:810
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "正在从 %2 拉取分支 %1..."
 
-#: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
+#: fileviewgitplugin.cpp:862 fileviewgitplugin.cpp:874
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "分支已是最新。"
 
-#: fileviewgitplugin.cpp:867
+#: fileviewgitplugin.cpp:878
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "发生合并冲突。解决这些问题，并提交结果。"
@@ -633,3 +633,7 @@ msgstr "标记名称不能包含空白。"
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "已存在名为“%1”的标记。"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "URL:"
+#~ msgstr "URL："

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-04-24 00:40+0000\n"
 "PO-Revision-Date: 2024-04-21 00:19+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -121,61 +121,61 @@ msgctxt ""
 msgid "branch"
 msgstr "rama"
 
-#: clonedialog.cpp:38
+#: clonedialog.cpp:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
 msgstr "Profundidad:"
 
-#: clonedialog.cpp:45
+#: clonedialog.cpp:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Rama:"
 
-#: clonedialog.cpp:51
+#: clonedialog.cpp:54
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
 msgstr "Recursivo"
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
 msgstr "No descargar"
 
-#: clonedialog.cpp:53
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
 msgstr "Clonar en repositorio simple"
 
-#: clonedialog.cpp:56
+#: clonedialog.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
-msgid "URL:"
-msgstr "URL:"
+msgid "Url:"
+msgstr ""
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "Directorio:"
 
-#: clonedialog.cpp:75
+#: clonedialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Clonar"
 
-#: clonedialog.cpp:103
+#: clonedialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Elegir directorio de clonación"
 
-#: clonedialog.cpp:132
+#: clonedialog.cpp:124
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -398,42 +398,42 @@ msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "Restaurando archivos añadidos del repositorio <application>Git</application>."
 
-#: fileviewgitplugin.cpp:591
+#: fileviewgitplugin.cpp:596
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "Ha ocurrido un error iniciando <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:600
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Ha fallado la clonación <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:597
+#: fileviewgitplugin.cpp:602
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "Clonación <application>Git</application> completa."
 
-#: fileviewgitplugin.cpp:632
+#: fileviewgitplugin.cpp:637
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
 msgstr "Clonar repositorio <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:666
+#: fileviewgitplugin.cpp:677
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Se ha cambiado a la rama «%1»"
 
-#: fileviewgitplugin.cpp:673
+#: fileviewgitplugin.cpp:684
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD está ahora en %1"
 
-#: fileviewgitplugin.cpp:678
+#: fileviewgitplugin.cpp:689
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Se ha cambiado a la nueva rama «%1»"
 
-#: fileviewgitplugin.cpp:689
+#: fileviewgitplugin.cpp:700
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -442,12 +442,12 @@ msgstr ""
 "Ha fallado la descarga <application>Git</application>. Es posible que su "
 "directorio de trabajo contenga modificaciones."
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "La etiqueta «%1» se ha creado con éxito"
 
-#: fileviewgitplugin.cpp:760
+#: fileviewgitplugin.cpp:771
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -456,47 +456,47 @@ msgstr ""
 "Ha fallado la creación de etiqueta <application>Git</application>. Ya existe "
 "una etiqueta con el nombre «%1»."
 
-#: fileviewgitplugin.cpp:763
+#: fileviewgitplugin.cpp:774
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Ha fallado la creación de etiqueta <application>Git</application>."
 
-#: fileviewgitplugin.cpp:774
+#: fileviewgitplugin.cpp:785
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Ha fallado la incorporación de la rama %1 a %2:%3."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:786
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Se ha incorporado la rama %1 a %2:%3."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:787
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Incorporando la rama %1 a %2:%3..."
 
-#: fileviewgitplugin.cpp:797
+#: fileviewgitplugin.cpp:808
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Ha fallado la extracción de la rama %1 de %2."
 
-#: fileviewgitplugin.cpp:798
+#: fileviewgitplugin.cpp:809
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Se ha extraído con éxito la rama %1 de %2."
 
-#: fileviewgitplugin.cpp:799
+#: fileviewgitplugin.cpp:810
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Extrayendo la rama %1 de %2..."
 
-#: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
+#: fileviewgitplugin.cpp:862 fileviewgitplugin.cpp:874
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "La rama ya está actualizada."
 
-#: fileviewgitplugin.cpp:867
+#: fileviewgitplugin.cpp:878
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
@@ -647,3 +647,7 @@ msgstr "Los nombres de las etiquetas no deben contener espacios."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Ya existe una etiqueta con el nombre «%1»."
+
+#~ msgctxt "@label:textbox"
+#~ msgid "URL:"
+#~ msgstr "URL:"

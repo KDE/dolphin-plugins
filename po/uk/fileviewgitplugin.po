@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-04-24 00:40+0000\n"
 "PO-Revision-Date: 2024-04-19 16:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -124,61 +124,61 @@ msgctxt ""
 msgid "branch"
 msgstr "гілка"
 
-#: clonedialog.cpp:38
+#: clonedialog.cpp:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
 msgstr "Глибина:"
 
-#: clonedialog.cpp:45
+#: clonedialog.cpp:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Гілка:"
 
-#: clonedialog.cpp:51
+#: clonedialog.cpp:54
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
 msgstr "Рекурсивно"
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
 msgstr "Без отримання"
 
-#: clonedialog.cpp:53
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
 msgstr "Клонувати до мінімального сховища"
 
-#: clonedialog.cpp:56
+#: clonedialog.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
-msgid "URL:"
-msgstr "Адреса:"
+msgid "Url:"
+msgstr ""
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "Каталог:"
 
-#: clonedialog.cpp:75
+#: clonedialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Клонувати"
 
-#: clonedialog.cpp:103
+#: clonedialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Виберіть каталог клонування"
 
-#: clonedialog.cpp:132
+#: clonedialog.cpp:124
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -404,42 +404,42 @@ msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "Відновлення запланованих файлів зі сховища <application>Git</application>."
 
-#: fileviewgitplugin.cpp:591
+#: fileviewgitplugin.cpp:596
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "Помилка запуску <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:600
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Не вдалося виконати клонування <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:597
+#: fileviewgitplugin.cpp:602
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "Клонування <application>Git</application> завершено."
 
-#: fileviewgitplugin.cpp:632
+#: fileviewgitplugin.cpp:637
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
 msgstr "Сховище клонування <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:666
+#: fileviewgitplugin.cpp:677
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Здійснено перехід до гілки «'%1»"
 
-#: fileviewgitplugin.cpp:673
+#: fileviewgitplugin.cpp:684
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD тепер розташовано у %1"
 
-#: fileviewgitplugin.cpp:678
+#: fileviewgitplugin.cpp:689
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Здійснено перехід на нову гілку «%1»"
 
-#: fileviewgitplugin.cpp:689
+#: fileviewgitplugin.cpp:700
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -448,12 +448,12 @@ msgstr ""
 "Спроба виконання отримання з <application>Git</application> зазнала невдачі. "
 "Ймовірно, ваш робочий каталог не синхронізовано зі сховищем."
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Успішно створено версію «%1»"
 
-#: fileviewgitplugin.cpp:760
+#: fileviewgitplugin.cpp:771
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -462,47 +462,47 @@ msgstr ""
 "Спроба створення версії у <application>Git</application> зазнала невдачі. "
 "Версія з назвою «%1» вже існує."
 
-#: fileviewgitplugin.cpp:763
+#: fileviewgitplugin.cpp:774
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Невдала спроба створення версії у <application>Git</application>."
 
-#: fileviewgitplugin.cpp:774
+#: fileviewgitplugin.cpp:785
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Спроба вивантаження гілки %1 до %2:%3 зазнала невдачі."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:786
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Вивантажено гілку %1 до %2:%3."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:787
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Вивантаження гілки %1 до %2:%3…"
 
-#: fileviewgitplugin.cpp:797
+#: fileviewgitplugin.cpp:808
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Спроба отримання гілки %1 з %2 зазнала невдачі."
 
-#: fileviewgitplugin.cpp:798
+#: fileviewgitplugin.cpp:809
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Гілку %1 з %2 успішно отримано."
 
-#: fileviewgitplugin.cpp:799
+#: fileviewgitplugin.cpp:810
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Отримання гілки %1 з %2…"
 
-#: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
+#: fileviewgitplugin.cpp:862 fileviewgitplugin.cpp:874
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Гілку вже синхронізовано."
 
-#: fileviewgitplugin.cpp:867
+#: fileviewgitplugin.cpp:878
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
@@ -654,3 +654,7 @@ msgstr "Назви версій не повинні містити пробіл�
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Версія з назвою «%1» вже існує."
+
+#~ msgctxt "@label:textbox"
+#~ msgid "URL:"
+#~ msgstr "Адреса:"

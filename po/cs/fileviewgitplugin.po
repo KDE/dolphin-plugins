@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-04-24 00:40+0000\n"
 "PO-Revision-Date: 2023-06-23 11:24+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -122,70 +122,65 @@ msgctxt ""
 msgid "branch"
 msgstr "větev"
 
-#: clonedialog.cpp:38
+#: clonedialog.cpp:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
 msgstr ""
 
-#: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#: clonedialog.cpp:48
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
-msgstr "Větev:"
+msgstr ""
 
-#: clonedialog.cpp:51
+#: clonedialog.cpp:54
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "Rekurzivně"
 
-#: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#: clonedialog.cpp:55
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Checkout"
+msgstr ""
 
-#: clonedialog.cpp:53
+#: clonedialog.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
 msgstr ""
 
-#: clonedialog.cpp:56
+#: clonedialog.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
-msgid "URL:"
+msgid "Url:"
 msgstr ""
 
-#: clonedialog.cpp:58
+#: clonedialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Adresář:"
 
-#: clonedialog.cpp:75
+#: clonedialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Klonovat"
 
-#: clonedialog.cpp:103
+#: clonedialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr ""
 
-#: clonedialog.cpp:132
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#: clonedialog.cpp:124
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Záznam"
+msgstr ""
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -291,10 +286,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Sloučit..."
 
 #: fileviewgitplugin.cpp:104
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Záznam..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
@@ -398,47 +392,42 @@ msgstr ""
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 
-#: fileviewgitplugin.cpp:591
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#: fileviewgitplugin.cpp:596
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> Záznam"
+msgstr ""
 
-#: fileviewgitplugin.cpp:595
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#: fileviewgitplugin.cpp:600
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> Záznam selhal."
+msgstr ""
 
-#: fileviewgitplugin.cpp:597
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#: fileviewgitplugin.cpp:602
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> Checkout"
+msgstr ""
 
-#: fileviewgitplugin.cpp:632
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#: fileviewgitplugin.cpp:637
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> Sloučit..."
+msgstr ""
 
-#: fileviewgitplugin.cpp:666
+#: fileviewgitplugin.cpp:677
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Přepnuto na větev '%1'"
 
-#: fileviewgitplugin.cpp:673
+#: fileviewgitplugin.cpp:684
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD je nyní na %1"
 
-#: fileviewgitplugin.cpp:678
+#: fileviewgitplugin.cpp:689
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Přepnuto na novou větev '%1'"
 
-#: fileviewgitplugin.cpp:689
+#: fileviewgitplugin.cpp:700
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -447,12 +436,12 @@ msgstr ""
 "<application>Git</application> Checkout selhal. Možná je váš pracovní "
 "adresář zaneřáděný."
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Úspěšně vytvořena značka '%1'"
 
-#: fileviewgitplugin.cpp:760
+#: fileviewgitplugin.cpp:771
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -461,47 +450,47 @@ msgstr ""
 "<application>Git</application> vytvoření značky selhalo. Značka s názvem "
 "'%1' již existuje."
 
-#: fileviewgitplugin.cpp:763
+#: fileviewgitplugin.cpp:774
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application>  vytvoření značky selhalo."
 
-#: fileviewgitplugin.cpp:774
+#: fileviewgitplugin.cpp:785
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Odesílání větve %1 do %2:%3 selhalo."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:786
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Větev %1 odeslána do %2:%3."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:787
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Odesílám větev %1 do %2:%3..."
 
-#: fileviewgitplugin.cpp:797
+#: fileviewgitplugin.cpp:808
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Stahování větve %1 z %2 selhalo."
 
-#: fileviewgitplugin.cpp:798
+#: fileviewgitplugin.cpp:809
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Větev %1 z %2 stažena úspěšně."
 
-#: fileviewgitplugin.cpp:799
+#: fileviewgitplugin.cpp:810
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Stahuji větev %1 z %2..."
 
-#: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
+#: fileviewgitplugin.cpp:862 fileviewgitplugin.cpp:874
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Větev je už aktuální"
 
-#: fileviewgitplugin.cpp:867
+#: fileviewgitplugin.cpp:878
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Nastaly konflikty při sloučení. Opravte je a commitněte výsledek."
