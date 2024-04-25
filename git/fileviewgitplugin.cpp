@@ -11,6 +11,7 @@
 #include "clonedialog.h"
 #include "commitdialog.h"
 #include "gitwrapper.h"
+#include "progressdialog.h"
 #include "pulldialog.h"
 #include "pushdialog.h"
 #include "tagdialog.h"
@@ -582,65 +583,25 @@ void FileViewGitPlugin::clone()
         }
 
         QProcess *process = new QProcess(m_parentWidget);
-        QDialog *progressDialog = new QDialog(m_parentWidget);
-        QVBoxLayout *layout = new QVBoxLayout;
-        QPlainTextEdit *text = new QPlainTextEdit;
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-        layout->addWidget(text);
-        layout->addWidget(buttonBox);
-        progressDialog->setLayout(layout);
-        connect(buttonBox, &QDialogButtonBox::rejected, process, &QProcess::terminate);
-        connect(buttonBox, &QDialogButtonBox::accepted, progressDialog, &QDialog::accept);
+        QDialog *progressDialog = new ProgressDialog(process, m_parentWidget);
+
         connect(process, &QProcess::errorOccurred, this, [this, process](QProcess::ProcessError) {
             const QString commandLine = process->program() + process->arguments().join(QLatin1Char(' '));
             Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> error starting: %1", commandLine));
         });
-        connect(process, &QProcess::finished, process, [this, process, buttonBox](int exitCode, QProcess::ExitStatus) {
+        connect(process, &QProcess::finished, process, [this, process](int exitCode, QProcess::ExitStatus) {
             if (exitCode != EXIT_SUCCESS) {
                 Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> clone failed: %1", process->errorString()));
             } else {
                 Q_EMIT operationCompletedMessage(xi18nd("@info:status", "<application>Git</application> clone complete."));
             }
-
-            buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
-            buttonBox->button(QDialogButtonBox::Cancel)->setEnabled(false);
         });
-        // git clone outputs only to stderr but we connect stdout anyway.
-        connect(process, &QProcess::readyReadStandardOutput, text, [text, process]() {
-            auto input = process->readAllStandardOutput();
-            auto list = QString::fromLocal8Bit(input).split(QLatin1Char('\r'), Qt::SkipEmptyParts);
-            text->moveCursor(QTextCursor::End);
-            for (auto &i : std::as_const(list)) {
-                text->moveCursor(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
-                text->textCursor().removeSelectedText();
-                text->insertPlainText(i);
-            }
-        });
-        connect(process, &QProcess::readyReadStandardError, text, [text, process]() {
-            auto input = process->readAllStandardError();
-            auto list = QString::fromLocal8Bit(input).split(QLatin1Char('\r'), Qt::SkipEmptyParts);
-            text->moveCursor(QTextCursor::End);
-            for (auto &i : std::as_const(list)) {
-                text->moveCursor(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
-                text->textCursor().removeSelectedText();
-                text->insertPlainText(i);
-            }
-        });
-        buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
         progressDialog->setWindowTitle(dialog.windowTitle());
-        progressDialog->setAttribute(Qt::WA_DeleteOnClose);
-        progressDialog->resize(progressDialog->sizeHint() + QSize{200, 0});
         progressDialog->show();
 
         process->setWorkingDirectory(m_contextDir);
         process->start(QStringLiteral("git"), arguments);
         Q_EMIT infoMessage(xi18nd("@info:status", "<application>Git</application> clone repository..."));
-
-        connect(process, &QProcess::finished, this, [progressDialog](int /* exitCode */, QProcess::ExitStatus exitStatus){
-            if (exitStatus == QProcess::ExitStatus::NormalExit) {
-                progressDialog->close();
-            }
-        });
     }
 }
 

@@ -8,6 +8,7 @@ target_sources(fileviewgitplugin PRIVATE
     clonedialog.cpp
     commitdialog.cpp
     tagdialog.cpp
+    progressdialog.cpp
     pushdialog.cpp
     pulldialog.cpp
     gitwrapper.cpp
@@ -17,6 +18,7 @@ target_sources(fileviewgitplugin PRIVATE
     clonedialog.h
     commitdialog.h
     tagdialog.h
+    progressdialog.h
     pushdialog.h
     pulldialog.h
     gitwrapper.h
