@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:40+0000\n"
-"PO-Revision-Date: 2024-04-19 16:36+0300\n"
+"PO-Revision-Date: 2024-04-24 10:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -158,7 +158,7 @@ msgstr "Клонувати до мінімального сховища"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "Адреса:"
 
 #: clonedialog.cpp:61
 #, kde-format

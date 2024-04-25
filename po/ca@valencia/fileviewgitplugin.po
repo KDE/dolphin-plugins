@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:40+0000\n"
-"PO-Revision-Date: 2024-04-19 08:49+0200\n"
+"PO-Revision-Date: 2024-04-24 11:19+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -160,7 +160,7 @@ msgstr "Clona en un repositori nu"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:61
 #, kde-format
@@ -666,7 +666,3 @@ msgstr "Els noms de les branques no poden contindre espais en blanc."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Ja existix una branca anomenada «%1»."
-
-#~ msgctxt "@label:textbox"
-#~ msgid "URL:"
-#~ msgstr "URL:"

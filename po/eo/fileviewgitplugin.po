@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:40+0000\n"
-"PO-Revision-Date: 2024-04-21 17:45+0100\n"
+"PO-Revision-Date: 2024-04-24 19:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -156,7 +156,7 @@ msgstr "Kloni En Krudan Deponejon"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:61
 #, kde-format
@@ -647,7 +647,3 @@ msgstr "Etikednomoj eble ne enhavas blankspacon."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Etikedo nomita '%1' jam ekzistas."
-
-#~ msgctxt "@label:textbox"
-#~ msgid "URL:"
-#~ msgstr "URL:"

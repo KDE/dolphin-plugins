@@ -633,7 +633,3 @@ msgstr "标记名称不能包含空白。"
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "已存在名为“%1”的标记。"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "URL:"
-#~ msgstr "URL："
