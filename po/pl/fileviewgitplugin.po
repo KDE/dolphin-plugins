@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
-"PO-Revision-Date: 2024-04-01 07:54+0200\n"
+"PO-Revision-Date: 2024-04-27 10:07+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -126,12 +126,10 @@ msgstr "gałąź"
 #, kde-format
 msgctxt "@option:check"
 msgid "Depth:"
-msgstr ""
+msgstr "Głębokość:"
 
 #: clonedialog.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Branch:"
 msgstr "Gałąź:"
@@ -140,82 +138,79 @@ msgstr "Gałąź:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr ""
+msgstr "Wgłąb"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Sprawdzenie"
+msgstr "Bez przestawiania się na zmianę"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "Sklonuj do pustego repozytorium"
 
 #: clonedialog.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "Adres URL:"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Katalog:"
 
 #: clonedialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Sklonuj"
 
 #: clonedialog.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Wybierz katalog do sklonowania"
 
 #: clonedialog.cpp:132
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Dziennik"
+msgstr "<application>Git</application> Klonuj"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr "<application>Git</application> Wdrożenie"
+msgstr "<application>Git</application> Dodaj zmianę"
 
 #: commitdialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "Wdrożenie"
+msgstr "Zmiana"
 
 #: commitdialog.cpp:44
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
-msgstr "Opis wdrożenia"
+msgstr "Opis zmiany"
 
 #: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
-msgstr "Dołącz do poprzedniego wdrożenia"
+msgstr "Dołącz do poprzedniej zmiany"
 
 #: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr "Nie ma nic do wprowadzania zmian."
+msgstr "Nie ma niczego do dołączenia."
 
 #: commitdialog.cpp:72
 #, kde-format
@@ -227,13 +222,13 @@ msgstr "Podpisz"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr "Dodaj wiersz \"podpisane przez\" na końcu opisu wdrożenia."
+msgstr "Dodaj wiersz \"podpisane przez\" na końcu opisu zmiany."
 
 #: commitdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr "Najpierw musisz podać opis wdrożenia."
+msgstr "Najpierw trzeba wpisać opis zmiany."
 
 #: fileviewgitplugin.cpp:53
 #, kde-kuit-format
@@ -248,12 +243,12 @@ msgstr "<application>Git</application> Dodaj"
 #: fileviewgitplugin.cpp:63
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr "<application>Git</application> Zmiany"
+msgstr "Pokaż lokalne zmiany <application>Git</application>"
 
 #: fileviewgitplugin.cpp:68
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> Odłóż dobrany"
+msgstr "<application>Git</application> Przywróć dobrane"
 
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
@@ -263,12 +258,12 @@ msgstr "<application>Git</application> Usuń"
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> Sprawdź..."
+msgstr "<application>Git</application> Przestaw się..."
 
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "<application>Git</application> Wdrożenie..."
+msgstr "<application>Git</application> Dodaj zmianę..."
 
 #: fileviewgitplugin.cpp:88
 #, kde-kuit-format
@@ -278,12 +273,12 @@ msgstr "<application>Git</application> Utwórz znacznik..."
 #: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "<application>Git</application> Popchnij..."
+msgstr "<application>Git</application> Wypchnij..."
 
 #: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "<application>Git</application> Pociągnij..."
+msgstr "<application>Git</application> Zaciągnij..."
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
@@ -291,10 +286,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Scal..."
 
 #: fileviewgitplugin.cpp:104
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Dziennik..."
+msgstr "<application>Git</application> Sklonuj..."
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
@@ -304,7 +298,7 @@ msgstr "<application>Git</application> Dziennik..."
 #: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr "Dodawanie plików repozytorium <application>Git</application> ..."
+msgstr "Dodawanie plików do repozytorium <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:429
 #, kde-kuit-format
@@ -363,7 +357,7 @@ msgstr "<application>Git</application> Dziennik"
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
-msgstr "Wdrożenie"
+msgstr "Zmiana"
 
 #: fileviewgitplugin.cpp:528
 #, kde-format
@@ -405,29 +399,24 @@ msgstr ""
 "Odkładanie dobranego pliku z repozytorium <application>Git</application>."
 
 #: fileviewgitplugin.cpp:591
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> Odłóż dobrany"
+msgstr "<application>Git</application> błąd przy uruchamianiu: %1"
 
 #: fileviewgitplugin.cpp:595
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> Niepowodzenie dziennika..."
+msgstr "<application>Git</application> nie udało się sklonować: %1"
 
 #: fileviewgitplugin.cpp:597
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> Sprawdź"
+msgstr "<application>Git</application> ukończono klonowanie."
 
 #: fileviewgitplugin.cpp:632
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "<application>Git</application> Scal..."
+msgstr "<application>Git</application> sklonuj repozytorium..."
 
 #: fileviewgitplugin.cpp:666
 #, kde-kuit-format
@@ -480,12 +469,12 @@ msgstr "Nie udało się wypchnąć gałęzi %1 do %2:%3."
 #: fileviewgitplugin.cpp:775
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr "Popchnięto gałąź %1 do %2:%3."
+msgstr "Wypchnięto gałąź %1 do %2:%3."
 
 #: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr "Popychanie gałęzi %1 do %2:%3..."
+msgstr "Wypchanie gałęzi %1 do %2:%3..."
 
 #: fileviewgitplugin.cpp:797
 #, kde-kuit-format
@@ -495,12 +484,12 @@ msgstr "Nie udało się zaciągnąć gałęzi %1 z %2."
 #: fileviewgitplugin.cpp:798
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr "Pomyślne pociągnięto gałąź %1 z %2."
+msgstr "Pomyślne zaciągnięto gałąź %1 z %2."
 
 #: fileviewgitplugin.cpp:799
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr "Pociąganie gałęzi %1 z %2..."
+msgstr "Zaciąganie gałęzi %1 z %2..."
 
 #: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
 #, kde-kuit-format
@@ -510,7 +499,7 @@ msgstr "Gałąź już jest aktualna."
 #: fileviewgitplugin.cpp:867
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
-msgstr "Wystąpiły sprzeczności przy scalaniu. Napraw je i wdroż wyniki."
+msgstr "Wystąpiły sprzeczności przy scalaniu. Napraw je i dodaj wynik."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
@@ -528,13 +517,13 @@ msgstr "Szerokość okna dialogowego"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr "<application>Git</application> Pociągnij"
+msgstr "<application>Git</application> Zaciągnij"
 
 #: pulldialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
-msgstr "Pociągnij"
+msgstr "Zaciągnij"
 
 #: pulldialog.cpp:44
 #, kde-format
@@ -558,13 +547,13 @@ msgstr "Zdalna gałąź:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr "<application>Git</application> Popchnij"
+msgstr "<application>Git</application> Wypchnij"
 
 #: pushdialog.cpp:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr "Popchnij"
+msgstr "Wypchnij"
 
 #: pushdialog.cpp:47
 #, kde-format
@@ -615,7 +604,7 @@ msgstr "Utwórz znacznik"
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
-msgstr "Informacje o znaczniku"
+msgstr "Szczegóły znacznika"
 
 #: tagdialog.cpp:53
 #, kde-format
@@ -627,7 +616,7 @@ msgstr "Nazwa znacznika:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr "Wiadomość znacznika:"
+msgstr "Opis znacznika:"
 
 #: tagdialog.cpp:72
 #, kde-format
