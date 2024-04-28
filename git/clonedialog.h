@@ -25,10 +25,7 @@ public:
     QString url() const;
     QString directory() const;
     QString branch() const;
-    uint depth() const;
     bool recursive() const;
-    bool noCheckout() const;
-    bool bare() const;
 
 private Q_SLOTS:
     void urlChanged();
@@ -39,17 +36,14 @@ private:
     QString extractRepositoryName(const QString &input);
 
     QLineEdit *m_branch;
-    QCheckBox *m_branchCheck;
-    QLineEdit *m_depth;
-    QCheckBox *m_depthCheck;
     QLineEdit *m_url;
     QLineEdit *m_dir;
     QDialogButtonBox *m_buttonBox;
     QCheckBox *m_recursive;
-    QCheckBox *m_noCheckout;
-    QCheckBox *m_bare;
     QPushButton *m_okButton;
+
     QString m_contextDir;
+    QString m_repositoryName;
 };
 
 #endif // CLONEDIALOG_H

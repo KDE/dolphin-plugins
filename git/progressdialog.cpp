@@ -16,6 +16,7 @@ ProgressDialog::ProgressDialog(QProcess *process, QWidget *parent)
     : QDialog(parent, Qt::Dialog)
 {
     m_text = new QPlainTextEdit;
+    m_text->setReadOnly(true);
 
     QVBoxLayout *layout = new QVBoxLayout;
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);

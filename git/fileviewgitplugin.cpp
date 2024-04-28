@@ -567,16 +567,6 @@ void FileViewGitPlugin::clone()
         if (dialog.recursive()) {
             arguments << QStringLiteral("--recurse-submodules");
         }
-        if (dialog.bare()) {
-            arguments << QStringLiteral("--bare");
-        }
-        if (dialog.noCheckout()) {
-            arguments << QStringLiteral("--no-checkout");
-        }
-        const auto depth = dialog.depth();
-        if (depth > 0) {
-            arguments << QStringLiteral("--depth") << QString::number(depth);
-        }
         const QString branch = dialog.branch();
         if (!branch.isEmpty()) {
             arguments << QStringLiteral("--branch") << branch;
@@ -601,7 +591,7 @@ void FileViewGitPlugin::clone()
 
         process->setWorkingDirectory(m_contextDir);
         process->start(QStringLiteral("git"), arguments);
-        Q_EMIT infoMessage(xi18nd("@info:status", "<application>Git</application> clone repository..."));
+        Q_EMIT infoMessage(xi18nd("@info:status", "<application>Git</application> cloning repository..."));
     }
 }
 

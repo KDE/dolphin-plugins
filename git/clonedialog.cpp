@@ -15,61 +15,36 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QFontMetrics>
-#include <QGridLayout>
-#include <QHBoxLayout>
-#include <QIntValidator>
+#include <QFormLayout>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QString>
-#include <QVBoxLayout>
-
-#include <limits>
 
 CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
     : QDialog(parent, Qt::Dialog)
 {
-    static const auto minWidth = fontMetrics().horizontalAdvance(QStringLiteral("123456789_text"));
+    static const auto minWidth = fontMetrics().horizontalAdvance(QStringLiteral("https://invent.kde.org/sdk/dolphin-plugins.git"));
 
     m_contextDir = contextDir;
 
     m_url = new QLineEdit;
+    m_url->setPlaceholderText(i18nc("a placeholder", "a git repository url or path"));
     m_dir = new QLineEdit;
-    m_url->setMinimumWidth(minWidth * 2);
-    m_dir->setMinimumWidth(minWidth * 2);
+    m_url->setMinimumWidth(minWidth * 1.3);
 
-    m_depthCheck = new QCheckBox(i18nc("@option:check", "Depth:"));
-    m_depth = new QLineEdit;
-    m_depth->setMinimumWidth(minWidth);
-    m_depth->setMaximumWidth(minWidth);
-    m_depth->setEnabled(false);
-    m_depth->setValidator(new QIntValidator(1, std::numeric_limits<int>::max()));
-
-    m_branchCheck = new QCheckBox(i18nc("@option:check", "Branch:"));
     m_branch = new QLineEdit;
-    m_branch->setMinimumWidth(minWidth);
-    m_branch->setMaximumWidth(minWidth);
-    m_branch->setEnabled(false);
+    m_branch->setPlaceholderText(QStringLiteral("HEAD"));
+    m_recursive = new QCheckBox();
+    m_recursive->setChecked(true);
+    m_recursive->setToolTip(i18nc("@info:tooltip submodules as in git submodules", "Recursively clone submodules"));
 
-    m_recursive = new QCheckBox(i18nc("@option:check", "Recursive"));
-    m_noCheckout = new QCheckBox(i18nc("@option:check", "No Checkout"));
-    m_bare = new QCheckBox(i18nc("@option:check", "Clone Into Bare Repo"));
+    auto layout = new QFormLayout();
+    layout->addRow(new QLabel(i18nc("@label:textbox", "Url:")), m_url);
+    layout->addRow(new QLabel(i18nc("@label:textbox", "Directory:")), m_dir);
 
-    QGridLayout *gridLayout = new QGridLayout;
-    gridLayout->addWidget(new QLabel(i18nc("@label:textbox", "Url:")), 0, 0);
-    gridLayout->addWidget(m_url, 0, 1, 1, -1);
-    gridLayout->addWidget(new QLabel(i18nc("@label:textbox", "Directory:")), 1, 0);
-    gridLayout->addWidget(m_dir, 1, 1, 1, -1);
-    gridLayout->addWidget(m_recursive, 2, 0);
-    gridLayout->addWidget(m_depthCheck, 3, 0);
-    gridLayout->addWidget(m_depth, 3, 1);
-    gridLayout->addWidget(m_noCheckout, 3, 2);
-    gridLayout->addWidget(m_branchCheck, 4, 0);
-    gridLayout->addWidget(m_branch, 4, 1);
-    gridLayout->addWidget(m_bare, 4, 2);
-    gridLayout->setColumnStretch(0, 0);
-    gridLayout->setColumnStretch(1, 1);
-    gridLayout->setColumnStretch(2, 1);
+    layout->addRow(new QLabel(i18nc("@label:textbox", "Branch:")), m_branch);
+    layout->addRow(new QLabel(i18nc("@label:textbox", "Recursive")), m_recursive);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     m_okButton = m_buttonBox->button(QDialogButtonBox::Ok);
@@ -78,7 +53,7 @@ CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
     m_okButton->setEnabled(false);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addLayout(gridLayout);
+    mainLayout->addLayout(layout);
     mainLayout->addWidget(m_buttonBox);
 
     setLayout(mainLayout);
@@ -88,18 +63,6 @@ CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
      */
     connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-    connect(m_depthCheck, &QCheckBox::clicked, this, [this](bool enabled) {
-        m_depth->setEnabled(enabled);
-        if (enabled) {
-            m_depth->setFocus();
-        }
-    });
-    connect(m_branchCheck, &QCheckBox::clicked, this, [this](bool enabled) {
-        m_branch->setEnabled(enabled);
-        if (enabled) {
-            m_branch->setFocus();
-        }
-    });
     QAction *pickDirectory = m_dir->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
 
     connect(pickDirectory, &QAction::triggered, this, [this]() {
@@ -190,26 +153,31 @@ QString CloneDialog::extractRepositoryName(const QString &_input)
 void CloneDialog::urlChanged()
 {
     auto input = m_url->text();
+    if (input.isEmpty()) {
+        m_okButton->setEnabled(false);
+        return;
+    }
+
     // allow to work with "git clone ..." command
     if (input.startsWith(QStringLiteral("git clone "))) {
         input = input.mid(10);
         m_url->setText(input);
         return;
     }
-    QString name = extractRepositoryName(input);
 
-    m_okButton->setEnabled(!name.isEmpty());
-
-    if (!name.isEmpty()) {
-        QString destPath = QDir(m_contextDir).filePath(name);
-
-        if (m_dir->text().isEmpty() || m_dir->text() == m_contextDir || m_dir->text() == destPath.chopped(1)) {
-            m_dir->setText(destPath);
-            return;
-        }
-
-        m_okButton->setEnabled(!QFile::exists(m_dir->text()));
+    m_repositoryName = extractRepositoryName(input);
+    if (m_repositoryName.isEmpty()) {
+        m_okButton->setEnabled(false);
+        return;
     }
+
+    QString destPath = QDir(m_contextDir).filePath(m_repositoryName);
+    if (m_dir->text().isEmpty() || m_dir->text() == m_contextDir || m_dir->text() == destPath.chopped(1)) {
+        m_dir->setText(destPath);
+        return;
+    }
+
+    m_okButton->setEnabled(!QFile::exists(m_dir->text()));
 }
 
 void CloneDialog::destinationDirChanged()
@@ -226,8 +194,7 @@ void CloneDialog::destinationDirChanged()
         destinationValid = true;
     }
 
-    const QString name = extractRepositoryName(m_url->text());
-    m_okButton->setEnabled(!name.isEmpty() && destinationValid);
+    m_okButton->setEnabled(!m_repositoryName.isEmpty() && destinationValid);
 }
 
 QString CloneDialog::url() const
@@ -242,35 +209,12 @@ QString CloneDialog::directory() const
 
 QString CloneDialog::branch() const
 {
-    if (m_branchCheck->checkState() == Qt::Checked) {
-        return m_branch->text();
-    } else {
-        return {};
-    }
-}
-
-uint CloneDialog::depth() const
-{
-    if (m_depthCheck->checkState() == Qt::Checked) {
-        return m_depth->text().toInt();
-    } else {
-        return 0;
-    }
+    return m_branch->text();
 }
 
 bool CloneDialog::recursive() const
 {
     return m_recursive->checkState() == Qt::Checked;
-}
-
-bool CloneDialog::noCheckout() const
-{
-    return m_noCheckout->checkState() == Qt::Checked;
-}
-
-bool CloneDialog::bare() const
-{
-    return m_bare->checkState() == Qt::Checked;
 }
 
 #include "moc_clonedialog.cpp"
