@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-04-29 00:41+0000\n"
 "PO-Revision-Date: 2024-04-25 18:00+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -121,61 +121,59 @@ msgctxt ""
 msgid "branch"
 msgstr "Branca"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:32
 #, kde-format
-msgctxt "@option:check"
-msgid "Depth:"
-msgstr "Profunditate:"
+msgctxt "a placeholder"
+msgid "a git repository url or path"
+msgstr ""
 
-#: clonedialog.cpp:48
+#: clonedialog.cpp:40
 #, kde-format
-msgctxt "@option:check"
-msgid "Branch:"
-msgstr "Branca:"
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
+msgstr ""
 
-#: clonedialog.cpp:54
-#, kde-format
-msgctxt "@option:check"
-msgid "Recursive"
-msgstr "Recursive"
-
-#: clonedialog.cpp:55
-#, kde-format
-msgctxt "@option:check"
-msgid "No Checkout"
-msgstr "Nulle Checkout (Extraher)"
-
-#: clonedialog.cpp:56
-#, kde-format
-msgctxt "@option:check"
-msgid "Clone Into Bare Repo"
-msgstr "Clona in Repo Nude"
-
-#: clonedialog.cpp:59
+#: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "Url:"
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "Directorio:"
 
-#: clonedialog.cpp:77
+#: clonedialog.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@option:radio Git Checkout"
+#| msgid "Branch:"
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "Branca:"
+
+#: clonedialog.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Recursive"
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr "Recursive"
+
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Clona"
 
-#: clonedialog.cpp:107
+#: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Selige un directorio de clonar"
 
-#: clonedialog.cpp:124
+#: clonedialog.cpp:87
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -399,42 +397,43 @@ msgstr ""
 "Restabilir files ponite in scena (staged)  ab repositorio de "
 "<application>Git</application>."
 
-#: fileviewgitplugin.cpp:590
+#: fileviewgitplugin.cpp:580
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> error startante: %1"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> clonar falleva: %1"
 
-#: fileviewgitplugin.cpp:596
+#: fileviewgitplugin.cpp:586
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> clona complete."
 
-#: fileviewgitplugin.cpp:604
-#, kde-kuit-format
-msgid "<application>Git</application> clone repository..."
+#: fileviewgitplugin.cpp:594
+#, fuzzy, kde-kuit-format
+#| msgid "<application>Git</application> clone repository..."
+msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> repositorio de clonar ..."
 
-#: fileviewgitplugin.cpp:638
+#: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Commutava a branca '%1'"
 
-#: fileviewgitplugin.cpp:645
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "Head es nunc a %1"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Commutava a nove branca '%1'"
 
-#: fileviewgitplugin.cpp:661
+#: fileviewgitplugin.cpp:651
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -443,12 +442,12 @@ msgstr ""
 "Checkout de <application>Git</application> falleva. Forsan tu directorio de "
 "labor es immunde."
 
-#: fileviewgitplugin.cpp:727
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Etiquetta '%1' create on successo "
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:722
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -457,47 +456,47 @@ msgstr ""
 "Creation de etiquetta de <application>Git</application> falleva. Un "
 "etiquetta con le nomine '%1' jam existe."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Creation de etiquetta de <application>Git</application> falleva."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Pulsar (Pushing) branca %1 a %2:%3 falleva."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Pulsava branca %1 a %2:%3."
 
-#: fileviewgitplugin.cpp:748
+#: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Pulsante branca %1 a %2:%3..."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Tirar branca %1 ex %2 falleva."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Tirate branca %1 ex %2 con successo."
 
-#: fileviewgitplugin.cpp:771
+#: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Tirante branca %1 ex %2 ..."
 
-#: fileviewgitplugin.cpp:823 fileviewgitplugin.cpp:835
+#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Brana ja es actualisate."
 
-#: fileviewgitplugin.cpp:839
+#: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Conflictos de fusion occurreva. Corriger los e committe le exito."
@@ -646,6 +645,22 @@ msgstr "Nmine de etiquetta non pot econtiner alcun spatio blanc."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Un etiquetta nominate '%1' ja existe."
+
+#~ msgctxt "@option:check"
+#~ msgid "Depth:"
+#~ msgstr "Profunditate:"
+
+#~ msgctxt "@option:check"
+#~ msgid "Branch:"
+#~ msgstr "Branca:"
+
+#~ msgctxt "@option:check"
+#~ msgid "No Checkout"
+#~ msgstr "Nulle Checkout (Extraher)"
+
+#~ msgctxt "@option:check"
+#~ msgid "Clone Into Bare Repo"
+#~ msgstr "Clona in Repo Nude"
 
 #~ msgctxt "@label:textbox"
 #~ msgid "URL:"

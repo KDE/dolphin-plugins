@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-04-29 00:41+0000\n"
 "PO-Revision-Date: 2024-04-24 11:19+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -126,61 +126,59 @@ msgctxt ""
 msgid "branch"
 msgstr "branca"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:32
 #, kde-format
-msgctxt "@option:check"
-msgid "Depth:"
-msgstr "Profunditat:"
+msgctxt "a placeholder"
+msgid "a git repository url or path"
+msgstr ""
 
-#: clonedialog.cpp:48
+#: clonedialog.cpp:40
 #, kde-format
-msgctxt "@option:check"
-msgid "Branch:"
-msgstr "Branca:"
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
+msgstr ""
 
-#: clonedialog.cpp:54
-#, kde-format
-msgctxt "@option:check"
-msgid "Recursive"
-msgstr "Recursiu"
-
-#: clonedialog.cpp:55
-#, kde-format
-msgctxt "@option:check"
-msgid "No Checkout"
-msgstr "Sense extraure"
-
-#: clonedialog.cpp:56
-#, kde-format
-msgctxt "@option:check"
-msgid "Clone Into Bare Repo"
-msgstr "Clona en un repositori nu"
-
-#: clonedialog.cpp:59
+#: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "URL:"
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "Directori:"
 
-#: clonedialog.cpp:77
+#: clonedialog.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@option:radio Git Checkout"
+#| msgid "Branch:"
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "Branca:"
+
+#: clonedialog.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Recursive"
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr "Recursiu"
+
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Clona"
 
-#: clonedialog.cpp:107
+#: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Seleccioneu un directori que s'haja de clonar"
 
-#: clonedialog.cpp:124
+#: clonedialog.cpp:87
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -416,42 +414,43 @@ msgstr ""
 "S'han restaurat els fitxers marcats del repositori <application>Git</"
 "application>."
 
-#: fileviewgitplugin.cpp:590
+#: fileviewgitplugin.cpp:580
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "S'ha produït un error en iniciar <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Ha fallat la clonació de <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:596
+#: fileviewgitplugin.cpp:586
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "Es ga completat la clonació de <application>Git</application>."
 
-#: fileviewgitplugin.cpp:604
-#, kde-kuit-format
-msgid "<application>Git</application> clone repository..."
+#: fileviewgitplugin.cpp:594
+#, fuzzy, kde-kuit-format
+#| msgid "<application>Git</application> clone repository..."
+msgid "<application>Git</application> cloning repository..."
 msgstr "Clonació de repositori de <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:638
+#: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "S'ha canviat a la branca «%1»"
 
-#: fileviewgitplugin.cpp:645
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD ara és a %1"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "S'ha canviat a la branca nova «%1»"
 
-#: fileviewgitplugin.cpp:661
+#: fileviewgitplugin.cpp:651
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -460,12 +459,12 @@ msgstr ""
 "No s'ha pogut fer l'extracció de <application>Git</application> "
 "(«checkout»). Potser el directori de treball està brut."
 
-#: fileviewgitplugin.cpp:727
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "L'etiqueta «%1» s'ha creat correctament"
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:722
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -474,47 +473,47 @@ msgstr ""
 "No s'ha pogut crear l'etiqueta a <application>Git</application>. Ja existix "
 "una etiqueta amb el nom «%1»."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "No s'ha pogut crear l'etiqueta a <application>Git</application>."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "La incorporació de la branca %1 a %2:%3 ha fallat."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "S'ha incorporat la branca %1 a %2:%3."
 
-#: fileviewgitplugin.cpp:748
+#: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "S'està incorporant la branca %1 a %2:%3..."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "L'extracció a la branca %1 des de %2 ha fallat."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Extracció correcta a la branca %1 des de %2."
 
-#: fileviewgitplugin.cpp:771
+#: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "S'està extraent a la branca %1 des de %2..."
 
-#: fileviewgitplugin.cpp:823 fileviewgitplugin.cpp:835
+#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "La branca ja està actualitzada."
 
-#: fileviewgitplugin.cpp:839
+#: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
@@ -666,3 +665,19 @@ msgstr "Els noms de les branques no poden contindre espais en blanc."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Ja existix una branca anomenada «%1»."
+
+#~ msgctxt "@option:check"
+#~ msgid "Depth:"
+#~ msgstr "Profunditat:"
+
+#~ msgctxt "@option:check"
+#~ msgid "Branch:"
+#~ msgstr "Branca:"
+
+#~ msgctxt "@option:check"
+#~ msgid "No Checkout"
+#~ msgstr "Sense extraure"
+
+#~ msgctxt "@option:check"
+#~ msgid "Clone Into Bare Repo"
+#~ msgstr "Clona en un repositori nu"

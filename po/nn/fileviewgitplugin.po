@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-04-29 00:41+0000\n"
 "PO-Revision-Date: 2018-06-19 18:37+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -123,65 +123,57 @@ msgctxt ""
 msgid "branch"
 msgstr "grein"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:32
 #, kde-format
-msgctxt "@option:check"
-msgid "Depth:"
+msgctxt "a placeholder"
+msgid "a git repository url or path"
 msgstr ""
 
-#: clonedialog.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
-msgctxt "@option:check"
-msgid "Branch:"
-msgstr "Grein:"
-
-#: clonedialog.cpp:54
+#: clonedialog.cpp:40
 #, kde-format
-msgctxt "@option:check"
-msgid "Recursive"
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
 msgstr ""
 
-#: clonedialog.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
-msgctxt "@option:check"
-msgid "No Checkout"
-msgstr "Sjekk ut"
-
-#: clonedialog.cpp:56
-#, kde-format
-msgctxt "@option:check"
-msgid "Clone Into Bare Repo"
-msgstr ""
-
-#: clonedialog.cpp:59
+#: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr ""
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr ""
 
-#: clonedialog.cpp:77
+#: clonedialog.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@option:radio Git Checkout"
+#| msgid "Branch:"
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "Grein:"
+
+#: clonedialog.cpp:47
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr ""
+
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr ""
 
-#: clonedialog.cpp:107
+#: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr ""
 
-#: clonedialog.cpp:124
+#: clonedialog.cpp:87
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log"
 msgctxt "@title:window"
@@ -405,48 +397,48 @@ msgstr "Feil ved fjerning av filer frå <application>Git</application>-depot."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Tilbakestilte filer frå <application>Git</application>-depot."
 
-#: fileviewgitplugin.cpp:590
+#: fileviewgitplugin.cpp:580
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> lag merkelapp"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:584
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Feil ved <application>Git</application>-logg."
 
-#: fileviewgitplugin.cpp:596
+#: fileviewgitplugin.cpp:586
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> sjekk ut"
 
-#: fileviewgitplugin.cpp:604
+#: fileviewgitplugin.cpp:594
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Merge..."
-msgid "<application>Git</application> clone repository..."
+msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> flett saman …"
 
-#: fileviewgitplugin.cpp:638
+#: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Bytte til greina «%1»"
 
-#: fileviewgitplugin.cpp:645
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD er no ved %1"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Bytte til ny grein «%1»"
 
-#: fileviewgitplugin.cpp:661
+#: fileviewgitplugin.cpp:651
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -455,12 +447,12 @@ msgstr ""
 "Feil ved <application>Git</application>-utsjekking. Det kan vera fordi "
 "arbeidsmappa di ikkje er tom frå før."
 
-#: fileviewgitplugin.cpp:727
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Lagde merkelappen «%1»"
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:722
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -469,47 +461,47 @@ msgstr ""
 "Feil ved laging av <application>Git</application>-merkelapp. Det finat alt "
 "ein merkelapp med namn «%1»."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Feil ved laging av <application>Git</application>-merkelapp."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Feil ved innsending av grein %1 til %2:%3."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Sende inn grein %1 til %2:%3."
 
-#: fileviewgitplugin.cpp:748
+#: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Sender inn grein %1 til %2:%3 …"
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Feil ved henting av grein %1 frå %2."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Henta grein %1 frå %2."
 
-#: fileviewgitplugin.cpp:771
+#: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Hentar grein %1 frå %2 …"
 
-#: fileviewgitplugin.cpp:823 fileviewgitplugin.cpp:835
+#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Greina er alt oppdatert."
 
-#: fileviewgitplugin.cpp:839
+#: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Det finst flettekonfliktar. Fiks dei og meld inn resultatet."
@@ -659,3 +651,17 @@ msgstr "Namn på merkelappar kan ikkje innehalda blankteikn."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Det finst alt ein merkelapp med namn «%1»."
+
+#, fuzzy
+#~| msgctxt "@option:radio Git Checkout"
+#~| msgid "Branch:"
+#~ msgctxt "@option:check"
+#~ msgid "Branch:"
+#~ msgstr "Grein:"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Checkout"
+#~ msgctxt "@option:check"
+#~ msgid "No Checkout"
+#~ msgstr "Sjekk ut"

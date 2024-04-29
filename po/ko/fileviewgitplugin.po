@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-04-29 00:41+0000\n"
 "PO-Revision-Date: 2020-04-05 12:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -121,65 +121,57 @@ msgctxt ""
 msgid "branch"
 msgstr "branch"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:32
 #, kde-format
-msgctxt "@option:check"
-msgid "Depth:"
+msgctxt "a placeholder"
+msgid "a git repository url or path"
 msgstr ""
 
-#: clonedialog.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
-msgctxt "@option:check"
-msgid "Branch:"
-msgstr "브랜치:"
-
-#: clonedialog.cpp:54
+#: clonedialog.cpp:40
 #, kde-format
-msgctxt "@option:check"
-msgid "Recursive"
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
 msgstr ""
 
-#: clonedialog.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
-msgctxt "@option:check"
-msgid "No Checkout"
-msgstr "체크아웃"
-
-#: clonedialog.cpp:56
-#, kde-format
-msgctxt "@option:check"
-msgid "Clone Into Bare Repo"
-msgstr ""
-
-#: clonedialog.cpp:59
+#: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr ""
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr ""
 
-#: clonedialog.cpp:77
+#: clonedialog.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@option:radio Git Checkout"
+#| msgid "Branch:"
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "브랜치:"
+
+#: clonedialog.cpp:47
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr ""
+
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr ""
 
-#: clonedialog.cpp:107
+#: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr ""
 
-#: clonedialog.cpp:124
+#: clonedialog.cpp:87
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log"
 msgctxt "@title:window"
@@ -402,48 +394,48 @@ msgstr "<application>Git</application> 저장소에서 파일을 삭제할 수 �
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "<application>Git</application> 저장소의 파일로 되돌렸습니다."
 
-#: fileviewgitplugin.cpp:590
+#: fileviewgitplugin.cpp:580
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> 태그 만들기"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:584
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> 로그 실패."
 
-#: fileviewgitplugin.cpp:596
+#: fileviewgitplugin.cpp:586
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> 체크아웃"
 
-#: fileviewgitplugin.cpp:604
+#: fileviewgitplugin.cpp:594
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Merge..."
-msgid "<application>Git</application> clone repository..."
+msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> 합치기..."
 
-#: fileviewgitplugin.cpp:638
+#: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "브랜치 '%1'(으)로 전환함"
 
-#: fileviewgitplugin.cpp:645
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD는 이제 %1을(를) 가리킴"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "새 브랜치 '%1'(으)로 전환함"
 
-#: fileviewgitplugin.cpp:661
+#: fileviewgitplugin.cpp:651
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -452,12 +444,12 @@ msgstr ""
 "<application>Git</application> 체크아웃이 실패했습니다. 작업 디렉터리가 비어 "
 "있지 않을 수도 있습니다."
 
-#: fileviewgitplugin.cpp:727
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "태그 '%1'을(를) 생성함"
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:722
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -466,47 +458,47 @@ msgstr ""
 "<application>Git</application> 태그를 만들 수 없습니다. 이름이 '%1'인 태그가 "
 "이미 존재합니다."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> 태그 생성 실패."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "브랜치 %1을(를) %2:%3(으)로 푸시할 수 없습니다."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "브랜치 %1을(를) %2:%3(으)로 푸시했습니다."
 
-#: fileviewgitplugin.cpp:748
+#: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "브랜치 %1을(를) %2:%3(으)로 푸시하는 중..."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%2에서 브랜치 %1을(를) 풀할 수 없습니다."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%2에서 브랜치 %1을(를) 풀했습니다."
 
-#: fileviewgitplugin.cpp:771
+#: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "%2에서 브랜치 %1을(를) 풀하는 중..."
 
-#: fileviewgitplugin.cpp:823 fileviewgitplugin.cpp:835
+#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "브랜치가 최신 상태입니다."
 
-#: fileviewgitplugin.cpp:839
+#: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "결합 충돌이 발생했습니다. 수정한 후 결과를 커밋하십시오."
@@ -655,3 +647,17 @@ msgstr "태그 이름에는 공백 문자가 들어 있으면 안 됩니다."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "태그 '%1'이(가) 이미 존재합니다."
+
+#, fuzzy
+#~| msgctxt "@option:radio Git Checkout"
+#~| msgid "Branch:"
+#~ msgctxt "@option:check"
+#~ msgid "Branch:"
+#~ msgstr "브랜치:"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Checkout"
+#~ msgctxt "@option:check"
+#~ msgid "No Checkout"
+#~ msgstr "체크아웃"

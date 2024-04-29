@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-04-29 00:41+0000\n"
 "PO-Revision-Date: 2012-08-02 08:04+0600\n"
 "Last-Translator: Sairan Kikkarin\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -121,65 +121,57 @@ msgctxt ""
 msgid "branch"
 msgstr "тармақ"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:32
 #, kde-format
-msgctxt "@option:check"
-msgid "Depth:"
+msgctxt "a placeholder"
+msgid "a git repository url or path"
 msgstr ""
 
-#: clonedialog.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
-msgctxt "@option:check"
-msgid "Branch:"
-msgstr "Тармақ:"
-
-#: clonedialog.cpp:54
+#: clonedialog.cpp:40
 #, kde-format
-msgctxt "@option:check"
-msgid "Recursive"
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
 msgstr ""
 
-#: clonedialog.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
-msgctxt "@option:check"
-msgid "No Checkout"
-msgstr "Жүктеп алу"
-
-#: clonedialog.cpp:56
-#, kde-format
-msgctxt "@option:check"
-msgid "Clone Into Bare Repo"
-msgstr ""
-
-#: clonedialog.cpp:59
+#: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr ""
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr ""
 
-#: clonedialog.cpp:77
+#: clonedialog.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@option:radio Git Checkout"
+#| msgid "Branch:"
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "Тармақ:"
+
+#: clonedialog.cpp:47
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr ""
+
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr ""
 
-#: clonedialog.cpp:107
+#: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr ""
 
-#: clonedialog.cpp:124
+#: clonedialog.cpp:87
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Add"
@@ -457,42 +449,42 @@ msgstr "<application>Git</application> қоймасынан файлдарды �
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "<application>Git</application> қоймасынан файлдар өшірілді."
 
-#: fileviewgitplugin.cpp:590
+#: fileviewgitplugin.cpp:580
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> нұсқаны құруы"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:584
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> нұсқасын құру жаңылысы."
 
-#: fileviewgitplugin.cpp:596
+#: fileviewgitplugin.cpp:586
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> жүктеп алуы"
 
-#: fileviewgitplugin.cpp:604
+#: fileviewgitplugin.cpp:594
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
-msgid "<application>Git</application> clone repository..."
+msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> тығындау..."
 
-#: fileviewgitplugin.cpp:638
+#: fileviewgitplugin.cpp:628
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to branch '%1'"
 msgid "Switched to branch '%1'"
 msgstr "'%1' тармағына ауысу"
 
-#: fileviewgitplugin.cpp:645
+#: fileviewgitplugin.cpp:635
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "@info:status Git HEAD pointer, parameter includes short SHA-1 & commit "
@@ -501,14 +493,14 @@ msgstr "'%1' тармағына ауысу"
 msgid "HEAD is now at %1"
 msgstr "HEAD енді %1 дегенде"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:640
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to a new branch '%1'"
 msgid "Switched to a new branch '%1'"
 msgstr "Жаңа '%1' тармағына ауысты"
 
-#: fileviewgitplugin.cpp:661
+#: fileviewgitplugin.cpp:651
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -521,14 +513,14 @@ msgstr ""
 "<application>Git</application> жүкте алуы жаңылды. Бәлкім, жұмыс каталогыңыз "
 "қоймасымен қадамдас емес шығар ."
 
-#: fileviewgitplugin.cpp:727
+#: fileviewgitplugin.cpp:717
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Successfully created tag '%1'"
 msgid "Successfully created tag '%1'"
 msgstr "'%1' нұсқасы сәтті құрылды"
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:722
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -541,63 +533,63 @@ msgstr ""
 "<application>Git</application> нұсқасын құру жаңылысы. '%1' деп аталған "
 "нұсқасы бар екен."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:725
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> нұсқасын құру жаңылысы."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:736
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "%1 тармағын %2:%3 дегенге тығындау жаңылысы."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:737
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushed branch %1 to %2:%3."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%1 тармағы %2:%3 дегенге тығындалды."
 
-#: fileviewgitplugin.cpp:748
+#: fileviewgitplugin.cpp:738
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%1 тармағын %2:%3 дегенге тығындау..."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:759
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%1 тармағын %2 дегенен суырып алу жаңылысы."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:760
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%1 тармағын %2 дегенен сәтті суырып алынды."
 
-#: fileviewgitplugin.cpp:771
+#: fileviewgitplugin.cpp:761
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "%1 тармағын %2 дегенен суырып алу..."
 
-#: fileviewgitplugin.cpp:823 fileviewgitplugin.cpp:835
+#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Branch is already up-to-date."
 msgid "Branch is already up-to-date."
 msgstr "Тармақ қадамдас екен."
 
-#: fileviewgitplugin.cpp:839
+#: fileviewgitplugin.cpp:829
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Merge conflicts occurred. Fix them and commit the result."
@@ -748,3 +740,17 @@ msgstr "Нұсқаның атауында бос орындар болмау к�
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "'%1' деп аталған нұсқа бар екен."
+
+#, fuzzy
+#~| msgctxt "@option:radio Git Checkout"
+#~| msgid "Branch:"
+#~ msgctxt "@option:check"
+#~ msgid "Branch:"
+#~ msgstr "Тармақ:"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Checkout"
+#~ msgctxt "@option:check"
+#~ msgid "No Checkout"
+#~ msgstr "Жүктеп алу"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-04-29 00:41+0000\n"
 "PO-Revision-Date: 2024-04-27 20:46+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -125,61 +125,59 @@ msgctxt ""
 msgid "branch"
 msgstr "adarra"
 
-#: clonedialog.cpp:41
+#: clonedialog.cpp:32
 #, kde-format
-msgctxt "@option:check"
-msgid "Depth:"
-msgstr "Sakonera:"
+msgctxt "a placeholder"
+msgid "a git repository url or path"
+msgstr ""
 
-#: clonedialog.cpp:48
+#: clonedialog.cpp:40
 #, kde-format
-msgctxt "@option:check"
-msgid "Branch:"
-msgstr "Adarra:"
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
+msgstr ""
 
-#: clonedialog.cpp:54
-#, kde-format
-msgctxt "@option:check"
-msgid "Recursive"
-msgstr "Errekurtsiboa"
-
-#: clonedialog.cpp:55
-#, kde-format
-msgctxt "@option:check"
-msgid "No Checkout"
-msgstr "Ez «Checkout»"
-
-#: clonedialog.cpp:56
-#, kde-format
-msgctxt "@option:check"
-msgid "Clone Into Bare Repo"
-msgstr "Klonatu biltegi biluzian"
-
-#: clonedialog.cpp:59
+#: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "URL:"
 
-#: clonedialog.cpp:61
+#: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "Direktorioa:"
 
-#: clonedialog.cpp:77
+#: clonedialog.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@option:radio Git Checkout"
+#| msgid "Branch:"
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "Adarra:"
+
+#: clonedialog.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Recursive"
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr "Errekurtsiboa"
+
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "klonatu"
 
-#: clonedialog.cpp:107
+#: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Hautatu klonatzeko direktorio bat"
 
-#: clonedialog.cpp:124
+#: clonedialog.cpp:87
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
@@ -407,42 +405,43 @@ msgstr ""
 "Etapako fitxategiak <application>Git</application> gordetegitik "
 "lehengoratzea."
 
-#: fileviewgitplugin.cpp:590
+#: fileviewgitplugin.cpp:580
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> errorea abiatzean: %1"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> klonatu huts egin du: %1"
 
-#: fileviewgitplugin.cpp:596
+#: fileviewgitplugin.cpp:586
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> klonatu osatu da"
 
-#: fileviewgitplugin.cpp:604
-#, kde-kuit-format
-msgid "<application>Git</application> clone repository..."
+#: fileviewgitplugin.cpp:594
+#, fuzzy, kde-kuit-format
+#| msgid "<application>Git</application> clone repository..."
+msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> klonatu gordetegia..."
 
-#: fileviewgitplugin.cpp:638
+#: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "'%1' adarrera aldatu da"
 
-#: fileviewgitplugin.cpp:645
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "« HEAD » orain %1-(e)n dago"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "'%1' adar berri batera aldatu da"
 
-#: fileviewgitplugin.cpp:661
+#: fileviewgitplugin.cpp:651
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -451,12 +450,12 @@ msgstr ""
 "<application>Git</application> Checkout (adarra aldatzea) huts egin du. "
 "Agian zure laneko direktorioa zikin dago."
 
-#: fileviewgitplugin.cpp:727
+#: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "'%1' etiketa sorrera arrakastatsua"
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:722
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -465,47 +464,47 @@ msgstr ""
 "<application>Git</application> etiketa sortzea huts egin du. '%1' "
 "izenekoetiketa bat badago lehendik ere."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> etiketa sortzea huts egin du."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "%1 adarra %2:%3-(e)ra bultzatzea huts egin du."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%1 adarra %2:%3-(e)ra bultzatu da."
 
-#: fileviewgitplugin.cpp:748
+#: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%1 adarra %2:%3-(e)ra bultzatzen..."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%1 adarrari %2-(e)tik tira egitea huts egin du."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%1 adarrari %2-(e)tik tira egitea arrakastatsua"
 
-#: fileviewgitplugin.cpp:771
+#: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "%1 adarrari %2-(e)tik tira egiten..."
 
-#: fileviewgitplugin.cpp:823 fileviewgitplugin.cpp:835
+#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Adarra egunean dago dagoeneko."
 
-#: fileviewgitplugin.cpp:839
+#: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Bateratze gatazkak egon dira. Haiek konpondu eta baliozkotu emaitza."
@@ -654,6 +653,22 @@ msgstr "Etiketa izenek ezin dute zuriunerik eduki."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "'%1' izeneko etiketa bat badago dagoeneko."
+
+#~ msgctxt "@option:check"
+#~ msgid "Depth:"
+#~ msgstr "Sakonera:"
+
+#~ msgctxt "@option:check"
+#~ msgid "Branch:"
+#~ msgstr "Adarra:"
+
+#~ msgctxt "@option:check"
+#~ msgid "No Checkout"
+#~ msgstr "Ez «Checkout»"
+
+#~ msgctxt "@option:check"
+#~ msgid "Clone Into Bare Repo"
+#~ msgstr "Klonatu biltegi biluzian"
 
 #~ msgctxt "@label:textbox"
 #~ msgid "URL:"
