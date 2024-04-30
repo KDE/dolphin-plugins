@@ -18,14 +18,12 @@ public:
     SvnCheckoutDialog(const QString &contextDir, QWidget *parent = nullptr);
     virtual ~SvnCheckoutDialog() override;
 
+    QString url() const;
+    QString directory() const;
+    bool omitExternals() const;
+
 public Q_SLOTS:
     void on_leRepository_textChanged(const QString &text);
-    void on_pbOk_clicked();
-
-Q_SIGNALS:
-    void infoMessage(const QString &msg);
-    void errorMessage(const QString &msg);
-    void operationCompletedMessage(const QString &msg);
 
 private:
     Ui::SvnCheckoutDialog m_ui;

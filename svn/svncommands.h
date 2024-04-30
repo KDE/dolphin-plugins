@@ -15,6 +15,7 @@
 
 class QTemporaryFile;
 class QFileDevice;
+class QProcess;
 
 /**
  * SVN commands execution results.
@@ -177,14 +178,15 @@ public:
     static QSharedPointer<QVector<logEntry>> getLog(const QString &filePath, uint maxEntries = 255, ulong fromRevision = 0);
 
     /**
-     * Check out a working copy of repository \p URL (local URL starts with a 'file://') to a local
-     * path \p whereto (could be relative ot absolute).
+     * Check out a working copy of repository \p url (local URL starts with a 'file://') to a local
+     * path \p whereto (could be relative ot absolute), \p parent is a parent widget of newly
+     * created QProcess.
      *
-     * \return True if check out success, false either.
+     * \return Valid QProcess of executed svn command, or empty optional.
      *
-     * \note This function can be really time consuming.
+     * \note Checkout SVN repository can be time consuming.
      */
-    static bool checkoutRepository(const QString &url, bool ignoreExternals, const QString &whereto);
+    static QProcess *checkoutRepository(QObject *parent, const QString &url, bool ignoreExternals, const QString &whereto);
 };
 
 #endif // SVNCOMMANDS_H

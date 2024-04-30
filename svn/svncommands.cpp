@@ -369,23 +369,16 @@ QSharedPointer<QVector<logEntry>> SvnCommands::getLog(const QString &filePath, u
     return log;
 }
 
-bool SvnCommands::checkoutRepository(const QString &url, bool ignoreExternals, const QString &whereto)
+QProcess *SvnCommands::checkoutRepository(QObject *parent, const QString &url, bool ignoreExternals, const QString &whereto)
 {
-    QStringList params;
-    params.append(QStringLiteral("checkout"));
-    params.append(url);
+    QStringList params = {QStringLiteral("checkout"), url};
     if (ignoreExternals) {
-        params.append(QStringLiteral("--ignore-externals"));
+        params << QStringLiteral("--ignore-externals");
     }
-    params.append(whereto);
+    params << whereto;
 
-    QProcess process;
-    process.start(QLatin1String("svn"), params);
+    QProcess *process = new QProcess(parent);
+    process->start(QLatin1String("svn"), params);
 
-    // Without timeout because it could be expensive time consuming operation.
-    if (!process.waitForFinished(-1) || process.exitCode() != 0) {
-        return false;
-    } else {
-        return true;
-    }
+    return process;
 }

@@ -485,9 +485,28 @@ void FileViewSvnPlugin::checkoutDialog()
 {
     SvnCheckoutDialog *svnCheckoutDialog = new SvnCheckoutDialog(m_contextDir, m_parentWidget);
 
-    connect(svnCheckoutDialog, &SvnCheckoutDialog::infoMessage, this, &FileViewSvnPlugin::infoMessage);
-    connect(svnCheckoutDialog, &SvnCheckoutDialog::errorMessage, this, &FileViewSvnPlugin::errorMessage);
-    connect(svnCheckoutDialog, &SvnCheckoutDialog::operationCompletedMessage, this, &FileViewSvnPlugin::operationCompletedMessage);
+    connect(svnCheckoutDialog, &SvnCheckoutDialog::accepted, this, [this, svnCheckoutDialog]() {
+        const QString url = svnCheckoutDialog->url();
+        const bool omitExternals = svnCheckoutDialog->omitExternals();
+        const QString whereto = svnCheckoutDialog->directory();
+
+        Q_EMIT infoMessage(i18nc("@info:status", "SVN checkout: checkout in process..."));
+        QProcess *process = SvnCommands::checkoutRepository(this, url, omitExternals, whereto);
+        connect(process, &QProcess::errorOccurred, this, [this, process](QProcess::ProcessError) {
+            const QString commandLine = process->program() + process->arguments().join(QLatin1Char(' '));
+            Q_EMIT errorMessage(i18nc("@info:status", "SVN error starting: %1", commandLine));
+        });
+        connect(process, &QProcess::finished, process, [this, process](int exitCode, QProcess::ExitStatus) {
+            if (exitCode != EXIT_SUCCESS) {
+                Q_EMIT errorMessage(i18nc("@info:status", "SVN checkout: checkout failed: %1", process->errorString()));
+            } else {
+                Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN checkout: checkout successful."));
+            }
+        });
+
+        SvnProgressDialog *progressDialog = new SvnProgressDialog(i18nc("@title:window", "SVN Checkout"), m_contextDir, m_parentWidget);
+        progressDialog->connectToProcess(process);
+    });
 
     svnCheckoutDialog->setAttribute(Qt::WA_DeleteOnClose);
     svnCheckoutDialog->show();

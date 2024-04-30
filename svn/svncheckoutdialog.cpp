@@ -12,8 +12,6 @@
 #include <QFileDialog>
 #include <QUrl>
 
-#include "svncommands.h"
-
 namespace
 {
 
@@ -57,7 +55,8 @@ SvnCheckoutDialog::SvnCheckoutDialog(const QString &contextDir, QWidget *parent)
     /*
      * Add actions, establish connections.
      */
-    connect(m_ui.pbCancel, &QPushButton::clicked, this, &QWidget::close);
+    connect(m_ui.pbOk, &QPushButton::clicked, this, &QDialog::accept);
+    connect(m_ui.pbCancel, &QPushButton::clicked, this, &QDialog::reject);
     QAction *pickDirectory = m_ui.leCheckoutDir->addAction(QIcon::fromTheme(QStringLiteral("folder")), QLineEdit::TrailingPosition);
     connect(pickDirectory, &QAction::triggered, this, [this]() {
         const QString dir = QFileDialog::getExistingDirectory(this,
@@ -83,6 +82,21 @@ SvnCheckoutDialog::SvnCheckoutDialog(const QString &contextDir, QWidget *parent)
 
 SvnCheckoutDialog::~SvnCheckoutDialog() = default;
 
+QString SvnCheckoutDialog::url() const
+{
+    return m_ui.leRepository->text();
+}
+
+QString SvnCheckoutDialog::directory() const
+{
+    return m_ui.leCheckoutDir->text();
+}
+
+bool SvnCheckoutDialog::omitExternals() const
+{
+    return m_ui.cbOmitExternals->isChecked();
+}
+
 void SvnCheckoutDialog::on_leRepository_textChanged(const QString &text)
 {
     if (isValidSvnRepoUrl(text)) {
@@ -100,23 +114,6 @@ void SvnCheckoutDialog::on_leRepository_textChanged(const QString &text)
     } else {
         m_ui.pbOk->setEnabled(false);
     }
-}
-
-void SvnCheckoutDialog::on_pbOk_clicked()
-{
-    const QString &url = m_ui.leRepository->text();
-    const bool omitExternals = m_ui.cbOmitExternals->isChecked();
-    const QString &whereto = m_ui.leCheckoutDir->text();
-
-    Q_EMIT infoMessage(i18nc("@info:status", "SVN checkout: checkout in process..."));
-
-    if (!SvnCommands::checkoutRepository(url, omitExternals, whereto)) {
-        Q_EMIT errorMessage(i18nc("@info:status", "SVN checkout: checkout failed."));
-    } else {
-        Q_EMIT operationCompletedMessage(i18nc("@info:status", "SVN checkout: checkout successful."));
-    }
-
-    close();
 }
 
 #include "moc_svncheckoutdialog.cpp"
