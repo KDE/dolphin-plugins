@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-04-24 11:19+0200\n"
+"PO-Revision-Date: 2024-04-29 10:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -130,13 +130,13 @@ msgstr "branca"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "un URL de repositori Git o camí"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Clona els submòduls recursivament"
 
 #: clonedialog.cpp:43
 #, kde-format
@@ -151,17 +151,13 @@ msgid "Directory:"
 msgstr "Directori:"
 
 #: clonedialog.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Branca:"
 
 #: clonedialog.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "Recursiu"
@@ -428,8 +424,7 @@ msgid "<application>Git</application> clone complete."
 msgstr "S'ga completat la clonació de <application>Git</application>."
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "Clonació de repositori de <application>Git</application>..."
 

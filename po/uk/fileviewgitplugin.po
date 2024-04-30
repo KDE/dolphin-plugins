@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-04-24 10:51+0300\n"
+"PO-Revision-Date: 2024-04-29 08:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -128,13 +128,13 @@ msgstr "гілка"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "адреса або шлях до сховища git"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Рекурсивно клонувати підмодулі"
 
 #: clonedialog.cpp:43
 #, kde-format
@@ -149,17 +149,13 @@ msgid "Directory:"
 msgstr "Каталог:"
 
 #: clonedialog.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Гілка:"
 
 #: clonedialog.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "Рекурсивно"
@@ -418,10 +414,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "Клонування <application>Git</application> завершено."
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "Сховище клонування <application>Git</application>…"
+msgstr "Клонування сховища <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format

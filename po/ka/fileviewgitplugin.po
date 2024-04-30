@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-04-24 06:59+0200\n"
+"PO-Revision-Date: 2024-04-29 10:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -126,13 +126,13 @@ msgstr "ბრენჩი"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "git რეპოზიტორიის url და ბილიკი"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "ქვემოდულების რეკურსიული დაკლონვა"
 
 #: clonedialog.cpp:43
 #, kde-format
@@ -147,17 +147,13 @@ msgid "Directory:"
 msgstr "საქაღალდე:"
 
 #: clonedialog.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "ბრენჩი:"
 
 #: clonedialog.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "რეკურსიული"
@@ -414,8 +410,7 @@ msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> დაკლონვა დასრულდა."
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> რეპოზიტორიის დაკლონვა..."
 

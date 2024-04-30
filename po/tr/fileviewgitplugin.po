@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-04-24 14:37+0300\n"
+"PO-Revision-Date: 2024-04-29 15:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -53,7 +53,7 @@ msgstr "Seçenekler"
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
-msgstr "Yeni Dal Oluştur: "
+msgstr "Yeni dal oluştur: "
 
 #: checkoutdialog.cpp:77
 #, kde-format
@@ -127,13 +127,13 @@ msgstr "dal"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "Bir Git deposu URL’si veya yolu"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Altmodülleri özyineli olarak klonla"
 
 #: clonedialog.cpp:43
 #, kde-format
@@ -148,17 +148,13 @@ msgid "Directory:"
 msgstr "Dizin:"
 
 #: clonedialog.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Dal:"
 
 #: clonedialog.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "Özyineli"
@@ -413,10 +409,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> clone tamamlandı."
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> Deposu Klonla…"
+msgstr "<application>Git</application> deposu klonlanıyor…"
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format
@@ -535,7 +530,7 @@ msgstr "Kaynak"
 #, kde-format
 msgctxt "@label:listbox a git remote"
 msgid "Remote:"
-msgstr "Uzak Konum:"
+msgstr "Uzak konum:"
 
 #: pulldialog.cpp:55
 #, kde-format
@@ -571,13 +566,13 @@ msgstr "Dallar"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr "Yerel Dal:"
+msgstr "Yerel dal:"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr "Uzak Dal:"
+msgstr "Uzak dal:"
 
 #: pushdialog.cpp:84
 #, kde-format
@@ -608,13 +603,13 @@ msgstr "Etiket Bilgisi"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
-msgstr "Etiket Adı:"
+msgstr "Etiket adı:"
 
 #: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr "Etiket İletisi:"
+msgstr "Etiket iletisi:"
 
 #: tagdialog.cpp:72
 #, kde-format

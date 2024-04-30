@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-04-24 07:23+0200\n"
+"PO-Revision-Date: 2024-04-29 10:01+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -131,13 +131,13 @@ msgstr "veja"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "url repozitorija git ali pot"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Rekurzivno kloniraj podmodule"
 
 #: clonedialog.cpp:43
 #, kde-format
@@ -152,26 +152,22 @@ msgid "Directory:"
 msgstr "Imenik:"
 
 #: clonedialog.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Veja:"
 
 #: clonedialog.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr "Rekurzivno"
+msgstr "Rekurzivni"
 
 #: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr "Kloniraj"
+msgstr "Klon"
 
 #: clonedialog.cpp:70
 #, kde-format
@@ -421,10 +417,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> kloniranje dokončano."
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> repozitorij klona..."
+msgstr "<application>Git</application> kloniranje repozitorija..."
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format
