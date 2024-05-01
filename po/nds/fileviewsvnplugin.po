@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-05-01 00:40+0000\n"
 "PO-Revision-Date: 2011-01-12 10:06+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -136,8 +136,8 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "Inspelen vun SVN-Ännern is fehlslaan."
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:579
-#: fileviewsvnplugin.cpp:602
+#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
+#: fileviewsvnplugin.cpp:621
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -179,7 +179,7 @@ msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "Dateien ut dat SVN-Archiev wegmaakt."
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:548
+#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu"
 #| msgid "SVN Delete"
@@ -211,26 +211,58 @@ msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "Dateien ut dat SVN-Archiev wegmaakt."
 
-#: fileviewsvnplugin.cpp:553
+#: fileviewsvnplugin.cpp:493
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout in process..."
+msgstr ""
+
+#: fileviewsvnplugin.cpp:497
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN error starting: %1"
+msgstr ""
+
+#: fileviewsvnplugin.cpp:501
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout failed: %1"
+msgstr ""
+
+#: fileviewsvnplugin.cpp:503
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout successful."
+msgstr ""
+
+#: fileviewsvnplugin.cpp:507
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu"
+#| msgid "SVN Commit..."
+msgctxt "@title:window"
+msgid "SVN Checkout"
+msgstr "Na SVN-Archiev inspelen..."
+
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:554
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:555
+#: fileviewsvnplugin.cpp:574
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr ""
 
-#: fileviewsvnplugin.cpp:572 fileviewsvnplugin.cpp:589
-#: fileviewsvnplugin.cpp:594
+#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
+#: fileviewsvnplugin.cpp:613
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Commit of SVN changes failed."
@@ -238,25 +270,25 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr "Inspelen vun SVN-Ännern is fehlslaan."
 
-#: fileviewsvnplugin.cpp:629 fileviewsvnplugin.cpp:655
+#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Inspelen vun SVN-Ännern is fehlslaan."
 
-#: fileviewsvnplugin.cpp:649 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "Na SVN-Archiev inspelen"
 
-#: fileviewsvnplugin.cpp:654
+#: fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN-Ännern warrt inspeelt..."
 
-#: fileviewsvnplugin.cpp:656
+#: fileviewsvnplugin.cpp:675
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -268,28 +300,10 @@ msgstr "SVN-Ännern inspeelt."
 msgid "Show updates"
 msgstr "Opfrischen wiesen"
 
-#: svncheckoutdialog.cpp:64
+#: svncheckoutdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr ""
-
-#: svncheckoutdialog.cpp:111
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout in process..."
-msgstr ""
-
-#: svncheckoutdialog.cpp:114
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout failed."
-msgstr ""
-
-#: svncheckoutdialog.cpp:116
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout successful."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)

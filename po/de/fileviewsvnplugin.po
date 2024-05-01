@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-05-01 00:40+0000\n"
 "PO-Revision-Date: 2021-05-22 12:12+0200\n"
 "Last-Translator: Frank Steinmetzger <dev@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -123,8 +123,8 @@ msgstr ""
 "Lokale SVN-Änderungen können nicht angezeigt werden: Fehler bei der "
 "Ausführung von „svn diff“."
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:579
-#: fileviewsvnplugin.cpp:602
+#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
+#: fileviewsvnplugin.cpp:621
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -168,7 +168,7 @@ msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "Dateien wurden aus dem SVN-Repository entfernt."
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:548
+#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
@@ -194,26 +194,61 @@ msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "Dateien wurden auf den Stand des SVN-Repositorys zurückgesetzt."
 
-#: fileviewsvnplugin.cpp:553
+#: fileviewsvnplugin.cpp:493
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout in process..."
+msgstr "SVN-Abruf läuft ..."
+
+#: fileviewsvnplugin.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Error starting: %1"
+msgctxt "@info:status"
+msgid "SVN error starting: %1"
+msgstr "Fehler beim Start von %1"
+
+#: fileviewsvnplugin.cpp:501
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "SVN checkout: checkout failed."
+msgctxt "@info:status"
+msgid "SVN checkout: checkout failed: %1"
+msgstr "SVN-Abruf fehlgeschlagen."
+
+#: fileviewsvnplugin.cpp:503
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout successful."
+msgstr "SVN-Abruf erfolgreich."
+
+#: fileviewsvnplugin.cpp:507
+#, fuzzy, kde-format
+#| msgid "SVN Checkout"
+msgctxt "@title:window"
+msgid "SVN Checkout"
+msgstr "Abruf (SVN checkout)"
+
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "Dateien werden auf den Stand des SVN-Repositorys zurückgesetzt ..."
 
-#: fileviewsvnplugin.cpp:554
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "Das Zurücksetzen der Datei ist fehlgeschlagen."
 
-#: fileviewsvnplugin.cpp:555
+#: fileviewsvnplugin.cpp:574
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "Die Datei wurde zurückgesetzt."
 
-#: fileviewsvnplugin.cpp:572 fileviewsvnplugin.cpp:589
-#: fileviewsvnplugin.cpp:594
+#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
+#: fileviewsvnplugin.cpp:613
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
@@ -221,25 +256,25 @@ msgstr ""
 "Die lokalen SVN-Änderungen einer Datei können nicht angezeigt werden: die "
 "Datei konnte nicht heruntergeladen werden."
 
-#: fileviewsvnplugin.cpp:629 fileviewsvnplugin.cpp:655
+#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Fehler beim Einspielen der SVN-Änderungen."
 
-#: fileviewsvnplugin.cpp:649 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "Einspielen (SVN commit)"
 
-#: fileviewsvnplugin.cpp:654
+#: fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN-Änderungen werden eingespielt ..."
 
-#: fileviewsvnplugin.cpp:656
+#: fileviewsvnplugin.cpp:675
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -251,29 +286,11 @@ msgstr "SVN-Änderungen wurden eingespielt."
 msgid "Show updates"
 msgstr "Aktualisierungen anzeigen"
 
-#: svncheckoutdialog.cpp:64
+#: svncheckoutdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
 msgstr "Wählen Sie den abzurufenden Ordner aus"
-
-#: svncheckoutdialog.cpp:111
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout in process..."
-msgstr "SVN-Abruf läuft ..."
-
-#: svncheckoutdialog.cpp:114
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout failed."
-msgstr "SVN-Abruf fehlgeschlagen."
-
-#: svncheckoutdialog.cpp:116
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout successful."
-msgstr "SVN-Abruf erfolgreich."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20

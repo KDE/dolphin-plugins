@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-05-01 00:40+0000\n"
 "PO-Revision-Date: 2023-03-09 13:28+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -127,8 +127,8 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "No s'han pogut mostrar els canvis locals de SVN: ha fallat «svn diff»."
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:579
-#: fileviewsvnplugin.cpp:602
+#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
+#: fileviewsvnplugin.cpp:621
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -172,7 +172,7 @@ msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "S'han eliminat els fitxers del repositori SVN."
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:548
+#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
@@ -196,26 +196,61 @@ msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "S'han revertit els fitxers del repositori SVN."
 
-#: fileviewsvnplugin.cpp:553
+#: fileviewsvnplugin.cpp:493
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout in process..."
+msgstr "Extrau de SVN: s'està processant l'extracció..."
+
+#: fileviewsvnplugin.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Error starting: %1"
+msgctxt "@info:status"
+msgid "SVN error starting: %1"
+msgstr "S'ha produït un error en iniciar: %1"
+
+#: fileviewsvnplugin.cpp:501
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "SVN checkout: checkout failed."
+msgctxt "@info:status"
+msgid "SVN checkout: checkout failed: %1"
+msgstr "Extrau de SVN: l'extracció ha fallat."
+
+#: fileviewsvnplugin.cpp:503
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout successful."
+msgstr "Extrau de SVN: l'extracció ha sigut correcta."
+
+#: fileviewsvnplugin.cpp:507
+#, fuzzy, kde-format
+#| msgid "SVN Checkout"
+msgctxt "@title:window"
+msgid "SVN Checkout"
+msgstr "Extrau de SVN"
+
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "S'estan revertint els canvis en el fitxer..."
 
-#: fileviewsvnplugin.cpp:554
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "L'acció de revertir el fitxer ha fallat."
 
-#: fileviewsvnplugin.cpp:555
+#: fileviewsvnplugin.cpp:574
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "S'ha revertit el fitxer."
 
-#: fileviewsvnplugin.cpp:572 fileviewsvnplugin.cpp:589
-#: fileviewsvnplugin.cpp:594
+#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
+#: fileviewsvnplugin.cpp:613
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
@@ -223,25 +258,25 @@ msgstr ""
 "No s'han pogut mostrar els canvis locals de SVN d'un fitxer: no s'ha pogut "
 "aconseguir el fitxer."
 
-#: fileviewsvnplugin.cpp:629 fileviewsvnplugin.cpp:655
+#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "No s'ha pogut fer la comissió dels canvis a SVN."
 
-#: fileviewsvnplugin.cpp:649 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "Comissió a SVN"
 
-#: fileviewsvnplugin.cpp:654
+#: fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "S'estan cometent els canvis a SVN..."
 
-#: fileviewsvnplugin.cpp:656
+#: fileviewsvnplugin.cpp:675
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -253,29 +288,11 @@ msgstr "S'han comés els canvis a SVN."
 msgid "Show updates"
 msgstr "Mostra les actualitzacions"
 
-#: svncheckoutdialog.cpp:64
+#: svncheckoutdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
 msgstr "Seleccioneu el directori que s'ha d'extraure"
-
-#: svncheckoutdialog.cpp:111
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout in process..."
-msgstr "Extrau de SVN: s'està processant l'extracció..."
-
-#: svncheckoutdialog.cpp:114
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout failed."
-msgstr "Extrau de SVN: l'extracció ha fallat."
-
-#: svncheckoutdialog.cpp:116
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout successful."
-msgstr "Extrau de SVN: l'extracció ha sigut correcta."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20

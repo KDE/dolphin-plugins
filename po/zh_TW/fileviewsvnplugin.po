@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-05-01 00:40+0000\n"
 "PO-Revision-Date: 2024-04-17 08:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -123,8 +123,8 @@ msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "無法顯示本機 SVN 變更：svn diff 失敗。"
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:579
-#: fileviewsvnplugin.cpp:602
+#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
+#: fileviewsvnplugin.cpp:621
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -166,7 +166,7 @@ msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "已從 SVN 版本庫移除檔案。"
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:548
+#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
@@ -190,50 +190,85 @@ msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "已從 SVN 版本庫回復檔案。"
 
-#: fileviewsvnplugin.cpp:553
+#: fileviewsvnplugin.cpp:493
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout in process..."
+msgstr "SVN 簽出：正在簽出..."
+
+#: fileviewsvnplugin.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Error starting: %1"
+msgctxt "@info:status"
+msgid "SVN error starting: %1"
+msgstr "啟動時發生錯誤：%1"
+
+#: fileviewsvnplugin.cpp:501
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "SVN checkout: checkout failed."
+msgctxt "@info:status"
+msgid "SVN checkout: checkout failed: %1"
+msgstr "SVN 簽出：簽出失敗。"
+
+#: fileviewsvnplugin.cpp:503
+#, kde-format
+msgctxt "@info:status"
+msgid "SVN checkout: checkout successful."
+msgstr "SVN 簽出：簽出成功。"
+
+#: fileviewsvnplugin.cpp:507
+#, fuzzy, kde-format
+#| msgid "SVN Checkout"
+msgctxt "@title:window"
+msgid "SVN Checkout"
+msgstr "SVN 簽出"
+
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "正在回復對檔案的變更..."
 
-#: fileviewsvnplugin.cpp:554
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "回復檔案失敗。"
 
-#: fileviewsvnplugin.cpp:555
+#: fileviewsvnplugin.cpp:574
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "檔案已回復。"
 
-#: fileviewsvnplugin.cpp:572 fileviewsvnplugin.cpp:589
-#: fileviewsvnplugin.cpp:594
+#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
+#: fileviewsvnplugin.cpp:613
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr "無法顯示本機 SVN 變更：無法取得檔案。"
 
-#: fileviewsvnplugin.cpp:629 fileviewsvnplugin.cpp:655
+#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "提交 SVN 的變更失敗"
 
-#: fileviewsvnplugin.cpp:649 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN 提交"
 
-#: fileviewsvnplugin.cpp:654
+#: fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "提交 SVN 的變更..."
 
-#: fileviewsvnplugin.cpp:656
+#: fileviewsvnplugin.cpp:675
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -245,29 +280,11 @@ msgstr "已提交 SVN 的變更。"
 msgid "Show updates"
 msgstr "顯示更新"
 
-#: svncheckoutdialog.cpp:64
+#: svncheckoutdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
 msgstr "選擇要簽出的目錄"
-
-#: svncheckoutdialog.cpp:111
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout in process..."
-msgstr "SVN 簽出：正在簽出..."
-
-#: svncheckoutdialog.cpp:114
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout failed."
-msgstr "SVN 簽出：簽出失敗。"
-
-#: svncheckoutdialog.cpp:116
-#, kde-format
-msgctxt "@info:status"
-msgid "SVN checkout: checkout successful."
-msgstr "SVN 簽出：簽出成功。"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
