@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2023-11-09 20:08+0100\n"
+"PO-Revision-Date: 2024-05-01 17:30+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -197,20 +197,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN checkout: elpreno en procezo..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Eraro lanĉante: %1"
+msgstr "SVN-eraro lanĉante: %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN checkout: elpreno malsukcesis."
+msgstr "SVN checkout: elpreno malsukcesis: %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -219,8 +215,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN checkout: elpreno sukcesa."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN Checkout"

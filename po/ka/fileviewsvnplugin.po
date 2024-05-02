@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2023-01-09 12:53+0100\n"
+"PO-Revision-Date: 2024-05-01 05:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -197,20 +197,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN გამოთხოვა: გამოთხოვა მიმდინარეობს...."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "გაშვების შეცდომა: %1"
+msgstr "SVN-ის შეცდომა: %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN გამოთხოვა: გამოთხოვის შეცდომა."
+msgstr "SVN გამოთხოვა: გამოთხოვის შეცდომა: %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -219,8 +215,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN გამოთხოვა: გამოთხოვა წარმატებულია."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN გამოთხოვა"

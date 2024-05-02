@@ -1,118 +1,117 @@
-# translation of fileviewgitplugin.pot to esperanto
-# Copyright (C) 2023 Free Software Foundation, Inc.
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
 #
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-05-01 17:30+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
-"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
-"Language: eo\n"
+"PO-Revision-Date: 2024-04-30 09:19+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> Checkout"
+msgstr "<application>Git</application> משיכה"
 
 #: checkoutdialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "Checkout"
+msgstr "משיכה"
 
 #: checkoutdialog.cpp:54
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
-msgstr "Branĉo:"
+msgstr "ענף:"
 
 #: checkoutdialog.cpp:61
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
-msgstr "Tag:"
+msgstr "תגית:"
 
 #: checkoutdialog.cpp:71 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
-msgstr "Opcioj"
+msgstr "אפשרויות"
 
 #: checkoutdialog.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
-msgstr "Krei Novan Filion:"
+msgstr "יצירת ענף חדש:"
 
 #: checkoutdialog.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
-msgstr "Krei novan branĉon surbaze de elektita branĉo aŭ etikedo."
+msgstr "יצירת ענף חדש על בסיס הענף או התגית הנבחרים."
 
 #: checkoutdialog.cpp:92 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
-msgstr "Forto"
+msgstr "בכוח"
 
 #: checkoutdialog.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
-msgstr "Forĵeti lokajn ŝanĝojn."
+msgstr "התעלמות מהשינויים המקומיים."
 
 #: checkoutdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr "Ne estas etikedoj en ĉi tiu deponejo."
+msgstr "אין תגיות במאגר הזה."
 
 #: checkoutdialog.cpp:176
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
-msgstr "Branĉa Bazo"
+msgstr "בסיס ענף"
 
 #: checkoutdialog.cpp:176
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "Checkout"
+msgstr "משיכה"
 
 #: checkoutdialog.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr "Vi devas unue enigi validan nomon por la nova branĉo."
+msgstr "יש למלא קודם שם תקף לענף החדש."
 
 #: checkoutdialog.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr "Branĉo kun la nomo '%1' jam ekzistas."
+msgstr "כבר קיים ענף בשם ‚%1’."
 
 #: checkoutdialog.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
-msgstr "Branĉnomoj eble ne enhavas blankspacon."
+msgstr "שמות הענפים לא יכולים להכיל רווחים."
 
 #: checkoutdialog.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr "Vi devas unue elekti validan branĉon."
+msgstr "קודם יש לבחור בענף תקף."
 
 #: checkoutdialog.cpp:239
 #, kde-format
@@ -120,314 +119,305 @@ msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
 "for a newly created branch"
 msgid "branch"
-msgstr "branĉo"
+msgstr "ענף"
 
 #: clonedialog.cpp:32
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr "git-deponeja url aŭ vojo"
+msgstr "כתובת או נתיב מאגר git"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr "Rikure kloni submodulojn"
+msgstr "שכפול תת־המודולים באופן רקורסיבי"
 
 #: clonedialog.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr "URL:"
+msgstr "כתובת:"
 
 #: clonedialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr "Dosierujo:"
+msgstr "תיקייה:"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
-msgstr "Branĉo:"
+msgstr "ענף:"
 
 #: clonedialog.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr "Rikura"
+msgstr "רקורסיבי"
 
 #: clonedialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr "Kloni"
+msgstr "שכפול"
 
 #: clonedialog.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr "Elekti klonan dosierujon"
+msgstr "בחירת תיקיית שכפול"
 
 #: clonedialog.cpp:87
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Clone"
+msgstr "<application>Git</application> שכפול"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr "<application>Git</application> Commit"
+msgstr "<application>Git</application> הגשה"
 
 #: commitdialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "Enmeti"
+msgstr "הגשה"
 
 #: commitdialog.cpp:44
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
-msgstr "Enmet-mesaĝo"
+msgstr "הודעת הגשה"
 
 #: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
-msgstr "Ŝanĝi lastan enmeton"
+msgstr "הוספת ההגשה האחרונה"
 
 #: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr "Estas nenio por modifi."
+msgstr "אין מה להוסיף."
 
 #: commitdialog.cpp:72
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
-msgstr "Elsaluti"
+msgstr ""
 
 #: commitdialog.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr "Aldoni Signed-off-by linion ĉe la fino de la mesaĝo."
+msgstr ""
 
 #: commitdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr "Vi devas unue enigi enmetomesaĝon."
+msgstr "יש למלא הודעת הגשה תחילה."
 
 #: fileviewgitplugin.cpp:54
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr "<application>Git</application> Revert"
+msgstr "<application>Git</application> החזרה"
 
 #: fileviewgitplugin.cpp:59
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr "<application>Git</application> Add"
+msgstr "<application>Git</application> הוספה"
 
 #: fileviewgitplugin.cpp:64
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr "Montri Lokajn Ŝanĝojn de <application>Git</application>"
+msgstr "הצגת שינויי <application>Git</application> מקומיים"
 
 #: fileviewgitplugin.cpp:69
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> Restaŭri enscenigitan"
+msgstr ""
 
 #: fileviewgitplugin.cpp:74
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr "<application>Git</application> Remove"
+msgstr "<application>Git</application> הסרה"
 
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> Checkout..."
+msgstr "<application>Git</application> משיכה…"
 
 #: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "<application>Git</application> Commit..."
+msgstr "<application>Git</application> הגשה…"
 
 #: fileviewgitplugin.cpp:89
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "<application>Git</application> Create Tag..."
+msgstr "<application>Git</application> יצירת תגית…"
 
 #: fileviewgitplugin.cpp:93
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "<application>Git</application> Push..."
+msgstr "<application>Git</application> דחיפה…"
 
 #: fileviewgitplugin.cpp:97
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "<application>Git</application> Pull..."
+msgstr "<application>Git</application> משיכה…"
 
 #: fileviewgitplugin.cpp:101
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "<application>Git</application> Merge..."
+msgstr "<application>Git</application> מיזוג…"
 
 #: fileviewgitplugin.cpp:105
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Clone..."
+msgstr "<application>Git</application> שכפול…"
 
 #: fileviewgitplugin.cpp:109
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr "<application>Git</application> Log..."
+msgstr "<application>Git</application> יומן…"
 
 #: fileviewgitplugin.cpp:429
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr "Aldonante dosierojn al <application>Git</application>-deponejo..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:430
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
-"Aldono de dosieroj al <application>Git</application>-deponejo malsukcesis."
 
 #: fileviewgitplugin.cpp:431
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr "Aldonis dosierojn al <application>Git</application> deponejo."
+msgstr ""
 
 #: fileviewgitplugin.cpp:442
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr "Forigante dosierojn el <application>Git</application> deponejo..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:443
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
-"Forigo de dosieroj el <application>Git</application>-deponejo malsukcesis."
 
 #: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr "Forigis dosierojn el <application>Git</application> deponejo."
+msgstr ""
 
 #: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
-msgstr "Malŝanĝante dosierojn el <application>Git</application> deponejo..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
-"Malŝanĝo de dosieroj el <application>Git</application> deponejo malsukcesis."
 
 #: fileviewgitplugin.cpp:453
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr "Malŝanĝis dosierojn el <application>Git</application> deponejo."
+msgstr ""
 
 #: fileviewgitplugin.cpp:492
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr "<application>Git</application> Log malsukcesis."
+msgstr ""
 
 #: fileviewgitplugin.cpp:513
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr "<application>Git</application> Log"
+msgstr ""
 
 #: fileviewgitplugin.cpp:528
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
-msgstr "Commit"
+msgstr "הגשה"
 
 #: fileviewgitplugin.cpp:529
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
-msgstr "Dato"
+msgstr "תאריך"
 
 #: fileviewgitplugin.cpp:530
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
-msgstr "Mesaĝo"
+msgstr "הודעה"
 
 #: fileviewgitplugin.cpp:531
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
-msgstr "Aŭtoro"
+msgstr "יוצר/ת"
 
 #: fileviewgitplugin.cpp:552
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
-"Restaŭrante enscenigitajn dosierojn el <application>Git</application>-"
-"deponejo..."
 
 #: fileviewgitplugin.cpp:553
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"Restaŭro de enscenigitaj dosieroj el <application>Git</application>-deponejo "
-"malsukcesis."
 
 #: fileviewgitplugin.cpp:554
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
-"Restaŭrante enscenigitajn dosierojn el <application>Git</application>-"
-"deponejo."
 
 #: fileviewgitplugin.cpp:580
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> eraro startigante: %1"
+msgstr ""
 
 #: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> clone malsukcesis: %1"
+msgstr ""
 
 #: fileviewgitplugin.cpp:586
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> clone plenumita."
+msgstr ""
 
 #: fileviewgitplugin.cpp:594
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> klonante deponejon..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr "Ŝanĝis al branĉo '%1'"
+msgstr ""
 
 #: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr "HEAD nun estas ĉe %1"
+msgstr ""
 
 #: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr "Ŝanĝis al nova branĉo '%1'"
+msgstr ""
 
 #: fileviewgitplugin.cpp:651
 #, kde-kuit-format
@@ -435,13 +425,11 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
-"<application>Git</application> Kontrolo malsukcesis. Eble via labordosierujo "
-"estas malpura."
 
 #: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr "Sukcese kreis etikedon '%1'"
+msgstr ""
 
 #: fileviewgitplugin.cpp:722
 #, kde-kuit-format
@@ -449,195 +437,193 @@ msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr ""
-"<application>Git</application> kreado de tag malsukcesis. Etikedo kun la "
-"nomo '%1' jam ekzistas."
 
 #: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
-msgstr "<application>Git</application> kreado de tag malsukcesis."
+msgstr ""
 
 #: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr "Puŝo de branĉo %1 al %2:%3 malsukcesis."
+msgstr ""
 
 #: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr "Puŝis branĉon %1 al %2:%3."
+msgstr ""
 
 #: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr "Puŝante branĉon %1 al %2:%3..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr "Eltiri branĉon %1 el %2 malsukcesis."
+msgstr ""
 
 #: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr "Eltiris branĉon %1 el %2 sukcese."
+msgstr ""
 
 #: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr "Tirante branĉon %1 de %2..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
-msgstr "Branĉo jam estas ĝisdatigita."
+msgstr ""
 
 #: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
-msgstr "Kunfandaj konfliktoj okazis. Riparu ilin kaj enmetu la rezulton."
+msgstr ""
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr "Dialog-alteco"
+msgstr "גובה חלונית"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr "Dialog-larĝeco"
+msgstr "רוחב חלונית"
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr "<application>Git</application> Pull"
+msgstr "<application>Git</application> משיכה"
 
 #: pulldialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
-msgstr "Pull"
+msgstr "משיכה"
 
 #: pulldialog.cpp:44
 #, kde-format
 msgctxt "@title:group The source to pull from"
 msgid "Source"
-msgstr "Fonto"
+msgstr "מקור"
 
 #: pulldialog.cpp:50 pushdialog.cpp:51
 #, kde-format
 msgctxt "@label:listbox a git remote"
 msgid "Remote:"
-msgstr "Fora:"
+msgstr "מרוחק:"
 
 #: pulldialog.cpp:55
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote branch:"
-msgstr "Fora branĉo:"
+msgstr "ענף מרוחק:"
 
 #: pushdialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr "<application>Git</application> Push"
+msgstr "<application>Git</application> דחיפה"
 
 #: pushdialog.cpp:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr "Push"
+msgstr "דחיפה"
 
 #: pushdialog.cpp:47
 #, kde-format
 msgctxt "@title:group The remote host"
 msgid "Destination"
-msgstr "Celo"
+msgstr "יעד"
 
 #: pushdialog.cpp:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Branches"
-msgstr "Branĉoj"
+msgstr "ענפים"
 
 #: pushdialog.cpp:65
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr "Loka Branĉo:"
+msgstr "ענף מקומי:"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr "Fora Branĉo:"
+msgstr "ענף מרוחק:"
 
 #: pushdialog.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch."
-msgstr "Procedu eĉ se la fora branĉo ne estas praulo de la loka branĉo."
+msgstr "להמשיך אפילו אם הענף המרוחק הוא לא הורה קדום של הענף המקומי."
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
-msgstr "<application>Git</application> Create Tag"
+msgstr "<application>Git</application> יצירת תגית"
 
 #: tagdialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Tag"
-msgstr "Krei Etikedon"
+msgstr "יצירת תגית"
 
 #: tagdialog.cpp:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
-msgstr "Etikedaj Informoj"
+msgstr "פרטי תגית"
 
 #: tagdialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
-msgstr "Etikednomo:"
+msgstr "שם התגית:"
 
 #: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr "Etikedmesaĝo:"
+msgstr "הודעת התגית:"
 
 #: tagdialog.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
-msgstr "Alkroĉigu al"
+msgstr "הצמדה אל"
 
 #: tagdialog.cpp:79
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Branch:"
-msgstr "Branĉo:"
+msgstr "ענף:"
 
 #: tagdialog.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
-msgstr "Vi devas unue enigi etikednomon."
+msgstr "קודם יש לבחור שם לתגית."
 
 #: tagdialog.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
-msgstr "Etikednomoj eble ne enhavas blankspacon."
+msgstr "שמות התגיות לא יכולים להכיל רווחים."
 
 #: tagdialog.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr "Etikedo nomita '%1' jam ekzistas."
+msgstr "כבר קיימת תגית בשם ‚%1’."

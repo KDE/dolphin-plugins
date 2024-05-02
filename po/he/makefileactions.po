@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:40+0000\n"
-"PO-Revision-Date: 2024-04-25 09:14+0300\n"
+"PO-Revision-Date: 2024-04-30 09:02+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
-msgstr ""
+msgstr "בניית (Make) ‚%1’%2."
 
 #: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
@@ -31,17 +31,17 @@ msgstr "פעולות על Makefile"
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "אירעה שגיאה בבניית (Make) היעד ‚%1’."
 
 #: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr ""
+msgstr "התהליך הפעיל עבור ‚%1’ נעצר בהצלחה."
 
 #: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "אירעה שגיאה בניסיון לבנות (Make) את היעד ‚%1’."
 
 #: makefileactions.cpp:296
 #, kde-format
@@ -51,22 +51,22 @@ msgstr "Make (&בנייה)…"
 #: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
-msgstr ""
+msgstr "תוסף פעולות ה־Makefile יכול להשתמש רק בקבצים אמינים."
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "קובץ אמין — ביטול הסימון מסיר את האמון."
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "קובץ לא אמין — סימון יהפוך אותו לאמין"
 
 #: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr ""
+msgstr "תוסף Makefile ל־Dolphin"
 
 #: makefileactions.cpp:312
 #, kde-format
@@ -74,6 +74,8 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>אפשר לתת אמון בקובץ הזה?</b><br>קבצים אמינים יכולים להריץ קוד שרירותי עם "
+"הפעלה דרך תפריט ההקשר."
 
 #: makefileactions.cpp:326
 #, kde-format
