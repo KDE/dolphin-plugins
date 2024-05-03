@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-05-03 00:40+0000\n"
 "PO-Revision-Date: 2022-10-18 10:10+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -432,193 +432,193 @@ msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "Seleziona almeno un changeset da esportare."
 
-#: fileviewhgplugin.cpp:92
+#: fileviewhgplugin.cpp:90
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "Aggiungi a <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:97
+#: fileviewhgplugin.cpp:95
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "Rimuovi da <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:102
+#: fileviewhgplugin.cpp:100
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "Rinomina su <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:107
+#: fileviewhgplugin.cpp:105
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "Esegui commit con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:112
+#: fileviewhgplugin.cpp:110
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "Crea etichetta con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:117
+#: fileviewhgplugin.cpp:115
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "Ramifica con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:122
+#: fileviewhgplugin.cpp:120
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "Clona repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:127
+#: fileviewhgplugin.cpp:125
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "Inizializza repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:132
+#: fileviewhgplugin.cpp:130
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "Aggiorna con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:137
+#: fileviewhgplugin.cpp:135
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "Configurazione globale di <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:142
+#: fileviewhgplugin.cpp:140
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "Configurazione del repository di <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:147
+#: fileviewhgplugin.cpp:145
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "Invia a repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:152
+#: fileviewhgplugin.cpp:150
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "Ricevi da repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:157
+#: fileviewhgplugin.cpp:155
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "Ripristina repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:162
+#: fileviewhgplugin.cpp:160
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "Ripristina tutto il repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:167
+#: fileviewhgplugin.cpp:165
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "Annulla con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:172
+#: fileviewhgplugin.cpp:170
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "Fondi con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:177
+#: fileviewhgplugin.cpp:175
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "Bundle di <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:182
+#: fileviewhgplugin.cpp:180
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "Esporta repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:187
+#: fileviewhgplugin.cpp:185
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "Importa repository <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:192
+#: fileviewhgplugin.cpp:190
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "Apri bundle con <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:197
+#: fileviewhgplugin.cpp:195
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "Server di <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:202
+#: fileviewhgplugin.cpp:200
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "Backout di <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:207
+#: fileviewhgplugin.cpp:205
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "Differenze di <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:229
+#: fileviewhgplugin.cpp:227
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:426
+#: fileviewhgplugin.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "Aggiunta dei file al repository <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:427
+#: fileviewhgplugin.cpp:425
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr ""
 "Aggiunta dei file al repository <application>Hg</application> non riuscita."
 
-#: fileviewhgplugin.cpp:428
+#: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "File aggiunti al repository <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:441
+#: fileviewhgplugin.cpp:439
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "Vuoi rimuovere i file selezionati dal repository?"
 
-#: fileviewhgplugin.cpp:443
+#: fileviewhgplugin.cpp:441
 #, kde-format
 msgid "Remove Files"
 msgstr "Rimuovi i file"
 
-#: fileviewhgplugin.cpp:450
+#: fileviewhgplugin.cpp:448
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "Rimozione dei file dal repository <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:451
+#: fileviewhgplugin.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
@@ -626,13 +626,13 @@ msgstr ""
 "La rimozione dei file dal repository <application>Hg</application> non è "
 "riuscita."
 
-#: fileviewhgplugin.cpp:452
+#: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "File rimossi dal repository <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:462
+#: fileviewhgplugin.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
@@ -640,43 +640,43 @@ msgstr ""
 "Ridenominazione dei file nel repository <application>Hg</application> non "
 "riuscita."
 
-#: fileviewhgplugin.cpp:463
+#: fileviewhgplugin.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr "File nel repository <application>Hg</application> rinominato."
 
-#: fileviewhgplugin.cpp:464
+#: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "Ridenominazione del file nel repository <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:474
+#: fileviewhgplugin.cpp:472
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "Nessuna modifica da aggiungere al commit."
 
-#: fileviewhgplugin.cpp:478
+#: fileviewhgplugin.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "Commit del repository <application>Hg</application> non riuscito."
 
-#: fileviewhgplugin.cpp:479
+#: fileviewhgplugin.cpp:477
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "Commit del repository <application>Hg</application> effettuato."
 
-#: fileviewhgplugin.cpp:480
+#: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "Commit del repository <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:490
+#: fileviewhgplugin.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
@@ -684,20 +684,20 @@ msgstr ""
 "Operazione di etichettatura nel repository <application>Hg</application> non "
 "riuscita."
 
-#: fileviewhgplugin.cpp:491
+#: fileviewhgplugin.cpp:489
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
 msgstr "Etichettatura nel repository <application>Hg</application> riuscita."
 
-#: fileviewhgplugin.cpp:492
+#: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "Etichettatura nel repository <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:500
+#: fileviewhgplugin.cpp:498
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
@@ -705,7 +705,7 @@ msgstr ""
 "Aggiornamento della cartella di lavoro <application>Hg</application> non "
 "riuscita."
 
-#: fileviewhgplugin.cpp:501
+#: fileviewhgplugin.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -714,13 +714,13 @@ msgstr ""
 "Aggiornamento della cartella di lavoro <application>Hg</application> "
 "riuscita."
 
-#: fileviewhgplugin.cpp:502
+#: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "Aggiornamento della cartella di lavoro <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:510
+#: fileviewhgplugin.cpp:508
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
@@ -728,7 +728,7 @@ msgstr ""
 "Operazione di ramificazione nel repository <application>Hg</application> non "
 "riuscita."
 
-#: fileviewhgplugin.cpp:511
+#: fileviewhgplugin.cpp:509
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -738,31 +738,31 @@ msgstr ""
 "Operazione di ramificazione nel repository <application>Hg</application> "
 "riuscita."
 
-#: fileviewhgplugin.cpp:512
+#: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr ""
 "Operazione di ramificazione nel repository <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:609
+#: fileviewhgplugin.cpp:607
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
 msgstr "Vuoi annullare le modifiche fatte ai file selezionati?"
 
-#: fileviewhgplugin.cpp:611 fileviewhgplugin.cpp:612 fileviewhgplugin.cpp:633
+#: fileviewhgplugin.cpp:609 fileviewhgplugin.cpp:610 fileviewhgplugin.cpp:631
 #, kde-format
 msgid "Revert"
 msgstr "Ripristina"
 
-#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
+#: fileviewhgplugin.cpp:616 fileviewhgplugin.cpp:637
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr "Ripristino dei file nel repository <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:619 fileviewhgplugin.cpp:640
+#: fileviewhgplugin.cpp:617 fileviewhgplugin.cpp:638
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
@@ -770,7 +770,7 @@ msgstr ""
 "Ripristino dei file nel repository <application>Hg</application> non "
 "riuscito."
 
-#: fileviewhgplugin.cpp:620 fileviewhgplugin.cpp:641
+#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -779,19 +779,19 @@ msgid ""
 msgstr ""
 "Ripristino dei file nel repository <application>Hg</application> riuscito."
 
-#: fileviewhgplugin.cpp:630
+#: fileviewhgplugin.cpp:628
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr ""
 "Vuoi annullare tutte le modifiche fatte nella cartella di lavoro attuale?"
 
-#: fileviewhgplugin.cpp:632
+#: fileviewhgplugin.cpp:630
 #, kde-format
 msgid "Revert All"
 msgstr "Ripristina tutto"
 
-#: fileviewhgplugin.cpp:649
+#: fileviewhgplugin.cpp:647
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
@@ -799,7 +799,7 @@ msgstr ""
 "Generazione delle differenze per il repository <application>Hg</"
 "application>..."
 
-#: fileviewhgplugin.cpp:650
+#: fileviewhgplugin.cpp:648
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
@@ -807,13 +807,13 @@ msgstr ""
 "Impossibile ottenere le differenze del repository <application>Hg</"
 "application>."
 
-#: fileviewhgplugin.cpp:651
+#: fileviewhgplugin.cpp:649
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr "Differenze del repository <application>Hg</application> generate."
 
-#: fileviewhgplugin.cpp:680
+#: fileviewhgplugin.cpp:678
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
@@ -821,38 +821,38 @@ msgstr ""
 "Interruzione: nella cartella di lavoro ci sono modifiche di cui non è stato "
 "effettuato il commit."
 
-#: fileviewhgplugin.cpp:695
+#: fileviewhgplugin.cpp:693
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "Nessuna informazione d'annullamento disponibile."
 
-#: fileviewhgplugin.cpp:706
+#: fileviewhgplugin.cpp:704
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "Vuoi annullare l'ultima transazione?"
 
-#: fileviewhgplugin.cpp:708 fileviewhgplugin.cpp:709
+#: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:707
 #, kde-format
 msgid "Rollback"
 msgstr "Rollback"
 
-#: fileviewhgplugin.cpp:715
+#: fileviewhgplugin.cpp:713
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr ""
 "Esecuzione dell'annullamento sul repository <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:716
+#: fileviewhgplugin.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr ""
 "Annullamento sul repository <application>Hg</application> non riuscito."
 
-#: fileviewhgplugin.cpp:717
+#: fileviewhgplugin.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""

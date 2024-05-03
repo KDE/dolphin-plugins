@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-04-17 08:12+0900\n"
+"PO-Revision-Date: 2024-05-03 03:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -197,20 +197,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN 簽出：正在簽出..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "啟動時發生錯誤：%1"
+msgstr "SVN 啟動時發生錯誤：%1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN 簽出：簽出失敗。"
+msgstr "SVN 簽出：簽出失敗：%1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -219,8 +215,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN 簽出：簽出成功。"
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN 簽出"

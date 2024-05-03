@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2024-05-03 00:40+0000\n"
 "PO-Revision-Date: 2023-08-02 00:29+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -432,257 +432,257 @@ msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
 msgstr "Επιλέξτε τουλάχιστον ένα σύνολο αλλαγών προς εξαγωγή!"
 
-#: fileviewhgplugin.cpp:92
+#: fileviewhgplugin.cpp:90
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
 msgstr "<application>Hg</application> Προσθήκη"
 
-#: fileviewhgplugin.cpp:97
+#: fileviewhgplugin.cpp:95
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
 msgstr "<application>Hg</application> Αφαίρεση"
 
-#: fileviewhgplugin.cpp:102
+#: fileviewhgplugin.cpp:100
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
 msgstr "<application>Hg</application> Μετονομασία"
 
-#: fileviewhgplugin.cpp:107
+#: fileviewhgplugin.cpp:105
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
 msgstr "<application>Hg</application> Υποβολή"
 
-#: fileviewhgplugin.cpp:112
+#: fileviewhgplugin.cpp:110
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
 msgstr "<application>Hg</application>Ετικέτα"
 
-#: fileviewhgplugin.cpp:117
+#: fileviewhgplugin.cpp:115
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
 msgstr "<application>Hg</application> Κλάδος"
 
-#: fileviewhgplugin.cpp:122
+#: fileviewhgplugin.cpp:120
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
 msgstr "<application>Hg</application> Κλώνος"
 
-#: fileviewhgplugin.cpp:127
+#: fileviewhgplugin.cpp:125
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
 msgstr "<application>Hg</application> Εκκίνηση"
 
-#: fileviewhgplugin.cpp:132
+#: fileviewhgplugin.cpp:130
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
 msgstr "<application>Hg</application> Ενημέρωση"
 
-#: fileviewhgplugin.cpp:137
+#: fileviewhgplugin.cpp:135
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
 msgstr "<application>Hg</application> Καθολική Διαμόρφωση"
 
-#: fileviewhgplugin.cpp:142
+#: fileviewhgplugin.cpp:140
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
 msgstr "<application>Hg</application> Διαμόρφωση Αποθετήριου"
 
-#: fileviewhgplugin.cpp:147
+#: fileviewhgplugin.cpp:145
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
 msgstr "<application>Hg</application> Push"
 
-#: fileviewhgplugin.cpp:152
+#: fileviewhgplugin.cpp:150
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
 msgstr "<application>Hg</application> Pull"
 
-#: fileviewhgplugin.cpp:157
+#: fileviewhgplugin.cpp:155
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
 msgstr "<application>Hg</application> Επαναφορά"
 
-#: fileviewhgplugin.cpp:162
+#: fileviewhgplugin.cpp:160
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
 msgstr "<application>Hg</application> Επαναφορά όλων"
 
-#: fileviewhgplugin.cpp:167
+#: fileviewhgplugin.cpp:165
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
 msgstr "<application>Hg</application> Αναίρεση"
 
-#: fileviewhgplugin.cpp:172
+#: fileviewhgplugin.cpp:170
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
 msgstr "<application>Hg</application> Συγχώνευση"
 
-#: fileviewhgplugin.cpp:177
+#: fileviewhgplugin.cpp:175
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
 msgstr "<application>Hg</application> Δέσμη"
 
-#: fileviewhgplugin.cpp:182
+#: fileviewhgplugin.cpp:180
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
 msgstr "<application>Hg</application> Εξαγωγή"
 
-#: fileviewhgplugin.cpp:187
+#: fileviewhgplugin.cpp:185
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
 msgstr "<application>Hg</application> Εισαγωγή"
 
-#: fileviewhgplugin.cpp:192
+#: fileviewhgplugin.cpp:190
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
 msgstr "<application>Hg</application> Αποδέσμευση"
 
-#: fileviewhgplugin.cpp:197
+#: fileviewhgplugin.cpp:195
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
 msgstr "<application>Hg</application> Εξυπηρετώ"
 
-#: fileviewhgplugin.cpp:202
+#: fileviewhgplugin.cpp:200
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
 msgstr "<application>Hg</application> Υπαναχώρηση"
 
-#: fileviewhgplugin.cpp:207
+#: fileviewhgplugin.cpp:205
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
 msgstr "<application>Hg</application> Diff"
 
-#: fileviewhgplugin.cpp:229
+#: fileviewhgplugin.cpp:227
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
 msgstr "<application>Mercurial</application>"
 
-#: fileviewhgplugin.cpp:426
+#: fileviewhgplugin.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
 msgstr "Προσθήκη αρχείων στο αποθετήριο <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:427
+#: fileviewhgplugin.cpp:425
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr ""
 "Η προσθήκη αρχείων στο <application>Hg</application>αποθετήριο απέτυχε."
 
-#: fileviewhgplugin.cpp:428
+#: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
 msgstr "Προστέθηκαν αρχεία στο αποθετήριο <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:441
+#: fileviewhgplugin.cpp:439
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
 msgstr "Επιθυμείτε την αφαίρεση των επιλεγμένων αρχείων του αποθετήριου;"
 
-#: fileviewhgplugin.cpp:443
+#: fileviewhgplugin.cpp:441
 #, kde-format
 msgid "Remove Files"
 msgstr "Αφαίρεση Αρχείων"
 
-#: fileviewhgplugin.cpp:450
+#: fileviewhgplugin.cpp:448
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr "Αφαίρεση αρχείων από το αποθετήριο <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:451
+#: fileviewhgplugin.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr ""
 "Η διαγραφή αρχείων από το <application>Hg</application> αποθετήριο απέτυχε."
 
-#: fileviewhgplugin.cpp:452
+#: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
 msgstr "Αφαιρέθηκαν αρχεία από το αποθετήριο <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:462
+#: fileviewhgplugin.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
 msgstr ""
 "Η μετονομασία αρχείου στο <application>Hg</application> αποθετήριο απέτυχε."
 
-#: fileviewhgplugin.cpp:463
+#: fileviewhgplugin.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr ""
 "Επιτυχής μετονομασία αρχείου στο <application>Hg</application> αποθετήριο."
 
-#: fileviewhgplugin.cpp:464
+#: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
 msgstr "Μετονομασία αρχείου στο αποθετήριο <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:474
+#: fileviewhgplugin.cpp:472
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
 msgstr "Καμία αλλαγή προς υποβολή!"
 
-#: fileviewhgplugin.cpp:478
+#: fileviewhgplugin.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
 msgstr "Η υποβολή στο αποθετήριο <application>Hg</application> απέτυχε."
 
-#: fileviewhgplugin.cpp:479
+#: fileviewhgplugin.cpp:477
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
 msgstr "Έγινε υποβολή στο αποθετήριο <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:480
+#: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
 msgstr "Υποβολή στο αποθετήριο <application> Hg</application>."
 
-#: fileviewhgplugin.cpp:490
+#: fileviewhgplugin.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
 msgstr ""
 "Η λειτουργία ετικέτας στο αποθετήριο <application>Hg</application> απέτυχε."
 
-#: fileviewhgplugin.cpp:491
+#: fileviewhgplugin.cpp:489
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -691,20 +691,20 @@ msgstr ""
 "Η Λειτουργία ετικετοποίησης στο αποθετήριο  <application>Hg</application> "
 "είναι επιτυχής."
 
-#: fileviewhgplugin.cpp:492
+#: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
 msgstr "Λειτουργία ετικετοποίησης στο αποθετήριο <application>Hg</application>"
 
-#: fileviewhgplugin.cpp:500
+#: fileviewhgplugin.cpp:498
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
 msgstr ""
 "Η ενημέρωση του τρέχοντος καταλόγου <application>Hg</application> απέτυχε."
 
-#: fileviewhgplugin.cpp:501
+#: fileviewhgplugin.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -713,13 +713,13 @@ msgstr ""
 "Η ενημέρωση του τρέχοντος καταλόγου <application>Hg</application> είναι "
 "επιτυχής."
 
-#: fileviewhgplugin.cpp:502
+#: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
 msgstr "Ενημερώνετε ο τρέχων κατάλογος <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:510
+#: fileviewhgplugin.cpp:508
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
@@ -727,7 +727,7 @@ msgstr ""
 "Η λειτουργία διακλάδωσης στο αποθετήριο <application>Hg</application> "
 "απέτυχε."
 
-#: fileviewhgplugin.cpp:511
+#: fileviewhgplugin.cpp:509
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -737,37 +737,37 @@ msgstr ""
 "Η λειτουργία διακλάδωσης στο αποθετήριο <application>Hg</application> "
 "ολοκληρώθηκε επιτυχώς."
 
-#: fileviewhgplugin.cpp:512
+#: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
 msgstr "Η λειτουργία διακλάδωσης στο αποθετήριο <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:609
+#: fileviewhgplugin.cpp:607
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
 msgstr "Θα θέλατε να επαναφέρετε τις αλλαγές που έγιναν στα επιλεγμένα αρχεία;"
 
-#: fileviewhgplugin.cpp:611 fileviewhgplugin.cpp:612 fileviewhgplugin.cpp:633
+#: fileviewhgplugin.cpp:609 fileviewhgplugin.cpp:610 fileviewhgplugin.cpp:631
 #, kde-format
 msgid "Revert"
 msgstr "Επαναφορά"
 
-#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
+#: fileviewhgplugin.cpp:616 fileviewhgplugin.cpp:637
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr "Επαναφορά αρχείων στο αποθετήριο <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:619 fileviewhgplugin.cpp:640
+#: fileviewhgplugin.cpp:617 fileviewhgplugin.cpp:638
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr ""
 "Επαναφορά αρχείων στο αποθετήριο <application>Hg</application> απέτυχε."
 
-#: fileviewhgplugin.cpp:620 fileviewhgplugin.cpp:641
+#: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -777,7 +777,7 @@ msgstr ""
 "Η επαναφορά του αποθετηρίου <application>Hg</application> ολοκληρώθηκε "
 "επιτυχώς."
 
-#: fileviewhgplugin.cpp:630
+#: fileviewhgplugin.cpp:628
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
@@ -785,66 +785,66 @@ msgstr ""
 "Θα θέλατε να επαναφέρετε όλες τις αλλαγές που έγιναν στον τρέχοντα κατάλογο "
 "εργασίας;"
 
-#: fileviewhgplugin.cpp:632
+#: fileviewhgplugin.cpp:630
 #, kde-format
 msgid "Revert All"
 msgstr "Επαναφορά όλων"
 
-#: fileviewhgplugin.cpp:649
+#: fileviewhgplugin.cpp:647
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
 msgstr "Δημιουργία diff για το αποθετήριο <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:650
+#: fileviewhgplugin.cpp:648
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
 msgstr ""
 "Δεν μπόρεσα να πάρω το diff του αποθετηρίου <application>Hg</application>."
 
-#: fileviewhgplugin.cpp:651
+#: fileviewhgplugin.cpp:649
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr "Δημιουργία <application>Hg</application> diff επιτυχής."
 
-#: fileviewhgplugin.cpp:680
+#: fileviewhgplugin.cpp:678
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
 msgstr "ματαίωση: μη υποβληθείσες αλλαγές στο τρέχον κατάλογο!"
 
-#: fileviewhgplugin.cpp:695
+#: fileviewhgplugin.cpp:693
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
 msgstr "Δεν υπάρχουν διαθέσιμες πληροφορίες επαναφοράς!"
 
-#: fileviewhgplugin.cpp:706
+#: fileviewhgplugin.cpp:704
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
 msgstr "Θα θέλατε να επαναφέρετε την τελευταία συναλλαγή;"
 
-#: fileviewhgplugin.cpp:708 fileviewhgplugin.cpp:709
+#: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:707
 #, kde-format
 msgid "Rollback"
 msgstr "Επαναφορά"
 
-#: fileviewhgplugin.cpp:715
+#: fileviewhgplugin.cpp:713
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
 msgstr "Εκτέλεση επαναφοράς στο αποθετήριο <application>Hg</application>..."
 
-#: fileviewhgplugin.cpp:716
+#: fileviewhgplugin.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
 msgstr "Η επαναφορά του αποθετηρίου <application>Hg</application> απέτυχε."
 
-#: fileviewhgplugin.cpp:717
+#: fileviewhgplugin.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2020, 2021.
+# Giovanni Sora <g.sora@tiscali.it>, 2020, 2021, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2021-10-31 23:03+0100\n"
+"PO-Revision-Date: 2024-05-02 12:25+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -196,20 +196,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN Checkout: checkout in tractamento..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Error initiante: %1"
+msgstr "Error de SVN initiante: %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN checkout: checkout falleva."
+msgstr "SVN checkout: checkout falleva: %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -218,8 +214,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN Checkout: checkout con successo."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "Checkout de SVN"
