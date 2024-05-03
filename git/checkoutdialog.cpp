@@ -129,9 +129,9 @@ CheckoutDialog::CheckoutDialog(QWidget *parent)
 
     // signals
     connect(m_branchRadioButton, &QAbstractButton::toggled, this, &CheckoutDialog::branchRadioButtonToggled);
-    connect(m_branchComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
-    connect(m_branchComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(setOkButtonState()));
-    connect(m_tagComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
+    connect(m_branchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
+    connect(m_branchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setOkButtonState()));
+    connect(m_tagComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
     connect(m_newBranchCheckBox, &QCheckBox::stateChanged, this, &CheckoutDialog::newBranchCheckBoxStateToggled);
     connect(m_newBranchName, &QLineEdit::textChanged, this, &CheckoutDialog::setOkButtonState);
     connect(m_newBranchName, &QLineEdit::textEdited, this, &CheckoutDialog::noteUserEditedNewBranchName);
