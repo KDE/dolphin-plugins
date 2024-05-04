@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:41+0000\n"
-"PO-Revision-Date: 2024-04-30 09:19+0300\n"
+"PO-Revision-Date: 2024-05-03 17:43+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -168,7 +168,7 @@ msgstr "שכפול"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr "בחירת תיקיית שכפול"
+msgstr "בחירת תיקיית לשכפל אליה"
 
 #: clonedialog.cpp:87
 #, kde-kuit-format
@@ -210,13 +210,13 @@ msgstr "אין מה להוסיף."
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
-msgstr ""
+msgstr "אישור סופי"
 
 #: commitdialog.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr ""
+msgstr "הוספת שורת אושר סופית על ידי (Signed-off-by) בסוף הודעת ההגשה."
 
 #: commitdialog.cpp:129
 #, kde-format
@@ -242,7 +242,7 @@ msgstr "הצגת שינויי <application>Git</application> מקומיים"
 #: fileviewgitplugin.cpp:69
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr ""
+msgstr "<application>Git</application> שחזור מועמדים"
 
 #: fileviewgitplugin.cpp:74
 #, kde-kuit-format
@@ -292,57 +292,57 @@ msgstr "<application>Git</application> יומן…"
 #: fileviewgitplugin.cpp:429
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr ""
+msgstr "קבצים נוספים למאגר <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:430
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
-msgstr ""
+msgstr "הוספת קבצים למאגר <application>Git</application> נכשלה."
 
 #: fileviewgitplugin.cpp:431
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr ""
+msgstr "נוספו קבצים למאגר <application>Git</application>."
 
 #: fileviewgitplugin.cpp:442
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr ""
+msgstr "קבצים נמחקים ממאגר <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:443
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
-msgstr ""
+msgstr "הסרת קבצים ממאגר <application>Git</application> נכשלה."
 
 #: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr ""
+msgstr "הוסרו קבצים ממאגר <application>Git</application>."
 
 #: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
-msgstr ""
+msgstr "קבצים משוחזרים ממאגר <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
-msgstr ""
+msgstr "שחזור קבצים ממאגר <application>Git</application> נכשל."
 
 #: fileviewgitplugin.cpp:453
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr ""
+msgstr "שוחזרו קבצים ממאגר <application>Git</application>."
 
 #: fileviewgitplugin.cpp:492
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr ""
+msgstr "<application>Git</application> יומן נכשל."
 
 #: fileviewgitplugin.cpp:513
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr ""
+msgstr "<application>Git</application> יומן"
 
 #: fileviewgitplugin.cpp:528
 #, kde-format
@@ -372,53 +372,53 @@ msgstr "יוצר/ת"
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr ""
+msgstr "קבצים מועמדים משוחזרים ממאגר <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:553
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
-msgstr ""
+msgstr "שחזור קבצים מועמדים ממאגר <application>Git</application> נכשל."
 
 #: fileviewgitplugin.cpp:554
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr ""
+msgstr "קבצים מועמדים משוחזרים ממאגר <application>Git</application>."
 
 #: fileviewgitplugin.cpp:580
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr ""
+msgstr "<application>Git</application> שגיאה בהפעלה: %1"
 
 #: fileviewgitplugin.cpp:584
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr ""
+msgstr "<application>Git</application> שכפול נכשל: %1"
 
 #: fileviewgitplugin.cpp:586
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr ""
+msgstr "<application>Git</application> שכפול הושלם."
 
 #: fileviewgitplugin.cpp:594
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr ""
+msgstr "<application>Git</application> מאגר משוכפל…"
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr ""
+msgstr "בוצע מעבר לענף ‚%1’"
 
 #: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr ""
+msgstr "HEAD (ראש) כרגע על %1"
 
 #: fileviewgitplugin.cpp:640
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr ""
+msgstr "בוצע מעבר לענף החדש ‚%1’"
 
 #: fileviewgitplugin.cpp:651
 #, kde-kuit-format
@@ -426,11 +426,12 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
+"<application>Git</application> משיכה נכשלה. אולי תיקיית העבודה שלך מלוכלכת."
 
 #: fileviewgitplugin.cpp:717
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr ""
+msgstr "התגית ‚%1’ נוצרה בהצלחה"
 
 #: fileviewgitplugin.cpp:722
 #, kde-kuit-format
@@ -438,51 +439,52 @@ msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr ""
+"<application>Git</application> יצירת תגית נכשלה. כבר קיימת תגית בשם ‚%1’."
 
 #: fileviewgitplugin.cpp:725
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
-msgstr ""
+msgstr "<application>Git</application> יצירת תגית."
 
 #: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr ""
+msgstr "הענף %1 נדחף אל %2:%3 נכשל."
 
 #: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr ""
+msgstr "הענף %1 נדחף אל %2:%3."
 
 #: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr ""
+msgstr "הענף %1 נדחף אל %2:%3…"
 
 #: fileviewgitplugin.cpp:759
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr ""
+msgstr "משיכת הענף %1 מתוך %2 נכשלה."
 
 #: fileviewgitplugin.cpp:760
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr ""
+msgstr "הענף %1 נמשך מתוך %2 בהצלחה."
 
 #: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr ""
+msgstr "הענף %1 נמשך מתוך %2…"
 
 #: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
-msgstr ""
+msgstr "הענף כבר עדכני."
 
 #: fileviewgitplugin.cpp:829
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
-msgstr ""
+msgstr "התרחשו סתירות מיזוג. נא לתקן אותן ולהגיש את התוצאה."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
