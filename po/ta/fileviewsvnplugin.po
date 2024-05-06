@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-04-07 16:20+0530\n"
+"PO-Revision-Date: 2024-05-05 14:39+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -269,7 +269,7 @@ msgstr ""
 #: fileviewsvnpluginsettings.kcfg:9
 #, kde-format
 msgid "Show updates"
-msgstr ""
+msgstr "புதுப்பிப்புகளை காட்டு"
 
 #: svncheckoutdialog.cpp:63
 #, kde-format
