@@ -137,7 +137,7 @@ msgstr "分支："
 #, kde-format
 msgctxt "@option:check"
 msgid "Recursive"
-msgstr "递归"
+msgstr ""
 
 #: clonedialog.cpp:52
 #, kde-format

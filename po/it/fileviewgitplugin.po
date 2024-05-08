@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
-"PO-Revision-Date: 2024-04-19 18:25+0200\n"
+"PO-Revision-Date: 2024-05-07 18:14+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
@@ -141,12 +141,10 @@ msgid "Recursive"
 msgstr "Ricorsivo"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Checkout"
+#, kde-format
 msgctxt "@option:check"
 msgid "No Checkout"
-msgstr "Checkout"
+msgstr "Nessun checkout"
 
 #: clonedialog.cpp:53
 #, kde-format
@@ -176,14 +174,13 @@ msgstr "Clona"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Scegli una cartella di clonazione"
 
 #: clonedialog.cpp:132
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "Log di <application>Git</application>"
+msgstr "Clona <application>Git</application>"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -291,10 +288,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "Fusione con <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:104
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "Log di <application>Git</application>..."
+msgstr "Clona <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
@@ -415,17 +411,14 @@ msgid "<application>Git</application> error starting: %1"
 msgstr "Crea etichette con <application>Git</application>"
 
 #: fileviewgitplugin.cpp:595
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "Log di <application>Git</application> non riuscito."
+msgstr "Clonazione di <application>Git</application> non riuscita: %1"
 
 #: fileviewgitplugin.cpp:597
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "Esegui il checkout con <application>Git</application>"
+msgstr "Clonazione di <application>Git</application> completa."
 
 #: fileviewgitplugin.cpp:632
 #, fuzzy, kde-kuit-format
