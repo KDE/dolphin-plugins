@@ -651,17 +651,3 @@ msgstr "Namn på merkelappar kan ikkje innehalda blankteikn."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Det finst alt ein merkelapp med namn «%1»."
-
-#, fuzzy
-#~| msgctxt "@option:radio Git Checkout"
-#~| msgid "Branch:"
-#~ msgctxt "@option:check"
-#~ msgid "Branch:"
-#~ msgstr "Grein:"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Checkout"
-#~ msgctxt "@option:check"
-#~ msgid "No Checkout"
-#~ msgstr "Sjekk ut"

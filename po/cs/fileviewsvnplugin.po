@@ -195,12 +195,10 @@ msgid "SVN checkout: checkout in process..."
 msgstr ""
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Chyba při spuštění: %1"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:501
 #, kde-format
@@ -215,11 +213,10 @@ msgid "SVN checkout: checkout successful."
 msgstr ""
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "SVN Checkout"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format

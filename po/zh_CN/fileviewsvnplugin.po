@@ -193,20 +193,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN 检出：检出过程中..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "启动出错： %1"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN 检出：检出失败。"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -215,8 +211,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN 检出：检出成功。"
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN 检出"

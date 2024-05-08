@@ -653,17 +653,3 @@ msgstr "Det kan ikke være tomrom i taggnavn."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "En tagg med navnet «%1» finnes fra før."
-
-#, fuzzy
-#~| msgctxt "@option:radio Git Checkout"
-#~| msgid "Branch:"
-#~ msgctxt "@option:check"
-#~ msgid "Branch:"
-#~ msgstr "Gren:"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Checkout"
-#~ msgctxt "@option:check"
-#~ msgid "No Checkout"
-#~ msgstr "Sjekk ut"

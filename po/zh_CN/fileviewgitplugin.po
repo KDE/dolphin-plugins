@@ -137,7 +137,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL："
 
 #: clonedialog.cpp:44
 #, kde-format
@@ -146,20 +146,16 @@ msgid "Directory:"
 msgstr "目录："
 
 #: clonedialog.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "分支："
 
 #: clonedialog.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr "递归"
+msgstr ""
 
 #: clonedialog.cpp:52
 #, kde-format
@@ -404,10 +400,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> 克隆完成。"
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> 克隆仓库..."
+msgstr ""
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format
@@ -632,19 +627,3 @@ msgstr "标记名称不能包含空白。"
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "已存在名为“%1”的标记。"
-
-#~ msgctxt "@option:check"
-#~ msgid "Depth:"
-#~ msgstr "深度："
-
-#~ msgctxt "@option:check"
-#~ msgid "Branch:"
-#~ msgstr "分支："
-
-#~ msgctxt "@option:check"
-#~ msgid "No Checkout"
-#~ msgstr "无检出"
-
-#~ msgctxt "@option:check"
-#~ msgid "Clone Into Bare Repo"
-#~ msgstr "克隆到空仓库"
