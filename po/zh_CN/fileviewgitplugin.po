@@ -125,13 +125,13 @@ msgstr "分支"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "一个 Git 仓库 URL或者路径"
 
 #: clonedialog.cpp:40
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "递归克隆子模块"
 
 #: clonedialog.cpp:43
 #, kde-format
@@ -155,7 +155,7 @@ msgstr "分支："
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr ""
+msgstr "递归"
 
 #: clonedialog.cpp:52
 #, kde-format
@@ -402,7 +402,7 @@ msgstr "<application>Git</application> 克隆完成。"
 #: fileviewgitplugin.cpp:594
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr ""
+msgstr "<application>Git</application> 正在克隆仓库..."
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format

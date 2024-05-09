@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-04-17 08:11+0900\n"
+"PO-Revision-Date: 2024-05-09 06:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1198,7 +1198,7 @@ msgstr "選項"
 #: updatedialog.cpp:47
 #, kde-format
 msgid "Discard uncommitted changes"
-msgstr "丟棄未提交的變更"
+msgstr "捨棄未提交的變更"
 
 #: updatedialog.cpp:120
 #, kde-format

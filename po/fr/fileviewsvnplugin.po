@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-04-29 13:52+0200\n"
+"PO-Revision-Date: 2024-05-03 12:40+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -204,20 +204,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "Extraction SVN : extraction en cours..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Erreur au démarrage : %1"
+msgstr "Erreur SVN au démarrage : %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "Extraction SVN : échec de l'extraction."
+msgstr "Extraction SVN : échec de l'extraction : %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -226,11 +222,10 @@ msgid "SVN checkout: checkout successful."
 msgstr "Extraction SVN : extraction terminée avec succès."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "Extraction « SVN »"
+msgstr "Extraction SVN"
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format

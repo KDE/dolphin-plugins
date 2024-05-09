@@ -196,13 +196,13 @@ msgstr "SVN 检出：检出过程中..."
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr ""
+msgstr "SVN 启动时出错：%1"
 
 #: fileviewsvnplugin.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr ""
+msgstr "SVN 检出：检出失败：%1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
