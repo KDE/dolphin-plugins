@@ -31,11 +31,13 @@ kconfig_add_kcfg_files(fileviewgitplugin
 target_link_libraries(fileviewgitplugin PRIVATE
     Qt6::Core
     Qt6::Widgets
+    Qt6::Concurrent
     KF6::ConfigGui
     KF6::I18n
     KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::TextWidgets
+    DolphinPluginsLogging
     DolphinVcs
 )
 

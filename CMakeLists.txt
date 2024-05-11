@@ -24,6 +24,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 
 include(ECMDeprecationSettings)
 include(ECMOptionalAddSubdirectory)
+include(ECMQtDeclareLoggingCategory)
 include(FeatureSummary)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
@@ -31,6 +32,7 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Widgets
     Network
     DBus
+    Concurrent
 )
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
@@ -55,6 +57,17 @@ ecm_set_disabled_deprecation_versions(
     QT 6.5
     KF 5.240
 )
+
+ecm_qt_declare_logging_category(dolphin-plugins
+    HEADER dolphinpluginsdebug.h
+    IDENTIFIER GitPluginDebug
+    CATEGORY_NAME org.kde.dolphin
+    DESCRIPTION "dolphin-plugins"
+    EXPORT DOLPHINPLUGINS
+)
+add_library(DolphinPluginsLogging SHARED)
+target_sources(DolphinPluginsLogging PUBLIC ${PROJECT_BINARY_DIR}/dolphinpluginsdebug.h ${PROJECT_BINARY_DIR}/dolphinpluginsdebug.cpp)
+target_link_libraries(DolphinPluginsLogging PRIVATE Qt6::Core)
 
 ecm_optional_add_subdirectory(svn)
 ecm_optional_add_subdirectory(git)

@@ -6,11 +6,14 @@
 
 #include "clonedialog.h"
 
+#include "gitwrapper.h"
+
 #include <KLocalizedString>
 
 #include <QApplication>
 #include <QCheckBox>
 #include <QClipboard>
+#include <QComboBox>
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFileDialog>
@@ -19,7 +22,8 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QString>
+
+#include <QtConcurrent>
 
 CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
     : QDialog(parent, Qt::Dialog)
@@ -33,8 +37,9 @@ CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
     m_dir = new QLineEdit;
     m_url->setMinimumWidth(minWidth * 1.3);
 
-    m_branch = new QLineEdit;
-    m_branch->setPlaceholderText(QStringLiteral("HEAD"));
+    m_branch = new QComboBox;
+    m_branch->setEditable(true);
+    m_branch->lineEdit()->setPlaceholderText(QStringLiteral("HEAD"));
     m_recursive = new QCheckBox();
     m_recursive->setChecked(true);
     m_recursive->setToolTip(i18nc("@info:tooltip submodules as in git submodules", "Recursively clone submodules"));
@@ -155,6 +160,7 @@ void CloneDialog::urlChanged()
     auto input = m_url->text();
     if (input.isEmpty()) {
         m_okButton->setEnabled(false);
+        m_branch->clear();
         return;
     }
 
@@ -168,8 +174,24 @@ void CloneDialog::urlChanged()
     m_repositoryName = extractRepositoryName(input);
     if (m_repositoryName.isEmpty()) {
         m_okButton->setEnabled(false);
+        m_branch->clear();
         return;
     }
+
+    m_branch->clear();
+    QtConcurrent::run(&GitWrapper::remoteBranches, GitWrapper::instance(), input).then([this, input](QStringList ret) {
+        // A protection against inserting branches from different URL if user change remote.
+        if (input == m_url->text()) {
+            const auto text = m_branch->currentText();
+            m_branch->clearEditText();
+            m_branch->addItems(ret);
+            if (!text.isEmpty()) {
+                // Preserve current input if any.
+                m_branch->setCurrentText(text);
+                m_branch->setEditText(text);
+            }
+        }
+    });
 
     QString destPath = QDir(m_contextDir).filePath(m_repositoryName);
     if (m_dir->text().isEmpty() || m_dir->text() == m_contextDir || m_dir->text() == destPath.chopped(1)) {
@@ -209,7 +231,7 @@ QString CloneDialog::directory() const
 
 QString CloneDialog::branch() const
 {
-    return m_branch->text();
+    return m_branch->currentText();
 }
 
 bool CloneDialog::recursive() const

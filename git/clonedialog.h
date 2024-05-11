@@ -11,6 +11,7 @@
 
 class QCheckBox;
 class QLineEdit;
+class QComboBox;
 class QDialogButtonBox;
 
 /**
@@ -35,7 +36,7 @@ private Q_SLOTS:
 private:
     QString extractRepositoryName(const QString &input);
 
-    QLineEdit *m_branch;
+    QComboBox *m_branch;
     QLineEdit *m_url;
     QLineEdit *m_dir;
     QDialogButtonBox *m_buttonBox;

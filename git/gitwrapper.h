@@ -40,6 +40,17 @@ public:
     }
 
     /**
+     * Gets a list of all branches for remote repository.
+     * @param remote
+     *          Remote repository URL.
+     * @returns A QStringList containing the names of remote branches.
+     *          First entry is for default branch.
+     *
+     * @note Might be time consuming, prefer to call it from a separate thread.
+     */
+    QStringList remoteBranches(const QString &remote);
+
+    /**
      * @returns The configured user.name of the repository,
                 the empty String (which is NOT null) if not configured.
      */

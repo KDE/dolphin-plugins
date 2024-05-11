@@ -6,6 +6,8 @@
 
 #include "gitwrapper.h"
 
+#include <dolphinpluginsdebug.h>
+
 GitWrapper *GitWrapper::m_instance = nullptr;
 const int GitWrapper::BUFFER_SIZE = 256;
 const int GitWrapper::SMALL_BUFFER_SIZE = 128;
@@ -26,6 +28,64 @@ void GitWrapper::freeInstance()
 {
     delete m_instance;
     m_instance = nullptr;
+}
+
+QStringList GitWrapper::remoteBranches(const QString &remote)
+{
+    static QString heads(QStringLiteral("refs/heads/"));
+    static QString tags(QStringLiteral("refs/tags/"));
+    static QString ref(QStringLiteral("ref: refs/heads/"));
+
+    const QStringList arguments = {QStringLiteral("ls-remote"),
+                                   QStringLiteral("--quiet"), // do not print remote url to strerr
+                                   QStringLiteral("--symref"), // show default branch at first line
+                                   remote};
+
+    QProcess process;
+    process.start(QStringLiteral("git"), arguments);
+
+    // Output is in the form, first line:
+    // ref: refs/heads/<branch> HEAD
+    // others:
+    // [ref]\t[refs/heads/<branch> | refs/tags/<tag>]\n
+    // Separate by lines and then extract name.
+    QStringList remotes;
+    // Infinite wait for data: operation depends on connection and might take unknown time.
+    while (process.waitForReadyRead(-1)) {
+        while (process.canReadLine()) {
+            auto line = QString::fromLocal8Bit(process.readLine());
+            // Remove last '\n', do not need to check sizes.
+            line.chop(1);
+
+            if (line.endsWith(QStringLiteral("^{}"))) {
+                // No need of preudo-refs.
+                continue;
+            }
+
+            if (line.startsWith(ref)) {
+                remotes << line.split(QLatin1Char('\t'))[0].sliced(ref.size());
+                continue;
+            }
+
+            const auto idx = line.lastIndexOf(QLatin1Char('\t'));
+            if (idx > 0) {
+                const auto name = line.last(line.length() - idx - 1);
+
+                // Name starts from 'refs/heads/' or 'refs/tags/', which we remove.
+                if (name.startsWith(heads)) {
+                    remotes << name.sliced(heads.size());
+                } else if (name.startsWith(tags)) {
+                    remotes << name.sliced(tags.size());
+                } else {
+                    // 'HEAD', 'refs/merge-requests', 'refs/backups', etc: just ignore it.
+                }
+            } else {
+                qCWarning(GitPluginDebug) << "Error proccessing `git ls-remote` output: can't find `\\t` in:" << line;
+            }
+        }
+    }
+
+    return remotes;
 }
 
 QString GitWrapper::userName()
