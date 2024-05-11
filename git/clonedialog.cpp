@@ -40,6 +40,7 @@ CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
     m_branch = new QComboBox;
     m_branch->setEditable(true);
     m_branch->lineEdit()->setPlaceholderText(QStringLiteral("HEAD"));
+    m_branch->setSizeAdjustPolicy(QComboBox::SizeAdjustPolicy::AdjustToContents);
     m_recursive = new QCheckBox();
     m_recursive->setChecked(true);
     m_recursive->setToolTip(i18nc("@info:tooltip submodules as in git submodules", "Recursively clone submodules"));
