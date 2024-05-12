@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:41+0000\n"
+"POT-Creation-Date: 2024-05-12 00:40+0000\n"
 "PO-Revision-Date: 2018-02-10 17:55+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -123,31 +123,31 @@ msgctxt ""
 msgid "branch"
 msgstr "ramificação"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:36
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
 msgstr ""
 
-#: clonedialog.cpp:40
+#: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
 msgstr ""
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr ""
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr ""
 
-#: clonedialog.cpp:46
+#: clonedialog.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "@option:radio Git Checkout"
 #| msgid "Branch:"
@@ -155,25 +155,25 @@ msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Ramificação:"
 
-#: clonedialog.cpp:47
+#: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr ""
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr ""
 
-#: clonedialog.cpp:70
+#: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr ""
 
-#: clonedialog.cpp:87
+#: clonedialog.cpp:93
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log"
 msgctxt "@title:window"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:41+0000\n"
+"POT-Creation-Date: 2024-05-12 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -121,55 +121,55 @@ msgctxt ""
 msgid "branch"
 msgstr "分支"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:36
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
 msgstr "一个 Git 仓库 URL或者路径"
 
-#: clonedialog.cpp:40
+#: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
 msgstr "递归克隆子模块"
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "URL："
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "目录："
 
-#: clonedialog.cpp:46
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "分支："
 
-#: clonedialog.cpp:47
+#: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "递归"
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "克隆"
 
-#: clonedialog.cpp:70
+#: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "选择克隆目录"
 
-#: clonedialog.cpp:87
+#: clonedialog.cpp:93
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:41+0000\n"
+"POT-Creation-Date: 2024-05-12 00:40+0000\n"
 "PO-Revision-Date: 2024-04-29 15:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -123,55 +123,55 @@ msgctxt ""
 msgid "branch"
 msgstr "dal"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:36
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
 msgstr "Bir Git deposu URL’si veya yolu"
 
-#: clonedialog.cpp:40
+#: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
 msgstr "Altmodülleri özyineli olarak klonla"
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "URL:"
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "Dizin:"
 
-#: clonedialog.cpp:46
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Dal:"
 
-#: clonedialog.cpp:47
+#: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "Özyineli"
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "Klonla"
 
-#: clonedialog.cpp:70
+#: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "Klonlama Dizini Seç"
 
-#: clonedialog.cpp:87
+#: clonedialog.cpp:93
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"

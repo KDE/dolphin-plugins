@@ -50,13 +50,13 @@ msgstr "Mostra els canvis locals a Bazaar"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
-msgstr "Comet a Bazaar..."
+msgstr "Comet a Bazaar…"
 
 #: fileviewbazaarplugin.cpp:74
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
-msgstr "Afig a Bazaar..."
+msgstr "Afig a Bazaar…"
 
 #: fileviewbazaarplugin.cpp:79
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "Registre de Bazaar"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
-msgstr "S'està actualitzant el repositori Bazaar..."
+msgstr "S'està actualitzant el repositori Bazaar…"
 
 #: fileviewbazaarplugin.cpp:361
 #, kde-format
@@ -92,7 +92,7 @@ msgstr "S'ha actualitzat el repositori Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
-msgstr "S'està recuperant el repositori Bazaar..."
+msgstr "S'està recuperant el repositori Bazaar…"
 
 #: fileviewbazaarplugin.cpp:372
 #, kde-format
@@ -110,7 +110,7 @@ msgstr "S'ha recuperat el repositori Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
-msgstr "S'està entregant al repositori Bazaar..."
+msgstr "S'està entregant al repositori Bazaar…"
 
 #: fileviewbazaarplugin.cpp:383
 #, kde-format
@@ -128,7 +128,7 @@ msgstr "S'ha entregat al repositori Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
-msgstr "S'estan revisant els canvis..."
+msgstr "S'estan revisant els canvis…"
 
 #: fileviewbazaarplugin.cpp:392
 #, kde-format
@@ -146,7 +146,7 @@ msgstr "S'han revisat els canvis."
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
-msgstr "S'estan cometent els canvis a Bazaar..."
+msgstr "S'estan cometent els canvis a Bazaar…"
 
 #: fileviewbazaarplugin.cpp:401
 #, kde-format
@@ -164,7 +164,7 @@ msgstr "S'han comés els canvis a Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
-msgstr "S'estan afegint fitxers al repositori Bazaar..."
+msgstr "S'estan afegint fitxers al repositori Bazaar…"
 
 #: fileviewbazaarplugin.cpp:410
 #, kde-format
@@ -182,7 +182,7 @@ msgstr "S'han afegit fitxers al repositori Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
-msgstr "S'estan eliminant fitxers del repositori Bazaar..."
+msgstr "S'estan eliminant fitxers del repositori Bazaar…"
 
 #: fileviewbazaarplugin.cpp:419
 #, kde-format
@@ -200,7 +200,7 @@ msgstr "S'han eliminat fitxers del repositori Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
-msgstr "S'està executant el registre de Bazaar..."
+msgstr "S'està executant el registre de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:428
 #, kde-format

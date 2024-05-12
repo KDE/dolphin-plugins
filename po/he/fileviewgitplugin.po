@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:41+0000\n"
+"POT-Creation-Date: 2024-05-12 00:40+0000\n"
 "PO-Revision-Date: 2024-05-03 17:43+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -122,55 +122,55 @@ msgctxt ""
 msgid "branch"
 msgstr "ענף"
 
-#: clonedialog.cpp:32
+#: clonedialog.cpp:36
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
 msgstr "כתובת או נתיב מאגר git"
 
-#: clonedialog.cpp:40
+#: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
 msgstr "שכפול תת־המודולים באופן רקורסיבי"
 
-#: clonedialog.cpp:43
+#: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "כתובת:"
 
-#: clonedialog.cpp:44
+#: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
 msgstr "תיקייה:"
 
-#: clonedialog.cpp:46
+#: clonedialog.cpp:52
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "ענף:"
 
-#: clonedialog.cpp:47
+#: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "רקורסיבי"
 
-#: clonedialog.cpp:52
+#: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
 msgstr "שכפול"
 
-#: clonedialog.cpp:70
+#: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
 msgstr "בחירת תיקיית לשכפל אליה"
 
-#: clonedialog.cpp:87
+#: clonedialog.cpp:93
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"

@@ -588,7 +588,7 @@ msgstr "<application>Mercurial</application>"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
-msgstr "S'estan afegint fitxers al repositori <application>Hg</application>..."
+msgstr "S'estan afegint fitxers al repositori <application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:425
 #, kde-kuit-format
@@ -620,7 +620,7 @@ msgstr "Elimina fitxers"
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
 msgstr ""
-"S'estan eliminant els fitxers del repositori <application>Hg</application>..."
+"S'estan eliminant els fitxers del repositori <application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:449
 #, kde-kuit-format
@@ -769,8 +769,7 @@ msgstr "Revertix"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
-msgstr ""
-"S'estan revertint fitxers al repositori <application>Hg</application>..."
+msgstr "S'estan revertint fitxers al repositori <application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:617 fileviewhgplugin.cpp:638
 #, kde-kuit-format
@@ -804,7 +803,7 @@ msgstr "Revertix-ho tot"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr "S'està generant «diff» del repositori <application>Hg</application>..."
+msgstr "S'està generant «diff» del repositori <application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:648
 #, kde-kuit-format
@@ -848,7 +847,7 @@ msgstr "Desfés"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
-msgstr "S'està desfent al repositori <application>Hg</application>..."
+msgstr "S'està desfent al repositori <application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:714
 #, kde-kuit-format
