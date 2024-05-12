@@ -39,7 +39,7 @@ msgstr "Mostra els canvis locals de SVN"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "Comet a SVN..."
+msgstr "Comet a SVN…"
 
 #: fileviewsvnplugin.cpp:86
 #, kde-format
@@ -69,19 +69,19 @@ msgstr "Mostra les actualitzacions de SVN"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "Registre de SVN..."
+msgstr "Registre de SVN…"
 
 #: fileviewsvnplugin.cpp:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Extracció de SVN..."
+msgstr "Extracció de SVN…"
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "Neteja SVN..."
+msgstr "Neteja SVN…"
 
 #: fileviewsvnplugin.cpp:225
 #, kde-format
@@ -101,7 +101,7 @@ msgstr "Actualitza SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "S'està actualitzant el repositori SVN..."
+msgstr "S'està actualitzant el repositori SVN…"
 
 #: fileviewsvnplugin.cpp:367
 #, kde-format
@@ -140,7 +140,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "S'estan afegint els fitxers al repositori SVN..."
+msgstr "S'estan afegint els fitxers al repositori SVN…"
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
@@ -158,7 +158,7 @@ msgstr "S'han afegit els fitxers al repositori SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "S'estan eliminant els fitxers del repositori SVN..."
+msgstr "S'estan eliminant els fitxers del repositori SVN…"
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
@@ -182,7 +182,7 @@ msgstr "Reversió a SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "S'estan revertint els fitxers del repositori SVN..."
+msgstr "S'estan revertint els fitxers del repositori SVN…"
 
 #: fileviewsvnplugin.cpp:467
 #, kde-format
@@ -200,7 +200,7 @@ msgstr "S'han revertit els fitxers del repositori SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "S'estan revertint els canvis en el fitxer..."
+msgstr "S'estan revertint els canvis en el fitxer…"
 
 #: fileviewsvnplugin.cpp:554
 #, kde-format
@@ -239,7 +239,7 @@ msgstr "Comissió a SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "S'estan cometent els canvis a SVN..."
+msgstr "S'estan cometent els canvis a SVN…"
 
 #: fileviewsvnplugin.cpp:656
 #, kde-format
@@ -263,7 +263,7 @@ msgstr "Seleccioneu el directori que s'ha d'extraure"
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "Extracció de SVN: s'està processant l'extracció..."
+msgstr "Extracció de SVN: s'està processant l'extracció…"
 
 #: svncheckoutdialog.cpp:114
 #, kde-format
@@ -338,7 +338,7 @@ msgstr "No s'ha pogut netejar SVN per a %1"
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "Neteja SVN..."
+msgstr "Neteja SVN…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26

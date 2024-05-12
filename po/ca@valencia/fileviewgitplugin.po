@@ -263,48 +263,47 @@ msgstr "Elimina a <application>Git</application> («remove»)"
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "Extrau de <application>Git</application> («checkout»)..."
+msgstr "Extrau de <application>Git</application> («checkout»)…"
 
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "Comet a <application>Git</application> («commit»)..."
+msgstr "Comet a <application>Git</application> («commit»)…"
 
 #: fileviewgitplugin.cpp:88
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "Crea una etiqueta a <application>Git</application> («create tag»)..."
+msgstr "Crea una etiqueta a <application>Git</application> («create tag»)…"
 
 #: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "Incorpora a <application>Git</application> («push»)..."
+msgstr "Incorpora a <application>Git</application> («push»)…"
 
 #: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "Extrau de <application>Git</application> («pull»)..."
+msgstr "Extrau de <application>Git</application> («pull»)…"
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "Fusiona a <application>Git</application> («merge»)..."
+msgstr "Fusiona a <application>Git</application> («merge»)…"
 
 #: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "Clonació de <application>Git</application> («clone»)..."
+msgstr "Clonació de <application>Git</application> («clone»)…"
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr "Registre de <application>Git</application> («log»)..."
+msgstr "Registre de <application>Git</application> («log»)…"
 
 #: fileviewgitplugin.cpp:428
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr ""
-"S'estan afegint fitxers al repositori <application>Git</application>..."
+msgstr "S'estan afegint fitxers al repositori <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:429
 #, kde-kuit-format
@@ -322,8 +321,7 @@ msgstr "S'han afegit els fitxers al repositori <application>Git</application>."
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr ""
-"S'estan eliminant els fitxers del repositori <application>Git</"
-"application>..."
+"S'estan eliminant els fitxers del repositori <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:442
 #, kde-kuit-format
@@ -342,8 +340,7 @@ msgstr ""
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
-"S'estan revertint els fitxers del repositori <application>Git</"
-"application>..."
+"S'estan revertint els fitxers del repositori <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:451
 #, kde-kuit-format
@@ -399,7 +396,7 @@ msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
 "S'estan restaurant els fitxers marcats del repositori <application>Git</"
-"application>..."
+"application>…"
 
 #: fileviewgitplugin.cpp:552
 #, kde-kuit-format
@@ -434,7 +431,7 @@ msgstr "Es ga completat la clonació de <application>Git</application>."
 #: fileviewgitplugin.cpp:632
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr "Clonació de repositori de <application>Git</application>..."
+msgstr "Clonació de repositori de <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:666
 #, kde-kuit-format
@@ -492,7 +489,7 @@ msgstr "S'ha incorporat la branca %1 a %2:%3."
 #: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr "S'està incorporant la branca %1 a %2:%3..."
+msgstr "S'està incorporant la branca %1 a %2:%3…"
 
 #: fileviewgitplugin.cpp:797
 #, kde-kuit-format
@@ -507,7 +504,7 @@ msgstr "Extracció correcta a la branca %1 des de %2."
 #: fileviewgitplugin.cpp:799
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr "S'està extraent a la branca %1 des de %2..."
+msgstr "S'està extraent a la branca %1 des de %2…"
 
 #: fileviewgitplugin.cpp:851 fileviewgitplugin.cpp:863
 #, kde-kuit-format
