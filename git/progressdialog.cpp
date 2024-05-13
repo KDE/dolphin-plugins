@@ -27,9 +27,13 @@ ProgressDialog::ProgressDialog(QProcess *process, QWidget *parent)
     /*
      * Add actions, establish connections.
      */
-    connect(buttonBox, &QDialogButtonBox::rejected, process, &QProcess::terminate);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, [this, process]() {
+        process->terminate();
+        disconnect(process);
+        reject();
+    });
     connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
-    connect(process, &QProcess::finished, process, [this, buttonBox](int exitCode, QProcess::ExitStatus exitStatus) {
+    connect(process, &QProcess::finished, this, [this, buttonBox](int exitCode, QProcess::ExitStatus exitStatus) {
         if (exitCode == EXIT_SUCCESS && exitStatus == QProcess::ExitStatus::NormalExit) {
             close();
         }

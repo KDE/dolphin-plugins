@@ -576,7 +576,7 @@ void FileViewGitPlugin::clone()
         QDialog *progressDialog = new ProgressDialog(process, m_parentWidget);
 
         connect(process, &QProcess::errorOccurred, this, [this, process](QProcess::ProcessError) {
-            const QString commandLine = process->program() + process->arguments().join(QLatin1Char(' '));
+            const QString commandLine = process->program() + QLatin1Char(' ') + process->arguments().join(QLatin1Char(' '));
             Q_EMIT errorMessage(xi18nd("@info:status", "<application>Git</application> error starting: %1", commandLine));
         });
         connect(process, &QProcess::finished, process, [this, process](int exitCode, QProcess::ExitStatus) {
