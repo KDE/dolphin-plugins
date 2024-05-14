@@ -36,6 +36,7 @@ int GitWrapper::shortIdLength()
     while (!m_process.waitForFinished())
         ;
     const auto line = m_process.readLine().trimmed();
+
     return line.size();
 }
 
@@ -71,9 +72,7 @@ QStringList GitWrapper::remoteBranches(const QString &remote)
     // Infinite wait for data: operation depends on connection and might take unknown time.
     while (process.waitForReadyRead(-1)) {
         while (process.canReadLine()) {
-            auto line = QString::fromLocal8Bit(process.readLine());
-            // Remove last '\n', do not need to check sizes.
-            line.chop(1);
+            const auto line = QString::fromLocal8Bit(process.readLine()).trimmed();
 
             if (line.endsWith(QStringLiteral("^{}"))) {
                 // No need of preudo-refs.

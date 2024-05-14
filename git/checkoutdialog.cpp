@@ -31,17 +31,17 @@ CheckoutDialog::CheckoutDialog(QWidget *parent)
     static const auto minShaWidth = 1.1 * fontMetrics().horizontalAdvance(QStringLiteral("320548ea08f26ecbc28e520f39715f566437a97e"));
 
     // branch/tag selection
-    this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Checkout"));
+    setWindowTitle(xi18nc("@title:window", "<application>Git</application> Checkout"));
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    this->setLayout(mainLayout);
+    setLayout(mainLayout);
     mainLayout->addWidget(mainWidget);
     QPushButton *okButton = m_buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    this->connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
-    this->connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+    connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     okButton->setText(i18nc("@action:button", "Checkout"));
 
     QWidget *boxWidget = new QWidget(this);
@@ -150,9 +150,9 @@ CheckoutDialog::CheckoutDialog(QWidget *parent)
     });
     connect(m_commitLineEdit, &QLineEdit::textChanged, this, &CheckoutDialog::setDefaultNewBranchName);
     connect(m_commitLineEdit, &QLineEdit::textChanged, this, &CheckoutDialog::setOkButtonState);
-    connect(m_branchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
-    connect(m_branchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setOkButtonState()));
-    connect(m_tagComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
+    connect(m_branchComboBox, &QComboBox::currentTextChanged, this, &CheckoutDialog::setDefaultNewBranchName);
+    connect(m_branchComboBox, &QComboBox::currentTextChanged, this, &CheckoutDialog::setOkButtonState);
+    connect(m_tagComboBox, &QComboBox::currentTextChanged, this, &CheckoutDialog::setDefaultNewBranchName);
     connect(m_newBranchCheckBox, &QCheckBox::stateChanged, this, &CheckoutDialog::newBranchCheckBoxStateToggled);
     connect(m_newBranchName, &QLineEdit::textChanged, this, &CheckoutDialog::setOkButtonState);
     connect(m_newBranchName, &QLineEdit::textEdited, this, &CheckoutDialog::noteUserEditedNewBranchName);
