@@ -40,6 +40,21 @@ public:
     }
 
     /**
+     * Returns length of short id (short SHA-signature) for current repository.
+     * Usually it is 7+ characters.
+     * @returns Short id length. If `0` - error occured.
+     */
+    int shortIdLength();
+
+    /**
+     * Checks if commit id (SHA-signature) is valid for current repository.
+     * @param commitSha
+     *          Requested SHA to check.
+     * @returns True for a valid SHA, false otherwise.
+     */
+    bool isCommitIdValid(const QString &commitSha);
+
+    /**
      * Gets a list of all branches for remote repository.
      * @param remote
      *          Remote repository URL.

@@ -30,6 +30,24 @@ void GitWrapper::freeInstance()
     m_instance = nullptr;
 }
 
+int GitWrapper::shortIdLength()
+{
+    m_process.start(QStringLiteral("git"), {QStringLiteral("rev-parse"), QStringLiteral("--short"), QStringLiteral("HEAD")});
+    while (!m_process.waitForFinished())
+        ;
+    const auto line = m_process.readLine().trimmed();
+    return line.size();
+}
+
+bool GitWrapper::isCommitIdValid(const QString &commitSha)
+{
+    m_process.start(QStringLiteral("git"), {QStringLiteral("cat-file"), QStringLiteral("commit"), commitSha});
+    while (!m_process.waitForFinished())
+        ;
+
+    return m_process.exitStatus() == QProcess::NormalExit && m_process.exitCode() == EXIT_SUCCESS;
+}
+
 QStringList GitWrapper::remoteBranches(const QString &remote)
 {
     static QString heads(QStringLiteral("refs/heads/"));

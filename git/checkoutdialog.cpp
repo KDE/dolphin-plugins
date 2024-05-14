@@ -25,7 +25,11 @@
 CheckoutDialog::CheckoutDialog(QWidget *parent)
     : QDialog(parent, Qt::Dialog)
     , m_userEditedNewBranchName(false)
+    , m_shortIdLength(GitWrapper::instance()->shortIdLength())
 {
+    // Typical SHA space.
+    static const auto minShaWidth = 1.1 * fontMetrics().horizontalAdvance(QStringLiteral("320548ea08f26ecbc28e520f39715f566437a97e"));
+
     // branch/tag selection
     this->setWindowTitle(xi18nc("@title:window", "<application>Git</application> Checkout"));
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
@@ -58,11 +62,18 @@ CheckoutDialog::CheckoutDialog(QWidget *parent)
     m_branchComboBox = new QComboBox(m_branchSelectGroupBox);
     gridLayout->addWidget(m_branchComboBox, 0, 1);
 
-    QRadioButton *tagRadioButton = new QRadioButton(i18nc("@option:radio Git Checkout", "Tag:"), m_branchSelectGroupBox);
-    gridLayout->addWidget(tagRadioButton, 1, 0);
+    m_tagRadioButton = new QRadioButton(i18nc("@option:radio Git Checkout", "Tag:"), m_branchSelectGroupBox);
+    gridLayout->addWidget(m_tagRadioButton, 1, 0);
     m_tagComboBox = new QComboBox(m_branchSelectGroupBox);
     m_tagComboBox->setEnabled(false);
     gridLayout->addWidget(m_tagComboBox, 1, 1);
+
+    m_commitRadioButton = new QRadioButton(i18nc("@option:radio Git Checkout", "Commit:"), m_branchSelectGroupBox);
+    gridLayout->addWidget(m_commitRadioButton, 2, 0);
+    m_commitLineEdit = new QLineEdit(m_branchSelectGroupBox);
+    m_commitLineEdit->setEnabled(false);
+    m_commitLineEdit->setMinimumWidth(minShaWidth);
+    gridLayout->addWidget(m_commitLineEdit, 2, 1);
 
     // options
     QGroupBox *optionsGroupBox = new QGroupBox(boxWidget);
@@ -121,27 +132,45 @@ CheckoutDialog::CheckoutDialog(QWidget *parent)
     m_tagComboBox->addItems(tags);
     m_tagComboBox->setCurrentIndex(m_tagComboBox->count() - 1);
     if (m_tagComboBox->count() == 0) {
-        tagRadioButton->setEnabled(false);
+        m_tagRadioButton->setEnabled(false);
         const QString tooltip = i18nc("@info:tooltip", "There are no tags in this repository.");
-        tagRadioButton->setToolTip(tooltip);
+        m_tagRadioButton->setToolTip(tooltip);
         m_tagComboBox->setToolTip(tooltip);
     }
 
     // signals
-    connect(m_branchRadioButton, &QAbstractButton::toggled, this, &CheckoutDialog::branchRadioButtonToggled);
+    connect(m_branchRadioButton, &QAbstractButton::toggled, this, [this](bool checked) {
+        radioButtonToggled(m_branchComboBox, m_branchComboBox->currentText(), checked);
+    });
+    connect(m_tagRadioButton, &QAbstractButton::toggled, this, [this](bool checked) {
+        radioButtonToggled(m_tagComboBox, m_tagComboBox->currentText(), checked);
+    });
+    connect(m_commitRadioButton, &QAbstractButton::toggled, this, [this](bool checked) {
+        radioButtonToggled(m_commitLineEdit, m_commitLineEdit->text(), checked);
+    });
+    connect(m_commitLineEdit, &QLineEdit::textChanged, this, &CheckoutDialog::setDefaultNewBranchName);
+    connect(m_commitLineEdit, &QLineEdit::textChanged, this, &CheckoutDialog::setOkButtonState);
     connect(m_branchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
     connect(m_branchComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setOkButtonState()));
     connect(m_tagComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(setDefaultNewBranchName(QString)));
     connect(m_newBranchCheckBox, &QCheckBox::stateChanged, this, &CheckoutDialog::newBranchCheckBoxStateToggled);
     connect(m_newBranchName, &QLineEdit::textChanged, this, &CheckoutDialog::setOkButtonState);
     connect(m_newBranchName, &QLineEdit::textEdited, this, &CheckoutDialog::noteUserEditedNewBranchName);
+
     // set initial widget states
     newBranchCheckBoxStateToggled(Qt::Unchecked);
 }
 
 QString CheckoutDialog::checkoutIdentifier() const
 {
-    QString identifier = m_branchComboBox->isEnabled() ? m_branchComboBox->currentText() : m_tagComboBox->currentText();
+    QString identifier;
+    if (m_branchComboBox->isEnabled()) {
+        identifier = m_branchComboBox->currentText();
+    } else if (m_tagComboBox->isEnabled()) {
+        identifier = m_tagComboBox->currentText();
+    } else {
+        identifier = m_commitLineEdit->text();
+    }
     if (identifier.length() == 0 || identifier.at(0) == QLatin1Char('(')) {
         identifier = QString();
     }
@@ -162,11 +191,12 @@ QString CheckoutDialog::newBranchName() const
     }
 }
 
-void CheckoutDialog::branchRadioButtonToggled(bool checked)
+void CheckoutDialog::radioButtonToggled(QWidget *buddyWidget, const QString &baseBranchName, bool checked)
 {
-    m_branchComboBox->setEnabled(checked);
-    m_tagComboBox->setEnabled(!checked);
-    setDefaultNewBranchName(checked ? m_branchComboBox->currentText() : m_tagComboBox->currentText());
+    buddyWidget->setEnabled(checked);
+    if (checked) {
+        setDefaultNewBranchName(baseBranchName);
+    }
     setOkButtonState();
 }
 
@@ -216,6 +246,13 @@ void CheckoutDialog::setOkButtonState()
         enableButton = false;
         okButton->setToolTip(i18nc("@info:tooltip", "You must select a valid branch first."));
     }
+
+    if (m_commitRadioButton->isChecked()) {
+        if (!GitWrapper::instance()->isCommitIdValid(m_commitLineEdit->text())) {
+            enableButton = false;
+            okButton->setToolTip(i18nc("@info:tooltip", "You must enter a valid commit Id (Sha signature)."));
+        }
+    }
     //------------------------------------------------------//
 
     setLineEditErrorModeActive(newNameError);
@@ -234,10 +271,20 @@ void CheckoutDialog::setDefaultNewBranchName(const QString &baseBranchName)
         if (baseBranchName.startsWith(QLatin1Char('('))) {
             m_newBranchName->setText(QString());
         } else {
+            QString postfix;
+            if (m_commitRadioButton->isChecked()) {
+                auto text = m_commitLineEdit->text();
+                if (m_shortIdLength > 0 && text.size() > m_shortIdLength) {
+                    text.truncate(m_shortIdLength);
+                }
+                postfix = text;
+            } else {
+                postfix = baseBranchName;
+            }
             m_newBranchName->setText(i18nc("@item:intext Prepended to the current branch name "
                                            "to get the default name for a newly created branch",
                                            "branch")
-                                     + QLatin1Char('_') + baseBranchName);
+                                     + QLatin1Char('_') + postfix);
         }
     }
 }

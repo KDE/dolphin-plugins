@@ -43,7 +43,7 @@ public:
     QString newBranchName() const;
 
 private Q_SLOTS:
-    void branchRadioButtonToggled(bool checked);
+    void radioButtonToggled(QWidget *acompanyWidget, const QString &baseBranchName, bool checked);
     void newBranchCheckBoxStateToggled(int state);
     /**
      * Checks whether the values of all relevant widgets are valid.
@@ -64,13 +64,17 @@ private:
 private:
     ///@brief true if the user has manually edited the branchName, false otherwise
     bool m_userEditedNewBranchName;
+    int m_shortIdLength;
     QSet<QString> m_branchNames;
     QPalette m_errorColors;
     QDialogButtonBox *m_buttonBox;
     QGroupBox *m_branchSelectGroupBox;
     QRadioButton *m_branchRadioButton;
     QComboBox *m_branchComboBox;
+    QRadioButton *m_tagRadioButton;
     QComboBox *m_tagComboBox;
+    QRadioButton *m_commitRadioButton;
+    QLineEdit *m_commitLineEdit;
     QCheckBox *m_newBranchCheckBox;
     QLineEdit *m_newBranchName;
     QCheckBox *m_forceCheckBox;
