@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:40+0000\n"
-"PO-Revision-Date: 2024-04-03 00:10+0200\n"
+"PO-Revision-Date: 2024-05-13 22:08+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
@@ -256,49 +256,48 @@ msgstr "<application>Git</application> Премахване"
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> Изтегляне..."
+msgstr "<application>Git</application> Изтегляне…"
 
 #: fileviewgitplugin.cpp:84
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "<application>Git</application> Подаване..."
+msgstr "<application>Git</application> Подаване…"
 
 #: fileviewgitplugin.cpp:89
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "<application>Git</application> Създаване на етикет..."
+msgstr "<application>Git</application> Създаване на етикет…"
 
 #: fileviewgitplugin.cpp:93
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "<application>Git</application> Изтласкване..."
+msgstr "<application>Git</application> Изтласкване…"
 
 #: fileviewgitplugin.cpp:97
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "<application>Git</application> Издърпване..."
+msgstr "<application>Git</application> Издърпване…"
 
 #: fileviewgitplugin.cpp:101
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "<application>Git</application> Сливане..."
+msgstr "<application>Git</application> Сливане…"
 
 #: fileviewgitplugin.cpp:105
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log..."
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Log..."
+msgstr "<application>Git</application> Log…"
 
 #: fileviewgitplugin.cpp:109
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr "<application>Git</application> Log..."
+msgstr "<application>Git</application> Log…"
 
 #: fileviewgitplugin.cpp:429
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr ""
-"Добавяне на файловете в хранилището в <application>Git</application>..."
+msgstr "Добавяне на файловете в хранилището в <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:430
 #, kde-kuit-format
@@ -315,8 +314,7 @@ msgstr "Файловете са добавени в хранилището на 
 #: fileviewgitplugin.cpp:442
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr ""
-"Премахване на файлове от хранилището в <application>Git</application>..."
+msgstr "Премахване на файлове от хранилището в <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:443
 #, kde-kuit-format
@@ -335,8 +333,7 @@ msgstr ""
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
-"Възстановяване на файловете от хранилището в <application>Git</"
-"application>..."
+"Възстановяване на файловете от хранилището в <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:452
 #, kde-kuit-format
@@ -391,7 +388,7 @@ msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
 "Възстановяване на етапни файлове от хранилището в <application>Git</"
-"application>..."
+"application>…"
 
 #: fileviewgitplugin.cpp:553
 #, kde-kuit-format
@@ -431,7 +428,7 @@ msgstr "<application>Git</application> Изтегляне"
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Merge..."
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> Сливане..."
+msgstr "<application>Git</application> Сливане…"
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format
@@ -489,7 +486,7 @@ msgstr "Клон %1 е изтласкан в %2:%3."
 #: fileviewgitplugin.cpp:738
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr "Изтласкване на клон %1 в %2:%3..."
+msgstr "Изтласкване на клон %1 в %2:%3…"
 
 #: fileviewgitplugin.cpp:759
 #, kde-kuit-format
@@ -504,7 +501,7 @@ msgstr "Издърпването на клон %1 от %2 е успешно."
 #: fileviewgitplugin.cpp:761
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr "Издърпване на клон %1 от %2..."
+msgstr "Издърпване на клон %1 от %2…"
 
 #: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
 #, kde-kuit-format

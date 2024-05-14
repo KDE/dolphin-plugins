@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-03-10 17:15+0100\n"
+"PO-Revision-Date: 2024-05-13 22:08+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -35,7 +35,7 @@ msgstr "Показване на локалните промени в SVN"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "Подаване към SVN..."
+msgstr "Подаване към SVN…"
 
 #: fileviewsvnplugin.cpp:86
 #, kde-format
@@ -65,19 +65,19 @@ msgstr "Показване на обновленията в SVN"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "Журнал на SVN..."
+msgstr "Журнал на SVN…"
 
 #: fileviewsvnplugin.cpp:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Изтегляне от SVN..."
+msgstr "Изтегляне от SVN…"
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "Изчистване на SVN..."
+msgstr "Изчистване на SVN…"
 
 #: fileviewsvnplugin.cpp:225
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "Обновяване на SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "Обновяване на хранилището на SVN..."
+msgstr "Обновяване на хранилището на SVN…"
 
 #: fileviewsvnplugin.cpp:367
 #, kde-format
@@ -136,7 +136,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "Добавяне на файловете в хранилището в SVN..."
+msgstr "Добавяне на файловете в хранилището в SVN…"
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
@@ -154,7 +154,7 @@ msgstr "Файловете са добавени в хранилището на 
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "Премахване на файлове от хранилището в SVN..."
+msgstr "Премахване на файлове от хранилището в SVN…"
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
@@ -178,7 +178,7 @@ msgstr "Възстановяване на SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Възстановяване на файловете от хранилището в SVN..."
+msgstr "Възстановяване на файловете от хранилището в SVN…"
 
 #: fileviewsvnplugin.cpp:467
 #, kde-format
@@ -196,7 +196,7 @@ msgstr "Файловете са възстановени от хранилище
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "Изтегляне от SVN: извършва се изтегляне..."
+msgstr "Изтегляне от SVN: извършва се изтегляне…"
 
 #: fileviewsvnplugin.cpp:497
 #, fuzzy, kde-format
@@ -231,7 +231,7 @@ msgstr "Изтегляне от SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "Възстановяване на промените във файла..."
+msgstr "Възстановяване на промените във файла…"
 
 #: fileviewsvnplugin.cpp:573
 #, kde-format
@@ -270,7 +270,7 @@ msgstr "Подаване към SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "Подаване на промените в SVN..."
+msgstr "Подаване на промените в SVN…"
 
 #: fileviewsvnplugin.cpp:675
 #, kde-format
@@ -351,7 +351,7 @@ msgstr "Неуспешно изчистване на SVN за %1"
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "Изчистване на SVN..."
+msgstr "Изчистване на SVN…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
