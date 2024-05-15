@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-05-15 00:40+0000\n"
 "PO-Revision-Date: 2021-05-03 08:04+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -16,104 +16,120 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: checkoutdialog.cpp:30
+#: checkoutdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr "Checkout <application>Git</application>"
 
-#: checkoutdialog.cpp:41
+#: checkoutdialog.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr "Checkout"
 
-#: checkoutdialog.cpp:54
+#: checkoutdialog.cpp:58
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "Cabang:"
 
-#: checkoutdialog.cpp:61
+#: checkoutdialog.cpp:65
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "Tag:"
 
-#: checkoutdialog.cpp:71 pushdialog.cpp:80
+#: checkoutdialog.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Commit"
+msgctxt "@option:radio Git Checkout"
+msgid "Commit:"
+msgstr "Commit"
+
+#: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "Opsi"
 
-#: checkoutdialog.cpp:76
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "Buat Cabang Baru:"
 
-#: checkoutdialog.cpp:77
+#: checkoutdialog.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Buat cabang baru berdasarkan cabang atau tag yang dipilih."
 
-#: checkoutdialog.cpp:92 pushdialog.cpp:83
+#: checkoutdialog.cpp:103 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "Paksa"
 
-#: checkoutdialog.cpp:93
+#: checkoutdialog.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr "Buang perubahan lokal."
 
-#: checkoutdialog.cpp:125
+#: checkoutdialog.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "Tidak adanya tag-tag di dalam repositori ini."
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Basis Cabang"
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Checkout"
 
-#: checkoutdialog.cpp:196
+#: checkoutdialog.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr ""
 "Kamu harus memasukkan nama yang valid untuk cabang baru terlebih dahulu."
 
-#: checkoutdialog.cpp:203
+#: checkoutdialog.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Sebuah cabang dengan nama '%1' sudah ada."
 
-#: checkoutdialog.cpp:210
+#: checkoutdialog.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Nama-nama cabang mungkin tidak mengandung spasi putih apa pun."
 
-#: checkoutdialog.cpp:217
+#: checkoutdialog.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Kamu harus memilih sebuah cabang yang valid terlebih dahulu."
 
-#: checkoutdialog.cpp:239
+#: checkoutdialog.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "You must enter a commit message first."
+msgctxt "@info:tooltip"
+msgid "You must enter a valid commit Id (Sha signature)."
+msgstr "Kamu harus memasukkan pesan commit terlebih dahulu."
+
+#: checkoutdialog.cpp:286
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "

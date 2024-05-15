@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-05-15 00:40+0000\n"
 "PO-Revision-Date: 2020-04-05 12:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,103 +17,119 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 19.04.3\n"
 
-#: checkoutdialog.cpp:30
+#: checkoutdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr "<application>Git</application> 체크아웃"
 
-#: checkoutdialog.cpp:41
+#: checkoutdialog.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr "체크아웃"
 
-#: checkoutdialog.cpp:54
+#: checkoutdialog.cpp:58
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "브랜치:"
 
-#: checkoutdialog.cpp:61
+#: checkoutdialog.cpp:65
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "태그:"
 
-#: checkoutdialog.cpp:71 pushdialog.cpp:80
+#: checkoutdialog.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Commit"
+msgctxt "@option:radio Git Checkout"
+msgid "Commit:"
+msgstr "커밋"
+
+#: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "옵션"
 
-#: checkoutdialog.cpp:76
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "새 브랜치 만들기: "
 
-#: checkoutdialog.cpp:77
+#: checkoutdialog.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "선택한 브랜치나 태그에서 새 브랜치를 만듭니다."
 
-#: checkoutdialog.cpp:92 pushdialog.cpp:83
+#: checkoutdialog.cpp:103 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "강제"
 
-#: checkoutdialog.cpp:93
+#: checkoutdialog.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr "로컬 변경 사항을 무시합니다."
 
-#: checkoutdialog.cpp:125
+#: checkoutdialog.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "이 저장소에 태그가 없습니다."
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "브랜치 기반"
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "체크아웃"
 
-#: checkoutdialog.cpp:196
+#: checkoutdialog.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "새 브랜치의 올바른 이름을 입력해야 합니다."
 
-#: checkoutdialog.cpp:203
+#: checkoutdialog.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "이름이 '%1'인 브랜치가 이미 존재합니다."
 
-#: checkoutdialog.cpp:210
+#: checkoutdialog.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "브랜치 이름에는 공백 문자가 들어 있으면 안 됩니다."
 
-#: checkoutdialog.cpp:217
+#: checkoutdialog.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "올바른 브랜치를 선택해야 합니다."
 
-#: checkoutdialog.cpp:239
+#: checkoutdialog.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "You must enter a commit message first."
+msgctxt "@info:tooltip"
+msgid "You must enter a valid commit Id (Sha signature)."
+msgstr "커밋 메시지를 입력하십시오."
+
+#: checkoutdialog.cpp:286
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "

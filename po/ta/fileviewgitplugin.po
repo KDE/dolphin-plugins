@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-05-15 00:40+0000\n"
 "PO-Revision-Date: 2024-05-05 14:40+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,103 +17,117 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.2\n"
 
-#: checkoutdialog.cpp:30
+#: checkoutdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr ""
 
-#: checkoutdialog.cpp:41
+#: checkoutdialog.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr ""
 
-#: checkoutdialog.cpp:54
+#: checkoutdialog.cpp:58
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "கிளை:"
 
-#: checkoutdialog.cpp:61
+#: checkoutdialog.cpp:65
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "குறிச்சொல்:"
 
-#: checkoutdialog.cpp:71 pushdialog.cpp:80
+#: checkoutdialog.cpp:71
+#, kde-format
+msgctxt "@option:radio Git Checkout"
+msgid "Commit:"
+msgstr ""
+
+#: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "விருப்பங்கள்"
 
-#: checkoutdialog.cpp:76
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "புதிய கிளையை உருவாக்கு:"
 
-#: checkoutdialog.cpp:77
+#: checkoutdialog.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr ""
 
-#: checkoutdialog.cpp:92 pushdialog.cpp:83
+#: checkoutdialog.cpp:103 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "கட்டாயப்படுத்து"
 
-#: checkoutdialog.cpp:93
+#: checkoutdialog.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr ""
 
-#: checkoutdialog.cpp:125
+#: checkoutdialog.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr ""
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr ""
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr ""
 
-#: checkoutdialog.cpp:196
+#: checkoutdialog.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr ""
 
-#: checkoutdialog.cpp:203
+#: checkoutdialog.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "'%1' எனும் பெயருடைய கிளை ஏற்கனவே உள்ளது."
 
-#: checkoutdialog.cpp:210
+#: checkoutdialog.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "கிளையின் பெயரில் இடைவெளி இருக்க‍க்கூடாது."
 
-#: checkoutdialog.cpp:217
+#: checkoutdialog.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "முறையான கிளையை முதலில் தேர்வு செய்யவேண்டும்."
 
-#: checkoutdialog.cpp:239
+#: checkoutdialog.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "You must select a valid branch first."
+msgctxt "@info:tooltip"
+msgid "You must enter a valid commit Id (Sha signature)."
+msgstr "முறையான கிளையை முதலில் தேர்வு செய்யவேண்டும்."
+
+#: checkoutdialog.cpp:286
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "

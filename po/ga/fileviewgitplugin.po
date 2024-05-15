@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-05-15 00:40+0000\n"
 "PO-Revision-Date: 2011-12-28 12:28-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,103 +17,117 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
-#: checkoutdialog.cpp:30
+#: checkoutdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr ""
 
-#: checkoutdialog.cpp:41
+#: checkoutdialog.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr ""
 
-#: checkoutdialog.cpp:54
+#: checkoutdialog.cpp:58
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr ""
 
-#: checkoutdialog.cpp:61
+#: checkoutdialog.cpp:65
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr ""
 
-#: checkoutdialog.cpp:71 pushdialog.cpp:80
+#: checkoutdialog.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Commit"
+msgctxt "@option:radio Git Checkout"
+msgid "Commit:"
+msgstr "Cuir i bhFeidhm"
+
+#: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "Roghanna"
 
-#: checkoutdialog.cpp:76
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr ""
 
-#: checkoutdialog.cpp:77
+#: checkoutdialog.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr ""
 
-#: checkoutdialog.cpp:92 pushdialog.cpp:83
+#: checkoutdialog.cpp:103 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr ""
 
-#: checkoutdialog.cpp:93
+#: checkoutdialog.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr ""
 
-#: checkoutdialog.cpp:125
+#: checkoutdialog.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr ""
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr ""
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr ""
 
-#: checkoutdialog.cpp:196
+#: checkoutdialog.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr ""
 
-#: checkoutdialog.cpp:203
+#: checkoutdialog.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr ""
 
-#: checkoutdialog.cpp:210
+#: checkoutdialog.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr ""
 
-#: checkoutdialog.cpp:217
+#: checkoutdialog.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr ""
 
-#: checkoutdialog.cpp:239
+#: checkoutdialog.cpp:253
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a valid commit Id (Sha signature)."
+msgstr ""
+
+#: checkoutdialog.cpp:286
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "

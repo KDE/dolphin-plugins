@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-05-15 00:40+0000\n"
 "PO-Revision-Date: 2024-04-29 11:58+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -17,103 +17,119 @@ msgstr ""
 "X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: checkoutdialog.cpp:30
+#: checkoutdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr "<application>Git</application> Descargar"
 
-#: checkoutdialog.cpp:41
+#: checkoutdialog.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr "Descargar"
 
-#: checkoutdialog.cpp:54
+#: checkoutdialog.cpp:58
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "Rama:"
 
-#: checkoutdialog.cpp:61
+#: checkoutdialog.cpp:65
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "Etiqueta:"
 
-#: checkoutdialog.cpp:71 pushdialog.cpp:80
+#: checkoutdialog.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Commit"
+msgctxt "@option:radio Git Checkout"
+msgid "Commit:"
+msgstr "Enviar"
+
+#: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "Opciones"
 
-#: checkoutdialog.cpp:76
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "Crear nueva rama: "
 
-#: checkoutdialog.cpp:77
+#: checkoutdialog.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Crear una nueva rama basada en una rama o etiqueta seleccionada."
 
-#: checkoutdialog.cpp:92 pushdialog.cpp:83
+#: checkoutdialog.cpp:103 pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "Forzar"
 
-#: checkoutdialog.cpp:93
+#: checkoutdialog.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr "Descartar los cambios locales."
 
-#: checkoutdialog.cpp:125
+#: checkoutdialog.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "No existen etiquetas en este repositorio."
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Rama base"
 
-#: checkoutdialog.cpp:176
+#: checkoutdialog.cpp:206
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Descargar"
 
-#: checkoutdialog.cpp:196
+#: checkoutdialog.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Primero debe introducir un nombre válido para la nueva rama."
 
-#: checkoutdialog.cpp:203
+#: checkoutdialog.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Ya existe una rama con el nombre «%1»."
 
-#: checkoutdialog.cpp:210
+#: checkoutdialog.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Los nombres de las ramas no deben contener espacios."
 
-#: checkoutdialog.cpp:217
+#: checkoutdialog.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Primero debe seleccionar una rama válida."
 
-#: checkoutdialog.cpp:239
+#: checkoutdialog.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "You must enter a commit message first."
+msgctxt "@info:tooltip"
+msgid "You must enter a valid commit Id (Sha signature)."
+msgstr "Primero debe introducir un mensaje de envío."
+
+#: checkoutdialog.cpp:286
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
