@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:40+0000\n"
-"PO-Revision-Date: 2024-04-29 10:22+0200\n"
+"PO-Revision-Date: 2024-05-15 10:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -47,12 +47,10 @@ msgid "Tag:"
 msgstr "Etiqueta:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Comet"
+msgstr "Comissió:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -127,12 +125,10 @@ msgid "You must select a valid branch first."
 msgstr "Primer heu de seleccionar una branca vàlida."
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Primer heu d'introduir un missatge de comissió."
+msgstr "Cal introduir un ID vàlid de comissió (signatura SHA)."
 
 #: checkoutdialog.cpp:286
 #, kde-format

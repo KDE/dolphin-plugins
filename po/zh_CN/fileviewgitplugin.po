@@ -42,12 +42,10 @@ msgid "Tag:"
 msgstr "标记："
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "提交"
+msgstr ""
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -122,12 +120,10 @@ msgid "You must select a valid branch first."
 msgstr "您必须先选择一个有效的分支。"
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "您必须先输入提交信息。"
+msgstr ""
 
 #: checkoutdialog.cpp:286
 #, kde-format

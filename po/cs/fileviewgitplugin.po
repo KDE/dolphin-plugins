@@ -44,12 +44,10 @@ msgid "Tag:"
 msgstr "Značka:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Commit"
+msgstr ""
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -124,12 +122,10 @@ msgid "You must select a valid branch first."
 msgstr "Nejprve musíte zadat platnou větev."
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Nejprve musíte zadat commit zprávu."
+msgstr ""
 
 #: checkoutdialog.cpp:286
 #, kde-format

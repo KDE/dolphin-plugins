@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:40+0000\n"
-"PO-Revision-Date: 2024-04-29 08:55+0300\n"
+"PO-Revision-Date: 2024-05-15 09:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -45,12 +45,10 @@ msgid "Tag:"
 msgstr "Версія:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Надіслати"
+msgstr "Внесок:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -125,12 +123,10 @@ msgid "You must select a valid branch first."
 msgstr "Спочатку вам слід вибрати коректну гілку."
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Вам слід спочатку ввести повідомлення про внесок"
+msgstr "Вам слід ввести коректний ідентифікатор внеску (підпис SHA)."
 
 #: checkoutdialog.cpp:286
 #, kde-format
