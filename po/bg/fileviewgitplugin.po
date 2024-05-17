@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:40+0000\n"
-"PO-Revision-Date: 2024-05-13 22:08+0200\n"
+"PO-Revision-Date: 2024-05-16 11:39+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -44,12 +44,10 @@ msgid "Tag:"
 msgstr "Етикет:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Подаване"
+msgstr "Подаване:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -124,12 +122,10 @@ msgid "You must select a valid branch first."
 msgstr "Първо трябва да изберете валиден клон."
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Трябва първо да въведете съобщението на подаването."
+msgstr "Трябва да въведете валиден Id (Sha signature) на подаването."
 
 #: checkoutdialog.cpp:286
 #, kde-format
@@ -143,58 +139,55 @@ msgstr "клон"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "url адрес или път до git хранилище"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Рекурсивно клониране на субмодули"
 
 #: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "Адрес:"
 
 #: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Директория:"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
-msgstr "клон:"
+msgstr "Клон:"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr ""
+msgstr "Рекурсивно"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Клониране"
 
 #: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Избиране на директория на клониране"
 
 #: clonedialog.cpp:93
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Вписване"
+msgstr "<application>Git</application> Клониране"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -300,10 +293,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Сливане…"
 
 #: fileviewgitplugin.cpp:105
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Log…"
+msgstr "<application>Git</application> Клониране..."
 
 #: fileviewgitplugin.cpp:109
 #, kde-kuit-format
@@ -422,29 +414,24 @@ msgstr ""
 "application>."
 
 #: fileviewgitplugin.cpp:580
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Restore staged"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> Възстановяване на етапни файлове"
+msgstr "<application>Git</application> грешка при стартиране на: %1"
 
 #: fileviewgitplugin.cpp:584
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "<application>Git</application> Вписването е неуспешно."
+msgstr "<application>Git</application> клонирането е неуспешно: %1"
 
 #: fileviewgitplugin.cpp:586
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> Изтегляне"
+msgstr "<application>Git</application> клонирането завърши."
 
 #: fileviewgitplugin.cpp:594
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> Сливане…"
+msgstr "<application>Git</application> клониране на хранилище..."
 
 #: fileviewgitplugin.cpp:628
 #, kde-kuit-format

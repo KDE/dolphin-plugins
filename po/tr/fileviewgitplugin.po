@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:40+0000\n"
-"PO-Revision-Date: 2024-04-29 15:10+0300\n"
+"PO-Revision-Date: 2024-05-16 13:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -44,12 +44,10 @@ msgid "Tag:"
 msgstr "Etiket:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "İşle"
+msgstr "İşle:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -124,12 +122,10 @@ msgid "You must select a valid branch first."
 msgstr "Öncelikle geçerli bir dal seçmelisiniz."
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Öncelikle bir işleme iletisi girmelisiniz."
+msgstr "Geçerli bir işleme kimliği (SHA imzası) girmelisiniz."
 
 #: checkoutdialog.cpp:286
 #, kde-format

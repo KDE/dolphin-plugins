@@ -45,7 +45,7 @@ msgstr "标记："
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr ""
+msgstr "提交："
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -123,7 +123,7 @@ msgstr "您必须先选择一个有效的分支。"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr ""
+msgstr "您必须输入一个有效的提交 ID (SHA 签名)。"
 
 #: checkoutdialog.cpp:286
 #, kde-format
