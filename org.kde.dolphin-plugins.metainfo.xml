@@ -50,6 +50,7 @@
   <name xml:lang="zh-CN">Dolphin 插件</name>
   <name xml:lang="zh-TW">Dolphin 外掛程式</name>
   <summary>Dolphin integration for revision control systems, Dropbox, and disk images</summary>
+  <summary xml:lang="bg">Интеграции за Dolphin на системи за контрол на версиите, Dropbox и дискови образи.</summary>
   <summary xml:lang="ca">Integració al Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc</summary>
   <summary xml:lang="ca-valencia">Integració a Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc</summary>
   <summary xml:lang="cs">Integrace Dolphinu se systémy pro správu verzí, Dropboxem a obrazy disky</summary>
@@ -62,6 +63,7 @@
   <summary xml:lang="it">Integrazione con Dolphin per i sistemi di controllo di revisione, per Dropbox e per le immagini disco</summary>
   <summary xml:lang="ka">Dolphin-ის ინტეგრაცია რევიზიების კონტროლის სისტემებთან, Dropbox-თნ და დისკის ასლებთან სამუშაოდ.</summary>
   <summary xml:lang="nl">Integratie van Dolphin voor revisie besturingssystemen, Dropbox en images van schijven</summary>
+  <summary xml:lang="nn">Dolphin-integrering med versjonskontrollsystem, Dropbox og diskbilete</summary>
   <summary xml:lang="pl">Obsługa systemów zarządzania wersjami w Dolphinie, Dropboksie oraz obrazach dyskowych</summary>
   <summary xml:lang="sl">Dolphinova integracija za nadzorne sisteme verzij izvornih programov, Dropbox in slike diskov.</summary>
   <summary xml:lang="ta">பதிப்புக் கட்டுப்பாட்டு அமைப்புகள் (revision control systems), Dropbox, மற்றும் வட்டு கோப்புகளுக்கான டால்பின் ஒருங்கிணைப்பு</summary>
