@@ -1,15 +1,15 @@
 # translation of fileviewgitplugin.pot to esperanto
 # Copyright (C) 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the dolphin-plugins package.
-# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
-"PO-Revision-Date: 2024-04-24 19:18+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "Opcioj"
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
-msgstr "Krei Novan Filion:"
+msgstr "Krei Novan Branĉon:"
 
 #: checkoutdialog.cpp:77
 #, kde-format

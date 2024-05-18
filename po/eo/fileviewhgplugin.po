@@ -1,7 +1,7 @@
 # translation of fileviewhgplugin.pot to esperanto
 # Copyright (C) 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the dolphin-plugins package.
-# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com, 2023.
 #
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
 "PO-Revision-Date: 2023-11-10 19:09+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Elekti"
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Branch"
-msgstr "<application>Hg</application> Branĉo"
+msgstr "<application>Hg</application> Branch"
 
 #: branchdialog.cpp:36
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "Iu eraro okazis"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
-msgstr "<application>Hg</application> Pakaĵo"
+msgstr "<application>Hg</application> Bundle"
 
 #: bundledialog.cpp:30
 #, kde-kuit-format
@@ -396,7 +396,7 @@ msgstr "Eraro dum kreado de deponejo!"
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
-msgstr "<application>Hg</application> Eksporti"
+msgstr "<application>Hg</application> Export"
 
 #: exportdialog.cpp:27
 #, kde-kuit-format
@@ -456,7 +456,7 @@ msgstr "<application>Hg</application> Commit"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
-msgstr "<application>Hg</application> Tag"
+msgstr "<application>Hg</application> Etikedo"
 
 #: fileviewhgplugin.cpp:117
 #, kde-kuit-format
@@ -480,7 +480,7 @@ msgstr "<application>Hg</application> Init"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
-msgstr "<application>Hg</application> Update"
+msgstr "<application>Hg</application> Ĝisdatigo"
 
 #: fileviewhgplugin.cpp:137
 #, kde-kuit-format
@@ -528,7 +528,7 @@ msgstr "<application>Hg</application> Rollback"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
-msgstr "<application>Hg</application> Merge"
+msgstr "<application>Hg</application> Kunfandi"
 
 #: fileviewhgplugin.cpp:177
 #, kde-kuit-format
@@ -546,7 +546,7 @@ msgstr "<application>Hg</application> Export"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
-msgstr "<application>Hg</application> Import"
+msgstr "<application>Hg</application> Importi"
 
 #: fileviewhgplugin.cpp:192
 #, kde-kuit-format
