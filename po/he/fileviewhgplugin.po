@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-05-03 17:44+0300\n"
+"PO-Revision-Date: 2024-05-17 13:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: backoutdialog.cpp:29
 #, kde-kuit-format
@@ -296,36 +296,36 @@ msgstr ""
 #: commitdialog.cpp:247
 #, kde-format
 msgid "Branch: "
-msgstr ""
+msgstr "ענף:"
 
 #: commitdialog.cpp:257
 #, kde-format
 msgid "Branch: Close Current"
-msgstr ""
+msgstr "ענף: סגירת הנוכחי"
 
 #: commitdialog.cpp:269
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
-msgstr ""
+msgstr "<application>Hg</application> הגשה: ענף חדש"
 
 #: commitdialog.cpp:277
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
-msgstr ""
+msgstr "נא למלא שם לענף החדש"
 
 #: commitdialog.cpp:297
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
-msgstr ""
+msgstr "<b>הענף כבר קיים!</b>"
 
 #: commitdialog.cpp:303
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
-msgstr ""
+msgstr "<b>נא למלא טקסט כלשהו!</b>"
 
 #: commitinfowidget.cpp:37
 #, kde-format
@@ -350,13 +350,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "General Settings"
-msgstr ""
+msgstr "הגדרות כלליות"
 
 #: configdialog.cpp:46
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
-msgstr ""
+msgstr "נתיבי מאגרים"
 
 #: configdialog.cpp:49
 #, kde-kuit-format
