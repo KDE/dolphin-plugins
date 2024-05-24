@@ -1,0 +1,99 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Steve Allewell <steve.allewell@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"PO-Revision-Date: 2024-05-23 20:02+0100\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#: makefileactions.cpp:225
+#, kde-format
+msgid "Make '%1'%2."
+msgstr "Make '%1'%2."
+
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
+#, kde-format
+msgid "Makefile Actions"
+msgstr "Makefile Actions"
+
+#: makefileactions.cpp:254
+#, kde-format
+msgid "An error occurred while making target '%1'."
+msgstr "An error occurred while making target '%1'."
+
+#: makefileactions.cpp:262
+#, kde-format
+msgid "Running process for '%1' successfully stopped."
+msgstr "Running process for '%1' successfully stopped."
+
+#: makefileactions.cpp:264
+#, kde-format
+msgid "An error occurred trying to make target '%1'."
+msgstr "An error occurred trying to make target '%1'."
+
+#: makefileactions.cpp:296
+#, kde-format
+msgid "&Make…"
+msgstr "&Make…"
+
+#: makefileactions.cpp:301
+#, kde-format
+msgid "Only trusted files can be used by the Makefile Actions plugin."
+msgstr "Only trusted files can be used by the Makefile Actions plugin."
+
+#: makefileactions.cpp:304
+#, kde-format
+msgid "Trusted file — uncheck to remove trust"
+msgstr "Trusted file — untick to remove trust"
+
+#: makefileactions.cpp:304
+#, kde-format
+msgid "Untrusted file — check to trust"
+msgstr "Untrusted file — tick to trust"
+
+#: makefileactions.cpp:311
+#, kde-format
+msgid "Dolphin Makefile Plugin"
+msgstr "Dolphin Makefile Plugin"
+
+#: makefileactions.cpp:312
+#, kde-format
+msgid ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+msgstr ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+
+#: makefileactions.cpp:326
+#, kde-format
+msgid "Open a terminal window"
+msgstr "Open a terminal window"
+
+#: makefileactions.cpp:327
+#, kde-format
+msgid ""
+"Open a new terminal window to see the output of making the chosen target."
+msgstr ""
+"Open a new terminal window to see the output of making the chosen target."
+
+#: makefileactions.cpp:339
+#, kde-format
+msgid "Cancel running process (%1)"
+msgstr "Cancel running process (%1)"
+
+#: makefileactions.cpp:340
+#, kde-format
+msgid "Interrupt the currently running process (%1)."
+msgstr "Interrupt the currently running process (%1)."

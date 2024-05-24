@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2010, 2011.
-# Steve Allewell <steve.allewell@gmail.com>, 2015, 2020.
+# SPDX-FileCopyrightText: 2015, 2020, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2020-10-11 14:54+0100\n"
+"PO-Revision-Date: 2024-05-23 20:01+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -194,20 +194,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN checkout: checkout in process..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Error starting: %1"
+msgstr "SVN error starting: %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN checkout: checkout failed."
+msgstr "SVN checkout: checkout failed: %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -216,8 +212,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN checkout: checkout successful."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN Checkout"
