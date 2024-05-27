@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:40+0000\n"
-"PO-Revision-Date: 2024-05-12 08:19+0200\n"
+"PO-Revision-Date: 2024-05-26 12:24+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.08.5\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -43,12 +43,12 @@ msgid "Tag:"
 msgstr "Znacznik:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@action:button"
 #| msgid "Commit"
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Zmiana"
+msgstr "Zmiana:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -123,12 +123,12 @@ msgid "You must select a valid branch first."
 msgstr "Najpierw musisz wybrać prawidłową gałąź."
 
 #: checkoutdialog.cpp:253
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "You must enter a commit message first."
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Najpierw trzeba wpisać opis zmiany."
+msgstr "Musisz wpisać istniejący ID zmiany (skrót SHA)."
 
 #: checkoutdialog.cpp:286
 #, kde-format
@@ -673,3 +673,4 @@ msgstr "Znacznik o nazwie '%1 już istnieje."
 #~ msgctxt "@option:check"
 #~ msgid "Clone Into Bare Repo"
 #~ msgstr "Sklonuj do pustego repozytorium"
+
