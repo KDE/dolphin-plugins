@@ -66,6 +66,16 @@ public:
     QStringList remoteBranches(const QString &remote);
 
     /**
+     * Gets a list of untracked files/dirs in the repository.
+     * @returns A StringList containing the names of all untracked entries.
+     *
+     * @note List contains of file names and directory names without path
+     *       and without trailing slash. If whole current directory is untracked list
+     *       contains a single entry ".".
+     */
+    QStringList listUntracked();
+
+    /**
      * @returns The configured user.name of the repository,
                 the empty String (which is NOT null) if not configured.
      */

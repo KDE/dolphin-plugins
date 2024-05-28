@@ -8,6 +8,8 @@
 
 #include <dolphinpluginsdebug.h>
 
+#include <QDir>
+
 GitWrapper *GitWrapper::m_instance = nullptr;
 const int GitWrapper::BUFFER_SIZE = 256;
 const int GitWrapper::SMALL_BUFFER_SIZE = 128;
@@ -103,6 +105,27 @@ QStringList GitWrapper::remoteBranches(const QString &remote)
     }
 
     return remotes;
+}
+
+QStringList GitWrapper::listUntracked()
+{
+    m_process.start(QStringLiteral("git"),
+                    {QStringLiteral("ls-files"), QStringLiteral("--others"), QStringLiteral("--directory"), QStringLiteral("--exclude-standard")});
+
+    QStringList untracked;
+    while (m_process.waitForReadyRead()) {
+        while (m_process.canReadLine()) {
+            // One line is one entry.
+            const auto line = QString::fromLocal8Bit(m_process.readLine()).trimmed();
+            if (line.endsWith(QDir::separator())) {
+                untracked << line.chopped(1);
+            } else {
+                untracked << line;
+            }
+        }
+    }
+
+    return untracked;
 }
 
 QString GitWrapper::userName()

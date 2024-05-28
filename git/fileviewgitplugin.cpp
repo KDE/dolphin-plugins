@@ -265,6 +265,12 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
             }
         }
     }
+
+    const auto untracked = GitWrapper::instance()->listUntracked();
+    for (auto &i : std::as_const(untracked)) {
+        m_versionInfoHash.insert(directory + i, UnversionedVersion);
+    }
+
     return true;
 }
 
@@ -277,8 +283,11 @@ KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileIte
     const QString itemUrl = item.localPath();
     if (m_versionInfoHash.contains(itemUrl)) {
         return m_versionInfoHash.value(itemUrl);
+    } else if (m_versionInfoHash.contains(m_currentDir + QStringLiteral("."))) {
+        // We are inside unversioned directory - everything is unversioned.
+        return UnversionedVersion;
     } else {
-        // files that are not in our map are normal, tracked files by definition
+        // files that are not in our map are normal, tracked files by definition.
         return NormalVersion;
     }
 }
