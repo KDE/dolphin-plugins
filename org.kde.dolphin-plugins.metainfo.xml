@@ -50,6 +50,7 @@
   <name xml:lang="zh-CN">Dolphin 插件</name>
   <name xml:lang="zh-TW">Dolphin 外掛程式</name>
   <summary>Dolphin integration for revision control systems, Dropbox, and disk images</summary>
+  <summary xml:lang="bg">Интеграции за Dolphin, за системи за контрол на версиите, Dropbox и дискови образи.</summary>
   <summary xml:lang="ca">Integració al Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc</summary>
   <summary xml:lang="ca-valencia">Integració a Dolphin per a sistemes de control de revisions, Dropbox i imatges de disc</summary>
   <summary xml:lang="cs">Integrace Dolphinu se systémy pro správu verzí, Dropboxem a obrazy disky</summary>
