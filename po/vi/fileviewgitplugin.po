@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:40+0000\n"
+"POT-Creation-Date: 2024-05-29 00:40+0000\n"
 "PO-Revision-Date: 2022-04-08 01:14+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -310,93 +310,93 @@ msgstr "Nhật kí <application>Git</application>..."
 msgid "<application>Git</application> Log..."
 msgstr "Nhật kí <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:429
+#: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Thêm tệp vào kho <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:430
+#: fileviewgitplugin.cpp:439
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "Thêm tệp vào kho <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:431
+#: fileviewgitplugin.cpp:440
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Đã thêm tệp vào kho <application>Git</application>."
 
-#: fileviewgitplugin.cpp:442
+#: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Xoá tệp khỏi kho <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:443
+#: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "Xoá tệp khỏi kho <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:444
+#: fileviewgitplugin.cpp:453
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Đã xoá tệp khỏi kho <application>Git</application>."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:460
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Hoàn nguyên tệp từ kho <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:461
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "Hoàn nguyên tệp từ kho <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:462
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Đã hoàn nguyên tệp từ kho <application>Git</application>."
 
-#: fileviewgitplugin.cpp:492
+#: fileviewgitplugin.cpp:501
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "Nhật kí <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:513
+#: fileviewgitplugin.cpp:522
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "Nhật kí <application>Git</application>"
 
-#: fileviewgitplugin.cpp:528
+#: fileviewgitplugin.cpp:537
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Chuyển giao"
 
-#: fileviewgitplugin.cpp:529
+#: fileviewgitplugin.cpp:538
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Ngày"
 
-#: fileviewgitplugin.cpp:530
+#: fileviewgitplugin.cpp:539
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Thông điệp"
 
-#: fileviewgitplugin.cpp:531
+#: fileviewgitplugin.cpp:540
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Tác giả"
 
-#: fileviewgitplugin.cpp:552
+#: fileviewgitplugin.cpp:561
 #, fuzzy, kde-kuit-format
 #| msgid "Removing files from <application>Git</application> repository..."
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "Xoá tệp khỏi kho <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:553
+#: fileviewgitplugin.cpp:562
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "Removing files from <application>Git</application> repository failed."
@@ -404,54 +404,54 @@ msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr "Xoá tệp khỏi kho <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:554
+#: fileviewgitplugin.cpp:563
 #, fuzzy, kde-kuit-format
 #| msgid "Reverted files from <application>Git</application> repository."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Đã hoàn nguyên tệp từ kho <application>Git</application>."
 
-#: fileviewgitplugin.cpp:580
+#: fileviewgitplugin.cpp:589
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "Tạo thẻ gắn <application>Git</application>"
 
-#: fileviewgitplugin.cpp:584
+#: fileviewgitplugin.cpp:593
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Log failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Nhật kí <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:586
+#: fileviewgitplugin.cpp:595
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "Lấy ra <application>Git</application>"
 
-#: fileviewgitplugin.cpp:594
+#: fileviewgitplugin.cpp:603
 #, fuzzy, kde-kuit-format
 #| msgid "<application>Git</application> Merge..."
 msgid "<application>Git</application> cloning repository..."
 msgstr "Trộn <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:628
+#: fileviewgitplugin.cpp:637
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Đã chuyển sang nhánh '%1'"
 
-#: fileviewgitplugin.cpp:635
+#: fileviewgitplugin.cpp:644
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD giờ ở %1"
 
-#: fileviewgitplugin.cpp:640
+#: fileviewgitplugin.cpp:649
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Đã chuyển sang nhánh mới '%1'"
 
-#: fileviewgitplugin.cpp:651
+#: fileviewgitplugin.cpp:660
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -460,12 +460,12 @@ msgstr ""
 "Lấy ra <application>Git</application> thất bại. Có thể thư mục làm việc của "
 "bạn không sạch."
 
-#: fileviewgitplugin.cpp:717
+#: fileviewgitplugin.cpp:726
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Tạo thẻ gắn '%1' thành công"
 
-#: fileviewgitplugin.cpp:722
+#: fileviewgitplugin.cpp:731
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -474,47 +474,47 @@ msgstr ""
 "Việc tạo thẻ gắn <application>Git</application> thất bại. Một thẻ gắn với "
 "tên '%1' đã tồn tại rồi."
 
-#: fileviewgitplugin.cpp:725
+#: fileviewgitplugin.cpp:734
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Việc tạo thẻ gắn <application>Git</application> thất bại."
 
-#: fileviewgitplugin.cpp:736
+#: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Việc đẩy nhánh %1 lên %2:%3 thất bại."
 
-#: fileviewgitplugin.cpp:737
+#: fileviewgitplugin.cpp:746
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Đã đẩy nhánh %1 lên %2:%3."
 
-#: fileviewgitplugin.cpp:738
+#: fileviewgitplugin.cpp:747
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Đẩy nhánh %1 lên %2:%3..."
 
-#: fileviewgitplugin.cpp:759
+#: fileviewgitplugin.cpp:768
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Việc kéo nhánh %1 từ %2 về thất bại."
 
-#: fileviewgitplugin.cpp:760
+#: fileviewgitplugin.cpp:769
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Đã kéo nhánh %1 từ %2 về thành công."
 
-#: fileviewgitplugin.cpp:761
+#: fileviewgitplugin.cpp:770
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Kéo nhánh %1 từ %2 về..."
 
-#: fileviewgitplugin.cpp:813 fileviewgitplugin.cpp:825
+#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Nhánh đã cập nhật rồi."
 
-#: fileviewgitplugin.cpp:829
+#: fileviewgitplugin.cpp:838
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Đã xảy ra xung đột trộn. Hãy sửa chúng và chuyển giao kết quả."
