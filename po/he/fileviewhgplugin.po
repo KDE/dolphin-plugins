@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-05-28 12:32+0300\n"
+"PO-Revision-Date: 2024-05-29 09:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -396,7 +396,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
-msgstr ""
+msgstr "<application>Hg</application> ייצוא"
 
 #: exportdialog.cpp:27
 #, kde-kuit-format
@@ -552,7 +552,7 @@ msgstr "<application>Hg</application> ייבוא"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
-msgstr ""
+msgstr "<application>Hg</application> פירוק"
 
 #: fileviewhgplugin.cpp:195
 #, kde-kuit-format
@@ -582,48 +582,48 @@ msgstr "<application>Mercurial</application>"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
-msgstr ""
+msgstr "קבצים נוספים למאגר ה־<application>Hg</application>..."
 
 #: fileviewhgplugin.cpp:425
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
-msgstr ""
+msgstr "הוספת קבצים למאגר ה־<application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
-msgstr ""
+msgstr "קבצים נוספו למאגר ה־<application>Hg</application>."
 
 #: fileviewhgplugin.cpp:439
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
-msgstr ""
+msgstr "להסיר את הקבצים הנבחרים מהמאגר?"
 
 #: fileviewhgplugin.cpp:441
 #, kde-format
 msgid "Remove Files"
-msgstr ""
+msgstr "להסיר קבצים"
 
 #: fileviewhgplugin.cpp:448
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
-msgstr ""
+msgstr "קבצים נמחקים ממאגר ה־<application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
-msgstr ""
+msgstr "הסרת קבצים ממאגר ה־ <application>Hg</application>נכשלה."
 
 #: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
-msgstr ""
+msgstr "הוסרו קבצים ממאגר ה־<application>Hg</application>."
 
 #: fileviewhgplugin.cpp:460
 #, kde-kuit-format
@@ -647,7 +647,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
-msgstr ""
+msgstr "אין שינויים להגשה!"
 
 #: fileviewhgplugin.cpp:476
 #, kde-kuit-format
@@ -709,7 +709,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
-msgstr ""
+msgstr "פעולת הענף על מאגר ה־<application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:509
 #, kde-kuit-format
@@ -717,19 +717,19 @@ msgctxt "@info:status"
 msgid ""
 "Branch operation on <application>Hg</application> repository completed "
 "successfully."
-msgstr ""
+msgstr "פעולת הענף על מאגר ה־<application>Hg</application> הושלמה בהצלחה."
 
 #: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
-msgstr ""
+msgstr "פעולת ענף על מאגר <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:607
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
-msgstr ""
+msgstr "להסיג את השינויים שבוצעו בקבצים הנבחרים?"
 
 #: fileviewhgplugin.cpp:609 fileviewhgplugin.cpp:610 fileviewhgplugin.cpp:631
 #, kde-format
@@ -760,24 +760,24 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
-msgstr ""
+msgstr "להסיג את כל השינויים שבוצעו בתיקיית העבודה הנוכחית?"
 
 #: fileviewhgplugin.cpp:630
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "להסיג הכול"
 
 #: fileviewhgplugin.cpp:647
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr ""
+msgstr "נוצר תיעוד הבדלים למאגר ה־<application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:648
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
-msgstr ""
+msgstr "לא ניתן למשוך את תיעוד ההבדלים למאגר ה־<application>Hg</application>."
 
 #: fileviewhgplugin.cpp:649
 #, kde-kuit-format
@@ -1203,3 +1203,5 @@ msgid ""
 "Some error occurred! \n"
 "Maybe there are uncommitted changes."
 msgstr ""
+"אירעה שגיאה!\n"
+"אולי יש שינויים שטרם הוגשו."

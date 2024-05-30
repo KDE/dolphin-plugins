@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2015, 2020.
-# Vit Pelcak <vit@pelcak.org>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2021-03-25 10:51+0100\n"
+"PO-Revision-Date: 2024-05-29 11:44+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: fileviewsvnplugin.cpp:71
@@ -198,7 +198,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr ""
+msgstr "Chyba při spuštění SVN: %1"
 
 #: fileviewsvnplugin.cpp:501
 #, kde-format
@@ -216,7 +216,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr ""
+msgstr "SVN Checkout"
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-29 00:40+0000\n"
-"PO-Revision-Date: 2024-04-30 15:25+0200\n"
+"PO-Revision-Date: 2024-05-29 11:44+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -47,7 +47,7 @@ msgstr "Značka:"
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr ""
+msgstr "Commit:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -295,7 +295,7 @@ msgstr "<application>Git</application> Sloučit..."
 #: fileviewgitplugin.cpp:105
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr ""
+msgstr "<application>Git</application> Clone..."
 
 #: fileviewgitplugin.cpp:109
 #, kde-kuit-format
@@ -386,18 +386,19 @@ msgstr "Autor"
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
-msgstr ""
+msgstr "Obnovování souborů z repozitáře <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:562
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
+"Obnovování souborů z repozitáře <application>Git</application> selhalo."
 
 #: fileviewgitplugin.cpp:563
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr ""
+msgstr "Obnovování souborů z repozitáře <application>Git</application>."
 
 #: fileviewgitplugin.cpp:589
 #, kde-kuit-format
@@ -407,12 +408,12 @@ msgstr ""
 #: fileviewgitplugin.cpp:593
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr ""
+msgstr "<application>Git</application> clone selhal: %1"
 
 #: fileviewgitplugin.cpp:595
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr ""
+msgstr "<application>Git</application> clone byl dokončen."
 
 #: fileviewgitplugin.cpp:603
 #, kde-kuit-format
