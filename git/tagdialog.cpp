@@ -118,11 +118,12 @@ QString TagDialog::baseBranch() const
 
 void TagDialog::setOkButtonState()
 {
+    static const auto whitespace = QRegularExpression(QStringLiteral("\\s"));
     const QString tagName = m_tagNameTextEdit->text().trimmed();
     QString toolTip;
     if (tagName.isEmpty()) {
         toolTip = i18nc("@info:tooltip", "You must enter a tag name first.");
-    } else if (tagName.contains(QRegularExpression(QStringLiteral("\\s")))) {
+    } else if (tagName.contains(whitespace)) {
         toolTip = i18nc("@info:tooltip", "Tag names may not contain any whitespace.");
     } else if (m_tagNames.contains(tagName)) {
         toolTip = i18nc("@info:tooltip", "A tag named '%1' already exists.", tagName);

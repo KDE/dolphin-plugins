@@ -212,6 +212,8 @@ void CheckoutDialog::newBranchCheckBoxStateToggled(int state)
 
 void CheckoutDialog::setOkButtonState()
 {
+    static const auto whitespace = QRegularExpression(QStringLiteral("\\s"));
+
     // default to enabled
     bool enableButton = true;
     bool newNameError = false;
@@ -234,7 +236,7 @@ void CheckoutDialog::setOkButtonState()
             m_newBranchName->setToolTip(tt);
             okButton->setToolTip(tt);
         }
-        if (newBranchName.contains(QRegularExpression(QStringLiteral("\\s")))) {
+        if (newBranchName.contains(whitespace)) {
             enableButton = false;
             newNameError = true;
             const QString tt = i18nc("@info:tooltip", "Branch names may not contain any whitespace.");
