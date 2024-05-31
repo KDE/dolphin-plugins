@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:40+0000\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
 "PO-Revision-Date: 2024-05-18 16:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -98,37 +98,37 @@ msgctxt "@title:group"
 msgid "Checkout"
 msgstr "簽出"
 
-#: checkoutdialog.cpp:226
+#: checkoutdialog.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "您必須先輸入新分支的名稱。"
 
-#: checkoutdialog.cpp:233
+#: checkoutdialog.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "已經有名為 '%1 的分支存在。"
 
-#: checkoutdialog.cpp:240
+#: checkoutdialog.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "分支名稱不能包含空白。"
 
-#: checkoutdialog.cpp:247
+#: checkoutdialog.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "您必須先選擇一個合法的分支。"
 
-#: checkoutdialog.cpp:253
+#: checkoutdialog.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "您必須輸入有效的提交 ID（SHA 雜湊值）。"
 
-#: checkoutdialog.cpp:286
+#: checkoutdialog.cpp:288
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -625,19 +625,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "分支："
 
-#: tagdialog.cpp:124
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "您必須先輸入標籤名稱。"
 
-#: tagdialog.cpp:126
+#: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "標籤名稱不能包含空白。"
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."

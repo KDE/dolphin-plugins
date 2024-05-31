@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:40+0000\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
 "PO-Revision-Date: 2020-04-01 13:23+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -98,31 +98,31 @@ msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Získanie"
 
-#: checkoutdialog.cpp:226
+#: checkoutdialog.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Najprv musíte zadať platný názov pre novú vetvu."
 
-#: checkoutdialog.cpp:233
+#: checkoutdialog.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Vetva s názvom '%1' už existuje."
 
-#: checkoutdialog.cpp:240
+#: checkoutdialog.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Názvy vetiev nesmú obsahovať žiadne medzery."
 
-#: checkoutdialog.cpp:247
+#: checkoutdialog.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Najprv musíte vybrať platnú vetvu."
 
-#: checkoutdialog.cpp:253
+#: checkoutdialog.cpp:255
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "You must enter a commit message first."
@@ -130,7 +130,7 @@ msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Najskôr musíte zadať správu začlenenia."
 
-#: checkoutdialog.cpp:286
+#: checkoutdialog.cpp:288
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -649,19 +649,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Vetva:"
 
-#: tagdialog.cpp:124
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "Najprv musíte zadať názov značky."
 
-#: tagdialog.cpp:126
+#: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Názvy značiek nesmú obsahovať žiadne medzery."
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:40+0000\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
 "PO-Revision-Date: 2024-05-17 13:38+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -96,37 +96,37 @@ msgctxt "@title:group"
 msgid "Checkout"
 msgstr "משיכה"
 
-#: checkoutdialog.cpp:226
+#: checkoutdialog.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "יש למלא קודם שם תקף לענף החדש."
 
-#: checkoutdialog.cpp:233
+#: checkoutdialog.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "כבר קיים ענף בשם ‚%1’."
 
-#: checkoutdialog.cpp:240
+#: checkoutdialog.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "שמות הענפים לא יכולים להכיל רווחים."
 
-#: checkoutdialog.cpp:247
+#: checkoutdialog.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "קודם יש לבחור בענף תקף."
 
-#: checkoutdialog.cpp:253
+#: checkoutdialog.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "יש למלא מזהה הגשה תקף (חתימת Sha)."
 
-#: checkoutdialog.cpp:286
+#: checkoutdialog.cpp:288
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -625,19 +625,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "ענף:"
 
-#: tagdialog.cpp:124
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "קודם יש לבחור שם לתגית."
 
-#: tagdialog.cpp:126
+#: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "שמות התגיות לא יכולים להכיל רווחים."
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."

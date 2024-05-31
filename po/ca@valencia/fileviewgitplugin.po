@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:40+0000\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
 "PO-Revision-Date: 2024-05-15 10:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -100,37 +100,37 @@ msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Extrau"
 
-#: checkoutdialog.cpp:226
+#: checkoutdialog.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Primer heu d'introduir un nom vàlid per a la branca nova."
 
-#: checkoutdialog.cpp:233
+#: checkoutdialog.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Ja hi ha una branca amb el nom «%1»."
 
-#: checkoutdialog.cpp:240
+#: checkoutdialog.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Els noms de les branques no poden contindre espais en blanc."
 
-#: checkoutdialog.cpp:247
+#: checkoutdialog.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Primer heu de seleccionar una branca vàlida."
 
-#: checkoutdialog.cpp:253
+#: checkoutdialog.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Cal introduir un ID vàlid de comissió (signatura SHA)."
 
-#: checkoutdialog.cpp:286
+#: checkoutdialog.cpp:288
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -652,19 +652,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Branca:"
 
-#: tagdialog.cpp:124
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "Primer heu d'introduir un nom de la branca."
 
-#: tagdialog.cpp:126
+#: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Els noms de les branques no poden contindre espais en blanc."
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."

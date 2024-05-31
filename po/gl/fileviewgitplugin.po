@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:40+0000\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
 "PO-Revision-Date: 2024-05-17 21:15+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -97,37 +97,37 @@ msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Obtención"
 
-#: checkoutdialog.cpp:226
+#: checkoutdialog.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Antes debe inserir un nome correcto para a nova rama."
 
-#: checkoutdialog.cpp:233
+#: checkoutdialog.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Xa existe unha rama chamada «%1»."
 
-#: checkoutdialog.cpp:240
+#: checkoutdialog.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Os nomes das ramas non poden ter espazos."
 
-#: checkoutdialog.cpp:247
+#: checkoutdialog.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Antes debe escoller unha rama correcta."
 
-#: checkoutdialog.cpp:253
+#: checkoutdialog.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Debe inserir un identificador válido de remisión (sinatura SHA)."
 
-#: checkoutdialog.cpp:286
+#: checkoutdialog.cpp:288
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -642,19 +642,19 @@ msgctxt "@label:listbox"
 msgid "Branch:"
 msgstr "Rama:"
 
-#: tagdialog.cpp:124
+#: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
 msgstr "Antes debe inserir un nome para a etiqueta."
 
-#: tagdialog.cpp:126
+#: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
 msgstr "Os nomes das etiquetas non poden ter espazos."
 
-#: tagdialog.cpp:128
+#: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
