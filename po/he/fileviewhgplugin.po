@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-05-29 09:14+0300\n"
+"PO-Revision-Date: 2024-05-31 09:12+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -384,13 +384,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
-msgstr ""
+msgstr "אתחול מאגר"
 
 #: createdialog.cpp:56
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
-msgstr ""
+msgstr "שגיאה ביצירת מאגר!"
 
 #: exportdialog.cpp:26
 #, kde-format
@@ -629,19 +629,19 @@ msgstr "הוסרו קבצים ממאגר ה־<application>Hg</application>."
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
-msgstr ""
+msgstr "שינוי שם קובץ במאגר <application>Hg</application> נכשל."
 
 #: fileviewhgplugin.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
-msgstr ""
+msgstr "שינוי שם קובץ במאגר <application>Hg</application> הצליח."
 
 #: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
-msgstr ""
+msgstr "מתבצע שינוי שם קובץ במאגר <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:472
 #, kde-kuit-format
@@ -653,57 +653,57 @@ msgstr "אין שינויים להגשה!"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
-msgstr ""
+msgstr "הגשה למאגר ה־<application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:477
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
-msgstr ""
+msgstr "הוגש למאגר ה־<application>Hg</application>."
 
 #: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
-msgstr ""
+msgstr "הגשה למאגר <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
-msgstr ""
+msgstr "פעולת תיוג במאגר ה־<application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:489
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
-msgstr ""
+msgstr "פעולת תיוג במאגר ה־<application>Hg</application> הצליחה."
 
 #: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
-msgstr ""
+msgstr "פעולת תיוג במאגר ה־<application>Hg</application>."
 
 #: fileviewhgplugin.cpp:498
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
-msgstr ""
+msgstr "עדכון תיקיית העבודה של <application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
-msgstr ""
+msgstr "עדכון תיקיית העבודה של <application>Hg</application> הצליחה."
 
 #: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
-msgstr ""
+msgstr "עדכון תיקיית העבודה של <application>Hg</application>"
 
 #: fileviewhgplugin.cpp:508
 #, kde-kuit-format
@@ -734,7 +734,7 @@ msgstr "להסיג את השינויים שבוצעו בקבצים הנבחרי�
 #: fileviewhgplugin.cpp:609 fileviewhgplugin.cpp:610 fileviewhgplugin.cpp:631
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "הסגה"
 
 #: fileviewhgplugin.cpp:616 fileviewhgplugin.cpp:637
 #, kde-kuit-format
@@ -789,7 +789,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
-msgstr ""
+msgstr "ביטול גורף: שינויים שלא הוגשו בתיקיית העבודה!"
 
 #: fileviewhgplugin.cpp:693
 #, kde-kuit-format
