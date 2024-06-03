@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-05-31 09:12+0300\n"
+"PO-Revision-Date: 2024-06-02 07:51+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -873,13 +873,13 @@ msgstr "רוחב חלונית"
 #: fileviewhgpluginsettings.kcfg:17
 #, kde-format
 msgid "Divides file list and editors with commit details"
-msgstr ""
+msgstr "פיצול רשימת הקבצים והעורכים עם פרטי ההגשה"
 
 #. i18n: ectx: label, entry (horizontalSplitterSizes), group (CommitDialogSettings)
 #: fileviewhgpluginsettings.kcfg:21
 #, kde-format
 msgid "Divides commit editor and diff editor"
-msgstr ""
+msgstr "פיצול בין עורך ההגשות לעורך ההבדלים"
 
 #: importdialog.cpp:28
 #, kde-kuit-format
