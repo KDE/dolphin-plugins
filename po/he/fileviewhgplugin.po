@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-06-02 07:51+0300\n"
+"PO-Revision-Date: 2024-06-06 06:20+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -22,19 +22,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> השבה (Backout)"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
-msgstr ""
+msgstr "השבה (Backout)"
 
 #: backoutdialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
-msgstr ""
+msgstr "מיזוג עם הורה מצב תיקייה (dirstate) ישן אחרי השבה (Backout)"
 
 #: backoutdialog.cpp:54 backoutdialog.cpp:55 bundledialog.cpp:51
 #, kde-kuit-format
@@ -46,7 +46,7 @@ msgstr "בחירת ערכת שינויים"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
-msgstr ""
+msgstr "מהדורה להשבה (Backout):"
 
 #: backoutdialog.cpp:62
 #, kde-kuit-format
@@ -378,7 +378,7 @@ msgstr "הגדרות תוספים"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Initialize Repository"
-msgstr ""
+msgstr "<application>Hg</application> אתחול מאגר"
 
 #: createdialog.cpp:23
 #, kde-kuit-format
@@ -522,7 +522,7 @@ msgstr "<application>Hg</application> הסגה של הכול"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
-msgstr ""
+msgstr "<application>Hg</application> החזרה (Rollback)"
 
 #: fileviewhgplugin.cpp:170
 #, kde-kuit-format
@@ -564,7 +564,7 @@ msgstr "<application>Hg</application> שירות"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> השבה (Backout)"
 
 #: fileviewhgplugin.cpp:205
 #, kde-kuit-format
@@ -740,13 +740,13 @@ msgstr "הסגה"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
-msgstr ""
+msgstr "קבצים מוחזרים כהסגה במאגר <application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:617 fileviewhgplugin.cpp:638
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
-msgstr ""
+msgstr "החזרת קבצים לאחור במאגר ה־<application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
@@ -754,7 +754,7 @@ msgctxt "@info:status"
 msgid ""
 "Reverting files in <application>Hg</application> repository completed "
 "successfully."
-msgstr ""
+msgstr "החזרת קבצים כהסגה במאגר <application>Hg</application> הושלמה בהצלחה."
 
 #: fileviewhgplugin.cpp:628
 #, kde-kuit-format
@@ -783,7 +783,7 @@ msgstr "לא ניתן למשוך את תיעוד ההבדלים למאגר ה־<
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
-msgstr ""
+msgstr "יצירת תיעוד הבדלים ל־<application>Hg</application> הצליחה."
 
 #: fileviewhgplugin.cpp:678
 #, kde-kuit-format
@@ -795,37 +795,37 @@ msgstr "ביטול גורף: שינויים שלא הוגשו בתיקיית ה�
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
-msgstr ""
+msgstr "אין פרטי החזרה (Rollback) זמינים!"
 
 #: fileviewhgplugin.cpp:704
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
-msgstr ""
+msgstr "האם להשיב (rollback) את ההעברה האחרונה?"
 
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:707
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "השבה (Rollback)"
 
 #: fileviewhgplugin.cpp:713
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
-msgstr ""
+msgstr "מופעלת השבה (Rollback) על מאגר ה־<application>Hg</application>…"
 
 #: fileviewhgplugin.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
-msgstr ""
+msgstr "השבת (Rollback) מאגר ה־<application>Hg</application> נכשלה."
 
 #: fileviewhgplugin.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Rollback of <application>Hg</application> repository completed successfully."
-msgstr ""
+msgstr "השבת (Rollback) מאגר ה־<application>Hg</application> הושלמה בהצלחב"
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)
