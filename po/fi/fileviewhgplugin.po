@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2023-04-20 10:31+0300\n"
+"PO-Revision-Date: 2024-03-20 18:18+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1119,7 +1119,7 @@ msgstr "Nouda muutokset (pull)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr ""
+msgstr "Lähetä"
 
 #: syncdialogbase.cpp:146
 #, kde-format
