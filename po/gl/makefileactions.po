@@ -1,73 +1,72 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:40+0000\n"
-"PO-Revision-Date: 2023-08-10 07:29+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
-"Language: sv\n"
+"PO-Revision-Date: 2024-06-09 11:16+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
-msgstr "Bygg '%1'%2."
+msgstr "Facer «%1»%2."
 
 #: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
 msgid "Makefile Actions"
-msgstr "Makefile-åtgärder"
+msgstr "Accións de Makefile"
 
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr "Ett fel uppstod när målet '%1' skulle byggas."
+msgstr "Produciuse un erro ao facer o obxectivo «%1»."
 
 #: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr "Körande process för '%1' stoppades med lyckat resultat."
+msgstr "Detívose o proceso en execución de «%1»."
 
 #: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr "Ett fel uppstod vid försök att bygga mål '%1'."
+msgstr "Produciuse un erro ao intentar facer o obxectivo «%1»."
 
 #: makefileactions.cpp:296
 #, kde-format
 msgid "&Make…"
-msgstr "&Bygg…"
+msgstr "&Facer…"
 
 #: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
-"Bara pålitliga filer kan användas av insticksprogrammet för Makefile-"
-"åtgärder."
+"O complemento de accións de Makefile só pode usar ficheiros de confianza."
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr "Pålitlig fil — avmarkera för sluta lita på"
+msgstr "Ficheiro de confianza. Desmárqueo para retirar a confianza."
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr "Opålitlig fil — markera för att lita på"
+msgstr "Ficheiro non de confianza. Marque para dar confianza."
 
 #: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr "Dolphin Makefile-insticksprogram"
+msgstr "Complemento de Makefile de Dolphin"
 
 #: makefileactions.cpp:312
 #, kde-format
@@ -75,28 +74,28 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
-"<b>Är du säker på att du vill lita på filen?</b><br>Pålitliga filer kan köra "
-"godtycklig kod vid anrop från den sammanhangsberoende menyn."
+"<b>Seguro que confía no ficheiro?</b><br>Os ficheiros de confianza poden "
+"executar código arbitrario nas invocacións do menú contextual."
 
 #: makefileactions.cpp:326
 #, kde-format
 msgid "Open a terminal window"
-msgstr "Öppna ett terminalfönster"
+msgstr "Abrir unha xanela de terminal"
 
 #: makefileactions.cpp:327
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
-"Öppna ett nytt terminalfönster för att se utmatningen när det valda målet "
-"byggs."
+"Abrir unha nova xanela de terminar para ver a saída de facer o obxectivo "
+"escollido."
 
 #: makefileactions.cpp:339
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr "Avbryt körande process (%1)"
+msgstr "Cancelar o proceso en execución (%1)"
 
 #: makefileactions.cpp:340
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr "Avbryt processen som för närvarande kör (%1)."
+msgstr "Interromper o proceso actual en execución (%1)."
