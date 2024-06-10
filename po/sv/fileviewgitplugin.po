@@ -1,13 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2010, 2012, 2015, 2016, 2018, 2024 Stefan Asserhall <stefan.asserhall@bredband.net>
+# SPDX-FileCopyrightText: 2010, 2012, 2015, 2016, 2018, 2024 Stefan Asserhall <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
-"PO-Revision-Date: 2024-06-08 20:58+0200\n"
+"PO-Revision-Date: 2024-06-09 09:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -149,7 +150,7 @@ msgstr "Ingen utcheckning"
 #, kde-format
 msgctxt "@option:check"
 msgid "Clone Into Bare Repo"
-msgstr ""
+msgstr "Duplicera i tomt arkiv"
 
 #: clonedialog.cpp:56
 #, kde-format
@@ -167,19 +168,19 @@ msgstr "Katalog:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Duplicera"
 
 #: clonedialog.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Välj en dupliceringskatalog"
 
 #: clonedialog.cpp:132
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr ""
+msgstr "<application>Git</application> duplicera"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -247,47 +248,47 @@ msgstr "Visa lokala <application>Git</application>-ändringar"
 #: fileviewgitplugin.cpp:68
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr ""
+msgstr "<application>Git</application> återställ uppsatta"
 
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr "Ta bort från <application>Git</application>"
+msgstr "<application>Git</application> ta bort"
 
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> utcheckning..."
+msgstr "<application>Git</application> checka ut..."
 
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "Arkivera i <application>Git</application>..."
+msgstr "<application>Git</application> arkivera..."
 
 #: fileviewgitplugin.cpp:88
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "Skapa tagg i <application>Git</application>..."
+msgstr "<application>Git</application> skapa tagg..."
 
 #: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "Skicka i <application>Git</application>..."
+msgstr "<application>Git</application> skicka..."
 
 #: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "Hämta med <application>Git</application>..."
+msgstr "<application>Git</application> hämta..."
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "Sammanfoga i <application>Git</application>..."
+msgstr "<application>Git</application> sammanfoga..."
 
 #: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr ""
+msgstr "<application>Git</application> duplicera..."
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
@@ -379,17 +380,21 @@ msgstr "Upphovsman"
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
+"Återställer uppsatta filer från <application>Git</application>-arkiv..."
 
 #: fileviewgitplugin.cpp:552
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
+"Återställning av uppsatta filer från <application>Git</application>-arkiv "
+"misslyckades."
 
 #: fileviewgitplugin.cpp:553
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
+"Återställer av uppsatta filer från <application>Git</application>-arkiv."
 
 #: fileviewgitplugin.cpp:591
 #, kde-kuit-format
@@ -399,17 +404,17 @@ msgstr "<application>Git</application> fel vid start: %1"
 #: fileviewgitplugin.cpp:595
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr ""
+msgstr "<application>Git</application> duplicera misslyckades: %1"
 
 #: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr ""
+msgstr "<application>Git</application> duplicera klart."
 
 #: fileviewgitplugin.cpp:632
 #, kde-kuit-format
 msgid "<application>Git</application> clone repository..."
-msgstr ""
+msgstr "<application>Git</application> duplicera arkiv..."
 
 #: fileviewgitplugin.cpp:666
 #, kde-kuit-format
