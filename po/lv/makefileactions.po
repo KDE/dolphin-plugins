@@ -1,0 +1,101 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"PO-Revision-Date: 2024-05-28 11:16+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#: makefileactions.cpp:225
+#, kde-format
+msgid "Make '%1'%2."
+msgstr "Make '%1'%2."
+
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
+#, kde-format
+msgid "Makefile Actions"
+msgstr "„Makefile“ darbības"
+
+#: makefileactions.cpp:254
+#, kde-format
+msgid "An error occurred while making target '%1'."
+msgstr "Notika kļūda, veidojot mērķi „%1“."
+
+#: makefileactions.cpp:262
+#, kde-format
+msgid "Running process for '%1' successfully stopped."
+msgstr "„%1“ palaistais process ir veiksmīgi apturēts."
+
+#: makefileactions.cpp:264
+#, kde-format
+msgid "An error occurred trying to make target '%1'."
+msgstr "Notika kļūda, mēģinot izveidot mērķi „%1“."
+
+#: makefileactions.cpp:296
+#, kde-format
+msgid "&Make…"
+msgstr "&Make…"
+
+#: makefileactions.cpp:301
+#, kde-format
+msgid "Only trusted files can be used by the Makefile Actions plugin."
+msgstr "„Makefile“ darbību spraudnis var izmantot tikai uzticamas datnes."
+
+#: makefileactions.cpp:304
+#, kde-format
+msgid "Trusted file — uncheck to remove trust"
+msgstr "Uzticama datne — noņemiet atzīmi, lai noņemtu uzticamību"
+
+#: makefileactions.cpp:304
+#, kde-format
+msgid "Untrusted file — check to trust"
+msgstr "Neuzticama datne — atzīmējiet, ja vēlaties to norādīt kā uzticamu"
+
+#: makefileactions.cpp:311
+#, kde-format
+msgid "Dolphin Makefile Plugin"
+msgstr "„Dolphin“ programmas „Makefile“ spraudnis"
+
+#: makefileactions.cpp:312
+#, kde-format
+msgid ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+msgstr ""
+"<b>Vai tiešām vēlaties šo datni norādīt kā uzticamu?</b><br>Uzticamām "
+"programmām ir ļauts izpildīt patvaļīgu kodu uznirstošās izvēlnes atvēršanas "
+"brīdī."
+
+#: makefileactions.cpp:326
+#, kde-format
+msgid "Open a terminal window"
+msgstr "Atvērt termināļa logu"
+
+#: makefileactions.cpp:327
+#, kde-format
+msgid ""
+"Open a new terminal window to see the output of making the chosen target."
+msgstr ""
+"Atvērt jaunu termināļa logu, lai redzētu izvēlētā mērķa veidošanas izvadi."
+
+#: makefileactions.cpp:339
+#, kde-format
+msgid "Cancel running process (%1)"
+msgstr "Atcelt palaisto procesu (%1)"
+
+#: makefileactions.cpp:340
+#, kde-format
+msgid "Interrupt the currently running process (%1)."
+msgstr "Pārtraukt šobrīd palaisto procesu (%1)."
