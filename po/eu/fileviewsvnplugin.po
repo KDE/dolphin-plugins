@@ -5,13 +5,13 @@
 # KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2018, 2020.
+# SPDX-FileCopyrightText: 2018, 2020, 2024 Iñigo Salvador Azurmendi <xalba@euskalnet.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
-"PO-Revision-Date: 2020-10-10 18:18+0200\n"
+"PO-Revision-Date: 2024-06-29 23:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "SVN Egunkaria..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Eskuratzea..."
+msgstr "SVN Eskuratu..."
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
@@ -279,7 +279,7 @@ msgstr "SVN eskuratu: eskuratze arrakastatsua."
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "SVN Eskuratzea"
+msgstr "SVN Eskuratu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26

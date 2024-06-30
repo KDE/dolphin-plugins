@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:58+0000\n"
-"PO-Revision-Date: 2024-04-20 10:13+0200\n"
+"PO-Revision-Date: 2024-06-29 23:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: checkoutdialog.cpp:30
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> Checkout (adarra aldatzea)"
+msgstr "<application>Git</application> Eskuratu"
 
 #: checkoutdialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "«Checkout»"
+msgstr "Eskuratu"
 
 #: checkoutdialog.cpp:54
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "Oinarri-adarra"
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "«Checkout»"
+msgstr "Eskuratu"
 
 #: checkoutdialog.cpp:196
 #, kde-format
@@ -261,7 +261,7 @@ msgstr "<application>Git</application> kendu"
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> Checkout (adarra aldatzea)..."
+msgstr "<application>Git</application> Eskuratu..."
 
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
@@ -448,8 +448,8 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
-"<application>Git</application> Checkout (adarra aldatzea) huts egin du. "
-"Agian zure laneko direktorioa zikin dago."
+"<application>Git</application> Eskuratzea huts egin du. Agian zure laneko "
+"direktorioa zikin dago."
 
 #: fileviewgitplugin.cpp:755
 #, kde-kuit-format
