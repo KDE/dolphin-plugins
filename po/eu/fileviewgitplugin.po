@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-04-27 20:46+0200\n"
+"PO-Revision-Date: 2024-06-29 23:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> Checkout (adarra aldatzea)"
+msgstr "<application>Git</application> Eskuratu"
 
 #: checkoutdialog.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "«Checkout»"
+msgstr "Eskuratu"
 
 #: checkoutdialog.cpp:58
 #, kde-format
@@ -45,12 +45,10 @@ msgid "Tag:"
 msgstr "Etiketa:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Baliozkotu"
+msgstr "Baliozkotu:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -99,7 +97,7 @@ msgstr "Oinarri-adarra"
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "«Checkout»"
+msgstr "Eskuratu"
 
 #: checkoutdialog.cpp:228
 #, kde-format
@@ -126,12 +124,10 @@ msgid "You must select a valid branch first."
 msgstr "Adar baliodun bat hautatu behar duzu aurrena."
 
 #: checkoutdialog.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Baliozkotze mezu bat sartu behar duzu aurrena."
+msgstr "Baliozkotze ID baliodun bat sartu behar duzu (SHA sinadura)."
 
 #: checkoutdialog.cpp:288
 #, kde-format
@@ -145,13 +141,13 @@ msgstr "adarra"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "git gordetegi baten URL edo bide-izena"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Azpimoduluak errekurtsiboki klonatzea"
 
 #: clonedialog.cpp:49
 #, kde-format
@@ -166,17 +162,13 @@ msgid "Directory:"
 msgstr "Direktorioa:"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Adarra:"
 
 #: clonedialog.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Recursive"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
 msgstr "Errekurtsiboa"
@@ -275,7 +267,7 @@ msgstr "<application>Git</application> kendu"
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> Checkout (adarra aldatzea)..."
+msgstr "<application>Git</application> Eskuratu..."
 
 #: fileviewgitplugin.cpp:84
 #, kde-kuit-format
@@ -437,10 +429,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> klonatu osatu da"
 
 #: fileviewgitplugin.cpp:603
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> clone repository..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> klonatu gordetegia..."
+msgstr "<application>Git</application> gordetegia klonatzen..."
 
 #: fileviewgitplugin.cpp:637
 #, kde-kuit-format
@@ -463,8 +454,8 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
-"<application>Git</application> Checkout (adarra aldatzea) huts egin du. "
-"Agian zure laneko direktorioa zikin dago."
+"<application>Git</application> Eskuratzea huts egin du. Agian zure laneko "
+"direktorioa zikin dago."
 
 #: fileviewgitplugin.cpp:726
 #, kde-kuit-format

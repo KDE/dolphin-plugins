@@ -1,17 +1,17 @@
 # Translation for fileviewsvnplugin.po to Euskara/Basque (eu).
 # Copyright (C) 2018, Free Software Foundation.
-# Copyright (C) 2019-2020, This file is copyright:
+# Copyright (C) 2019-2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2018, 2020.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2018, 2020, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2020-10-10 18:18+0200\n"
+"PO-Revision-Date: 2024-06-29 23:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "SVN Egunkaria..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Eskuratzea..."
+msgstr "SVN Eskuratu..."
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
@@ -201,20 +201,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN eskuratu: eskuratzea martxan..."
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Errorea abiaraztean: %1"
+msgstr "SVN Errorea ondokoa abiaraztean: %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN eskuratu: eskuratzea huts egin du."
+msgstr "SVN eskuratu: eskuratzea huts egin du: %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -223,11 +219,10 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN eskuratu: eskuratze arrakastatsua."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "SVN Eskuratzea"
+msgstr "SVN Eskuratu"
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format
@@ -296,7 +291,7 @@ msgstr "Hautatu eskuratzeko direktorio bat"
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "SVN Eskuratzea"
+msgstr "SVN Eskuratu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
