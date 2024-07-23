@@ -670,23 +670,3 @@ msgstr "Els noms de les branques no poden contenir espais en blanc."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Ja existeix una branca anomenada «%1»."
-
-#~ msgctxt "@option:check"
-#~ msgid "Depth:"
-#~ msgstr "Profunditat:"
-
-#~ msgctxt "@option:check"
-#~ msgid "Branch:"
-#~ msgstr "Branca:"
-
-#~ msgctxt "@option:check"
-#~ msgid "No Checkout"
-#~ msgstr "Sense extreure"
-
-#~ msgctxt "@option:check"
-#~ msgid "Clone Into Bare Repo"
-#~ msgstr "Clona en un repositori nu"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "URL:"
-#~ msgstr "URL:"
