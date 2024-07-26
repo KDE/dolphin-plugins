@@ -2,6 +2,14 @@ add_definitions(-DTRANSLATION_DOMAIN=\"fileviewgitplugin\")
 
 kcoreaddons_add_plugin(fileviewgitplugin INSTALL_NAMESPACE "dolphin/vcs")
 
+ecm_qt_declare_logging_category(fileviewgitplugin
+    HEADER dolphingit_log.h
+    IDENTIFIER DolphinGitLog
+    CATEGORY_NAME org.kde.dolphin.plugins.git
+    DESCRIPTION "Dolphin Git Plugin"
+    EXPORT DolphinGit
+)
+
 target_sources(fileviewgitplugin PRIVATE
     fileviewgitplugin.cpp
     checkoutdialog.cpp
@@ -37,8 +45,13 @@ target_link_libraries(fileviewgitplugin PRIVATE
     KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::TextWidgets
-    DolphinPluginsLogging
     DolphinVcs
 )
 
 install(FILES fileviewgitpluginsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+
+ecm_qt_install_logging_categories(
+    EXPORT DolphinGit
+    FILE dolphingit.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)

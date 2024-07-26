@@ -6,7 +6,7 @@
 
 #include "gitwrapper.h"
 
-#include <dolphinpluginsdebug.h>
+#include <dolphingit_log.h>
 
 #include <QDir>
 
@@ -99,7 +99,7 @@ QStringList GitWrapper::remoteBranches(const QString &remote)
                     // 'HEAD', 'refs/merge-requests', 'refs/backups', etc: just ignore it.
                 }
             } else {
-                qCWarning(GitPluginDebug) << "Error proccessing `git ls-remote` output: can't find `\\t` in:" << line;
+                qCWarning(DolphinGitLog) << "Error proccessing `git ls-remote` output: can't find `\\t` in:" << line;
             }
         }
     }
