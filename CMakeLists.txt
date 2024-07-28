@@ -75,7 +75,7 @@ install(FILES org.kde.dolphin-plugins.metainfo.xml
 
 ki18n_install(po)
 
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 include(KDEClangFormat)
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
