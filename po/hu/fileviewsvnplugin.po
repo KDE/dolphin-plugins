@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-01-29 12:57+0100\n"
+"PO-Revision-Date: 2024-07-31 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-i18n-doc@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.01.90\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: fileviewsvnplugin.cpp:71
@@ -200,20 +200,16 @@ msgid "SVN checkout: checkout in process..."
 msgstr "SVN lekérés: lekérés folyamatban…"
 
 #: fileviewsvnplugin.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Hiba indításkor: %1"
+msgstr "SVN hiba indításkor: %1"
 
 #: fileviewsvnplugin.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN lekérés: lekérés sikertelen."
+msgstr "SVN lekérés: lekérés sikertelen: %1"
 
 #: fileviewsvnplugin.cpp:503
 #, kde-format
@@ -222,8 +218,7 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN lekérés: sikeres lekérés."
 
 #: fileviewsvnplugin.cpp:507
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN lekérés"

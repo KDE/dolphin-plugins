@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-05-18 14:45+0200\n"
+"PO-Revision-Date: 2024-07-31 21:32+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: checkoutdialog.cpp:34
@@ -44,12 +44,10 @@ msgid "Tag:"
 msgstr "Címke:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Véglegesítés"
+msgstr "Véglegesítés:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -124,12 +122,10 @@ msgid "You must select a valid branch first."
 msgstr "Először ki kell választania egy érvényes ágat."
 
 #: checkoutdialog.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Először be kell írnia egy véglegesítési üzenetet."
+msgstr "Érvényes véglegesítési azonosítót kell megadnia (SHA aláírás)."
 
 #: checkoutdialog.cpp:288
 #, kde-format
@@ -143,19 +139,19 @@ msgstr "ág"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "git tároló URL-je vagy elérési út"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Almodulok klónozása rekurzívan"
 
 #: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:50
 #, kde-format
@@ -164,9 +160,7 @@ msgid "Directory:"
 msgstr "Könyvtár:"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Ág:"
@@ -430,10 +424,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> klónozás befejezve."
 
 #: fileviewgitplugin.cpp:603
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "<application>Git</application> egyesítés…"
+msgstr "<application>Git</application> tároló klónozása…"
 
 #: fileviewgitplugin.cpp:637
 #, kde-kuit-format
