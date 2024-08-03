@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-04-13 01:02-0300\n"
+"PO-Revision-Date: 2024-08-02 12:04-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -46,9 +46,7 @@ msgid "Tag:"
 msgstr "Marca:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
 msgstr "Enviar"
@@ -127,12 +125,10 @@ msgid "You must select a valid branch first."
 msgstr "Você deve selecionar primeiro uma ramificação válida."
 
 #: checkoutdialog.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Você deve indicar primeiro uma mensagem de envio."
+msgstr "Você deve inserir um Id de confirmação válido (assinatura Sha)."
 
 #: checkoutdialog.cpp:288
 #, kde-format
@@ -146,30 +142,28 @@ msgstr "ramificação"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "uma url ou caminho do repositório git"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Clonar submódulos recursivamente"
 
 #: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "Url:"
 
 #: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Pasta:"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Ramificação:"
@@ -178,26 +172,25 @@ msgstr "Ramificação:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr ""
+msgstr "Recursivamente"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Clonar"
 
 #: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Escolher pasta para clonar"
 
 #: clonedialog.cpp:93
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "Registro do <application>Git</application>"
+msgstr "<application>Git</application> Clone"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
@@ -263,11 +256,9 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Mostrar as alterações locais do <application>Git</application>"
 
 #: fileviewgitplugin.cpp:69
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "Criação da marca no <application>Git</application>"
+msgstr "<application>Git</application> Restauração preparada"
 
 #: fileviewgitplugin.cpp:74
 #, kde-kuit-format
@@ -305,10 +296,9 @@ msgid "<application>Git</application> Merge..."
 msgstr "Mesclar do <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:105
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
+#, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "Registro do <application>Git</application>..."
+msgstr "<application>Git</application> Clone..."
 
 #: fileviewgitplugin.cpp:109
 #, kde-kuit-format
@@ -407,22 +397,20 @@ msgid "Author"
 msgstr "Autor"
 
 #: fileviewgitplugin.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
-"Removendo os arquivos do repositório do <application>Git</application>..."
+"Restaurando arquivos preparados do repositório <application>Git</"
+"application>..."
 
 #: fileviewgitplugin.cpp:562
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"A remoção dos arquivos do repositório do <application>Git</application> foi "
-"mal-sucedida."
+"Falha na restauração de arquivos preparados do repositório <application>Git</"
+"application>."
 
 #: fileviewgitplugin.cpp:563
 #, kde-kuit-format
@@ -432,30 +420,24 @@ msgstr ""
 "application>."
 
 #: fileviewgitplugin.cpp:589
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "Criação da marca no <application>Git</application>"
+msgstr "<application>Git</application> erro ao iniciar: %1"
 
 #: fileviewgitplugin.cpp:593
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "Registro do <application>Git</application> falhou."
+msgstr "<application>Git</application> falha ao clonar: %1"
 
 #: fileviewgitplugin.cpp:595
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "Obtenção do <application>Git</application>"
+msgstr "<application>Git</application> clonagem concluída."
 
 #: fileviewgitplugin.cpp:603
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "Mesclar do <application>Git</application>..."
+msgstr "<application>Git</application> clonando repositório..."
 
 #: fileviewgitplugin.cpp:637
 #, kde-kuit-format
