@@ -44,7 +44,8 @@ public:
 
 private Q_SLOTS:
     void radioButtonToggled(QWidget *acompanyWidget, const QString &baseBranchName, bool checked);
-    void newBranchCheckBoxStateToggled(int state);
+    void newBranchCheckBoxStateToggled(Qt::CheckState state);
+
     /**
      * Checks whether the values of all relevant widgets are valid.
      * Enables or disables the OK button and sets tooltips accordingly.

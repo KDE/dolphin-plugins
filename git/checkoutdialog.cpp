@@ -153,7 +153,7 @@ CheckoutDialog::CheckoutDialog(QWidget *parent)
     connect(m_branchComboBox, &QComboBox::currentTextChanged, this, &CheckoutDialog::setDefaultNewBranchName);
     connect(m_branchComboBox, &QComboBox::currentTextChanged, this, &CheckoutDialog::setOkButtonState);
     connect(m_tagComboBox, &QComboBox::currentTextChanged, this, &CheckoutDialog::setDefaultNewBranchName);
-    connect(m_newBranchCheckBox, &QCheckBox::stateChanged, this, &CheckoutDialog::newBranchCheckBoxStateToggled);
+    connect(m_newBranchCheckBox, &QCheckBox::checkStateChanged, this, &CheckoutDialog::newBranchCheckBoxStateToggled);
     connect(m_newBranchName, &QLineEdit::textChanged, this, &CheckoutDialog::setOkButtonState);
     connect(m_newBranchName, &QLineEdit::textEdited, this, &CheckoutDialog::noteUserEditedNewBranchName);
 
@@ -200,7 +200,7 @@ void CheckoutDialog::radioButtonToggled(QWidget *buddyWidget, const QString &bas
     setOkButtonState();
 }
 
-void CheckoutDialog::newBranchCheckBoxStateToggled(int state)
+void CheckoutDialog::newBranchCheckBoxStateToggled(Qt::CheckState state)
 {
     m_newBranchName->setEnabled(state == Qt::Checked);
     m_branchSelectGroupBox->setTitle(state == Qt::Checked ? i18nc("@title:group", "Branch Base") : i18nc("@title:group", "Checkout"));
