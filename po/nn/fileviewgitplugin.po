@@ -45,8 +45,6 @@ msgstr "Merkelapp:"
 
 #: checkoutdialog.cpp:71
 #, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
 msgstr "Meld inn"
@@ -125,8 +123,6 @@ msgstr "Du må velja ei gyldig grein først."
 
 #: checkoutdialog.cpp:255
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Du må skriva inn ei innmeldingsmelding først."
@@ -165,8 +161,6 @@ msgstr ""
 
 #: clonedialog.cpp:52
 #, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Grein:"
@@ -191,7 +185,6 @@ msgstr ""
 
 #: clonedialog.cpp:93
 #, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
 msgstr "<application>Git</application> logg"
@@ -261,8 +254,6 @@ msgstr "Vis lokale <application>Git</application>-endringar"
 
 #: fileviewgitplugin.cpp:69
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> lag merkelapp"
 
@@ -303,7 +294,6 @@ msgstr "<application>Git</application> flett saman …"
 
 #: fileviewgitplugin.cpp:105
 #, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log..."
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> logg …"
 
@@ -394,48 +384,38 @@ msgstr "Opphavsperson"
 
 #: fileviewgitplugin.cpp:561
 #, fuzzy, kde-kuit-format
-#| msgid "Removing files from <application>Git</application> repository..."
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "Fjernar filer frå <application>Git</application>-depot …"
 
 #: fileviewgitplugin.cpp:562
 #, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr "Feil ved fjerning av filer frå <application>Git</application>-depot."
 
 #: fileviewgitplugin.cpp:563
 #, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Tilbakestilte filer frå <application>Git</application>-depot."
 
 #: fileviewgitplugin.cpp:589
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> lag merkelapp"
 
 #: fileviewgitplugin.cpp:593
 #, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Feil ved <application>Git</application>-logg."
 
 #: fileviewgitplugin.cpp:595
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> sjekk ut"
 
 #: fileviewgitplugin.cpp:603
 #, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> flett saman …"
 

@@ -215,8 +215,6 @@ msgstr ""
 
 #: fileviewsvnplugin.cpp:507
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "SVN Commit"
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN Innlever"

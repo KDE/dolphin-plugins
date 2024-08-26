@@ -45,8 +45,6 @@ msgstr "Tagg:"
 
 #: checkoutdialog.cpp:71
 #, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
 msgstr "Innlever"
@@ -125,8 +123,6 @@ msgstr "Du må først velge en gyldig gren."
 
 #: checkoutdialog.cpp:255
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Du må skrive inn en innleveringsmelding først."
@@ -165,8 +161,6 @@ msgstr ""
 
 #: clonedialog.cpp:52
 #, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Gren:"
@@ -191,8 +185,6 @@ msgstr ""
 
 #: clonedialog.cpp:93
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Commit"
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
 msgstr "<application>Git</application> innlever"
@@ -262,8 +254,6 @@ msgstr ""
 
 #: fileviewgitplugin.cpp:69
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> Opprett tagg"
 
@@ -304,8 +294,6 @@ msgstr ""
 
 #: fileviewgitplugin.cpp:105
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Commit"
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> innlever"
 
@@ -395,52 +383,38 @@ msgstr ""
 
 #: fileviewgitplugin.cpp:561
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Commit"
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "<application>Git</application> innlever"
 
 #: fileviewgitplugin.cpp:562
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> Opprett tagg"
 
 #: fileviewgitplugin.cpp:563
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Commit"
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "<application>Git</application> innlever"
 
 #: fileviewgitplugin.cpp:589
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> Opprett tagg"
 
 #: fileviewgitplugin.cpp:593
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Pull"
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> dra"
 
 #: fileviewgitplugin.cpp:595
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> sjekk ut"
 
 #: fileviewgitplugin.cpp:603
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Commit"
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> innlever"
 
