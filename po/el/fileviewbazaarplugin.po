@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Stelios <sstavra@gmail.com>, 2012.
+# Antonis Geralis <capoiosct@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewbazaarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:40+0000\n"
-"PO-Revision-Date: 2012-11-21 22:58+0200\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
-"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"PO-Revision-Date: 2024-08-29 19:45+0300\n"
+"Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-doc@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: fileviewbazaarplugin.cpp:49
 #, kde-format
@@ -40,7 +41,7 @@ msgstr "Bazaar ώθηση"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
-msgstr "Εμφάνιση τοπικών bazaar αλλαγών"
+msgstr "Εμφάνιση τοπικών αλλαγών Bazaar"
 
 #: fileviewbazaarplugin.cpp:69
 #, kde-format
@@ -64,7 +65,7 @@ msgstr "Bazaar διαγραφή"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Log"
-msgstr "Bazaar ημερολόγιο"
+msgstr "Καταγραφή Bazaar"
 
 #: fileviewbazaarplugin.cpp:360
 #, kde-format
@@ -196,7 +197,7 @@ msgstr "Διαγράφηκαν αρχεία από το Bazaar αποθετήρ�
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
-msgstr "Εκτέλεση Bazaar ημερολογίου..."
+msgstr "Εκτέλεση καταγραφής Bazaar..."
 
 #: fileviewbazaarplugin.cpp:428
 #, kde-format

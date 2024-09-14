@@ -4,20 +4,21 @@
 # Petros Vidalis <pvidalis@gmail.com>, 2012, 2013, 2017, 2018, 2020.
 # Dimitris Kardarakos <dimkard@gmail.com>, 2014.
 # George Stefanakis <george.stefanakis@gmail.com>, 2023.
+# Antonis Geralis <capoiosct@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2023-08-02 00:29+0300\n"
-"Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
+"PO-Revision-Date: 2024-08-30 09:23+0300\n"
+"Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: backoutdialog.cpp:29
 #, kde-kuit-format
@@ -989,7 +990,7 @@ msgstr "<application>Hg</application> Pull αποθετηρίου"
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
-msgstr ""
+msgstr "Ενημέρωση στη νέα επικεφαλίδα κλάδου αν τα σύνολα αλλαγών έχουν ληφθεί"
 
 #: pulldialog.cpp:35
 #, kde-kuit-format
@@ -1019,7 +1020,7 @@ msgstr "<application>Hg</application> Push αποθετηρίου"
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
-msgstr ""
+msgstr "Επιτρέψτε την προώθηση ενός νέου κλάδου"
 
 #: pushdialog.cpp:35
 #, kde-kuit-format
@@ -1067,7 +1068,7 @@ msgstr "Μετονομασία σε "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> Σερβίρισμα"
 
 #: servedialog.cpp:56
 #, kde-kuit-format
@@ -1136,7 +1137,7 @@ msgstr "Pull"
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr ""
+msgstr "Σπρώξιμο"
 
 #: syncdialogbase.cpp:146
 #, kde-format
@@ -1206,12 +1207,12 @@ msgstr "Ετικέτα"
 #: updatedialog.cpp:34
 #, kde-format
 msgid "Changeset/Revision"
-msgstr ""
+msgstr "Σύνολο αλλαγών/αναθεώρηση"
 
 #: updatedialog.cpp:39
 #, kde-format
 msgid "Current Parent"
-msgstr ""
+msgstr "Τρέχων γονέας"
 
 #: updatedialog.cpp:45
 #, kde-format
