@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SPDX-FileCopyrightText: 2024 Dimitrys Meliates <demetresmeliates+i18n@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
@@ -10,62 +10,64 @@ msgstr ""
 "PO-Revision-Date: 2024-09-13 18:18+0300\n"
 "Last-Translator: Antonis G. <capoiosct@gmail.com>\n"
 "Language-Team: el <kde-i18n-el@kde.org>\n"
-"Language: Greek\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: makefileactions.cpp:225
 #, kde-format
 msgid "Make '%1'%2."
-msgstr ""
+msgstr "Make '%1'%2."
 
 #: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
 #, kde-format
 msgid "Makefile Actions"
-msgstr ""
+msgstr "Ενέργειες Makefile"
 
 #: makefileactions.cpp:254
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "Προέκυψε σφάλμα κατά τη δημιουργία του στόχου '%1'."
 
 #: makefileactions.cpp:262
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr ""
+msgstr "Η εκτελούμενη διεργασία για το '%1' σταμάτησε επιτυχώς."
 
 #: makefileactions.cpp:264
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "Παρουσιάστηκε σφάλμα κατά την προσπάθεια δημιουργίας του στόχου '%1'."
 
 #: makefileactions.cpp:296
 #, kde-format
 msgid "&Make…"
-msgstr ""
+msgstr "&Make…"
 
 #: makefileactions.cpp:301
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
+"Μόνο αξιόπιστα αρχεία μπορούν να χρησιμοποιηθούν από το πρόσθετο Ενέργειες "
+"Makefile."
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "Αξιόπιστο αρχείο - αποεπίλεξτε για να καταργήσετε την εμπιστοσύνη"
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "Μη αξιόπιστο αρχείο - έλεγχος εμπιστοσύνης"
 
 #: makefileactions.cpp:311
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr ""
+msgstr "Πρόσθετο Dolphin Makefile"
 
 #: makefileactions.cpp:312
 #, kde-format
@@ -73,24 +75,29 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>Είστε σίγουροι ότι μπορείτε να εμπιστευτείτε αυτό το αρχείο;</b><br>Τα "
+"έμπιστα αρχεία μπορεί να εκτελέσουν αυθαίρετο κώδικα κατά την κλήση του "
+"σχετικού μενού."
 
 #: makefileactions.cpp:326
 #, kde-format
 msgid "Open a terminal window"
-msgstr ""
+msgstr "Άνοιγμα ενός τερματικού παραθύρου"
 
 #: makefileactions.cpp:327
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"Άνοιγμα ενός νέου παραθύρου τερματικού για να δείτε την έξοδο της "
+"δημιουργίας του επιλεγμένου στόχου."
 
 #: makefileactions.cpp:339
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr ""
+msgstr "Ακύρωση εκτελούμενης διεργασίας (%1)"
 
 #: makefileactions.cpp:340
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr ""
+msgstr "Διακοπή της τρέχουσας διεργασίας (%1)."

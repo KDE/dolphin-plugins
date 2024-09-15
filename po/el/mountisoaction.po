@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SPDX-FileCopyrightText: 2024 Dimitrys Meliates <demetresmeliates+i18n@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
@@ -10,21 +10,21 @@ msgstr ""
 "PO-Revision-Date: 2024-09-13 18:18+0300\n"
 "Last-Translator: Antonis G. <capoiosct@gmail.com>\n"
 "Language-Team: el <kde-i18n-el@kde.org>\n"
-"Language: Greek\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: mountisoaction.cpp:212
 #, kde-format
 msgctxt "@action:inmenu Action to mount a disk image"
 msgid "Mount"
-msgstr ""
+msgstr "Προσάρτηση"
 
 #: mountisoaction.cpp:223
 #, kde-format
 msgctxt "@action:inmenu Action to unmount a disk image"
 msgid "Unmount"
-msgstr ""
+msgstr "Αποσύνδεση"
