@@ -95,7 +95,7 @@ CloneDialog::CloneDialog(const QString &contextDir, QWidget *parent)
 
 void CloneDialog::loadFromClipboard()
 {
-    auto input = QApplication::clipboard()->text();
+    auto input = QApplication::clipboard()->text().trimmed();
     if (!input.isEmpty()
         && (input.startsWith(QStringLiteral("http")) || input.startsWith(QStringLiteral("git@")) || input.startsWith(QStringLiteral("git:"))
             || input.startsWith(QStringLiteral("git clone ")) || QDir(m_contextDir, input).exists())) {
