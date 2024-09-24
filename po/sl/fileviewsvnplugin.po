@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-09-15 08:31+0200\n"
+"PO-Revision-Date: 2024-09-23 19:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Poedit 3.5\n"
 
 #: fileviewsvnplugin.cpp:71
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "Pokaži krajevne spremembe SVN"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "SVN Commit (izroči) …"
+msgstr "SVN Commit (potrdi)..."
 
 #: fileviewsvnplugin.cpp:86
 #, kde-format
@@ -255,13 +255,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
-msgstr "Izročitev sprememb SVN je spodletela."
+msgstr "Potrditev sprememb SVN je spodletela."
 
 #: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
-msgstr "SVN Commit (izroči)"
+msgstr "SVN Commit (potrdi)"
 
 #: fileviewsvnplugin.cpp:673
 #, kde-format
@@ -390,7 +390,7 @@ msgstr "Osveži"
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr "Izroči"
+msgstr "Potrdi"
 
 #: svncommitdialog.cpp:112
 #, kde-format
