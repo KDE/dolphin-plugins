@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Martin Schlander <mschlander@opensuse.org>, 2010, 2011, 2012, 2015, 2016, 2020.
+# SPDX-FileCopyrightText: 2024 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2020-07-27 22:10+0200\n"
-"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"PO-Revision-Date: 2024-10-28 14:12+0100\n"
+"Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: checkoutdialog.cpp:34
@@ -42,12 +43,10 @@ msgid "Tag:"
 msgstr "Tag:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Commit"
+msgstr "Commit:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -122,12 +121,10 @@ msgid "You must select a valid branch first."
 msgstr "Du skal første vælge en gyldig branch."
 
 #: checkoutdialog.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Du skal første angive en commit-besked."
+msgstr "Du skal første angive et gyldigt commit-ID (Sha-signatur)."
 
 #: checkoutdialog.cpp:288
 #, kde-format
@@ -141,30 +138,28 @@ msgstr "branch"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "et url eller en sti til et git-depot"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Klon undermoduler rekursivt"
 
 #: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "Url:"
 
 #: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "Mappe:"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
 msgstr "Branch:"
@@ -173,19 +168,19 @@ msgstr "Branch:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr ""
+msgstr "Rekursiv"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "Klon"
 
 #: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Vælg en kloningsmappe"
 
 #: clonedialog.cpp:93
 #, fuzzy, kde-kuit-format
