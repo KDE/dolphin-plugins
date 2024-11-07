@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-05-16 11:39+0200\n"
+"PO-Revision-Date: 2024-11-06 23:58+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -107,7 +107,7 @@ msgstr "Първо трябва да изберете валидно име за
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr "Клон с име \"%1\" вече съществува."
+msgstr "Клон с име „%1“ вече съществува."
 
 #: checkoutdialog.cpp:242
 #, kde-format
@@ -436,7 +436,7 @@ msgstr "<application>Git</application> клониране на хранилищ�
 #: fileviewgitplugin.cpp:637
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr "Превключване към клон \"%1\""
+msgstr "Превключване към клон „%1“"
 
 #: fileviewgitplugin.cpp:644
 #, kde-kuit-format
@@ -446,7 +446,7 @@ msgstr "HEAD главата е в %1"
 #: fileviewgitplugin.cpp:649
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr "Преминато е към нов клон \"%1\""
+msgstr "Преминато е към нов клон „%1“"
 
 #: fileviewgitplugin.cpp:660
 #, kde-kuit-format
@@ -460,7 +460,7 @@ msgstr ""
 #: fileviewgitplugin.cpp:726
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr "Успешно е създаден етикет '%1'"
+msgstr "Успешно е създаден етикет „%1“"
 
 #: fileviewgitplugin.cpp:731
 #, kde-kuit-format
@@ -469,7 +469,7 @@ msgid ""
 "already exists."
 msgstr ""
 "Неуспешно създаване на етикет на <application>Git</application> . Етикет с "
-"име \"%1\" вече съществува"
+"име „%1“ вече съществува"
 
 #: fileviewgitplugin.cpp:734
 #, kde-kuit-format
@@ -661,4 +661,4 @@ msgstr "Имената не може да съдържат празни поле
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr "Етикет с име \"%1\" вече съществува."
+msgstr "Етикет с име „%1“ вече съществува."
