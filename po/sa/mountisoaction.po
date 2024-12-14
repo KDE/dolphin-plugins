@@ -1,0 +1,29 @@
+# Sanskrit translations for dolphin-plugins package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mountisoaction.cpp:212
+#, kde-format
+msgctxt "@action:inmenu Action to mount a disk image"
+msgid "Mount"
+msgstr "माउण्ट्"
+
+#: mountisoaction.cpp:223
+#, kde-format
+msgctxt "@action:inmenu Action to unmount a disk image"
+msgid "Unmount"
+msgstr "अनमाउंट"

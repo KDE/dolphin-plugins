@@ -1,0 +1,644 @@
+# Sanskrit translations for dolphin-plugins package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: checkoutdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Checkout"
+msgstr "<application>Git</application> चेकआउट्"
+
+#: checkoutdialog.cpp:45
+#, kde-format
+msgctxt "@action:button"
+msgid "Checkout"
+msgstr "चेकआउट"
+
+#: checkoutdialog.cpp:58
+#, kde-format
+msgctxt "@option:radio Git Checkout"
+msgid "Branch:"
+msgstr "शाखा:"
+
+#: checkoutdialog.cpp:65
+#, kde-format
+msgctxt "@option:radio Git Checkout"
+msgid "Tag:"
+msgstr "सूचकपत्त्र:"
+
+#: checkoutdialog.cpp:71
+#, kde-format
+msgctxt "@option:radio Git Checkout"
+msgid "Commit:"
+msgstr "प्रविश्:"
+
+#: checkoutdialog.cpp:82 pushdialog.cpp:80
+#, kde-format
+msgctxt "@title:group"
+msgid "Options"
+msgstr "विकल्पाः"
+
+#: checkoutdialog.cpp:87
+#, kde-format
+msgctxt "@option:check"
+msgid "Create New Branch: "
+msgstr "नवीन शाखा रचयन्तु : १. "
+
+#: checkoutdialog.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new branch based on a selected branch or tag."
+msgstr "चयनितशाखायाः अथवा टैग् इत्यस्य आधारेण नूतनं शाखां रचयन्तु ।"
+
+#: checkoutdialog.cpp:103 pushdialog.cpp:83
+#, kde-format
+msgctxt "@option:check"
+msgid "Force"
+msgstr "बल"
+
+#: checkoutdialog.cpp:104
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Discard local changes."
+msgstr "स्थानीयपरिवर्तनानि परित्यजन्तु।"
+
+#: checkoutdialog.cpp:136
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "There are no tags in this repository."
+msgstr "अस्मिन् भण्डारे टैग्स् नास्ति ।"
+
+#: checkoutdialog.cpp:206
+#, kde-format
+msgctxt "@title:group"
+msgid "Branch Base"
+msgstr "शाखा आधार"
+
+#: checkoutdialog.cpp:206
+#, kde-format
+msgctxt "@title:group"
+msgid "Checkout"
+msgstr "चेकआउट"
+
+#: checkoutdialog.cpp:228
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a valid name for the new branch first."
+msgstr "भवता प्रथमं नूतनशाखायाः वैधं नाम प्रविष्टव्यम् ।"
+
+#: checkoutdialog.cpp:235
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "A branch with the name '%1' already exists."
+msgstr "'%1' इति नाम्ना शाखा पूर्वमेव अस्ति ।"
+
+#: checkoutdialog.cpp:242
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Branch names may not contain any whitespace."
+msgstr "शाखानामसु श्वेतस्थानं न स्यात् ।"
+
+#: checkoutdialog.cpp:249
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must select a valid branch first."
+msgstr "प्रथमं वैधशाखां चिन्वन्तु ।"
+
+#: checkoutdialog.cpp:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a valid commit Id (Sha signature)."
+msgstr "भवता वैधं commit Id (Sha हस्ताक्षरं) प्रविष्टव्यम् ।"
+
+#: checkoutdialog.cpp:288
+#, kde-format
+msgctxt ""
+"@item:intext Prepended to the current branch name to get the default name "
+"for a newly created branch"
+msgid "branch"
+msgstr "शाखा"
+
+#: clonedialog.cpp:36
+#, kde-format
+msgctxt "a placeholder"
+msgid "a git repository url or path"
+msgstr "एकः git भण्डारः url अथवा मार्गः"
+
+#: clonedialog.cpp:46
+#, kde-format
+msgctxt "@info:tooltip submodules as in git submodules"
+msgid "Recursively clone submodules"
+msgstr "पुनरावर्तनीयरूपेण उपमॉड्यूलस्य क्लोनीकरणं कुर्वन्तु"
+
+#: clonedialog.cpp:49
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Url:"
+msgstr "Url: १."
+
+#: clonedialog.cpp:50
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Directory:"
+msgstr "निर्देशिका : १."
+
+#: clonedialog.cpp:52
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Branch:"
+msgstr "शाखा:"
+
+#: clonedialog.cpp:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Recursive"
+msgstr "पुनरावर्तनीयम्"
+
+#: clonedialog.cpp:58
+#, kde-format
+msgctxt "@action:button"
+msgid "Clone"
+msgstr "क्लोन"
+
+#: clonedialog.cpp:76
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a clone directory"
+msgstr "क्लोन् निर्देशिकां चिनोतु"
+
+#: clonedialog.cpp:93
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Clone"
+msgstr "<application>Git</application> क्लोन"
+
+#: commitdialog.cpp:24
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Commit"
+msgstr "<application>Git</application> प्रतिबद्धम्"
+
+#: commitdialog.cpp:35
+#, kde-format
+msgctxt "@action:button"
+msgid "Commit"
+msgstr "प्रविश्"
+
+#: commitdialog.cpp:44
+#, kde-format
+msgctxt "@title:group"
+msgid "Commit message"
+msgstr "सन्देशं प्रतिबद्धं कुर्वन्तु"
+
+#: commitdialog.cpp:61
+#, kde-format
+msgctxt "@option:check"
+msgid "Amend last commit"
+msgstr "अन्तिमप्रतिबद्धता संशोधित करें"
+
+#: commitdialog.cpp:67
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "There is nothing to amend."
+msgstr "संशोधनीयं किमपि नास्ति।"
+
+#: commitdialog.cpp:72
+#, kde-format
+msgctxt "@action:button Add Signed-Off line to the message widget"
+msgid "Sign off"
+msgstr "हस्ताक्षरं कुर्वन्तु"
+
+#: commitdialog.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add Signed-off-by line at the end of the commit message."
+msgstr "प्रतिबद्धसन्देशस्य अन्ते Signed-off-by रेखां योजयन्तु ।"
+
+#: commitdialog.cpp:129
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a commit message first."
+msgstr "भवद्भिः प्रथमं commit सन्देशः प्रविष्टव्यः ।"
+
+#: fileviewgitplugin.cpp:54
+#, kde-kuit-format
+msgid "<application>Git</application> Revert"
+msgstr "<application>Git</application> प्रतिवर्तयतु"
+
+#: fileviewgitplugin.cpp:59
+#, kde-kuit-format
+msgid "<application>Git</application> Add"
+msgstr "<application>Git</application> योजयतु"
+
+#: fileviewgitplugin.cpp:64
+#, kde-kuit-format
+msgid "Show Local <application>Git</application> Changes"
+msgstr "स्थानीय <application>Git</application> परिवर्तनं दर्शयतु"
+
+#: fileviewgitplugin.cpp:69
+#, kde-kuit-format
+msgid "<application>Git</application> Restore staged"
+msgstr "<application>Git</application> मञ्चितं पुनः स्थापयतु"
+
+#: fileviewgitplugin.cpp:74
+#, kde-kuit-format
+msgid "<application>Git</application> Remove"
+msgstr "<application>Git</application> निष्कासयतु"
+
+#: fileviewgitplugin.cpp:79
+#, kde-kuit-format
+msgid "<application>Git</application> Checkout..."
+msgstr "<application>Git</application> चेकआउट्..."
+
+#: fileviewgitplugin.cpp:84
+#, kde-kuit-format
+msgid "<application>Git</application> Commit..."
+msgstr "<application>Git</application> प्रतिबद्ध..."
+
+#: fileviewgitplugin.cpp:89
+#, kde-kuit-format
+msgid "<application>Git</application> Create Tag..."
+msgstr "<application>Git</application> टैग रचयन्तु..."
+
+#: fileviewgitplugin.cpp:93
+#, kde-kuit-format
+msgid "<application>Git</application> Push..."
+msgstr "<application>Git</application> पुश..."
+
+#: fileviewgitplugin.cpp:97
+#, kde-kuit-format
+msgid "<application>Git</application> Pull..."
+msgstr "<application>Git</application> खींच..."
+
+#: fileviewgitplugin.cpp:101
+#, kde-kuit-format
+msgid "<application>Git</application> Merge..."
+msgstr "<application>Git</application> विलीनीकरणं..."
+
+#: fileviewgitplugin.cpp:105
+#, kde-kuit-format
+msgid "<application>Git</application> Clone..."
+msgstr "<application>Git</application> क्लोन..."
+
+#: fileviewgitplugin.cpp:109
+#, kde-kuit-format
+msgid "<application>Git</application> Log..."
+msgstr "<application>Git</application> लॉग..."
+
+#: fileviewgitplugin.cpp:438
+#, kde-kuit-format
+msgid "Adding files to <application>Git</application> repository..."
+msgstr "<application>Git</application> भण्डारे सञ्चिकाः योजयित्वा..."
+
+#: fileviewgitplugin.cpp:439
+#, kde-kuit-format
+msgid "Adding files to <application>Git</application> repository failed."
+msgstr "<application>Git</application> भण्डारे सञ्चिकाः योजयितुं विफलम् ।"
+
+#: fileviewgitplugin.cpp:440
+#, kde-kuit-format
+msgid "Added files to <application>Git</application> repository."
+msgstr "<application>Git</application> भण्डारे सञ्चिकाः योजिताः ।"
+
+#: fileviewgitplugin.cpp:451
+#, kde-kuit-format
+msgid "Removing files from <application>Git</application> repository..."
+msgstr "<application>Git</application> भण्डारतः सञ्चिकाः निष्कासयन्..."
+
+#: fileviewgitplugin.cpp:452
+#, kde-kuit-format
+msgid "Removing files from <application>Git</application> repository failed."
+msgstr "<application>Git</application> भण्डारतः सञ्चिकानां निष्कासनं विफलम् ।"
+
+#: fileviewgitplugin.cpp:453
+#, kde-kuit-format
+msgid "Removed files from <application>Git</application> repository."
+msgstr "<application>Git</application> भण्डारतः सञ्चिकाः निष्कासिताः ।"
+
+#: fileviewgitplugin.cpp:460
+#, kde-kuit-format
+msgid "Reverting files from <application>Git</application> repository..."
+msgstr "<application>Git</application> भण्डारतः सञ्चिकाः प्रत्यावर्तयन्..."
+
+#: fileviewgitplugin.cpp:461
+#, kde-kuit-format
+msgid "Reverting files from <application>Git</application> repository failed."
+msgstr "<application>Git</application> भण्डारतः सञ्चिकानां पुनरागमनं विफलम् ।"
+
+#: fileviewgitplugin.cpp:462
+#, kde-kuit-format
+msgid "Reverted files from <application>Git</application> repository."
+msgstr "<application>Git</application> भण्डारतः सञ्चिकाः प्रत्यावर्तिताः ।"
+
+#: fileviewgitplugin.cpp:501
+#, kde-kuit-format
+msgid "<application>Git</application> Log failed."
+msgstr "<application>Git</application> लॉग विफलः ।"
+
+#: fileviewgitplugin.cpp:522
+#, kde-kuit-format
+msgid "<application>Git</application> Log"
+msgstr "<application>Git</application> लॉग"
+
+#: fileviewgitplugin.cpp:537
+#, kde-format
+msgctxt "Git commit hash"
+msgid "Commit"
+msgstr "प्रविश्"
+
+#: fileviewgitplugin.cpp:538
+#, kde-format
+msgctxt "Git commit date"
+msgid "Date"
+msgstr "दिनाङ्कः"
+
+#: fileviewgitplugin.cpp:539
+#, kde-format
+msgctxt "Git commit message"
+msgid "Message"
+msgstr "सन्देशः"
+
+#: fileviewgitplugin.cpp:540
+#, kde-format
+msgctxt "Git commit author"
+msgid "Author"
+msgstr "लेखकः"
+
+#: fileviewgitplugin.cpp:561
+#, kde-kuit-format
+msgid ""
+"Restoring staged files from <application>Git</application> repository..."
+msgstr "<application>Git</application> भण्डारतः चरणबद्धसञ्चिकानां पुनर्स्थापनम्..."
+
+#: fileviewgitplugin.cpp:562
+#, kde-kuit-format
+msgid ""
+"Restoring staged files from <application>Git</application> repository failed."
+msgstr "<application>Git</application> भण्डारतः चरणबद्धसञ्चिकानां पुनर्स्थापनं विफलम् ।"
+
+#: fileviewgitplugin.cpp:563
+#, kde-kuit-format
+msgid "Restoring staged files from <application>Git</application> repository."
+msgstr "<application>Git</application> भण्डारतः चरणबद्धसञ्चिकानां पुनर्स्थापनम् ।"
+
+#: fileviewgitplugin.cpp:589
+#, kde-kuit-format
+msgid "<application>Git</application> error starting: %1"
+msgstr "<application>Git</application> त्रुटिः आरभ्यते: %1"
+
+#: fileviewgitplugin.cpp:593
+#, kde-kuit-format
+msgid "<application>Git</application> clone failed: %1"
+msgstr "<application>Git</application> क्लोन् विफलम्: %1"
+
+#: fileviewgitplugin.cpp:595
+#, kde-kuit-format
+msgid "<application>Git</application> clone complete."
+msgstr "<application>Git</application> क्लोन सम्पूर्णम्।"
+
+#: fileviewgitplugin.cpp:603
+#, kde-kuit-format
+msgid "<application>Git</application> cloning repository..."
+msgstr "<application>Git</application> क्लोनिंग् भण्डारः..."
+
+#: fileviewgitplugin.cpp:637
+#, kde-kuit-format
+msgid "Switched to branch '%1'"
+msgstr "'%1' इति शाखायां परिवर्तितम् ।"
+
+#: fileviewgitplugin.cpp:644
+#, kde-kuit-format
+msgid "HEAD is now at %1"
+msgstr "HEAD इदानीं %1 इत्यत्र अस्ति"
+
+#: fileviewgitplugin.cpp:649
+#, kde-kuit-format
+msgid "Switched to a new branch '%1'"
+msgstr "नूतनशाखा '%1' प्रति परिवर्तितम्।"
+
+#: fileviewgitplugin.cpp:660
+#, kde-kuit-format
+msgid ""
+"<application>Git</application> Checkout failed. Maybe your working directory "
+"is dirty."
+msgstr ""
+"<application>Git</application> चेकआउट् विफलम् । भवतु नाम भवतः कार्यनिर्देशिका मलिनम् "
+"अस्ति ।"
+
+#: fileviewgitplugin.cpp:726
+#, kde-kuit-format
+msgid "Successfully created tag '%1'"
+msgstr "'%1' इति टैग् सफलतया निर्मितम् ।"
+
+#: fileviewgitplugin.cpp:731
+#, kde-kuit-format
+msgid ""
+"<application>Git</application> tag creation failed. A tag with the name '%1' "
+"already exists."
+msgstr ""
+"<application>Git</application> टैग् निर्माणं विफलम् । '%1' इति नामयुक्तं टैग् पूर्वमेव "
+"अस्ति ।"
+
+#: fileviewgitplugin.cpp:734
+#, kde-kuit-format
+msgid "<application>Git</application> tag creation failed."
+msgstr "<application>Git</application> टैग् निर्माणं विफलम् ।"
+
+#: fileviewgitplugin.cpp:745
+#, kde-kuit-format
+msgid "Pushing branch %1 to %2:%3 failed."
+msgstr "शाखा %1 तः %2:%3 यावत् धक्कानं विफलम् ।"
+
+#: fileviewgitplugin.cpp:746
+#, kde-kuit-format
+msgid "Pushed branch %1 to %2:%3."
+msgstr "शाखा %1 तः %2:%3 यावत् धक्कायति।"
+
+#: fileviewgitplugin.cpp:747
+#, kde-kuit-format
+msgid "Pushing branch %1 to %2:%3..."
+msgstr "शाखा %1 तः %2:%3 यावत् धक्कायन्..."
+
+#: fileviewgitplugin.cpp:768
+#, kde-kuit-format
+msgid "Pulling branch %1 from %2 failed."
+msgstr "%2 तः %1 शाखायाः आकर्षणं विफलम् ।"
+
+#: fileviewgitplugin.cpp:769
+#, kde-kuit-format
+msgid "Pulled branch %1 from %2 successfully."
+msgstr "%2 तः %1 शाखा सफलतया आकर्षितवती।"
+
+#: fileviewgitplugin.cpp:770
+#, kde-kuit-format
+msgid "Pulling branch %1 from %2..."
+msgstr "%2 तः शाखा %1 आकर्षयन्..."
+
+#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
+#, kde-kuit-format
+msgid "Branch is already up-to-date."
+msgstr "शाखा पूर्वमेव अद्यतनः अस्ति।"
+
+#: fileviewgitplugin.cpp:838
+#, kde-kuit-format
+msgid "Merge conflicts occurred. Fix them and commit the result."
+msgstr "विलयविग्रहाः अभवन् । तान् समाधाय परिणामं प्रतिबद्धं कुरुत।"
+
+#. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
+#: fileviewgitpluginsettings.kcfg:7
+#, kde-format
+msgid "Dialog height"
+msgstr "संवादस्य ऊर्ध्वता"
+
+#. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
+#: fileviewgitpluginsettings.kcfg:12
+#, kde-format
+msgid "Dialog width"
+msgstr "संवादस्य विस्तारः"
+
+#: pulldialog.cpp:24
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Pull"
+msgstr "<application>Git</application> कर्षतु"
+
+#: pulldialog.cpp:35
+#, kde-format
+msgctxt "@action:button"
+msgid "Pull"
+msgstr "आकर्षति"
+
+#: pulldialog.cpp:44
+#, kde-format
+msgctxt "@title:group The source to pull from"
+msgid "Source"
+msgstr "स्रोतः"
+
+#: pulldialog.cpp:50 pushdialog.cpp:51
+#, kde-format
+msgctxt "@label:listbox a git remote"
+msgid "Remote:"
+msgstr "दूरस्थ:"
+
+#: pulldialog.cpp:55
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Remote branch:"
+msgstr "दूरस्थशाखाः १."
+
+#: pushdialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Push"
+msgstr "<application>Git</application> पुश"
+
+#: pushdialog.cpp:37
+#, kde-format
+msgctxt "@action:button"
+msgid "Push"
+msgstr "नोद"
+
+#: pushdialog.cpp:47
+#, kde-format
+msgctxt "@title:group The remote host"
+msgid "Destination"
+msgstr "गन्तव्य"
+
+#: pushdialog.cpp:61
+#, kde-format
+msgctxt "@title:group"
+msgid "Branches"
+msgstr "शाखाः"
+
+#: pushdialog.cpp:65
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Local Branch:"
+msgstr "स्थानीय शाखा : १."
+
+#: pushdialog.cpp:72
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Remote Branch:"
+msgstr "दूरस्थ शाखा : १."
+
+#: pushdialog.cpp:84
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Proceed even if the remote branch is not an ancestor of the local branch."
+msgstr "दूरस्थशाखा स्थानीयशाखायाः पूर्वजः नास्ति चेदपि अग्रे गच्छतु।"
+
+#: tagdialog.cpp:28
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "<application>Git</application> Create Tag"
+msgstr "<application>Git</application> टैग् रचयन्तु"
+
+#: tagdialog.cpp:40
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Tag"
+msgstr "टैग रचयन्तु"
+
+#: tagdialog.cpp:49
+#, kde-format
+msgctxt "@title:group"
+msgid "Tag Information"
+msgstr "टैग सूचना"
+
+#: tagdialog.cpp:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tag Name:"
+msgstr "टैग नाम:"
+
+#: tagdialog.cpp:61
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tag Message:"
+msgstr "टैग सन्देशः : १."
+
+#: tagdialog.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "Attach to"
+msgstr "संलग्नं कुरुत"
+
+#: tagdialog.cpp:79
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Branch:"
+msgstr "शाखा:"
+
+#: tagdialog.cpp:125
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "You must enter a tag name first."
+msgstr "भवता प्रथमं टैग्-नाम प्रविष्टव्यम् ।"
+
+#: tagdialog.cpp:127
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Tag names may not contain any whitespace."
+msgstr "टैग्-नामेषु किमपि श्वेतस्थानं न स्यात् ।"
+
+#: tagdialog.cpp:129
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "A tag named '%1' already exists."
+msgstr "'%1' इति नामकं टैग् पूर्वमेव अस्ति ।"
