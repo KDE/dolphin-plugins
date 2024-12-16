@@ -1,0 +1,95 @@
+# Hindi translations for dolphin-plugins package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"PO-Revision-Date: 2024-12-15 15:58+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: makefileactions.cpp:225
+#, kde-format
+msgid "Make '%1'%2."
+msgstr ""
+
+#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
+#, kde-format
+msgid "Makefile Actions"
+msgstr ""
+
+#: makefileactions.cpp:254
+#, kde-format
+msgid "An error occurred while making target '%1'."
+msgstr ""
+
+#: makefileactions.cpp:262
+#, kde-format
+msgid "Running process for '%1' successfully stopped."
+msgstr ""
+
+#: makefileactions.cpp:264
+#, kde-format
+msgid "An error occurred trying to make target '%1'."
+msgstr ""
+
+#: makefileactions.cpp:296
+#, kde-format
+msgid "&Make…"
+msgstr ""
+
+#: makefileactions.cpp:301
+#, kde-format
+msgid "Only trusted files can be used by the Makefile Actions plugin."
+msgstr ""
+
+#: makefileactions.cpp:304
+#, kde-format
+msgid "Trusted file — uncheck to remove trust"
+msgstr ""
+
+#: makefileactions.cpp:304
+#, kde-format
+msgid "Untrusted file — check to trust"
+msgstr ""
+
+#: makefileactions.cpp:311
+#, kde-format
+msgid "Dolphin Makefile Plugin"
+msgstr ""
+
+#: makefileactions.cpp:312
+#, kde-format
+msgid ""
+"<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
+"arbitrary code on context-menu invocation."
+msgstr ""
+
+#: makefileactions.cpp:326
+#, kde-format
+msgid "Open a terminal window"
+msgstr ""
+
+#: makefileactions.cpp:327
+#, kde-format
+msgid ""
+"Open a new terminal window to see the output of making the chosen target."
+msgstr ""
+
+#: makefileactions.cpp:339
+#, kde-format
+msgid "Cancel running process (%1)"
+msgstr ""
+
+#: makefileactions.cpp:340
+#, kde-format
+msgid "Interrupt the currently running process (%1)."
+msgstr ""
