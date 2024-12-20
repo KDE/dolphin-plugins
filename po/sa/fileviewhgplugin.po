@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the dolphin-plugins package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:40+0000\n"
-"PO-Revision-Date: 2024-12-14 02:05+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-19 21:41+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: backoutdialog.cpp:29
@@ -46,13 +47,13 @@ msgstr "परिवर्तनसमूहं चिनोतु"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
-msgstr "बैकआउट् प्रति संशोधनम् : १. "
+msgstr "बैकआउट् प्रति संशोधनम् : "
 
 #: backoutdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
-msgstr "मातापितृपुनरीक्षणम् (वैकल्पिकम्): १. "
+msgstr "मातापितृपुनरीक्षणम् (वैकल्पिकम्): "
 
 #: backoutdialog.cpp:128 bundledialog.cpp:178
 #, kde-kuit-format
@@ -109,7 +110,7 @@ msgstr "पोटलिका"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
-msgstr "आधारपुनरीक्षणम् (वैकल्पिकम्): १. "
+msgstr "आधारपुनरीक्षणम् (वैकल्पिकम्): "
 
 #: bundledialog.cpp:53
 #, kde-kuit-format
