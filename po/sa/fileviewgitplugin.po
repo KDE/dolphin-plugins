@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 21:41+0530\n"
+"PO-Revision-Date: 2024-12-20 21:51+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -151,13 +151,13 @@ msgstr "पुनरावर्तनीयरूपेण उपमॉड्�
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr "Url: १."
+msgstr "Url:"
 
 #: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr "निर्देशिका : १."
+msgstr "निर्देशिका :"
 
 #: clonedialog.cpp:52
 #, kde-format
@@ -541,7 +541,7 @@ msgstr "दूरस्थ:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote branch:"
-msgstr "दूरस्थशाखाः १."
+msgstr "दूरस्थशाखाः"
 
 #: pushdialog.cpp:25
 #, kde-kuit-format
@@ -571,13 +571,13 @@ msgstr "शाखाः"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr "स्थानीय शाखा : १."
+msgstr "स्थानीय शाखा :"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr "दूरस्थ शाखा : १."
+msgstr "दूरस्थ शाखा :"
 
 #: pushdialog.cpp:84
 #, kde-format
@@ -614,7 +614,7 @@ msgstr "टैग नाम:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr "टैग सन्देशः : १."
+msgstr "टैग सन्देशः :"
 
 #: tagdialog.cpp:72
 #, kde-format
