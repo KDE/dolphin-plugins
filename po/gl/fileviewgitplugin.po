@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2025-01-06 13:22+0100\n"
+"PO-Revision-Date: 2025-01-26 21:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -286,7 +286,7 @@ msgstr "Enviar con <application>Git</application>…"
 #: fileviewgitplugin.cpp:97
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "Descargar con <application>Git</application>…"
+msgstr "Pular con <application>Git</application>…"
 
 #: fileviewgitplugin.cpp:101
 #, kde-kuit-format
@@ -494,17 +494,17 @@ msgstr "Enviando a rama %1 a %2:%3…"
 #: fileviewgitplugin.cpp:768
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr "A descarga da rama %1 de %2 fallou."
+msgstr "Non foi posíbel pular a rama %1 de %2."
 
 #: fileviewgitplugin.cpp:769
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr "Descargouse a rama %1 de %2."
+msgstr "Pulouse a rama %1 de %2."
 
 #: fileviewgitplugin.cpp:770
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr "Descargando a rama %1 de %2…"
+msgstr "Pulando a rama %1 de %2…"
 
 #: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
 #, kde-kuit-format
@@ -532,13 +532,13 @@ msgstr "Anchura do diálogo"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr "Descarga en <application>Git</application>"
+msgstr "Pular con <application>Git</application>"
 
 #: pulldialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
-msgstr "Descargar"
+msgstr "Pular"
 
 #: pulldialog.cpp:44
 #, kde-format
