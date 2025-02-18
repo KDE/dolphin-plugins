@@ -1,21 +1,21 @@
 # Translation of fileviewsvnplugin to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Copyright (C) 2010-2025 This_file_is_part_of_KDE
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# SPDX-FileCopyrightText: 2010, 2011, 2015, 2020, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2011, 2015, 2020, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2024-05-01 11:59+0200\n"
+"PO-Revision-Date: 2025-02-17 23:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: fileviewsvnplugin.cpp:71
@@ -34,7 +34,7 @@ msgstr "Mostrar cambios locales del SVN"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "Enviar al SVN..."
+msgstr "Enviar al SVN…"
 
 #: fileviewsvnplugin.cpp:86
 #, kde-format
@@ -64,19 +64,19 @@ msgstr "Mostrar actualizaciones del SVN"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "Registro del SVN..."
+msgstr "Registro del SVN…"
 
 #: fileviewsvnplugin.cpp:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Descarga de SVN..."
+msgstr "Descarga de SVN…"
 
 #: fileviewsvnplugin.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "Limpieza de SVN..."
+msgstr "Limpieza de SVN…"
 
 #: fileviewsvnplugin.cpp:225
 #, kde-format
@@ -96,7 +96,7 @@ msgstr "Actualización del SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "Actualizando el repositorio SVN..."
+msgstr "Actualizando el repositorio SVN…"
 
 #: fileviewsvnplugin.cpp:367
 #, kde-format
@@ -136,7 +136,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "Añadiendo archivos al repositorio SVN..."
+msgstr "Añadiendo archivos al repositorio SVN…"
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
@@ -154,7 +154,7 @@ msgstr "Archivos añadidos al repositorio SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "Eliminando archivos del repositorio SVN..."
+msgstr "Eliminando archivos del repositorio SVN…"
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
@@ -178,7 +178,7 @@ msgstr "Revertir del SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Revirtiendo archivos del repositorio SVN..."
+msgstr "Revirtiendo archivos del repositorio SVN…"
 
 #: fileviewsvnplugin.cpp:467
 #, kde-format
@@ -196,7 +196,7 @@ msgstr "Archivos revertidos del repositorio SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "Descarga de SVN: descarga en curso..."
+msgstr "Descarga de SVN: descarga en curso…"
 
 #: fileviewsvnplugin.cpp:497
 #, kde-format
@@ -226,7 +226,7 @@ msgstr "Descarga de SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "Revirtiendo cambios en el archivo..."
+msgstr "Revirtiendo cambios en el archivo…"
 
 #: fileviewsvnplugin.cpp:573
 #, kde-format
@@ -265,7 +265,7 @@ msgstr "Enviar al SVN"
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "Enviando cambios al SVN..."
+msgstr "Enviando cambios al SVN…"
 
 #: fileviewsvnplugin.cpp:675
 #, kde-format
@@ -346,7 +346,7 @@ msgstr "La limpieza de SVN ha fallado por %1"
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "Limpieza de SVN..."
+msgstr "Limpieza de SVN…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
