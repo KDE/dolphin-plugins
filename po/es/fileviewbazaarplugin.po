@@ -1,21 +1,21 @@
 # Translation of fileviewbazaarplugin to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Copyright (C) 2011-2025 This_file_is_part_of_KDE
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# SPDX-FileCopyrightText: 2011 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2011, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewbazaarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:40+0000\n"
-"PO-Revision-Date: 2011-12-15 17:46+0100\n"
+"PO-Revision-Date: 2025-02-17 23:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: fileviewbazaarplugin.cpp:49
@@ -46,13 +46,13 @@ msgstr "Mostrar cambios locales de Bazaar"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
-msgstr "Envío de Bazaar..."
+msgstr "Envío de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:74
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
-msgstr "Adición de Bazaar..."
+msgstr "Adición de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:79
 #, kde-format
@@ -70,7 +70,7 @@ msgstr "Registro de Bazaar"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
-msgstr "Actualizando repositorio de Bazaar..."
+msgstr "Actualizando repositorio de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:361
 #, kde-format
@@ -88,7 +88,7 @@ msgstr "Repositorio de Bazaar actualizado."
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
-msgstr "Extrayendo repositorio de Bazaar..."
+msgstr "Extrayendo repositorio de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:372
 #, kde-format
@@ -106,7 +106,7 @@ msgstr "Repositorio de Bazaar extraído."
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
-msgstr "Incorporando a repositorio de Bazaar..."
+msgstr "Incorporando a repositorio de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:383
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "Repositorio de Bazaar incorporado."
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
-msgstr "Revisando cambios..."
+msgstr "Revisando cambios…"
 
 #: fileviewbazaarplugin.cpp:392
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "Cambios revisados."
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
-msgstr "Enviando cambios de Bazaar..."
+msgstr "Enviando cambios de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:401
 #, kde-format
@@ -160,7 +160,7 @@ msgstr "Cambios de Bazaar enviados."
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
-msgstr "Añadiendo archivos a repositorio de Bazaar..."
+msgstr "Añadiendo archivos a repositorio de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:410
 #, kde-format
@@ -178,7 +178,7 @@ msgstr "Archivos añadidos al repositorio de Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
-msgstr "Eliminando archivos del repositorio de Bazaar..."
+msgstr "Eliminando archivos del repositorio de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:419
 #, kde-format
@@ -196,7 +196,7 @@ msgstr "Archivos eliminados del repositorio de Bazaar."
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
-msgstr "Ejecutando el registro de Bazaar..."
+msgstr "Ejecutando el registro de Bazaar…"
 
 #: fileviewbazaarplugin.cpp:428
 #, kde-format
