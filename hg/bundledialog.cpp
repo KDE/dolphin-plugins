@@ -22,6 +22,7 @@
 #include <QProcess>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <qnamespace.h>
 
 HgBundleDialog::HgBundleDialog(QWidget *parent)
     : DialogBase(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, parent)
@@ -38,7 +39,7 @@ HgBundleDialog::HgBundleDialog(QWidget *parent)
     // connections
     connect(this, SIGNAL(finished(int)), this, SLOT(saveGeometry()));
     connect(m_selectCommitButton, &QAbstractButton::clicked, this, &HgBundleDialog::slotSelectChangeset);
-    connect(m_allChangesets, &QCheckBox::stateChanged, this, &HgBundleDialog::slotAllChangesCheckToggled);
+    connect(m_allChangesets, &QCheckBox::checkStateChanged, this, &HgBundleDialog::slotAllChangesCheckToggled);
 }
 
 void HgBundleDialog::setupUI()
@@ -189,7 +190,7 @@ void HgBundleDialog::slotSelectChangeset()
     }
 }
 
-void HgBundleDialog::slotAllChangesCheckToggled(int state)
+void HgBundleDialog::slotAllChangesCheckToggled(Qt::CheckState state)
 {
     if (state == Qt::Checked) {
         m_selectCommitButton->setEnabled(false);
