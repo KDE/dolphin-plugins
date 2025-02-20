@@ -66,7 +66,7 @@ CommitDialog::CommitDialog(QWidget *parent)
         m_amendCheckBox->setEnabled(false);
         m_amendCheckBox->setToolTip(i18nc("@info:tooltip", "There is nothing to amend."));
     } else {
-        connect(m_amendCheckBox, &QCheckBox::stateChanged, this, &CommitDialog::amendCheckBoxStateChanged);
+        connect(m_amendCheckBox, &QCheckBox::checkStateChanged, this, &CommitDialog::amendCheckBoxStateChanged);
     }
 
     QPushButton *signOffButton = new QPushButton(i18nc("@action:button Add Signed-Off line to the message widget", "Sign off"), messageGroupBox);

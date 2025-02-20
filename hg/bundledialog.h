@@ -42,7 +42,7 @@ private Q_SLOTS:
      * changeset for base revision.
      */
     void slotSelectChangeset();
-    void slotAllChangesCheckToggled(int state);
+    void slotAllChangesCheckToggled(Qt::CheckState state);
 
 private:
     void setupUI();
