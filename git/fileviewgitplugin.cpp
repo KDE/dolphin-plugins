@@ -750,8 +750,8 @@ void FileViewGitPlugin::push()
         m_pendingOperation = true;
         QStringList args;
         args << QStringLiteral("push");
-        if (dialog.force()) {
-            args << QStringLiteral("--force");
+        if (dialog.forceWithLease()) {
+            args << QStringLiteral("--force-with-lease");
         }
         args << dialog.destination();
         args << QStringLiteral("%1:%2").arg(dialog.localBranch(), dialog.remoteBranch());

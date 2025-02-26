@@ -22,7 +22,7 @@ public:
     QString destination() const;
     QString localBranch() const;
     QString remoteBranch() const;
-    bool force() const;
+    bool forceWithLease() const;
 private Q_SLOTS:
     void remoteSelectionChanged(const QString &newRemote);
     void localBranchSelectionChanged(const QString &newLocalBranch);

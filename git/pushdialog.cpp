@@ -80,8 +80,10 @@ PushDialog::PushDialog(QWidget *parent)
     optionsGroupBox->setTitle(i18nc("@title:group", "Options"));
     QHBoxLayout *optionsHBox = new QHBoxLayout(optionsGroupBox);
     optionsGroupBox->setLayout(optionsHBox);
-    m_forceCheckBox = new QCheckBox(i18nc("@option:check", "Force"), optionsGroupBox);
-    m_forceCheckBox->setToolTip(i18nc("@info:tooltip", "Proceed even if the remote branch is not an ancestor of the local branch."));
+    m_forceCheckBox = new QCheckBox(i18nc("@option:check", "Force with lease"), optionsGroupBox);
+    m_forceCheckBox->setToolTip(
+        i18nc("@info:tooltip",
+              "Proceed even if the remote branch is not an ancestor of the local branch provided there were no changes in the remote branch."));
     optionsHBox->addWidget(m_forceCheckBox);
 
     mainLayout->addWidget(m_buttonBox);
@@ -131,7 +133,7 @@ QString PushDialog::remoteBranch() const
     return m_remoteBranchComboBox->currentText();
 }
 
-bool PushDialog::force() const
+bool PushDialog::forceWithLease() const
 {
     return m_forceCheckBox->isChecked();
 }
