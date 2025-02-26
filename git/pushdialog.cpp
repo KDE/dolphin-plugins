@@ -83,7 +83,7 @@ PushDialog::PushDialog(QWidget *parent)
     m_forceCheckBox = new QCheckBox(i18nc("@option:check", "Force with lease"), optionsGroupBox);
     m_forceCheckBox->setToolTip(
         i18nc("@info:tooltip",
-              "Proceed even if the remote branch is not an ancestor of the local branch provided there were no changes in the remote branch."));
+              "Proceed even if the remote branch is not an ancestor of the local branch provided there were no changes in the remote branch since the last fetch."));
     optionsHBox->addWidget(m_forceCheckBox);
 
     mainLayout->addWidget(m_buttonBox);
