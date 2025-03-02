@@ -9,6 +9,10 @@
 
 #include <QDialog>
 #include <QHash>
+
+class KMessageWidget;
+
+class QLabel;
 class QCheckBox;
 class QComboBox;
 class QDialogButtonBox;
@@ -26,6 +30,7 @@ public:
 private Q_SLOTS:
     void remoteSelectionChanged(const QString &newRemote);
     void localBranchSelectionChanged(const QString &newLocalBranch);
+    void remoteBranchSelectionChanged(const QString &newRemote);
 
 private:
     QHash<QString, QStringList> m_remoteBranches;
@@ -35,6 +40,7 @@ private:
     QComboBox *m_remoteBranchComboBox;
     QCheckBox *m_forceCheckBox;
     QDialogButtonBox *m_buttonBox;
+    KMessageWidget *m_noRemoteMessage;
 };
 
 #endif // PUSHDIALOG_H
