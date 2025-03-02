@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2024-10-19 09:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -66,7 +66,7 @@ msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Luo uusi haara valitun haaran tai luokituksen pohjalta."
 
-#: checkoutdialog.cpp:103 pushdialog.cpp:83
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
@@ -589,11 +589,21 @@ msgctxt "@label:listbox"
 msgid "Remote Branch:"
 msgstr "Etähaara:"
 
-#: pushdialog.cpp:84
+#: pushdialog.cpp:83
 #, kde-format
+msgctxt "@option:check"
+msgid "Force with lease"
+msgstr ""
+
+#: pushdialog.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Proceed even if the remote branch is not an ancestor of the local branch."
 msgctxt "@info:tooltip"
 msgid ""
-"Proceed even if the remote branch is not an ancestor of the local branch."
+"Proceed even if the remote branch is not an ancestor of the local branch "
+"provided there were no changes in the remote branch since the last fetch."
 msgstr "Jatka, vaikkei etähaara olisikaan paikallisen haaran edeltäjä."
 
 #: tagdialog.cpp:28

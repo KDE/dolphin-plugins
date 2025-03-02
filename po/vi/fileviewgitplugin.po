@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2022-04-08 01:14+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -67,7 +67,7 @@ msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Tạo nhánh mới dựa trên một nhánh hoặc thẻ gắn đã chọn."
 
-#: checkoutdialog.cpp:103 pushdialog.cpp:83
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
@@ -597,11 +597,21 @@ msgctxt "@label:listbox"
 msgid "Remote Branch:"
 msgstr "Nhánh ở xa:"
 
-#: pushdialog.cpp:84
+#: pushdialog.cpp:83
 #, kde-format
+msgctxt "@option:check"
+msgid "Force with lease"
+msgstr ""
+
+#: pushdialog.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Proceed even if the remote branch is not an ancestor of the local branch."
 msgctxt "@info:tooltip"
 msgid ""
-"Proceed even if the remote branch is not an ancestor of the local branch."
+"Proceed even if the remote branch is not an ancestor of the local branch "
+"provided there were no changes in the remote branch since the last fetch."
 msgstr ""
 "Cứ tiếp tục kể cả khi nhánh ở xa không phải là tổ tiên của nhánh cục bộ."
 

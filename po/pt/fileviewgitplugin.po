@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2018-02-10 17:55+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -69,7 +69,7 @@ msgid "Create a new branch based on a selected branch or tag."
 msgstr ""
 "Cria uma nova ramificação com base numa ramificação ou marca seleccionada."
 
-#: checkoutdialog.cpp:103 pushdialog.cpp:83
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
@@ -621,11 +621,21 @@ msgctxt "@label:listbox"
 msgid "Remote Branch:"
 msgstr "Ramificação Remota:"
 
-#: pushdialog.cpp:84
+#: pushdialog.cpp:83
 #, kde-format
+msgctxt "@option:check"
+msgid "Force with lease"
+msgstr ""
+
+#: pushdialog.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Proceed even if the remote branch is not an ancestor of the local branch."
 msgctxt "@info:tooltip"
 msgid ""
-"Proceed even if the remote branch is not an ancestor of the local branch."
+"Proceed even if the remote branch is not an ancestor of the local branch "
+"provided there were no changes in the remote branch since the last fetch."
 msgstr "Seguir mesmo que a ramificação remota não seja uma ascendente à local."
 
 #: tagdialog.cpp:28

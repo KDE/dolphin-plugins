@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2024-08-19 22:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -65,7 +65,7 @@ msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "선택한 브랜치나 태그에서 새 브랜치를 만듭니다."
 
-#: checkoutdialog.cpp:103 pushdialog.cpp:83
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
@@ -582,11 +582,21 @@ msgctxt "@label:listbox"
 msgid "Remote Branch:"
 msgstr "원격 브랜치:"
 
-#: pushdialog.cpp:84
+#: pushdialog.cpp:83
 #, kde-format
+msgctxt "@option:check"
+msgid "Force with lease"
+msgstr ""
+
+#: pushdialog.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Proceed even if the remote branch is not an ancestor of the local branch."
 msgctxt "@info:tooltip"
 msgid ""
-"Proceed even if the remote branch is not an ancestor of the local branch."
+"Proceed even if the remote branch is not an ancestor of the local branch "
+"provided there were no changes in the remote branch since the last fetch."
 msgstr "원격 브랜치가 로컬 브랜치의 조성이 아니어도 푸시합니다."
 
 #: tagdialog.cpp:28

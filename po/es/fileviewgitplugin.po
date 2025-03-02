@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2025-02-17 23:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -66,7 +66,7 @@ msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Crear una nueva rama basada en una rama o etiqueta seleccionada."
 
-#: checkoutdialog.cpp:103 pushdialog.cpp:83
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
@@ -586,11 +586,21 @@ msgctxt "@label:listbox"
 msgid "Remote Branch:"
 msgstr "Rama remota:"
 
-#: pushdialog.cpp:84
+#: pushdialog.cpp:83
 #, kde-format
+msgctxt "@option:check"
+msgid "Force with lease"
+msgstr ""
+
+#: pushdialog.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Proceed even if the remote branch is not an ancestor of the local branch."
 msgctxt "@info:tooltip"
 msgid ""
-"Proceed even if the remote branch is not an ancestor of the local branch."
+"Proceed even if the remote branch is not an ancestor of the local branch "
+"provided there were no changes in the remote branch since the last fetch."
 msgstr ""
 "Proceder incluso si la rama remota no es un ascendente de la rama local."
 
