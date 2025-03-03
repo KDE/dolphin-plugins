@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
 "PO-Revision-Date: 2018-02-11 21:55+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -581,7 +581,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "<application>Git</application> Push"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -629,6 +629,20 @@ msgid ""
 msgstr ""
 "Auch fortsetzen, wenn der lokale Zweig nicht aus dem entfernten Zweig "
 "angelegt wurde."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "Neuen Zweig anlegen:"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format

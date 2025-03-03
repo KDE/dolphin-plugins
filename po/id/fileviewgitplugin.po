@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
 "PO-Revision-Date: 2021-05-03 08:04+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -572,7 +572,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "Dorong <application>Git</application>"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -620,6 +620,20 @@ msgid ""
 msgstr ""
 "Lanjutkan meskipun cabang jarak jauh bukan merupakan leluhur dari cabang "
 "lokal."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "Buat Cabang Baru:"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format

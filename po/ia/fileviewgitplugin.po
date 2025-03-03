@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
 "PO-Revision-Date: 2024-05-15 09:46+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -556,7 +556,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "<application>Git </application> Push"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -602,6 +602,20 @@ msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr "Procede anque si le branca remote non es un ancestre del branca local."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "Crea un nove branca: "
 
 #: tagdialog.cpp:28
 #, kde-kuit-format

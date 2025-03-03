@@ -1,4 +1,4 @@
-# Translation of fileviewgitplugin to Spanish
+# Translation of fileviewgitplugin.po to Spanish
 # Copyright (C) 2011-2025 This_file_is_part_of_KDE
 # This file is distributed under the same license as the dolphin-plugins package.
 #
@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
-"PO-Revision-Date: 2025-02-17 23:08+0100\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
+"PO-Revision-Date: 2025-03-02 18:04+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -556,7 +556,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "Incorporación <application>Git</application>"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -590,19 +590,32 @@ msgstr "Rama remota:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Forzar con seguridad"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
-"Proceder incluso si la rama remota no es un ascendente de la rama local."
+"Continuar incluso si la rama remota no es un ascendente de la rama local "
+"siempre que no haya habido cambios en la rama remota desde la última vez que "
+"se descargó."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "Crear nueva rama: "
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
@@ -663,23 +676,3 @@ msgstr "Los nombres de las etiquetas no deben contener espacios."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Ya existe una etiqueta con el nombre «%1»."
-
-#~ msgctxt "@option:check"
-#~ msgid "Depth:"
-#~ msgstr "Profundidad:"
-
-#~ msgctxt "@option:check"
-#~ msgid "Branch:"
-#~ msgstr "Rama:"
-
-#~ msgctxt "@option:check"
-#~ msgid "No Checkout"
-#~ msgstr "No descargar"
-
-#~ msgctxt "@option:check"
-#~ msgid "Clone Into Bare Repo"
-#~ msgstr "Clonar en repositorio simple"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "URL:"
-#~ msgstr "URL:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
 "PO-Revision-Date: 2024-06-16 22:34+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -554,7 +554,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "Skicka i <application>Git</application>"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -601,6 +601,20 @@ msgid ""
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
 "Fortsätt även om fjärrgrenen inte är en anfader till den lokala grenen."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "Skapa ny gren: "
 
 #: tagdialog.cpp:28
 #, kde-kuit-format

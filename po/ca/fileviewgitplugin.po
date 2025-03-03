@@ -1,17 +1,17 @@
 # Translation of fileviewgitplugin.po to Catalan
-# Copyright (C) 2011-2024 This_file_is_part_of_KDE
+# Copyright (C) 2011-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2015, 2018, 2023, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2015, 2018, 2023, 2024, 2025.
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2012.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2016, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
-"PO-Revision-Date: 2024-05-15 10:07+0200\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
+"PO-Revision-Date: 2025-03-02 09:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -572,7 +572,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "Incorporació a <application>Git</application>"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -606,20 +606,32 @@ msgstr "Branca remota:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Força amb cessió («force with lease»)"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
 "Continua encara que la branca remota no sigui un avantpassat de la branca "
-"local."
+"local, sempre que no hi hagi canvis en la branca remota des de l'última "
+"obtenció."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "Crea una branca nova: "
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
@@ -680,23 +692,3 @@ msgstr "Els noms de les branques no poden contenir espais en blanc."
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
 msgstr "Ja existeix una branca anomenada «%1»."
-
-#~ msgctxt "@option:check"
-#~ msgid "Depth:"
-#~ msgstr "Profunditat:"
-
-#~ msgctxt "@option:check"
-#~ msgid "Branch:"
-#~ msgstr "Branca:"
-
-#~ msgctxt "@option:check"
-#~ msgid "No Checkout"
-#~ msgstr "Sense extreure"
-
-#~ msgctxt "@option:check"
-#~ msgid "Clone Into Bare Repo"
-#~ msgstr "Clona en un repositori nu"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "URL:"
-#~ msgstr "URL:"

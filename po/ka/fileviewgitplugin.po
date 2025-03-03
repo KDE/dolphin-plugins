@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
-"PO-Revision-Date: 2024-05-15 05:23+0200\n"
+"POT-Creation-Date: 2025-03-03 00:43+0000\n"
+"PO-Revision-Date: 2025-03-02 04:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -557,7 +557,7 @@ msgctxt "@title:window"
 msgid "<application>Git</application> Push"
 msgstr "<application>Git</application> პუში"
 
-#: pushdialog.cpp:37
+#: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
@@ -591,18 +591,31 @@ msgstr "დაშორებული ბრენჩი:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "ძალა იჯარით"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
-msgstr "გაგრძელება მაშინაც კი, როცა დაშორებული ბრენჩი ლოკალურის წინაპარი არაა."
+msgstr ""
+"გაგრძელება მაშინაც კი, როცა დაშორებული ბრენჩი ლოკალურის წინაპარი არაა და "
+"დაშორებულ ბრენჩში ბოლო გამოთხოვის შემდეგ ცვლილებები არ მომხდარა."
+
+#: pushdialog.cpp:89
+#, kde-format
+msgctxt "@info no remote code repositories"
+msgid "No remotes defined."
+msgstr ""
+
+#: pushdialog.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Create New Branch: "
+msgctxt "@action:button"
+msgid "Push New Branch"
+msgstr "ახალი ბრენჩის შექმნა: "
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
