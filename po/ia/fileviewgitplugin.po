@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2020, 2021, 2024.
+# SPDX-FileCopyrightText: 2020, 2021, 2024, 2025 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2024-05-15 09:46+0200\n"
+"PO-Revision-Date: 2025-03-04 12:46+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -590,32 +590,29 @@ msgstr "Branca Remote:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Fortia con locar"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
-msgstr "Procede anque si le branca remote non es un ancestre del branca local."
+msgstr ""
+"Procede anque si le branca remote non es un ancestre del branca local "
+"fornite ilhabeva nulle cambiamentos in lebranca remote usque le ultime cerca."
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "Nulle remotes definite."
 
 #: pushdialog.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr "Crea un nove branca: "
+msgstr "Pulsa nove branca: "
 
 #: tagdialog.cpp:28
 #, kde-kuit-format

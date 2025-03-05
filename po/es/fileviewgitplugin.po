@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2025-03-02 18:04+0100\n"
+"PO-Revision-Date: 2025-03-04 17:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -607,15 +607,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "No se han definido remotos."
 
 #: pushdialog.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr "Crear nueva rama: "
+msgstr "Incorporar nueva rama"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
