@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
-# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2024-05-05 14:40+0530\n"
+"PO-Revision-Date: 2025-03-09 17:34+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -421,17 +421,17 @@ msgstr ""
 #: fileviewgitplugin.cpp:637
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr ""
+msgstr "'%1' எனும் கிளைக்கு மாறியுள்ளீர்"
 
 #: fileviewgitplugin.cpp:644
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr ""
+msgstr "HEAD இப்போது %1-இல் உள்ளது"
 
 #: fileviewgitplugin.cpp:649
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr ""
+msgstr "'%1' எனும் புதிய கிளைக்கு மாறியுள்ளீர்"
 
 #: fileviewgitplugin.cpp:660
 #, kde-kuit-format
@@ -441,9 +441,9 @@ msgid ""
 msgstr ""
 
 #: fileviewgitplugin.cpp:726
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr ""
+msgstr "'%1' எனும் குறிச்சொல் உருவாக்கப்பட்டுள்ளது"
 
 #: fileviewgitplugin.cpp:731
 #, kde-kuit-format
@@ -501,13 +501,13 @@ msgstr ""
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr ""
+msgstr "சாளர உயரம்"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr ""
+msgstr "சாளர அகலம்"
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
@@ -561,19 +561,19 @@ msgstr "சேருமிடம்"
 #, kde-format
 msgctxt "@title:group"
 msgid "Branches"
-msgstr ""
+msgstr "கிளைகள்"
 
 #: pushdialog.cpp:65
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr ""
+msgstr "உள்ளக கிளை:"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr ""
+msgstr "தொலை கிளை:"
 
 #: pushdialog.cpp:83
 #, kde-format
