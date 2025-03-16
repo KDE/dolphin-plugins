@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# SPDX-FileCopyrightText: 2011, 2012, 2014, 2015, 2016, 2018, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2011, 2012, 2014, 2015, 2016, 2018, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2024-05-26 12:24+0200\n"
+"PO-Revision-Date: 2025-03-15 10:07+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -588,34 +589,30 @@ msgstr "Zdalna gałąź:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Wymuś z wypożyczeniem"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
 "Kontynuuj nawet wtedy, gdy zdalna gałąź nie jest poprzednikiem lokalnej "
-"gałęzi."
+"gałęzi przy założeniu, że nie ma zmian na zdalnej gałęzi od czasu ostatniego "
+"pobrania."
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "Nie określono serwerów zdalnych."
 
 #: pushdialog.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr "Utwórz nową gałąź: "
+msgstr "Wypchnij nową gałąź"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
