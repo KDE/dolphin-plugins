@@ -4,20 +4,20 @@
 # Jeff Huang <s8321414@gmail.com>, 2016.
 # pan93412 <pan93412@gmail.com>, 2018.
 #
-# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2024-05-18 16:10+0900\n"
+"PO-Revision-Date: 2025-03-24 19:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.12.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: checkoutdialog.cpp:34
@@ -580,32 +580,29 @@ msgstr "遠端分支："
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "強制 (--force-with-lease)"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
-msgstr "即使本地端分支不是從遠端分支衍生而來，一樣進行。"
+msgstr ""
+"即使遠端分支不是本地分支的上層提交也還是繼續進行，但僅限於上次抓取 (fetch) 以"
+"來遠端分支沒有變更的時候。"
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "未定義遠端。"
 
 #: pushdialog.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr "建立新分支："
+msgstr "推送新分支"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
