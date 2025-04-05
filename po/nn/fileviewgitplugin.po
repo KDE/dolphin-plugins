@@ -588,9 +588,6 @@ msgstr ""
 
 #: pushdialog.cpp:86
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
@@ -606,8 +603,6 @@ msgstr ""
 
 #: pushdialog.cpp:166
 #, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
 msgctxt "@action:button"
 msgid "Push New Branch"
 msgstr "Lag ny grein:"
