@@ -1,5 +1,5 @@
-# Translation of fileviewsvnplugin to Spanish
-# Copyright (C) 2010-2025 This_file_is_part_of_KDE
+# Spanish translations for fileviewsvnplugin.po package.
+# Copyright (C) 2010-2025 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 #
 # SPDX-FileCopyrightText: 2010, 2011, 2015, 2020, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-01 00:40+0000\n"
-"PO-Revision-Date: 2025-02-17 23:10+0100\n"
+"PO-Revision-Date: 2025-05-07 18:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
