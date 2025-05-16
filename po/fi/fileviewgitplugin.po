@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2025-03-23 15:58+0200\n"
+"PO-Revision-Date: 2025-04-20 10:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -589,11 +589,12 @@ msgctxt "@label:listbox"
 msgid "Remote Branch:"
 msgstr "Etähaara:"
 
+# Kyse lienee tästä: ”--force-with-lease will push only if you are not overwriting any work on the remote branch if more commits were added to the remote branch”
 #: pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Pakota ehdollisesti"
 
 #: pushdialog.cpp:86
 #, kde-format
