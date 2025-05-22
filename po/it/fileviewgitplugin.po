@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2010, 2012, 2015.
 # SPDX-FileCopyrightText: 2016, 2018, 2024 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2024-05-07 18:14+0200\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2025-05-21 12:23+0200\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: checkoutdialog.cpp:34
 #, kde-kuit-format
@@ -43,12 +44,10 @@ msgid "Tag:"
 msgstr "Etichetta:"
 
 #: checkoutdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Commit"
+msgstr "Commit:"
 
 #: checkoutdialog.cpp:82 pushdialog.cpp:80
 #, kde-format
@@ -84,7 +83,7 @@ msgstr "Scarta le modifiche locali."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr "Non ci sono etichette in questo repository."
+msgstr "Non ci sono etichette in questo deposito."
 
 #: checkoutdialog.cpp:206
 #, kde-format
@@ -123,12 +122,10 @@ msgid "You must select a valid branch first."
 msgstr "Devi prima selezionare un ramo valido."
 
 #: checkoutdialog.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Devi prima inserire un messaggio di commit."
+msgstr "Devi prima inserire un ID di commit valido (firma SHA)."
 
 #: checkoutdialog.cpp:288
 #, kde-format
@@ -142,7 +139,7 @@ msgstr "ramo"
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "un URL o un percorso del deposito git"
 
 #: clonedialog.cpp:46
 #, kde-format
@@ -248,7 +245,7 @@ msgstr "Ripristino di <application>Git</application>"
 #: fileviewgitplugin.cpp:59
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr "Aggiungi al repository <application>Git</application>"
+msgstr "Aggiungi al deposito <application>Git</application>"
 
 #: fileviewgitplugin.cpp:64
 #, kde-kuit-format
@@ -256,16 +253,14 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Mostra i cambiamenti locali di <application>Git</application>"
 
 #: fileviewgitplugin.cpp:69
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "Crea etichette con <application>Git</application>"
+msgstr "Ripristino <application>Git</application> del contenuto in stage"
 
 #: fileviewgitplugin.cpp:74
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr "Rimuovi dal repository <application>Git</application>"
+msgstr "Rimuovi dal deposito <application>Git</application>"
 
 #: fileviewgitplugin.cpp:79
 #, kde-kuit-format
@@ -310,36 +305,36 @@ msgstr "Log di <application>Git</application>..."
 #: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr "Aggiunta dei file nel repository <application>Git</application>..."
+msgstr "Aggiunta dei file nel deposito <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:439
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
-"L'aggiunta dei file nel repository <application>Git</application> non è "
+"L'aggiunta dei file nel deposito <application>Git</application> non è "
 "riuscita."
 
 #: fileviewgitplugin.cpp:440
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr "File aggiunti al repository <application>Git</application>."
+msgstr "File aggiunti al deposito <application>Git</application>."
 
 #: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr "Rimozione dei file dal repository <application>Git</application>..."
+msgstr "Rimozione dei file dal deposito <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
-"La rimozione dei file dal repository <application>Git</application> non è "
+"La rimozione dei file dal deposito <application>Git</application> non è "
 "riuscita."
 
 #: fileviewgitplugin.cpp:453
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr "File rimossi dal repository <application>Git</application>."
+msgstr "File rimossi dal deposito <application>Git</application>."
 
 #: fileviewgitplugin.cpp:460
 #, kde-kuit-format
@@ -414,11 +409,9 @@ msgstr ""
 "Ripristino dei file in stage dal deposito <application>Git</application>."
 
 #: fileviewgitplugin.cpp:589
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "Crea etichette con <application>Git</application>"
+msgstr "Errore <application>Git</application> in avvio: %1"
 
 #: fileviewgitplugin.cpp:593
 #, kde-kuit-format
@@ -431,10 +424,9 @@ msgid "<application>Git</application> clone complete."
 msgstr "Clonazione di <application>Git</application> completa."
 
 #: fileviewgitplugin.cpp:603
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Merge..."
+#, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr "Fusione con <application>Git</application>..."
+msgstr "Clonazione deposito <application>Git</application>..."
 
 #: fileviewgitplugin.cpp:637
 #, kde-kuit-format
@@ -604,32 +596,30 @@ msgstr "Ramo remoto:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Forza con lease"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
-msgstr "Procedi anche se il ramo remoto non è un antenato di quello locale."
+msgstr ""
+"Procedi anche se il ramo remoto non è un antenato del ramo locale, a "
+"condizione che non vi siano state modifiche nel ramo remoto dall'ultimo "
+"recupero."
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "Nessun remoto definito."
 
 #: pushdialog.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr "Crea nuovo ramo: "
+msgstr "Push nuovo ramo"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
