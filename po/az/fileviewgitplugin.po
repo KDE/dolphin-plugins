@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:43+0000\n"
-"PO-Revision-Date: 2025-05-24 15:42+0400\n"
+"PO-Revision-Date: 2025-05-28 16:15+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -607,20 +607,20 @@ msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
+"Uzaq şöbədə sonuncu alınmadan bu yana heç bir dəyişiklik olmayaraq təqdim "
+"olunan yerli şöbənin ana şöbəsi uzaq şöbə olmasa belə davam etmək."
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "Uzaqdakılar aşkarlanmadı"
 
 #: pushdialog.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Create New Branch: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr "Yeni şöbə yaratmaq: "
+msgstr "Yeni şöbəni yükləmək"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
