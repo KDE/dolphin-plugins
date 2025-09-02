@@ -44,7 +44,7 @@ msgstr "Combina amb l'antic estat del directori pare després del retrocés"
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
-msgstr "Seleccioneu el joc de canvis"
+msgstr "Trieu el joc de canvis"
 
 #: backoutdialog.cpp:58
 #, kde-kuit-format
@@ -62,13 +62,13 @@ msgstr "Revisió pare (opcional): "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
-msgstr "Seleccioneu el joc de canvis"
+msgstr "Trieu el joc de canvis"
 
 #: backoutdialog.cpp:129 bundledialog.cpp:179
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Select"
-msgstr "Selecciona"
+msgstr "Tria"
 
 #: branchdialog.cpp:23
 #, kde-format
@@ -432,7 +432,7 @@ msgstr "Omet les dates de les capçaleres de «diff»"
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
-msgstr "Seleccioneu almenys un joc de canvis per a exportar!"
+msgstr "Trieu almenys un joc de canvis per a exportar!"
 
 #: fileviewhgplugin.cpp:90
 #, kde-kuit-format

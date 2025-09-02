@@ -287,7 +287,7 @@ msgstr "Mostra les actualitzacions"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "Seleccioneu el directori que s'ha d'extraure"
+msgstr "Trieu el directori que s'ha d'extraure"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
@@ -332,7 +332,7 @@ msgstr "Cancel·la"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr "Seleccioneu el directori que s'ha de netejar"
+msgstr "Trieu el directori que s'ha de netejar"
 
 #: svncleanupdialog.cpp:62
 #, kde-format
