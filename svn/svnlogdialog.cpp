@@ -11,8 +11,6 @@
 #include <QShortcut>
 #include <QTemporaryFile>
 
-#include "svncommands.h"
-
 namespace
 {
 

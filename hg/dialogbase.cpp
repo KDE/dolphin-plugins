@@ -5,7 +5,6 @@
 */
 
 #include "dialogbase.h"
-#include <QBoxLayout>
 #include <QKeyEvent>
 
 DialogBase::DialogBase(QDialogButtonBox::StandardButtons buttons, QWidget *parent)

@@ -6,23 +6,16 @@
 #include <csignal>
 #include <unistd.h>
 
-#include <QAction>
 #include <QApplication>
 #include <QDebug>
 #include <QDir>
-#include <QFileInfo>
 #include <QIcon>
-#include <QMenu>
 #include <QMessageBox>
-#include <QObject>
-#include <QPointer>
-#include <QProcess>
 #include <QProcessEnvironment>
 #include <QString>
 
 #include <KConfigGroup>
 #include <KDialogJobUiDelegate>
-#include <KFileItemListProperties>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
 #include <KPluginFactory>

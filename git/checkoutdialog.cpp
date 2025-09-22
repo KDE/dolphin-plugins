@@ -19,7 +19,6 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include <QRegularExpression>
-#include <QString>
 #include <QVBoxLayout>
 
 CheckoutDialog::CheckoutDialog(QWidget *parent)

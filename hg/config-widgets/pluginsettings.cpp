@@ -5,7 +5,6 @@
 */
 
 #include "pluginsettings.h"
-#include "hgconfig.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>

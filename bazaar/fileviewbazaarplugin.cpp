@@ -15,7 +15,6 @@
 #include <QDir>
 #include <QLabel>
 #include <QPlainTextEdit>
-#include <QProcess>
 #include <QString>
 #include <QStringList>
 #include <QTextStream>

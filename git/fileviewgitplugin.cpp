@@ -23,9 +23,7 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QPlainTextEdit>
-#include <QProcess>
 #include <QPushButton>
-#include <QString>
 #include <QStringList>
 #include <QTemporaryFile>
 #include <QTextBrowser>
