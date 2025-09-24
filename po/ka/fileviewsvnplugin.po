@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2024-05-01 05:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,67 +18,67 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: fileviewsvnplugin.cpp:71
+#: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
 msgstr "SVN განახლება"
 
-#: fileviewsvnplugin.cpp:76
+#: fileviewsvnplugin.cpp:75
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
 msgstr "SVN -ის ლოკალური ცვლილებების ჩვენება"
 
-#: fileviewsvnplugin.cpp:81
+#: fileviewsvnplugin.cpp:80
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
 msgstr "SVN კომიტი..."
 
-#: fileviewsvnplugin.cpp:86
+#: fileviewsvnplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
 msgstr "SVN დამატება"
 
-#: fileviewsvnplugin.cpp:91
+#: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
 msgstr "SVN წაშლა"
 
-#: fileviewsvnplugin.cpp:96
+#: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
 msgstr "SVN დაბრუნება"
 
-#: fileviewsvnplugin.cpp:101
+#: fileviewsvnplugin.cpp:100
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
 msgstr "SVN განახლებების ჩვენება"
 
-#: fileviewsvnplugin.cpp:107
+#: fileviewsvnplugin.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
 msgstr "SVN ჟურნალი..."
 
-#: fileviewsvnplugin.cpp:111
+#: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
 msgstr "SVN გამოთხოვა..."
 
-#: fileviewsvnplugin.cpp:115
+#: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "SVN მოსუფთავება..."
 
-#: fileviewsvnplugin.cpp:225
+#: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
@@ -86,160 +86,160 @@ msgstr ""
 "SVN სტატუსის განახლების შეცდომა: გაითიშება პარამეტრი \"SVN განახლებების "
 "ჩვენება\"."
 
-#: fileviewsvnplugin.cpp:361
+#: fileviewsvnplugin.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "SVN განახლება"
 
-#: fileviewsvnplugin.cpp:366
+#: fileviewsvnplugin.cpp:365
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "SVN -ის რეპოზიტორიის განახლება..."
 
-#: fileviewsvnplugin.cpp:367
+#: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "SVN -ის რეპოზიტორიის განახლების შეცდომა."
 
-#: fileviewsvnplugin.cpp:368
+#: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "SVN -ის რეპოზიტორია განახლდა."
 
-#: fileviewsvnplugin.cpp:382
+#: fileviewsvnplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "SVN -ის ლოკალური ცვლილებების ჩვენების შეცდომა."
 
-#: fileviewsvnplugin.cpp:390
+#: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "SVN -ის ლოკალური ცვლილებების ჩვენების შეცდომა: svn diff -ის შეცდომა."
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
-#: fileviewsvnplugin.cpp:621
+#: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
+#: fileviewsvnplugin.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr ""
 "SVN -ის ლოკალური ცვლილებების ჩვენების შეცდომა: kompare-ის გაშვების შეცდომა."
 
-#: fileviewsvnplugin.cpp:430
+#: fileviewsvnplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "SVN -ის რეპოზიტორიაში ფაილების დამატება..."
 
-#: fileviewsvnplugin.cpp:431
+#: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "SVN -ის რეპოზიტორიაში ფაილების დამატების შეცდომა."
 
-#: fileviewsvnplugin.cpp:432
+#: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "SVN -ის რეპოზიტორიაში ფაილები დამატებულია."
 
-#: fileviewsvnplugin.cpp:439
+#: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "SVN -ის რეპოზიტორიიდან ფაილების წაშლა..."
 
-#: fileviewsvnplugin.cpp:440
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "SVN -ის რეპოზიტორიიდან ფაილების წაშლის შეცდომა."
 
-#: fileviewsvnplugin.cpp:441
+#: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "SVN -ის რეპოზიტორიიდან ფაილები წაიშალა."
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
+#: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "SVN დაბრუნება"
 
-#: fileviewsvnplugin.cpp:466
+#: fileviewsvnplugin.cpp:465
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "SVN -ის რეპოზიტორიიდან ფაილები წაიშალა..."
 
-#: fileviewsvnplugin.cpp:467
+#: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "SVN -ის რეპოზიტორიაში ფაილების დაბრუნების შეცდომა."
 
-#: fileviewsvnplugin.cpp:468
+#: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "SVN -ის რეპოზიტორიაში ფაილები დაბრუნდა."
 
-#: fileviewsvnplugin.cpp:493
+#: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr "SVN გამოთხოვა: გამოთხოვა მიმდინარეობს...."
 
-#: fileviewsvnplugin.cpp:497
+#: fileviewsvnplugin.cpp:496
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
 msgstr "SVN-ის შეცდომა: %1"
 
-#: fileviewsvnplugin.cpp:501
+#: fileviewsvnplugin.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
 msgstr "SVN გამოთხოვა: გამოთხოვის შეცდომა: %1"
 
-#: fileviewsvnplugin.cpp:503
+#: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
 msgstr "SVN გამოთხოვა: გამოთხოვა წარმატებულია."
 
-#: fileviewsvnplugin.cpp:507
+#: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN გამოთხოვა"
 
-#: fileviewsvnplugin.cpp:572
+#: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "ფაილის ცვლილებების დაბრუნება..."
 
-#: fileviewsvnplugin.cpp:573
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "დაბრუნების შეცდომა."
 
-#: fileviewsvnplugin.cpp:574
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "ფაილი დაბრუნდა."
 
-#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
-#: fileviewsvnplugin.cpp:613
+#: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
+#: fileviewsvnplugin.cpp:612
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
@@ -247,25 +247,25 @@ msgstr ""
 "ფაილისთვის ლოკალური SVN ცვლილებების ჩვენების შეცდომა: ფაილის მიღება "
 "შეუძლებელია."
 
-#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
+#: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "SVN ცვლილებების გადაცემის შეცდომა."
 
-#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:667 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN კომიტი"
 
-#: fileviewsvnplugin.cpp:673
+#: fileviewsvnplugin.cpp:672
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN ცვლილებების გადაცემა..."
 
-#: fileviewsvnplugin.cpp:675
+#: fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -460,45 +460,45 @@ msgctxt "@item:intable"
 msgid "Update required"
 msgstr "განახლება აუცილებელია"
 
-#: svnlogdialog.cpp:90
+#: svnlogdialog.cpp:88
 #, kde-format
 msgid "Update to revision"
 msgstr "რევიზიამდე განახლება"
 
-#: svnlogdialog.cpp:94 svnlogdialog.cpp:112
+#: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
 msgid "Revert to revision"
 msgstr "რევიზიაზე დაბრუნება"
 
-#: svnlogdialog.cpp:98
+#: svnlogdialog.cpp:96
 #, kde-format
 msgid "Show changes"
 msgstr "ცვლილებების ჩვენება"
 
-#: svnlogdialog.cpp:105
+#: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
 msgstr "ცვლილებები მუშა ასლთან შედარებით"
 
-#: svnlogdialog.cpp:267
+#: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
 msgstr "SVN ჟურნალი: რევიზიამდე განახლების შეცდომა."
 
-#: svnlogdialog.cpp:269
+#: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
 msgstr "SVN ჟურნალი: რევიზიამდე %1 განახლება წარმატებულია."
 
-#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
+#: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
 msgstr "SVN ჟურნალი: რევიზიაზე დაბრუნების შეცდომა."
 
-#: svnlogdialog.cpp:281 svnlogdialog.cpp:292
+#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."

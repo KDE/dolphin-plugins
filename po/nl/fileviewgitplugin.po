@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:43+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2025-03-03 10:55+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,116 +17,116 @@ msgstr ""
 "X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: checkoutdialog.cpp:34
+#: checkoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr "<application>Git</application> Checkout"
 
-#: checkoutdialog.cpp:45
+#: checkoutdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr "Checkout"
 
-#: checkoutdialog.cpp:58
+#: checkoutdialog.cpp:57
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "Branch:"
 
-#: checkoutdialog.cpp:65
+#: checkoutdialog.cpp:64
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "Tag:"
 
-#: checkoutdialog.cpp:71
+#: checkoutdialog.cpp:70
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
 msgstr "Vastleggen (commit):"
 
-#: checkoutdialog.cpp:82 pushdialog.cpp:80
+#: checkoutdialog.cpp:81 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "Opties"
 
-#: checkoutdialog.cpp:87
+#: checkoutdialog.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "Nieuwe branch aanmaken: "
 
-#: checkoutdialog.cpp:88
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr ""
 "Een nieuwe branch aanmaken gebaseerd op de geselecteerde branch of tag."
 
-#: checkoutdialog.cpp:103
+#: checkoutdialog.cpp:102
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "Forceren"
 
-#: checkoutdialog.cpp:104
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr "Alle lokale wijzigingen verwerpen."
 
-#: checkoutdialog.cpp:136
+#: checkoutdialog.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "Er zijn geen tags in deze opslagruimte."
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Basis van branch"
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Checkout"
 
-#: checkoutdialog.cpp:228
+#: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "U dient een geldige naam voor de nieuwe branch in te voeren."
 
-#: checkoutdialog.cpp:235
+#: checkoutdialog.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Een branch met de naam '%1' bestaat al."
 
-#: checkoutdialog.cpp:242
+#: checkoutdialog.cpp:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Branchnamen mogen geen witruimte bevatten."
 
-#: checkoutdialog.cpp:249
+#: checkoutdialog.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "U dient eerst een geldige branch te selecteren."
 
-#: checkoutdialog.cpp:255
+#: checkoutdialog.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "U moet eerst een geldig vastleggen-Id invoeren (Sha ondertekening)."
 
-#: checkoutdialog.cpp:288
+#: checkoutdialog.cpp:287
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -237,163 +237,163 @@ msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
 msgstr "U moet eerst een vastleggen-bericht invoeren."
 
-#: fileviewgitplugin.cpp:54
+#: fileviewgitplugin.cpp:52
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> Revert (terugdraaien)"
 
-#: fileviewgitplugin.cpp:59
+#: fileviewgitplugin.cpp:57
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> Add (toevoegen)"
 
-#: fileviewgitplugin.cpp:64
+#: fileviewgitplugin.cpp:62
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
 msgstr "Lokale <application>Git</application> wijzigingen tonen"
 
-#: fileviewgitplugin.cpp:69
+#: fileviewgitplugin.cpp:67
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> staged herstellen"
 
-#: fileviewgitplugin.cpp:74
+#: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> Remove (verwijderen)"
 
-#: fileviewgitplugin.cpp:79
+#: fileviewgitplugin.cpp:77
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> Checkout (ophalen)... "
 
-#: fileviewgitplugin.cpp:84
+#: fileviewgitplugin.cpp:82
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> Commit (vastleggen)..."
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:87
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> Create Tag (tag aanmaken)..."
 
-#: fileviewgitplugin.cpp:93
+#: fileviewgitplugin.cpp:91
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> Push (wegschrijven)..."
 
-#: fileviewgitplugin.cpp:97
+#: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> Pull (ophalen)..."
 
-#: fileviewgitplugin.cpp:101
+#: fileviewgitplugin.cpp:99
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Samenvoegen..."
 
-#: fileviewgitplugin.cpp:105
+#: fileviewgitplugin.cpp:103
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> Klonen..."
 
-#: fileviewgitplugin.cpp:109
+#: fileviewgitplugin.cpp:107
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> Logboek..."
 
-#: fileviewgitplugin.cpp:438
+#: fileviewgitplugin.cpp:436
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr ""
 "Bestanden toevoegen aan <application>Git</application> repository "
 "(opslagruimte)..."
 
-#: fileviewgitplugin.cpp:439
+#: fileviewgitplugin.cpp:437
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Bestanden toevoegen aan <application>Git</application>-opslagruimte is "
 "mislukt."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Bestanden toegevoegd aan <application>Git</application>-opslagruimte."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:449
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr ""
 "Bestanden verwijderen uit de <application>Git</application>-opslagruimte..."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:450
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Bestanden verwijderen uit <application>Git</application>-opslagruimte is "
 "mislukt."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr ""
 "Verwijderde bestanden uit de <application>Git</application>-opslagruimte."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:458
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
 "Bestanden uit <application>Git</application>-opslagruimte terugzetten..."
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:459
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Bestanden terugzetten uit <application>Git</application>-opslagruimte is "
 "mislukt."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:460
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr ""
 "Bestanden teruggehaald uit de <application>Git</application>-opslagruimte."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:499
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> Logboek is mislukt."
 
-#: fileviewgitplugin.cpp:522
+#: fileviewgitplugin.cpp:520
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Logboek"
 
-#: fileviewgitplugin.cpp:537
+#: fileviewgitplugin.cpp:535
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Vastleggen (commit)"
 
-#: fileviewgitplugin.cpp:538
+#: fileviewgitplugin.cpp:536
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Datum"
 
-#: fileviewgitplugin.cpp:539
+#: fileviewgitplugin.cpp:537
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Bericht"
 
-#: fileviewgitplugin.cpp:540
+#: fileviewgitplugin.cpp:538
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Auteur"
 
-#: fileviewgitplugin.cpp:561
+#: fileviewgitplugin.cpp:559
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
@@ -401,7 +401,7 @@ msgstr ""
 "Staged bestanden herstellen uit de <application>Git</application>-"
 "opslagruimte..."
 
-#: fileviewgitplugin.cpp:562
+#: fileviewgitplugin.cpp:560
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
@@ -409,49 +409,49 @@ msgstr ""
 "Staged bestanden herstellen uit <application>Git</application>-opslagruimte "
 "is mislukt."
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:561
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "Staged bestanden herstellen uit de <application>Git</application>-"
 "opslagruimte."
 
-#: fileviewgitplugin.cpp:589
+#: fileviewgitplugin.cpp:587
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> fout bij starten: %1"
 
-#: fileviewgitplugin.cpp:593
+#: fileviewgitplugin.cpp:591
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> klonen is mislukt: %1"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:593
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> klonen is voltooid."
 
-#: fileviewgitplugin.cpp:603
+#: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> opslagruimte voor kloon..."
 
-#: fileviewgitplugin.cpp:637
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Omgeschakeld naar branch '%1'"
 
-#: fileviewgitplugin.cpp:644
+#: fileviewgitplugin.cpp:642
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD is nu op %1"
 
-#: fileviewgitplugin.cpp:649
+#: fileviewgitplugin.cpp:647
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Omgeschakeld naar een nieuwe branch '%1'"
 
-#: fileviewgitplugin.cpp:660
+#: fileviewgitplugin.cpp:658
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -460,12 +460,12 @@ msgstr ""
 "<application>Git</application> Checkout (ophalen) is mislukt. Misschien is "
 "uw werkmap vervuild."
 
-#: fileviewgitplugin.cpp:726
+#: fileviewgitplugin.cpp:724
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Tag '%1' is met succes aangemaakt"
 
-#: fileviewgitplugin.cpp:731
+#: fileviewgitplugin.cpp:729
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -474,47 +474,47 @@ msgstr ""
 "<application>Git</application> tag aanmaken is mislukt. Een tag met de naam "
 "'%1' bestaat al."
 
-#: fileviewgitplugin.cpp:734
+#: fileviewgitplugin.cpp:732
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> tag aanmaken is mislukt."
 
-#: fileviewgitplugin.cpp:745
+#: fileviewgitplugin.cpp:743
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Branch %1 wegschrijven naar %2:%3 is mislukt."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:744
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Branch %1 wegschrijven naar %2:%3."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Bezig branch %1 weg te schrijven naar %2:%3..."
 
-#: fileviewgitplugin.cpp:768
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Branch %1 ophalen van %2 is mislukt."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:767
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Branch %1 ophalen van %2 is gelukt."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:768
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Bezig branch %1 op te halen van %2..."
 
-#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
+#: fileviewgitplugin.cpp:820 fileviewgitplugin.cpp:832
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Branch is al bijgewerkt."
 
-#: fileviewgitplugin.cpp:838
+#: fileviewgitplugin.cpp:836
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2024-07-31 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-i18n-doc@kde.org>\n"
@@ -18,67 +18,67 @@ msgstr ""
 "X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: fileviewsvnplugin.cpp:71
+#: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
 msgstr "SVN frissítés"
 
-#: fileviewsvnplugin.cpp:76
+#: fileviewsvnplugin.cpp:75
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
 msgstr "Helyi SVN változások megjelenítése"
 
-#: fileviewsvnplugin.cpp:81
+#: fileviewsvnplugin.cpp:80
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
 msgstr "SVN véglegesítés…"
 
-#: fileviewsvnplugin.cpp:86
+#: fileviewsvnplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
 msgstr "SVN hozzáadás"
 
-#: fileviewsvnplugin.cpp:91
+#: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
 msgstr "SVN törlés"
 
-#: fileviewsvnplugin.cpp:96
+#: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
 msgstr "SVN visszaállítás"
 
-#: fileviewsvnplugin.cpp:101
+#: fileviewsvnplugin.cpp:100
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
 msgstr "SVN frissítések megjelenítése"
 
-#: fileviewsvnplugin.cpp:107
+#: fileviewsvnplugin.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
 msgstr "SVN napló…"
 
-#: fileviewsvnplugin.cpp:111
+#: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
 msgstr "SVN lekérés…"
 
-#: fileviewsvnplugin.cpp:115
+#: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "SVN tisztítás…"
 
-#: fileviewsvnplugin.cpp:225
+#: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
@@ -86,37 +86,37 @@ msgstr ""
 "Az SVN állapotfrissítés sikertelen volt. Az „SVN frissítések megjelenítése” "
 "opció ki lett kapcsolva."
 
-#: fileviewsvnplugin.cpp:361
+#: fileviewsvnplugin.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "SVN frissítés"
 
-#: fileviewsvnplugin.cpp:366
+#: fileviewsvnplugin.cpp:365
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "SVN tároló frissítése…"
 
-#: fileviewsvnplugin.cpp:367
+#: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "Az SVN tároló frissítése sikertelen volt."
 
-#: fileviewsvnplugin.cpp:368
+#: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "Az SVN tároló frissült."
 
-#: fileviewsvnplugin.cpp:382
+#: fileviewsvnplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "Nem sikerült megjeleníteni a helyi SVN változásokat."
 
-#: fileviewsvnplugin.cpp:390
+#: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
@@ -124,8 +124,8 @@ msgstr ""
 "Nem lehet megjeleníteni az SVN változásokat: az svn összehasonlítás "
 "sikertelen."
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
-#: fileviewsvnplugin.cpp:621
+#: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
+#: fileviewsvnplugin.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -133,116 +133,116 @@ msgstr ""
 "Nem sikerült megjeleníteni a helyi SVN változásokat: a kompare nem indítható "
 "el."
 
-#: fileviewsvnplugin.cpp:430
+#: fileviewsvnplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "Fájlok hozzáadása az SVN tárolóhoz…"
 
-#: fileviewsvnplugin.cpp:431
+#: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "A fájlok hozzáadása az SVN tárolóhoz sikertelen volt."
 
-#: fileviewsvnplugin.cpp:432
+#: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "Fájlok hozzáadva az SVN tárolóhoz."
 
-#: fileviewsvnplugin.cpp:439
+#: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "Fájlok eltávolítása az SVN tárolóból…"
 
-#: fileviewsvnplugin.cpp:440
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "A fájlok eltávolítása az SVN tárolóból sikertelen volt."
 
-#: fileviewsvnplugin.cpp:441
+#: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "A fájlok el lettek távolítva az SVN tárolóból."
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
+#: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "SVN visszaállítás"
 
-#: fileviewsvnplugin.cpp:466
+#: fileviewsvnplugin.cpp:465
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "Fájlok visszaállítása az SVN tárolóból…"
 
-#: fileviewsvnplugin.cpp:467
+#: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "A fájlok visszaállítása az SVN adattárból sikertelen volt."
 
-#: fileviewsvnplugin.cpp:468
+#: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "A fájlok vissza lettek távolítva az SVN tárolóból."
 
-#: fileviewsvnplugin.cpp:493
+#: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr "SVN lekérés: lekérés folyamatban…"
 
-#: fileviewsvnplugin.cpp:497
+#: fileviewsvnplugin.cpp:496
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
 msgstr "SVN hiba indításkor: %1"
 
-#: fileviewsvnplugin.cpp:501
+#: fileviewsvnplugin.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
 msgstr "SVN lekérés: lekérés sikertelen: %1"
 
-#: fileviewsvnplugin.cpp:503
+#: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
 msgstr "SVN lekérés: sikeres lekérés."
 
-#: fileviewsvnplugin.cpp:507
+#: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "SVN lekérés"
 
-#: fileviewsvnplugin.cpp:572
+#: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "Fájl változásainak visszaállítása…"
 
-#: fileviewsvnplugin.cpp:573
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "Fájlvisszaállítás sikertelen."
 
-#: fileviewsvnplugin.cpp:574
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "Fájl visszaállítva."
 
-#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
-#: fileviewsvnplugin.cpp:613
+#: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
+#: fileviewsvnplugin.cpp:612
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
@@ -250,25 +250,25 @@ msgstr ""
 "Nem sikerült megjeleníteni a fájl helyi SVN változásait: a fájl nem kérhető "
 "le."
 
-#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
+#: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Az SVN változások véglegesítése sikertelen."
 
-#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:667 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN véglegesítés"
 
-#: fileviewsvnplugin.cpp:673
+#: fileviewsvnplugin.cpp:672
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN változások véglegesítése…"
 
-#: fileviewsvnplugin.cpp:675
+#: fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -463,45 +463,45 @@ msgctxt "@item:intable"
 msgid "Update required"
 msgstr "Frissítés szükséges"
 
-#: svnlogdialog.cpp:90
+#: svnlogdialog.cpp:88
 #, kde-format
 msgid "Update to revision"
 msgstr "Frissítés verzióra"
 
-#: svnlogdialog.cpp:94 svnlogdialog.cpp:112
+#: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
 msgid "Revert to revision"
 msgstr "Visszaállítás verzióra"
 
-#: svnlogdialog.cpp:98
+#: svnlogdialog.cpp:96
 #, kde-format
 msgid "Show changes"
 msgstr "Változások megjelenítése"
 
-#: svnlogdialog.cpp:105
+#: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
 msgstr "Változások a munkamásolathoz képest"
 
-#: svnlogdialog.cpp:267
+#: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
 msgstr "SVN napló: a frissítés verzióra sikertelen."
 
-#: svnlogdialog.cpp:269
+#: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
 msgstr "SVN napló: a frissítés a(z) %1 verzióra sikeres."
 
-#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
+#: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
 msgstr "SVN napló: a visszaállítás verzióra sikertelen."
 
-#: svnlogdialog.cpp:281 svnlogdialog.cpp:292
+#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."

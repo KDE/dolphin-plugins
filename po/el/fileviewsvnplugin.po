@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2024-09-04 23:15+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -20,67 +20,67 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: fileviewsvnplugin.cpp:71
+#: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
 msgstr "Ενημέρωση SVN"
 
-#: fileviewsvnplugin.cpp:76
+#: fileviewsvnplugin.cpp:75
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
 msgstr "Εμφάνιση τοπικών αλλαγών SVN"
 
-#: fileviewsvnplugin.cpp:81
+#: fileviewsvnplugin.cpp:80
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
 msgstr "Υποβολή SVN..."
 
-#: fileviewsvnplugin.cpp:86
+#: fileviewsvnplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
 msgstr "Προσθήκη SVN"
 
-#: fileviewsvnplugin.cpp:91
+#: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
 msgstr "Διαγραφή SVN"
 
-#: fileviewsvnplugin.cpp:96
+#: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
 msgstr "Επαναφορά SVN"
 
-#: fileviewsvnplugin.cpp:101
+#: fileviewsvnplugin.cpp:100
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
 msgstr "Εμφάνιση ενημερώσεων SVN"
 
-#: fileviewsvnplugin.cpp:107
+#: fileviewsvnplugin.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
 msgstr "Αρχείο καταγραφής SVN..."
 
-#: fileviewsvnplugin.cpp:111
+#: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
 msgstr "Έλεγχος SVN..."
 
-#: fileviewsvnplugin.cpp:115
+#: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "Καθαρισμός SVN..."
 
-#: fileviewsvnplugin.cpp:225
+#: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
@@ -88,44 +88,44 @@ msgstr ""
 "Η ενημέρωση κατάστασης SVN απέτυχε. Απενεργοποίηση της επιλογής \"Εμφάνιση "
 "ενημερώσεων SVN\"."
 
-#: fileviewsvnplugin.cpp:361
+#: fileviewsvnplugin.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "Ενημέρωση SVN"
 
-#: fileviewsvnplugin.cpp:366
+#: fileviewsvnplugin.cpp:365
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "Ενημέρωση αποθετηρίου SVN..."
 
-#: fileviewsvnplugin.cpp:367
+#: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "Η ενημέρωση του αποθετηρίου SVN απέτυχε."
 
-#: fileviewsvnplugin.cpp:368
+#: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "Ενημερωμένο αποθετήριο SVN."
 
-#: fileviewsvnplugin.cpp:382
+#: fileviewsvnplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "Δεν μπορώ να προβάλω τις τοπικές αλλαγές του SVN."
 
-#: fileviewsvnplugin.cpp:390
+#: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "Δεν μπορώ να προβάλω τις τοπικές αλλαγές του SVN: Αποτυχία svn diff."
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
-#: fileviewsvnplugin.cpp:621
+#: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
+#: fileviewsvnplugin.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
@@ -133,116 +133,116 @@ msgstr ""
 "Δεν μπορώ να προβάλω στις τοπικές αλλαγές του SVN: δεν μπορώ να ξεκινήσω το "
 "Kompare."
 
-#: fileviewsvnplugin.cpp:430
+#: fileviewsvnplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "Προσθήκη αρχείων στο αποθετήριο SVN..."
 
-#: fileviewsvnplugin.cpp:431
+#: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "Η προσθήκη αρχείων στο αποθετήριο SVN απέτυχε."
 
-#: fileviewsvnplugin.cpp:432
+#: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "Προστέθηκαν αρχεία στο αποθετήριο SVN."
 
-#: fileviewsvnplugin.cpp:439
+#: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "Αφαίρεση αρχείων από το αποθετήριο SVN..."
 
-#: fileviewsvnplugin.cpp:440
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "Η αφαίρεση αρχείων από το αποθετήριο SVN απέτυχε."
 
-#: fileviewsvnplugin.cpp:441
+#: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "Αφαιρέθηκαν αρχεία από το αποθετήριο SVN."
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
+#: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "Επαναφορά SVN"
 
-#: fileviewsvnplugin.cpp:466
+#: fileviewsvnplugin.cpp:465
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "Επαναφορά αρχείων από το αποθετήριο SVN..."
 
-#: fileviewsvnplugin.cpp:467
+#: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "Η επαναφορά αρχείων από το αποθετήριο SVN απέτυχε."
 
-#: fileviewsvnplugin.cpp:468
+#: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "Επαναφέρθηκαν αρχεία από το αποθετήριο SVN."
 
-#: fileviewsvnplugin.cpp:493
+#: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr "Έλεγχος SVN: έλεγχος σε εξέλιξη..."
 
-#: fileviewsvnplugin.cpp:497
+#: fileviewsvnplugin.cpp:496
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
 msgstr "Έναρξη σφάλματος SVN: %1"
 
-#: fileviewsvnplugin.cpp:501
+#: fileviewsvnplugin.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
 msgstr "SVN checkout: το checkout απέτυχε: %1"
 
-#: fileviewsvnplugin.cpp:503
+#: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
 msgstr "Έλεγχος SVN: Έλεγχος επιτυχής."
 
-#: fileviewsvnplugin.cpp:507
+#: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "Υποβολή SVN"
 
-#: fileviewsvnplugin.cpp:572
+#: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "Επαναφορά αλλαγών στο αρχείο..."
 
-#: fileviewsvnplugin.cpp:573
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "Επαναφορά αρχείου απέτυχε."
 
-#: fileviewsvnplugin.cpp:574
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "Το αρχείο επαναφέρθηκε."
 
-#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
-#: fileviewsvnplugin.cpp:613
+#: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
+#: fileviewsvnplugin.cpp:612
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
@@ -250,25 +250,25 @@ msgstr ""
 "Δεν μπορώ να προβάλω στις τοπικές αλλαγές του SVN για το αρχείο: δεν μπόρεσα "
 "να πάρω το αρχείο."
 
-#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
+#: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "Η υποβολή αλλαγών SVN απέτυχε."
 
-#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:667 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "Υποβολή SVN"
 
-#: fileviewsvnplugin.cpp:673
+#: fileviewsvnplugin.cpp:672
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "Υποβολή αλλαγών SVN..."
 
-#: fileviewsvnplugin.cpp:675
+#: fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -463,45 +463,45 @@ msgctxt "@item:intable"
 msgid "Update required"
 msgstr "Απαιτείται ενημέρωση"
 
-#: svnlogdialog.cpp:90
+#: svnlogdialog.cpp:88
 #, kde-format
 msgid "Update to revision"
 msgstr "Ενημέρωση στην αναθεώρηση"
 
-#: svnlogdialog.cpp:94 svnlogdialog.cpp:112
+#: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
 msgid "Revert to revision"
 msgstr "Επιστροφή στην αναθεώρηση"
 
-#: svnlogdialog.cpp:98
+#: svnlogdialog.cpp:96
 #, kde-format
 msgid "Show changes"
 msgstr "Εμφάνιση αλλαγών"
 
-#: svnlogdialog.cpp:105
+#: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
 msgstr "Αλλαγές έναντι αντιγράφου εργασίας"
 
-#: svnlogdialog.cpp:267
+#: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
 msgstr "Αρχείο καταγραφής SVN: Ενημέρωση στην αναθεώρηση απέτυχε."
 
-#: svnlogdialog.cpp:269
+#: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
 msgstr "Αρχείο καταγραφής SVN: Ενημέρωση στην αναθεώρηση %1 επιτυχής."
 
-#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
+#: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
 msgstr "Αρχείο καταγραφής SVN: επιστροφή στην αναθεώρηση απέτυχε."
 
-#: svnlogdialog.cpp:281 svnlogdialog.cpp:292
+#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesdk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:43+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2015-02-04 14:18+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -20,31 +20,31 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: checkoutdialog.cpp:34
+#: checkoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr "<application>Git</application> izdvajanje"
 
-#: checkoutdialog.cpp:45
+#: checkoutdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr "Izdvajanje"
 
-#: checkoutdialog.cpp:58
+#: checkoutdialog.cpp:57
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "Grana:"
 
-#: checkoutdialog.cpp:65
+#: checkoutdialog.cpp:64
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "Oznaka:"
 
-#: checkoutdialog.cpp:71
+#: checkoutdialog.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Commit"
@@ -52,79 +52,79 @@ msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
 msgstr "Predaj"
 
-#: checkoutdialog.cpp:82 pushdialog.cpp:80
+#: checkoutdialog.cpp:81 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "Opcije"
 
-#: checkoutdialog.cpp:87
+#: checkoutdialog.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "Kreiraj novu granu: "
 
-#: checkoutdialog.cpp:88
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Kreiraj novu granu bazirano na izabranoj grani ili oznaci."
 
-#: checkoutdialog.cpp:103
+#: checkoutdialog.cpp:102
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "Forsiraj"
 
-#: checkoutdialog.cpp:104
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr "Odbaci lokalne izmjene."
 
-#: checkoutdialog.cpp:136
+#: checkoutdialog.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "Nema oznaka u ovom repozitoriju."
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Osnova grane"
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Izdvajanje"
 
-#: checkoutdialog.cpp:228
+#: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Morate prvo unijeti važeće ime za novu granu."
 
-#: checkoutdialog.cpp:235
+#: checkoutdialog.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Grana s imenom '%1' već postoji."
 
-#: checkoutdialog.cpp:242
+#: checkoutdialog.cpp:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Imena grana ne mogu sadržati razmake."
 
-#: checkoutdialog.cpp:249
+#: checkoutdialog.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Morate prvo odabrati važeću granu."
 
-#: checkoutdialog.cpp:255
+#: checkoutdialog.cpp:254
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "You must enter a commit message first."
@@ -132,7 +132,7 @@ msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Morate unijeti poruku potvrde prvo."
 
-#: checkoutdialog.cpp:288
+#: checkoutdialog.cpp:287
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -246,105 +246,105 @@ msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
 msgstr "Morate unijeti poruku potvrde prvo."
 
-#: fileviewgitplugin.cpp:54
+#: fileviewgitplugin.cpp:52
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Remove"
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> ukloni"
 
-#: fileviewgitplugin.cpp:59
+#: fileviewgitplugin.cpp:57
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Add"
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> dodaj"
 
-#: fileviewgitplugin.cpp:64
+#: fileviewgitplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "Show Local <application>Git</application> Changes"
 msgstr "<application>Git</application> izdvajanje"
 
-#: fileviewgitplugin.cpp:69
+#: fileviewgitplugin.cpp:67
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> Kreiraj oznaku"
 
-#: fileviewgitplugin.cpp:74
+#: fileviewgitplugin.cpp:72
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Remove"
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> ukloni"
 
-#: fileviewgitplugin.cpp:79
+#: fileviewgitplugin.cpp:77
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Checkout..."
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> izdvoji..."
 
-#: fileviewgitplugin.cpp:84
+#: fileviewgitplugin.cpp:82
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Commit..."
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> predaj..."
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:87
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Create Tag..."
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> Kreiraj oznaku.."
 
-#: fileviewgitplugin.cpp:93
+#: fileviewgitplugin.cpp:91
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> Gurni..."
 
-#: fileviewgitplugin.cpp:97
+#: fileviewgitplugin.cpp:95
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Pull..."
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> Povici..."
 
-#: fileviewgitplugin.cpp:101
+#: fileviewgitplugin.cpp:99
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Gurni..."
 
-#: fileviewgitplugin.cpp:105
+#: fileviewgitplugin.cpp:103
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Commit..."
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> predaj..."
 
-#: fileviewgitplugin.cpp:109
+#: fileviewgitplugin.cpp:107
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Commit..."
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> predaj..."
 
-#: fileviewgitplugin.cpp:438
+#: fileviewgitplugin.cpp:436
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Adding files to <application>Git</application> repository..."
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Dodajem datoteke u <application>Git</application> repozitorij..."
 
-#: fileviewgitplugin.cpp:439
+#: fileviewgitplugin.cpp:437
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Adding files to <application>Git</application> repository failed."
@@ -352,21 +352,21 @@ msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Dodavanje datoteka u <application>Git</application> repozitorij neuspjelo."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:438
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Added files to <application>Git</application> repository."
 msgid "Added files to <application>Git</application> repository."
 msgstr "Dodane datoteke u <application>Git</application> repozitorij."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:449
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Uklanjam datoteke iz <application>Git</application> repozitorija..."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:450
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -375,21 +375,21 @@ msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Uklanjanje datoteka iz <application>Git</application> repozitorija neuspjelo."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:451
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Uklonjedne datoteke iz <application>Git</application> repozitorija."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:458
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Uklanjam datoteke iz <application>Git</application> repozitorija..."
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:459
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -398,28 +398,28 @@ msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Uklanjanje datoteka iz <application>Git</application> repozitorija neuspjelo."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:460
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Uklonjedne datoteke iz <application>Git</application> repozitorija."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:499
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> Log failed."
 msgstr "Kreiranje <application>Git</application> oznake neuspjelo."
 
-#: fileviewgitplugin.cpp:522
+#: fileviewgitplugin.cpp:520
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Add"
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> dodaj"
 
-#: fileviewgitplugin.cpp:537
+#: fileviewgitplugin.cpp:535
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Commit"
@@ -427,13 +427,13 @@ msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Predaj"
 
-#: fileviewgitplugin.cpp:538
+#: fileviewgitplugin.cpp:536
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr ""
 
-#: fileviewgitplugin.cpp:539
+#: fileviewgitplugin.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Tag Message:"
@@ -441,13 +441,13 @@ msgctxt "Git commit message"
 msgid "Message"
 msgstr "Poruka oznake:"
 
-#: fileviewgitplugin.cpp:540
+#: fileviewgitplugin.cpp:538
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr ""
 
-#: fileviewgitplugin.cpp:561
+#: fileviewgitplugin.cpp:559
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
@@ -455,7 +455,7 @@ msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "Uklanjam datoteke iz <application>Git</application> repozitorija..."
 
-#: fileviewgitplugin.cpp:562
+#: fileviewgitplugin.cpp:560
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -465,49 +465,49 @@ msgid ""
 msgstr ""
 "Uklanjanje datoteka iz <application>Git</application> repozitorija neuspjelo."
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:561
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Uklonjedne datoteke iz <application>Git</application> repozitorija."
 
-#: fileviewgitplugin.cpp:589
+#: fileviewgitplugin.cpp:587
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> Kreiraj oznaku"
 
-#: fileviewgitplugin.cpp:593
+#: fileviewgitplugin.cpp:591
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Kreiranje <application>Git</application> oznake neuspjelo."
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:593
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> izdvajanje"
 
-#: fileviewgitplugin.cpp:603
+#: fileviewgitplugin.cpp:601
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> Gurni..."
 
-#: fileviewgitplugin.cpp:637
+#: fileviewgitplugin.cpp:635
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to branch '%1'"
 msgid "Switched to branch '%1'"
 msgstr "Prebačeno na granu '%1'"
 
-#: fileviewgitplugin.cpp:644
+#: fileviewgitplugin.cpp:642
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "@info:status Git HEAD pointer, parameter includes short SHA-1 & commit "
@@ -516,14 +516,14 @@ msgstr "Prebačeno na granu '%1'"
 msgid "HEAD is now at %1"
 msgstr "GLAVA je sad na %1"
 
-#: fileviewgitplugin.cpp:649
+#: fileviewgitplugin.cpp:647
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to a new branch '%1'"
 msgid "Switched to a new branch '%1'"
 msgstr "Prebačeno na novu granu '%1'"
 
-#: fileviewgitplugin.cpp:660
+#: fileviewgitplugin.cpp:658
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -536,14 +536,14 @@ msgstr ""
 "<application>Git</application> Izdvajanje neuspjelo. Možda u radnom "
 "direktoriju ima nešto."
 
-#: fileviewgitplugin.cpp:726
+#: fileviewgitplugin.cpp:724
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Successfully created tag '%1'"
 msgid "Successfully created tag '%1'"
 msgstr "Uspješno kreirana oznaka '%1'"
 
-#: fileviewgitplugin.cpp:731
+#: fileviewgitplugin.cpp:729
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -556,63 +556,63 @@ msgstr ""
 "Kreiranje <application>Git</application> oznake neuspjelo. Oznaka s imenom "
 "'%1' već postojki."
 
-#: fileviewgitplugin.cpp:734
+#: fileviewgitplugin.cpp:732
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> tag creation failed."
 msgstr "Kreiranje <application>Git</application> oznake neuspjelo."
 
-#: fileviewgitplugin.cpp:745
+#: fileviewgitplugin.cpp:743
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Guranje grane %1 u %2:%3 neuspjelo."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:744
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushed branch %1 to %2:%3."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Gurnuta grana %1 u %2:%3."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:745
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Guram granu %1 u %2:%3..."
 
-#: fileviewgitplugin.cpp:768
+#: fileviewgitplugin.cpp:766
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Povlačenje grane %1 iz %2 neuspjelo."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:767
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Povučena grana %1 iz %2 uspješno."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:768
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "Povlačim granu %1 iz %2..."
 
-#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
+#: fileviewgitplugin.cpp:820 fileviewgitplugin.cpp:832
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Branch is already up-to-date."
 msgid "Branch is already up-to-date."
 msgstr "Grana je već ažurna."
 
-#: fileviewgitplugin.cpp:838
+#: fileviewgitplugin.cpp:836
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Merge conflicts occurred. Fix them and commit the result."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -17,57 +17,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
-#: makefileactions.cpp:225
+#: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
 msgstr "'%1'%2 कृत्वा ।"
 
-#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
+#: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
 msgid "Makefile Actions"
 msgstr "Makefile क्रियाः"
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr "लक्ष्यं '%1' कृत्वा त्रुटिः अभवत् ।"
 
-#: makefileactions.cpp:262
+#: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr "'%1' कृते चालनप्रक्रिया सफलतया स्थगितम् ।"
 
-#: makefileactions.cpp:264
+#: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr "लक्ष्यं '%1' कर्तुं प्रयतमाने त्रुटिः अभवत् ।"
 
-#: makefileactions.cpp:296
+#: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
 msgstr "&निर्मीयताम्‌…"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr "केवलं विश्वसनीयसञ्चिकाः एव Makefile Actions प्लगिन् इत्यनेन उपयोक्तुं शक्यन्ते ।"
 
-#: makefileactions.cpp:304
+#: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr "विश्वसनीयसञ्चिका — विश्वासं दूरीकर्तुं अनचेक् कुर्वन्तु"
 
-#: makefileactions.cpp:304
+#: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr "अविश्वसनीयसञ्चिका — विश्वासं कर्तुं परीक्ष्यताम्"
 
-#: makefileactions.cpp:311
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr "डॉल्फिन मेकफाइल प्लगइन"
 
-#: makefileactions.cpp:312
+#: makefileactions.cpp:305
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
@@ -76,23 +76,23 @@ msgstr ""
 "<b>किं भवान् निश्चिन्तः अस्ति यत् भवान् एतां सञ्चिकां विश्वसितुम् अर्हति?</b><br> "
 "विश्वसनीयसञ्चिकाः सन्दर्भ-मेनू-आह्वानस्य मनमाना-सङ्केतं निष्पादयितुं शक्नुवन्ति ।"
 
-#: makefileactions.cpp:326
+#: makefileactions.cpp:319
 #, kde-format
 msgid "Open a terminal window"
 msgstr "एकं टर्मिनल् विण्डो उद्घाटयन्तु"
 
-#: makefileactions.cpp:327
+#: makefileactions.cpp:320
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr "चयनितं लक्ष्यं करणस्य आउटपुट् द्रष्टुं नूतनं टर्मिनल् विण्डो उद्घाटयन्तु ।"
 
-#: makefileactions.cpp:339
+#: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr "चालनप्रक्रिया रद्दं कुर्वन्तु (%1) ."
 
-#: makefileactions.cpp:340
+#: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr "वर्तमानं प्रचलति प्रक्रियां बाधयन्तु (%1) ।"

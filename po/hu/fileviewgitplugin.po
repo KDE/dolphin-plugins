@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:43+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2025-07-09 22:09+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -19,115 +19,115 @@ msgstr ""
 "X-Generator: Lokalize 25.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: checkoutdialog.cpp:34
+#: checkoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
 msgstr "<application>Git</application> átváltás"
 
-#: checkoutdialog.cpp:45
+#: checkoutdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
 msgstr "Átváltás"
 
-#: checkoutdialog.cpp:58
+#: checkoutdialog.cpp:57
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
 msgstr "Ág:"
 
-#: checkoutdialog.cpp:65
+#: checkoutdialog.cpp:64
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
 msgstr "Címke:"
 
-#: checkoutdialog.cpp:71
+#: checkoutdialog.cpp:70
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
 msgstr "Véglegesítés:"
 
-#: checkoutdialog.cpp:82 pushdialog.cpp:80
+#: checkoutdialog.cpp:81 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
 msgstr "Opciók"
 
-#: checkoutdialog.cpp:87
+#: checkoutdialog.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
 msgstr "Új ág létrehozása: "
 
-#: checkoutdialog.cpp:88
+#: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
 msgstr "Új ág létrehozása egy kijelölt ágból vagy címkéből."
 
-#: checkoutdialog.cpp:103
+#: checkoutdialog.cpp:102
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
 msgstr "Kényszerítés"
 
-#: checkoutdialog.cpp:104
+#: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
 msgstr "Helyi változások elvetése"
 
-#: checkoutdialog.cpp:136
+#: checkoutdialog.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
 msgstr "Nincsenek címkék ebben a tárolóban."
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
 msgstr "Ág alap"
 
-#: checkoutdialog.cpp:206
+#: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
 msgstr "Átváltás"
 
-#: checkoutdialog.cpp:228
+#: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
 msgstr "Először egy érvényes nevet kell adnia az új ágnak."
 
-#: checkoutdialog.cpp:235
+#: checkoutdialog.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
 msgstr "Már létezik egy „%1” nevű ág."
 
-#: checkoutdialog.cpp:242
+#: checkoutdialog.cpp:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
 msgstr "Az ágak nevei nem tartalmazhatnak üreshely-karaktereket."
 
-#: checkoutdialog.cpp:249
+#: checkoutdialog.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
 msgstr "Először ki kell választania egy érvényes ágat."
 
-#: checkoutdialog.cpp:255
+#: checkoutdialog.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
 msgstr "Érvényes véglegesítési azonosítót kell megadnia (SHA aláírás)."
 
-#: checkoutdialog.cpp:288
+#: checkoutdialog.cpp:287
 #, kde-format
 msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
@@ -237,156 +237,156 @@ msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
 msgstr "Először be kell írnia egy véglegesítési üzenetet."
 
-#: fileviewgitplugin.cpp:54
+#: fileviewgitplugin.cpp:52
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> visszaállítás"
 
-#: fileviewgitplugin.cpp:59
+#: fileviewgitplugin.cpp:57
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> hozzáadás"
 
-#: fileviewgitplugin.cpp:64
+#: fileviewgitplugin.cpp:62
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
 msgstr "Helyi <application>Git</application> változtatások megjelenítése"
 
-#: fileviewgitplugin.cpp:69
+#: fileviewgitplugin.cpp:67
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> kiválasztottak visszaállítása"
 
-#: fileviewgitplugin.cpp:74
+#: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> eltávolítás"
 
-#: fileviewgitplugin.cpp:79
+#: fileviewgitplugin.cpp:77
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> átváltás…"
 
-#: fileviewgitplugin.cpp:84
+#: fileviewgitplugin.cpp:82
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> véglegesítés…"
 
-#: fileviewgitplugin.cpp:89
+#: fileviewgitplugin.cpp:87
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> címke létrehozása…"
 
-#: fileviewgitplugin.cpp:93
+#: fileviewgitplugin.cpp:91
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> felküldés…"
 
-#: fileviewgitplugin.cpp:97
+#: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> lekérés…"
 
-#: fileviewgitplugin.cpp:101
+#: fileviewgitplugin.cpp:99
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> egyesítés…"
 
-#: fileviewgitplugin.cpp:105
+#: fileviewgitplugin.cpp:103
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> klónozás…"
 
-#: fileviewgitplugin.cpp:109
+#: fileviewgitplugin.cpp:107
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> napló…"
 
-#: fileviewgitplugin.cpp:438
+#: fileviewgitplugin.cpp:436
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Fájlok hozzáadása a <application>Git</application> tárolóhoz…"
 
-#: fileviewgitplugin.cpp:439
+#: fileviewgitplugin.cpp:437
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Nem sikerült hozzáadni a fájlokat a <application>Git</application> tárolóhoz."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Fájlok hozzáadva a <application>Git</application> tárolóhoz."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:449
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Fájlok eltávolítása a <application>Git</application> tárolóból…"
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:450
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Nem sikerült eltávolítani a fájlokat a <application>Git</application> "
 "tárolóból."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Fájlok eltávolítva a <application>Git</application> tárolóból."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:458
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Fájlok visszaállítása a <application>Git</application> tárolóból…"
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:459
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Nem sikerült visszaállítani a fájlokat a <application>Git</application> "
 "tárolóból."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:460
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Fájlok visszaállítva a <application>Git</application> tárolóból."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:499
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> napló sikertelen."
 
-#: fileviewgitplugin.cpp:522
+#: fileviewgitplugin.cpp:520
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> napló"
 
-#: fileviewgitplugin.cpp:537
+#: fileviewgitplugin.cpp:535
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Véglegesítés"
 
-#: fileviewgitplugin.cpp:538
+#: fileviewgitplugin.cpp:536
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Dátum"
 
-#: fileviewgitplugin.cpp:539
+#: fileviewgitplugin.cpp:537
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Üzenet"
 
-#: fileviewgitplugin.cpp:540
+#: fileviewgitplugin.cpp:538
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Szerző"
 
-#: fileviewgitplugin.cpp:561
+#: fileviewgitplugin.cpp:559
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
@@ -394,7 +394,7 @@ msgstr ""
 "Kiválasztott fájlok visszaállítása a <application>Git</application> "
 "tárolóból…"
 
-#: fileviewgitplugin.cpp:562
+#: fileviewgitplugin.cpp:560
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
@@ -402,48 +402,48 @@ msgstr ""
 "Nem sikerült visszaállítani a kiválasztott fájlokat a <application>Git</"
 "application> tárolóból."
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:561
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "Kiválasztott fájlok visszaállítva a <application>Git</application> tárolóból."
 
-#: fileviewgitplugin.cpp:589
+#: fileviewgitplugin.cpp:587
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> hiba induláskor: %1"
 
-#: fileviewgitplugin.cpp:593
+#: fileviewgitplugin.cpp:591
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> klónozás sikertelen: %1"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:593
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> klónozás befejezve."
 
-#: fileviewgitplugin.cpp:603
+#: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> tároló klónozása…"
 
-#: fileviewgitplugin.cpp:637
+#: fileviewgitplugin.cpp:635
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Átváltva erre az ágra: „%1”"
 
-#: fileviewgitplugin.cpp:644
+#: fileviewgitplugin.cpp:642
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "A HEAD jelenleg itt: %1"
 
-#: fileviewgitplugin.cpp:649
+#: fileviewgitplugin.cpp:647
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Átváltva egy új ágra: „%1”"
 
-#: fileviewgitplugin.cpp:660
+#: fileviewgitplugin.cpp:658
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -452,12 +452,12 @@ msgstr ""
 "A <application>Git</application> átváltás sikertelen volt. Talán a "
 "munkakönyvtár inkonzisztens."
 
-#: fileviewgitplugin.cpp:726
+#: fileviewgitplugin.cpp:724
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "„%1” címke sikeresen létrehozva"
 
-#: fileviewgitplugin.cpp:731
+#: fileviewgitplugin.cpp:729
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -466,47 +466,47 @@ msgstr ""
 "A <application>Git</application> címkekészítés sikertelen volt. Már létezik "
 "„%1” nevű címke."
 
-#: fileviewgitplugin.cpp:734
+#: fileviewgitplugin.cpp:732
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "A <application>Git</application> címkekészítés sikertelen volt."
 
-#: fileviewgitplugin.cpp:745
+#: fileviewgitplugin.cpp:743
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Nem sikerült felküldeni a(z) %1 ágat ide: %2:%3."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:744
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%1 ág felküldve ide: %2:%3."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%1 ág felküldése ide: %2:%3…"
 
-#: fileviewgitplugin.cpp:768
+#: fileviewgitplugin.cpp:766
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Nem sikerült lekérni a(z) %1 ágat innen: %2."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:767
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%1 ág sikeresen lekérve innen: %2."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:768
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "%1 ág lekérése innen: %2…"
 
-#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
+#: fileviewgitplugin.cpp:820 fileviewgitplugin.cpp:832
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Az ág már naprakész."
 
-#: fileviewgitplugin.cpp:838
+#: fileviewgitplugin.cpp:836
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

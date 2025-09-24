@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2023-08-10 18:52+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -18,58 +18,58 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: makefileactions.cpp:225
+#: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
 msgstr "Виконати «%1»%2."
 
-#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
+#: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
 msgid "Makefile Actions"
 msgstr "Дії Makefile"
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr "Під час виконання завдань цілі «%1» сталася помилка."
 
-#: makefileactions.cpp:262
+#: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr "Виконання процесу «%1» успішно зупинено."
 
-#: makefileactions.cpp:264
+#: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr "Під час спроби обробки цілі «%1» сталася помилка."
 
-#: makefileactions.cpp:296
+#: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
 msgstr "&Обробити…"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
 "Додаток «Дії Makefile» можна використовувати лише для довірених файлів."
 
-#: makefileactions.cpp:304
+#: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr "Довірений файл — зніміть позначку, щоб вилучити довіру"
 
-#: makefileactions.cpp:304
+#: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr "Недовірений файл — позначте, щоб він став довіреним"
 
-#: makefileactions.cpp:311
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr "Додаток обробки Makefile для Dolphin"
 
-#: makefileactions.cpp:312
+#: makefileactions.cpp:305
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
@@ -78,12 +78,12 @@ msgstr ""
 "<b>Ви справді хочете зробити цей файл довіреним?</b><br>При виклику "
 "контекстного меню може бути виконано довільний код з довіреного файла."
 
-#: makefileactions.cpp:326
+#: makefileactions.cpp:319
 #, kde-format
 msgid "Open a terminal window"
 msgstr "Відкрити вікно термінала"
 
-#: makefileactions.cpp:327
+#: makefileactions.cpp:320
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
@@ -91,12 +91,12 @@ msgstr ""
 "Відкрити нове вікно термінала для перегляду виведення при обробці вибраної "
 "цілі."
 
-#: makefileactions.cpp:339
+#: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr "Скасувати запущений процес (%1)"
 
-#: makefileactions.cpp:340
+#: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr "Перервати поточний запущений процес (%1)."

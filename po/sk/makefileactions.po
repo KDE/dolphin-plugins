@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makefileactions\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2023-12-09 09:21+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,80 +15,80 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: makefileactions.cpp:225
+#: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
 msgstr "Make '%1'%2."
 
-#: makefileactions.cpp:254 makefileactions.cpp:262 makefileactions.cpp:264
+#: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
 msgid "Makefile Actions"
 msgstr "Akcie makefile"
 
-#: makefileactions.cpp:254
+#: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
 msgstr ""
 
-#: makefileactions.cpp:262
+#: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
 msgstr ""
 
-#: makefileactions.cpp:264
+#: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
 msgstr ""
 
-#: makefileactions.cpp:296
+#: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
 msgstr "&Make…"
 
-#: makefileactions.cpp:301
+#: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
 
-#: makefileactions.cpp:304
+#: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
 msgstr ""
 
-#: makefileactions.cpp:304
+#: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
 msgstr ""
 
-#: makefileactions.cpp:311
+#: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
 msgstr ""
 
-#: makefileactions.cpp:312
+#: makefileactions.cpp:305
 #, kde-format
 msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
 
-#: makefileactions.cpp:326
+#: makefileactions.cpp:319
 #, kde-format
 msgid "Open a terminal window"
 msgstr ""
 
-#: makefileactions.cpp:327
+#: makefileactions.cpp:320
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
 
-#: makefileactions.cpp:339
+#: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
 msgstr ""
 
-#: makefileactions.cpp:340
+#: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 21:51+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -19,250 +19,250 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: fileviewsvnplugin.cpp:71
+#: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
 msgstr "एसवीएन अपडेट"
 
-#: fileviewsvnplugin.cpp:76
+#: fileviewsvnplugin.cpp:75
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
 msgstr "स्थानीय SVN परिवर्तनं दर्शयतु"
 
-#: fileviewsvnplugin.cpp:81
+#: fileviewsvnplugin.cpp:80
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
 msgstr "एसवीएन कमिट..."
 
-#: fileviewsvnplugin.cpp:86
+#: fileviewsvnplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
 msgstr "SVN Add"
 
-#: fileviewsvnplugin.cpp:91
+#: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
 msgstr "SVN विलोपनम्"
 
-#: fileviewsvnplugin.cpp:96
+#: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
 msgstr "SVN Revert"
 
-#: fileviewsvnplugin.cpp:101
+#: fileviewsvnplugin.cpp:100
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
 msgstr "SVN Updates दर्शयतु"
 
-#: fileviewsvnplugin.cpp:107
+#: fileviewsvnplugin.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
 msgstr "SVN Log..."
 
-#: fileviewsvnplugin.cpp:111
+#: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
 msgstr "SVN चेकआउट..."
 
-#: fileviewsvnplugin.cpp:115
+#: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
 msgstr "एसवीएन सफाई..."
 
-#: fileviewsvnplugin.cpp:225
+#: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr "SVN स्थिति अद्यतनं विफलम्। \"SVN अद्यतनं दर्शयतु\" विकल्पं निष्क्रियं करणम् ।"
 
-#: fileviewsvnplugin.cpp:361
+#: fileviewsvnplugin.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
 msgstr "एसवीएन अपडेट"
 
-#: fileviewsvnplugin.cpp:366
+#: fileviewsvnplugin.cpp:365
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "SVN भण्डारं अद्यतनं कुर्वन्..."
 
-#: fileviewsvnplugin.cpp:367
+#: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "SVN भण्डारस्य अद्यतनं विफलम् ।"
 
-#: fileviewsvnplugin.cpp:368
+#: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "SVN भण्डारः अद्यतनः ।"
 
-#: fileviewsvnplugin.cpp:382
+#: fileviewsvnplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
 msgstr "स्थानीय SVN परिवर्तनं दर्शयितुं न शक्तवान् ।"
 
-#: fileviewsvnplugin.cpp:390
+#: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
 msgstr "स्थानीय SVN परिवर्तनं दर्शयितुं न शक्तवान्: svn diff विफलम्।"
 
-#: fileviewsvnplugin.cpp:397 fileviewsvnplugin.cpp:598
-#: fileviewsvnplugin.cpp:621
+#: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
+#: fileviewsvnplugin.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr "स्थानीय SVN परिवर्तनं दर्शयितुं न शक्तवान्: kompare आरभुं न शक्तवान्।"
 
-#: fileviewsvnplugin.cpp:430
+#: fileviewsvnplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "SVN भण्डारे सञ्चिकाः योजयित्वा..."
 
-#: fileviewsvnplugin.cpp:431
+#: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "SVN भण्डारे सञ्चिकानां योजनं विफलम् ।"
 
-#: fileviewsvnplugin.cpp:432
+#: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "SVN भण्डारे सञ्चिकाः योजिताः ।"
 
-#: fileviewsvnplugin.cpp:439
+#: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "SVN भण्डारतः सञ्चिकाः निष्कासयन्..."
 
-#: fileviewsvnplugin.cpp:440
+#: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "SVN भण्डारतः सञ्चिकानां निष्कासनं विफलम् ।"
 
-#: fileviewsvnplugin.cpp:441
+#: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "SVN भण्डारतः सञ्चिकाः निष्कासिताः ।"
 
-#: fileviewsvnplugin.cpp:461 fileviewsvnplugin.cpp:567
+#: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
 msgstr "SVN Revert"
 
-#: fileviewsvnplugin.cpp:466
+#: fileviewsvnplugin.cpp:465
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
 msgstr "SVN भण्डारतः सञ्चिकाः पुनः प्रत्यागच्छति..."
 
-#: fileviewsvnplugin.cpp:467
+#: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr "SVN भण्डारतः सञ्चिकानां पुनरागमनं विफलम् ।"
 
-#: fileviewsvnplugin.cpp:468
+#: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
 msgstr "SVN भण्डारतः सञ्चिकाः प्रत्यागताः ।"
 
-#: fileviewsvnplugin.cpp:493
+#: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
 msgstr "SVN checkout: चेकआउट प्रक्रियायां..."
 
-#: fileviewsvnplugin.cpp:497
+#: fileviewsvnplugin.cpp:496
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
 msgstr "SVN त्रुटिः आरभ्यते: %1"
 
-#: fileviewsvnplugin.cpp:501
+#: fileviewsvnplugin.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
 msgstr "SVN चेकआउट्: चेकआउट् विफलम्: %1"
 
-#: fileviewsvnplugin.cpp:503
+#: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
 msgstr "SVN चेकआउट्: चेकआउट् सफलम्।"
 
-#: fileviewsvnplugin.cpp:507
+#: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
 msgstr "एसवीएन चेकआउट"
 
-#: fileviewsvnplugin.cpp:572
+#: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
 msgstr "परिवर्तनं सञ्चिकायां प्रत्यागच्छति..."
 
-#: fileviewsvnplugin.cpp:573
+#: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
 msgstr "सञ्चिकां प्रत्यागन्तुं विफलम्।"
 
-#: fileviewsvnplugin.cpp:574
+#: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
 msgstr "सञ्चिका प्रत्यावर्तिता ।"
 
-#: fileviewsvnplugin.cpp:591 fileviewsvnplugin.cpp:608
-#: fileviewsvnplugin.cpp:613
+#: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
+#: fileviewsvnplugin.cpp:612
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr ""
 "सञ्चिकायाः कृते स्थानीयं SVN परिवर्तनं दर्शयितुं न शक्तवान्: सञ्चिकां प्राप्तुं न शक्तवान् ।"
 
-#: fileviewsvnplugin.cpp:648 fileviewsvnplugin.cpp:674
+#: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "SVN परिवर्तनस्य प्रतिबद्धता विफलम् अभवत् ।"
 
-#: fileviewsvnplugin.cpp:668 svncommitdialog.cpp:152
+#: fileviewsvnplugin.cpp:667 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "एस वी एन कमिट"
 
-#: fileviewsvnplugin.cpp:673
+#: fileviewsvnplugin.cpp:672
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "SVN परिवर्तनं प्रतिबद्धं कृत्वा..."
 
-#: fileviewsvnplugin.cpp:675
+#: fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
@@ -457,45 +457,45 @@ msgctxt "@item:intable"
 msgid "Update required"
 msgstr "अपडेट् आवश्यकम्"
 
-#: svnlogdialog.cpp:90
+#: svnlogdialog.cpp:88
 #, kde-format
 msgid "Update to revision"
 msgstr "संशोधनं प्रति अद्यतनं कुर्वन्तु"
 
-#: svnlogdialog.cpp:94 svnlogdialog.cpp:112
+#: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
 msgid "Revert to revision"
 msgstr "पुनरीक्षणं प्रति प्रत्यागच्छन्तु"
 
-#: svnlogdialog.cpp:98
+#: svnlogdialog.cpp:96
 #, kde-format
 msgid "Show changes"
 msgstr "परिवर्तनं दर्शयतु"
 
-#: svnlogdialog.cpp:105
+#: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
 msgstr "कार्यरतप्रतिलिपिं विरुद्धं परिवर्तनम्"
 
-#: svnlogdialog.cpp:267
+#: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
 msgstr "SVN log: पुनरीक्षणं प्रति अद्यतनं विफलम्।"
 
-#: svnlogdialog.cpp:269
+#: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
 msgstr "SVN log: संशोधनं प्रति अद्यतनं %1 सफलम्।"
 
-#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
+#: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
 msgstr "SVN log: पुनरीक्षणं प्रति प्रत्यागमनं विफलम्।"
 
-#: svnlogdialog.cpp:281 svnlogdialog.cpp:292
+#: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."

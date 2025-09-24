@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:40+0000\n"
+"POT-Creation-Date: 2025-09-24 00:45+0000\n"
 "PO-Revision-Date: 2014-03-01 02:43+0900\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -16,193 +16,193 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: fileviewbazaarplugin.cpp:49
+#: fileviewbazaarplugin.cpp:48
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Update"
 msgstr "Bazaar 업데이트"
 
-#: fileviewbazaarplugin.cpp:54
+#: fileviewbazaarplugin.cpp:53
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Pull"
 msgstr "Bazaar 풀"
 
-#: fileviewbazaarplugin.cpp:59
+#: fileviewbazaarplugin.cpp:58
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Push"
 msgstr "Bazaar 푸시"
 
-#: fileviewbazaarplugin.cpp:64
+#: fileviewbazaarplugin.cpp:63
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local Bazaar Changes"
 msgstr "로컬 Bazaar 변경 사항 보기"
 
-#: fileviewbazaarplugin.cpp:69
+#: fileviewbazaarplugin.cpp:68
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
 msgstr "Bazaar 커밋..."
 
-#: fileviewbazaarplugin.cpp:74
+#: fileviewbazaarplugin.cpp:73
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
 msgstr "Bazaar 추가..."
 
-#: fileviewbazaarplugin.cpp:79
+#: fileviewbazaarplugin.cpp:78
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Delete"
 msgstr "Bazaar 삭제"
 
-#: fileviewbazaarplugin.cpp:84
+#: fileviewbazaarplugin.cpp:83
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Log"
 msgstr "Bazaar 로그"
 
-#: fileviewbazaarplugin.cpp:360
+#: fileviewbazaarplugin.cpp:359
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
 msgstr "Bazaar 저장소 업데이트 중..."
 
-#: fileviewbazaarplugin.cpp:361
+#: fileviewbazaarplugin.cpp:360
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of Bazaar repository failed."
 msgstr "Bazaar 저장소를 업데이트할 수 없습니다."
 
-#: fileviewbazaarplugin.cpp:362
+#: fileviewbazaarplugin.cpp:361
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated Bazaar repository."
 msgstr "Bazaar 저장소를 업데이트했습니다."
 
-#: fileviewbazaarplugin.cpp:371
+#: fileviewbazaarplugin.cpp:370
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
 msgstr "Bazaar 저장소를 가져오고 있습니다..."
 
-#: fileviewbazaarplugin.cpp:372
+#: fileviewbazaarplugin.cpp:371
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
 msgstr "Bazaar 저장소를 가져올 수 없습니다."
 
-#: fileviewbazaarplugin.cpp:373
+#: fileviewbazaarplugin.cpp:372
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulled Bazaar repository."
 msgstr "Bazaar 저장소 가져옴."
 
-#: fileviewbazaarplugin.cpp:382
+#: fileviewbazaarplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
 msgstr "Bazaar 저장소를 내보내는 중..."
 
-#: fileviewbazaarplugin.cpp:383
+#: fileviewbazaarplugin.cpp:382
 #, kde-format
 msgctxt "@info:status"
 msgid "Push of Bazaar repository failed."
 msgstr "Bazaar 저장소를 내보낼 수 없습니다."
 
-#: fileviewbazaarplugin.cpp:384
+#: fileviewbazaarplugin.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushed Bazaar repository."
 msgstr "Bazaar 저장소 내보냄."
 
-#: fileviewbazaarplugin.cpp:391
+#: fileviewbazaarplugin.cpp:390
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
 msgstr "변경 사항 검토 중..."
 
-#: fileviewbazaarplugin.cpp:392
+#: fileviewbazaarplugin.cpp:391
 #, kde-format
 msgctxt "@info:status"
 msgid "Review Changes failed."
 msgstr "변경 사항 검토가 실패했습니다."
 
-#: fileviewbazaarplugin.cpp:393
+#: fileviewbazaarplugin.cpp:392
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewed Changes."
 msgstr "변경 사항을 검토했습니다."
 
-#: fileviewbazaarplugin.cpp:400
+#: fileviewbazaarplugin.cpp:399
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
 msgstr "Bazaar 변경 사항 커밋 중..."
 
-#: fileviewbazaarplugin.cpp:401
+#: fileviewbazaarplugin.cpp:400
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
 msgstr "Bazaar 변경 사항을 커밋할 수 없습니다."
 
-#: fileviewbazaarplugin.cpp:402
+#: fileviewbazaarplugin.cpp:401
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed Bazaar changes."
 msgstr "Bazaar 변경 사항 커밋됨."
 
-#: fileviewbazaarplugin.cpp:409
+#: fileviewbazaarplugin.cpp:408
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
 msgstr "Bazaar 저장소에 파일 추가 중..."
 
-#: fileviewbazaarplugin.cpp:410
+#: fileviewbazaarplugin.cpp:409
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
 msgstr "Bazaar 저장소에 파일을 추가할 수 없습니다."
 
-#: fileviewbazaarplugin.cpp:411
+#: fileviewbazaarplugin.cpp:410
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to Bazaar repository."
 msgstr "Bazaar 저장소에 파일 추가됨."
 
-#: fileviewbazaarplugin.cpp:418
+#: fileviewbazaarplugin.cpp:417
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
 msgstr "Bazaar 저장소에서 파일 지우는 중..."
 
-#: fileviewbazaarplugin.cpp:419
+#: fileviewbazaarplugin.cpp:418
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
 msgstr "Bazaar 저장소에서 파일을 지울 수 없음."
 
-#: fileviewbazaarplugin.cpp:420
+#: fileviewbazaarplugin.cpp:419
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from Bazaar repository."
 msgstr "Bazaar 저장소에서 파일 지워짐."
 
-#: fileviewbazaarplugin.cpp:427
+#: fileviewbazaarplugin.cpp:426
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
 msgstr "Bazaar 기록 실행 중..."
 
-#: fileviewbazaarplugin.cpp:428
+#: fileviewbazaarplugin.cpp:427
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
 msgstr "Bazaar 기록을 실행할 수 없음."
 
-#: fileviewbazaarplugin.cpp:429
+#: fileviewbazaarplugin.cpp:428
 #, kde-format
 msgctxt "@info:status"
 msgid "Bazaar Log closed."
