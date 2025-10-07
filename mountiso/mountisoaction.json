@@ -8,6 +8,7 @@
             "application/x-raw-disk-image"
         ],
         "Name": "Mount ISO and disk images",
+        "Name[ar]": "ضُم صور ISO وصور الأقراص",
         "Name[az]": "İSO faylını disk surətini qoşmaq",
         "Name[bg]": "Монтиране на ISO и дискови изображения",
         "Name[ca@valencia]": "Muntatge d'imatges ISO i de disc",
