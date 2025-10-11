@@ -1,7 +1,7 @@
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2015.
-# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2011.
-# Burkhard Lück <lueck@hube-lueck.de>, 2020, 2021.
-# Frank Steinmetzger <dev@felsenfleischer.de>, 2021.
+# SPDX-FileCopyrightText: 2010, 2011, 2015 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2011 Rolf Eike Beer <kde@opensource.sf-tec.de>
+# SPDX-FileCopyrightText: 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2021 Frank Steinmetzger <dev@felsenfleischer.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"

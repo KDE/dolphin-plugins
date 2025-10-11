@@ -1,8 +1,8 @@
-# Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2015, 2016, 2018.
-# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2011.
-# Jonas Schürmann <jonasschuermann@aol.de>, 2012.
-# Burkhard Lück <lueck@hube-lueck.de>, 2015.
+# SPDX-FileCopyrightText: 2010 Panagiotis Papadopoulos <pano_90@gmx.net>
+# SPDX-FileCopyrightText: 2010, 2011, 2015, 2016, 2018 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2011 Rolf Eike Beer <kde@opensource.sf-tec.de>
+# SPDX-FileCopyrightText: 2012 Jonas Schürmann <jonasschuermann@aol.de>
+# SPDX-FileCopyrightText: 2015 Burkhard Lück <lueck@hube-lueck.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"

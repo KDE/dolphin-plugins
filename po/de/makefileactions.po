@@ -1,9 +1,7 @@
 # German translations for dolphin-plugins package.
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2023.
-#
-# Automatically generated, 2023.
+# SPDX-FileCopyrightText: 2023 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: makefileactions\n"
