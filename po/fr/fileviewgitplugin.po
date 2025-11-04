@@ -530,13 +530,13 @@ msgstr ""
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr "Hauteur de la boîte de dialogue"
+msgstr "Hauteur de la boite de dialogue"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr "Largeur de la boîte de dialogue"
+msgstr "Largeur de la boite de dialogue"
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
