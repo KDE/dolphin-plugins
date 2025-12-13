@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-05-24 14:48+0400\n"
-"Last-Translator: linux <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-12-12 21:56+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: fileviewsvnplugin.cpp:70
 #, kde-format
@@ -70,7 +70,7 @@ msgstr "SVN jurnalı..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN-dən əldə etmək..."
+msgstr "SVN-dən iş nüsxəsini almaq..."
 
 #: fileviewsvnplugin.cpp:114
 #, kde-format
@@ -195,7 +195,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "SVN-dən əldə etmək: icra olunur..."
+msgstr "SVN-dən iş nüsxəsini almaq: icra olunur..."
 
 #: fileviewsvnplugin.cpp:496
 #, kde-format
@@ -207,19 +207,19 @@ msgstr "SVN başlatma xətası: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN-dən almaq: icra olunmadı: %1"
+msgstr "SVN-dən iş nüsxəsini almaq: icra olunmadı: %1"
 
 #: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr "SVN-dən əldə etmək: uğurla alındı."
+msgstr "SVN-dən iş nüsxəsini almaq: uğurla alındı."
 
 #: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "SVN-dən almaq"
+msgstr "SVN-dən iş nüsxəsini almaq"
 
 #: fileviewsvnplugin.cpp:571
 #, kde-format
@@ -281,13 +281,13 @@ msgstr "Yenilənmələri göstərmək"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "Qarşılıqlı yoxlama üçün qovluğu seçmək"
+msgstr "iş nüsxəsini alınacaq qovluğu seçmək"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "SVN-dən əldə etmək"
+msgstr "SVN-dən iş nüsxəsini almaq"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
@@ -299,7 +299,7 @@ msgstr "Repazitoriya URL-u:"
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr "Alınanlar kataloqu:"
+msgstr "Alınan iş nüsxələri kataloqu:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
