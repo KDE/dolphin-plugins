@@ -2,20 +2,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
 # SPDX-FileCopyrightText: 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: makefileactions\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2023-08-13 16:04+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2026-01-01 14:21+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: makefileactions.cpp:218
 #, kde-format
@@ -25,12 +26,12 @@ msgstr ""
 #: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
 msgid "Makefile Actions"
-msgstr ""
+msgstr "Makefile-Aktionen"
 
 #: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "Beim Erstellen des Ziels „%1“ ist ein Fehler aufgetreten."
 
 #: makefileactions.cpp:255
 #, kde-format
@@ -40,27 +41,29 @@ msgstr ""
 #: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "Beim Versuch, das Ziel „%1“ zu erstellen, ist ein Fehler aufgetreten."
 
 #: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
-msgstr ""
+msgstr "&Make …"
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
+"Nur vertrauenswürdige Dateien können durch das Makefile-Modul verwendet "
+"werden."
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "Vertrauenswürdige Datei – abwählen, um Vertrauen zu entziehen"
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "Nicht vertrauenswürdige Datei – anwählen, um zu vertrauen"
 
 #: makefileactions.cpp:304
 #, kde-format
@@ -73,6 +76,9 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>Sind Sie sicher, dass Sie der Datei vertrauen können?</"
+"b><br>Vertrauenswürdige Dateien sind in der Lage, beliebigen Code über einen "
+"Aufruf aus dem Kontextmenü auszuführen."
 
 #: makefileactions.cpp:319
 #, kde-format
@@ -84,13 +90,15 @@ msgstr "Ein Terminal-Fenster öffnen"
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"Öffnen Sie ein neues Terminal-Fenster, um die Ausgabe beim Erstellen des "
+"ausgewählten Ziels zu sehen."
 
 #: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr "Laufenden Prozess beenden (%1)"
+msgstr "Laufenden Prozess (%1) abbrechen"
 
 #: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr "Den aktuell laufenden Prozess anhalten (%1)"
+msgstr "Den aktuell laufenden Prozess (%1) unterbrechen"

@@ -2,19 +2,21 @@
 # SPDX-FileCopyrightText: 2011 Rolf Eike Beer <kde@opensource.sf-tec.de>
 # SPDX-FileCopyrightText: 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2021 Frank Steinmetzger <dev@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-05-22 12:12+0200\n"
-"Last-Translator: Frank Steinmetzger <dev@felsenfleischer.de>\n"
+"PO-Revision-Date: 2026-01-03 00:06+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: fileviewsvnplugin.cpp:70
 #, kde-format
@@ -32,7 +34,7 @@ msgstr "Lokale SVN-Änderungen anzeigen"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr "Einspielen (SVN commit) ..."
+msgstr "Einspielen (SVN commit) …"
 
 #: fileviewsvnplugin.cpp:85
 #, kde-format
@@ -62,20 +64,20 @@ msgstr "SVN-Aktualisierungen anzeigen"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "Protokoll (SVN log) ..."
+msgstr "Protokoll (SVN log) …"
 
 # das SVN-Buch (http://svnbook.red-bean.com/de/1.7/svn.ref.svn.c.checkout.html) sagt direkt Auschecken. Ich persönlich finde es riskant, branchenübliche Begriffe (einchecken/auschecken) "proprietär" zu übersetzen. Meinungen?
 #: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "Abrufen (SVN checkout) ..."
+msgstr "Auschecken (SVN checkout) …"
 
 #: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "Aufräumen (SVN cleanup) ..."
+msgstr "Aufräumen (SVN cleanup) …"
 
 #: fileviewsvnplugin.cpp:224
 #, kde-format
@@ -95,19 +97,19 @@ msgstr "Aktualisieren (SVN update)"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "SVN-Repository wird aktualisiert ..."
+msgstr "SVN-Archiv wird aktualisiert …"
 
 #: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
-msgstr "Die Aktualisierung des SVN-Repositorys ist fehlgeschlagen."
+msgstr "Die Aktualisierung des SVN-Archiv ist fehlgeschlagen."
 
 #: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
-msgstr "Das SVN-Repository wurde aktualisiert."
+msgstr "Das SVN-Archiv wurde aktualisiert."
 
 #: fileviewsvnplugin.cpp:381
 #, kde-format
@@ -136,37 +138,37 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr "Dateien werden zum SVN-Repository hinzugefügt ..."
+msgstr "Dateien werden zum SVN-Archiv hinzugefügt …"
 
 #: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
-msgstr "Das Hinzufügen von Dateien zum SVN-Repository ist fehlgeschlagen."
+msgstr "Das Hinzufügen von Dateien zum SVN-Archiv ist fehlgeschlagen."
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
-msgstr "Dateien wurden zum SVN-Repository hinzugefügt."
+msgstr "Dateien wurden zum SVN-Archiv hinzugefügt."
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr "Dateien werden aus dem SVN-Repository entfernt ..."
+msgstr "Dateien werden aus dem SVN-Archiv entfernt …"
 
 #: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
-msgstr "Das Entfernen von Dateien aus dem SVN-Repository ist fehlgeschlagen."
+msgstr "Das Entfernen von Dateien aus dem SVN-Archiv ist fehlgeschlagen."
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
-msgstr "Dateien wurden aus dem SVN-Repository entfernt."
+msgstr "Dateien wurden aus dem SVN-Archiv entfernt."
 
 #: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
@@ -178,43 +180,39 @@ msgstr "Zurücksetzen (SVN revert)"
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Dateien werden auf den Stand des SVN-Repositorys zurückgesetzt ..."
+msgstr "Dateien werden auf den Stand des SVN-Archivs zurückgesetzt …"
 
 #: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
 msgstr ""
-"Das Zurücksetzen von Dateien auf den Stand des SVN-Repositorys ist "
+"Das Zurücksetzen von Dateien auf den Stand des SVN-Archivs ist "
 "fehlgeschlagen."
 
 #: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr "Dateien wurden auf den Stand des SVN-Repositorys zurückgesetzt."
+msgstr "Dateien wurden auf den Stand des SVN-Archivs zurückgesetzt."
 
 #: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr "SVN-Abruf läuft ..."
+msgstr "SVN-Auschecken läuft …"
 
 #: fileviewsvnplugin.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Error starting: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr "Fehler beim Start von %1"
+msgstr "SVN-Fehler beim Start: %1"
 
 #: fileviewsvnplugin.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "SVN checkout: checkout failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr "SVN-Abruf fehlgeschlagen."
+msgstr "SVN: Auschecken fehlgeschlagen: %1"
 
 #: fileviewsvnplugin.cpp:502
 #, kde-format
@@ -223,17 +221,16 @@ msgid "SVN checkout: checkout successful."
 msgstr "SVN-Abruf erfolgreich."
 
 #: fileviewsvnplugin.cpp:506
-#, fuzzy, kde-format
-#| msgid "SVN Checkout"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "Abruf (SVN checkout)"
+msgstr "Auschecken (SVN checkout)"
 
 #: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr "Dateien werden auf den Stand des SVN-Repositorys zurückgesetzt ..."
+msgstr "Dateien werden auf den Stand des SVN-Archivs zurückgesetzt …"
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format
@@ -272,7 +269,7 @@ msgstr "Einspielen (SVN commit)"
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr "SVN-Änderungen werden eingespielt ..."
+msgstr "SVN-Änderungen werden eingespielt …"
 
 #: fileviewsvnplugin.cpp:674
 #, kde-format
@@ -296,13 +293,13 @@ msgstr "Wählen Sie den abzurufenden Ordner aus"
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "Abruf (SVN checkout)"
+msgstr "Auschecken (SVN checkout)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
 #, kde-format
 msgid "URL of repository:"
-msgstr "URL des SVN-Repositorys:"
+msgstr "Adresse des SVN-Archivs:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36
@@ -353,7 +350,7 @@ msgstr "Aufräumen für %1 fehlgeschlagen"
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "Aufräumen (SVN cleanup) ..."
+msgstr "Aufräumen (SVN cleanup) …"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26

@@ -1,21 +1,23 @@
-# SPDX-FileCopyrightText: 2011, 2012 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2011 Panagiotis Papadopoulos <pano_90@gmx.net>
 # SPDX-FileCopyrightText: 2011 Rolf Eike Beer <kde@opensource.sf-tec.de>
+# SPDX-FileCopyrightText: 2011, 2012 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2012 Jonathan Kolberg <j_kolberg11@cs.uni-kl.de>
 # SPDX-FileCopyrightText: 2014 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewbazaarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2014-02-14 16:50+0100\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2025-12-27 15:42+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: fileviewbazaarplugin.cpp:48
 #, kde-format
@@ -45,13 +47,13 @@ msgstr "Lokale Bazaar-Änderungen anzeigen"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Commit..."
-msgstr "Bazaar Einspielen ..."
+msgstr "Bazaar Einspielen …"
 
 #: fileviewbazaarplugin.cpp:73
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Bazaar Add..."
-msgstr "Bazaar Hinzufügen ..."
+msgstr "Bazaar Hinzufügen …"
 
 #: fileviewbazaarplugin.cpp:78
 #, kde-format
@@ -69,7 +71,7 @@ msgstr "Bazaar-Protokoll"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating Bazaar repository..."
-msgstr "Bazaar-Archiv aktualisieren ..."
+msgstr "Bazaar-Archiv aktualisieren …"
 
 #: fileviewbazaarplugin.cpp:360
 #, kde-format
@@ -87,7 +89,7 @@ msgstr "Das Bazaar-Archiv wurde aktualisiert."
 #, kde-format
 msgctxt "@info:status"
 msgid "Pulling Bazaar repository..."
-msgstr "Bazaar-Archiv wird abgeglichen (pull) ..."
+msgstr "Bazaar-Archiv wird abgeglichen (pull) …"
 
 #: fileviewbazaarplugin.cpp:371
 #, kde-format
@@ -105,7 +107,7 @@ msgstr "Das Abgleichen (pull) des Bazaar-Archivs war erfolgreich."
 #, kde-format
 msgctxt "@info:status"
 msgid "Pushing Bazaar repository..."
-msgstr "Bazaar-Archiv wird übertragen ..."
+msgstr "Bazaar-Archiv wird übertragen …"
 
 #: fileviewbazaarplugin.cpp:382
 #, kde-format
@@ -123,7 +125,7 @@ msgstr "Bazaar-Archiv wurde übertragen."
 #, kde-format
 msgctxt "@info:status"
 msgid "Reviewing Changes..."
-msgstr "Änderungen durchsehen ..."
+msgstr "Änderungen durchsehen …"
 
 #: fileviewbazaarplugin.cpp:391
 #, kde-format
@@ -141,7 +143,7 @@ msgstr "Änderungen durchgesehen."
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing Bazaar changes..."
-msgstr "Bazaar-Änderungen werden eingespielt ..."
+msgstr "Bazaar-Änderungen werden eingespielt …"
 
 #: fileviewbazaarplugin.cpp:400
 #, kde-format
@@ -159,7 +161,7 @@ msgstr "Bazaar-Änderungen wurden eingespielt."
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to Bazaar repository..."
-msgstr "Dateien werden zum Bazaar-Archiv hinzugefügt ..."
+msgstr "Dateien werden zum Bazaar-Archiv hinzugefügt …"
 
 #: fileviewbazaarplugin.cpp:409
 #, kde-format
@@ -177,7 +179,7 @@ msgstr "Dateien wurden zum Bazaar-Archiv hinzugefügt."
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from Bazaar repository..."
-msgstr "Dateien werden aus dem Bazaar-Archiv entfernt ..."
+msgstr "Dateien werden aus dem Bazaar-Archiv entfernt …"
 
 #: fileviewbazaarplugin.cpp:418
 #, kde-format
@@ -195,7 +197,7 @@ msgstr "Dateien wurden aus dem Bazaar-Archiv entfernt."
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log..."
-msgstr "Bazaar-Protokoll wird angezeigt ..."
+msgstr "Bazaar-Protokoll wird angezeigt …"
 
 #: fileviewbazaarplugin.cpp:427
 #, kde-format
