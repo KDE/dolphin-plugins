@@ -1,75 +1,71 @@
-# Translation of makefileactions.po to Catalan (Valencian)
-# Copyright (C) 2023 This_file_is_part_of_KDE
-# This file is distributed under the license LGPL version 2.1 or
-# version 3 or later versions approved by the membership of KDE e.V.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# SPDX-FileCopyrightText: 2023 Josep M. Ferrer <txemaq@gmail.com>
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2023-08-10 20:18+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
-"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Language: ca@valencia\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
 
 #: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
-msgstr "Make «%1»%2."
+msgstr ""
 
 #: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
 msgid "Makefile Actions"
-msgstr "Accions del «makefile»"
+msgstr ""
 
 #: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr "S'ha produït un error mentre es creava l'objectiu «%1»."
+msgstr ""
 
 #: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr "El procés en execució per a «%1» s'ha parat correctament."
+msgstr ""
 
 #: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr "S'ha produït un error mentre s'intentava fer l'objectiu «%1»."
+msgstr ""
 
 #: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
-msgstr "&Make…"
+msgstr ""
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
-"Només es poden utilitzar fitxers fiables en el connector d'accions "
-"«makefile»."
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr "Fitxer fiable. Desmarqueu-lo per a eliminar-ne la confiança"
+msgstr ""
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr "Fitxer no fiable. Marqueu-lo per a fer-lo de confiança"
+msgstr ""
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr "Connector «makefile» de Dolphin"
+msgstr ""
 
 #: makefileactions.cpp:305
 #, kde-format
@@ -77,28 +73,24 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
-"<b>Segur que podeu confiar en este fitxer?</b><br>Els fitxers fiables poden "
-"executar codi arbitrari en la invocació del menú contextual."
 
 #: makefileactions.cpp:319
 #, kde-format
 msgid "Open a terminal window"
-msgstr "Obri una finestra de terminal"
+msgstr ""
 
 #: makefileactions.cpp:320
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
-"Obri una finestra nova de terminal per a veure l'eixida de crear l'objectiu "
-"triat."
 
 #: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr "Cancel·la el procés en execució (%1)"
+msgstr ""
 
 #: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr "Interromp el procés actualment en execució (%1)."
+msgstr ""

@@ -98,7 +98,7 @@ msgstr "S'està recuperant el repositori Bazaar…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Pull of Bazaar repository failed."
-msgstr "No s'ha pogut recuperar del repositori Bazaar."
+msgstr "Ha fallat mentre es recuperava des del repositori Bazaar."
 
 #: fileviewbazaarplugin.cpp:372
 #, kde-format
@@ -152,7 +152,7 @@ msgstr "S'estan cometent els canvis a Bazaar…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of Bazaar changes failed."
-msgstr "No s'han pogut cometre els canvis a Bazaar."
+msgstr "Ha fallat mentre es cometien els canvis a Bazaar."
 
 #: fileviewbazaarplugin.cpp:401
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "S'estan afegint fitxers al repositori Bazaar…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to Bazaar repository failed."
-msgstr "No s'han pogut afegir els fitxers al repositori Bazaar."
+msgstr "Ha fallat mentre s'afegien fitxers al repositori Bazaar."
 
 #: fileviewbazaarplugin.cpp:410
 #, kde-format
@@ -188,7 +188,7 @@ msgstr "S'estan eliminant fitxers del repositori Bazaar…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from Bazaar repository failed."
-msgstr "No s'ha pogut eliminar fitxers del repositori Bazaar."
+msgstr "Ha fallat mentre s'eliminaven fitxers del repositori Bazaar."
 
 #: fileviewbazaarplugin.cpp:419
 #, kde-format
@@ -206,7 +206,7 @@ msgstr "S'està executant el registre de Bazaar…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Running Bazaar Log failed."
-msgstr "No s'ha pogut executar el registre de Bazaar."
+msgstr "Ha fallat mentre s'executava el registre de Bazaar."
 
 #: fileviewbazaarplugin.cpp:428
 #, kde-format
