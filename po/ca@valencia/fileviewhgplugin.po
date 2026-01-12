@@ -396,7 +396,7 @@ msgstr "Restablix el repositori"
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
-msgstr "S'ha produït un error en crear el repositori!"
+msgstr "S'ha produït un error mentre es creava el repositori!"
 
 #: exportdialog.cpp:26
 #, kde-format
@@ -595,7 +595,7 @@ msgstr "S'estan afegint fitxers al repositori <application>Hg</application>…"
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
 msgstr ""
-"No s'han pogut afegir els fitxers al repositori <application>Hg</"
+"Ha fallat mentre s'afegien fitxers al repositori <application>Hg</"
 "application>."
 
 #: fileviewhgplugin.cpp:426
@@ -627,7 +627,7 @@ msgstr ""
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
 msgstr ""
-"No s'han pogut eliminar els fitxers del repositori <application>Hg</"
+"Ha fallat mentre s'eliminaven els fitxers del repositori <application>Hg</"
 "application>."
 
 #: fileviewhgplugin.cpp:450
@@ -670,7 +670,8 @@ msgstr "No hi ha cap canvi que s'haja de cometre!"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
-msgstr "No s'ha pogut cometre al repositori <application>Hg</application>."
+msgstr ""
+"Ha fallat mentre es cometia al repositori <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:477
 #, kde-kuit-format
@@ -853,7 +854,8 @@ msgstr "S'està desfent al repositori <application>Hg</application>…"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
-msgstr "No s'ha pogut desfer al repositori <application>Hg</application>."
+msgstr ""
+"Ha fallat mentre es desfeia al repositori <application>Hg</application>."
 
 #: fileviewhgplugin.cpp:715
 #, kde-kuit-format

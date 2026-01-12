@@ -32,7 +32,7 @@ msgstr "Accions del «makefile»"
 #: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr "S'ha produït un error en crear l'objectiu «%1»."
+msgstr "S'ha produït un error mentre es creava l'objectiu «%1»."
 
 #: makefileactions.cpp:255
 #, kde-format
@@ -42,7 +42,7 @@ msgstr "El procés en execució per a «%1» s'ha parat correctament."
 #: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr "S'ha produït un error en intentar fer l'objectiu «%1»."
+msgstr "S'ha produït un error mentre s'intentava fer l'objectiu «%1»."
 
 #: makefileactions.cpp:289
 #, kde-format

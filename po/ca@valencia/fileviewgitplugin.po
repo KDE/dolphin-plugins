@@ -315,7 +315,7 @@ msgstr "S'estan afegint fitxers al repositori <application>Git</application>…"
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
-"No s'han pogut afegir els fitxers al repositori <application>Git</"
+"Ha fallat mentre s'afegien els fitxers al repositori <application>Git</"
 "application>."
 
 #: fileviewgitplugin.cpp:438
@@ -333,7 +333,7 @@ msgstr ""
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
-"No s'han pogut eliminar els fitxers del repositori <application>Git</"
+"Ha fallat mentre s'eliminaven els fitxers del repositori <application>Git</"
 "application>."
 
 #: fileviewgitplugin.cpp:451
@@ -409,8 +409,8 @@ msgstr ""
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"No s'ha pogut restaurar els fitxers marcats del repositori <application>Git</"
-"application>."
+"Ha fallat mentre es restauraven els fitxers marcats del repositori "
+"<application>Git</application>."
 
 #: fileviewgitplugin.cpp:561
 #, kde-kuit-format
@@ -422,7 +422,8 @@ msgstr ""
 #: fileviewgitplugin.cpp:587
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "S'ha produït un error en iniciar <application>Git</application>: %1"
+msgstr ""
+"S'ha produït un error mentre s'iniciava <application>Git</application>: %1"
 
 #: fileviewgitplugin.cpp:591
 #, kde-kuit-format

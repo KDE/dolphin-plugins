@@ -146,7 +146,7 @@ msgstr "S'estan afegint els fitxers al repositori SVN…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
-msgstr "No s'han pogut afegir els fitxers al repositori SVN."
+msgstr "Ha fallat mentre s'afegien els fitxers al repositori SVN."
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
@@ -164,7 +164,7 @@ msgstr "S'estan eliminant els fitxers del repositori SVN…"
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
-msgstr "No s'han pogut eliminar els fitxers del repositori SVN."
+msgstr "Ha fallat mentre s'eliminaven els fitxers del repositori SVN."
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
@@ -556,4 +556,4 @@ msgstr "Actualitza"
 #, kde-format
 msgctxt "@info:status"
 msgid "Error starting: %1"
-msgstr "S'ha produït un error en iniciar: %1"
+msgstr "S'ha produït un error mentre s'iniciava: %1"
