@@ -48,12 +48,10 @@ msgid "SVN Delete"
 msgstr "SVN Scriosadh"
 
 #: fileviewsvnplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
-msgstr "SVN Scriosadh"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:100
 #, kde-format
@@ -62,28 +60,22 @@ msgid "Show SVN Updates"
 msgstr "Taispeáin Nuashonruithe SVN"
 
 #: fileviewsvnplugin.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:224
 #, kde-format
@@ -94,12 +86,10 @@ msgstr ""
 "díchumasú."
 
 #: fileviewsvnplugin.cpp:360
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
-msgstr "SVN Nuashonrú"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:365
 #, kde-format
@@ -120,20 +110,16 @@ msgid "Updated SVN repository."
 msgstr "Nuashonraíodh an stór SVN."
 
 #: fileviewsvnplugin.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "Show Local SVN Changes"
+#, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr "Taispeáin Athruithe Logánta SVN"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Commit of SVN changes failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr "Níorbh fhéidir na hathruithe SVN a chur i bhfeidhm."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
 #: fileviewsvnplugin.cpp:620
@@ -179,36 +165,28 @@ msgid "Removed files from SVN repository."
 msgstr "Baineadh comhaid ón stór SVN."
 
 #: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
-msgstr "SVN Scriosadh"
+msgstr ""
 
 #: fileviewsvnplugin.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Removing files from SVN repository..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr "Comhaid á mbaint ón stór SVN..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:466
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Removing of files from SVN repository failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
-msgstr "Níorbh fhéidir comhaid a bhaint ón stór SVN."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:467
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Removed files from SVN repository."
+#, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr "Baineadh comhaid ón stór SVN."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:492
 #, kde-format
@@ -235,12 +213,10 @@ msgid "SVN checkout: checkout successful."
 msgstr ""
 
 #: fileviewsvnplugin.cpp:506
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:571
 #, kde-format
@@ -262,12 +238,10 @@ msgstr ""
 
 #: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
 #: fileviewsvnplugin.cpp:612
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Commit of SVN changes failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
-msgstr "Níorbh fhéidir na hathruithe SVN a chur i bhfeidhm."
+msgstr ""
 
 #: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
@@ -307,19 +281,15 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Checkout"
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Updated SVN repository."
+#, kde-format
 msgid "URL of repository:"
-msgstr "Nuashonraíodh an stór SVN."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36
@@ -368,11 +338,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
@@ -417,20 +385,16 @@ msgid "Commit"
 msgstr "Cuir i bhFeidhm"
 
 #: svncommitdialog.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
-msgstr "SVN Scriosadh"
+msgstr ""
 
 #: svncommitdialog.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "Show Local SVN Changes"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
-msgstr "Taispeáin Athruithe Logánta SVN"
+msgstr ""
 
 #: svncommitdialog.cpp:126
 #, kde-format
@@ -469,12 +433,10 @@ msgid "Added"
 msgstr ""
 
 #: svncommitdialog.cpp:216
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Delete"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
-msgstr "SVN Scriosadh"
+msgstr ""
 
 #: svncommitdialog.cpp:219
 #, kde-format
@@ -495,11 +457,9 @@ msgid "Update required"
 msgstr ""
 
 #: svnlogdialog.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Updated SVN repository."
+#, kde-format
 msgid "Update to revision"
-msgstr "Nuashonraíodh an stór SVN."
+msgstr ""
 
 #: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
@@ -507,11 +467,9 @@ msgid "Revert to revision"
 msgstr ""
 
 #: svnlogdialog.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "Show Local SVN Changes"
+#, kde-format
 msgid "Show changes"
-msgstr "Taispeáin Athruithe Logánta SVN"
+msgstr ""
 
 #: svnlogdialog.cpp:103
 #, kde-format
@@ -519,12 +477,10 @@ msgid "Changes against working copy"
 msgstr ""
 
 #: svnlogdialog.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Update of SVN repository failed."
+#, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr "Níorbh fhéidir an stór SVN a nuashonrú."
+msgstr ""
 
 #: svnlogdialog.cpp:267
 #, kde-format
@@ -546,11 +502,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Commit..."
+#, kde-format
 msgid "SVN Log"
-msgstr "SVN Cur i bhFeidhm..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
