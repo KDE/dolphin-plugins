@@ -1,31 +1,31 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 charlotte <altronic25@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-02-20 08:40+0000\n"
+"Last-Translator: charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: mountisoaction.cpp:212
 #, kde-format
 msgctxt "@action:inmenu Action to mount a disk image"
 msgid "Mount"
-msgstr ""
+msgstr "Feistigh"
 
 #: mountisoaction.cpp:223
 #, kde-format
 msgctxt "@action:inmenu Action to unmount a disk image"
 msgid "Unmount"
-msgstr ""
+msgstr "Dífheistigh"
