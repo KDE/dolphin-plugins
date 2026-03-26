@@ -137,5 +137,7 @@ private:
         job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         job->start();
     }
+
+    void setSSHAskPassEnvironment(QProcess *process);
 };
 #endif // FILEVIEWGITPLUGIN_H

@@ -24,6 +24,7 @@
 #include <QDir>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QStringList>
 #include <QTemporaryFile>
 #include <QTextBrowser>
@@ -107,6 +108,7 @@ FileViewGitPlugin::FileViewGitPlugin(QObject *parent, const QList<QVariant> &arg
     m_logAction->setText(xi18nd("@action:inmenu", "<application>Git</application> Log..."));
     connect(m_logAction, &QAction::triggered, this, &FileViewGitPlugin::log);
 
+    setSSHAskPassEnvironment(&m_process);
     connect(&m_process, &QProcess::finished, this, &FileViewGitPlugin::slotOperationCompleted);
     connect(&m_process, &QProcess::errorOccurred, this, &FileViewGitPlugin::slotOperationError);
 }
@@ -580,6 +582,8 @@ void FileViewGitPlugin::clone()
         }
 
         QProcess *process = new QProcess(m_parentWidget);
+        setSSHAskPassEnvironment(process);
+
         QDialog *progressDialog = new ProgressDialog(process, m_parentWidget);
 
         connect(process, &QProcess::errorOccurred, this, [this, process](QProcess::ProcessError) {
@@ -738,8 +742,6 @@ void FileViewGitPlugin::push()
 {
     PushDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
-        m_process.setWorkingDirectory(m_contextDir);
-
         m_errorMsg = xi18nd("@info:status", "Pushing branch %1 to %2:%3 failed.", dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
         m_operationCompletedMsg = xi18nd("@info:status", "Pushed branch %1 to %2:%3.", dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
         Q_EMIT infoMessage(xi18nd("@info:status", "Pushing branch %1 to %2:%3...", dialog.localBranch(), dialog.destination(), dialog.remoteBranch()));
@@ -874,6 +876,27 @@ void FileViewGitPlugin::startGitCommandProcess()
     m_process.start(QStringLiteral("git"), arguments);
     // the remaining items of m_contextItems will be executed
     // after the process has finished (see slotOperationFinished())
+}
+
+void FileViewGitPlugin::setSSHAskPassEnvironment(QProcess *process)
+{
+    // Check if we have any tool for ssh password handling
+    QString pass = qEnvironmentVariable("SSH_ASKPASS");
+    if (pass.isEmpty()) {
+        pass = qEnvironmentVariable("GIT_ASKPASS");
+    }
+    // If not, try ksshaskpass
+    if (pass.isEmpty()) {
+        pass = QStandardPaths::findExecutable(QStringLiteral("ksshaskpass"));
+    }
+
+    // Set it as an env var for git
+    QStringList env = QProcess::systemEnvironment();
+    env.append(QStringLiteral("SSH_ASKPASS=%1").arg(pass));
+    // Enforce using it
+    env.append(QStringLiteral("SSH_ASKPASS_REQUIRE=force"));
+    process->setEnvironment(env);
+    process->setWorkingDirectory(m_contextDir);
 }
 
 #include "fileviewgitplugin.moc"
