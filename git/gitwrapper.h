@@ -14,8 +14,9 @@
 /**
  * @brief A git wrapper class to access git functions conveniently using a Singleton interface.
  */
-class GitWrapper
+class GitWrapper : public QObject
 {
+    Q_OBJECT
 private:
     GitWrapper();
     static GitWrapper *m_instance;
@@ -63,7 +64,14 @@ public:
      *
      * @note Might be time consuming, prefer to call it from a separate thread.
      */
-    QStringList remoteBranches(const QString &remote);
+    void remoteBranches(const QString &remote);
+
+    /**
+     * Emitted when remoteBranches has finished listing all branches.
+     * @param remoteBranches
+     *          The list of branches.
+     */
+    Q_SIGNAL void foundRemoteBranches(const QStringList &remoteBranches);
 
     /**
      * Gets a list of untracked files/dirs in the repository.

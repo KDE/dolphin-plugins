@@ -51,7 +51,7 @@ bool GitWrapper::isCommitIdValid(const QString &commitSha)
     return m_process.exitStatus() == QProcess::NormalExit && m_process.exitCode() == EXIT_SUCCESS;
 }
 
-QStringList GitWrapper::remoteBranches(const QString &remote)
+void GitWrapper::remoteBranches(const QString &remote)
 {
     static QString heads(QStringLiteral("refs/heads/"));
     static QString tags(QStringLiteral("refs/tags/"));
@@ -104,7 +104,7 @@ QStringList GitWrapper::remoteBranches(const QString &remote)
         }
     }
 
-    return remotes;
+    Q_EMIT foundRemoteBranches(remotes);
 }
 
 QStringList GitWrapper::listUntracked()

@@ -180,9 +180,10 @@ void CloneDialog::urlChanged()
     }
 
     m_branch->clear();
-    QtConcurrent::run(&GitWrapper::remoteBranches, GitWrapper::instance(), input).then([this, input](QStringList ret) {
+    connect(GitWrapper::instance(), &GitWrapper::foundRemoteBranches, this, [this, input](const QStringList &ret) {
         // A protection against inserting branches from different URL if user change remote.
-        if (input == m_url->text()) {
+        // Check for url field existing too, the dialog may already be closed.
+        if (m_branch && m_url && input == m_url->text()) {
             const auto text = m_branch->currentText();
             m_branch->clearEditText();
             m_branch->addItems(ret);
@@ -193,6 +194,7 @@ void CloneDialog::urlChanged()
             }
         }
     });
+    auto runner = QtConcurrent::run(&GitWrapper::remoteBranches, GitWrapper::instance(), input);
 
     QString destPath = QDir(m_contextDir).filePath(m_repositoryName);
     if (m_dir->text().isEmpty() || m_dir->text() == m_contextDir || m_dir->text() == destPath.chopped(1)) {
