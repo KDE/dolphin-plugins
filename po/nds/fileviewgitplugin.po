@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-03-28 00:46+0000\n"
 "PO-Revision-Date: 2011-01-25 06:38+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -244,105 +244,105 @@ msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
 msgstr "Du muttst toeerst en Inspeel-Naricht ingeven."
 
-#: fileviewgitplugin.cpp:52
+#: fileviewgitplugin.cpp:53
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Remove"
 msgid "<application>Git</application> Revert"
 msgstr "<application>Git</application> Wegmaken"
 
-#: fileviewgitplugin.cpp:57
+#: fileviewgitplugin.cpp:58
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Add"
 msgid "<application>Git</application> Add"
 msgstr "<application>Git</application> Tofögen"
 
-#: fileviewgitplugin.cpp:62
+#: fileviewgitplugin.cpp:63
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "Show Local <application>Git</application> Changes"
 msgstr "<application>Git</application> Utlesen"
 
-#: fileviewgitplugin.cpp:67
+#: fileviewgitplugin.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> Restore staged"
 msgstr "<application>Git</application> Beteker opstellen"
 
-#: fileviewgitplugin.cpp:72
+#: fileviewgitplugin.cpp:73
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Remove"
 msgid "<application>Git</application> Remove"
 msgstr "<application>Git</application> Wegmaken"
 
-#: fileviewgitplugin.cpp:77
+#: fileviewgitplugin.cpp:78
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Checkout..."
 msgid "<application>Git</application> Checkout..."
 msgstr "<application>Git</application> Utlesen..."
 
-#: fileviewgitplugin.cpp:82
+#: fileviewgitplugin.cpp:83
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Commit..."
 msgid "<application>Git</application> Commit..."
 msgstr "<application>Git</application> Inspelen..."
 
-#: fileviewgitplugin.cpp:87
+#: fileviewgitplugin.cpp:88
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Create Tag..."
 msgid "<application>Git</application> Create Tag..."
 msgstr "<application>Git</application> Beteker opstellen..."
 
-#: fileviewgitplugin.cpp:91
+#: fileviewgitplugin.cpp:92
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> Push..."
 msgstr "<application>Git</application> Hoochladen..."
 
-#: fileviewgitplugin.cpp:95
+#: fileviewgitplugin.cpp:96
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Pull..."
 msgid "<application>Git</application> Pull..."
 msgstr "<application>Git</application> Daalladen..."
 
-#: fileviewgitplugin.cpp:99
+#: fileviewgitplugin.cpp:100
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> Merge..."
 msgstr "<application>Git</application> Hoochladen..."
 
-#: fileviewgitplugin.cpp:103
+#: fileviewgitplugin.cpp:104
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Commit..."
 msgid "<application>Git</application> Clone..."
 msgstr "<application>Git</application> Inspelen..."
 
-#: fileviewgitplugin.cpp:107
+#: fileviewgitplugin.cpp:108
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Commit..."
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> Inspelen..."
 
-#: fileviewgitplugin.cpp:436
+#: fileviewgitplugin.cpp:438
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Adding files to <application>Git</application> repository..."
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Dateien warrt dat <application>Git</application>-Archiev toföögt..."
 
-#: fileviewgitplugin.cpp:437
+#: fileviewgitplugin.cpp:439
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Adding files to <application>Git</application> repository failed."
@@ -350,14 +350,14 @@ msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Tofögen vun Dateien na't <application>Git</application>-Archiev is fehlslaan."
 
-#: fileviewgitplugin.cpp:438
+#: fileviewgitplugin.cpp:440
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Added files to <application>Git</application> repository."
 msgid "Added files to <application>Git</application> repository."
 msgstr "Dateien na't <application>Git</application>-Archiev toföögt."
 
-#: fileviewgitplugin.cpp:449
+#: fileviewgitplugin.cpp:451
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
@@ -365,7 +365,7 @@ msgid "Removing files from <application>Git</application> repository..."
 msgstr ""
 "Dateien warrt ut dat <application>Git</application>-Archiev wegmaakt..."
 
-#: fileviewgitplugin.cpp:450
+#: fileviewgitplugin.cpp:452
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -375,14 +375,14 @@ msgstr ""
 "Wegmaken vun Dateien ut dat t <application>Git</application>-Archiev is "
 "fehlslaan."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:453
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Dateien ut dat <application>Git</application>-Archiev wegmaakt."
 
-#: fileviewgitplugin.cpp:458
+#: fileviewgitplugin.cpp:460
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
@@ -390,7 +390,7 @@ msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
 "Dateien warrt ut dat <application>Git</application>-Archiev wegmaakt..."
 
-#: fileviewgitplugin.cpp:459
+#: fileviewgitplugin.cpp:461
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -400,28 +400,28 @@ msgstr ""
 "Wegmaken vun Dateien ut dat t <application>Git</application>-Archiev is "
 "fehlslaan."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:462
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Dateien ut dat <application>Git</application>-Archiev wegmaakt."
 
-#: fileviewgitplugin.cpp:499
+#: fileviewgitplugin.cpp:501
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> Log failed."
 msgstr "Opstellen vun <application>Git</application>-Beteker fehlslaan."
 
-#: fileviewgitplugin.cpp:520
+#: fileviewgitplugin.cpp:522
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Add"
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Tofögen"
 
-#: fileviewgitplugin.cpp:535
+#: fileviewgitplugin.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Commit"
@@ -429,13 +429,13 @@ msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Inspelen"
 
-#: fileviewgitplugin.cpp:536
+#: fileviewgitplugin.cpp:538
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr ""
 
-#: fileviewgitplugin.cpp:537
+#: fileviewgitplugin.cpp:539
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Tag Message:"
@@ -443,13 +443,13 @@ msgctxt "Git commit message"
 msgid "Message"
 msgstr "Naricht tofögen:"
 
-#: fileviewgitplugin.cpp:538
+#: fileviewgitplugin.cpp:540
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr ""
 
-#: fileviewgitplugin.cpp:559
+#: fileviewgitplugin.cpp:561
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
@@ -458,7 +458,7 @@ msgid ""
 msgstr ""
 "Dateien warrt ut dat <application>Git</application>-Archiev wegmaakt..."
 
-#: fileviewgitplugin.cpp:560
+#: fileviewgitplugin.cpp:562
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -469,49 +469,49 @@ msgstr ""
 "Wegmaken vun Dateien ut dat t <application>Git</application>-Archiev is "
 "fehlslaan."
 
-#: fileviewgitplugin.cpp:561
+#: fileviewgitplugin.cpp:563
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Dateien ut dat <application>Git</application>-Archiev wegmaakt."
 
-#: fileviewgitplugin.cpp:587
+#: fileviewgitplugin.cpp:591
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> Beteker opstellen"
 
-#: fileviewgitplugin.cpp:591
+#: fileviewgitplugin.cpp:595
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "Opstellen vun <application>Git</application>-Beteker fehlslaan."
 
-#: fileviewgitplugin.cpp:593
+#: fileviewgitplugin.cpp:597
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> Utlesen"
 
-#: fileviewgitplugin.cpp:601
+#: fileviewgitplugin.cpp:605
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> Hoochladen..."
 
-#: fileviewgitplugin.cpp:635
+#: fileviewgitplugin.cpp:639
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to branch '%1'"
 msgid "Switched to branch '%1'"
 msgstr "Na Telg \"%1\" wesselt"
 
-#: fileviewgitplugin.cpp:642
+#: fileviewgitplugin.cpp:646
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "@info:status Git HEAD pointer, parameter includes short SHA-1 & commit "
@@ -520,14 +520,14 @@ msgstr "Na Telg \"%1\" wesselt"
 msgid "HEAD is now at %1"
 msgstr "HEAD is nu op %1"
 
-#: fileviewgitplugin.cpp:647
+#: fileviewgitplugin.cpp:651
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to a new branch '%1'"
 msgid "Switched to a new branch '%1'"
 msgstr "Na nieg Telg \"%1\" wesselt"
 
-#: fileviewgitplugin.cpp:658
+#: fileviewgitplugin.cpp:662
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -540,14 +540,14 @@ msgstr ""
 "<application>Git</application> Utlesen fehlslaan. Villicht is Dien "
 "Arbeitorner leeg."
 
-#: fileviewgitplugin.cpp:724
+#: fileviewgitplugin.cpp:728
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Successfully created tag '%1'"
 msgid "Successfully created tag '%1'"
 msgstr "Beteker \"%1\" mit Spood opstellt."
 
-#: fileviewgitplugin.cpp:729
+#: fileviewgitplugin.cpp:733
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -560,63 +560,63 @@ msgstr ""
 "Opstellen vun <application>Git</application>-Beteker fehlslaan. Dat gifft al "
 "en Beteker mit den Naam \"%1\"."
 
-#: fileviewgitplugin.cpp:732
+#: fileviewgitplugin.cpp:736
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> tag creation failed."
 msgstr "Opstellen vun <application>Git</application>-Beteker fehlslaan."
 
-#: fileviewgitplugin.cpp:743
+#: fileviewgitplugin.cpp:745
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Hoochladen vun Telg %1 na %2:%3 fehlslaan"
 
-#: fileviewgitplugin.cpp:744
+#: fileviewgitplugin.cpp:746
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushed branch %1 to %2:%3."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Telg %1 na %2:%3 hoochlaadt."
 
-#: fileviewgitplugin.cpp:745
+#: fileviewgitplugin.cpp:747
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Telg %1 warrt na %2:%3 hoochlaadt..."
 
-#: fileviewgitplugin.cpp:766
+#: fileviewgitplugin.cpp:768
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Telg %1 lett sik nich vun %2 daalladen."
 
-#: fileviewgitplugin.cpp:767
+#: fileviewgitplugin.cpp:769
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Telg %1 mit Spood vun %2 daallaadt."
 
-#: fileviewgitplugin.cpp:768
+#: fileviewgitplugin.cpp:770
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "Telg %1 warrt vun %2 daallaadt..."
 
-#: fileviewgitplugin.cpp:820 fileviewgitplugin.cpp:832
+#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Branch is already up-to-date."
 msgid "Branch is already up-to-date."
 msgstr "Telg is al op Stand."
 
-#: fileviewgitplugin.cpp:836
+#: fileviewgitplugin.cpp:838
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
