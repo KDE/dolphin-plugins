@@ -8,304 +8,300 @@ msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 08:37-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
-msgstr "SVN يېڭىلاش"
+msgstr "SVN يېڭىلا"
 
 #: fileviewsvnplugin.cpp:75
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
-msgstr ""
+msgstr "يەرلىك SVN يېڭىلاشنى كۆرسەت"
 
 #: fileviewsvnplugin.cpp:80
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr ""
+msgstr "SVN تاپشۇر…"
 
 #: fileviewsvnplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
-msgstr ""
+msgstr "SVN قوش"
 
 #: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
-msgstr ""
+msgstr "SVN ئۆچۈر"
 
 #: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
-msgstr ""
+msgstr "SVN ئەسلىگە قايتۇر"
 
 #: fileviewsvnplugin.cpp:100
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
-msgstr ""
+msgstr "SVN يېڭىلاشنى كۆرسەت"
 
 #: fileviewsvnplugin.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr ""
+msgstr "SVN خاتىرە…"
 
 #: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr ""
+msgstr "SVN تەكشۈر…"
 
 #: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr ""
+msgstr "SVN تازىلا…"
 
 #: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr ""
+"SVN ھالىتىنى يېڭىلىيالمىدى. «SVN يېڭىلاشنى كۆرسەت» تاللانمىسىنى چەكلەۋاتىدۇ."
 
 #: fileviewsvnplugin.cpp:360
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu"
-#| msgid "SVN Update"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
-msgstr "SVN يېڭىلاش"
+msgstr "SVN يېڭىلا"
 
 #: fileviewsvnplugin.cpp:365
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr ""
+msgstr "SVN خەزىنە يېڭىلاۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
-msgstr ""
+msgstr "SVN خەزىنەنى يېڭىلىيالمىدى."
 
 #: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
-msgstr ""
+msgstr "SVN خەزىنە يېڭىلاندى."
 
 #: fileviewsvnplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr ""
+msgstr "يەرلىك SVN ئۆزگىرىشىنى كۆرسىتەلمەيدۇ."
 
 #: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr ""
+msgstr "يەرلىك SVN ئۆزگىرىشىنى كۆرسىتەلمەيدۇ: svn diff نى ئىجرا قىلالمىدى."
 
 #: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
 #: fileviewsvnplugin.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
-msgstr ""
+msgstr "يەرلىك SVN ئۆزگىرىشىنى كۆرسىتەلمەيدۇ: kompare نى ئىجرا قىلالمىدى."
 
 #: fileviewsvnplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr ""
+msgstr "SVN خەزىنەگە ھۆججەت قوشۇۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
-msgstr ""
+msgstr "SVN خەزىنەگە ھۆججەت قوشالمىدى."
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
-msgstr ""
+msgstr "SVN خەزىنەگە ھۆججەت قوشتى."
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr ""
+msgstr "SVN خەزىنەدىن ھۆججەتنى چىقىرىۋېتىۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
-msgstr ""
+msgstr "SVN خەزىنەدىن ھۆججەتنى چىقىرىۋېتەلمىدى."
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
-msgstr ""
+msgstr "SVN خەزىنەدىن ھۆججەتنى چىقىرىۋەتتى."
 
 #: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
-msgstr ""
+msgstr "SVN ئەسلىگە قايتۇر"
 
 #: fileviewsvnplugin.cpp:465
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr ""
+msgstr "SVN خەزىنەدىن ھۆججەتنى ئەسلىگە قايتۇرۇۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
-msgstr ""
+msgstr "SVN خەزىنەدىن ھۆججەتنى ئەسلىگە قايتۇرالمىدى."
 
 #: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr ""
+msgstr "SVN خەزىنەدىن ھۆججەتنى ئەسلىگە قايتۇردى."
 
 #: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr ""
+msgstr "SVN تەكشۈر: تەكشۈرۈۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:496
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr ""
+msgstr "SVN نى قوزغىلىۋاتقاندىكى خاتالىق: %1"
 
 #: fileviewsvnplugin.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr ""
+msgstr "SVN تەكشۈر: تەكشۈرەلمىدى: %1"
 
 #: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr ""
+msgstr "SVN تەكشۈر: تەكشۈرۈش مۇۋەپپەقىيەتلىك بولدى."
 
 #: fileviewsvnplugin.cpp:506
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "SVN Commit"
+#, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "SVN تاپشۇرۇش"
+msgstr "SVN تەكشۈر"
 
 #: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr ""
+msgstr "ھۆججەت ئۆزگىرىشىنى ئەسلىگە ياندۇرۇۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
-msgstr ""
+msgstr "ھۆججەتنى ئەسلىگە ياندۇرالمىدى."
 
 #: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
-msgstr ""
+msgstr "ھۆججەتنى ئەسلىگە ياندۇردى."
 
 #: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
 #: fileviewsvnplugin.cpp:612
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
-msgstr ""
+msgstr "ھۆججەتنىڭ يەرلىك SVN ئۆزگىرىشىنى كۆرسىتەلمەيدۇ: ھۆججەتكە ئېرىشەلمەيدۇ."
 
 #: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
-msgstr ""
+msgstr "SVN ئۆزگىرىشنى تاپشۇرالمىدى."
 
 #: fileviewsvnplugin.cpp:667 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
-msgstr "SVN تاپشۇرۇش"
+msgstr "SVN تاپشۇر"
 
 #: fileviewsvnplugin.cpp:672
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr ""
+msgstr "SVN ئۆزگىرىشنى تاپشۇرۇۋاتىدۇ…"
 
 #: fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
-msgstr ""
+msgstr "SVN ئۆزگىرىشنى تاپشۇردى."
 
 #. i18n: ectx: label, entry (showUpdates), group (General)
 #: fileviewsvnpluginsettings.kcfg:9
 #, kde-format
 msgid "Show updates"
-msgstr "يېڭىلاشنى كۆرسىتىش"
+msgstr "يېڭىلاشنى كۆرسەت"
 
 #: svncheckoutdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr ""
+msgstr "تەكشۈرىدىغان مۇندەرىجە تاللىنىدۇ"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "SVN Commit"
+#, kde-format
 msgid "SVN Checkout"
-msgstr "SVN تاپشۇرۇش"
+msgstr "SVN تەكشۈر"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
 #, kde-format
 msgid "URL of repository:"
-msgstr ""
+msgstr "خەزىنە تور ئادرېسى:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr ""
+msgstr "تەكشۈرۈش مۇندەرىجىسى:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
 #, kde-format
 msgid "Omit externals"
-msgstr ""
+msgstr "سىرتقى مەزمۇنغا پەرۋا قىلما"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -313,62 +309,62 @@ msgstr ""
 #: svnprogressdialog.ui:46
 #, kde-format
 msgid "OK"
-msgstr ""
+msgstr "تامام"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbCancel)
 #. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
 #: svncheckoutdialog.ui:81 svncleanupdialog.ui:96 svnprogressdialog.ui:33
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "ۋاز كەچ"
 
 #: svncleanupdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr ""
+msgstr "تازىلايدىغان مۇندەرىجە تاللىنىدۇ"
 
 #: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
-msgstr ""
+msgstr "SVN تازىلاش مەشغۇلاتى غەلىبىلىك تاماملاندى."
 
 #: svncleanupdialog.cpp:64
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
-msgstr ""
+msgstr "%1 نىڭ SVN تازىلاش مەشغۇلاتى مەغلۇپ بولدى"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr ""
+msgstr "SVN تازىلا…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
 #, kde-format
 msgid "Clean up directory:"
-msgstr ""
+msgstr "مۇندەرىجە تازىلاش:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
 #: svncleanupdialog.ui:43
 #, kde-format
 msgid "Delete unversioned files and directories"
-msgstr ""
+msgstr "نەشرسىز ھۆججەت ۋە مۇندەرىجىنى ئۆچۈرىدۇ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
 #: svncleanupdialog.ui:50
 #, kde-format
 msgid "Delete ignored files and directories"
-msgstr ""
+msgstr "پەرۋا قىلمىغان ھۆججەت ۋە مۇندەرىجىنى ئۆچۈرىدۇ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
 #: svncleanupdialog.ui:57
 #, kde-format
 msgid "Include externals"
-msgstr ""
+msgstr "سىرتقى مەزمۇنمۇ بار"
 
 #: svncommitdialog.cpp:86
 #, kde-format
@@ -380,7 +376,7 @@ msgstr "چۈشەندۈرۈش:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Refresh"
-msgstr ""
+msgstr "يېڭىلا"
 
 #: svncommitdialog.cpp:106
 #, kde-format
@@ -392,164 +388,162 @@ msgstr "تاپشۇر(_C)"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
-msgstr ""
+msgstr "ئەسلىگە ياندۇر"
 
 #: svncommitdialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Show updates"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
-msgstr "يېڭىلاشنى كۆرسىتىش"
+msgstr "ئۆزگىرىشنى كۆرسەت"
 
 #: svncommitdialog.cpp:126
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Add file"
-msgstr ""
+msgstr "ھۆججەت قوش"
 
 #: svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Path"
-msgstr ""
+msgstr "يول"
 
 #: svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
-msgstr ""
+msgstr "ھالىتى"
 
 #: svncommitdialog.cpp:207
 #, kde-format
 msgctxt "@item:intable"
 msgid "Unversioned"
-msgstr ""
+msgstr "نەشرسىز"
 
 #: svncommitdialog.cpp:210
 #, kde-format
 msgctxt "@item:intable"
 msgid "Modified"
-msgstr ""
+msgstr "ئۆزگەرتىلگەن ۋاقتى"
 
 #: svncommitdialog.cpp:213
 #, kde-format
 msgctxt "@item:intable"
 msgid "Added"
-msgstr ""
+msgstr "قوشۇلدى"
 
 #: svncommitdialog.cpp:216
 #, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
-msgstr ""
+msgstr "ئۆچۈرۈلدى"
 
 #: svncommitdialog.cpp:219
 #, kde-format
 msgctxt "@item:intable"
 msgid "Conflict"
-msgstr ""
+msgstr "توقۇنۇش"
 
 #: svncommitdialog.cpp:222
 #, kde-format
 msgctxt "@item:intable"
 msgid "Missing"
-msgstr ""
+msgstr "يوقالغان"
 
 #: svncommitdialog.cpp:225
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
-msgstr ""
+msgstr "يېڭىلاش زۆرۈر"
 
 #: svnlogdialog.cpp:88
 #, kde-format
 msgid "Update to revision"
-msgstr ""
+msgstr "تۈزىتىلمىگە يېڭىلا"
 
 #: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
 msgid "Revert to revision"
-msgstr ""
+msgstr "تۈزىتىلمىگە ئەسلىگە ياندۇر"
 
 #: svnlogdialog.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show updates"
+#, kde-format
 msgid "Show changes"
-msgstr "يېڭىلاشنى كۆرسىتىش"
+msgstr "ئۆزگىرىشنى كۆرسەت"
 
 #: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
-msgstr ""
+msgstr "خىزمەت نۇسخىسىغا قارىتا ئۆزگىرىش"
 
 #: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr ""
+msgstr "SVN خاتىرە: تۈزىتىلمىگە يېڭىلىيالمىدى."
 
 #: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
-msgstr ""
+msgstr "SVN خاتىرە: %1 تۈزىتىلمىگە مۇۋەپپەقىيەتلىك يېڭىلىدى."
 
 #: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
-msgstr ""
+msgstr "SVN خاتىرە: تۈزىتىلمىگە ئەسلىگە ياندۇرالمىدى."
 
 #: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."
-msgstr ""
+msgstr "SVN خاتىرە: %1 تۈزىتىلمىگە مۇۋەپپەقىيەتلىك ئەسلىگە ياندۇردى."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
 #, kde-format
 msgid "SVN Log"
-msgstr ""
+msgstr "SVN خاتىرە"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
 #, kde-format
 msgid "Revision"
-msgstr ""
+msgstr "تۈزىتىلمە"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:60
 #, kde-format
 msgid "Author"
-msgstr ""
+msgstr "يازغۇچى"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:65
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "چېسلا"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:70
 #, kde-format
 msgid "Message"
-msgstr ""
+msgstr "ئۇچۇر"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNext100)
 #: svnlogdialog.ui:104
 #, kde-format
 msgid "Next 100"
-msgstr ""
+msgstr "كېيىنكى 100"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbRefresh)
 #: svnlogdialog.ui:114
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "يېڭىلا"
 
 #: svnprogressdialog.cpp:53
 #, kde-format
 msgctxt "@info:status"
 msgid "Error starting: %1"
-msgstr ""
+msgstr "قوزغىلىۋاتقاندىكى خاتالىق: %1"

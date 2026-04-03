@@ -8,56 +8,58 @@ msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 08:36-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: backoutdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> چېكىن"
 
 #: backoutdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Backout"
-msgstr ""
+msgstr "چېكىن"
 
 #: backoutdialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Merge with old dirstate parent after backout"
 msgstr ""
+"چېكىنگەندىن كېيىن كونا ئاتا تۈزىتىلگەن مۇندەرىجە ھالىتىگە بىرلەشتۈرۈلىدۇ"
 
 #: backoutdialog.cpp:54 backoutdialog.cpp:55 bundledialog.cpp:51
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Select Changeset"
-msgstr ""
+msgstr "ئۆزگىرىش توپلىمى تاللا"
 
 #: backoutdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
-msgstr ""
+msgstr "چېكىنگەن تۈزىتىلمە: "
 
 #: backoutdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Parent Revision (optional): "
-msgstr ""
+msgstr "ئاتا تۈزىتىلمە (تاللاشچان): "
 
 #: backoutdialog.cpp:128 bundledialog.cpp:178
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Select Changeset"
-msgstr ""
+msgstr "ئۆزگىرىش توپلىمى تاللا"
 
 #: backoutdialog.cpp:129 bundledialog.cpp:179
 #, kde-kuit-format
@@ -69,52 +71,52 @@ msgstr "تاللا"
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Branch"
-msgstr ""
+msgstr "<application>Hg</application> شاخ"
 
 #: branchdialog.cpp:36
 #, kde-format
 msgid "Create New Branch"
-msgstr ""
+msgstr "يېڭى شاخ قۇر"
 
 #: branchdialog.cpp:37
 #, kde-format
 msgid "Switch Branch"
-msgstr ""
+msgstr "شاخ ئالماشتۇر"
 
 #: branchdialog.cpp:65
 #, kde-format
 msgid "<b>Current Branch: </b>"
-msgstr ""
+msgstr "<b>نۆۋەتتىكى شاخ:</b>"
 
 #: branchdialog.cpp:99 branchdialog.cpp:113 tagdialog.cpp:92 tagdialog.cpp:107
 #: tagdialog.cpp:121
 #, kde-format
 msgid "Some error occurred"
-msgstr ""
+msgstr "بەزى خاتالىق كۆرۈلدى"
 
 #: bundledialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Bundle"
-msgstr ""
+msgstr "<application>Hg</application> بولاقلا"
 
 #: bundledialog.cpp:30
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Bundle"
-msgstr ""
+msgstr "بولاقلا"
 
 #: bundledialog.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Base Revision (optional): "
-msgstr ""
+msgstr "ئاساسىي تۈزىتىلمە (تاللاشچان): "
 
 #: bundledialog.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Bundle all changesets in repository."
-msgstr ""
+msgstr "خەزىنىدىكى بارلىق ئۆزگىرىش توپلىمىنى بولاقلايدۇ."
 
 #: bundledialog.cpp:68 exportdialog.cpp:52 importdialog.cpp:56
 #: pulldialog.cpp:36 pushdialog.cpp:36
@@ -127,30 +129,30 @@ msgstr "تاللانما"
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Run even when the destination is unrelated (force)"
-msgstr ""
+msgstr "نىشان مۇناسىۋەتلىك بولمىغان تەقدىردىمۇ ئىجرا قىلىدۇ (مەجبۇرىي)"
 
 #: bundledialog.cpp:72 pulldialog.cpp:34 pushdialog.cpp:34
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
-msgstr ""
+msgstr "مۇلازىمېتىر گۇۋاھنامىسىنى دەلىللىمەيدۇ"
 
 #: clonedialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Clone"
-msgstr ""
+msgstr "<application>Hg</application> نۇسخىلا"
 
 #: clonedialog.cpp:32
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr "كىلون"
+msgstr "نۇسخىلا"
 
 #: clonedialog.cpp:39
 #, kde-format
 msgid "URLs"
-msgstr ""
+msgstr "تور ئادرېس"
 
 #: clonedialog.cpp:41
 #, kde-kuit-format
@@ -179,27 +181,29 @@ msgstr "تاللانما"
 #: clonedialog.cpp:59
 #, kde-format
 msgid "Do not update the new working directory."
-msgstr ""
+msgstr "يېڭى خىزمەت مۇندەرىجىسىنى يېڭىلىمايدۇ."
 
 #: clonedialog.cpp:60
 #, kde-format
 msgid "Use pull protocol to copy metadata."
-msgstr ""
+msgstr "ئىتتىرىش كېلىشىمى ئارقىلىق تەپسىلىي سانلىق مەلۇماتنى كۆچۈرىدۇ."
 
 #: clonedialog.cpp:61
 #, kde-format
 msgid "Use uncompressed transfer."
-msgstr ""
+msgstr "قىسماي يەتكۈزۈشنى ئىشلىتىدۇ."
 
 #: clonedialog.cpp:62
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
 msgstr ""
+"مۇلازىمېتىر گۇۋاھنامىسىنى دەلىللىمەيدۇ (web.cacerts سەپلىمىسىگە پەرۋا "
+"قىلمايدۇ)."
 
 #: clonedialog.cpp:147
 #, kde-format
 msgid "Terminating cloning!"
-msgstr ""
+msgstr "نۇسخىلاشنى ئاخىرلاشتۇرۇۋاتىدۇ!"
 
 #: clonedialog.cpp:172
 #, kde-kuit-format
@@ -211,13 +215,13 @@ msgstr "ياپ"
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "Error Cloning Repository!"
-msgstr ""
+msgstr "خەزىنە نۇسخىلاۋاتقاندا خاتالىق كۆرۈلدى!"
 
 #: commitdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit"
-msgstr ""
+msgstr "<application>Hg</application> تاپشۇر"
 
 #: commitdialog.cpp:33
 #, kde-kuit-format
@@ -226,34 +230,31 @@ msgid "Commit"
 msgstr "تاپشۇر(_C)"
 
 #: commitdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "A KDE text-editor component could not be found;\n"
-#| "please check your KDE installation."
+#, kde-format
 msgid ""
 "The KTextEditor component could not be found;\n"
 "please check your KDE Frameworks installation."
 msgstr ""
-"ك د ئې(KDE) تەھرىرلىگۈچ بۆلىكى تېپىلمىدى؛\n"
-" ك د ئې(KDE) نىڭ ئورنىتىلىشىنى تەكشۈرۈڭ."
+"KTextEditor بۆلىكى تېپىلمىدى؛\n"
+"KDE قۇرۇلمىسىنىڭ ئورنىتىلىشىنى تەكشۈرۈڭ."
 
 #: commitdialog.cpp:52
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Commit to current branch"
-msgstr ""
+msgstr "نۆۋەتتىكى شاخقا تاپشۇر"
 
 #: commitdialog.cpp:56
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Create new branch"
-msgstr ""
+msgstr "يېڭى شاخ قۇر"
 
 #: commitdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Close current branch"
-msgstr ""
+msgstr "نۆۋەتتىكى شاخنى ياپ"
 
 #: commitdialog.cpp:80
 #, kde-format
@@ -269,67 +270,67 @@ msgstr "تارماق"
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Commit Message"
-msgstr "تاپشۇرۇش ئۇچۇرى:"
+msgstr "تاپشۇرۇش ئۇچۇرى"
 
 #: commitdialog.cpp:108
 #, kde-kuit-format
 msgctxt "@title:group"
 msgid "Diff/Content"
-msgstr ""
+msgstr "پەرق/مەزمۇن"
 
 #: commitdialog.cpp:204
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
-msgstr ""
+msgstr "شاخ قۇرالمايدۇ! تاپشۇرۇشنى بىكار قىلىۋاتىدۇ!"
 
 #: commitdialog.cpp:212
 #, kde-format
 msgid "Commit unsuccessful!"
-msgstr ""
+msgstr "تاپشۇرۇش مەغلۇپ بولدى!"
 
 #: commitdialog.cpp:215
 #, kde-format
 msgid "No files for commit!"
-msgstr ""
+msgstr "تاپشۇرىدىغان ھۆججەت يوق!"
 
 #: commitdialog.cpp:241
 #, kde-format
 msgid "Branch: Current Branch"
-msgstr ""
+msgstr "شاخ: نۆۋەتتىكى شاخ"
 
 #: commitdialog.cpp:247
 #, kde-format
 msgid "Branch: "
-msgstr "تارماق: "
+msgstr "شاخ: "
 
 #: commitdialog.cpp:257
 #, kde-format
 msgid "Branch: Close Current"
-msgstr ""
+msgstr "شاخ: نۆۋەتتىكىنى ياپ"
 
 #: commitdialog.cpp:269
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Commit: New Branch"
-msgstr ""
+msgstr "<application>Hg</application> تاپشۇر: يېڭى شاخ"
 
 #: commitdialog.cpp:277
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enter new branch name"
-msgstr ""
+msgstr "يېڭى شاخ ئاتى كىرگۈزۈلىدۇ"
 
 #: commitdialog.cpp:297
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Branch already exists!</b>"
-msgstr ""
+msgstr "<b>شاخ مەۋجۇت!</b>"
 
 #: commitdialog.cpp:303
 #, kde-kuit-format
 msgctxt "@label"
 msgid "<b>Enter some text!</b>"
-msgstr ""
+msgstr "<b>ئازراق تېكىست كىرگۈزۈڭ!</b>"
 
 #: commitinfowidget.cpp:37
 #, kde-format
@@ -337,20 +338,20 @@ msgid ""
 "A KDE text-editor component could not be found;\n"
 "please check your KDE installation."
 msgstr ""
-"ك د ئې(KDE) تەھرىرلىگۈچ بۆلىكى تېپىلمىدى؛\n"
-" ك د ئې(KDE) نىڭ ئورنىتىلىشىنى تەكشۈرۈڭ."
+"KDE تېكىست تەھرىرلىگۈچ بۆلىكى تېپىلمىدى؛\n"
+"KDE نىڭ ئورنىتىلىشىنى تەكشۈرۈڭ."
 
 #: configdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Repository Configuration"
-msgstr ""
+msgstr "<application>Hg</application> خەزىنە سەپلىمىسى"
 
 #: configdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Global Configuration"
-msgstr ""
+msgstr "<application>Hg</application> ئومۇمىيەت سەپلىمىسى"
 
 #: configdialog.cpp:42
 #, kde-kuit-format
@@ -362,13 +363,13 @@ msgstr "ئادەتتىكى تەڭشەك"
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Repository Paths"
-msgstr ""
+msgstr "خەزىنە يولى"
 
 #: configdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Ignored Files"
-msgstr ""
+msgstr "پەرۋا قىلمايدىغان ھۆججەت"
 
 #: configdialog.cpp:52
 #, kde-kuit-format
@@ -380,300 +381,302 @@ msgstr "قىستۇرما تەڭشىكى"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Initialize Repository"
-msgstr ""
+msgstr "<application>Hg</application> خەزىنە دەسلەپلەشتۈر"
 
 #: createdialog.cpp:23
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Initialize Repository"
-msgstr ""
+msgstr "خەزىنە دەسلەپلەشتۈر"
 
 #: createdialog.cpp:56
 #, kde-kuit-format
 msgctxt "error message"
 msgid "Error creating repository!"
-msgstr ""
+msgstr "خەزىنە قۇرۇۋاتقاندا خاتالىق كۆرۈلدى!"
 
 #: exportdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Export"
-msgstr ""
+msgstr "<application>Hg</application> چىقار"
 
 #: exportdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Export"
-msgstr "ئېكسپورت قىل"
+msgstr "چىقار"
 
 #: exportdialog.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid "Treat all files as text"
-msgstr ""
+msgstr "ھەممە ھۆججەتكە تېكىستتەك مۇئامىلە قىلىدۇ"
 
 #: exportdialog.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Use Git extended diff format"
-msgstr ""
+msgstr "Git كېڭەيتىلگەن پەرق پىچىمنى ئىشلىتىدۇ"
 
 #: exportdialog.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Omit dates from diff headers"
-msgstr ""
+msgstr "ھۆججەت بېشىدىكى چېسلانى چىقىرىۋېتىدۇ"
 
 #: exportdialog.cpp:124
 #, kde-format
 msgctxt "@message:error"
 msgid "Please select at least one changeset to be exported!"
-msgstr ""
+msgstr "چىقىرىدىغان ئۆزگىرىش توپلىمىدىن كەم دېگەندە بىرنى تاللاڭ!"
 
 #: fileviewhgplugin.cpp:90
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Add"
-msgstr ""
+msgstr "<application>Hg</application> قوش"
 
 #: fileviewhgplugin.cpp:95
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Remove"
-msgstr ""
+msgstr "<application>Hg</application> چىقىرىۋەت"
 
 #: fileviewhgplugin.cpp:100
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rename"
-msgstr ""
+msgstr "<application>Hg</application> ئات ئۆزگەرت"
 
 #: fileviewhgplugin.cpp:105
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Commit"
-msgstr ""
+msgstr "<application>Hg</application> تاپشۇر"
 
 #: fileviewhgplugin.cpp:110
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Tag"
-msgstr ""
+msgstr "<application>Hg</application> بەلگە"
 
 #: fileviewhgplugin.cpp:115
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Branch"
-msgstr ""
+msgstr "<application>Hg</application> شاخ"
 
 #: fileviewhgplugin.cpp:120
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Clone"
-msgstr ""
+msgstr "<application>Hg</application> نۇسخىلا"
 
 #: fileviewhgplugin.cpp:125
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Init"
-msgstr ""
+msgstr "<application>Hg</application> دەسلەپلەشتۈر"
 
 #: fileviewhgplugin.cpp:130
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Update"
-msgstr ""
+msgstr "<application>Hg</application> يېڭىلا"
 
 #: fileviewhgplugin.cpp:135
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Global Config"
-msgstr ""
+msgstr "<application>Hg</application> ئومۇمىيەت سەپلىمە"
 
 #: fileviewhgplugin.cpp:140
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Repository Config"
-msgstr ""
+msgstr "<application>Hg</application> خەزىنە سەپلىمە"
 
 #: fileviewhgplugin.cpp:145
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Push"
-msgstr ""
+msgstr "<application>Hg</application> ئىتتەر"
 
 #: fileviewhgplugin.cpp:150
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Pull"
-msgstr ""
+msgstr "<application>Hg</application> يۇقىرىدىن تارت"
 
 #: fileviewhgplugin.cpp:155
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert"
-msgstr ""
+msgstr "<application>Hg</application> ئەسلىگە كەلتۈر"
 
 #: fileviewhgplugin.cpp:160
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Revert All"
-msgstr ""
+msgstr "<application>Hg</application> ھەممىنى ئەسلىگە كەلتۈر"
 
 #: fileviewhgplugin.cpp:165
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Rollback"
-msgstr ""
+msgstr "<application>Hg</application> كەينىگە قايتۇر"
 
 #: fileviewhgplugin.cpp:170
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Merge"
-msgstr ""
+msgstr "<application>Hg</application> بىرلەشتۈر"
 
 #: fileviewhgplugin.cpp:175
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Bundle"
-msgstr ""
+msgstr "<application>Hg</application> بولاقلا"
 
 #: fileviewhgplugin.cpp:180
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Export"
-msgstr ""
+msgstr "<application>Hg</application> چىقار"
 
 #: fileviewhgplugin.cpp:185
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Import"
-msgstr ""
+msgstr "<application>Hg</application> ئەكىر"
 
 #: fileviewhgplugin.cpp:190
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Unbundle"
-msgstr ""
+msgstr "<application>Hg</application> بولاقنى يەش"
 
 #: fileviewhgplugin.cpp:195
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> مۇلازىمەت"
 
 #: fileviewhgplugin.cpp:200
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Backout"
-msgstr ""
+msgstr "<application>Hg</application> چېكىن"
 
 #: fileviewhgplugin.cpp:205
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Hg</application> Diff"
-msgstr ""
+msgstr "<application>Hg</application> پەرق"
 
 #: fileviewhgplugin.cpp:227
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
-msgstr ""
+msgstr "<application>Mercurial</application>"
 
 #: fileviewhgplugin.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە ھۆججەت قوشۇۋاتىدۇ…"
 
 #: fileviewhgplugin.cpp:425
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Adding files to <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە ھۆججەت قوشالمىدى."
 
 #: fileviewhgplugin.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Added files to <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە ھۆججەت قوشتى."
 
 #: fileviewhgplugin.cpp:439
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to remove selected files from the repository?"
-msgstr ""
+msgstr "تاللانغان ھۆججەتنى خەزىنەدىن چىقىرىۋېتەمسىز؟"
 
 #: fileviewhgplugin.cpp:441
 #, kde-format
 msgid "Remove Files"
-msgstr ""
+msgstr "ھۆججەتنى چىقىرىۋەت"
 
 #: fileviewhgplugin.cpp:448
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىن ھۆججەتنى چىقىرىۋاتىدۇ…"
 
 #: fileviewhgplugin.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removing files from <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىن ھۆججەتنى چىقىرالمىدى."
 
 #: fileviewhgplugin.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Removed files from <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىن ھۆججەتنى چىقىرىۋەتتى."
 
 #: fileviewhgplugin.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming of file in <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىكى ھۆججەت ئاتىنى ئۆزگەرتەلمىدى."
 
 #: fileviewhgplugin.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renamed file in <application>Hg</application> repository successfully."
 msgstr ""
+"<application>Hg</application> خەزىنەدىكى ھۆججەت ئاتىنى مۇۋەپپەقىيەتلىك "
+"ئۆزگەرتتى."
 
 #: fileviewhgplugin.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renaming file in <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىكى ھۆججەت ئاتىنى ئۆزگەرتىۋاتىدۇ."
 
 #: fileviewhgplugin.cpp:472
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No changes for commit!"
-msgstr ""
+msgstr "تاپشۇرىدىغان ھېچقانداق ئۆزگىرىش يوق!"
 
 #: fileviewhgplugin.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit to <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە ھۆججەت تاپشۇرالمىدى."
 
 #: fileviewhgplugin.cpp:477
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Committed to <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە ھۆججەتنى تاپشۇردى."
 
 #: fileviewhgplugin.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Commit <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە تاپشۇرىدۇ."
 
 #: fileviewhgplugin.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tag operation in <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىكى بەلگە مەشغۇلاتى مەغلۇپ بولدى."
 
 #: fileviewhgplugin.cpp:489
 #, kde-kuit-format
@@ -681,18 +684,20 @@ msgctxt "@info:status"
 msgid ""
 "Tagging operation in <application>Hg</application> repository is successful."
 msgstr ""
+"<application>Hg</application> خەزىنەدىكى بەلگە مەشغۇلاتى مۇۋەپپەقىيەتلىك "
+"بولدى."
 
 #: fileviewhgplugin.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Tagging operation in <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدە بەلگە مەشغۇلاتى قىلىۋاتىدۇ."
 
 #: fileviewhgplugin.cpp:498
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Update of <application>Hg</application> working directory failed."
-msgstr ""
+msgstr "<application>Hg</application> خىزمەت مۇندەرىجىسىنى يېڭىلىيالمىدى."
 
 #: fileviewhgplugin.cpp:499
 #, kde-kuit-format
@@ -700,18 +705,19 @@ msgctxt "@info:status"
 msgid ""
 "Update of <application>Hg</application> working directory is successful."
 msgstr ""
+"<application>Hg</application> خىزمەت مۇندەرىجىسىنى مۇۋەپپەقىيەتلىك يېڭىلىدى."
 
 #: fileviewhgplugin.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Updating <application>Hg</application> working directory."
-msgstr ""
+msgstr "<application>Hg</application> خىزمەت مۇندەرىجىسىنى يېڭىلاۋاتىدۇ."
 
 #: fileviewhgplugin.cpp:508
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىكى شاخ مەشغۇلاتى مەغلۇپ بولدى."
 
 #: fileviewhgplugin.cpp:509
 #, kde-kuit-format
@@ -720,35 +726,39 @@ msgid ""
 "Branch operation on <application>Hg</application> repository completed "
 "successfully."
 msgstr ""
+"<application>Hg</application> خەزىنەدىكى شاخ مەشغۇلاتى مۇۋەپپەقىيەتلىك "
+"تاماملاندى."
 
 #: fileviewhgplugin.cpp:510
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Branch operation on <application>Hg</application> repository."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەدىكى شاخ مەشغۇلاتى."
 
 #: fileviewhgplugin.cpp:607
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert changes made to selected files?"
-msgstr ""
+msgstr "تاللىغان ھۆججەتنى ئۆزگىرىشىنى ئەسلىگە ياندۇرامسىز؟"
 
 #: fileviewhgplugin.cpp:609 fileviewhgplugin.cpp:610 fileviewhgplugin.cpp:631
 #, kde-format
 msgid "Revert"
-msgstr ""
+msgstr "ئەسلىگە ياندۇر"
 
 #: fileviewhgplugin.cpp:616 fileviewhgplugin.cpp:637
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository..."
 msgstr ""
+"<application>Hg</application> خەزىنەدىكى ھۆججەتنى ئەسلىگە ياندۇرۇۋاتىدۇ…"
 
 #: fileviewhgplugin.cpp:617 fileviewhgplugin.cpp:638
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reverting files in <application>Hg</application> repository failed."
 msgstr ""
+"<application>Hg</application> خەزىنەدىكى ھۆججەتنى ئەسلىگە ياندۇرالمىدى."
 
 #: fileviewhgplugin.cpp:618 fileviewhgplugin.cpp:639
 #, kde-kuit-format
@@ -757,70 +767,74 @@ msgid ""
 "Reverting files in <application>Hg</application> repository completed "
 "successfully."
 msgstr ""
+"<application>Hg</application> خەزىنەدىكى ھۆججەتنى ئەسلىگە ياندۇرۇش "
+"مۇۋەپپەقىيەتلىك تاماملاندى."
 
 #: fileviewhgplugin.cpp:628
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to revert all changes made to current working directory?"
 msgstr ""
+"نۆۋەتتىكى خىزمەت مۇندەرىجىسىنىڭ بارلىق ئۆزگىرىشىنى ئەسلىگە ياندۇرامسىز؟"
 
 #: fileviewhgplugin.cpp:630
 #, kde-format
 msgid "Revert All"
-msgstr ""
+msgstr "ھەممىنى ئەسلىگە ياندۇر"
 
 #: fileviewhgplugin.cpp:647
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generating diff for <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە پەرق ئۇچۇرى قۇرۇۋاتىدۇ…"
 
 #: fileviewhgplugin.cpp:648
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not get <application>Hg</application> repository diff."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنە پەرق ئۇچۇرىغا ئېرىشەلمەيدۇ."
 
 #: fileviewhgplugin.cpp:649
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Generated <application>Hg</application> diff successfully."
 msgstr ""
+"<application>Hg</application> خەزىنە پەرق ئۇچۇرىنى مۇۋەپپەقىيەتلىك قۇردى."
 
 #: fileviewhgplugin.cpp:678
 #, kde-kuit-format
 msgctxt "@message:error"
 msgid "abort: Uncommitted changes in working directory!"
-msgstr ""
+msgstr "بىكار قىل: خىزمەت مۇندەرىجىسىدە تېخى تاپشۇرمىغان ئۆزگىرىش بار!"
 
 #: fileviewhgplugin.cpp:693
 #, kde-kuit-format
 msgctxt "@info:message"
 msgid "No rollback information available!"
-msgstr ""
+msgstr "كەينىگە ياندۇرىدىغان ئۇچۇرنى ئىشلەتكىلى بولمايدۇ!"
 
 #: fileviewhgplugin.cpp:704
 #, kde-kuit-format
 msgctxt "@message:yesorno"
 msgid "Would you like to rollback last transaction?"
-msgstr ""
+msgstr "ئاخىرقى مەشغۇلاتنى كەينىگە ياندۇرامسىز؟"
 
 #: fileviewhgplugin.cpp:706 fileviewhgplugin.cpp:707
 #, kde-format
 msgid "Rollback"
-msgstr ""
+msgstr "كەينىگە ياندۇر"
 
 #: fileviewhgplugin.cpp:713
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Executing Rollback <application>Hg</application> repository..."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەنى كەينىگە ياندۇرۇۋاتىدۇ…"
 
 #: fileviewhgplugin.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Rollback of <application>Hg</application> repository failed."
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەنى كەينىگە ياندۇرالمىدى."
 
 #: fileviewhgplugin.cpp:715
 #, kde-kuit-format
@@ -828,6 +842,8 @@ msgctxt "@info:status"
 msgid ""
 "Rollback of <application>Hg</application> repository completed successfully."
 msgstr ""
+"<application>Hg</application> خەزىنەنى كەينىگە ياندۇرۇش مۇۋەپپەقىيەتلىك "
+"تاماملاندى."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogHeight), group (ConfigDialogSettings)
@@ -848,7 +864,7 @@ msgstr ""
 #: fileviewhgpluginsettings.kcfg:119
 #, kde-format
 msgid "Dialog height"
-msgstr ""
+msgstr "سۆزلەشكۈ ئېگىزلىكى"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #. i18n: ectx: label, entry (configDialogWidth), group (ConfigDialogSettings)
@@ -869,157 +885,159 @@ msgstr ""
 #: fileviewhgpluginsettings.kcfg:123
 #, kde-format
 msgid "Dialog width"
-msgstr ""
+msgstr "سۆزلەشكۈ كەڭلىكى"
 
 #. i18n: ectx: label, entry (verticalSplitterSizes), group (CommitDialogSettings)
 #: fileviewhgpluginsettings.kcfg:17
 #, kde-format
 msgid "Divides file list and editors with commit details"
-msgstr ""
+msgstr "ھۆججەت تىزىمى بىلەن تاپشۇرۇش تەپسىلاتى بار تەھرىرلىگۈچنى ئايرىيدۇ"
 
 #. i18n: ectx: label, entry (horizontalSplitterSizes), group (CommitDialogSettings)
 #: fileviewhgpluginsettings.kcfg:21
 #, kde-format
 msgid "Divides commit editor and diff editor"
-msgstr ""
+msgstr "تاپشۇرما تەھرىرلىگۈچ بىلەن پەرق ئۇچۇرىنى ئايرىيدۇ"
 
 #: importdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Import"
-msgstr ""
+msgstr "<application>Hg</application> ئەكىر"
 
 #: importdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Import"
-msgstr "ئىمپورت قىل"
+msgstr "ئەكىر"
 
 #: importdialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Do not commit, just update the working directory"
-msgstr ""
+msgstr "تاپشۇرماي، پەقەت خىزمەت مۇندەرىجىسىنى يېڭىلايدۇ"
 
 #: importdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Skip test for outstanding uncommitted changes"
-msgstr ""
+msgstr "تېخى بىر تەرەپ قىلىنمىغان تاپشۇرۇلمىغان ئۆزگىرىشنى سىناشتىن ئاتلايدۇ"
 
 #: importdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch to the nodes from which it was generated"
-msgstr ""
+msgstr "ياماقنى ئۇ قۇرۇلغان تۈگۈنگە قوللىنىدۇ"
 
 #: importdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Apply patch without touching working directory"
-msgstr ""
+msgstr "ياماقنى قوللىنىپ خىزمەت مۇندەرىجىسىگە تەگمەيدۇ"
 
 #: importdialog.cpp:71
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Add Patches"
-msgstr ""
+msgstr "ياماق قوش"
 
 #: importdialog.cpp:72
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Remove Patches"
-msgstr ""
+msgstr "ياماقنى چىقىرىۋەت"
 
 #: mergedialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Merge"
-msgstr ""
+msgstr "<application>Hg</application> بىرلەشتۈر"
 
 #: mergedialog.cpp:26
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Merge"
-msgstr "بىرىكتۈر"
+msgstr "بىرلەشتۈر"
 
 #: mergedialog.cpp:103
 #, kde-kuit-format
 msgctxt "@message"
 msgid "No head selected for merge!"
-msgstr ""
+msgstr "بىرلەشتۈرىدىغان باش تاللانمىدى!"
 
 #: pathselector.cpp:57
 #, kde-kuit-format
 msgctxt "@label:combobox"
 msgid "edit"
-msgstr ""
+msgstr "تەھرىر"
 
 #: pulldialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Pull Repository"
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەنى يۇقىرىدىن تارت"
 
 #: pulldialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Update to new branch head if changesets were pulled"
 msgstr ""
+"ئەگەر ئۆزگىرىش توپلىمى يۇقىرىدىن تارتىلغان بولسا ئۇنداقتا يېڭى شاخنىڭ بېشىنى "
+"يېڭىلايدۇ"
 
 #: pulldialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Pull"
-msgstr ""
+msgstr "يۇقىرىدىن مەجبۇرىي تارت"
 
 #: pulldialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Incoming Changes"
-msgstr ""
+msgstr "كىرگەن ئۆزگىرىش"
 
 #: pulldialog.cpp:138
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No incoming changes!"
-msgstr ""
+msgstr "كىرگەن ئۆزگىرىش يوق!"
 
 #: pushdialog.cpp:27
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Push Repository"
-msgstr ""
+msgstr "<application>Hg</application> خەزىنەگە ئىتتەر"
 
 #: pushdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Allow pushing a new branch"
-msgstr ""
+msgstr "يېڭى شاخنى ئىتتىرىشكە يول قويىدۇ"
 
 #: pushdialog.cpp:35
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Force Push"
-msgstr ""
+msgstr "مەجبۇرىي ئىتتەر"
 
 #: pushdialog.cpp:45
 #, kde-kuit-format
 msgctxt "@label:group"
 msgid "Outgoing Changes"
-msgstr ""
+msgstr "چىققان ئۆزگىرىش"
 
 #: pushdialog.cpp:159
 #, kde-kuit-format
 msgctxt "@message:info"
 msgid "No outgoing changes!"
-msgstr ""
+msgstr "چىققان ئۆزگىرىش يوق!"
 
 #: renamedialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Rename"
-msgstr ""
+msgstr "<application>Hg</application> ئات ئۆزگەرت"
 
 #: renamedialog.cpp:26
 #, kde-kuit-format
@@ -1043,25 +1061,25 @@ msgstr "ئات ئۆزگەرت "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Serve"
-msgstr ""
+msgstr "<application>Hg</application> مۇلازىمەت"
 
 #: servedialog.cpp:56
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
-msgstr ""
+msgstr "مۇلازىمېتىرنى قوزغات"
 
 #: servedialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
-msgstr ""
+msgstr "مۇلازىمېتىرنى توختات"
 
 #: servedialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Open in browser"
-msgstr ""
+msgstr "توركۆرگۈدە ئاچ"
 
 #: servedialog.cpp:74
 #, kde-kuit-format
@@ -1072,12 +1090,12 @@ msgstr "ئېغىز"
 #: servewrapper.cpp:62
 #, kde-format
 msgid "## Starting Server ##"
-msgstr ""
+msgstr "## مۇلازىمېتىرنى قوزغىتىۋاتىدۇ ##"
 
 #: servewrapper.h:144
 #, kde-format
 msgid "## Server Stopped! ##\n"
-msgstr ""
+msgstr "## مۇلازىمېتىر توختىدى! ##\n"
 
 #: statuslist.cpp:29
 #, kde-format
@@ -1088,19 +1106,19 @@ msgstr "ھۆججەت ئاتى"
 #, kde-format
 msgctxt "@title:group"
 msgid "File Status"
-msgstr ""
+msgstr "ھۆججەت ھالىتى"
 
 #: syncdialogbase.cpp:73
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Incoming Changes"
-msgstr ""
+msgstr "كىرگەن ئۆزگىرىشنى كۆرسەت"
 
 #: syncdialogbase.cpp:75
 #, kde-format
 msgctxt "@label:button"
 msgid "Show Outgoing Changes"
-msgstr ""
+msgstr "چىققان ئۆزگىرىشنى كۆرسەت"
 
 #: syncdialogbase.cpp:108
 #, kde-format
@@ -1112,13 +1130,13 @@ msgstr "تارت"
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr "قويۇش"
+msgstr "ئىتتەر"
 
 #: syncdialogbase.cpp:146
 #, kde-format
 msgctxt "@message"
 msgid "No changes found!"
-msgstr ""
+msgstr "ئۆزگىرىش بايقالمىدى!"
 
 #: syncdialogbase.cpp:197 syncdialogbase.cpp:263 syncdialogbase.cpp:270
 #, kde-format
@@ -1135,33 +1153,33 @@ msgstr "تاللانما"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Tag"
-msgstr ""
+msgstr "<application>Hg</application> بەلگە"
 
 #: tagdialog.cpp:29
 #, kde-format
 msgid "Create New Tag"
-msgstr ""
+msgstr "يېڭى بەلگە قۇر"
 
 #: tagdialog.cpp:30
 #, kde-format
 msgid "Remove Tag"
-msgstr ""
+msgstr "بەلگىنى چىقىرىۋەت"
 
 #: tagdialog.cpp:31
 #, kde-format
 msgid "Switch Tag"
-msgstr ""
+msgstr "بەلگە ئالماشتۇر"
 
 #: tagdialog.cpp:118
 #, kde-format
 msgid "Created tag successfully!"
-msgstr ""
+msgstr "بەلگە مۇۋەپپەقىيەتلىك قۇرۇلدى!"
 
 #: updatedialog.cpp:23
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Hg</application> Update"
-msgstr ""
+msgstr "<application>Hg</application> يېڭىلا"
 
 #: updatedialog.cpp:25
 #, kde-kuit-format
@@ -1172,22 +1190,22 @@ msgstr "يېڭىلا"
 #: updatedialog.cpp:28
 #, kde-format
 msgid "New working directory"
-msgstr ""
+msgstr "يېڭى خىزمەت مۇندەرىجىسى"
 
 #: updatedialog.cpp:33
 #, kde-format
 msgid "Tag"
-msgstr "خەتكۈش"
+msgstr "بەلگە"
 
 #: updatedialog.cpp:34
 #, kde-format
 msgid "Changeset/Revision"
-msgstr ""
+msgstr "ئۆزگىرىش توپلىمى/تۈزىتىلمە"
 
 #: updatedialog.cpp:39
 #, kde-format
 msgid "Current Parent"
-msgstr ""
+msgstr "نۆۋەتتىكى ئاتا ھالىتى"
 
 #: updatedialog.cpp:45
 #, kde-format
@@ -1197,7 +1215,7 @@ msgstr "تاللانما"
 #: updatedialog.cpp:47
 #, kde-format
 msgid "Discard uncommitted changes"
-msgstr ""
+msgstr "تاپشۇرۇلمىغان ئۆزگىرىشنى تاشلىۋەت"
 
 #: updatedialog.cpp:120
 #, kde-format
@@ -1205,3 +1223,5 @@ msgid ""
 "Some error occurred! \n"
 "Maybe there are uncommitted changes."
 msgstr ""
+"بەزى خاتالىق كۆرۈلدى!\n"
+"بەلكىم تاپشۇرۇلمىغان ئۆزگىرىش بولۇشى مۇمكىن."

@@ -8,46 +8,45 @@ msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-28 00:46+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 08:36-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: checkoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr ""
+msgstr "<application>Git</application> تەكشۈر"
 
 #: checkoutdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "Checkout"
+msgstr "تەكشۈر"
 
 #: checkoutdialog.cpp:57
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
-msgstr "تارماق:"
+msgstr "شاخ:"
 
 #: checkoutdialog.cpp:64
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
-msgstr ""
+msgstr "بەلگە:"
 
 #: checkoutdialog.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "تاپشۇر(_C)"
+msgstr "تاپشۇر:"
 
 #: checkoutdialog.cpp:81 pushdialog.cpp:80
 #, kde-format
@@ -59,13 +58,13 @@ msgstr "تاللانما"
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
-msgstr ""
+msgstr "يېڭى شاخ قۇر: "
 
 #: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
-msgstr ""
+msgstr "تاللانغان تارماق ياكى بەلگە ئاساسىدا يېڭى بىر شاخ قۇرىدۇ."
 
 #: checkoutdialog.cpp:102
 #, kde-format
@@ -77,55 +76,55 @@ msgstr "مەجبۇرىي"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
-msgstr ""
+msgstr "يەرلىك ئۆزگەرتىشنى تاشلىۋېتىدۇ."
 
 #: checkoutdialog.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr ""
+msgstr "خەزىنەدە ھېچقانداق بەلگە يوق."
 
 #: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
-msgstr ""
+msgstr "شاخ ئاساسى"
 
 #: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "Checkout"
+msgstr "تەكشۈر"
 
 #: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr ""
+msgstr "ئالدى بىلەن يېڭى شاخقا چوقۇم ئىناۋەتلىك ئىسىم كىرگۈزۈشىڭىز كېرەك."
 
 #: checkoutdialog.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr ""
+msgstr "«%1» ئاتلىق شاخ مەۋجۇت."
 
 #: checkoutdialog.cpp:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
-msgstr ""
+msgstr "شاخ ئىسمىدا بوش ئورۇن بولسا بولمايدۇ."
 
 #: checkoutdialog.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr ""
+msgstr "ئالدى بىلەن چوقۇم ئىناۋەتلىك شاختىن بىرنى تاللىشىڭىز كېرەك."
 
 #: checkoutdialog.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr ""
+msgstr "ئىناۋەتلىك تاپشۇرۇش كىملىكى (SHA ئىمزاسى) نى كىرگۈزۈشىڭىز كېرەك."
 
 #: checkoutdialog.cpp:287
 #, kde-format
@@ -133,69 +132,67 @@ msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
 "for a newly created branch"
 msgid "branch"
-msgstr ""
+msgstr "شاخ"
 
 #: clonedialog.cpp:36
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "Git خەزىنە تور ئادرېسى ياكى يولى"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "قايتىلانما ھالەتتە تارماق بۆلەكنى نۇسخىلايدۇ"
 
 #: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "تور ئادرېسى:"
 
 #: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "مۇندەرىجە:"
 
 #: clonedialog.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@option:radio Git Checkout"
-#| msgid "Branch:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
-msgstr "تارماق:"
+msgstr "شاخ:"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr ""
+msgstr "قايتىلانما"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "نۇسخىلا"
 
 #: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "نۇسخىلاش مۇندەرىجىسى تاللىنىدۇ"
 
 #: clonedialog.cpp:93
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr ""
+msgstr "<application>Git</application> نۇسخىلا"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr ""
+msgstr "<application>Git</application> تاپشۇر"
 
 #: commitdialog.cpp:35
 #, kde-format
@@ -207,162 +204,162 @@ msgstr "تاپشۇر(_C)"
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
-msgstr ""
+msgstr "تاپشۇرۇش ئۇچۇرى"
 
 #: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
-msgstr ""
+msgstr "ئاخىرقى تاپشۇرۇلمىنى تۈزىتىدۇ"
 
 #: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr ""
+msgstr "تۈزىتىدىغان ھېچنېمە يوق."
 
 #: commitdialog.cpp:72
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
-msgstr ""
+msgstr "ئىمزا قوي"
 
 #: commitdialog.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr ""
+msgstr "تاپشۇرۇش ئۇچۇرىنىڭ ئاخىرىدىكى قۇرغا ئىمزا قوشىدۇ."
 
 #: commitdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr ""
+msgstr "ئالدى بىلەن چوقۇم تاپشۇرۇش ئۇچۇرىنى كىرگۈزۈشىڭىز كېرەك."
 
 #: fileviewgitplugin.cpp:53
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr ""
+msgstr "<application>Git</application> ئەسلىگە قايتۇر"
 
 #: fileviewgitplugin.cpp:58
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr ""
+msgstr "<application>Git</application> قوش"
 
 #: fileviewgitplugin.cpp:63
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr ""
+msgstr "يەرلىك <application>Git</application> ئۆزگىرىشىنى كۆرسەت"
 
 #: fileviewgitplugin.cpp:68
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr ""
+msgstr "<application>Git</application> باسقۇچلۇق ھۆججەتنى ئەسلىگە كەلتۈر"
 
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr ""
+msgstr "<application>Git</application> چىقىرىۋەت"
 
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr ""
+msgstr "<application>Git</application> تەكشۈر…"
 
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr ""
+msgstr "<application>Git</application> تاپشۇر…"
 
 #: fileviewgitplugin.cpp:88
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr ""
+msgstr "<application>Git</application> بەلگە قۇر…"
 
 #: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr ""
+msgstr "<application>Git</application> يۇقىرىغا ئىتتەر…"
 
 #: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr ""
+msgstr "<application>Git</application> يۇقىرىدىن تارت…"
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr ""
+msgstr "<application>Git</application> بىرلەشتۈر…"
 
 #: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr ""
+msgstr "<application>Git</application> نۇسخىلا…"
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr ""
+msgstr "<application>Git</application> خاتىرە…"
 
 #: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەگە ھۆججەت قوشۇۋاتىدۇ…"
 
 #: fileviewgitplugin.cpp:439
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەگە ھۆججەت قوشالمىدى."
 
 #: fileviewgitplugin.cpp:440
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەگە ھۆججەت قوشتى."
 
 #: fileviewgitplugin.cpp:451
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى چىقىرىۋاتىدۇ…"
 
 #: fileviewgitplugin.cpp:452
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى چىقىرالمىدى."
 
 #: fileviewgitplugin.cpp:453
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى چىقىرىۋەتتى."
 
 #: fileviewgitplugin.cpp:460
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
+"<application>Git</application> خەزىنەدىن ھۆججەتنى ئەسلىگە كەلتۈرۈۋاتىدۇ…"
 
 #: fileviewgitplugin.cpp:461
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application> خەزىنەدىن ھۆججەتنى ئەسلىگە كەلتۈرەلمىدى."
 
 #: fileviewgitplugin.cpp:462
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى ئەسلىگە كەلتۈردى."
 
 #: fileviewgitplugin.cpp:501
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr ""
+msgstr "<application>Git</application> خاتىرىيەلمىدى."
 
 #: fileviewgitplugin.cpp:522
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr ""
+msgstr "<application>Git</application> خاتىرە"
 
 #: fileviewgitplugin.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Commit"
+#, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "تاپشۇر(_C)"
@@ -371,71 +368,77 @@ msgstr "تاپشۇر(_C)"
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
-msgstr ""
+msgstr "چېسلا"
 
 #: fileviewgitplugin.cpp:539
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
-msgstr ""
+msgstr "ئۇچۇر"
 
 #: fileviewgitplugin.cpp:540
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
-msgstr ""
+msgstr "يازغۇچى"
 
 #: fileviewgitplugin.cpp:561
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
+"<application>Git</application> خەزىنەدىن باسقۇچلۇق ھۆججەتنى ئەسلىگە "
+"كەلتۈرۈۋاتىدۇ…"
 
 #: fileviewgitplugin.cpp:562
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application> خەزىنەدىن باسقۇچلۇق ھۆججەتنى ئەسلىگە "
+"كەلتۈرەلمىدى."
 
 #: fileviewgitplugin.cpp:563
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
+"<application>Git</application> خەزىنەدىن باسقۇچلۇق ھۆججەتنى ئەسلىگە "
+"كەلتۈرۈۋاتىدۇ."
 
 #: fileviewgitplugin.cpp:591
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr ""
+msgstr "<application>Git</application> قوزغىلىۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: fileviewgitplugin.cpp:595
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr ""
+msgstr "<application>Git</application> نۇسخىلىيالمىدى: %1"
 
 #: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr ""
+msgstr "<application>Git</application> نۇسخىلاش تامام."
 
 #: fileviewgitplugin.cpp:605
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr ""
+msgstr "<application>Git</application> خەزىنە نۇسخىلاۋاتىدۇ…"
 
 #: fileviewgitplugin.cpp:639
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr ""
+msgstr "«%1» شاخقا ئالماشتى"
 
 #: fileviewgitplugin.cpp:646
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr ""
+msgstr "ھازىر HEAD كۆرسەتكىنى %1"
 
 #: fileviewgitplugin.cpp:651
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr ""
+msgstr "«%1» يېڭى شاخقا ئالماشتى"
 
 #: fileviewgitplugin.cpp:662
 #, kde-kuit-format
@@ -443,11 +446,13 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
+"<application>Git</application> تەكشۈرەلمىدى. بەلكىم خىزمەت مۇندەرىجىڭىز "
+"بۇلغانغان بولۇشى مۇمكىن."
 
 #: fileviewgitplugin.cpp:728
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr ""
+msgstr "«%1» بەلگە مۇۋەپپەقىيەتلىك قۇرۇلدى"
 
 #: fileviewgitplugin.cpp:733
 #, kde-kuit-format
@@ -455,69 +460,70 @@ msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr ""
+"<application>Git</application> بەلگە قۇرالمىدى. «%1» ئاتلىق بەلگە مەۋجۇت."
 
 #: fileviewgitplugin.cpp:736
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
-msgstr ""
+msgstr "<application>Git</application> بەلگە قۇرالمىدى."
 
 #: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr ""
+msgstr "%1 شاخنى يۇقىرىدىكى %2:%3 غا ئىتتىرەلمىدى."
 
 #: fileviewgitplugin.cpp:746
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr ""
+msgstr "%1 شاخنى يۇقىرىدىكى %2:%3 غا ئىتتەردى."
 
 #: fileviewgitplugin.cpp:747
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr ""
+msgstr "%1 شاخنى يۇقىرىدىكى %2:%3 غا ئىتتىرىۋاتىدۇ."
 
 #: fileviewgitplugin.cpp:768
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr ""
+msgstr "يۇقىرىدىكى %2 دىن %1 شاخنى تارتالمىدى."
 
 #: fileviewgitplugin.cpp:769
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr ""
+msgstr "يۇقىرىدىكى %2 دىن %1 شاخنى مۇۋەپپەقىيەتلىك تارتتى."
 
 #: fileviewgitplugin.cpp:770
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr ""
+msgstr "يۇقىرىدىكى %2 دىن %1 شاخنى تارتىۋاتىدۇ…"
 
 #: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
-msgstr ""
+msgstr "شاخ ئاللىبۇرۇن ئەڭ يېڭى ھالەتتە."
 
 #: fileviewgitplugin.cpp:838
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
-msgstr ""
+msgstr "بىرلەشتۈرگەندە توقۇنۇش كۆرۈلدى. ئۇلارنى ئوڭشاپ ئاندىن نەتىجىنى يوللاڭ."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr ""
+msgstr "سۆزلەشكۈ ئېگىزلىكى"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr ""
+msgstr "سۆزلەشكۈ كەڭلىكى"
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr ""
+msgstr "<application>Git</application> يۇقىرىدىن تارت"
 
 #: pulldialog.cpp:35
 #, kde-format
@@ -535,25 +541,25 @@ msgstr "مەنبە"
 #, kde-format
 msgctxt "@label:listbox a git remote"
 msgid "Remote:"
-msgstr ""
+msgstr "يىراقتىكى:"
 
 #: pulldialog.cpp:55
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote branch:"
-msgstr ""
+msgstr "يىراقتىكى شاخ:"
 
 #: pushdialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr ""
+msgstr "<application>Git</application> يۇقىرىغا ئىتتەر"
 
 #: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr "قويۇش"
+msgstr "ئىتتەر"
 
 #: pushdialog.cpp:47
 #, kde-format
@@ -565,25 +571,25 @@ msgstr "نىشان"
 #, kde-format
 msgctxt "@title:group"
 msgid "Branches"
-msgstr "تارماقلار"
+msgstr "شاخ"
 
 #: pushdialog.cpp:65
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr ""
+msgstr "يەرلىك شاخ:"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr ""
+msgstr "يىراقتىكى شاخ:"
 
 #: pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "مەجبۇرىي (--force-with-lease)"
 
 #: pushdialog.cpp:86
 #, kde-format
@@ -592,87 +598,87 @@ msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
+"ئالدىنقى قېتىم ئېرىشكەندىن كېيىن يىراقتىكى شاختا ئۆزگىرىش بولمىغان بولسا، "
+"يىراقتىكى شاخ يەرلىك شاخنىڭ ئەسلى شېخى بولمىسىمۇ، مەشغۇلاتنى داۋاملاشتۇرىدۇ."
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "يىراقتىكى خەزىنە بەلگىلەنمىگەن."
 
 #: pushdialog.cpp:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr ""
+msgstr "يېڭى شاخ ئىتتەر"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
-msgstr ""
+msgstr "<application>Git</application> بەلگە قۇر"
 
 #: tagdialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Tag"
-msgstr "خەتكۈش قۇرۇش"
+msgstr "بەلگە قۇر"
 
 #: tagdialog.cpp:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
-msgstr ""
+msgstr "بەلگە ئۇچۇرى"
 
 #: tagdialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
-msgstr "خەتكۈش ئاتى:"
+msgstr "بەلگە ئاتى:"
 
 #: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr ""
+msgstr "بەلگە ئۇچۇرى:"
 
 #: tagdialog.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
-msgstr ""
+msgstr "يۈكلىنىش ئورنى"
 
 #: tagdialog.cpp:79
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Branch:"
-msgstr "تارماق:"
+msgstr "شاخ:"
 
 #: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
-msgstr ""
+msgstr "ئالدى بىلەن چوقۇم بەلگە ئاتىنى كىرگۈزۈشىڭىز كېرەك."
 
 #: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
-msgstr ""
+msgstr "بەلگە ئىسمىدا ھەر قانداق بوش ئورۇن بولسا بولمايدۇ."
 
 #: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr ""
+msgstr "«%1» ئاتلىق بەلگە ئاتى مەۋجۇت."
 
-#, fuzzy
 #~| msgctxt "@option:radio Git Checkout"
 #~| msgid "Branch:"
 #~ msgctxt "@option:check"
 #~ msgid "Branch:"
 #~ msgstr "تارماق:"
 
-#, fuzzy
 #~| msgctxt "@action:button"
 #~| msgid "Checkout"
 #~ msgctxt "@option:check"
