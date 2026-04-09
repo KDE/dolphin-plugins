@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: makefileactions.cpp:218
 #, kde-format
@@ -28,17 +28,17 @@ msgstr "Akcie makefile"
 #: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "Vyskytla sa chyba pri zostavovaní cieľa „%1“."
 
 #: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr ""
+msgstr "Bežiaci proces pre „%1“ bol úspešne zastavený."
 
 #: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "Vyskytla sa chyba pri pokuse o zostavenie cieľa „%1“."
 
 #: makefileactions.cpp:289
 #, kde-format
@@ -48,22 +48,22 @@ msgstr "&Make…"
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
-msgstr ""
+msgstr "Modul Makefile Actions môže používať iba dôveryhodné súbory."
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "Dôveryhodný súbor — odškrtnite na odstránenie dôvery"
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "Nedôveryhodný súbor — zaškrtnite na udelenie dôvery"
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr ""
+msgstr "Modul Makefile pre Dolphin"
 
 #: makefileactions.cpp:305
 #, kde-format
@@ -71,24 +71,27 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>Ste si istí, že môžete dôverovať tomuto súboru?</b><br>Dôveryhodné súbory "
+"môžu spustiť ľubovoľný kód pri vyvolaní kontextového menu."
 
 #: makefileactions.cpp:319
 #, kde-format
 msgid "Open a terminal window"
-msgstr ""
+msgstr "Otvoriť okno terminálu"
 
 #: makefileactions.cpp:320
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"Otvoriť nové okno terminálu na zobrazenie výstupu zostavenia zvoleného cieľa."
 
 #: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr ""
+msgstr "Zrušiť bežiaci proces (%1)"
 
 #: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr ""
+msgstr "Prerušiť aktuálne bežiaci proces (%1)."
