@@ -287,7 +287,16 @@ KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileIte
         // We are inside unversioned directory - everything is unversioned.
         return UnversionedVersion;
     } else {
-        // files that are not in our map are normal, tracked files by definition.
+        // Check if the file/directory is ignored by git.
+        QProcess checkProcess;
+        checkProcess.setWorkingDirectory(m_currentDir);
+        checkProcess.start(QStringLiteral("git"),
+                          {QStringLiteral("check-ignore"), QStringLiteral("--quiet"), itemUrl});
+        checkProcess.waitForFinished();
+        if (checkProcess.exitCode() == 0) {
+            return IgnoredVersion;
+        }
+        // files that are not in our map and not ignored are normal, tracked files.
         return NormalVersion;
     }
 }
@@ -387,6 +396,7 @@ QList<QAction *> FileViewGitPlugin::contextMenuDirectoryActions(const QString &d
     actions.append(m_checkoutAction);
 
     bool canCommit = false;
+    bool canAdd = false;
     bool showChanges = false;
     bool shouldMerge = false;
     QHash<QString, ItemVersion>::const_iterator it = m_versionInfoHash.constBegin();
@@ -394,6 +404,9 @@ QList<QAction *> FileViewGitPlugin::contextMenuDirectoryActions(const QString &d
         const ItemVersion state = it.value();
         if (state == LocallyModifiedVersion || state == AddedVersion || state == RemovedVersion) {
             canCommit = true;
+        }
+        if (state == UnversionedVersion) {
+            canAdd = true;
         }
         if (state == LocallyModifiedUnstagedVersion || state == LocallyModifiedVersion) {
             showChanges = true;
@@ -427,6 +440,9 @@ QList<QAction *> FileViewGitPlugin::contextMenuDirectoryActions(const QString &d
     actions.append(m_pushAction);
     m_pullAction->setEnabled(!m_pendingOperation);
     actions.append(m_pullAction);
+
+    m_addAction->setEnabled(!m_pendingOperation && canAdd);
+    actions.append(m_addAction);
 
     return actions;
 }
