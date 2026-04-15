@@ -5,7 +5,7 @@
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="fileviewsvnpluginrc"/>
     <group name="General">
-      <entry name="showUpdates" type="bool">
+      <entry name="showUpdates" type="Bool">
           <label>Show updates</label>
           <default>false</default>
       </entry>
