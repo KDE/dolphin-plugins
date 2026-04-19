@@ -1,35 +1,36 @@
 # SPDX-FileCopyrightText: 2010 Panagiotis Papadopoulos <pano_90@gmx.net>
-# SPDX-FileCopyrightText: 2010, 2011, 2015, 2016, 2018 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2010-2011, 2015-2016, 2018 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2011 Rolf Eike Beer <kde@opensource.sf-tec.de>
 # SPDX-FileCopyrightText: 2012 Jonas Schürmann <jonasschuermann@aol.de>
 # SPDX-FileCopyrightText: 2015 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2026 Alexander Becker <alex-at-kde-l10n-de@freenet.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-01-03 00:00+0100\n"
-"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
+"PO-Revision-Date: 2026-04-18 21:43+0200\n"
+"Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: checkoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr "<application>Git</application> Checkout"
+msgstr "Auschecken – <application>git</application> checkout"
 
 #: checkoutdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr "Auslesen"
+msgstr "Auschecken"
 
 #: checkoutdialog.cpp:57
 #, kde-format
@@ -47,7 +48,7 @@ msgstr "Tag:"
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr "Einspielen:"
+msgstr "Commit:"
 
 #: checkoutdialog.cpp:81 pushdialog.cpp:80
 #, kde-format
@@ -95,7 +96,7 @@ msgstr "Zweigbasis"
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr "Auslesen"
+msgstr "Auschecken"
 
 #: checkoutdialog.cpp:227
 #, kde-format
@@ -122,12 +123,10 @@ msgid "You must select a valid branch first."
 msgstr "Sie müssen erst einen gültigen Zweig auswählen."
 
 #: checkoutdialog.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "You must enter a commit message first."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr "Sie müssen erst eine Commit-Nachricht eingeben."
+msgstr "Sie müssen eine gültige Einspielkennung (SHA-Signatur) eingeben."
 
 #: checkoutdialog.cpp:287
 #, kde-format
@@ -147,7 +146,7 @@ msgstr "Pfad oder Adresse eines Git-Archivs"
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "Untermodule rekursiv klonen"
 
 #: clonedialog.cpp:49
 #, kde-format
@@ -183,20 +182,19 @@ msgstr "Klonen"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "Ordner zum Klonen auswählen"
 
 #: clonedialog.cpp:93
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr "<application>Git</application> Log"
+msgstr "Klonen – <application>git</application> clone"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr "<application>Git</application> Commit"
+msgstr "Einspielen – <application>git</application> commit"
 
 #: commitdialog.cpp:35
 #, kde-format
@@ -220,7 +218,7 @@ msgstr "Letzten Commit ändern"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr "Es gibt nichts zu Ändern."
+msgstr "Es gibt nichts zu ändern."
 
 #: commitdialog.cpp:72
 #, kde-format
@@ -232,7 +230,7 @@ msgstr "Freigeben (Sign off)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr "Freigabe-Nachricht (Sign off) am Ende der Commit-Nachricht hinzufügen."
+msgstr "Freigabezeile (Sign off) am Ende der Commit-Nachricht hinzufügen."
 
 #: commitdialog.cpp:129
 #, kde-format
@@ -243,12 +241,12 @@ msgstr "Sie müssen erst eine Commit-Nachricht eingeben."
 #: fileviewgitplugin.cpp:52
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr "<application>Git</application> Revert"
+msgstr "Zurücknehmen von Änderungen – <application>git</application> checkout"
 
 #: fileviewgitplugin.cpp:57
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr "<application>Git</application> Add"
+msgstr "Zum Einspielen vormerken – <application>git</application> add"
 
 #: fileviewgitplugin.cpp:62
 #, kde-kuit-format
@@ -256,73 +254,77 @@ msgid "Show Local <application>Git</application> Changes"
 msgstr "Lokale <application>Git</application>-Änderungen anzeigen"
 
 #: fileviewgitplugin.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr "<application>Git</application> Tag anlegen"
+msgstr ""
+"Aus der Vormerkung zum Einspielen entfernen – <application>git</application> "
+"restore --staged"
 
 #: fileviewgitplugin.cpp:72
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr "<application>Git</application> Remove"
+msgstr "Entfernen – <application>git</application> remove"
 
 #: fileviewgitplugin.cpp:77
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr "<application>Git</application> Auschecken …"
+msgstr "Auschecken – <application>git</application> checkout …"
 
 #: fileviewgitplugin.cpp:82
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr "<application>Git</application> Einspielen …"
+msgstr "Einspielen – <application>git</application> commit …"
 
 #: fileviewgitplugin.cpp:87
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr "<application>Git</application> Tag anlegen …"
+msgstr "Tag anlegen – <application>git</application> tag …"
 
 #: fileviewgitplugin.cpp:91
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr "<application>Git</application> Übertragen …"
+msgstr "Übertragen – <application>git</application> push …"
 
 #: fileviewgitplugin.cpp:95
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr "<application>Git</application> Abgleichen …"
+msgstr "Abgleichen – <application>git</application> pull …"
 
 #: fileviewgitplugin.cpp:99
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr "<application>Git</application> Zusammenführen …"
+msgstr "Zusammenführen – <application>git</application> merge …"
 
 #: fileviewgitplugin.cpp:103
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr "<application>Git</application> Klonen …"
+msgstr "Klonen – <application>git</application> clone …"
 
 #: fileviewgitplugin.cpp:107
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr "<application>Git</application> Protokoll …"
+msgstr "Protokoll – <application>git</application> log …"
 
 #: fileviewgitplugin.cpp:436
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr "Dateien werden zum <application>Git</application>-Archiv hinzugefügt …"
+msgstr ""
+"Dateien werden zum Einspielen ins <application>Git</application>-Archiv "
+"vorgemerkt …"
 
 #: fileviewgitplugin.cpp:437
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
-"Das Hinzufügen von Dateien zum <application>Git</application>-Archiv ist "
-"fehlgeschlagen."
+"Das Vormerken von Dateien zum Einspielen ins <application>Git</application>-"
+"Archiv ist fehlgeschlagen."
 
 #: fileviewgitplugin.cpp:438
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr "Dateien wurden zum <application>Git</application>-Archiv hinzugefügt."
+msgstr ""
+"Dateien wurden zum Einspielen ins <application>Git</application>-Archiv "
+"vorgemerkt."
 
 #: fileviewgitplugin.cpp:449
 #, kde-kuit-format
@@ -353,23 +355,26 @@ msgstr ""
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
-"Das Zurücksetzen von Dateien im <application>Git</application>-Archiv ist "
-"fehlgeschlagen."
+"Das Zurücknehmen von Änderungen an Dateien aus dem <application>Git</"
+"application>-Archiv ist fehlgeschlagen."
 
 #: fileviewgitplugin.cpp:460
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
-msgstr "Dateien im <application>Git</application>-Archiv wurden zurückgesetzt."
+msgstr ""
+"Änderungen an Dateien aus dem <application>Git</application>-Archiv wurden "
+"zurückgenommen."
 
 #: fileviewgitplugin.cpp:499
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr "Schreiben des <application>Git</application>-Logs fehlgeschlagen."
+msgstr ""
+"Ermitteln des <application>Git</application>-Protokolls fehlgeschlagen."
 
 #: fileviewgitplugin.cpp:520
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr "<application>Git</application> Log"
+msgstr "Protokoll – <application>git</application> log"
 
 #: fileviewgitplugin.cpp:535
 #, kde-format
@@ -404,40 +409,34 @@ msgstr ""
 "application>-Archiv wiederhergestellt …"
 
 #: fileviewgitplugin.cpp:560
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Removing files from <application>Git</application> repository failed."
+#, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
-"Das Entfernen von Dateien aus dem <application>Git</application>-Archiv ist "
-"fehlgeschlagen."
+"Das Wiederherstellen der zum Einspielen vorgemerkten Dateien aus dem "
+"<application>Git</application>-Archiv ist fehlgeschlagen."
 
 #: fileviewgitplugin.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "Reverted files from <application>Git</application> repository."
+#, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
-msgstr "Dateien im <application>Git</application>-Archiv wurden zurückgesetzt."
+msgstr ""
+"Zum Einspielen vorgemerkte Dateien wurden aus dem <application>Git</"
+"application>-Archiv wiederhergestellt."
 
 #: fileviewgitplugin.cpp:587
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Create Tag"
+#, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr "<application>Git</application> Tag anlegen"
+msgstr "<application>Git</application>-Fehler beim Starten: %1"
 
 #: fileviewgitplugin.cpp:591
-#, fuzzy, kde-kuit-format
-#| msgid "<application>Git</application> Log failed."
+#, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr "Schreiben des <application>Git</application>-Logs fehlgeschlagen."
+msgstr "„<application>git</application> clone“ fehlgeschlagen: %1"
 
 #: fileviewgitplugin.cpp:593
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "<application>Git</application> Checkout"
+#, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr "<application>Git</application> Checkout"
+msgstr "„<application>git</application> clone“ abgeschlossen."
 
 #: fileviewgitplugin.cpp:601
 #, kde-kuit-format
@@ -465,8 +464,8 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
-"<application>Git</application> Checkout ist fehlgeschlagen. Möglicherweise "
-"ist der Arbeitsordner nicht sauber."
+"„<application>git</application> checkout“ ist fehlgeschlagen. Möglicherweise "
+"enthält der Arbeitsordner lokale Änderungen."
 
 #: fileviewgitplugin.cpp:724
 #, kde-kuit-format
@@ -490,12 +489,12 @@ msgstr "Anlegen des <application>Git</application>-Tags fehlgeschlagen."
 #: fileviewgitplugin.cpp:743
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr "Das Pushen von Zweig %1 nach %2:%3 ist fehlgeschlagen."
+msgstr "Das Übertragen des Zweigs %1 nach %2:%3 ist fehlgeschlagen."
 
 #: fileviewgitplugin.cpp:744
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr "Zweig %1 nach %2:%3 gepusht."
+msgstr "Zweig %1 wurde nach %2:%3 übertragen."
 
 #: fileviewgitplugin.cpp:745
 #, kde-kuit-format
@@ -526,8 +525,8 @@ msgstr "Der Zweig ist bereits aktuell."
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
-"Beim Zusammenführen sind Konflikte aufgetreten. Bitte beheben Sie diese, "
-"bevor Sie die Datei einspielen."
+"Beim Zusammenführen sind Konflikte aufgetreten. Bitte beheben Sie diese und "
+"spielen Sie das Ergebnis ein."
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
@@ -545,7 +544,7 @@ msgstr "Dialogbreite"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr "<application>Git</application> Pull"
+msgstr "Abgleichen – <application>git</application> pull"
 
 #: pulldialog.cpp:35
 #, kde-format
@@ -575,13 +574,13 @@ msgstr "Entfernter Zweig:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr "<application>Git</application> Push"
+msgstr "Übertragen – <application>git</application> push"
 
 #: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr "Push"
+msgstr "Übertragen (Push)"
 
 #: pushdialog.cpp:47
 #, kde-format
@@ -611,26 +610,24 @@ msgstr "Entfernter Zweig:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "Erzwingen mit Bedacht"
 
 #: pushdialog.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Proceed even if the remote branch is not an ancestor of the local branch."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
-"Auch fortsetzen, wenn der lokale Zweig nicht aus dem entfernten Zweig "
-"angelegt wurde."
+"Auch dann ausführen, wenn der lokale Zweig nicht vom entfernten Zweig "
+"abgeleitet wurde. Voraussetzung dafür ist, dass seit dem letzten Abrufen "
+"keine Änderungen am entfernten Zweig vorgenommen wurden."
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "Keine Gegenstellen („remote“) festgelegt."
 
 #: pushdialog.cpp:166
 #, kde-format
