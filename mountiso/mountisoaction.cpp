@@ -63,11 +63,14 @@ MountIsoAction::MountIsoAction(QObject *parent, const QVariantList &)
  */
 const Solid::Device getDeviceFromBackingFile(const QString &backingFile)
 {
-    const QList<Solid::Device> blockDevices = Solid::Device::listFromQuery(QStringLiteral("[ IS StorageVolume AND IS GenericInterface ]"));
+    // This used to be a predicate of "[ IS StorageVolume AND IS GenericInterface ]"
+    // but this causes Solid to also query all devices with GenericInterface which
+    // is slow, only to then discard the ones that aren't a StorageVolume.
+    const QList<Solid::Device> blockDevices = Solid::Device::listFromType(Solid::DeviceInterface::StorageVolume);
 
     for (const Solid::Device &device : blockDevices) {
         auto genericDevice = device.as<Solid::GenericInterface>();
-        if (backingFile == genericDevice->property(QStringLiteral("BackingFile")).toString()) {
+        if (genericDevice && backingFile == genericDevice->property(QStringLiteral("BackingFile")).toString()) {
             return device;
         }
     }
