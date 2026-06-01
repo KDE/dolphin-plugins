@@ -68,6 +68,7 @@ if(UNIX)
 endif()
 if(UNIX AND NOT APPLE)
     ecm_optional_add_subdirectory(mountiso)
+    ecm_optional_add_subdirectory(mountedisooverlay)
 endif()
 
 install(FILES org.kde.dolphin-plugins.metainfo.xml
