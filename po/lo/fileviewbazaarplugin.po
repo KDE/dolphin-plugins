@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the dolphin-plugins package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dolphin-plugins\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2025-12-13 11:39+0700\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: lo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: fileviewbazaarplugin.cpp:48
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Update"
+msgstr "ປັບປຸງ Bazaar"
+
+#: fileviewbazaarplugin.cpp:53
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Pull"
+msgstr "ດຶງ Bazaar"
+
+#: fileviewbazaarplugin.cpp:58
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Push"
+msgstr "ຍູ້ Bazaar"
+
+#: fileviewbazaarplugin.cpp:63
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Show Local Bazaar Changes"
+msgstr "ສະແດງການປ່ຽນແປງ Bazaar ໃນເຄື່ອງ"
+
+#: fileviewbazaarplugin.cpp:68
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Commit..."
+msgstr "ຢືນຢັນ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:73
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Add..."
+msgstr "ເພີ່ມ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:78
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Delete"
+msgstr "ລຶບ Bazaar"
+
+#: fileviewbazaarplugin.cpp:83
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Bazaar Log"
+msgstr "ປະຫວັດ Bazaar"
+
+#: fileviewbazaarplugin.cpp:359
+#, kde-format
+msgctxt "@info:status"
+msgid "Updating Bazaar repository..."
+msgstr "ກຳລັງປັບປຸງຄັງ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:360
+#, kde-format
+msgctxt "@info:status"
+msgid "Update of Bazaar repository failed."
+msgstr "ການປັບປຸງຄັງ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:361
+#, kde-format
+msgctxt "@info:status"
+msgid "Updated Bazaar repository."
+msgstr "ປັບປຸງຄັງ Bazaar ແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:370
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulling Bazaar repository..."
+msgstr "ກຳລັງດຶງຄັງ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:371
+#, kde-format
+msgctxt "@info:status"
+msgid "Pull of Bazaar repository failed."
+msgstr "ການດຶງຄັງ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:372
+#, kde-format
+msgctxt "@info:status"
+msgid "Pulled Bazaar repository."
+msgstr "ດຶງຄັງ Bazaar ແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:381
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushing Bazaar repository..."
+msgstr "ກຳລັງຍູ້ຄັງ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:382
+#, kde-format
+msgctxt "@info:status"
+msgid "Push of Bazaar repository failed."
+msgstr "ການຍູ້ຄັງ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Pushed Bazaar repository."
+msgstr "ຍູ້ຄັງ Bazaar ແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:390
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewing Changes..."
+msgstr "ກຳລັງກວດສອບການປ່ຽນແປງ..."
+
+#: fileviewbazaarplugin.cpp:391
+#, kde-format
+msgctxt "@info:status"
+msgid "Review Changes failed."
+msgstr "ການກວດສອບການປ່ຽນແປງລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:392
+#, kde-format
+msgctxt "@info:status"
+msgid "Reviewed Changes."
+msgstr "ກວດສອບການປ່ຽນແປງແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:399
+#, kde-format
+msgctxt "@info:status"
+msgid "Committing Bazaar changes..."
+msgstr "ກຳລັງຢືນຢັນການປ່ຽນແປງ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:400
+#, kde-format
+msgctxt "@info:status"
+msgid "Commit of Bazaar changes failed."
+msgstr "ການຢືນຢັນການປ່ຽນແປງ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:401
+#, kde-format
+msgctxt "@info:status"
+msgid "Committed Bazaar changes."
+msgstr "ຢືນຢັນການປ່ຽນແປງ Bazaar ແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:408
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding files to Bazaar repository..."
+msgstr "ກຳລັງເພີ່ມໄຟລ໌ເຂົ້າຄັງ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Adding of files to Bazaar repository failed."
+msgstr "ການເພີ່ມໄຟລ໌ເຂົ້າຄັງ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:410
+#, kde-format
+msgctxt "@info:status"
+msgid "Added files to Bazaar repository."
+msgstr "ເພີ່ມໄຟລ໌ເຂົ້າຄັງ Bazaar ແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:417
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing files from Bazaar repository..."
+msgstr "ກຳລັງລຶບໄຟລ໌ອອກຈາກຄັງ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:418
+#, kde-format
+msgctxt "@info:status"
+msgid "Removing of files from Bazaar repository failed."
+msgstr "ການລຶບໄຟລ໌ອອກຈາກຄັງ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:419
+#, kde-format
+msgctxt "@info:status"
+msgid "Removed files from Bazaar repository."
+msgstr "ລຶບໄຟລ໌ອອກຈາກຄັງ Bazaar ແລ້ວ."
+
+#: fileviewbazaarplugin.cpp:426
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log..."
+msgstr "ກຳລັງດຳເນີນການປະຫວັດ Bazaar..."
+
+#: fileviewbazaarplugin.cpp:427
+#, kde-format
+msgctxt "@info:status"
+msgid "Running Bazaar Log failed."
+msgstr "ການດຳເນີນການປະຫວັດ Bazaar ລົ້ມເຫຼວ."
+
+#: fileviewbazaarplugin.cpp:428
+#, kde-format
+msgctxt "@info:status"
+msgid "Bazaar Log closed."
+msgstr "ປິດປະຫວັດ Bazaar ແລ້ວ."
