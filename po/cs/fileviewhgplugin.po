@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2011, 2012, 2013, 2015, 2017, 2023.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2023-06-23 11:24+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-06 20:19+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: backoutdialog.cpp:29
 #, kde-kuit-format
@@ -103,7 +104,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Bundle"
-msgstr ""
+msgstr "Skupina"
 
 #: bundledialog.cpp:52
 #, kde-kuit-format
@@ -951,7 +952,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:combobox"
 msgid "edit"
-msgstr ""
+msgstr "upravit"
 
 #: pulldialog.cpp:27
 #, kde-kuit-format
@@ -1047,19 +1048,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
-msgstr ""
+msgstr "Spustit server"
 
 #: servedialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
-msgstr ""
+msgstr "Zastavit server"
 
 #: servedialog.cpp:58
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Open in browser"
-msgstr ""
+msgstr "Otevřít v prohlížeči"
 
 #: servedialog.cpp:74
 #, kde-kuit-format
@@ -1121,7 +1122,7 @@ msgstr ""
 #: syncdialogbase.cpp:197 syncdialogbase.cpp:263 syncdialogbase.cpp:270
 #, kde-format
 msgid "Error!"
-msgstr "Chyba."
+msgstr "Chyba!"
 
 #: syncdialogbase.cpp:302
 #, kde-kuit-format
