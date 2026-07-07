@@ -2,27 +2,28 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2015, 2020.
 # SPDX-FileCopyrightText: 2021, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2024-05-29 11:44+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-06 20:19+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
-msgstr "SVN Update"
+msgstr "SVN aktualizace"
 
 #: fileviewsvnplugin.cpp:75
 #, kde-format
@@ -40,19 +41,19 @@ msgstr "SVN Commit..."
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
-msgstr "SVN Add"
+msgstr "SVN přidat"
 
 #: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
-msgstr "SVN Delete"
+msgstr "SVN smazat"
 
 #: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
-msgstr "SVN Revert"
+msgstr "SVN vrátit zpět"
 
 #: fileviewsvnplugin.cpp:100
 #, kde-format
@@ -64,26 +65,26 @@ msgstr "Zobrazit aktualizace SVN"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr "Záznam SVN..."
+msgstr "Protokol SVN..."
 
 #: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr "SVN Checkout..."
+msgstr "SVN načíst..."
 
 #: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr "SVN Cleanup..."
+msgstr "SVN vyčistit..."
 
 #: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr ""
-"Aktualizace stavu SVN selhala. Zakazuji možnost \"Zobrazit aktualizace SVN\"."
+"Aktualizace stavu SVN selhala. Zakázána možnost \"Zobrazit aktualizace SVN\"."
 
 #: fileviewsvnplugin.cpp:360
 #, kde-format
@@ -95,7 +96,7 @@ msgstr "SVN Update"
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr "Aktualizuji repozitář SVN..."
+msgstr "Aktualizace repozitáře SVN..."
 
 #: fileviewsvnplugin.cpp:366
 #, kde-format
@@ -113,20 +114,20 @@ msgstr "Repozitář SVN byl aktualizován."
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr ""
+msgstr "Nelze zobrazit místní změny v SVN."
 
 #: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr ""
+msgstr "Nelze zobrazit místní změny v SVN: příkaz svn diff selhal."
 
 #: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
 #: fileviewsvnplugin.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
-msgstr ""
+msgstr "Nelze zobrazit místní změny v SVN: nepodařilo se spustit kompare."
 
 #: fileviewsvnplugin.cpp:429
 #, kde-format
@@ -192,7 +193,7 @@ msgstr "Soubory byly navráceny z repozitáře SVN."
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr ""
+msgstr "SVN načíst: probíhá načítání..."
 
 #: fileviewsvnplugin.cpp:496
 #, kde-format
@@ -204,19 +205,19 @@ msgstr "Chyba při spuštění SVN: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr ""
+msgstr "SVN načíst: načítání selhalo: %1"
 
 #: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr ""
+msgstr "SVN načíst: úspěšně načteno."
 
 #: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr "SVN Checkout"
+msgstr "SVN načíst"
 
 #: fileviewsvnplugin.cpp:571
 #, kde-format
@@ -242,6 +243,8 @@ msgstr "Soubor byl vrácen."
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr ""
+"Nelze zobrazit místní změny v SVN pro daný soubor: nepodařilo se načíst "
+"soubor."
 
 #: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
@@ -277,13 +280,13 @@ msgstr "Zobrazit aktualizace"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr ""
+msgstr "Vyberte adresář, do kterého načítat"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr "SVN Checkout"
+msgstr "SVN načíst"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
@@ -295,13 +298,13 @@ msgstr "URL repozitáře:"
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr ""
+msgstr "Adresář pro načítání:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
 #, kde-format
 msgid "Omit externals"
-msgstr ""
+msgstr "Vynechat vnější"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -322,25 +325,25 @@ msgstr "Zrušit"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr ""
+msgstr "Vybrat adresář, který chcete vyčistit"
 
 #: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
-msgstr ""
+msgstr "Vyčištění SVN bylo úspěšně dokončeno."
 
 #: svncleanupdialog.cpp:64
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
-msgstr ""
+msgstr "Vyčištění SVN se nezdařilo u %1"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr "SVN Cleanup..."
+msgstr "SVN vyčistit..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
@@ -364,7 +367,7 @@ msgstr "Smazat ignorované soubory a adresáře"
 #: svncleanupdialog.ui:57
 #, kde-format
 msgid "Include externals"
-msgstr ""
+msgstr "Zahrnout vnější"
 
 #: svncommitdialog.cpp:86
 #, kde-format
@@ -474,37 +477,37 @@ msgstr "Zobrazit změny"
 #: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
-msgstr ""
+msgstr "Změny oproti pracovní kopii"
 
 #: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr ""
+msgstr "Protokol SVN: aktualizace na revizi se nezdařila."
 
 #: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
-msgstr ""
+msgstr "Protokol SVN: aktualizace na revizi %1 proběhla úspěšně."
 
 #: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
-msgstr ""
+msgstr "Protokol SVN: vrácení k revizi se nezdařilo."
 
 #: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."
-msgstr ""
+msgstr "Protokol SVN: vrácení k revizi %1 proběhlo úspěšně."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
 #, kde-format
 msgid "SVN Log"
-msgstr "Záznam SVN"
+msgstr "Protokol SVN"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
