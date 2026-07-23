@@ -128,8 +128,8 @@ QString FileViewGitPlugin::localRepositoryRoot(const QString &directory) const
     QProcess process;
     process.setWorkingDirectory(directory);
     process.start(QStringLiteral("git"), {QStringLiteral("rev-parse"), QStringLiteral("--show-toplevel")});
-    if (process.waitForReadyRead(100) && process.exitCode() == 0) {
-        return QString::fromUtf8(process.readAll().chopped(1));
+    if (process.waitForFinished() && process.exitStatus() == QProcess::NormalExit && process.exitCode() == 0) {
+        return QString::fromUtf8(process.readAllStandardOutput().chopped(1));
     }
     return QString();
 }
@@ -178,6 +178,8 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
             dirBelowBaseDir = QString::fromLocal8Bit(buffer).trimmed(); // ends in "/" or is empty
         }
     }
+    // Reap the process before reusing it for the next command.
+    process.waitForFinished();
 
     m_versionInfoHash.clear();
 
@@ -265,6 +267,8 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
             }
         }
     }
+    // Reap the process so it is not destroyed while still running.
+    process.waitForFinished();
 
     const auto untracked = GitWrapper::instance()->listUntracked();
     for (auto &i : std::as_const(untracked)) {
@@ -652,6 +656,7 @@ void FileViewGitPlugin::checkout()
                 }
             }
         }
+        process.waitForFinished();
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
             if (!completedMessage.isEmpty()) {
                 Q_EMIT operationCompletedMessage(completedMessage);
@@ -692,6 +697,7 @@ void FileViewGitPlugin::commit()
                 }
             }
         }
+        process.waitForFinished();
         if (!completedMessage.isEmpty()) {
             Q_EMIT operationCompletedMessage(completedMessage);
             Q_EMIT itemVersionsChanged();
@@ -724,6 +730,7 @@ void FileViewGitPlugin::createTag()
                 }
             }
         }
+        process.waitForFinished();
         if (process.exitCode() == 0 && process.exitStatus() == QProcess::NormalExit) {
             completedMessage = xi18nd("@info:status", "Successfully created tag '%1'", dialog.tagName());
             Q_EMIT operationCompletedMessage(completedMessage);

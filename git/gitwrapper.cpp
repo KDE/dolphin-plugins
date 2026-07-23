@@ -103,6 +103,7 @@ void GitWrapper::remoteBranches(const QString &remote)
             }
         }
     }
+    process.waitForFinished();
 
     Q_EMIT foundRemoteBranches(remotes);
 }
