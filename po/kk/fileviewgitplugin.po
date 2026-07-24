@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:46+0000\n"
+"POT-Creation-Date: 2026-07-24 00:47+0000\n"
 "PO-Revision-Date: 2012-08-02 08:04+0600\n"
 "Last-Translator: Sairan Kikkarin\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -334,35 +334,35 @@ msgstr "<application>Git</application> тапсыру..."
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> тапсыру..."
 
-#: fileviewgitplugin.cpp:438
+#: fileviewgitplugin.cpp:442
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Adding files to <application>Git</application> repository..."
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "<application>Git</application> қоймасына файлдарды қосу..."
 
-#: fileviewgitplugin.cpp:439
+#: fileviewgitplugin.cpp:443
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Adding files to <application>Git</application> repository failed."
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "<application>Git</application> қоймасына файлдарды қосу жаңылысы."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:444
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Added files to <application>Git</application> repository."
 msgid "Added files to <application>Git</application> repository."
 msgstr "<application>Git</application> қоймасына файлдар қосылды."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:455
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "<application>Git</application> қоймасынан файлдарды өшіру..."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:456
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -370,21 +370,21 @@ msgstr "<application>Git</application> қоймасынан файлдарды �
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> қоймасынан файлдарды өшіру жаңылысы."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:457
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Removed files from <application>Git</application> repository."
 msgstr "<application>Git</application> қоймасынан файлдар өшірілді."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:464
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "<application>Git</application> қоймасынан файлдарды өшіру..."
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:465
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -392,28 +392,28 @@ msgstr "<application>Git</application> қоймасынан файлдарды �
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> қоймасынан файлдарды өшіру жаңылысы."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:466
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "<application>Git</application> қоймасынан файлдар өшірілді."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:505
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> нұсқасын құру жаңылысы."
 
-#: fileviewgitplugin.cpp:522
+#: fileviewgitplugin.cpp:526
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Add"
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> қосуы"
 
-#: fileviewgitplugin.cpp:537
+#: fileviewgitplugin.cpp:541
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Commit"
@@ -421,13 +421,13 @@ msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Тапсыру"
 
-#: fileviewgitplugin.cpp:538
+#: fileviewgitplugin.cpp:542
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr ""
 
-#: fileviewgitplugin.cpp:539
+#: fileviewgitplugin.cpp:543
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Tag Message:"
@@ -435,13 +435,13 @@ msgctxt "Git commit message"
 msgid "Message"
 msgstr "Нұсқа хабарламасы:"
 
-#: fileviewgitplugin.cpp:540
+#: fileviewgitplugin.cpp:544
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr ""
 
-#: fileviewgitplugin.cpp:561
+#: fileviewgitplugin.cpp:565
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removing files from <application>Git</application> repository..."
@@ -449,7 +449,7 @@ msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "<application>Git</application> қоймасынан файлдарды өшіру..."
 
-#: fileviewgitplugin.cpp:562
+#: fileviewgitplugin.cpp:566
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -458,49 +458,49 @@ msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> қоймасынан файлдарды өшіру жаңылысы."
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:567
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Removed files from <application>Git</application> repository."
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "<application>Git</application> қоймасынан файлдар өшірілді."
 
-#: fileviewgitplugin.cpp:591
+#: fileviewgitplugin.cpp:595
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Create Tag"
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> нұсқаны құруы"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:599
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> нұсқасын құру жаңылысы."
 
-#: fileviewgitplugin.cpp:597
+#: fileviewgitplugin.cpp:601
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "<application>Git</application> Checkout"
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> жүктеп алуы"
 
-#: fileviewgitplugin.cpp:605
+#: fileviewgitplugin.cpp:609
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "<application>Git</application> Push..."
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> тығындау..."
 
-#: fileviewgitplugin.cpp:639
+#: fileviewgitplugin.cpp:643
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to branch '%1'"
 msgid "Switched to branch '%1'"
 msgstr "'%1' тармағына ауысу"
 
-#: fileviewgitplugin.cpp:646
+#: fileviewgitplugin.cpp:650
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "@info:status Git HEAD pointer, parameter includes short SHA-1 & commit "
@@ -509,14 +509,14 @@ msgstr "'%1' тармағына ауысу"
 msgid "HEAD is now at %1"
 msgstr "HEAD енді %1 дегенде"
 
-#: fileviewgitplugin.cpp:651
+#: fileviewgitplugin.cpp:655
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Switched to a new branch '%1'"
 msgid "Switched to a new branch '%1'"
 msgstr "Жаңа '%1' тармағына ауысты"
 
-#: fileviewgitplugin.cpp:662
+#: fileviewgitplugin.cpp:667
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -529,14 +529,14 @@ msgstr ""
 "<application>Git</application> жүкте алуы жаңылды. Бәлкім, жұмыс каталогыңыз "
 "қоймасымен қадамдас емес шығар ."
 
-#: fileviewgitplugin.cpp:728
+#: fileviewgitplugin.cpp:735
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Successfully created tag '%1'"
 msgid "Successfully created tag '%1'"
 msgstr "'%1' нұсқасы сәтті құрылды"
 
-#: fileviewgitplugin.cpp:733
+#: fileviewgitplugin.cpp:740
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid ""
@@ -549,63 +549,63 @@ msgstr ""
 "<application>Git</application> нұсқасын құру жаңылысы. '%1' деп аталған "
 "нұсқасы бар екен."
 
-#: fileviewgitplugin.cpp:736
+#: fileviewgitplugin.cpp:743
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "<application>Git</application> tag creation failed."
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> нұсқасын құру жаңылысы."
 
-#: fileviewgitplugin.cpp:745
+#: fileviewgitplugin.cpp:752
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "%1 тармағын %2:%3 дегенге тығындау жаңылысы."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:753
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushed branch %1 to %2:%3."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%1 тармағы %2:%3 дегенге тығындалды."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:754
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%1 тармағын %2:%3 дегенге тығындау..."
 
-#: fileviewgitplugin.cpp:768
+#: fileviewgitplugin.cpp:775
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%1 тармағын %2 дегенен суырып алу жаңылысы."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:776
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%1 тармағын %2 дегенен сәтті суырып алынды."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:777
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "%1 тармағын %2 дегенен суырып алу..."
 
-#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
+#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Branch is already up-to-date."
 msgid "Branch is already up-to-date."
 msgstr "Тармақ қадамдас екен."
 
-#: fileviewgitplugin.cpp:838
+#: fileviewgitplugin.cpp:845
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Merge conflicts occurred. Fix them and commit the result."

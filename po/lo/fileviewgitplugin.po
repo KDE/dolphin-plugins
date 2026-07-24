@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:46+0000\n"
+"POT-Creation-Date: 2026-07-24 00:47+0000\n"
 "PO-Revision-Date: 2025-12-13 11:42+0700\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -301,138 +301,138 @@ msgstr "ສຳເນົາ (Clone) <application>Git</application>..."
 msgid "<application>Git</application> Log..."
 msgstr "ປະຫວັດ (Log) <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:438
+#: fileviewgitplugin.cpp:442
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "ກຳລັງເພີ່ມໄຟລ໌ເຂົ້າໃນຄັງຂໍ້ມູນ <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:439
+#: fileviewgitplugin.cpp:443
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "ການເພີ່ມໄຟລ໌ເຂົ້າໃນຄັງຂໍ້ມູນ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:440
+#: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "ເພີ່ມໄຟລ໌ເຂົ້າໃນຄັງຂໍ້ມູນ <application>Git</application> ແລ້ວ."
 
-#: fileviewgitplugin.cpp:451
+#: fileviewgitplugin.cpp:455
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "ກຳລັງລົບໄຟລ໌ອອກຈາກຄັງຂໍ້ມູນ <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:452
+#: fileviewgitplugin.cpp:456
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "ການລົບໄຟລ໌ອອກຈາກຄັງຂໍ້ມູນ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:453
+#: fileviewgitplugin.cpp:457
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "ລົບໄຟລ໌ອອກຈາກຄັງຂໍ້ມູນ <application>Git</application> ແລ້ວ."
 
-#: fileviewgitplugin.cpp:460
+#: fileviewgitplugin.cpp:464
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "ກຳລັງຍ້ອນກັບໄຟລ໌ຈາກຄັງຂໍ້ມູນ <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:461
+#: fileviewgitplugin.cpp:465
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "ການຍ້ອນກັບໄຟລ໌ຈາກຄັງຂໍ້ມູນ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:462
+#: fileviewgitplugin.cpp:466
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "ຍ້ອນກັບໄຟລ໌ຈາກຄັງຂໍ້ມູນ <application>Git</application> ແລ້ວ."
 
-#: fileviewgitplugin.cpp:501
+#: fileviewgitplugin.cpp:505
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "ການເບິ່ງປະຫວັດ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:522
+#: fileviewgitplugin.cpp:526
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "ປະຫວັດ (Log) <application>Git</application>"
 
-#: fileviewgitplugin.cpp:537
+#: fileviewgitplugin.cpp:541
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "ສົ່ງຂໍ້ມູນ (Commit)"
 
-#: fileviewgitplugin.cpp:538
+#: fileviewgitplugin.cpp:542
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "ວັນທີ"
 
-#: fileviewgitplugin.cpp:539
+#: fileviewgitplugin.cpp:543
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "ຂໍ້ຄວາມ"
 
-#: fileviewgitplugin.cpp:540
+#: fileviewgitplugin.cpp:544
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "ຜູ້ຂຽນ"
 
-#: fileviewgitplugin.cpp:561
+#: fileviewgitplugin.cpp:565
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "ກຳລັງຄືນຄ່າໄຟລ໌ທີ່ກຽມໄວ້ຈາກຄັງຂໍ້ມູນ <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:562
+#: fileviewgitplugin.cpp:566
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr "ການຄືນຄ່າໄຟລ໌ທີ່ກຽມໄວ້ຈາກຄັງຂໍ້ມູນ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:563
+#: fileviewgitplugin.cpp:567
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "ຄືນຄ່າໄຟລ໌ທີ່ກຽມໄວ້ຈາກຄັງຂໍ້ມູນ <application>Git</application>."
 
-#: fileviewgitplugin.cpp:591
+#: fileviewgitplugin.cpp:595
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "ເກີດຂໍ້ຜິດພາດໃນການເລີ່ມ <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:599
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "ການສຳເນົາ (Clone) <application>Git</application> ລົ້ມເຫຼວ: %1"
 
-#: fileviewgitplugin.cpp:597
+#: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "ການສຳເນົາ (Clone) <application>Git</application> ສຳເລັດ."
 
-#: fileviewgitplugin.cpp:605
+#: fileviewgitplugin.cpp:609
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "ກຳລັງສຳເນົາ (Cloning) ຄັງຂໍ້ມູນ <application>Git</application>..."
 
-#: fileviewgitplugin.cpp:639
+#: fileviewgitplugin.cpp:643
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "ປ່ຽນໄປໃຊ້ຂະແໜງ '%1' ແລ້ວ"
 
-#: fileviewgitplugin.cpp:646
+#: fileviewgitplugin.cpp:650
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "ຕອນນີ້ HEAD ຢູ່ທີ່ %1"
 
-#: fileviewgitplugin.cpp:651
+#: fileviewgitplugin.cpp:655
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "ປ່ຽນໄປໃຊ້ຂະແໜງໃໝ່ '%1' ແລ້ວ"
 
-#: fileviewgitplugin.cpp:662
+#: fileviewgitplugin.cpp:667
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -441,59 +441,59 @@ msgstr ""
 "ການດຶງອອກມາໃຊ້ <application>Git</application> ລົ້ມເຫຼວ. "
 "ບາງທີໂຟນເດີເຮັດວຽກຂອງທ່ານອາດຈະມີການປ່ຽນແປງຄ້າງຢູ່."
 
-#: fileviewgitplugin.cpp:728
+#: fileviewgitplugin.cpp:735
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "ສ້າງແທັກ '%1' ສຳເລັດຜົນ."
 
-#: fileviewgitplugin.cpp:733
+#: fileviewgitplugin.cpp:740
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr "ການສ້າງແທັກ <application>Git</application> ລົ້ມເຫຼວ. ມີແທັກທີ່ຊື່ '%1' ຢູ່ແລ້ວ."
 
-#: fileviewgitplugin.cpp:736
+#: fileviewgitplugin.cpp:743
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "ການສ້າງແທັກ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:745
+#: fileviewgitplugin.cpp:752
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "ການສົ່ງຂະແໜງ %1 ໄປຍັງ %2:%3 ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:746
+#: fileviewgitplugin.cpp:753
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "ສົ່ງຂະແໜງ %1 ໄປຍັງ %2:%3 ແລ້ວ."
 
-#: fileviewgitplugin.cpp:747
+#: fileviewgitplugin.cpp:754
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "ກຳລັງສົ່ງຂະແໜງ %1 ໄປຍັງ %2:%3..."
 
-#: fileviewgitplugin.cpp:768
+#: fileviewgitplugin.cpp:775
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "ການດຶງຂະແໜງ %1 ຈາກ %2 ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:769
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "ດຶງຂະແໜງ %1 ຈາກ %2 ສຳເລັດຜົນ."
 
-#: fileviewgitplugin.cpp:770
+#: fileviewgitplugin.cpp:777
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "ກຳລັງດຶງຂະແໜງ %1 ຈາກ %2..."
 
-#: fileviewgitplugin.cpp:822 fileviewgitplugin.cpp:834
+#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "ຂະແໜງເປັນປັດຈຸບັນແລ້ວ."
 
-#: fileviewgitplugin.cpp:838
+#: fileviewgitplugin.cpp:845
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "ເກີດຂໍ້ຂັດແຍ່ງໃນການໂຮມ. ໃຫ້ແກ້ໄຂພວກມັນແລ້ວສົ່ງຂໍ້ມູນຜົນລັບ."
