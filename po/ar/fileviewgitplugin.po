@@ -100,7 +100,7 @@ msgstr "اسحب"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr "يجب عليك إدخال اسم صحيح للفرع الجديد أولاً."
+msgstr "يجب عليك إدخال اسم صحيح للفرع الجديد أولًا."
 
 #: checkoutdialog.cpp:234
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "قد لا تحتوي أسماء الفروع على أي مسافات ب
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr "يجب عليك اختيار فرع صحيح أولاً."
+msgstr "يجب عليك اختيار فرع صحيح أولًا."
 
 #: checkoutdialog.cpp:254
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "أضف سطر Signed-off-by في نهاية رسالة الإيداع."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr "يجب عليك إدخال رسالة إيداع أولاً."
+msgstr "يجب عليك إدخال رسالة إيداع أولًا."
 
 #: fileviewgitplugin.cpp:53
 #, kde-kuit-format
@@ -649,7 +649,7 @@ msgstr "الفرع:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
-msgstr "يجب عليك إدخال اسم وسم أولاً."
+msgstr "يجب عليك إدخال اسم وسم أولًا."
 
 #: tagdialog.cpp:127
 #, kde-format

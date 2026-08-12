@@ -276,7 +276,7 @@ msgstr "أرِ التحديثات"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr "اختر دليلاً للسحب"
+msgstr "اختر دليلًا للسحب"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
@@ -321,7 +321,7 @@ msgstr "ألغِ"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr "اختر دليلاً لتنظيفه"
+msgstr "اختر دليلًا لتنظيفه"
 
 #: svncleanupdialog.cpp:62
 #, kde-format
@@ -399,7 +399,7 @@ msgstr "أرِ التغييرات"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Add file"
-msgstr "أضف ملفاً"
+msgstr "أضف ملفًا"
 
 #: svncommitdialog.cpp:154
 #, kde-format
@@ -453,7 +453,7 @@ msgstr "مفقود"
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
-msgstr "يتطلب تحديثاً"
+msgstr "يتطلب تحديثًا"
 
 #: svnlogdialog.cpp:88
 #, kde-format
