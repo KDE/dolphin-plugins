@@ -190,7 +190,7 @@ msgstr "استخدم بروتوكول السحب لنسخ البيانات ال�
 #: clonedialog.cpp:61
 #, kde-format
 msgid "Use uncompressed transfer."
-msgstr "استخدم نقلاً غير مضغوط."
+msgstr "استخدم نقلًا غير مضغوط."
 
 #: clonedialog.cpp:62
 #, kde-format
