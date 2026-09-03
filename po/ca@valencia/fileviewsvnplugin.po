@@ -5,7 +5,7 @@
 #
 # SPDX-FileCopyrightText: 2010 Manuel Tortosa <manutortosa@gmail.com>
 # SPDX-FileCopyrightText: 2011 Manue Tortosa <manutortosa@chakra-project.org>
-# SPDX-FileCopyrightText: 2014, 2015, 2020, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2014-2015, 2020, 2022-2024 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2020, 2022 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
