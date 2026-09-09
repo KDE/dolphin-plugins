@@ -387,7 +387,7 @@ msgstr "Description :"
 #, kde-format
 msgctxt "@action:button"
 msgid "Refresh"
-msgstr "Rafraîchir"
+msgstr "Rafraichir"
 
 #: svncommitdialog.cpp:106
 #, kde-format
@@ -551,7 +551,7 @@ msgstr "Les 100 suivants"
 #: svnlogdialog.ui:114
 #, kde-format
 msgid "Refresh"
-msgstr "Rafraîchir"
+msgstr "Rafraichir"
 
 #: svnprogressdialog.cpp:53
 #, kde-format
