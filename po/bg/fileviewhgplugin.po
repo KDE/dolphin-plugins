@@ -48,7 +48,7 @@ msgstr "Избор на changeset"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Revision to Backout: "
-msgstr "Ревизия за връщане:"
+msgstr "Ревизия за връщане: "
 
 #: backoutdialog.cpp:62
 #, kde-kuit-format
