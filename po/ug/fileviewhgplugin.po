@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fileviewhgplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-05-29 17:28-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -281,7 +281,7 @@ msgstr "پەرق/مەزمۇن"
 #: commitdialog.cpp:204
 #, kde-format
 msgid "Could not create branch! Aborting commit!"
-msgstr "شاخ قۇرالمايدۇ! تاپشۇرۇشنى بىكار قىلىۋاتىدۇ!"
+msgstr ""
 
 #: commitdialog.cpp:212
 #, kde-format
@@ -579,7 +579,7 @@ msgstr "<application>Hg</application> پەرق"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "<application>Mercurial</application>"
-msgstr "<application>Mercurial</application>"
+msgstr ""
 
 #: fileviewhgplugin.cpp:424
 #, kde-kuit-format
@@ -1095,7 +1095,7 @@ msgstr "## مۇلازىمېتىرنى قوزغىتىۋاتىدۇ ##"
 #: servewrapper.h:144
 #, kde-format
 msgid "## Server Stopped! ##\n"
-msgstr "## مۇلازىمېتىر توختىدى! ##\n"
+msgstr ""
 
 #: statuslist.cpp:29
 #, kde-format
@@ -1223,5 +1223,3 @@ msgid ""
 "Some error occurred! \n"
 "Maybe there are uncommitted changes."
 msgstr ""
-"بەزى خاتالىق كۆرۈلدى!\n"
-"بەلكىم تاپشۇرۇلمىغان ئۆزگىرىش بولۇشى مۇمكىن."
