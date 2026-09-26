@@ -8,6 +8,7 @@
 
 #include <dolphingit_log.h>
 
+#include <QCoreApplication>
 #include <QDir>
 
 GitWrapper *GitWrapper::m_instance = nullptr;
@@ -22,6 +23,10 @@ GitWrapper *GitWrapper::instance()
 {
     if (m_instance == nullptr) {
         m_instance = new GitWrapper();
+        // Every view that watches a folder has a plugin of its own, and they all share this one
+        // wrapper, so no single one of them can say when it is no longer wanted. It goes when the
+        // application does.
+        qAddPostRoutine(&GitWrapper::freeInstance);
     }
     return m_instance;
 }
