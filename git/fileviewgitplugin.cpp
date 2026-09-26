@@ -157,12 +157,11 @@ int FileViewGitPlugin::readUntilZeroChar(QIODevice *device, char *buffer, const 
     return maxChars;
 }
 
-bool FileViewGitPlugin::beginRetrieval(const QString &directory)
+QHash<QString, KVersionControlPlugin::ItemVersion> FileViewGitPlugin::readVersionsFor(const QString &directory)
 {
     Q_ASSERT(directory.endsWith(QLatin1Char('/')));
 
-    GitWrapper::instance()->setWorkingDirectory(directory);
-    m_currentDir = directory;
+    QHash<QString, ItemVersion> versions;
 
     // ----- find path below git base dir -----
     QProcess process;
@@ -177,8 +176,6 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
     }
     // Reap the process before reusing it for the next command.
     process.waitForFinished();
-
-    m_versionInfoHash.clear();
 
     // ----- find files with special status -----
     process.start(QStringLiteral("git"),
@@ -246,8 +243,8 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
                     state = LocallyModifiedVersion;
                 }
                 const QString absoluteDirName = directory + relativeFileName.left(relativeFileName.indexOf(QLatin1Char('/')));
-                if (m_versionInfoHash.contains(absoluteDirName)) {
-                    ItemVersion oldState = m_versionInfoHash.value(absoluteDirName);
+                if (versions.contains(absoluteDirName)) {
+                    ItemVersion oldState = versions.value(absoluteDirName);
                     // only keep the most important state for a directory
                     if (oldState == ConflictingVersion)
                         continue;
@@ -255,12 +252,12 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
                         continue;
                     if (oldState == LocallyModifiedVersion && state != LocallyModifiedUnstagedVersion && state != ConflictingVersion)
                         continue;
-                    m_versionInfoHash.insert(absoluteDirName, state);
+                    versions.insert(absoluteDirName, state);
                 } else {
-                    m_versionInfoHash.insert(absoluteDirName, state);
+                    versions.insert(absoluteDirName, state);
                 }
             } else { // normal file, no directory
-                m_versionInfoHash.insert(directory + relativeFileName, state);
+                versions.insert(directory + relativeFileName, state);
             }
         }
     }
@@ -269,10 +266,23 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
 
     const auto untracked = GitWrapper::instance()->listUntracked();
     for (auto &i : std::as_const(untracked)) {
-        m_versionInfoHash.insert(directory + i, UnversionedVersion);
+        versions.insert(directory + i, UnversionedVersion);
     }
 
+    return versions;
+}
+
+bool FileViewGitPlugin::beginRetrieval(const QString &directory)
+{
+    GitWrapper::instance()->setWorkingDirectory(directory);
+    m_currentDir = directory;
+    m_versionInfoHash = readVersionsFor(directory);
     return true;
+}
+
+std::unique_ptr<KVersionControlPluginVersions> FileViewGitPlugin::readVersions(const QString &directory)
+{
+    return std::make_unique<GitVersions>(this, directory, readVersionsFor(directory));
 }
 
 void FileViewGitPlugin::endRetrieval()
@@ -281,16 +291,52 @@ void FileViewGitPlugin::endRetrieval()
 
 KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileItem &item) const
 {
+    return versionOf(item, m_versionInfoHash, m_currentDir);
+}
+GitVersions::GitVersions(FileViewGitPlugin *plugin, const QString &directory, QHash<QString, KVersionControlPlugin::ItemVersion> versions)
+    : m_plugin(plugin)
+    , m_directory(directory)
+    , m_versions(std::move(versions))
+{
+}
+
+KVersionControlPlugin::ItemVersion GitVersions::itemVersion(const KFileItem &item) const
+{
+    return FileViewGitPlugin::versionOf(item, m_versions, m_directory);
+}
+
+QList<QAction *> GitVersions::versionControlActions(const KFileItemList &items) const
+{
+    // The actions are built from what was read for this directory, and only one menu is open at
+    // a time, so the plugin is lent this reading for as long as it takes to build them.
+    m_plugin->adoptVersions(m_directory, m_versions);
+    return m_plugin->versionControlActions(items);
+}
+
+QList<QAction *> GitVersions::outOfVersionControlActions(const KFileItemList &items) const
+{
+    m_plugin->adoptVersions(m_directory, m_versions);
+    return m_plugin->outOfVersionControlActions(items);
+}
+
+void FileViewGitPlugin::adoptVersions(const QString &directory, const QHash<QString, ItemVersion> &versions)
+{
+    GitWrapper::instance()->setWorkingDirectory(directory);
+    m_currentDir = directory;
+    m_versionInfoHash = versions;
+}
+
+KVersionControlPlugin::ItemVersion FileViewGitPlugin::versionOf(const KFileItem &item, const QHash<QString, ItemVersion> &versions, const QString &directory)
+{
     const QString itemUrl = item.localPath();
-    if (m_versionInfoHash.contains(itemUrl)) {
-        return m_versionInfoHash.value(itemUrl);
-    } else if (m_versionInfoHash.contains(m_currentDir + QStringLiteral("."))) {
+    if (versions.contains(itemUrl)) {
+        return versions.value(itemUrl);
+    } else if (versions.contains(directory + QStringLiteral("."))) {
         // We are inside unversioned directory - everything is unversioned.
         return UnversionedVersion;
-    } else {
-        // files that are not in our map are normal, tracked files by definition.
-        return NormalVersion;
     }
+    // files that are not in our map are normal, tracked files by definition.
+    return NormalVersion;
 }
 
 QList<QAction *> FileViewGitPlugin::versionControlActions(const KFileItemList &items) const

@@ -18,7 +18,30 @@
 #include <QHash>
 #include <QList>
 #include <QProcess>
+
 #include <QString>
+#include <memory>
+
+class FileViewGitPlugin;
+
+/**
+ * What one reading of a directory found, so that a single plugin instance can answer for every
+ * view at once.
+ */
+class GitVersions : public KVersionControlPluginVersions
+{
+public:
+    GitVersions(FileViewGitPlugin *plugin, const QString &directory, QHash<QString, KVersionControlPlugin::ItemVersion> versions);
+
+    KVersionControlPlugin::ItemVersion itemVersion(const KFileItem &item) const override;
+    QList<QAction *> versionControlActions(const KFileItemList &items) const override;
+    QList<QAction *> outOfVersionControlActions(const KFileItemList &items) const override;
+
+private:
+    FileViewGitPlugin *const m_plugin;
+    const QString m_directory;
+    const QHash<QString, KVersionControlPlugin::ItemVersion> m_versions;
+};
 
 /**
  * @brief Git implementation for the KVersionControlPlugin2 interface.
@@ -32,11 +55,18 @@ public:
     ~FileViewGitPlugin() override;
     QString fileName() const override;
     QString localRepositoryRoot(const QString &directory) const override;
+    std::unique_ptr<KVersionControlPluginVersions> readVersions(const QString &directory) override;
     bool beginRetrieval(const QString &directory) override;
     void endRetrieval() override;
     ItemVersion itemVersion(const KFileItem &item) const override;
     QList<QAction *> versionControlActions(const KFileItemList &items) const override;
     QList<QAction *> outOfVersionControlActions(const KFileItemList &items) const override;
+
+    /// Reads the versions of everything in @p directory without keeping any of it.
+    QHash<QString, ItemVersion> readVersionsFor(const QString &directory);
+    /// Takes on one reading for as long as it takes to build the actions for its directory.
+    void adoptVersions(const QString &directory, const QHash<QString, ItemVersion> &versions);
+    static ItemVersion versionOf(const KFileItem &item, const QHash<QString, ItemVersion> &versions, const QString &directory);
 
 private Q_SLOTS:
     void addFiles();
