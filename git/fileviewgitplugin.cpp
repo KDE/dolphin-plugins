@@ -113,10 +113,7 @@ FileViewGitPlugin::FileViewGitPlugin(QObject *parent, const QList<QVariant> &arg
     connect(&m_process, &QProcess::errorOccurred, this, &FileViewGitPlugin::slotOperationError);
 }
 
-FileViewGitPlugin::~FileViewGitPlugin()
-{
-    GitWrapper::freeInstance();
-}
+FileViewGitPlugin::~FileViewGitPlugin() = default;
 
 QString FileViewGitPlugin::fileName() const
 {
