@@ -749,6 +749,7 @@ void FileViewGitPlugin::push()
 {
     PushDialog dialog(m_parentWidget);
     if (dialog.exec() == QDialog::Accepted) {
+        m_process.setWorkingDirectory(m_contextDir);
         m_errorMsg = xi18nd("@info:status", "Pushing branch %1 to %2:%3 failed.", dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
         m_operationCompletedMsg = xi18nd("@info:status", "Pushed branch %1 to %2:%3.", dialog.localBranch(), dialog.destination(), dialog.remoteBranch());
         Q_EMIT infoMessage(xi18nd("@info:status", "Pushing branch %1 to %2:%3...", dialog.localBranch(), dialog.destination(), dialog.remoteBranch()));
