@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2011-01-25 06:38+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -567,56 +567,56 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "Opstellen vun <application>Git</application>-Beteker fehlslaan."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Hoochladen vun Telg %1 na %2:%3 fehlslaan"
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushed branch %1 to %2:%3."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Telg %1 na %2:%3 hoochlaadt."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Telg %1 warrt na %2:%3 hoochlaadt..."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Telg %1 lett sik nich vun %2 daalladen."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Telg %1 mit Spood vun %2 daallaadt."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "Telg %1 warrt vun %2 daallaadt..."
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Branch is already up-to-date."
 msgid "Branch is already up-to-date."
 msgstr "Telg is al op Stand."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

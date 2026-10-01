@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2025-03-26 17:45+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -476,42 +476,42 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "Неуспешно създаване на етикет на <application>Git</application>."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Изтласкването на клон %1 в %2:%3 е неуспешно."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Клон %1 е изтласкан в %2:%3."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Изтласкване на клон %1 в %2:%3…"
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Издърпването на клон %1 от %2 е неуспешно."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Издърпването на клон %1 от %2 е успешно."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Издърпване на клон %1 от %2…"
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Клонът вече е актуален."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2026-04-18 21:43+0200\n"
 "Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -486,42 +486,42 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "Anlegen des <application>Git</application>-Tags fehlgeschlagen."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Das Übertragen des Zweigs %1 nach %2:%3 ist fehlgeschlagen."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Zweig %1 wurde nach %2:%3 übertragen."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Zweig %1 wird nach %2:%3 übertragen …"
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Abgleichen (pull) des Zweiges %1 von %2 ist fehlgeschlagen."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Das Abgleichen (pull) des Zweiges %1 von %2 war erfolgreich."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Zweig %1 wird mit %2 abgeglichen (pull) …"
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Der Zweig ist bereits aktuell."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

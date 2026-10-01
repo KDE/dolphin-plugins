@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2024-02-11 12:00-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -479,54 +479,54 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> ਟੈਗ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "%2 ਤੋਂ ਬਰਾਂਚ %1 ਤੋਂ ਪੁਲ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%2 ਤੋਂ %1 ਬਰਾਂਚ ਪੁਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%2 ਤੋਂ %1 ਬਰਾਂਚ ਪੁਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%2 ਤੋਂ ਬਰਾਂਚ %1 ਤੋਂ ਪੁਲ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%2 ਤੋਂ %1 ਬਰਾਂਚ ਠੀਕ ਤਰ੍ਹਾਂ ਪੁਲ ਕੀਤੀ ਗਈ।"
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "%2 ਤੋਂ %1 ਬਰਾਂਚ ਪੁਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "ਬਰਾਂਚ ਪਹਿਲਾਂ ਹੀ ਅੱਪ ਟੂ ਡੇਟ ਹੈ।"
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""

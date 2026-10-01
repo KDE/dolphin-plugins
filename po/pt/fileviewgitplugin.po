@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2018-02-10 17:55+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -503,42 +503,42 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "A criação da marca no <application>Git</application> foi mal-sucedido."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "O envio da ramificação %1 para %2:%3 foi mal-sucedido."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "A ramificação %1 foi enviada para %2:%3."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "A enviar a ramificação %1 para %2:%3..."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "A obtenção da ramificação %1 de %2 foi mal-sucedida."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Foi obtida a ramificação %1 de %2 com sucesso."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "A receber a ramificação %1 de %2..."
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "A ramificação já está actualizada."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Ocorreram conflitos na reunião. Corrija-os e envie o resultado."

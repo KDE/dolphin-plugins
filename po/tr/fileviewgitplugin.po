@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2026-05-02 18:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -468,42 +468,42 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> etiket oluşturması başarısız oldu."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "%1 dalı %2:%3 konumuna itilemedi."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%1 dalı %2:%3 konumuna itildi."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%1 dalı %2:%3 konumuna itiliyor…"
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "%1 dalı %2 konumundan çekilemedi."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "%1 dalı %2 konumundan başarıyla çekildi."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "%1 dalı %2 konumundan çekiliyor…"
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Dal hâlihazırda güncel."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Birleştirme çakışmaları oluştu. Bunları düzeltip sonucu işleyin."

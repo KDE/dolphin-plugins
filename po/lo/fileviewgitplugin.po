@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2025-12-13 11:42+0700\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -458,42 +458,42 @@ msgstr "ການສ້າງແທັກ <application>Git</application> ລົ�
 msgid "<application>Git</application> tag creation failed."
 msgstr "ການສ້າງແທັກ <application>Git</application> ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "ການສົ່ງຂະແໜງ %1 ໄປຍັງ %2:%3 ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "ສົ່ງຂະແໜງ %1 ໄປຍັງ %2:%3 ແລ້ວ."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "ກຳລັງສົ່ງຂະແໜງ %1 ໄປຍັງ %2:%3..."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "ການດຶງຂະແໜງ %1 ຈາກ %2 ລົ້ມເຫຼວ."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "ດຶງຂະແໜງ %1 ຈາກ %2 ສຳເລັດຜົນ."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "ກຳລັງດຶງຂະແໜງ %1 ຈາກ %2..."
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "ຂະແໜງເປັນປັດຈຸບັນແລ້ວ."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "ເກີດຂໍ້ຂັດແຍ່ງໃນການໂຮມ. ໃຫ້ແກ້ໄຂພວກມັນແລ້ວສົ່ງຂໍ້ມູນຜົນລັບ."

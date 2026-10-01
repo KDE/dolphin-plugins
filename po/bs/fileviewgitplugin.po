@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesdk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:47+0000\n"
+"POT-Creation-Date: 2026-10-01 00:48+0000\n"
 "PO-Revision-Date: 2015-02-04 14:18+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -563,56 +563,56 @@ msgstr ""
 msgid "<application>Git</application> tag creation failed."
 msgstr "Kreiranje <application>Git</application> oznake neuspjelo."
 
-#: fileviewgitplugin.cpp:752
+#: fileviewgitplugin.cpp:753
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3 failed."
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Guranje grane %1 u %2:%3 neuspjelo."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:754
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushed branch %1 to %2:%3."
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Gurnuta grana %1 u %2:%3."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:755
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pushing branch %1 to %2:%3..."
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Guram granu %1 u %2:%3..."
 
-#: fileviewgitplugin.cpp:775
+#: fileviewgitplugin.cpp:776
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2 failed."
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Povlačenje grane %1 iz %2 neuspjelo."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:777
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulled branch %1 from %2 successfully."
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Povučena grana %1 iz %2 uspješno."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:778
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Pulling branch %1 from %2..."
 msgid "Pulling branch %1 from %2..."
 msgstr "Povlačim granu %1 iz %2..."
 
-#: fileviewgitplugin.cpp:829 fileviewgitplugin.cpp:841
+#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Branch is already up-to-date."
 msgid "Branch is already up-to-date."
 msgstr "Grana je već ažurna."
 
-#: fileviewgitplugin.cpp:845
+#: fileviewgitplugin.cpp:846
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Merge conflicts occurred. Fix them and commit the result."
