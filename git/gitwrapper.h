@@ -75,13 +75,15 @@ public:
 
     /**
      * Gets a list of untracked files/dirs in the repository.
+     * @param directory The directory to list, which git runs in.
      * @returns A StringList containing the names of all untracked entries.
      *
      * @note List contains of file names and directory names without path
      *       and without trailing slash. If whole current directory is untracked list
      *       contains a single entry ".".
+     *       Runs git in a process of its own, so any thread can call it.
      */
-    QStringList listUntracked();
+    static QStringList listUntracked(const QString &directory);
 
     /**
      * @returns The configured user.name of the repository,

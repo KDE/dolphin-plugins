@@ -108,16 +108,18 @@ void GitWrapper::remoteBranches(const QString &remote)
     Q_EMIT foundRemoteBranches(remotes);
 }
 
-QStringList GitWrapper::listUntracked()
+QStringList GitWrapper::listUntracked(const QString &directory)
 {
-    m_process.start(QStringLiteral("git"),
-                    {QStringLiteral("ls-files"), QStringLiteral("--others"), QStringLiteral("--directory"), QStringLiteral("--exclude-standard")});
+    QProcess process;
+    process.setWorkingDirectory(directory);
+    process.start(QStringLiteral("git"),
+                  {QStringLiteral("ls-files"), QStringLiteral("--others"), QStringLiteral("--directory"), QStringLiteral("--exclude-standard")});
 
     QStringList untracked;
-    while (m_process.waitForReadyRead()) {
-        while (m_process.canReadLine()) {
+    while (process.waitForReadyRead()) {
+        while (process.canReadLine()) {
             // One line is one entry.
-            const auto line = QString::fromLocal8Bit(m_process.readLine()).trimmed();
+            const auto line = QString::fromLocal8Bit(process.readLine()).trimmed();
             if (line.endsWith(QDir::separator())) {
                 untracked << line.chopped(1);
             } else {
@@ -125,6 +127,7 @@ QStringList GitWrapper::listUntracked()
             }
         }
     }
+    process.waitForFinished();
 
     return untracked;
 }

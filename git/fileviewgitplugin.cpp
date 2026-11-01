@@ -164,7 +164,6 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
 {
     Q_ASSERT(directory.endsWith(QLatin1Char('/')));
 
-    GitWrapper::instance()->setWorkingDirectory(directory);
     m_currentDir = directory;
 
     // ----- find path below git base dir -----
@@ -270,7 +269,7 @@ bool FileViewGitPlugin::beginRetrieval(const QString &directory)
     // Reap the process so it is not destroyed while still running.
     process.waitForFinished();
 
-    const auto untracked = GitWrapper::instance()->listUntracked();
+    const auto untracked = GitWrapper::listUntracked(directory);
     for (auto &i : std::as_const(untracked)) {
         m_versionInfoHash.insert(directory + i, UnversionedVersion);
     }
@@ -298,6 +297,9 @@ KVersionControlPlugin::ItemVersion FileViewGitPlugin::itemVersion(const KFileIte
 
 QList<QAction *> FileViewGitPlugin::versionControlActions(const KFileItemList &items) const
 {
+    // The dialogs that these actions open run git through the shared wrapper, in the folder that
+    // was read last.
+    GitWrapper::instance()->setWorkingDirectory(m_currentDir);
     if (items.count() == 1 && items.first().isDir()) {
         QString directory = items.first().localPath();
         if (!directory.endsWith(QLatin1Char('/'))) {
