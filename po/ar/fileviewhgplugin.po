@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the dolphin-plugins package.
-# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-08-10 15:00+0400\n"
+"PO-Revision-Date: 2026-10-31 18:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: backoutdialog.cpp:29
 #, kde-kuit-format
@@ -134,7 +134,7 @@ msgstr "شغّل حتى عندما لا يكون الهدف ذا صلة (إجب�
 #, kde-kuit-format
 msgctxt "@label:checkbox"
 msgid "Do not verify server certificate"
-msgstr "لا تتحقق من شهادة الملقم"
+msgstr "لا تتحقق من شهادة الخادم"
 
 #: clonedialog.cpp:31
 #, kde-kuit-format
@@ -195,7 +195,7 @@ msgstr "استخدم نقلًا غير مضغوط."
 #: clonedialog.cpp:62
 #, kde-format
 msgid "Do not verify server certificate (ignoring web.cacerts config)."
-msgstr "لا تتحقق من شهادة الملقم (مع تجاهل اضبط web.cacerts)."
+msgstr "لا تتحقق من شهادة الخادم (مع تجاهل اضبط web.cacerts)."
 
 #: clonedialog.cpp:147
 #, kde-format
@@ -1047,13 +1047,13 @@ msgstr "اخدُم <application>Hg</application>"
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Start Server"
-msgstr "اِبدأ الملقم"
+msgstr "اِبدأ الخادم"
 
 #: servedialog.cpp:57
 #, kde-kuit-format
 msgctxt "@label:button"
 msgid "Stop Server"
-msgstr "أوقِف الملقم"
+msgstr "أوقِف الخادم"
 
 #: servedialog.cpp:58
 #, kde-kuit-format
@@ -1070,12 +1070,12 @@ msgstr "المنفذ"
 #: servewrapper.cpp:62
 #, kde-format
 msgid "## Starting Server ##"
-msgstr "## اِبدأ الملقم ##"
+msgstr "## اِبدأ الخادم ##"
 
 #: servewrapper.h:144
 #, kde-format
 msgid "## Server Stopped! ##\n"
-msgstr "## أُوقِفَ الملقم! ##\n"
+msgstr "## أُوقِفَ الخادم! ##\n"
 
 #: statuslist.cpp:29
 #, kde-format
