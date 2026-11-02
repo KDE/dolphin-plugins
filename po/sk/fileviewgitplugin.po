@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 00:48+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2020-04-01 13:23+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -301,140 +301,140 @@ msgstr "<application>Git</application> Log..."
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> Log..."
 
-#: fileviewgitplugin.cpp:442
+#: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Pridávam súbory do <application>Git</application> repozitára..."
 
-#: fileviewgitplugin.cpp:443
+#: fileviewgitplugin.cpp:445
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "Pridanie súborov do <application>Git</application> repozitára zlyhalo."
 
-#: fileviewgitplugin.cpp:444
+#: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "Pridané súbory do <application>Git</application> repozitára."
 
-#: fileviewgitplugin.cpp:455
+#: fileviewgitplugin.cpp:457
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Odstraňujem súbory z <application>Git</application> repozitára..."
 
-#: fileviewgitplugin.cpp:456
+#: fileviewgitplugin.cpp:458
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Odstránenie súborov z <application>Git</application> repozitára zlyhalo."
 
-#: fileviewgitplugin.cpp:457
+#: fileviewgitplugin.cpp:459
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "Odstrénené súbory z <application>Git</application> repozitára."
 
-#: fileviewgitplugin.cpp:464
+#: fileviewgitplugin.cpp:466
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr "Vraciam súbory z <application>Git</application> repozitára..."
 
-#: fileviewgitplugin.cpp:465
+#: fileviewgitplugin.cpp:467
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr "Vrátenie súborov z <application>Git</application> repozitára zlyhalo."
 
-#: fileviewgitplugin.cpp:466
+#: fileviewgitplugin.cpp:468
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "Vrátené súbory z <application>Git</application> repozitára."
 
-#: fileviewgitplugin.cpp:505
+#: fileviewgitplugin.cpp:507
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> Log zlyhalo."
 
-#: fileviewgitplugin.cpp:526
+#: fileviewgitplugin.cpp:528
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> Log"
 
-#: fileviewgitplugin.cpp:541
+#: fileviewgitplugin.cpp:543
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Začleniť"
 
-#: fileviewgitplugin.cpp:542
+#: fileviewgitplugin.cpp:544
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Dátum"
 
-#: fileviewgitplugin.cpp:543
+#: fileviewgitplugin.cpp:545
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Správa"
 
-#: fileviewgitplugin.cpp:544
+#: fileviewgitplugin.cpp:546
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Autor"
 
-#: fileviewgitplugin.cpp:565
+#: fileviewgitplugin.cpp:567
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr "Odstraňujem súbory z <application>Git</application> repozitára..."
 
-#: fileviewgitplugin.cpp:566
+#: fileviewgitplugin.cpp:568
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
 "Odstránenie súborov z <application>Git</application> repozitára zlyhalo."
 
-#: fileviewgitplugin.cpp:567
+#: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr "Vrátené súbory z <application>Git</application> repozitára."
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> error starting: %1"
 
-#: fileviewgitplugin.cpp:599
+#: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> clone failed: %1"
 
-#: fileviewgitplugin.cpp:601
+#: fileviewgitplugin.cpp:603
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "Získanie z <application>Git</application>"
 
-#: fileviewgitplugin.cpp:609
+#: fileviewgitplugin.cpp:611
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> Zlúčiť..."
 
-#: fileviewgitplugin.cpp:643
+#: fileviewgitplugin.cpp:645
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Prepnuté na vetvu '%1'"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:652
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "HEAD je teraz na %1"
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:657
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Prepnuté na novú vetvu '%1'"
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -443,12 +443,12 @@ msgstr ""
 "Získanie z <application>Git</application> zlyhalo. Možno váš pracovný "
 "adresár nie je čistý."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Úspešne vytvorená značka '%1'"
 
-#: fileviewgitplugin.cpp:740
+#: fileviewgitplugin.cpp:742
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -457,47 +457,47 @@ msgstr ""
 "Vytvorenie <application>Git</application> značky zlyhalo. Značka s názvom "
 "'%1' už existuje."
 
-#: fileviewgitplugin.cpp:743
+#: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "Vytvorenie <application>Git</application> značky zlyhalo."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "Posunutie vetvy %1 do %2:%3 zlyhalo."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:756
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Posunutá vetva %1 do %2:%3."
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:757
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Posunutie vetvy %1 do %2:%3..."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Ťahanie vetvy %1 z %2 zlyhalo."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:779
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Ťahanie vetvy %1 z %2 úspešné."
 
-#: fileviewgitplugin.cpp:778
+#: fileviewgitplugin.cpp:780
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Ťahanie vetvy %1 z %2..."
 
-#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
+#: fileviewgitplugin.cpp:832 fileviewgitplugin.cpp:844
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "Vetva je už aktuálna."
 
-#: fileviewgitplugin.cpp:846
+#: fileviewgitplugin.cpp:848
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Nastali konflikty pri začlenení. Opravte ich a začleňte výsledok."

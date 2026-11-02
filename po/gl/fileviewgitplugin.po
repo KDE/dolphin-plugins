@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 00:48+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2025-03-04 08:48+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -303,94 +303,94 @@ msgstr "Clonación de <application>Git</application>…"
 msgid "<application>Git</application> Log..."
 msgstr "Rexistro de <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:442
+#: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "Engadindo ficheiros ao repositorio de <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:443
+#: fileviewgitplugin.cpp:445
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
 "Engadir ficheiros ao repositorio de <application>Git</application> fallou."
 
-#: fileviewgitplugin.cpp:444
+#: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr ""
 "Engadíronse os ficheiros ao repositorio de <application>Git</application>."
 
-#: fileviewgitplugin.cpp:455
+#: fileviewgitplugin.cpp:457
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "Retirando ficheiros do repositorio de <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:456
+#: fileviewgitplugin.cpp:458
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
 "Retirar os ficheiros do repositorio de <application>Git</application> fallou."
 
-#: fileviewgitplugin.cpp:457
+#: fileviewgitplugin.cpp:459
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr ""
 "Retiráronse os ficheiros do repositorio de <application>Git</application>."
 
-#: fileviewgitplugin.cpp:464
+#: fileviewgitplugin.cpp:466
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
 "Revertendo os ficheiros do repositorio de <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:465
+#: fileviewgitplugin.cpp:467
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "Reverter os ficheiros do repositorio de <application>Git</application> "
 "fallou."
 
-#: fileviewgitplugin.cpp:466
+#: fileviewgitplugin.cpp:468
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr ""
 "Revertéronse os ficheiros do repositorio de <application>Git</application>."
 
-#: fileviewgitplugin.cpp:505
+#: fileviewgitplugin.cpp:507
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "A apertura do rexistro de <application>Git</application> fallou."
 
-#: fileviewgitplugin.cpp:526
+#: fileviewgitplugin.cpp:528
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "Rexistro de <application>Git</application>"
 
-#: fileviewgitplugin.cpp:541
+#: fileviewgitplugin.cpp:543
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "Remisión"
 
-#: fileviewgitplugin.cpp:542
+#: fileviewgitplugin.cpp:544
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "Data"
 
-#: fileviewgitplugin.cpp:543
+#: fileviewgitplugin.cpp:545
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "Mensaxe"
 
-#: fileviewgitplugin.cpp:544
+#: fileviewgitplugin.cpp:546
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "Autor"
 
-#: fileviewgitplugin.cpp:565
+#: fileviewgitplugin.cpp:567
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
@@ -398,7 +398,7 @@ msgstr ""
 "Restaurando ficheiros apartados do repositorio de <application>Git</"
 "application>…"
 
-#: fileviewgitplugin.cpp:566
+#: fileviewgitplugin.cpp:568
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
@@ -406,49 +406,49 @@ msgstr ""
 "Non foi posíbel restaurar os ficheiros apartados do repositorio de "
 "<application>Git</application>."
 
-#: fileviewgitplugin.cpp:567
+#: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "Restaurando ficheiros apartados do repositorio de <application>Git</"
 "application>."
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "Inicio de erro de <application>Git</application>: %1"
 
-#: fileviewgitplugin.cpp:599
+#: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "A clonación de <application>Git</application> fallou: %1"
 
-#: fileviewgitplugin.cpp:601
+#: fileviewgitplugin.cpp:603
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "Completouse a clonación de <application>Git</application>."
 
-#: fileviewgitplugin.cpp:609
+#: fileviewgitplugin.cpp:611
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "Clonando un repositorio con <application>Git</application>…"
 
-#: fileviewgitplugin.cpp:643
+#: fileviewgitplugin.cpp:645
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "Cargouse a rama «%1»…"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:652
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "Agora a cabeceira (HEAD) está en %1."
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:657
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "Cargouse a nova rama «%1»…"
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -457,12 +457,12 @@ msgstr ""
 "A obtención con <application>Git</application> fallou. Pode que o cartafol "
 "de traballo estea “sucio”."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "Creouse a etiqueta «%1»."
 
-#: fileviewgitplugin.cpp:740
+#: fileviewgitplugin.cpp:742
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -471,47 +471,47 @@ msgstr ""
 "A creación da etiqueta con <application>Git</application> fallou. Xa existe "
 "unha chamada «%1»."
 
-#: fileviewgitplugin.cpp:743
+#: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "A creación da etiqueta con <application>Git</application> fallou."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "O envío da rama %1 a %2:%3 fallou."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:756
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "Enviouse a rama %1 a %2:%3."
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:757
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "Enviando a rama %1 a %2:%3…"
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "Non foi posíbel pular a rama %1 de %2."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:779
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "Pulouse a rama %1 de %2."
 
-#: fileviewgitplugin.cpp:778
+#: fileviewgitplugin.cpp:780
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "Pulando a rama %1 de %2…"
 
-#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
+#: fileviewgitplugin.cpp:832 fileviewgitplugin.cpp:844
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "A rama xa está actualizada."
 
-#: fileviewgitplugin.cpp:846
+#: fileviewgitplugin.cpp:848
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "Producíronse conflitos de mestura. Amáñeos e remita o resultado."

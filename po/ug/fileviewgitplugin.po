@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 00:48+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2026-10-03 19:44-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -301,88 +301,88 @@ msgstr "<application>Git</application> نۇسخىلا…"
 msgid "<application>Git</application> Log..."
 msgstr "<application>Git</application> خاتىرە…"
 
-#: fileviewgitplugin.cpp:442
+#: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
 msgstr "<application>Git</application> خەزىنەگە ھۆججەت قوشۇۋاتىدۇ…"
 
-#: fileviewgitplugin.cpp:443
+#: fileviewgitplugin.cpp:445
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr "<application>Git</application> خەزىنەگە ھۆججەت قوشالمىدى."
 
-#: fileviewgitplugin.cpp:444
+#: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
 msgstr "<application>Git</application> خەزىنەگە ھۆججەت قوشتى."
 
-#: fileviewgitplugin.cpp:455
+#: fileviewgitplugin.cpp:457
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى چىقىرىۋاتىدۇ…"
 
-#: fileviewgitplugin.cpp:456
+#: fileviewgitplugin.cpp:458
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى چىقىرالمىدى."
 
-#: fileviewgitplugin.cpp:457
+#: fileviewgitplugin.cpp:459
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
 msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى چىقىرىۋەتتى."
 
-#: fileviewgitplugin.cpp:464
+#: fileviewgitplugin.cpp:466
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
 "<application>Git</application> خەزىنەدىن ھۆججەتنى ئەسلىگە كەلتۈرۈۋاتىدۇ…"
 
-#: fileviewgitplugin.cpp:465
+#: fileviewgitplugin.cpp:467
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
 "<application>Git</application> خەزىنەدىن ھۆججەتنى ئەسلىگە كەلتۈرەلمىدى."
 
-#: fileviewgitplugin.cpp:466
+#: fileviewgitplugin.cpp:468
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr "<application>Git</application> خەزىنەدىن ھۆججەتنى ئەسلىگە كەلتۈردى."
 
-#: fileviewgitplugin.cpp:505
+#: fileviewgitplugin.cpp:507
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr "<application>Git</application> خاتىرىيەلمىدى."
 
-#: fileviewgitplugin.cpp:526
+#: fileviewgitplugin.cpp:528
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
 msgstr "<application>Git</application> خاتىرە"
 
-#: fileviewgitplugin.cpp:541
+#: fileviewgitplugin.cpp:543
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
 msgstr "تاپشۇر(_C)"
 
-#: fileviewgitplugin.cpp:542
+#: fileviewgitplugin.cpp:544
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
 msgstr "چېسلا"
 
-#: fileviewgitplugin.cpp:543
+#: fileviewgitplugin.cpp:545
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
 msgstr "ئۇچۇر"
 
-#: fileviewgitplugin.cpp:544
+#: fileviewgitplugin.cpp:546
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
 msgstr "يازغۇچى"
 
-#: fileviewgitplugin.cpp:565
+#: fileviewgitplugin.cpp:567
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
@@ -390,7 +390,7 @@ msgstr ""
 "<application>Git</application> خەزىنەدىن باسقۇچلۇق ھۆججەتنى ئەسلىگە "
 "كەلتۈرۈۋاتىدۇ…"
 
-#: fileviewgitplugin.cpp:566
+#: fileviewgitplugin.cpp:568
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
@@ -398,49 +398,49 @@ msgstr ""
 "<application>Git</application> خەزىنەدىن باسقۇچلۇق ھۆججەتنى ئەسلىگە "
 "كەلتۈرەلمىدى."
 
-#: fileviewgitplugin.cpp:567
+#: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
 "<application>Git</application> خەزىنەدىن باسقۇچلۇق ھۆججەتنى ئەسلىگە "
 "كەلتۈرۈۋاتىدۇ."
 
-#: fileviewgitplugin.cpp:595
+#: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
 msgstr "<application>Git</application> قوزغىلىۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
-#: fileviewgitplugin.cpp:599
+#: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
 msgstr "<application>Git</application> نۇسخىلىيالمىدى: %1"
 
-#: fileviewgitplugin.cpp:601
+#: fileviewgitplugin.cpp:603
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
 msgstr "<application>Git</application> نۇسخىلاش تامام."
 
-#: fileviewgitplugin.cpp:609
+#: fileviewgitplugin.cpp:611
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
 msgstr "<application>Git</application> خەزىنە نۇسخىلاۋاتىدۇ…"
 
-#: fileviewgitplugin.cpp:643
+#: fileviewgitplugin.cpp:645
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
 msgstr "«%1» شاخقا ئالماشتى"
 
-#: fileviewgitplugin.cpp:650
+#: fileviewgitplugin.cpp:652
 #, kde-kuit-format
 msgid "HEAD is now at %1"
 msgstr "ھازىر HEAD كۆرسەتكىنى %1"
 
-#: fileviewgitplugin.cpp:655
+#: fileviewgitplugin.cpp:657
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
 msgstr "«%1» يېڭى شاخقا ئالماشتى"
 
-#: fileviewgitplugin.cpp:667
+#: fileviewgitplugin.cpp:669
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
@@ -449,12 +449,12 @@ msgstr ""
 "<application>Git</application> تەكشۈرەلمىدى. بەلكىم خىزمەت مۇندەرىجىڭىز "
 "بۇلغانغان بولۇشى مۇمكىن."
 
-#: fileviewgitplugin.cpp:735
+#: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
 msgstr "«%1» بەلگە مۇۋەپپەقىيەتلىك قۇرۇلدى"
 
-#: fileviewgitplugin.cpp:740
+#: fileviewgitplugin.cpp:742
 #, kde-kuit-format
 msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
@@ -462,47 +462,47 @@ msgid ""
 msgstr ""
 "<application>Git</application> بەلگە قۇرالمىدى. «%1» ئاتلىق بەلگە مەۋجۇت."
 
-#: fileviewgitplugin.cpp:743
+#: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
 msgstr "<application>Git</application> بەلگە قۇرالمىدى."
 
-#: fileviewgitplugin.cpp:753
+#: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
 msgstr "%1 شاخنى يۇقىرىدىكى %2:%3 غا ئىتتىرەلمىدى."
 
-#: fileviewgitplugin.cpp:754
+#: fileviewgitplugin.cpp:756
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
 msgstr "%1 شاخنى يۇقىرىدىكى %2:%3 غا ئىتتەردى."
 
-#: fileviewgitplugin.cpp:755
+#: fileviewgitplugin.cpp:757
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
 msgstr "%1 شاخنى يۇقىرىدىكى %2:%3 غا ئىتتىرىۋاتىدۇ."
 
-#: fileviewgitplugin.cpp:776
+#: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
 msgstr "يۇقىرىدىكى %2 دىن %1 شاخنى تارتالمىدى."
 
-#: fileviewgitplugin.cpp:777
+#: fileviewgitplugin.cpp:779
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
 msgstr "يۇقىرىدىكى %2 دىن %1 شاخنى مۇۋەپپەقىيەتلىك تارتتى."
 
-#: fileviewgitplugin.cpp:778
+#: fileviewgitplugin.cpp:780
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
 msgstr "يۇقىرىدىكى %2 دىن %1 شاخنى تارتىۋاتىدۇ…"
 
-#: fileviewgitplugin.cpp:830 fileviewgitplugin.cpp:842
+#: fileviewgitplugin.cpp:832 fileviewgitplugin.cpp:844
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
 msgstr "شاخ ئاللىبۇرۇن ئەڭ يېڭى ھالەتتە."
 
-#: fileviewgitplugin.cpp:846
+#: fileviewgitplugin.cpp:848
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr "بىرلەشتۈرگەندە توقۇنۇش كۆرۈلدى. ئۇلارنى ئوڭشاپ ئاندىن نەتىجىنى يوللاڭ."
