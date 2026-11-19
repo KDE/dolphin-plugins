@@ -365,7 +365,7 @@ msgstr ""
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
 msgstr ""
-"No s'ha pogut fer el registre de <application>Git</application> («log»)."
+"No s'ha pogut llegir el registre de <application>Git</application> («log»)."
 
 #: fileviewgitplugin.cpp:528
 #, kde-kuit-format
