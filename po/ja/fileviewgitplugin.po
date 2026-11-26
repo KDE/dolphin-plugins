@@ -1,10 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Yuma Kakei <yumasansansan@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewgitplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:57+0000\n"
-"PO-Revision-Date: 2010-11-02 00:29-0700\n"
-"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-11-22 17:05+0900\n"
+"Last-Translator: Yuma Kakei <yumasansansan@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -13,114 +14,115 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: checkoutdialog.cpp:33
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Checkout"
-msgstr ""
+msgstr "<application>Git</application> チェックアウト"
 
 #: checkoutdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Checkout"
-msgstr ""
+msgstr "チェックアウト"
 
 #: checkoutdialog.cpp:57
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Branch:"
-msgstr ""
+msgstr "ブランチ:"
 
 #: checkoutdialog.cpp:64
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Tag:"
-msgstr ""
+msgstr "タグ:"
 
 #: checkoutdialog.cpp:70
 #, kde-format
 msgctxt "@option:radio Git Checkout"
 msgid "Commit:"
-msgstr ""
+msgstr "コミット:"
 
 #: checkoutdialog.cpp:81 pushdialog.cpp:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 #: checkoutdialog.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Create New Branch: "
-msgstr ""
+msgstr "新しいブランチを作成: "
 
 #: checkoutdialog.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new branch based on a selected branch or tag."
-msgstr ""
+msgstr "選択したブランチまたはタグを元に、新しいブランチを作成します。"
 
 #: checkoutdialog.cpp:102
 #, kde-format
 msgctxt "@option:check"
 msgid "Force"
-msgstr ""
+msgstr "強制"
 
 #: checkoutdialog.cpp:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard local changes."
-msgstr ""
+msgstr "ローカルの変更を破棄します。"
 
 #: checkoutdialog.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There are no tags in this repository."
-msgstr ""
+msgstr "このリポジトリにはタグがありません。"
 
 #: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Branch Base"
-msgstr ""
+msgstr "ブランチの元"
 
 #: checkoutdialog.cpp:205
 #, kde-format
 msgctxt "@title:group"
 msgid "Checkout"
-msgstr ""
+msgstr "チェックアウト"
 
 #: checkoutdialog.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid name for the new branch first."
-msgstr ""
+msgstr "まず、新しいブランチの有効な名前を入力してください。"
 
 #: checkoutdialog.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A branch with the name '%1' already exists."
-msgstr ""
+msgstr "「%1」という名前のブランチは既に存在します。"
 
 #: checkoutdialog.cpp:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Branch names may not contain any whitespace."
-msgstr ""
+msgstr "ブランチ名には空白を含めることができません。"
 
 #: checkoutdialog.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must select a valid branch first."
-msgstr ""
+msgstr "まず、有効なブランチを選択してください。"
 
 #: checkoutdialog.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a valid commit Id (Sha signature)."
-msgstr ""
+msgstr "有効なコミット ID (SHA 署名) を入力してください。"
 
 #: checkoutdialog.cpp:287
 #, kde-format
@@ -128,305 +130,317 @@ msgctxt ""
 "@item:intext Prepended to the current branch name to get the default name "
 "for a newly created branch"
 msgid "branch"
-msgstr ""
+msgstr "branch"
 
 #: clonedialog.cpp:36
 #, kde-format
 msgctxt "a placeholder"
 msgid "a git repository url or path"
-msgstr ""
+msgstr "Git リポジトリの URL またはパス"
 
 #: clonedialog.cpp:46
 #, kde-format
 msgctxt "@info:tooltip submodules as in git submodules"
 msgid "Recursively clone submodules"
-msgstr ""
+msgstr "サブモジュールを再帰的にクローンします"
 
 #: clonedialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: clonedialog.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Directory:"
-msgstr ""
+msgstr "ディレクトリ:"
 
 #: clonedialog.cpp:52
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Branch:"
-msgstr ""
+msgstr "ブランチ:"
 
 #: clonedialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Recursive"
-msgstr ""
+msgstr "再帰的"
 
 #: clonedialog.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone"
-msgstr ""
+msgstr "クローン"
 
 #: clonedialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a clone directory"
-msgstr ""
+msgstr "クローン先のディレクトリを選択"
 
 #: clonedialog.cpp:93
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Clone"
-msgstr ""
+msgstr "<application>Git</application> クローン"
 
 #: commitdialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Commit"
-msgstr ""
+msgstr "<application>Git</application> コミット"
 
 #: commitdialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr ""
+msgstr "コミット"
 
 #: commitdialog.cpp:44
 #, kde-format
 msgctxt "@title:group"
 msgid "Commit message"
-msgstr ""
+msgstr "コミットメッセージ"
 
 #: commitdialog.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Amend last commit"
-msgstr ""
+msgstr "直前のコミットを修正"
 
 #: commitdialog.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "There is nothing to amend."
-msgstr ""
+msgstr "修正するコミットがありません。"
 
 #: commitdialog.cpp:72
 #, kde-format
 msgctxt "@action:button Add Signed-Off line to the message widget"
 msgid "Sign off"
-msgstr ""
+msgstr "サインオフ"
 
 #: commitdialog.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Signed-off-by line at the end of the commit message."
-msgstr ""
+msgstr "コミットメッセージの末尾に Signed-off-by 行を追加します。"
 
 #: commitdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a commit message first."
-msgstr ""
+msgstr "まず、コミットメッセージを入力してください。"
 
 #: fileviewgitplugin.cpp:53
 #, kde-kuit-format
 msgid "<application>Git</application> Revert"
-msgstr ""
+msgstr "<application>Git</application> で変更を元に戻す"
 
 #: fileviewgitplugin.cpp:58
 #, kde-kuit-format
 msgid "<application>Git</application> Add"
-msgstr ""
+msgstr "<application>Git</application> に追加"
 
 #: fileviewgitplugin.cpp:63
 #, kde-kuit-format
 msgid "Show Local <application>Git</application> Changes"
-msgstr ""
+msgstr "<application>Git</application> のローカルの変更を表示"
 
 #: fileviewgitplugin.cpp:68
 #, kde-kuit-format
 msgid "<application>Git</application> Restore staged"
-msgstr ""
+msgstr "<application>Git</application> でステージングを取り消す"
 
 #: fileviewgitplugin.cpp:73
 #, kde-kuit-format
 msgid "<application>Git</application> Remove"
-msgstr ""
+msgstr "<application>Git</application> から削除"
 
 #: fileviewgitplugin.cpp:78
 #, kde-kuit-format
 msgid "<application>Git</application> Checkout..."
-msgstr ""
+msgstr "<application>Git</application> でチェックアウト..."
 
 #: fileviewgitplugin.cpp:83
 #, kde-kuit-format
 msgid "<application>Git</application> Commit..."
-msgstr ""
+msgstr "<application>Git</application> でコミット..."
 
 #: fileviewgitplugin.cpp:88
 #, kde-kuit-format
 msgid "<application>Git</application> Create Tag..."
-msgstr ""
+msgstr "<application>Git</application> でタグを作成..."
 
 #: fileviewgitplugin.cpp:92
 #, kde-kuit-format
 msgid "<application>Git</application> Push..."
-msgstr ""
+msgstr "<application>Git</application> でプッシュ..."
 
 #: fileviewgitplugin.cpp:96
 #, kde-kuit-format
 msgid "<application>Git</application> Pull..."
-msgstr ""
+msgstr "<application>Git</application> でプル..."
 
 #: fileviewgitplugin.cpp:100
 #, kde-kuit-format
 msgid "<application>Git</application> Merge..."
-msgstr ""
+msgstr "<application>Git</application> でマージ..."
 
 #: fileviewgitplugin.cpp:104
 #, kde-kuit-format
 msgid "<application>Git</application> Clone..."
-msgstr ""
+msgstr "<application>Git</application> でクローン..."
 
 #: fileviewgitplugin.cpp:108
 #, kde-kuit-format
 msgid "<application>Git</application> Log..."
-msgstr ""
+msgstr "<application>Git</application> のログ..."
 
 #: fileviewgitplugin.cpp:444
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository..."
-msgstr ""
+msgstr "<application>Git</application> リポジトリにファイルを追加しています..."
 
 #: fileviewgitplugin.cpp:445
 #, kde-kuit-format
 msgid "Adding files to <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application> リポジトリへのファイルの追加に失敗しました。"
 
 #: fileviewgitplugin.cpp:446
 #, kde-kuit-format
 msgid "Added files to <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application> リポジトリにファイルを追加しました。"
 
 #: fileviewgitplugin.cpp:457
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository..."
 msgstr ""
+"<application>Git</application> リポジトリからファイルを削除しています..."
 
 #: fileviewgitplugin.cpp:458
 #, kde-kuit-format
 msgid "Removing files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application> リポジトリからのファイルの削除に失敗しました。"
 
 #: fileviewgitplugin.cpp:459
 #, kde-kuit-format
 msgid "Removed files from <application>Git</application> repository."
-msgstr ""
+msgstr "<application>Git</application> リポジトリからファイルを削除しました。"
 
 #: fileviewgitplugin.cpp:466
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository..."
 msgstr ""
+"<application>Git</application> リポジトリのファイルの変更を元に戻していま"
+"す..."
 
 #: fileviewgitplugin.cpp:467
 #, kde-kuit-format
 msgid "Reverting files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application> リポジトリのファイルの変更を元に戻せませんでし"
+"た。"
 
 #: fileviewgitplugin.cpp:468
 #, kde-kuit-format
 msgid "Reverted files from <application>Git</application> repository."
 msgstr ""
+"<application>Git</application> リポジトリのファイルの変更を元に戻しました。"
 
 #: fileviewgitplugin.cpp:507
 #, kde-kuit-format
 msgid "<application>Git</application> Log failed."
-msgstr ""
+msgstr "<application>Git</application> のログの取得に失敗しました。"
 
 #: fileviewgitplugin.cpp:528
 #, kde-kuit-format
 msgid "<application>Git</application> Log"
-msgstr ""
+msgstr "<application>Git</application> のログ"
 
 #: fileviewgitplugin.cpp:543
 #, kde-format
 msgctxt "Git commit hash"
 msgid "Commit"
-msgstr ""
+msgstr "コミット"
 
 #: fileviewgitplugin.cpp:544
 #, kde-format
 msgctxt "Git commit date"
 msgid "Date"
-msgstr ""
+msgstr "日付"
 
 #: fileviewgitplugin.cpp:545
 #, kde-format
 msgctxt "Git commit message"
 msgid "Message"
-msgstr ""
+msgstr "メッセージ"
 
 #: fileviewgitplugin.cpp:546
 #, kde-format
 msgctxt "Git commit author"
 msgid "Author"
-msgstr ""
+msgstr "作成者"
 
 #: fileviewgitplugin.cpp:567
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository..."
 msgstr ""
+"<application>Git</application> リポジトリでステージングを取り消しています..."
 
 #: fileviewgitplugin.cpp:568
 #, kde-kuit-format
 msgid ""
 "Restoring staged files from <application>Git</application> repository failed."
 msgstr ""
+"<application>Git</application> リポジトリでのステージングの取り消しに失敗しま"
+"した。"
 
 #: fileviewgitplugin.cpp:569
 #, kde-kuit-format
 msgid "Restoring staged files from <application>Git</application> repository."
 msgstr ""
+"<application>Git</application> リポジトリでステージングを取り消しています。"
 
 #: fileviewgitplugin.cpp:597
 #, kde-kuit-format
 msgid "<application>Git</application> error starting: %1"
-msgstr ""
+msgstr "<application>Git</application> の起動中にエラーが発生しました: %1"
 
 #: fileviewgitplugin.cpp:601
 #, kde-kuit-format
 msgid "<application>Git</application> clone failed: %1"
-msgstr ""
+msgstr "<application>Git</application> のクローンに失敗しました: %1"
 
 #: fileviewgitplugin.cpp:603
 #, kde-kuit-format
 msgid "<application>Git</application> clone complete."
-msgstr ""
+msgstr "<application>Git</application> のクローンが完了しました。"
 
 #: fileviewgitplugin.cpp:611
 #, kde-kuit-format
 msgid "<application>Git</application> cloning repository..."
-msgstr ""
+msgstr "<application>Git</application> でリポジトリをクローンしています..."
 
 #: fileviewgitplugin.cpp:645
 #, kde-kuit-format
 msgid "Switched to branch '%1'"
-msgstr ""
+msgstr "ブランチ「%1」に切り替えました"
 
 #: fileviewgitplugin.cpp:652
 #, kde-kuit-format
 msgid "HEAD is now at %1"
-msgstr ""
+msgstr "HEAD は現在 %1 にあります"
 
 #: fileviewgitplugin.cpp:657
 #, kde-kuit-format
 msgid "Switched to a new branch '%1'"
-msgstr ""
+msgstr "新しいブランチ「%1」に切り替えました"
 
 #: fileviewgitplugin.cpp:669
 #, kde-kuit-format
@@ -434,11 +448,13 @@ msgid ""
 "<application>Git</application> Checkout failed. Maybe your working directory "
 "is dirty."
 msgstr ""
+"<application>Git</application> のチェックアウトに失敗しました。作業ディレクト"
+"リにコミットされていない変更があるかもしれません。"
 
 #: fileviewgitplugin.cpp:737
 #, kde-kuit-format
 msgid "Successfully created tag '%1'"
-msgstr ""
+msgstr "タグ「%1」を作成しました"
 
 #: fileviewgitplugin.cpp:742
 #, kde-kuit-format
@@ -446,135 +462,139 @@ msgid ""
 "<application>Git</application> tag creation failed. A tag with the name '%1' "
 "already exists."
 msgstr ""
+"<application>Git</application> のタグの作成に失敗しました。「%1」という名前の"
+"タグは既に存在します。"
 
 #: fileviewgitplugin.cpp:745
 #, kde-kuit-format
 msgid "<application>Git</application> tag creation failed."
-msgstr ""
+msgstr "<application>Git</application> のタグの作成に失敗しました。"
 
 #: fileviewgitplugin.cpp:755
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3 failed."
-msgstr ""
+msgstr "ブランチ %1 の %2:%3 へのプッシュに失敗しました。"
 
 #: fileviewgitplugin.cpp:756
 #, kde-kuit-format
 msgid "Pushed branch %1 to %2:%3."
-msgstr ""
+msgstr "ブランチ %1 を %2:%3 にプッシュしました。"
 
 #: fileviewgitplugin.cpp:757
 #, kde-kuit-format
 msgid "Pushing branch %1 to %2:%3..."
-msgstr ""
+msgstr "ブランチ %1 を %2:%3 にプッシュしています..."
 
 #: fileviewgitplugin.cpp:778
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2 failed."
-msgstr ""
+msgstr "ブランチ %1 の %2 からのプルに失敗しました。"
 
 #: fileviewgitplugin.cpp:779
 #, kde-kuit-format
 msgid "Pulled branch %1 from %2 successfully."
-msgstr ""
+msgstr "ブランチ %1 を %2 からプルしました。"
 
 #: fileviewgitplugin.cpp:780
 #, kde-kuit-format
 msgid "Pulling branch %1 from %2..."
-msgstr ""
+msgstr "ブランチ %1 を %2 からプルしています..."
 
 #: fileviewgitplugin.cpp:832 fileviewgitplugin.cpp:844
 #, kde-kuit-format
 msgid "Branch is already up-to-date."
-msgstr ""
+msgstr "ブランチは既に最新です。"
 
 #: fileviewgitplugin.cpp:848
 #, kde-kuit-format
 msgid "Merge conflicts occurred. Fix them and commit the result."
 msgstr ""
+"マージでコンフリクトが発生しました。コンフリクトを解消して、結果をコミットし"
+"てください。"
 
 #. i18n: ectx: label, entry (commitDialogHeight), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:7
 #, kde-format
 msgid "Dialog height"
-msgstr ""
+msgstr "ダイアログの高さ"
 
 #. i18n: ectx: label, entry (commitDialogWidth), group (CommitDialogSettings)
 #: fileviewgitpluginsettings.kcfg:12
 #, kde-format
 msgid "Dialog width"
-msgstr ""
+msgstr "ダイアログの幅"
 
 #: pulldialog.cpp:24
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Pull"
-msgstr ""
+msgstr "<application>Git</application> プル"
 
 #: pulldialog.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Pull"
-msgstr ""
+msgstr "プル"
 
 #: pulldialog.cpp:44
 #, kde-format
 msgctxt "@title:group The source to pull from"
 msgid "Source"
-msgstr ""
+msgstr "取得元"
 
 #: pulldialog.cpp:50 pushdialog.cpp:51
 #, kde-format
 msgctxt "@label:listbox a git remote"
 msgid "Remote:"
-msgstr ""
+msgstr "リモート:"
 
 #: pulldialog.cpp:55
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote branch:"
-msgstr ""
+msgstr "リモートブランチ:"
 
 #: pushdialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Push"
-msgstr ""
+msgstr "<application>Git</application> プッシュ"
 
 #: pushdialog.cpp:37 pushdialog.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Push"
-msgstr ""
+msgstr "プッシュ"
 
 #: pushdialog.cpp:47
 #, kde-format
 msgctxt "@title:group The remote host"
 msgid "Destination"
-msgstr ""
+msgstr "送信先"
 
 #: pushdialog.cpp:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Branches"
-msgstr ""
+msgstr "ブランチ"
 
 #: pushdialog.cpp:65
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Local Branch:"
-msgstr ""
+msgstr "ローカルブランチ:"
 
 #: pushdialog.cpp:72
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Remote Branch:"
-msgstr ""
+msgstr "リモートブランチ:"
 
 #: pushdialog.cpp:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Force with lease"
-msgstr ""
+msgstr "強制 (force-with-lease)"
 
 #: pushdialog.cpp:86
 #, kde-format
@@ -583,75 +603,77 @@ msgid ""
 "Proceed even if the remote branch is not an ancestor of the local branch "
 "provided there were no changes in the remote branch since the last fetch."
 msgstr ""
+"最後のフェッチ以降にリモートブランチが変更されていなければ、リモートブランチ"
+"がローカルブランチの祖先でなくても続行します。"
 
 #: pushdialog.cpp:89
 #, kde-format
 msgctxt "@info no remote code repositories"
 msgid "No remotes defined."
-msgstr ""
+msgstr "リモートが定義されていません。"
 
 #: pushdialog.cpp:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Push New Branch"
-msgstr ""
+msgstr "新しいブランチをプッシュ"
 
 #: tagdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "<application>Git</application> Create Tag"
-msgstr ""
+msgstr "<application>Git</application> タグの作成"
 
 #: tagdialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Tag"
-msgstr ""
+msgstr "タグを作成"
 
 #: tagdialog.cpp:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Tag Information"
-msgstr ""
+msgstr "タグの情報"
 
 #: tagdialog.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Name:"
-msgstr ""
+msgstr "タグ名:"
 
 #: tagdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tag Message:"
-msgstr ""
+msgstr "タグのメッセージ:"
 
 #: tagdialog.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "Attach to"
-msgstr ""
+msgstr "付ける対象"
 
 #: tagdialog.cpp:79
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Branch:"
-msgstr ""
+msgstr "ブランチ:"
 
 #: tagdialog.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You must enter a tag name first."
-msgstr ""
+msgstr "まず、タグ名を入力してください。"
 
 #: tagdialog.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Tag names may not contain any whitespace."
-msgstr ""
+msgstr "タグ名には空白を含めることができません。"
 
 #: tagdialog.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "A tag named '%1' already exists."
-msgstr ""
+msgstr "「%1」という名前のタグは既に存在します。"

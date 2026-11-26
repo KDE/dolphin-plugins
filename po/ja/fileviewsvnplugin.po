@@ -1,10 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Yuma Kakei <yumasansansan@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: fileviewsvnplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2010-04-16 22:26+0900\n"
-"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-11-22 17:24+0900\n"
+"Last-Translator: Yuma Kakei <yumasansansan@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -13,108 +14,111 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: fileviewsvnplugin.cpp:70
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Update"
-msgstr ""
+msgstr "SVN で更新"
 
 #: fileviewsvnplugin.cpp:75
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show Local SVN Changes"
-msgstr ""
+msgstr "SVN のローカルの変更を表示"
 
 #: fileviewsvnplugin.cpp:80
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Commit..."
-msgstr ""
+msgstr "SVN でコミット..."
 
 #: fileviewsvnplugin.cpp:85
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Add"
-msgstr ""
+msgstr "SVN に追加"
 
 #: fileviewsvnplugin.cpp:90
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Delete"
-msgstr ""
+msgstr "SVN から削除"
 
 #: fileviewsvnplugin.cpp:95
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "SVN Revert"
-msgstr ""
+msgstr "SVN で変更を元に戻す"
 
 #: fileviewsvnplugin.cpp:100
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show SVN Updates"
-msgstr ""
+msgstr "SVN の更新を表示"
 
 #: fileviewsvnplugin.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Log..."
-msgstr ""
+msgstr "SVN のログ..."
 
 #: fileviewsvnplugin.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Checkout..."
-msgstr ""
+msgstr "SVN でチェックアウト..."
 
 #: fileviewsvnplugin.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "SVN Cleanup..."
-msgstr ""
+msgstr "SVN でクリーンアップ..."
 
 #: fileviewsvnplugin.cpp:224
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN status update failed. Disabling Option \"Show SVN Updates\"."
 msgstr ""
+"SVN の状態の更新に失敗しました。「SVN の更新を表示」オプションを無効にしま"
+"す。"
 
 #: fileviewsvnplugin.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Update"
-msgstr ""
+msgstr "SVN 更新"
 
 #: fileviewsvnplugin.cpp:365
 #, kde-format
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
-msgstr ""
+msgstr "SVN リポジトリを更新しています..."
 
 #: fileviewsvnplugin.cpp:366
 #, kde-format
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
-msgstr ""
+msgstr "SVN リポジトリの更新に失敗しました。"
 
 #: fileviewsvnplugin.cpp:367
 #, kde-format
 msgctxt "@info:status"
 msgid "Updated SVN repository."
-msgstr ""
+msgstr "SVN リポジトリを更新しました。"
 
 #: fileviewsvnplugin.cpp:381
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes."
-msgstr ""
+msgstr "SVN のローカルの変更を表示できませんでした。"
 
 #: fileviewsvnplugin.cpp:389
 #, kde-format
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: svn diff failed."
-msgstr ""
+msgstr "SVN のローカルの変更を表示できませんでした: svn diff に失敗しました。"
 
 #: fileviewsvnplugin.cpp:396 fileviewsvnplugin.cpp:597
 #: fileviewsvnplugin.cpp:620
@@ -122,114 +126,115 @@ msgstr ""
 msgctxt "@info:status"
 msgid "Could not show local SVN changes: could not start kompare."
 msgstr ""
+"SVN のローカルの変更を表示できませんでした: kompare を起動できませんでした。"
 
 #: fileviewsvnplugin.cpp:429
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
-msgstr ""
+msgstr "SVN リポジトリにファイルを追加しています..."
 
 #: fileviewsvnplugin.cpp:430
 #, kde-format
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
-msgstr ""
+msgstr "SVN リポジトリへのファイルの追加に失敗しました。"
 
 #: fileviewsvnplugin.cpp:431
 #, kde-format
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
-msgstr ""
+msgstr "SVN リポジトリにファイルを追加しました。"
 
 #: fileviewsvnplugin.cpp:438
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
-msgstr ""
+msgstr "SVN リポジトリからファイルを削除しています..."
 
 #: fileviewsvnplugin.cpp:439
 #, kde-format
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
-msgstr ""
+msgstr "SVN リポジトリからのファイルの削除に失敗しました。"
 
 #: fileviewsvnplugin.cpp:440
 #, kde-format
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
-msgstr ""
+msgstr "SVN リポジトリからファイルを削除しました。"
 
 #: fileviewsvnplugin.cpp:460 fileviewsvnplugin.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Revert"
-msgstr ""
+msgstr "SVN で変更を元に戻す"
 
 #: fileviewsvnplugin.cpp:465
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting files from SVN repository..."
-msgstr ""
+msgstr "SVN リポジトリのファイルの変更を元に戻しています..."
 
 #: fileviewsvnplugin.cpp:466
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting of files from SVN repository failed."
-msgstr ""
+msgstr "SVN リポジトリのファイルの変更を元に戻せませんでした。"
 
 #: fileviewsvnplugin.cpp:467
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverted files from SVN repository."
-msgstr ""
+msgstr "SVN リポジトリのファイルの変更を元に戻しました。"
 
 #: fileviewsvnplugin.cpp:492
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout in process..."
-msgstr ""
+msgstr "SVN チェックアウト: チェックアウトしています..."
 
 #: fileviewsvnplugin.cpp:496
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN error starting: %1"
-msgstr ""
+msgstr "SVN の起動中にエラーが発生しました: %1"
 
 #: fileviewsvnplugin.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout failed: %1"
-msgstr ""
+msgstr "SVN チェックアウト: チェックアウトに失敗しました: %1"
 
 #: fileviewsvnplugin.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN checkout: checkout successful."
-msgstr ""
+msgstr "SVN チェックアウト: チェックアウトが完了しました。"
 
 #: fileviewsvnplugin.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Checkout"
-msgstr ""
+msgstr "SVN チェックアウト"
 
 #: fileviewsvnplugin.cpp:571
 #, kde-format
 msgctxt "@info:status"
 msgid "Reverting changes to file..."
-msgstr ""
+msgstr "ファイルの変更を元に戻しています..."
 
 #: fileviewsvnplugin.cpp:572
 #, kde-format
 msgctxt "@info:status"
 msgid "Revert file failed."
-msgstr ""
+msgstr "ファイルの変更を元に戻せませんでした。"
 
 #: fileviewsvnplugin.cpp:573
 #, kde-format
 msgctxt "@info:status"
 msgid "File reverted."
-msgstr ""
+msgstr "ファイルの変更を元に戻しました。"
 
 #: fileviewsvnplugin.cpp:590 fileviewsvnplugin.cpp:607
 #: fileviewsvnplugin.cpp:612
@@ -237,66 +242,68 @@ msgstr ""
 msgctxt "@info:status"
 msgid "Could not show local SVN changes for a file: could not get file."
 msgstr ""
+"ファイルの SVN のローカルの変更を表示できませんでした: ファイルを取得できませ"
+"んでした。"
 
 #: fileviewsvnplugin.cpp:647 fileviewsvnplugin.cpp:673
 #, kde-format
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
-msgstr ""
+msgstr "SVN の変更のコミットに失敗しました。"
 
 #: fileviewsvnplugin.cpp:667 svncommitdialog.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "SVN Commit"
-msgstr ""
+msgstr "SVN コミット"
 
 #: fileviewsvnplugin.cpp:672
 #, kde-format
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
-msgstr ""
+msgstr "SVN の変更をコミットしています..."
 
 #: fileviewsvnplugin.cpp:674
 #, kde-format
 msgctxt "@info:status"
 msgid "Committed SVN changes."
-msgstr ""
+msgstr "SVN の変更をコミットしました。"
 
 #. i18n: ectx: label, entry (showUpdates), group (General)
 #: fileviewsvnpluginsettings.kcfg:9
 #, kde-format
 msgid "Show updates"
-msgstr ""
+msgstr "更新を表示"
 
 #: svncheckoutdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to checkout"
-msgstr ""
+msgstr "チェックアウト先のディレクトリを選択"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutDialog)
 #: svncheckoutdialog.ui:20
 #, kde-format
 msgid "SVN Checkout"
-msgstr ""
+msgstr "SVN チェックアウト"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncheckoutdialog.ui:26
 #, kde-format
 msgid "URL of repository:"
-msgstr ""
+msgstr "リポジトリの URL:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: svncheckoutdialog.ui:36
 #, kde-format
 msgid "Checkout directory:"
-msgstr ""
+msgstr "チェックアウト先のディレクトリ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbOmitExternals)
 #: svncheckoutdialog.ui:46
 #, kde-format
 msgid "Omit externals"
-msgstr ""
+msgstr "外部項目を除外"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbOk)
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -304,241 +311,241 @@ msgstr ""
 #: svnprogressdialog.ui:46
 #, kde-format
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbCancel)
 #. i18n: ectx: property (text), widget (QPushButton, buttonCancel)
 #: svncheckoutdialog.ui:81 svncleanupdialog.ui:96 svnprogressdialog.ui:33
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: svncleanupdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a directory to clean up"
-msgstr ""
+msgstr "クリーンアップするディレクトリを選択"
 
 #: svncleanupdialog.cpp:62
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up completed successfully."
-msgstr ""
+msgstr "SVN のクリーンアップが完了しました。"
 
 #: svncleanupdialog.cpp:64
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN clean up failed for %1"
-msgstr ""
+msgstr "%1 の SVN のクリーンアップに失敗しました"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnCleanupDialog)
 #: svncleanupdialog.ui:20
 #, kde-format
 msgid "SVN Cleanup..."
-msgstr ""
+msgstr "SVN クリーンアップ..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: svncleanupdialog.ui:26
 #, kde-format
 msgid "Clean up directory:"
-msgstr ""
+msgstr "クリーンアップするディレクトリ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxUnversioned)
 #: svncleanupdialog.ui:43
 #, kde-format
 msgid "Delete unversioned files and directories"
-msgstr ""
+msgstr "バージョン管理されていないファイルとディレクトリを削除"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxIgnored)
 #: svncleanupdialog.ui:50
 #, kde-format
 msgid "Delete ignored files and directories"
-msgstr ""
+msgstr "無視されたファイルとディレクトリを削除"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxExternals)
 #: svncleanupdialog.ui:57
 #, kde-format
 msgid "Include externals"
-msgstr ""
+msgstr "外部項目を含める"
 
 #: svncommitdialog.cpp:86
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr ""
+msgstr "説明:"
 
 #: svncommitdialog.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Refresh"
-msgstr ""
+msgstr "更新"
 
 #: svncommitdialog.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Commit"
-msgstr ""
+msgstr "コミット"
 
 #: svncommitdialog.cpp:112
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Revert"
-msgstr ""
+msgstr "変更を元に戻す"
 
 #: svncommitdialog.cpp:119
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Show changes"
-msgstr ""
+msgstr "変更を表示"
 
 #: svncommitdialog.cpp:126
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Add file"
-msgstr ""
+msgstr "ファイルを追加"
 
 #: svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Path"
-msgstr ""
+msgstr "パス"
 
 #: svncommitdialog.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
-msgstr ""
+msgstr "状態"
 
 #: svncommitdialog.cpp:207
 #, kde-format
 msgctxt "@item:intable"
 msgid "Unversioned"
-msgstr ""
+msgstr "バージョン管理外"
 
 #: svncommitdialog.cpp:210
 #, kde-format
 msgctxt "@item:intable"
 msgid "Modified"
-msgstr ""
+msgstr "変更あり"
 
 #: svncommitdialog.cpp:213
 #, kde-format
 msgctxt "@item:intable"
 msgid "Added"
-msgstr ""
+msgstr "追加"
 
 #: svncommitdialog.cpp:216
 #, kde-format
 msgctxt "@item:intable"
 msgid "Deleted"
-msgstr ""
+msgstr "削除"
 
 #: svncommitdialog.cpp:219
 #, kde-format
 msgctxt "@item:intable"
 msgid "Conflict"
-msgstr ""
+msgstr "コンフリクト"
 
 #: svncommitdialog.cpp:222
 #, kde-format
 msgctxt "@item:intable"
 msgid "Missing"
-msgstr ""
+msgstr "見つからない"
 
 #: svncommitdialog.cpp:225
 #, kde-format
 msgctxt "@item:intable"
 msgid "Update required"
-msgstr ""
+msgstr "更新が必要"
 
 #: svnlogdialog.cpp:88
 #, kde-format
 msgid "Update to revision"
-msgstr ""
+msgstr "このリビジョンに更新"
 
 #: svnlogdialog.cpp:92 svnlogdialog.cpp:110
 #, kde-format
 msgid "Revert to revision"
-msgstr ""
+msgstr "このリビジョンに戻す"
 
 #: svnlogdialog.cpp:96
 #, kde-format
 msgid "Show changes"
-msgstr ""
+msgstr "変更を表示"
 
 #: svnlogdialog.cpp:103
 #, kde-format
 msgid "Changes against working copy"
-msgstr ""
+msgstr "作業コピーとの差分"
 
 #: svnlogdialog.cpp:265
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision failed."
-msgstr ""
+msgstr "SVN ログ: リビジョンへの更新に失敗しました。"
 
 #: svnlogdialog.cpp:267
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: update to revision %1 successful."
-msgstr ""
+msgstr "SVN ログ: リビジョン %1 に更新しました。"
 
 #: svnlogdialog.cpp:277 svnlogdialog.cpp:288
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision failed."
-msgstr ""
+msgstr "SVN ログ: リビジョンへの復元に失敗しました。"
 
 #: svnlogdialog.cpp:279 svnlogdialog.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "SVN log: revert to revision %1 successful."
-msgstr ""
+msgstr "SVN ログ: リビジョン %1 に戻しました。"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogDialog)
 #: svnlogdialog.ui:20
 #, kde-format
 msgid "SVN Log"
-msgstr ""
+msgstr "SVN のログ"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:55
 #, kde-format
 msgid "Revision"
-msgstr ""
+msgstr "リビジョン"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:60
 #, kde-format
 msgid "Author"
-msgstr ""
+msgstr "作成者"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:65
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "日付"
 
 #. i18n: ectx: property (text), widget (QTableWidget, tLog)
 #: svnlogdialog.ui:70
 #, kde-format
 msgid "Message"
-msgstr ""
+msgstr "メッセージ"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNext100)
 #: svnlogdialog.ui:104
 #, kde-format
 msgid "Next 100"
-msgstr ""
+msgstr "次の 100 件"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbRefresh)
 #: svnlogdialog.ui:114
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "更新"
 
 #: svnprogressdialog.cpp:53
 #, kde-format
 msgctxt "@info:status"
 msgid "Error starting: %1"
-msgstr ""
+msgstr "起動中にエラーが発生しました: %1"

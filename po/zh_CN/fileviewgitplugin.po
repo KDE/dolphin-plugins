@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/dolphin-plugins/fileviewgitplugin.pot\n"
-"X-Crowdin-File-ID: 48328\n"
+"X-Crowdin-File: /kf6-stable/messages/dolphin-plugins/fileviewgitplugin.pot\n"
+"X-Crowdin-File-ID: 52976\n"
 
 #: checkoutdialog.cpp:33
 #, kde-kuit-format

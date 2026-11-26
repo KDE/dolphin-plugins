@@ -1,10 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Yuma Kakei <yumasansansan@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2023-08-13 17:33-0700\n"
-"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-11-22 17:06+0900\n"
+"Last-Translator: Yuma Kakei <yumasansansan@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -13,56 +14,58 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
-msgstr ""
+msgstr "「%1」を make します%2。"
 
 #: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
 msgid "Makefile Actions"
-msgstr ""
+msgstr "Makefile のアクション"
 
 #: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "ターゲット「%1」の make 中にエラーが発生しました。"
 
 #: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr ""
+msgstr "「%1」のプロセスを停止しました。"
 
 #: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "ターゲット「%1」を make しようとしてエラーが発生しました。"
 
 #: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
-msgstr ""
+msgstr "make(&M)…"
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
+"Makefile のアクションプラグインでは、信頼済みのファイルだけを使用できます。"
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "信頼済みのファイル — チェックを外すと信頼を解除します"
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "信頼されていないファイル — チェックを入れると信頼します"
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr ""
+msgstr "Dolphin の Makefile プラグイン"
 
 #: makefileactions.cpp:305
 #, kde-format
@@ -70,24 +73,28 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>このファイルを信頼してもよろしいですか？</b><br>信頼済みのファイルは、コン"
+"テキストメニューを開いたときに任意のコードを実行する可能性があります。"
 
 #: makefileactions.cpp:319
 #, kde-format
 msgid "Open a terminal window"
-msgstr ""
+msgstr "ターミナルウィンドウを開く"
 
 #: makefileactions.cpp:320
 #, kde-format
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"新しいターミナルウィンドウを開いて、選択したターゲットを make したときの出力"
+"を表示します。"
 
 #: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr ""
+msgstr "実行中のプロセスをキャンセル (%1)"
 
 #: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr ""
+msgstr "現在実行中のプロセス (%1) を中断します。"
