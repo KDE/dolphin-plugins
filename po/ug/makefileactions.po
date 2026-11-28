@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: dolphin-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-11-25 18:17-0500\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.10\n"
 
 #: makefileactions.cpp:218
 #, kde-format
 msgid "Make '%1'%2."
-msgstr ""
+msgstr "«%1»%2 ھاسىللا."
 
 #: makefileactions.cpp:247 makefileactions.cpp:255 makefileactions.cpp:257
 #, kde-format
@@ -31,42 +31,44 @@ msgstr "Makefile مەشغۇلاتى"
 #: makefileactions.cpp:247
 #, kde-format
 msgid "An error occurred while making target '%1'."
-msgstr ""
+msgstr "«%1» نىشاننى ھاسىللاۋاتقاندا خاتالىق كۆرۈلدى."
 
 #: makefileactions.cpp:255
 #, kde-format
 msgid "Running process for '%1' successfully stopped."
-msgstr ""
+msgstr "«%1» نىڭ ئىجرا قىلىنىۋاتقان جەريانى مۇۋەپپەقىيەتلىك توختىتىلدى."
 
 #: makefileactions.cpp:257
 #, kde-format
 msgid "An error occurred trying to make target '%1'."
-msgstr ""
+msgstr "«%1» نىشاننى ھاسىللاپ سىناۋاتقاندا خاتالىق كۆرۈلدى."
 
 #: makefileactions.cpp:289
 #, kde-format
 msgid "&Make…"
-msgstr ""
+msgstr "ھاسىللا(&M)…"
 
 #: makefileactions.cpp:294
 #, kde-format
 msgid "Only trusted files can be used by the Makefile Actions plugin."
 msgstr ""
+"پەقەت ئىشەنچلىك ھۆججەتنىلا Makefile مەشغۇلاتىنىڭ قىستۇرمىسى سۈپىتىدە "
+"ئىشلەتكىلى بولىدۇ."
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Trusted file — uncheck to remove trust"
-msgstr ""
+msgstr "ئىشەنچلىك ھۆججەت — ئىشەنچنى چىقىرىۋېتىشتە تاللانمايدۇ"
 
 #: makefileactions.cpp:297
 #, kde-format
 msgid "Untrusted file — check to trust"
-msgstr ""
+msgstr "ئىشەنچسىز ھۆججەت — ئىشەنچلىك قىلىشتا تاللىنىدۇ"
 
 #: makefileactions.cpp:304
 #, kde-format
 msgid "Dolphin Makefile Plugin"
-msgstr ""
+msgstr "Dolphin Makefile قىستۇرمىسى"
 
 #: makefileactions.cpp:305
 #, kde-format
@@ -74,6 +76,8 @@ msgid ""
 "<b>Are you sure you can trust this file?</b><br>Trusted files may execute "
 "arbitrary code on context-menu invocation."
 msgstr ""
+"<b>بۇ ھۆججەتكە راستتىنلا ئىشىنەمسىز؟</b><br>ئىشەنچلىك ھۆججەت مەزمۇن "
+"تىزىملىكى قوزغىتىلغاندا خالىغان كودنى ئىجرا قىلىدۇ."
 
 #: makefileactions.cpp:319
 #, kde-format
@@ -85,13 +89,15 @@ msgstr "تېرمىنال كۆزنەك ئاچ"
 msgid ""
 "Open a new terminal window to see the output of making the chosen target."
 msgstr ""
+"تاللانغان نىشاننىڭ ھاسىللاپ چىقارغان ئۇچۇرىنى كۆرۈشتە يېڭى بىر تېرمىنال "
+"كۆزنىكى ئاچىدۇ."
 
 #: makefileactions.cpp:332
 #, kde-format
 msgid "Cancel running process (%1)"
-msgstr ""
+msgstr "ئىجرا قىلىنىۋاتقان جەرياندىن ۋاز كەچ (%1)"
 
 #: makefileactions.cpp:333
 #, kde-format
 msgid "Interrupt the currently running process (%1)."
-msgstr ""
+msgstr "نۆۋەتتە ئىجرا قىلىنىۋاتقان جەرياننى ئۈزىدۇ (%1)."
